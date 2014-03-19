@@ -1,0 +1,25 @@
+#!/bin/bash
+# Checks for updates once a day.
+#===============================================================================
+
+# If you want your dfm to autoupdate, uncomment the next line
+#dfm_autoupdate=1
+
+# If you want your dotfiles to autoupdate, uncomment the next line
+#dotfiles_autoupdate=1
+
+if [ $dfm_autoupdate -eq 1 ]; then
+    DFM_LAST_UPDATE=`cat ~/.dfm/lib/dfm-last-update`;
+    DATE=`date +%s`;
+    if [[ "$(($DATE - $DFM_LAST_UPDATE))" -gt "$((3600 * 24))" ]]; then
+        dfm -u;
+    fi;
+fi;
+
+if [ $dotfiles_autoupdate -eq 1 ]; then
+    DOTFILES_LAST_UPDATE=`cat ~/.dfm/lib/dotfiles-last-update`;
+    DATE=`date +%s`;
+    if [[ "$(($DATE - $DOTFILES_LAST_UPDATE))" -gt "$((3600 * 24))" ]]; then
+        dfm -u;
+    fi;
+fi;
