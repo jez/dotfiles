@@ -1,0 +1,118 @@
+###############################################################################
+##    .bash_profile                                                          ##
+##    @author Jake Zimmerman                                                 ##
+##    @email jake@zimmerman.io                                               ##
+###############################################################################
+
+## NOTE: 
+## This .bash_profile requires brew and coreutils if you are running on OS X.
+
+# Make sure we are running interactively, else stop
+# (I once had a really annoying problem with scp when this line wasn't here)
+[ -z "$PS1" ] && return
+
+echo -n 'Loading...'
+
+# ----- aliases --------------------------------------------------------------
+if [ `uname` = "Darwin" -a -n `which gls` ]
+then
+  alias ls="gls -p --color"
+  alias dircolors="gdircolors"
+  alias duls="du -h -d1 | gsort -hr"
+else
+  alias ls="ls -p --color=auto"
+  alias duls="du -h -d1 | sort -hr"
+fi
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias cdd="cd .."
+alias sml="rlwrap sml"
+# alias grep="ggrep --color=auto"
+
+alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
+alias pyserv="python -m SimpleHTTPServer"
+alias purgeswp='rm -i `find . | grep .swp$`'
+
+# ------ git stuff -----
+#   git-log:       show a pretty list of commit hashes and messages
+#   git-lastmerge: show what changed on the last merge of the repo
+#   git-last:      show what changed on the last commit
+#   gpall:         Add everything, commit everything, push everything
+alias git-log="git log --pretty=oneline --graph --decorate"
+alias git-lastmerge="git whatchanged -2 --oneline -p"
+alias git-last="git whatchanged -1 --oneline -p"
+
+# ------ vim stuff -----
+alias vim="/usr/local/bin/vim"
+# -----------------------------------------------------------------------------
+echo -n '.'
+
+# Turn on italics
+tic ~/.xterm-256color-italic.terminfo
+export TERM=xterm-256color-italic
+echo -n '.'
+
+# ruby...
+source ~/.profile
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+echo -n '.'
+
+# Load utility colors, change ls colors
+source ~/.COLORS
+eval `dircolors ~/.dir_colors`
+echo -n '.'
+
+function color_my_prompt {
+    # Determine active Python virtualenv details.
+    if test -z "$VIRTUAL_ENV" ; then
+        __python_virtualenv=""
+    else
+      __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
+    fi
+    local __user_and_host="\[$(color256 093)\]\u@\[${cgray}\]\h"
+    local __cur_location="\[${swhite}\]:\[$(color256 141)\]\w"
+    local __git_branch_color="\[$(color256 227)\]"
+    # Determine active git branch if any
+    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+    local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
+    local __prompt_tail="\[${ccyanb}\]$"
+    local __last_color="\[${cnone}\]\[$(color256 039)\]"
+    export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
+}
+color_my_prompt
+echo -n '.'
+
+# Turn the color back to normal (light gray) after the command executes
+trap 'echo -ne "\033[0m"' DEBUG
+
+# Turn on vi keybindings <3 <3 <3 :D
+set -o vi
+shopt -s autocd
+echo -n '.'
+
+# Settings for virtualenv and virtualenvwrapper (for python virtual environments)
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export PATH=.:/Users/Jake/bin:/usr/local/bin:$PATH
+echo -n '.'
+
+if [ -e $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
+echo -n '.'
+
+# Get coloring in man pages
+# man() {
+#     env LESS_TERMCAP_mb=$'\E[01;31m' \
+#     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+#     LESS_TERMCAP_me=$'\E[0m' \
+#     LESS_TERMCAP_se=$'\E[0m' \
+#     LESS_TERMCAP_so=$'\E[38;5;246m' \
+#     LESS_TERMCAP_ue=$'\E[0m' \
+#     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+#     man "$@"
+# }
+export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -"
+
+echo -en '.\r'
