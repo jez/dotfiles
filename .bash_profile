@@ -131,6 +131,8 @@ if [ `uname` == "Darwin" ]; then
   echo -n '.'
 fi
 
+export PATH="$PATH:~/.dfm/bin/";
+source ~/.dfmrc;
 
 # Get coloring in man pages
 # man() {
