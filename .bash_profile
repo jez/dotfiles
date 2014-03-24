@@ -50,10 +50,14 @@ tic ~/.xterm-256color-italic.terminfo
 export TERM=xterm-256color-italic
 echo -n '.'
 
-# ruby...
+# Mac tools
 if [ `uname` = "Darwin" ]; then
-  source ~/.profile
+  ### Added by the Heroku Toolbelt
+  export PATH="/usr/local/heroku/bin:$PATH"
 
+  # ruby...
+  # Add RVM to PATH for scripting
+  PATH=$PATH:$HOME/.rvm/bin 
   # Load RVM into a shell session *as a function*
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
   echo -n '.'
