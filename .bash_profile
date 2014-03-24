@@ -70,6 +70,8 @@ echo -n '.'
 
 color_my_prompt() {
   # To color each machine's prompt differently
+  local __git_branch_color="\[$(color256 227)\]"
+
   case $HOSTNAME in
     *MacBook*)
       local __user_color=093;
@@ -90,6 +92,7 @@ color_my_prompt() {
     pop.scottylabs.org)
       local __user_color=227;
       local __loc_color=222;
+      local __git_branch_color="\[$(color256 141)\]"
       ;;
     scottylabs)
       local __user_color=202;
@@ -108,7 +111,6 @@ color_my_prompt() {
   fi
   local __user_and_host="\[$(color256 $__user_color)\]\u@\[${cgray}\]\h"
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
-  local __git_branch_color="\[$(color256 227)\]"
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
   local __prompt_tail="\[${ccyanb}\]$"
