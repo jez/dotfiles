@@ -14,11 +14,13 @@
 echo -n 'Loading...'
 
 # ----- aliases --------------------------------------------------------------
-if [ `uname` = "Darwin" -a -n `which gls` ]
+if [ `uname` = "Darwin" ]
 then
   alias ls="gls -p --color"
   alias dircolors="gdircolors"
   alias duls="du -h -d1 | gsort -hr"
+  alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
+  alias vim="/usr/local/bin/vim"
 else
   alias ls="ls -p --color=auto"
   alias duls="du -h -d1 | sort -hr"
@@ -28,9 +30,7 @@ alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
 alias sml="rlwrap sml"
-# alias grep="ggrep --color=auto"
 
-alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
 
@@ -38,14 +38,11 @@ alias purgeswp='rm -i `find . | grep .swp$`'
 #   git-log:       show a pretty list of commit hashes and messages
 #   git-lastmerge: show what changed on the last merge of the repo
 #   git-last:      show what changed on the last commit
-#   gpall:         Add everything, commit everything, push everything
 alias git-log="git log --pretty=oneline --graph --decorate"
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
-
-# ------ vim stuff -----
-alias vim="/usr/local/bin/vim"
 # -----------------------------------------------------------------------------
+
 echo -n '.'
 
 # Turn on italics
@@ -54,53 +51,86 @@ export TERM=xterm-256color-italic
 echo -n '.'
 
 # ruby...
-source ~/.profile
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-echo -n '.'
+if [ `uname` = "Darwin" ]; then
+  source ~/.profile
+
+  # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  echo -n '.'
+fi
 
 # Load utility colors, change ls colors
 source ~/.COLORS
 eval `dircolors ~/.dir_colors`
 echo -n '.'
 
-function color_my_prompt {
-    # Determine active Python virtualenv details.
-    if test -z "$VIRTUAL_ENV" ; then
-        __python_virtualenv=""
-    else
-      __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
-    fi
-    local __user_and_host="\[$(color256 093)\]\u@\[${cgray}\]\h"
-    local __cur_location="\[${swhite}\]:\[$(color256 141)\]\w"
-    local __git_branch_color="\[$(color256 227)\]"
-    # Determine active git branch if any
-    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
-    local __prompt_tail="\[${ccyanb}\]$"
-    local __last_color="\[${cnone}\]\[$(color256 039)\]"
-    export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
+color_my_prompt() {
+  # To color each machine's prompt differently
+  case $HOSTNAME in
+    *MacBook*)
+      local __user_color=093;
+      local __loc_color=141
+      ;;
+    *andrew*|*gates*)
+      local __user_color=076;
+      local __loc_color=078;
+      ;;
+    alarmpi)
+      local __user_color=027;
+      local __loc_color=045;
+      ;;
+    pop.scottylabs.org)
+      local __user_color=227;
+      local __loc_color=222;
+      ;;
+    scottylabs)
+      local __user_color=202;
+      local __loc_color=214;
+      ;;
+    *)
+      local __user_color=196;
+      local __loc_color=015;
+      ;;
+  esac
+
+  if test -z "$VIRTUAL_ENV" ; then
+      __python_virtualenv=""
+  else
+    __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
+  fi
+  local __user_and_host="\[$(color256 $__user_color)\]\u@\[${cgray}\]\h"
+  local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
+  local __git_branch_color="\[$(color256 227)\]"
+  local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+  local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
+  local __prompt_tail="\[${ccyanb}\]$"
+  local __last_color="\[${cnone}\]\[$(color256 039)\]"
+  export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
 }
 color_my_prompt
 echo -n '.'
 
-# Turn the color back to normal (light gray) after the command executes
+# Turn the color back to normal (light gray/white) after the command executes
 trap 'echo -ne "\033[0m"' DEBUG
 
-# Turn on vi keybindings <3 <3 <3 :D
+# Turn on vi keybindings <3 <3 <3 :D and other things
 set -o vi
 shopt -s autocd
 echo -n '.'
 
-# Settings for virtualenv and virtualenvwrapper (for python virtual environments)
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PATH=.:/Users/Jake/bin:/usr/local/bin:$PATH
-echo -n '.'
+if [ `uname` == "Darwin" ]; then
+  # Settings for virtualenv and virtualenvwrapper (for python virtual environments)
+  export WORKON_HOME=$HOME/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+  export PATH=.:/Users/Jake/bin:/usr/local/bin:$PATH
+  echo -n '.'
 
-if [ -e $(brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion
+  if [ -e $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+  fi
+  echo -n '.'
 fi
-echo -n '.'
+
 
 # Get coloring in man pages
 # man() {
