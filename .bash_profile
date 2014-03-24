@@ -79,6 +79,10 @@ color_my_prompt() {
       local __user_color=027;
       local __loc_color=045;
       ;;
+    *xubuntu*)
+      local __user_color=057;
+      local __loc_color=055;
+      ;;
     pop.scottylabs.org)
       local __user_color=227;
       local __loc_color=222;
