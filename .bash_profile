@@ -13,6 +13,12 @@
 
 echo -n 'Loading...'
 
+case $HOSTNAME in
+  *andrew*|*gates*)
+    source ~/.bashrc_gpi
+    ;;
+esac
+
 # ----- aliases --------------------------------------------------------------
 if [ `uname` = "Darwin" ]
 then
