@@ -147,9 +147,6 @@ if [ `uname` == "Darwin" ]; then
   echo -n '.'
 fi
 
-export PATH="$PATH:~/.dfm/bin/";
-source ~/.dfmrc;
-
 # Get coloring in man pages
 # man() {
 #     env LESS_TERMCAP_mb=$'\E[01;31m' \
