@@ -14,13 +14,8 @@
 echo -n 'Loading...'
 
 case $HOSTNAME in
-  *andrew*|*gates*)
-    source ~/.bashrc_gpi
-    export PATH="$PATH:$HOME/bin"
-    ;;
-  *scottylabs*)
-    export PATH="$PATH:$HOME/bin"
-    ;;
+  *andrew*|*gates*) source ~/.bashrc_gpi ;&
+  *scottylabs*)     export PATH="$PATH:$HOME/bin" ;;
 esac
 
 # ----- aliases --------------------------------------------------------------
