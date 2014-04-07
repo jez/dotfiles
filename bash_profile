@@ -118,7 +118,10 @@ color_my_prompt() {
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
-  local __prompt_tail="\[${ccyanb}\]$"
+  if [ $(id -u) -eq 0 ]
+  then local __prompt_tail="\[${cred}\]#"
+  else local __prompt_tail="\[${ccyanb}\]$"
+  fi
   local __last_color="\[${cnone}\]\[$(color256 039)\]"
   export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
 }
