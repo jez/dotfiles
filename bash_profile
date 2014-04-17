@@ -160,6 +160,5 @@ fi
 #     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
 #     man "$@"
 # }
-export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -"
 
 echo -en '.\r'

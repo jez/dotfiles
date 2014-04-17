@@ -103,7 +103,7 @@ set number
 
 " Match ` with ' in LaTeX
 au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-au FileType tex let b:delimitMate_quotes = "\" '"
+au FileType tex let b:delimitMate_quotes = "\""
 
 " Make it so that these commands don't complain
 command WQ wq
@@ -136,5 +136,15 @@ noremap <buffer> <silent> _ g_
 noremap <buffer> <silent> gA g$a
 noremap <buffer> <silent> gI I
 noremap <buffer> <silent> I g^i
+
+" take first suggested spelling as correct spelling and replace
 noremap <buffer> <silent> z! z=1<CR><CR>
+
+" use 'Y' to yank to the end of a line
 map <buffer> <silent> Y y$
+
+" use ~ to toggle case as an operator, not a motion
+set tildeop
+
+" better manpage support
+source $VIMRUNTIME/ftplugin/man.vim
