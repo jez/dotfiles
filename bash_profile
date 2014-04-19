@@ -26,6 +26,8 @@ then
   alias duls="du -h -d1 | gsort -hr"
   alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
   alias vim="/usr/local/bin/vim"
+  alias math="rlwrap /Applications/Mathematica.app/Contents/MacOS/MathKernel"
+  alias grep="grep --color=auto"
 else
   alias ls="ls -p --color=auto"
   alias duls="du -h -d1 | sort -hr"
