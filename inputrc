@@ -1,3 +1,5 @@
 set show-all-if-unmodified off
 set show-all-if-ambiguous on
 TAB: menu-complete
+set editing-mode vi
+set keymap vi

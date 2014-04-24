@@ -27,6 +27,8 @@ then
   alias duls="du -h -d1 | gsort -hr"
   alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
   alias vim="/usr/local/bin/vim"
+  alias math="rlwrap /Applications/Mathematica.app/Contents/MacOS/MathKernel"
+  alias grep="grep --color=auto"
 else
   alias ls="ls -p --color=auto"
   alias duls="du -h -d1 | sort -hr"
@@ -119,7 +121,10 @@ color_my_prompt() {
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
-  local __prompt_tail="\[${ccyanb}\]$"
+  if [ $(id -u) -eq 0 ]
+  then local __prompt_tail="\[${cred}\]#"
+  else local __prompt_tail="\[${ccyanb}\]$"
+  fi
   local __last_color="\[${cnone}\]\[$(color256 039)\]"
   export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
 }
@@ -158,6 +163,5 @@ fi
 #     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
 #     man "$@"
 # }
-export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -"
 
 echo -en '.\r'
