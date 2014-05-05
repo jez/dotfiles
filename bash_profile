@@ -62,12 +62,12 @@ if [ `uname` = "Darwin" ]; then
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
 
-  # ruby...
-  # Add RVM to PATH for scripting
-  PATH=$PATH:$HOME/.rvm/bin 
-  # Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-  echo -n '.'
+#  # ruby...
+#  # Add RVM to PATH for scripting
+#  PATH=$PATH:$HOME/.rvm/bin 
+#  # Load RVM into a shell session *as a function*
+#  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#  echo -n '.'
 fi
 
 # Load utility colors, change ls colors

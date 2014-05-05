@@ -88,6 +88,10 @@ if !exists(":DiffOrig")
 endif
 
 " MY CHANGES
+
+" Pathogen
+execute pathogen#infect()
+
 set expandtab          "Expand tabs into spaces
 set tabstop=2          "default to 2 spaces for a hard tab
 set softtabstop=2      "default to 2 spaces for the soft tab
@@ -100,6 +104,7 @@ set writebackup
 
 " Line numbers
 set number
+set relativenumber
 
 " Match ` with ' in LaTeX
 au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
@@ -141,7 +146,7 @@ noremap <buffer> <silent> I g^i
 noremap <buffer> <silent> z! z=1<CR><CR>
 
 " use 'Y' to yank to the end of a line
-map <buffer> <silent> Y y$
+noremap <buffer> <silent> Y y$
 
 " use ~ to toggle case as an operator, not a motion
 set tildeop

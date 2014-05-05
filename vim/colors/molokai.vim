@@ -214,6 +214,6 @@ if &t_Co > 255
    hi Comment         ctermfg=59  cterm=italic
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
-   hi LineNr          ctermfg=237
+   hi LineNr          ctermfg=242
    hi NonText         ctermfg=237
 end
