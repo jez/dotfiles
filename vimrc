@@ -153,6 +153,3 @@ set tildeop
 
 " better manpage support
 source $VIMRUNTIME/ftplugin/man.vim
-
-" use tree style when viewing directories
-let g:netrw_liststyle=3
