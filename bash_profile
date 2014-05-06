@@ -61,7 +61,11 @@ if [ `uname` = "Darwin" ]; then
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
 
-#  # ruby...
+  # ruby...
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  alias bex="bundle exec"
+
 #  # Add RVM to PATH for scripting
 #  PATH=$PATH:$HOME/.rvm/bin 
 #  # Load RVM into a shell session *as a function*

@@ -104,7 +104,6 @@ set writebackup
 
 " Line numbers
 set number
-set relativenumber
 
 " Match ` with ' in LaTeX
 au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
