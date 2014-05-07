@@ -85,7 +85,8 @@ color_my_prompt() {
   case $HOSTNAME in
     *MacBook*)
       local __user_color=093;
-      local __loc_color=141
+      local __loc_color=141;
+      local __host="MacBook";
       ;;
     *andrew*|*gates*)
       local __user_color=076;
@@ -98,19 +99,23 @@ color_my_prompt() {
     *xubuntu*)
       local __user_color=057;
       local __loc_color=055;
+      local __host="xubuntu"
       ;;
     pop.scottylabs.org)
       local __user_color=227;
       local __loc_color=222;
       local __git_branch_color="\[$(color256 141)\]"
+      local __host="sl-prod"
       ;;
     scottylabs)
       local __user_color=202;
       local __loc_color=214;
+      local __host="sl-dev"
       ;;
     *)
       local __user_color=196;
       local __loc_color=015;
+      local __host="\h"
       ;;
   esac
 
@@ -119,7 +124,7 @@ color_my_prompt() {
   else
     __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
   fi
-  local __user_and_host="\[$(color256 $__user_color)\]\u@\[${cgray}\]\h"
+  local __user_and_host="\[$(color256 $__user_color)\]\u\[${cgray}\]@$__host"
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
