@@ -52,7 +52,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
-  au BufRead,BufNewFile *.md set filetype=markdown
+  " au BufRead,BufNewFile *.md set filetype=markdown
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -90,7 +90,7 @@ endif
 " MY CHANGES
 
 " Pathogen
-execute pathogen#infect()
+call pathogen#infect()
 
 set expandtab          "Expand tabs into spaces
 set tabstop=2          "default to 2 spaces for a hard tab
@@ -104,10 +104,6 @@ set writebackup
 
 " Line numbers
 set number
-
-" Match ` with ' in LaTeX
-au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-au FileType tex let b:delimitMate_quotes = "\""
 
 " Make it so that these commands don't complain
 command WQ wq
@@ -152,3 +148,6 @@ set tildeop
 
 " better manpage support
 source $VIMRUNTIME/ftplugin/man.vim
+
+" Octopress coloring
+autocmd BufNewFile,BufRead *.md,*.markdown,*.textile set filetype=octopress
