@@ -36,6 +36,9 @@ alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
 alias sml="rlwrap sml"
+resolve() {
+  cd "`pwd -P`"
+}
 
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
