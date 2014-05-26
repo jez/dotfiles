@@ -47,7 +47,7 @@ alias purgeswp='rm -i `find . | grep .swp$`'
 #   git-log:       show a pretty list of commit hashes and messages
 #   git-lastmerge: show what changed on the last merge of the repo
 #   git-last:      show what changed on the last commit
-alias git-log="git log --pretty=oneline --graph --decorate"
+alias git-log="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
 # -----------------------------------------------------------------------------
