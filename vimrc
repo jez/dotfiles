@@ -116,7 +116,7 @@ command V make view
 command Wv w | make view
 command WV w | make view
 
-command Clear let @/ = ""
+command Clear noh
 
 colorscheme molokai
 
@@ -151,3 +151,5 @@ source $VIMRUNTIME/ftplugin/man.vim
 
 " Octopress coloring
 autocmd BufNewFile,BufRead *.md,*.markdown,*.textile set filetype=octopress
+
+let g:netrw_liststyle=3
