@@ -112,6 +112,8 @@ command Wqa wqa
 command W w 
 command Q q 
 
+command WS w !sudo tee %
+
 command V make view
 command Wv w | make view
 command WV w | make view
@@ -151,3 +153,5 @@ source $VIMRUNTIME/ftplugin/man.vim
 
 " use tree style when viewing directories
 let g:netrw_liststyle=3
+
+
