@@ -31,15 +31,30 @@ else
   alias ls="ls -p --color=auto"
   alias duls="du -h -d1 | sort -hr"
 fi
+alias grep="grep --color=auto"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
 alias sml="rlwrap sml"
+# Resolve the current directory into it's fully qualified path, and change 
+# to that directory.
 resolve() {
   cd "`pwd -P`"
 }
-
+# Open Matching
+# grep for non-binary files matching a pattern and open them in vim tabs
+# will automatically search for the specified regexp
+om() {
+  local pattern="$@"
+  local result="`grep -l -r --binary-files=without-match "$pattern" * | tr '\n' ' '`"
+  if [ -n "$result" ]; then
+    vim -p -c "/$pattern" $result
+  else
+    echo "${cwhiteb}No files matching the pattern: $sred$pattern$cnone"
+  fi
+}
+alias TODO="grep -n -r TODO *"
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
 
