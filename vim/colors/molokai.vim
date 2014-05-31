@@ -126,7 +126,7 @@ end
 " Support for 256-color terminal
 "
 if &t_Co > 255
-   hi Normal          ctermfg=252 ctermbg=232
+   hi Normal          ctermfg=252 ctermbg=233
 
    hi Boolean         ctermfg=135
    hi Character       ctermfg=222
