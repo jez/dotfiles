@@ -14,7 +14,8 @@
 echo -n 'Loading...'
 
 case $HOSTNAME in
-  *andrew*|*gates*) source ~/.bashrc_gpi ;&
+  *andrew*|*gates*) source ~/.bashrc_gpi
+                    export PATH="$PATH:/afs/club/contrib/bin";&
   *scottylabs*)     export PATH="$PATH:$HOME/bin" ;;
 esac
 
@@ -26,18 +27,34 @@ then
   alias duls="du -h -d1 | gsort -hr"
   alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
   alias vim="/usr/local/bin/vim"
-  alias math="rlwrap /Applications/Mathematica.app/Contents/MacOS/MathKernel"
-  alias grep="grep --color=auto"
 else
   alias ls="ls -p --color=auto"
   alias duls="du -h -d1 | sort -hr"
 fi
+alias grep="grep --color=auto"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
 alias sml="rlwrap sml"
-
+# Resolve the current directory into it's fully qualified path, and change 
+# to that directory.
+resolve() {
+  cd "`pwd -P`"
+}
+# Open Matching
+# grep for non-binary files matching a pattern and open them in vim tabs
+# will automatically search for the specified regexp
+om() {
+  local pattern="$@"
+  local result="`grep -l -r --binary-files=without-match "$pattern" * | tr '\n' ' '`"
+  if [ -n "$result" ]; then
+    vim -p -c "/$pattern" $result
+  else
+    echo "${cwhiteb}No files matching the pattern: $sred$pattern$cnone"
+  fi
+}
+alias TODO="grep -n -r TODO *"
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
 
@@ -45,7 +62,7 @@ alias purgeswp='rm -i `find . | grep .swp$`'
 #   git-log:       show a pretty list of commit hashes and messages
 #   git-lastmerge: show what changed on the last merge of the repo
 #   git-last:      show what changed on the last commit
-alias git-log="git log --pretty=oneline --graph --decorate"
+alias git-log="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
 # -----------------------------------------------------------------------------
@@ -63,11 +80,15 @@ if [ `uname` = "Darwin" ]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 
   # ruby...
-  # Add RVM to PATH for scripting
-  PATH=$PATH:$HOME/.rvm/bin 
-  # Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-  echo -n '.'
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  alias bex="bundle exec"
+
+#  # Add RVM to PATH for scripting
+#  PATH=$PATH:$HOME/.rvm/bin 
+#  # Load RVM into a shell session *as a function*
+#  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#  echo -n '.'
 fi
 
 # Load utility colors, change ls colors
@@ -82,7 +103,8 @@ color_my_prompt() {
   case $HOSTNAME in
     *MacBook*)
       local __user_color=093;
-      local __loc_color=141
+      local __loc_color=141;
+      local __host="MacBook";
       ;;
     *andrew*|*gates*)
       local __user_color=076;
@@ -95,19 +117,23 @@ color_my_prompt() {
     *xubuntu*)
       local __user_color=057;
       local __loc_color=055;
+      local __host="xubuntu"
       ;;
     pop.scottylabs.org)
       local __user_color=227;
       local __loc_color=222;
       local __git_branch_color="\[$(color256 141)\]"
+      local __host="sl-prod"
       ;;
     scottylabs)
       local __user_color=202;
       local __loc_color=214;
+      local __host="sl-dev"
       ;;
     *)
       local __user_color=196;
       local __loc_color=015;
+      local __host="\h"
       ;;
   esac
 
@@ -116,7 +142,7 @@ color_my_prompt() {
   else
     __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
   fi
-  local __user_and_host="\[$(color256 $__user_color)\]\u@\[${cgray}\]\h"
+  local __user_and_host="\[$(color256 $__user_color)\]\u\[${cgray}\]@$__host"
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"

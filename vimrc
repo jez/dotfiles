@@ -52,7 +52,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
-  au BufRead,BufNewFile *.md set filetype=markdown
+  " au BufRead,BufNewFile *.md set filetype=markdown
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -88,6 +88,10 @@ if !exists(":DiffOrig")
 endif
 
 " MY CHANGES
+
+" Pathogen
+call pathogen#infect()
+
 set expandtab          "Expand tabs into spaces
 set tabstop=2          "default to 2 spaces for a hard tab
 set softtabstop=2      "default to 2 spaces for the soft tab
@@ -100,10 +104,6 @@ set writebackup
 
 " Line numbers
 set number
-
-" Match ` with ' in LaTeX
-au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-au FileType tex let b:delimitMate_quotes = "\""
 
 " Make it so that these commands don't complain
 command WQ wq
@@ -118,7 +118,7 @@ command V make view
 command Wv w | make view
 command WV w | make view
 
-command Clear let @/ = ""
+command Clear noh
 
 colorscheme molokai
 
@@ -143,7 +143,7 @@ noremap <buffer> <silent> I g^i
 noremap <buffer> <silent> z! z=1<CR><CR>
 
 " use 'Y' to yank to the end of a line
-map <buffer> <silent> Y y$
+noremap <buffer> <silent> Y y$
 
 " use ~ to toggle case as an operator, not a motion
 set tildeop
@@ -151,7 +151,9 @@ set tildeop
 " better manpage support
 source $VIMRUNTIME/ftplugin/man.vim
 
-" use tree style when viewing directories
+" Octopress coloring
+autocmd BufNewFile,BufRead *.md,*.markdown,*.textile set filetype=octopress
+
 let g:netrw_liststyle=3
 
 
