@@ -45,6 +45,6 @@ export sreset="$(echo -ne '\033[0m')"
 # You may omit either (bg) or (style and bg)
 function color256 () { 
   if [ -z $3 ]; then echo -ne "\033[$2;48;5;$3;38;5;$1m"; return; fi
-  if [ -z $2 ]; then echo -ne "\033[$2;38;5;$1m"; return; fi
-  if [ -z $1 ]; then echo -ne "\033[38;5;$1m"; return; fi
+  if [ -z $2 ]; then echo -ne "\033[$2;38;5;$1;40m"; return; fi
+  if [ -z $1 ]; then echo -ne "\033[0;38;5;$1;40m"; return; fi
 }
