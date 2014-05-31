@@ -55,7 +55,7 @@ om() {
   fi
 }
 alias TODO="ack TODO"
-alias reload"source ~/.bash_profile"
+alias reload="source ~/.bash_profile"
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
 
