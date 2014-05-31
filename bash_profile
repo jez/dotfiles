@@ -54,7 +54,8 @@ om() {
     echo "${cwhiteb}No files matching the pattern: $sred$pattern$cnone"
   fi
 }
-alias TODO="grep -n -r TODO *"
+alias TODO="ack TODO"
+alias reload"source ~/.bash_profile"
 alias pyserv="python -m SimpleHTTPServer"
 alias purgeswp='rm -i `find . | grep .swp$`'
 
