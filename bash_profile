@@ -110,10 +110,17 @@ color_my_prompt() {
     *andrew*|*gates*)
       local __user_color=076;
       local __loc_color=078;
+      local __host="\h"
       ;;
     alarmpi)
       local __user_color=027;
       local __loc_color=045;
+      local __host="\h"
+      ;;
+    jake-raspi)
+      local __user_color=164;
+      local __loc_color=170;
+      local __host="\h"
       ;;
     *xubuntu*)
       local __user_color=057;
