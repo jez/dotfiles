@@ -14,8 +14,7 @@
 echo -n 'Loading...'
 
 case $HOSTNAME in
-  *andrew*|*gates*) source ~/.bashrc_gpi ;&
-  *scottylabs*)     export PATH="$PATH:$HOME/bin" ;;
+  *andrew*|*gates*) source ~/.bashrc_gpi ;;
 esac
 
 # ----- aliases --------------------------------------------------------------
@@ -142,7 +141,7 @@ if [ `uname` == "Darwin" ]; then
   # Settings for virtualenv and virtualenvwrapper (for python virtual environments)
   export WORKON_HOME=$HOME/.virtualenvs
   source /usr/local/bin/virtualenvwrapper.sh
-  export PATH=.:/Users/Jake/bin:/usr/local/bin:$PATH
+  export PATH=/usr/local/bin:$PATH
   echo -n '.'
 
   if [ -e $(brew --prefix)/etc/bash_completion ]; then
@@ -163,4 +162,5 @@ fi
 #     man "$@"
 # }
 
+export PATH=".:$HOME/bin:$PATH"
 echo -en '.\r'
