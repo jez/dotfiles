@@ -65,9 +65,8 @@ fi
 echo -n 'Loading...'
 
 case $HOSTNAME in
-  *andrew*|*gates*) source ~/.bashrc_gpi
-                    export PATH="$PATH:/afs/club/contrib/bin";&
-  *scottylabs*)     export PATH="$PATH:$HOME/bin" ;;
+  *andrew*|*gates*) source ~/.bashrc_gpi;
+                    export PATH="$PATH:/afs/club/contrib/bin";;
 esac
 
 # ----- aliases --------------------------------------------------------------
@@ -164,10 +163,17 @@ color_my_prompt() {
     *andrew*|*gates*)
       local __user_color=076;
       local __loc_color=078;
+      local __host="\h"
       ;;
     alarmpi)
       local __user_color=027;
       local __loc_color=045;
+      local __host="\h"
+      ;;
+    jake-raspi)
+      local __user_color=164;
+      local __loc_color=170;
+      local __host="\h"
       ;;
     *xubuntu*)
       local __user_color=057;
@@ -222,7 +228,7 @@ if [ `uname` == "Darwin" ]; then
   # Settings for virtualenv and virtualenvwrapper (for python virtual environments)
   export WORKON_HOME=$HOME/.virtualenvs
   source /usr/local/bin/virtualenvwrapper.sh
-  export PATH=.:/Users/Jake/bin:/usr/local/bin:$PATH
+  export PATH=/usr/local/bin:$PATH
   echo -n '.'
 
   if [ -e $(brew --prefix)/etc/bash_completion ]; then
@@ -243,4 +249,5 @@ man() {
     man "$@"
 }
 
+export PATH=".:$HOME/bin:$PATH"
 echo -en '.\r'
