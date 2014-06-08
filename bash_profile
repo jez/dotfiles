@@ -24,6 +24,7 @@ if [ `uname` = "Darwin" ]
 then
   alias ls="gls -p --color"
   alias dircolors="gdircolors"
+  alias date="gdate"
   alias duls="du -h -d1 | gsort -hr"
   alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
   alias vim="/usr/local/bin/vim"
@@ -37,12 +38,13 @@ alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
 alias sml="rlwrap sml"
+##
 # Resolve the current directory into it's fully qualified path, and change 
 # to that directory.
 resolve() {
   cd "`pwd -P`"
 }
-# Open Matching
+## Open Matching
 # grep for non-binary files matching a pattern and open them in vim tabs
 # will automatically search for the specified regexp
 om() {
@@ -98,9 +100,10 @@ eval `dircolors ~/.dir_colors`
 echo -n '.'
 
 color_my_prompt() {
-  # To color each machine's prompt differently
-  local __git_branch_color="\[$(color256 227)\]"
+  # change the color of the git branch depending on whether the repo is "messy" or "clean"
+  local __git_branch_color='`if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi`'
 
+  # To color each machine's prompt differently
   case $HOSTNAME in
     *MacBook*)
       local __user_color=093;
@@ -123,7 +126,6 @@ color_my_prompt() {
     pop.scottylabs.org)
       local __user_color=227;
       local __loc_color=222;
-      local __git_branch_color="\[$(color256 141)\]"
       local __host="sl-prod"
       ;;
     scottylabs)
