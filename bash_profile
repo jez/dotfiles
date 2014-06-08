@@ -11,6 +11,57 @@
 # (I once had a really annoying problem with scp when this line wasn't here)
 [ -z "$PS1" ] && return
 
+# ----- daily updates --------------------------------------------------------
+[ ! -e $HOME/.last_update ] && touch $HOME/.last_update
+# Initialize for when we have no GNU date available
+last_check=0
+time_now=0
+
+# Unix last command to check the log of logins, grab the most recent
+last_check_string=`ls -l $HOME/.last_update | awk '{print $6" "$7" "$8}'`
+
+# Darwin uses BSD, check for gdate, else use date
+if [[ `uname` = "Darwin" && -n `which gdate` ]]; then
+  last_login=`gdate -d"$last_check_string" +%s`
+  time_now=`gdate +%s`
+else
+  # Ensure this is GNU grep
+  if [ -n "`date --version 2> /dev/null | grep GNU`" ]; then
+    last_login=`date -d"$last_login_string" +%s`
+    time_now=`date +%s`
+  fi
+fi
+
+time_since_check=$((time_now - last_login))
+
+cnone="$(echo -ne '\033[0m')"
+cwhiteb="$(echo -ne '\033[1;37m')"
+cblueb="$(echo -ne '\033[1;34m')"
+cgreenb="$(echo -ne '\033[1;32m')"
+
+if [ "$time_since_check" -ge 86400 ]; then
+  touch $HOME/.last_update
+
+  # Mac updates
+  if [ `uname` = "Darwin" ]; then
+    echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
+    brew update
+
+    echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
+    brew outdated --verbose
+
+    echo "$cblueb==>$cwhiteb Checking for outdated rbenv...$cnone"
+    cd $HOME/.rbenv
+    git fetch
+    if [ "`git describe --tags master`" != "`git describe --tags origin/master`" ]; then
+      echo "rbenv (`git describe --tags master`) is outdated (`git describe --tags origin/master`)."
+      echo "To update, run: cd ~/.rbenv; git merge && cd -"
+    fi
+    cd - 2>&1 > /dev/null
+  fi
+fi
+# ----------------------------------------------------------------------------
+
 echo -n 'Loading...'
 
 case $HOSTNAME in
