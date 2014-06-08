@@ -1,4 +1,8 @@
 set show-all-if-unmodified off
 set show-all-if-ambiguous on
 set mark-symlinked-directories on
+set colored-stats on
+
+"\C-x\C-r": re-read-init-file
+"\C-x\C-p": menu-complete-display-prefix
 TAB: menu-complete
