@@ -58,6 +58,9 @@ if [ "$time_since_check" -ge 86400 ]; then
       echo "To update, run: cd ~/.rbenv; git merge && cd -"
     fi
     cd - 2>&1 > /dev/null
+
+    echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
+    gem outdated
   fi
 fi
 # ----------------------------------------------------------------------------
