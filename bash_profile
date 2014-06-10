@@ -11,6 +11,9 @@
 # (I once had a really annoying problem with scp when this line wasn't here)
 [ -z "$PS1" ] && return
 
+# Load utility colors
+source ~/.COLORS
+
 # ----- daily updates --------------------------------------------------------
 [ ! -e $HOME/.last_update ] && touch $HOME/.last_update
 # Initialize for when we have no GNU date available
@@ -34,12 +37,12 @@ fi
 
 time_since_check=$((time_now - last_login))
 
-cnone="$(echo -ne '\033[0m')"
-cwhiteb="$(echo -ne '\033[1;37m')"
-cblueb="$(echo -ne '\033[1;34m')"
-cgreenb="$(echo -ne '\033[1;32m')"
-
 if [ "$time_since_check" -ge 86400 ]; then
+  echo "$cred==>$cwhiteb Your system is out of date!$cnone"
+  echo 'Run `update` to bring it up to date.'
+fi
+
+update() {
   touch $HOME/.last_update
 
   # Mac updates
@@ -55,14 +58,14 @@ if [ "$time_since_check" -ge 86400 ]; then
     git fetch
     if [ "`git describe --tags master`" != "`git describe --tags origin/master`" ]; then
       echo "rbenv (`git describe --tags master`) is outdated (`git describe --tags origin/master`)."
-      echo "To update, run: cd ~/.rbenv; git merge && cd -"
+      echo "To update, run: cd ~/.rbenv; git merge origin master && cd -"
     fi
     cd - 2>&1 > /dev/null
 
     echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
     gem outdated
   fi
-fi
+}
 # ----------------------------------------------------------------------------
 
 echo -n 'Loading...'
@@ -147,8 +150,7 @@ if [ `uname` = "Darwin" ]; then
 #  echo -n '.'
 fi
 
-# Load utility colors, change ls colors
-source ~/.COLORS
+# Load LS_COLORS
 eval `dircolors ~/.dir_colors`
 echo -n '.'
 
