@@ -1,18 +1,15 @@
-###############################################################################
-##    .bash_profile                                                          ##
-##    @author Jake Zimmerman                                                 ##
-##    @email jake@zimmerman.io                                               ##
-###############################################################################
-
-## NOTE: 
-## This .bash_profile requires brew and coreutils if you are running on OS X.
+# =========================================================================== #
+#                                                                             #
+#  .bash_profile                                                              #
+#                                                                             #
+#  Author:  Jake Zimmerman                                                    #
+#  Email:   jake@zimmerman.io                                                 #
+#                                                                             #
+# =========================================================================== #
 
 # Make sure we are running interactively, else stop
-# (I once had a really annoying problem with scp when this line wasn't here)
 [ -z "$PS1" ] && return
-
-# Load utility colors
-source ~/.COLORS
+export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 
 # ----- daily updates --------------------------------------------------------
 [ ! -e $HOME/.last_update ] && touch $HOME/.last_update
@@ -42,64 +39,144 @@ if [ "$time_since_check" -ge 86400 ]; then
   echo 'Run `update` to bring it up to date.'
 fi
 
-update() {
-  touch $HOME/.last_update
+# ============================================================================
+# ============================================================================
+# ===== START OF CONFIGURATION ===============================================
+# ============================================================================
+# ============================================================================
 
-  # Mac updates
-  if [ `uname` = "Darwin" ]; then
-    echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
-    brew update
-
-    echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
-    brew outdated --verbose
-
-    echo "$cblueb==>$cwhiteb Checking for outdated rbenv...$cnone"
-    cd $HOME/.rbenv
-    git fetch
-    if [ "`git describe --tags master`" != "`git describe --tags origin/master`" ]; then
-      echo "rbenv (`git describe --tags master`) is outdated (`git describe --tags origin/master`)."
-      echo "To update, run: cd ~/.rbenv; git merge origin master && cd -"
-    fi
-    cd - 2>&1 > /dev/null
-
-    echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
-    gem outdated
-  fi
-}
-# ----------------------------------------------------------------------------
-
+# Keep track of how long loading takes
 echo -n 'Loading...'
 
-case $HOSTNAME in
-  *andrew*|*gates*) source ~/.bashrc_gpi;
-                    export PATH="$PATH:/afs/club/contrib/bin";;
-esac
+# ----- miscellaneous  -------------------------------------------------------
+# Turn on vi keybindings <3 <3 <3 :D and other things
+set -o vi
+
+# if command not found, but directory exists, cd into it
+shopt -s autocd
+
+echo -n '.'
 
 # ----- aliases --------------------------------------------------------------
-if [ `uname` = "Darwin" ]
-then
-  alias ls="gls -p --color"
-  alias dircolors="gdircolors"
-  alias date="gdate"
-  alias duls="du -h -d1 | gsort -hr"
-  alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
-  alias vim="/usr/local/bin/vim"
-else
-  alias ls="ls -p --color=auto"
-  alias duls="du -h -d1 | sort -hr"
-fi
+# General aliases
 alias grep="grep --color=auto"
+alias ls="ls -p --color=auto"
+alias duls="du -h -d1 | sort -hr"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
-alias sml="rlwrap sml"
-##
-# Resolve the current directory into it's fully qualified path, and change 
-# to that directory.
-resolve() {
-  cd "`pwd -P`"
+alias resolve='cd `pwd -P`'
+alias reload="source ~/.bash_profile"
+alias pyserv="python -m SimpleHTTPServer"
+alias purgeswp='rm -i `find . | grep .swp$`'
+which ack > /dev/null && alias TODO="ack TODO"
+alias git-log="git log --pretty=oneline --graph --decorate --abbrev-commit"
+alias git-lastmerge="git whatchanged -2 --oneline -p"
+alias git-last="git whatchanged -1 --oneline -p"
+echo -n '.'
+
+# ----- per machine setup ----------------------------------------------------
+case $HOSTNAME in
+  *Jacobs-MacBook-Air*)
+    # aliases 
+    alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
+    alias vim="/usr/local/bin/vim"
+    alias sml="rlwrap sml"
+
+    ### Added by the Heroku Toolbelt
+    export PATH="/usr/local/heroku/bin:$PATH"
+
+    # ruby...
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    alias bex="bundle exec"
+    
+    # Settings for virtualenv and virtualenvwrapper 
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+    echo -n '.'
+
+    ;;
+  *andrew*|*gates*) 
+    # Source files that make working on these servers easier
+    source ~/.bashrc_gpi;
+    export PATH="$PATH:/afs/club/contrib/bin";
+    echo -n '.'
+    ;;
+  alarmpi)
+    ;;
+  jake-raspi)
+    ;;
+  *xubuntu*)
+    ;;
+  pop.scottylabs.org)
+    ;;
+  scottylabs)
+    ;;
+  *)
+    ;;
+esac
+echo -n '.'
+
+case `uname` in
+  Darwin)
+    # Non standard aliases
+    which gls > /dev/null && alias ls="gls -p --color";
+    which gdircolors > /dev/null && alias dircolors="gdircolors";
+    which gdate > /dev/null && alias date="gdate";
+    which gsort > /dev/null && alias duls="du -h -d1 | gsort -hr"
+    echo -n '.'
+
+    if [ -e $(brew --prefix)/etc/bash_completion ]; then
+      source $(brew --prefix)/etc/bash_completion
+      echo -n '.'
+    fi
+    ;;
+  Linux)
+    ;;
+esac
+echo -n '.'
+
+# ----- appearance -----------------------------------------------------------
+# Load utility colors
+source ~/.COLORS
+# Load LS_COLORS
+eval `dircolors ~/.dir_colors`
+# Turn on italics
+tic ~/.xterm-256color-italic.terminfo
+export TERM=xterm-256color-italic
+
+echo -n '.'
+
+# ----- function -------------------------------------------------------------
+update() {
+  touch $HOME/.last_update
+
+  # Mac updates
+  case $HOSTNAME in
+    *Jacobs-MacBook-Air*)
+      echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
+      brew update
+
+      echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
+      brew outdated --verbose
+
+      echo "$cblueb==>$cwhiteb Checking for outdated rbenv...$cnone"
+      cd $HOME/.rbenv
+      git fetch
+      if [ "`git describe --tags master`" != "`git describe --tags origin/master`" ]; then
+        echo "rbenv (`git describe --tags master`) is outdated (`git describe --tags origin/master`)."
+        echo "To update, run: cd ~/.rbenv; git merge origin master && cd -"
+      fi
+      cd - 2>&1 > /dev/null
+
+      echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
+      gem outdated
+      ;;
+  esac
 }
+
 ## Open Matching
 # grep for non-binary files matching a pattern and open them in vim tabs
 # will automatically search for the specified regexp
@@ -112,52 +189,31 @@ om() {
     echo "${cwhiteb}No files matching the pattern: $sred$pattern$cnone"
   fi
 }
-alias TODO="ack TODO"
-alias reload="source ~/.bash_profile"
-alias pyserv="python -m SimpleHTTPServer"
-alias purgeswp='rm -i `find . | grep .swp$`'
 
-# ------ git stuff -----
-#   git-log:       show a pretty list of commit hashes and messages
-#   git-lastmerge: show what changed on the last merge of the repo
-#   git-last:      show what changed on the last commit
-alias git-log="git log --pretty=oneline --graph --decorate --abbrev-commit"
-alias git-lastmerge="git whatchanged -2 --oneline -p"
-alias git-last="git whatchanged -1 --oneline -p"
-# -----------------------------------------------------------------------------
+# Get coloring in man pages
+man() {
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
 
-echo -n '.'
+vman() {
+  vim -R \
+    -c ':source $VIMRUNTIME/ftplugin/man.vim' \
+    -c ":Man $1" \
+    -c ":only" \
+    -c ":set nu" \
+    -c ":set nomodifiable" \
+    -c ":map q :q<CR>"
+}
 
-# Turn on italics
-tic ~/.xterm-256color-italic.terminfo
-export TERM=xterm-256color-italic
-echo -n '.'
-
-# Mac tools
-if [ `uname` = "Darwin" ]; then
-  ### Added by the Heroku Toolbelt
-  export PATH="/usr/local/heroku/bin:$PATH"
-
-  # ruby...
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-  alias bex="bundle exec"
-
-#  # Add RVM to PATH for scripting
-#  PATH=$PATH:$HOME/.rvm/bin 
-#  # Load RVM into a shell session *as a function*
-#  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#  echo -n '.'
-fi
-
-# Load LS_COLORS
-eval `dircolors ~/.dir_colors`
-echo -n '.'
-
+# ----- set the PS1 variable -------------------------------------------------
 color_my_prompt() {
-  # change the color of the git branch depending on whether the repo is "messy" or "clean"
-  local __git_branch_color='`if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi`'
-
   # To color each machine's prompt differently
   case $HOSTNAME in
     *MacBook*)
@@ -202,57 +258,33 @@ color_my_prompt() {
       ;;
   esac
 
-  if test -z "$VIRTUAL_ENV" ; then
-      __python_virtualenv=""
-  else
+  __python_virtualenv=""
+  if [ -n "$VIRTUAL_ENV" ]; then
     __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
   fi
+
   local __user_and_host="\[$(color256 $__user_color)\]\u\[${cgray}\]@$__host"
   local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
+
+  # change the color of the git branch depending on whether the repo is "messy" or "clean"
+  local __git_branch_color='`if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi`'
+
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+
   local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
+
   if [ $(id -u) -eq 0 ]
   then local __prompt_tail="\[${cred}\]#"
   else local __prompt_tail="\[${ccyanb}\]$"
   fi
+
   local __last_color="\[${cnone}\]\[$(color256 039)\]"
+
   export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
 }
 color_my_prompt
 echo -n '.'
 
-# Turn the color back to normal (light gray/white) after the command executes
+# Turn the color back to normal after the command executes
 trap 'echo -ne "\033[0m"' DEBUG
-
-# Turn on vi keybindings <3 <3 <3 :D and other things
-set -o vi
-shopt -s autocd
-echo -n '.'
-
-if [ `uname` == "Darwin" ]; then
-  # Settings for virtualenv and virtualenvwrapper (for python virtual environments)
-  export WORKON_HOME=$HOME/.virtualenvs
-  source /usr/local/bin/virtualenvwrapper.sh
-  export PATH=/usr/local/bin:$PATH
-  echo -n '.'
-
-  if [ -e $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-  fi
-  echo -n '.'
-fi
-
-# Get coloring in man pages
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}
-
-export PATH=".:$HOME/bin:$PATH"
 echo -en '.\r'
