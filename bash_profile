@@ -10,6 +10,8 @@
 # Make sure we are running interactively, else stop
 [ -z "$PS1" ] && return
 export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
+# Load utility colors
+source ~/.COLORS
 
 # ----- daily updates --------------------------------------------------------
 [ ! -e $HOME/.last_update ] && touch $HOME/.last_update
@@ -139,8 +141,6 @@ esac
 echo -n '.'
 
 # ----- appearance -----------------------------------------------------------
-# Load utility colors
-source ~/.COLORS
 # Load LS_COLORS
 eval `dircolors ~/.dir_colors`
 # Turn on italics
