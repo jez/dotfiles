@@ -95,6 +95,7 @@ case $HOSTNAME in
     export RBENV_ROOT="/usr/local/var/rbenv"
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
+
     alias bex="bundle exec"
     
     # Settings for virtualenv and virtualenvwrapper 
@@ -167,15 +168,6 @@ update() {
 
       echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
       brew outdated --verbose
-
-      echo "$cblueb==>$cwhiteb Checking for outdated rbenv...$cnone"
-      cd $HOME/.rbenv
-      git fetch
-      if [ "`git describe --tags master`" != "`git describe --tags origin/master`" ]; then
-        echo "rbenv (`git describe --tags master`) is outdated (`git describe --tags origin/master`)."
-        echo "To update, run: cd ~/.rbenv; git merge origin master && cd -"
-      fi
-      cd - 2>&1 > /dev/null
 
       echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
       gem outdated
