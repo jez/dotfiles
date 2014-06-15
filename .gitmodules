@@ -4,3 +4,6 @@
 [submodule "vim/bundle/octopress"]
 	path = vim/bundle/octopress
 	url = https://github.com/tangledhelix/vim-octopress.git
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = https://github.com/groenewege/vim-less.git
