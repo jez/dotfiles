@@ -91,6 +91,8 @@ case $HOSTNAME in
     export PATH="/usr/local/heroku/bin:$PATH"
 
     # ruby...
+    # To use Homebrew's directories rather than ~/.rbenv
+    export RBENV_ROOT="/usr/local/var/rbenv"
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
     alias bex="bundle exec"
@@ -180,6 +182,11 @@ update() {
 
       echo "$cblueb==>$cwhiteb Checking for outdated node packages...$cnone"
       npm outdated
+
+      echo "$cblueb==>$cwhiteb Checking for outdated pathogen plugins...$cnone"
+      cd ~/.dotfiles/
+      git submodule foreach git pull
+      cd -
       ;;
   esac
 }
