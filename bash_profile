@@ -159,6 +159,9 @@ update() {
       echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
       brew update
 
+      echo "$cblueb==>$cwhiteb Checking Homebrew...$cnone"
+      brew doctor
+
       echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
       brew outdated --verbose
 
@@ -173,6 +176,9 @@ update() {
 
       echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
       gem outdated
+
+      echo "$cblueb==>$cwhiteb Checking for outdated node packages...$cnone"
+      npm outdated
       ;;
   esac
 }
