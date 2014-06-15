@@ -1,3 +1,6 @@
 [submodule "vim/bundle/auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/bundle/octopress"]
+	path = vim/bundle/octopress
+	url = https://github.com/tangledhelix/vim-octopress.git
