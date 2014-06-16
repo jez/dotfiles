@@ -175,6 +175,9 @@ update() {
       echo "$cblueb==>$cwhiteb Checking for outdated node packages...$cnone"
       npm outdated
 
+      echo "$cblueb==>$cwhiteb Checking for outdated python packages...$cnone"
+      pip list -o
+
       echo "$cblueb==>$cwhiteb Checking for outdated pathogen plugins...$cnone"
       cd ~/.dotfiles/
       git submodule foreach git pull
