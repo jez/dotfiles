@@ -29,7 +29,7 @@ if [[ `uname` = "Darwin" && -n `which gdate` ]]; then
 else
   # Ensure this is GNU grep
   if [ -n "`date --version 2> /dev/null | grep GNU`" ]; then
-    last_login=`date -d"$last_login_string" +%s`
+    last_login=`date -d"$last_check_string" +%s`
     time_now=`date +%s`
   fi
 fi
