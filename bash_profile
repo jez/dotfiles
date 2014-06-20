@@ -29,7 +29,7 @@ if [[ `uname` = "Darwin" && -n `which gdate` ]]; then
 else
   # Ensure this is GNU grep
   if [ -n "`date --version 2> /dev/null | grep GNU`" ]; then
-    last_login=`date -d"$last_login_string" +%s`
+    last_login=`date -d"$last_check_string" +%s`
     time_now=`date +%s`
   fi
 fi
@@ -53,6 +53,7 @@ echo -n 'Loading...'
 # ----- miscellaneous  -------------------------------------------------------
 # Turn on vi keybindings <3 <3 <3 :D and other things
 set -o vi
+export EDITOR="vim"
 
 # if command not found, but directory exists, cd into it
 shopt -s autocd
@@ -119,6 +120,9 @@ case $HOSTNAME in
   pop.scottylabs.org)
     ;;
   scottylabs)
+    ;;
+  metagross)
+    export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
     ;;
   *)
     ;;
@@ -259,6 +263,11 @@ color_my_prompt() {
       local __user_color=202;
       local __loc_color=214;
       local __host="sl-dev"
+      ;;
+    metagross)
+      local __user_color=027;
+      local __loc_color=244;
+      local __host="\h"
       ;;
     *)
       local __user_color=196;
