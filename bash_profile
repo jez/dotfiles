@@ -72,6 +72,7 @@ alias cdd="cd .."
 alias resolve='cd "`pwd -P`"'
 alias reload="source ~/.bash_profile"
 alias pyserv="python -m SimpleHTTPServer"
+alias py3serv="python3 -m http.server"
 alias purgeswp='rm -i `find . | grep .swp$`'
 alias purgedrive='find ~/Google\ Drive/ -name Icon -exec rm -f {} \; -print'
 which ack > /dev/null && alias TODO="ack TODO"
