@@ -185,7 +185,7 @@ update() {
 
       echo "$cblueb==>$cwhiteb Checking for outdated pathogen plugins...$cnone"
       cd ~/.dotfiles/
-      git submodule foreach git pull
+      git submodule foreach git fetch
       cd -
       ;;
   esac
