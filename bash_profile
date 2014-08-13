@@ -77,9 +77,18 @@ alias ip="curl curlmyip.com"
 alias purgeswp='rm -i `find . | grep .swp$`'
 alias purgedrive='find ~/Google\ Drive/ -name Icon -exec rm -f {} \; -print'
 which ack > /dev/null && alias TODO="ack TODO"
+which ghci > /dev/null && alias has="ghci"
+which grc > /dev/null && alias grc="grc -es"
+
+# Git aliases
 alias git-log="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
+alias gap="git add --patch"
+alias gc="git commit"
+alias gca="git commit -a"
+alias gcam="git commit -am"
+alias gs="git status"
 echo -n '.'
 
 # ----- per machine setup ----------------------------------------------------
@@ -217,6 +226,7 @@ man() {
     man "$@"
 }
 
+# Open man pages in vim
 vman() {
   vim -R \
     -c ':source $VIMRUNTIME/ftplugin/man.vim' \
@@ -225,6 +235,11 @@ vman() {
     -c ":set nu" \
     -c ":set nomodifiable" \
     -c ":map q :q<CR>"
+}
+
+# Open diffs in vim
+vdiff() {
+  diff $@ | vim -
 }
 
 # ----- set the PS1 variable -------------------------------------------------

@@ -60,6 +60,7 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
+  au BufRead,BufNewFile *.md setlocal textwidth=80
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -87,15 +88,19 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" MY CHANGES
+" =========================================================================== "
+"                                                                             "
+"                                 MY CHANGES                                  "
+"                                                                             "
+" =========================================================================== "
 
 " Pathogen
 call pathogen#infect()
 
 set expandtab          "Expand tabs into spaces
-set tabstop=2          "default to 2 spaces for a hard tab
-set softtabstop=2      "default to 2 spaces for the soft tab
-set shiftwidth=2       "for when <TAB> is pressed at the beginning of a line
+set tabstop=4          "default to 4 spaces for a hard tab
+set softtabstop=4      "default to 4 spaces for the soft tab
+set shiftwidth=4       "for when <TAB> is pressed at the beginning of a line
 
 " Use a backup file but don't create a new one when overwriting
 " :help nobackup for more information
@@ -154,6 +159,26 @@ source $VIMRUNTIME/ftplugin/man.vim
 " Octopress coloring
 autocmd BufNewFile,BufRead *.md,*.markdown,*.textile set filetype=octopress
 
+" Show nested tree mode when viewing directories
 let g:netrw_liststyle=3
 
+" \c and \C to comment and uncomment lines in visual block mode
+noremap <buffer> <silent> <leader>c :s/^/\/\//<CR>:noh<CR>
+noremap <buffer> <silent> <leader>C :s/^\/\///<CR>:noh<CR>
 
+" \f to make manual folds on { or }
+noremap <buffer> <silent> <leader>f V%zf
+
+" set get rid of obnoxious '-' characters in folds
+"set fillchars="vert:|,fold:\ "
+
+" open help in a new tab
+cabbrev help tab help
+
+" qt or tq to close tab
+cabbrev qt tabclose
+cabbrev tq tabclose
+command Qt qt
+command QT qt
+command Tq qt
+command TQ qt
