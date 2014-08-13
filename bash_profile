@@ -134,6 +134,7 @@ case $HOSTNAME in
     ;;
   metagross)
     export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+    alias ack="ack-grep"
     ;;
   *)
     ;;
