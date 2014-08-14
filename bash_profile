@@ -112,7 +112,7 @@ case $HOSTNAME in
     
     # Settings for virtualenv and virtualenvwrapper 
     export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
     echo -n '.'
 
     ;;
