@@ -94,6 +94,10 @@ echo -n '.'
 # ----- per machine setup ----------------------------------------------------
 case $HOSTNAME in
   *Jacobs-MacBook-Air*)
+    # GNU coreutils with their actual names
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
     # aliases 
     alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
     alias vim="/usr/local/bin/vim"
