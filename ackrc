@@ -1,0 +1,6 @@
+--color-filename=red
+--color-match=green
+--color-lineno=blue
+--type-set=markdown:ext:md,markdown
+--ignore-dir=.meteor
+--ignore-file=is:tags
