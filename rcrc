@@ -1,1 +1,1 @@
-EXCLUDES="com.googlecode.iterm2.plist"
+EXCLUDES="com.googlecode.iterm2.plist *setup.sh"
