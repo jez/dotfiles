@@ -4,4 +4,3 @@
 --type-set=markdown:ext:md,markdown
 --ignore-dir=.meteor
 --ignore-file=is:tags
-
