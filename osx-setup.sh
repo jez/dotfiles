@@ -80,6 +80,7 @@ brew install ruby-build
 echo "rbenv is insatlled."
 echo "You'll still have to install ruby 1.9.3 for Octopress."
 cat << EOF
+(within Octopress project root directory)
 $ rbenv install 1.9.3-p0
 $ rbenv local 1.9.3-p0
 $ rbenv rehash
@@ -107,9 +108,10 @@ brew install watch
 brew install rlwrap
 
 # After installing Xcode
+# TODO install Xcode using script
+sudo xcodebuild -license
 
 # Install MacVim
-xcodebuild -license
 brew install macvim
 brew linkapps
 # You may want to install RCDefaultApps to deal with using MacVim for opening
@@ -119,4 +121,13 @@ brew linkapps
 brew install smlnj
 
 # After installing python
+
+# Install virtualenvwrapper
+pip install virtualenvwrapper
+# Note: requires relaunching the terminal to work
+
+# Helper utilities
 pip install grip
+
+# After installing node
+npm install -g jade
