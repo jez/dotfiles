@@ -254,7 +254,7 @@
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
-	<false/>
+	<true/>
 	<key>FsTabDelay</key>
 	<real>1</real>
 	<key>GlobalKeyMap</key>
@@ -475,9 +475,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 104 924 485 0 0 1440 878 </string>
+	<string>269 104 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 452 570 426 0 0 1440 878 </string>
+	<string>0 212 710 666 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>783 90 570 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1279,6 +1279,8 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
