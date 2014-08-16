@@ -182,3 +182,6 @@ command Qt qt
 command QT qt
 command Tq qt
 command TQ qt
+
+" GitHub Readme Instant Preview
+command Grip !gripe %
