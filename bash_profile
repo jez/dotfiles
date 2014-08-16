@@ -75,7 +75,7 @@ alias pyserv="python -m SimpleHTTPServer"
 alias py3serv="python3 -m http.server"
 alias ip="curl curlmyip.com"
 alias purgeswp='rm -i `find . | grep .swp$`'
-alias purgedrive='find ~/Google\ Drive/ -name Icon -exec rm -f {} \; -print'
+alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 which ack > /dev/null && alias TODO="ack TODO"
 which ghci > /dev/null && alias has="ghci"
 which grc > /dev/null && alias grc="grc -es"
