@@ -87,6 +87,7 @@ alias git-last="git whatchanged -1 --oneline -p"
 alias gap="git add --patch"
 alias gc="git commit"
 alias gca="git commit -a"
+alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gs="git status"
 echo -n '.'
