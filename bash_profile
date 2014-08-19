@@ -182,6 +182,11 @@ export TERM=xterm-256color-italic
 
 echo -n '.'
 
+# ----- other ---------------------------------------------------------------
+which pip > /dev/null && eval `pip completion --bash`
+
+echo -n '.'
+
 # ----- function -------------------------------------------------------------
 update() {
   touch $HOME/.last_update
@@ -254,6 +259,16 @@ vman() {
 # Open diffs in vim
 vdiff() {
   diff $@ | vim -
+}
+
+init_django_completion() {
+  if [ -n "$VIRTUAL_ENV" ]; then
+    echo 'source ~/bin/django_bash_completion' >> ${VIRTUAL_ENV}/bin/postactivate
+    echo "You will have to re-run `workon <virtualenv>` for changes to apply."
+  else
+    echo "Whoops! Looks like you're not in a virtual env."
+    return 1
+  fi
 }
 
 # ----- set the PS1 variable -------------------------------------------------
