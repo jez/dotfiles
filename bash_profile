@@ -263,10 +263,14 @@ vdiff() {
 
 init_django_completion() {
   if [ -n "$VIRTUAL_ENV" ]; then
-    echo 'source ~/bin/django_bash_completion' >> ${VIRTUAL_ENV}/bin/postactivate
-    echo "You will have to re-run `workon <virtualenv>` for changes to apply."
+    if [ -n "`grep \"django_bash_completion\" ${VIRTUAL_ENV}/bin/postactivate`" ]; then
+      echo "${cgreen}Oh look!${cnone} You've already run this script for this virtual env."
+    else
+      echo 'source ~/bin/django_bash_completion' >> ${VIRTUAL_ENV}/bin/postactivate
+      echo "${cgreen}Congrats!${cnone} You will have to re-run ${cblueb}\`workon <virtualenv>\`${cnone} for changes to apply."
+    fi
   else
-    echo "Whoops! Looks like you're not in a virtual env."
+    echo "${cred}Whoops!${cnone} Looks like you're not in a virtual env."
     return 1
   fi
 }
