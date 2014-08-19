@@ -170,7 +170,7 @@ noremap <buffer> <silent> <leader>C :s/^\/\///<CR>:noh<CR>
 noremap <buffer> <silent> <leader>f V%zf
 
 " set get rid of obnoxious '-' characters in folds
-"set fillchars="vert:|,fold:\ "
+set fillchars=fold:\ ,vert:\|
 
 " open help in a new tab
 cabbrev help tab help
