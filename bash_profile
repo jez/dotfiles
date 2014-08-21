@@ -76,9 +76,9 @@ alias py3serv="python3 -m http.server"
 alias ip="curl curlmyip.com"
 alias purgeswp='rm -i `find . | grep .swp$`'
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
-which ack > /dev/null && alias TODO="ack TODO"
-which ghci > /dev/null && alias has="ghci"
-which grc > /dev/null && alias grc="grc -es"
+which ack &> /dev/null && alias TODO="ack TODO"
+which ghci &> /dev/null && alias has="ghci"
+which grc &> /dev/null && alias grc="grc -es"
 
 # Git aliases
 alias git-lastmerge="git whatchanged -2 --oneline -p"
@@ -157,10 +157,10 @@ echo -n '.'
 case `uname` in
   Darwin)
     # Non standard aliases
-    which gls > /dev/null && alias ls="gls -p --color";
-    which gdircolors > /dev/null && alias dircolors="gdircolors";
-    which gdate > /dev/null && alias date="gdate";
-    which gsort > /dev/null && alias duls="du -h -d1 | gsort -hr"
+    which gls &> /dev/null && alias ls="gls -p --color";
+    which gdircolors &> /dev/null && alias dircolors="gdircolors";
+    which gdate &> /dev/null && alias date="gdate";
+    which gsort &> /dev/null && alias duls="du -h -d1 | gsort -hr"
     echo -n '.'
 
     if [ -e $(brew --prefix)/etc/bash_completion ]; then
@@ -183,7 +183,7 @@ export TERM=xterm-256color-italic
 echo -n '.'
 
 # ----- other ---------------------------------------------------------------
-which pip > /dev/null && eval `pip completion --bash`
+which pip &> /dev/null && eval `pip completion --bash`
 
 echo -n '.'
 
