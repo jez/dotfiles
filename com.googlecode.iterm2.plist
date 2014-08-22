@@ -1205,7 +1205,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.1002296209335327</real>
+			<real>1.0622228384017944</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1278,7 +1278,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-08-19T18:50:18Z</date>
+	<date>2014-08-22T08:25:29Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
