@@ -478,10 +478,12 @@
 		<key>TB Size Mode</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>915 77 445 270 0 0 1360 746 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 104 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 212 710 666 0 0 1440 878 </string>
+	<string>0 32 710 666 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>783 90 570 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1317,6 +1319,10 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>2.0</string>
 </dict>
