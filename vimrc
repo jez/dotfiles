@@ -98,9 +98,9 @@ endif
 call pathogen#infect()
 
 set expandtab          "Expand tabs into spaces
-set tabstop=4          "default to 4 spaces for a hard tab
-set softtabstop=4      "default to 4 spaces for the soft tab
-set shiftwidth=4       "for when <TAB> is pressed at the beginning of a line
+set tabstop=2          "default to 2 spaces for a hard tab
+set softtabstop=2      "default to 2 spaces for the soft tab
+set shiftwidth=2       "for when <TAB> is pressed at the beginning of a line
 
 " Use a backup file but don't create a new one when overwriting
 " :help nobackup for more information
