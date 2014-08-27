@@ -131,7 +131,7 @@ case $HOSTNAME in
     ;;
   *andrew*|*gates*) 
     # Source files that make working on these servers easier
-    source ~/.bashrc_gpi;
+    #source ~/.bashrc_gpi;
     export PATH="$PATH:/afs/club/contrib/bin";
     echo -n '.'
     ;;
@@ -274,6 +274,24 @@ init_django_completion() {
     return 1
   fi
 }
+
+get_cs_afs_access() {
+    # Script to give a user with an andrew.cmu.edu account access to cs.cmu.edu
+    # See https://www.cs.cmu.edu/~help/afs/cross_realm.html for information.
+
+    # Get tokens. This might create the user, but I'm not sure that that's
+    # reliable, so we'll also try to do pts createuser.
+    aklog cs.cmu.edu
+
+    CUR_USER=`whoami`
+
+    pts createuser $CUR_USER@ANDREW.CMU.EDU -cell cs.cmu.edu 2>&1 | grep -v "Entry for name already exists"
+
+    aklog cs.cmu.edu
+
+    echo "(aklog cs.cmu.edu &)" >> ~/.bashrc
+}
+
 
 # ----- set the PS1 variable -------------------------------------------------
 color_my_prompt() {
