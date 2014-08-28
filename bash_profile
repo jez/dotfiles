@@ -169,6 +169,7 @@ case `uname` in
     fi
     ;;
   Linux)
+    which tree &> /dev/null && alias tree="tree -C"
     ;;
 esac
 echo -n '.'
