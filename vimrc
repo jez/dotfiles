@@ -59,8 +59,9 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-  au BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd FileType text setlocal columns=78
+  "au BufRead,BufNewFile *.md setlocal columns=80
+  au BufNewFile,BufRead *.sig set filetype=sml
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -185,3 +186,6 @@ command TQ qt
 
 " GitHub Readme Instant Preview
 command Grip !gripe %
+
+" Lower ^[ timeout
+set timeoutlen=100
