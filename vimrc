@@ -22,7 +22,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 set history=50		" keep 50 lines of command line history
-set ruler		      " show the cursor position all the time
+"set ruler		      " show the cursor position all the time
                   " clock
 " set rulerformat=%55(%{strftime('%I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 set showcmd		    " display incomplete commands
@@ -59,7 +59,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal columns=78
+  "autocmd FileType text setlocal columns=78
   "au BufRead,BufNewFile *.md setlocal columns=80
   au BufNewFile,BufRead *.sig set filetype=sml
 
@@ -124,7 +124,7 @@ command V make view
 command Wv w | make view
 command WV w | make view
 
-command Clear noh
+command C noh
 
 colorscheme molokai
 
@@ -141,9 +141,9 @@ noremap <buffer> <silent> 0 g0
 noremap <buffer> <silent> $ g$
 noremap <buffer> <silent> ^ g^
 noremap <buffer> <silent> _ g_
-noremap <buffer> <silent> gA g$a
-noremap <buffer> <silent> gI I
-noremap <buffer> <silent> I g^i
+"noremap <buffer> <silent> gA g$a
+"noremap <buffer> <silent> gI I
+"noremap <buffer> <silent> I g^i
 
 " take first suggested spelling as correct spelling and replace
 noremap <buffer> <silent> z! z=1<CR><CR>

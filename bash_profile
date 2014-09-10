@@ -57,6 +57,7 @@ export EDITOR="vim"
 
 # if command not found, but directory exists, cd into it
 shopt -s autocd
+shopt -s histappend
 
 echo -n '.'
 
@@ -111,6 +112,7 @@ case $HOSTNAME in
     alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
     alias vim="/usr/local/bin/vim"
     alias sml="rlwrap sml"
+    which coffee &> /dev/null && alias coffe="coffee"
 
     ### Added by the Heroku Toolbelt
     export PATH="/usr/local/heroku/bin:$PATH"
@@ -375,3 +377,5 @@ echo -n '.'
 # Turn the color back to normal after the command executes
 trap 'echo -ne "\033[0m"' DEBUG
 echo -en '.\r'
+
+#source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
