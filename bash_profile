@@ -131,7 +131,7 @@ case $HOSTNAME in
     echo -n '.'
 
     ;;
-  *andrew*|*gates*) 
+  *andrew*|*gates*|*shark*) 
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="$PATH:/afs/club/contrib/bin";
@@ -305,7 +305,7 @@ color_my_prompt() {
       local __loc_color=141;
       local __host="MacBook";
       ;;
-    *andrew*|*gates*)
+    *andrew*|*gates*|*shark*)
       local __user_color=076;
       local __loc_color=078;
       local __host="\h"
