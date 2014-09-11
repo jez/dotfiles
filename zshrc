@@ -287,6 +287,11 @@ get_cs_afs_access() {
 
     echo "(aklog cs.cmu.edu &)" >> ~/.bashrc
 }
+
+vi-search-fix() {
+  zle vi-cmd-mode
+  zle .vi-history-search-backward
+}
 # ----- Tom's zsh stuff -----------------------------------------------
 zstyle :compinstall filename $HOME/.zshrc
 
@@ -297,6 +302,11 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
+
+# Fix ESC + /
+autoload vi-search-fix
+zle -N vi-search-fix
+bindkey -M viins '\e/' vi-search-fix
 
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
