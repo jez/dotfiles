@@ -19,9 +19,6 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline
-[submodule "zfunctions/pure"]
-	path = zfunctions/pure
-	url = https://github.com/sindresorhus/pure
 [submodule "zfunctions/syntax-highlighting"]
 	path = zfunctions/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
