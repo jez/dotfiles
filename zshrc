@@ -188,7 +188,7 @@ update() {
   touch $HOME/.last_update
 
   # Mac updates
-  case $HOSTNAME in
+  case `hostname` in
     *Jacobs-MacBook-Air*)
       echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
       brew update
@@ -311,7 +311,7 @@ bindkey -M viins '\e/' vi-search-fix
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To color each machine's prompt differently
-case $HOSTNAME in
+case `hostname` in
   *MacBook*)
     PROMPT_PURE_DIR_COLOR="%F{093}"
     ;;
