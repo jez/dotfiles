@@ -25,3 +25,6 @@
 [submodule "zfunctions/pure"]
 	path = zfunctions/pure
 	url = https://github.com/Z1MM32M4N/pure
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = http://github.com/robbyrussell/oh-my-zsh
