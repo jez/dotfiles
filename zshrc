@@ -310,8 +310,37 @@ bindkey -M viins '\e/' vi-search-fix
 
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# To color each machine's prompt differently
+case $HOSTNAME in
+  *MacBook*)
+    PROMPT_PURE_DIR_COLOR="%F{093}"
+    ;;
+  *andrew*|*gates*|*shark*)
+    PROMPT_PURE_DIR_COLOR="%F{076}"
+    ;;
+  alarmpi)
+    PROMPT_PURE_DIR_COLOR="%F{027}"
+    ;;
+  jake-raspi)
+    PROMPT_PURE_DIR_COLOR="%F{164}"
+    ;;
+  *xubuntu*)
+    PROMPT_PURE_DIR_COLOR="%F{057}"
+    ;;
+  pop.scottylabs.org)
+    PROMPT_PURE_DIR_COLOR="%F{227}"
+    ;;
+  scottylabs)
+    PROMPT_PURE_DIR_COLOR="%F{202}"
+    ;;
+  metagross)
+    PROMPT_PURE_DIR_COLOR="%F{027}"
+    ;;
+  *)
+    PROMPT_PURE_DIR_COLOR="%F{196}"
+    ;;
+esac
 
-PROMPT_PURE_DIR_COLOR="%F{magenta}"
 #PROMPT_PURE_VCS_COLOR="%F{cyan}"
 #PROMPT_PURE_EXEC_TIME_COLOR="%F{blue}"
 PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
