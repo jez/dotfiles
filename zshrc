@@ -12,6 +12,12 @@
 # Make sure we are running interactively, else stop
 [ -z "$PS1" ] && return
 export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
+
+# Load oh-my-zsh
+#export ZSH="$HOME/.oh-my-zsh/"
+#plugins=(git brew)
+#source $ZSH/oh-my-zsh.sh
+
 # Load utility colors
 source ~/.COLORS
 
@@ -50,7 +56,7 @@ fi
 # ============================================================================
 
 # ----- miscellaneous  -------------------------------------------------------
-setopt autocd completealiases extendedglob nomatch no_case_glob
+setopt autocd completealiases extendedglob nomatch no_case_glob histappend
 
 # Turn on vi keybindings <3 <3 <3 :D and other things
 bindkey -v
@@ -292,7 +298,8 @@ vi-search-fix() {
   zle vi-cmd-mode
   zle .vi-history-search-backward
 }
-# ----- Tom's zsh stuff -----------------------------------------------
+
+# ----- zsh stuff -------------------------------------------------------------
 zstyle :compinstall filename $HOME/.zshrc
 
 ## case-insensitive (all),partial-word and then substring completion
@@ -350,4 +357,5 @@ PURE_NO_SSH_USERNAME=1
 
 PURE_GIT_PULL=0
 prompt pure
+
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
