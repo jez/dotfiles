@@ -346,6 +346,8 @@ esac
 PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
 #PROMPT_PURE_FAILURE_COLOR="%F{yellow}"
 
+PURE_NO_SSH_USERNAME=1
+
 PURE_GIT_PULL=0
 prompt pure
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
