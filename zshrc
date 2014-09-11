@@ -107,7 +107,7 @@ alias gl="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias gll="git log --pretty=oneline --graph --decorate --abbrev-commit --all"
 
 # ----- per machine setup ----------------------------------------------------
-case $HOSTNAME in
+case `hostname` in
   *Jacobs-MacBook-Air*)
     # GNU coreutils with their actual names
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
