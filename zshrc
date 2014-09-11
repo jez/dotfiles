@@ -310,6 +310,13 @@ bindkey -M viins '\e/' vi-search-fix
 
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+PROMPT_PURE_DIR_COLOR="%F{magenta}"
+#PROMPT_PURE_VCS_COLOR="%F{cyan}"
+#PROMPT_PURE_EXEC_TIME_COLOR="%F{blue}"
+PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
+#PROMPT_PURE_FAILURE_COLOR="%F{yellow}"
+
 PURE_GIT_PULL=0
 prompt pure
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
