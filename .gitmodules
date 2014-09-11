@@ -22,3 +22,6 @@
 [submodule "zfunctions/syntax-highlighting"]
 	path = zfunctions/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "zfunctions/pure"]
+	path = zfunctions/pure
+	url = https://github.com/Z1MM32M4N/pure
