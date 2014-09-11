@@ -22,7 +22,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 set history=50		" keep 50 lines of command line history
-"set ruler		      " show the cursor position all the time
+set ruler		      " show the cursor position all the time
                   " clock
 " set rulerformat=%55(%{strftime('%I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 set showcmd		    " display incomplete commands
