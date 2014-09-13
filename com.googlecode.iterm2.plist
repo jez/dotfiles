@@ -485,7 +485,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>130 116 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 84 710 626 0 0 1440 878 </string>
+	<string>77 113 710 706 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>730 0 710 626 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1211,7 +1211,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.0622228384017944</real>
+			<real>0.93616712093353271</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1286,7 +1286,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-10T05:24:22Z</date>
+	<date>2014-09-11T06:24:59Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
