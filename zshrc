@@ -15,8 +15,9 @@ export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 
 # Load oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh/"
+export CASE_SENSITIVE="true"
 plugins=(git brew)
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Load utility colors
 source ~/.COLORS
@@ -303,9 +304,9 @@ vi-search-fix() {
 zstyle :compinstall filename $HOME/.zshrc
 
 ## case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-      'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}' #'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+zstyle ':completion:*' verbose false
 
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
