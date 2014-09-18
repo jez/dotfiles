@@ -147,6 +147,7 @@ case `hostname` in
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="$PATH:/afs/club/contrib/bin";
+    alias sml="rlwrap sml"
     ;;
   alarmpi)
     ;;
