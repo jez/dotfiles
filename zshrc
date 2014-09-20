@@ -305,6 +305,7 @@ vi-search-fix() {
 zstyle :compinstall filename $HOME/.zshrc
 
 ## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*:*:*:*:*' menu ''
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}' #'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' verbose false
