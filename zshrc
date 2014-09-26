@@ -16,9 +16,8 @@ export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 # Load oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh/"
 export CASE_SENSITIVE="true"
-export DISABLE_UPDATE_PROMPT=true
-plugins=(gitfast brew)
-source $ZSH/oh-my-zsh.sh
+plugins=(git brew)
+#source $ZSH/oh-my-zsh.sh
 
 # Load utility colors
 source ~/.COLORS
