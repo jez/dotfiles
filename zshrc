@@ -327,6 +327,7 @@ case `hostname` in
     ;;
   *andrew*|*gates*|*shark*)
     PROMPT_PURE_DIR_COLOR="%F{076}"
+    mesg n
     ;;
   alarmpi)
     PROMPT_PURE_DIR_COLOR="%F{027}"
