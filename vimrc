@@ -126,7 +126,8 @@ command WV w | make view
 
 command C noh
 
-colorscheme molokai
+set background=dark
+colorscheme solarized
 
 set linebreak
 set scrolloff=3
