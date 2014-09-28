@@ -322,33 +322,60 @@ source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To color each machine's prompt differently
 case `hostname` in
+  #*MacBook*)
+  #  PROMPT_PURE_DIR_COLOR="%F{093}"
+  #  ;;
+  #*andrew*|*gates*|*shark*)
+  #  PROMPT_PURE_DIR_COLOR="%F{076}"
+  #  ;;
+  #alarmpi)
+  #  PROMPT_PURE_DIR_COLOR="%F{027}"
+  #  ;;
+  #jake-raspi)
+  #  PROMPT_PURE_DIR_COLOR="%F{164}"
+  #  ;;
+  #*xubuntu*)
+  #  PROMPT_PURE_DIR_COLOR="%F{057}"
+  #  ;;
+  #pop.scottylabs.org)
+  #  PROMPT_PURE_DIR_COLOR="%F{227}"
+  #  ;;
+  #scottylabs)
+  #  PROMPT_PURE_DIR_COLOR="%F{202}"
+  #  ;;
+  #metagross)
+  #  PROMPT_PURE_DIR_COLOR="%F{027}"
+  #  ;;
+  #*)
+  #  PROMPT_PURE_DIR_COLOR="%F{196}"
+  #  ;;
   *MacBook*)
-    PROMPT_PURE_DIR_COLOR="%F{093}"
+    PROMPT_PURE_DIR_COLOR="$cmagentab"
     ;;
   *andrew*|*gates*|*shark*)
-    PROMPT_PURE_DIR_COLOR="%F{076}"
     mesg n
+    PROMPT_PURE_DIR_COLOR="%F{green}"
     ;;
   alarmpi)
-    PROMPT_PURE_DIR_COLOR="%F{027}"
+    PROMPT_PURE_DIR_COLOR="%F{blue}"
     ;;
   jake-raspi)
-    PROMPT_PURE_DIR_COLOR="%F{164}"
+    PROMPT_PURE_DIR_COLOR="%F{magenta}"
     ;;
   *xubuntu*)
-    PROMPT_PURE_DIR_COLOR="%F{057}"
+    PROMPT_PURE_DIR_COLOR="%F{cyan}"
     ;;
   pop.scottylabs.org)
-    PROMPT_PURE_DIR_COLOR="%F{227}"
+    PROMPT_PURE_DIR_COLOR="%F{yellow}"
     ;;
   scottylabs)
-    PROMPT_PURE_DIR_COLOR="%F{202}"
+    PROMPT_PURE_DIR_COLOR="$credb"
     ;;
   metagross)
-    PROMPT_PURE_DIR_COLOR="%F{027}"
+    PROMPT_PURE_DIR_COLOR="%F{blue}"
     ;;
   *)
-    PROMPT_PURE_DIR_COLOR="%F{196}"
+    PROMPT_PURE_DIR_COLOR="%F{red}"
     ;;
 esac
 
