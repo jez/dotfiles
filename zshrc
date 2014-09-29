@@ -353,6 +353,7 @@ case `hostname` in
     PROMPT_PURE_DIR_COLOR="$cmagentab"
     ;;
   *andrew*|*gates*|*shark*)
+    mesg n
     PROMPT_PURE_DIR_COLOR="%F{green}"
     ;;
   alarmpi)
