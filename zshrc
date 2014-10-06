@@ -194,6 +194,7 @@ export TERM=xterm-256color-italic
 # ----- function -------------------------------------------------------------
 update() {
   touch $HOME/.last_update
+  kinitandrew
 
   # Mac updates
   case `hostname` in
