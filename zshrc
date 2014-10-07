@@ -253,7 +253,7 @@ man() {
 vman() {
   vim -R \
     -c ':source $VIMRUNTIME/ftplugin/man.vim' \
-    -c ":Man $1" \
+    -c ":Man $*" \
     -c ":only" \
     -c ":set nu" \
     -c ":set nomodifiable" \
