@@ -68,10 +68,9 @@ exit
 # TODO repoen iTerm2
 
 # Download and import iTerm colors
-curl -o ~/Desktop/Molokai.itermcolors https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Molokai.itermcolors
-open ~/Desktop/Molokai.itermcolors
-rm ~/Desktop/Molokai.itermcolors
-echo "Molokai iTerm colorscheme imported."
+git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
+open ~/Desktop/iTerm2-Color-Schemes/schemes/*itermcolors
+echo "iTerm2 colorschemes imported."
 echo "Be sure to edit your preferences (colors, font, etc.)"
 
 # Install ruby
