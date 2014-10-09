@@ -194,11 +194,11 @@ export TERM=xterm-256color-italic
 # ----- function -------------------------------------------------------------
 update() {
   touch $HOME/.last_update
-  kinitandrew
 
   # Mac updates
   case `hostname` in
     *Jacobs-MacBook-Air*)
+      kinitandrew
       echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
       brew update
 
