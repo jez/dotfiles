@@ -89,7 +89,7 @@ alias reload="source ~/.zshrc"
 alias pyserv="python -m SimpleHTTPServer"
 alias py3serv="python3 -m http.server"
 alias ip="curl curlmyip.com"
-alias purgeswp='rm -i `find . | grep .swp$`'
+alias purgeswp="find . -regex \'.*.swp$\' -exec rm {}"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 which ack &> /dev/null && alias TODO="ack TODO"
 which ghci &> /dev/null && alias has="ghci"
@@ -170,6 +170,7 @@ esac
 case `uname` in
   Darwin)
     # Non standard aliases
+    which ggrep &> /dev/null && alias grep="ggrep --color=auto";
     which gls &> /dev/null && alias ls="gls -p --color";
     which gdircolors &> /dev/null && alias dircolors="gdircolors";
     which gdate &> /dev/null && alias date="gdate";
