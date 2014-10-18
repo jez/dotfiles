@@ -25,11 +25,12 @@ xcode-select --install
 # Xcode installation to work
 
 # Install and set up Homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 brew update
 
 # Set up out PATH until we clone our dotfiles
+# Not necessary on OS X 10.10 (Yosemite)
 export PATH="/usr/local/bin:$PATH"
 
 # Install and setup git 
@@ -40,11 +41,13 @@ git config --global color.ui true
 git config --global push.default simple
 git config --global credential.helper osxkeychain
 
-# Install newest bash and make it the login shell
+# Install newest bash and zsh and make zsh the login shell
 brew install bash
 brew install bash-completion
 echo "`brew --prefix`/bin/bash" | sudo tee -a /etc/shells
-chsh -s "`brew --prefix`/bin/bash"
+brew install zsh
+echo "`brew --prefix`/bin/zsh" | sudo tee -a /etc/shells
+chsh -s "`brew --prefix`/bin/zsh"
 
 # Install gnu coreutils
 brew install coreutils
