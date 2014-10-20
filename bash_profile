@@ -48,7 +48,7 @@ fi
 # ============================================================================
 
 # Keep track of how long loading takes
-echo -n 'Loading...'
+#echo -n 'Loading...'
 
 # ----- miscellaneous  -------------------------------------------------------
 # Turn on vi keybindings <3 <3 <3 :D and other things
@@ -59,7 +59,7 @@ export EDITOR="vim"
 shopt -s autocd
 shopt -s histappend
 
-echo -n '.'
+#echo -n '.'
 
 # ----- aliases --------------------------------------------------------------
 # General aliases
@@ -98,7 +98,7 @@ alias gd="git diff"
 
 alias gl="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias gll="git log --pretty=oneline --graph --decorate --abbrev-commit --all"
-echo -n '.'
+#echo -n '.'
 
 # ----- per machine setup ----------------------------------------------------
 case $HOSTNAME in
@@ -128,14 +128,14 @@ case $HOSTNAME in
     # Settings for virtualenv and virtualenvwrapper 
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
-    echo -n '.'
+    #echo -n '.'
 
     ;;
   *andrew*|*gates*|*shark*) 
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="$PATH:/afs/club/contrib/bin";
-    echo -n '.'
+    #echo -n '.'
     ;;
   alarmpi)
     ;;
@@ -154,41 +154,42 @@ case $HOSTNAME in
   *)
     ;;
 esac
-echo -n '.'
+#echo -n '.'
 
 case `uname` in
   Darwin)
     # Non standard aliases
+    which ggrep &> /dev/null && alias grep="ggrep --color=auto";
     which gls &> /dev/null && alias ls="gls -p --color";
     which gdircolors &> /dev/null && alias dircolors="gdircolors";
     which gdate &> /dev/null && alias date="gdate";
     which gsort &> /dev/null && alias duls="du -h -d1 | gsort -hr"
-    echo -n '.'
+    #echo -n '.'
 
     if [ -e $(brew --prefix)/etc/bash_completion ]; then
       source $(brew --prefix)/etc/bash_completion
-      echo -n '.'
+      #echo -n '.'
     fi
     ;;
   Linux)
     which tree &> /dev/null && alias tree="tree -C"
     ;;
 esac
-echo -n '.'
+#echo -n '.'
 
 # ----- appearance -----------------------------------------------------------
 # Load LS_COLORS
 eval `dircolors ~/.dir_colors`
 # Turn on italics
-tic ~/.xterm-256color-italic.terminfo
-export TERM=xterm-256color-italic
+#tic ~/.xterm-256color-italic.terminfo
+#export TERM=xterm-256color-italic
 
-echo -n '.'
+#echo -n '.'
 
 # ----- other ---------------------------------------------------------------
 which pip &> /dev/null && eval `pip completion --bash`
 
-echo -n '.'
+#echo -n '.'
 
 # ----- function -------------------------------------------------------------
 update() {
@@ -301,81 +302,50 @@ color_my_prompt() {
   # To color each machine's prompt differently
   case $HOSTNAME in
     *MacBook*)
-      local __user_color=093;
-      local __loc_color=141;
-      local __host="MacBook";
+      local prompt_dir_color="$cmagentab"
       ;;
     *andrew*|*gates*|*shark*)
-      local __user_color=076;
-      local __loc_color=078;
-      local __host="\h"
+      local prompt_dir_color="${cgreen}"
       ;;
     alarmpi)
-      local __user_color=027;
-      local __loc_color=045;
-      local __host="\h"
+      local prompt_dir_color="${cblue}"
       ;;
     jake-raspi)
-      local __user_color=164;
-      local __loc_color=170;
-      local __host="\h"
+      local prompt_dir_color="${cmagenta}"
       ;;
     *xubuntu*)
-      local __user_color=057;
-      local __loc_color=055;
-      local __host="xubuntu"
+      local prompt_dir_color="${cyan}"
       ;;
     pop.scottylabs.org)
-      local __user_color=227;
-      local __loc_color=222;
-      local __host="sl-prod"
+      local prompt_dir_color="${cyellow}"
       ;;
     scottylabs)
-      local __user_color=202;
-      local __loc_color=214;
-      local __host="sl-dev"
+      local prompt_dir_color="$credb"
       ;;
     metagross)
-      local __user_color=027;
-      local __loc_color=244;
-      local __host="\h"
+      local prompt_dir_color="${cblue}"
       ;;
     *)
-      local __user_color=196;
-      local __loc_color=015;
-      local __host="\h"
+      local prompt_dir_color="${cred}"
       ;;
   esac
 
-  __python_virtualenv=""
-  if [ -n "$VIRTUAL_ENV" ]; then
-    __python_virtualenv="\[$(color256 141)\][`basename \"$VIRTUAL_ENV\"`]\[${cnone}\] "
-  fi
-
-  local __user_and_host="\[$(color256 $__user_color)\]\u\[${cgray}\]@$__host"
-  local __cur_location="\[${swhite}\]:\[$(color256 $__loc_color)\]\w"
-
   # change the color of the git branch depending on whether the repo is "messy" or "clean"
-  local __git_branch_color='`if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi`'
+  local __git_branch_color='$(if [ -z "$(git status --porcelain 2> /dev/null)" ]; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi)'
 
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
 
-  local __cur_time="\[$(color256 247)\][\@]\[${cnone}\]"
-
-  if [ $(id -u) -eq 0 ]
-  then local __prompt_tail="\[${cred}\]#"
-  else local __prompt_tail="\[${ccyanb}\]$"
+  if [ $(id -u) -eq 0 ]; then
+    local __prompt_tail="\[$cred\]#\[$cnone\]";
+  else
+    local __prompt_tail="\[$ccyan\]$(echo -en '\u276F')\[${cnone}\]";
   fi
 
-  local __last_color="\[${cnone}\]\[$(color256 039)\]"
-
-  export PS1="\[${cnone}\]${__python_virtualenv}├── $__user_and_host$__cur_location\[${cnone}\] ──┤ $__cur_time $__git_branch_color$__git_branch\[${cnone}\]\n$__prompt_tail$__last_color "
+  export PS1="\n\[$prompt_dir_color\]\w\[${cnone}\] $__git_branch_color$__git_branch\[$cnone\]\n$__prompt_tail "
 }
 color_my_prompt
-echo -n '.'
+#echo -n '.'
 
 # Turn the color back to normal after the command executes
-trap 'echo -ne "\033[0m"' DEBUG
-echo -en '.\r'
-
-#source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#trap 'echo -ne "\033[0m"' DEBUG
+#echo -en '.\r'
