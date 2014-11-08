@@ -152,7 +152,7 @@ if &t_Co > 255
    hi FoldColumn      ctermfg=67  ctermbg=16
    hi Folded          ctermfg=67  ctermbg=16
    hi Function        ctermfg=118
-   hi Identifier      ctermfg=161               cterm=italic
+   hi Identifier      ctermfg=161
    hi Ignore          ctermfg=244 ctermbg=bg
    hi IncSearch       ctermfg=bg  ctermbg=222   cterm=none
 
@@ -184,7 +184,7 @@ if &t_Co > 255
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81  ctermbg=bg
    hi SpecialKey      ctermfg=245
-   hi SpellBad        ctermfg=015 ctermbg=196   cterm=italic
+   hi SpellBad        ctermfg=015 ctermbg=196
 
    hi Statement       ctermfg=161
    hi StatusLine      ctermfg=238 ctermbg=253
@@ -193,7 +193,7 @@ if &t_Co > 255
    hi Structure       ctermfg=81
    hi Tag             ctermfg=161
    hi Title           ctermfg=166
-   hi Todo            ctermfg=000 ctermbg=208   cterm=italic
+   hi Todo            ctermfg=000 ctermbg=208
 
    hi Typedef         ctermfg=81
    hi Type            ctermfg=81                cterm=none
@@ -210,8 +210,7 @@ if &t_Co > 255
    hi WildMenu        ctermfg=81  ctermbg=16
 
    " hi Comment         ctermfg=59
-   " I want italic comments
-   hi Comment         ctermfg=59  cterm=italic
+   hi Comment         ctermfg=59
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
    hi LineNr          ctermfg=242
