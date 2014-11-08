@@ -1,0 +1,58 @@
+! The Athena Widgets provided by Data General have 2 look-and-feels
+! to choose from (athena and motif).  The following resource sets
+! the look-and-feel:
+*lookAndFeel: motif
+
+! Show the scrollbar (hidden by default)
+*xterm*scrollBar: true
+*xterm*rightScrollBar: true
+*xterm*cursorBlink: true
+
+! Turn on Unicode
+*xterm*utf8: 2
+*faceName: xft:Dejavu Sans Mono:pixelsize=13
+*charClass: 3:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48,58:48,63:48,61:48,44:48,38:48,59:48
+
+! Molokai theme
+XTerm*background: #121212
+XTerm*foreground: #BABABA
+XTerm*cursorColor: #BABABA
+
+! black
+XTerm*color0: #121212
+XTerm*color8: #545454
+
+! red
+XTerm*color1: #FA2573
+XTerm*color9: #F5679D
+
+! green
+XTerm*color2: #98E024
+XTerm*color10: #B1E05E
+
+! yellow
+XTerm*color3: #E0D660
+XTerm*color11: #FFF36E
+
+! blue
+XTerm*color4: #117FCF
+XTerm*color12: #00AEFF
+
+! magenta
+XTerm*color5: #8800FF
+XTerm*color13: #AF87FF
+
+! cyan
+XTerm*color6: #42A7CF
+XTerm*color14: #52CEFF
+
+! white
+XTerm*color7: #BABABA
+XTerm*color15: #FFFFFF
+
+Mwm.keyboardFocusPolicy:	explicit
+Mwm*XClock*clientDecoration:	Border
+Mwm*XBiff*clientDecoration:	Border
+Mwm*iconDecoration:		label activelabel
+Mwm*iconPlacement:		bottom right
+XTerm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
