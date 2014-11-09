@@ -52,7 +52,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
-  " au BufRead,BufNewFile *.md set filetype=markdown
+  au BufRead,BufNewFile *.md set filetype=markdown
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -123,6 +123,11 @@ colorscheme solarized
 " vim-gitgutter settings
 hi clear SignColumn
 
+" vim-markdown settings
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+
 " ----------------------------------------------------------------------------
 
 " Tab settings
@@ -179,9 +184,6 @@ set tildeop
 
 " better manpage support
 source $VIMRUNTIME/ftplugin/man.vim
-
-" Octopress coloring
-autocmd BufNewFile,BufRead *.md,*.markdown,*.textile set filetype=octopress
 
 " Show nested tree mode when viewing directories
 let g:netrw_liststyle=3
