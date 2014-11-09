@@ -33,10 +33,55 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized
 [submodule "vim/bundle/a.vim"]
 	path = vim/bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "vim/bundle/pathogen"]
+	path = vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/bundle/vim-misc"]
+	path = vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc
+[submodule "vim/bundle/vim-easytags"]
+	path = vim/bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vim/bundle/HTML-AutoCloseTag"]
+	path = vim/bundle/HTML-AutoCloseTag
+	url = https://github.com/vim-scripts/HTML-AutoCloseTag
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade
+[submodule "vim/bundle/vim-css-color"]
+	path = vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = https://github.com/tomasr/molokai
+[submodule "vim/bundle/vim-better-whitespace"]
+	path = vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace

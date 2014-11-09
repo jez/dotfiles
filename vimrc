@@ -86,7 +86,7 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+        \ | wincmd p | diffthis
 endif
 
 " =========================================================================== "
@@ -95,8 +95,37 @@ endif
 "                                                                             "
 " =========================================================================== "
 
-" ===== Vundle ============================================================== "
+" ----- Pathogen and Plugins -------------------------------------------------
+set rtp+=~/.vim/bundle/pathogen
+execute pathogen#infect()
 
+" vim-airline settings
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
+" delimitMate settings
+let delimitMate_expand_cr = 1
+
+" Tagbar settings
+nmap <silent> <leader>b :TagbarToggle<CR>
+
+" EasyTags settings
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+
+" Syntastic settings
+let g:syntastic_error_symbol = '✗'
+
+" Solarized settings
+set background=dark
+colorscheme solarized
+
+" vim-gitgutter settings
+hi clear SignColumn
+
+" ----------------------------------------------------------------------------
+
+" Tab settings
 set expandtab          "Expand tabs into spaces
 set tabstop=2          "default to 2 spaces for a hard tab
 set softtabstop=2      "default to 2 spaces for the soft tab
@@ -114,7 +143,7 @@ set number
 command WQ wq
 command Wq wq
 command Wqa wqa
-command W w 
+command W w
 command Q q 
 
 " Save readonly files using sudo
@@ -127,9 +156,6 @@ command WV w | make view
 
 " Use :C to clear hlsearch
 command C noh
-
-set background=dark
-colorscheme solarized
 
 set linebreak
 set scrolloff=3
