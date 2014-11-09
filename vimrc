@@ -144,7 +144,7 @@ command WQ wq
 command Wq wq
 command Wqa wqa
 command W w
-command Q q 
+command Q q
 
 " Save readonly files using sudo
 command WS w !sudo tee %
