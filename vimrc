@@ -95,8 +95,7 @@ endif
 "                                                                             "
 " =========================================================================== "
 
-" Pathogen
-call pathogen#infect()
+" ===== Vundle ============================================================== "
 
 set expandtab          "Expand tabs into spaces
 set tabstop=2          "default to 2 spaces for a hard tab
@@ -118,12 +117,15 @@ command Wqa wqa
 command W w 
 command Q q 
 
+" Save readonly files using sudo
 command WS w !sudo tee %
 
+" Helper commands for running Make with my Makefiles
 command V make view
 command Wv w | make view
 command WV w | make view
 
+" Use :C to clear hlsearch
 command C noh
 
 set background=dark
@@ -132,9 +134,6 @@ colorscheme solarized
 set linebreak
 set scrolloff=3
 
-" Turn on syntax completion
-set omnifunc=syntaxcomplete#Complete
-
 " Make it so that using long, wrapped lines will behave like normal lines
 noremap <buffer> <silent> k gk
 noremap <buffer> <silent> j gj
@@ -142,9 +141,6 @@ noremap <buffer> <silent> 0 g0
 noremap <buffer> <silent> $ g$
 noremap <buffer> <silent> ^ g^
 noremap <buffer> <silent> _ g_
-"noremap <buffer> <silent> gA g$a
-"noremap <buffer> <silent> gI I
-"noremap <buffer> <silent> I g^i
 
 " take first suggested spelling as correct spelling and replace
 noremap <buffer> <silent> z! z=1<CR><CR>
@@ -184,9 +180,6 @@ command Qt qt
 command QT qt
 command Tq qt
 command TQ qt
-
-" GitHub Readme Instant Preview
-command Grip !gripe %
 
 " Lower ^[ timeout
 set timeoutlen=100
