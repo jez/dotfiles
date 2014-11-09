@@ -209,3 +209,6 @@ command TQ qt
 
 " Lower ^[ timeout
 set timeoutlen=100
+
+" Vertical splits use right half of screen
+set splitright
