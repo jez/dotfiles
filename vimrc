@@ -99,8 +99,11 @@ endif
 set rtp+=~/.vim/bundle/pathogen
 execute pathogen#infect()
 
+Helptags
+
 " vim-airline settings
 let g:airline_powerline_fonts = 1
+let g:airline_detect_paste=1
 set laststatus=2
 
 " delimitMate settings
