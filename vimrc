@@ -105,6 +105,20 @@ Helptags
 let g:airline_powerline_fonts = 1
 let g:airline_detect_paste=1
 set laststatus=2
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  if g:airline_theme == 'solarized'
+    " normal mode background: s:base03
+    let a:palette.normal.airline_a[2] = 8
+    " normal mode foreground: s:green
+    let a:palette.normal.airline_a[3] = 2
+
+    " line no. background: s:base03
+    let a:palette.normal.airline_z[2] = 8
+    " line no. foreground: s:green
+    let a:palette.normal.airline_z[3] = 2
+  endif
+endfunction
 
 " delimitMate settings
 let delimitMate_expand_cr = 1
