@@ -199,10 +199,21 @@ eval `dircolors ~/.dir_colors`
 update() {
   touch $HOME/.last_update
 
+  # Updates for all hosts
+  cd ~/.dotfiles/
+  echo "$cblueb==>$cwhiteb Updating dotfiles...$cnone"
+  if [ -n "$(git fetch 2>&1)" ]; then echo "$credb  --> outdated.$cnone"; fi
+
+  echo "$cblueb==>$cwhiteb Checking for outdated dotfiles submodules...$cnone"
+  git submodule foreach 'if [ -n "$(git fetch 2>&1)" ]; then echo "$credb  --> outdated.$cnone"; fi'
+  cd -
+
   # Mac updates
   case `hostname` in
     *Jacobs-MacBook-Air*)
+      echo "$cblueb==>$cwhiteb Renewing Kerberos ticket...$cnone"
       kinitandrew
+
       echo "$cblueb==>$cwhiteb Updating Homebrew...$cnone"
       brew update
 
@@ -211,21 +222,18 @@ update() {
 
       echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
       brew outdated --verbose
-
-      echo "$cblueb==>$cwhiteb Checking for outdated ruby gems...$cnone"
-      gem outdated
-
-      echo "$cblueb==>$cwhiteb Checking for outdated node packages...$cnone"
-      npm outdated
-
-      echo "$cblueb==>$cwhiteb Checking for outdated python packages...$cnone"
-      pip list -o
-
-      echo "$cblueb==>$cwhiteb Checking for outdated pathogen plugins...$cnone"
-      cd ~/.dotfiles/
-      git submodule foreach git fetch
-      cd -
       ;;
+    *andrew*|*gates*|*shark*)
+      echo "$cblueb==>$cwhiteb Renewing cross-realm permissions...$cnone"
+      aklog cs.cmu.edu
+      ;;
+    metagross)
+      echo "$cblueb==>$cwhiteb Updating package lists...$cnone"
+      sudo apt-get update
+
+      echo "$cblueb==>$cwhiteb Checking for outdated packages...$cnone"
+      # modified from http://unix.stackexchange.com/questions/19470/list-available-updates-but-do-not-install-them#comment111161_75791
+      apt-get -s upgrade| awk -F'[][() ]+' "/^Inst/{printf \"${cwhiteb}Prog${cnone}: %s\t${credb}cur${cnone}: %s\t${cgreen}avail${cnone}: %s\n\", \$2,\$3,\$4}"
   esac
 }
 
