@@ -109,6 +109,7 @@ alias gcam="git commit -am"
 
 alias gs="git status"
 alias gd="git diff"
+alias gdw="git diff --color-words"
 
 alias gl="git log --pretty=oneline --graph --decorate --abbrev-commit"
 alias gll="git log --pretty=oneline --graph --decorate --abbrev-commit --all"
