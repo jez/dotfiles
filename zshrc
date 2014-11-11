@@ -205,8 +205,8 @@ update() {
   if [ -n "$(git fetch 2>&1)" ]; then echo "$credb  --> outdated.$cnone"; fi
 
   echo "$cblueb==>$cwhiteb Checking for outdated dotfiles submodules...$cnone"
-  git submodule foreach 'if [ -n "$(git fetch 2>&1)" ]; then echo "$credb  --> outdated.$cnone"; fi'
-  cd -
+  git submodule foreach --quiet 'git fetch --quiet && if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo $path; fi'
+  cd - &> /dev/null
 
   # Mac updates
   case `hostname` in
