@@ -134,7 +134,8 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 
 " Syntastic settings
-let g:syntastic_error_symbol = '✗'
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
 
 " Solarized settings
 set background=dark
@@ -142,6 +143,7 @@ colorscheme solarized
 
 " vim-gitgutter settings
 hi clear SignColumn
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " vim-markdown settings
 let g:vim_markdown_frontmatter = 1
