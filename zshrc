@@ -202,7 +202,9 @@ update() {
   # Updates for all hosts
   cd ~/.dotfiles/
   echo "$cblueb==>$cwhiteb Updating dotfiles...$cnone"
-  if [ -n "$(git fetch 2>&1)" ]; then echo "$credb  --> outdated.$cnone"; fi
+  git fetch --quiet origin master
+  if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo "$credb  --> outdated.$cnone"; fi
+
 
   echo "$cblueb==>$cwhiteb Checking for outdated dotfiles submodules...$cnone"
   git submodule foreach --quiet 'git fetch --quiet && if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo $path; fi'
