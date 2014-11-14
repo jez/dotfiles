@@ -152,6 +152,7 @@ case `hostname` in
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/afs/club.cc.cmu.edu/contrib/lib"
     alias sml="rlwrap sml"
     alias vim="~odb/bin/vim"
+    aklog cs.cmu.edu
     ;;
   alarmpi)
     ;;
@@ -227,8 +228,6 @@ update() {
       brew outdated --verbose
       ;;
     *andrew*|*gates*|*shark*)
-      echo "$cblueb==>$cwhiteb Renewing cross-realm permissions...$cnone"
-      aklog cs.cmu.edu
       ;;
     metagross)
       echo "$cblueb==>$cwhiteb Updating package lists...$cnone"
