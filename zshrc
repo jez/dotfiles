@@ -151,6 +151,7 @@ case `hostname` in
     export MANPATH="$MANPATH:/afs/club.cc.cmu.edu/contrib/man"
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/afs/club.cc.cmu.edu/contrib/lib"
     alias sml="rlwrap sml"
+    alias vim="~odb/bin/vim"
     ;;
   alarmpi)
     ;;
