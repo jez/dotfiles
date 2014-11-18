@@ -204,7 +204,7 @@ update() {
   # Updates for all hosts
   cd ~/.dotfiles/
   echo "$cblueb==>$cwhiteb Updating dotfiles...$cnone"
-  git fetch --quiet origin master
+  git fetch --quiet origin
   if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo "$credb  --> outdated.$cnone"; fi
 
 
