@@ -124,6 +124,7 @@ endfunction
 
 " delimitMate settings
 let delimitMate_expand_cr = 1
+au BufRead,BufNewFile *.md let b:delimitMate_nesting_quotes = ["`"]
 
 " Tagbar settings
 nmap <silent> <leader>b :TagbarToggle<CR>
