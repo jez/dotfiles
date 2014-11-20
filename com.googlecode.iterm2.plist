@@ -10941,11 +10941,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>742 78 608 223 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>265 200 924 485 0 0 1440 900 </string>
+	<string>-800 359 924 485 -800 300 800 600 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>157 111 710 491 0 0 1440 900 </string>
+	<string>-800 383 710 491 -800 300 800 577 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>446 180 710 586 0 0 1440 900 </string>
+	<string>300 303 710 491 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -12467,7 +12467,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-11-12T23:32:46Z</date>
+	<date>2014-11-18T20:26:15Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
