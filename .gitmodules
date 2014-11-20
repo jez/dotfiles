@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/vim-liquid"]
+	path = vim/bundle/vim-liquid
+	url = https://github.com/tpope/vim-liquid
