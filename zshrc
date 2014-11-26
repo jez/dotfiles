@@ -91,6 +91,7 @@ alias py3serv="python3 -m http.server"
 alias ip="curl curlmyip.com"
 alias purgeswp="find . -regex \'.*.swp$\' -exec rm {}"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
+alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 which ack &> /dev/null && alias TODO="ack TODO"
 which ghci &> /dev/null && alias has="ghci"
 which grc &> /dev/null && alias grc="grc -es"
