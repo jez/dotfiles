@@ -135,7 +135,7 @@ case `hostname` in
     # ruby...
     # To use Homebrew's directories rather than ~/.rbenv
     export RBENV_ROOT="/usr/local/var/rbenv"
-    export PATH="$HOME/.rbenv/bin:$PATH"
+    export PATH="$PATH"
     eval "$(rbenv init -)"
 
     alias bex="bundle exec"
