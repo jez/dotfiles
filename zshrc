@@ -84,6 +84,7 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 alias cdd="cd .."
+alias vim="vim -p"
 alias resolve='cd "`pwd -P`"'
 alias reload="source ~/.zshrc"
 alias pyserv="python -m SimpleHTTPServer"
