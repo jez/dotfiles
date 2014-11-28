@@ -187,7 +187,7 @@ case `uname` in
     fi
     ;;
   Linux)
-    which tree &> /dev/null && alias tree="tree -C"
+    which tree &> /dev/null && alias tree="tree -C -F --dirsfirst"
     ;;
 esac
 
