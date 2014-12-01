@@ -153,6 +153,10 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
 
+" vim-notes settings
+let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_suffix = '.txt'
+
 " ----------------------------------------------------------------------------
 
 " Tab settings
