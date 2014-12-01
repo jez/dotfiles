@@ -272,8 +272,8 @@ vman() {
     -c ':source $VIMRUNTIME/ftplugin/man.vim' \
     -c ":Man $*" \
     -c ":only" \
-    -c ":set nu" \
-    -c ":set nomodifiable" \
+    -c ":setlocal nu" \
+    -c ":setlocal nomodifiable" \
     -c ":map q :q<CR>"
 }
 
