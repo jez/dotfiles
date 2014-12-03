@@ -94,3 +94,6 @@
 [submodule "vim/bundle/vim-notes"]
 	path = vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
