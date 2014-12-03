@@ -126,7 +126,6 @@ case `hostname` in
     # aliases
     alias resethostname='sudo scutil --set HostName Jacobs-MacBook-Air'
     alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
-    alias vim="/usr/local/bin/vim"
     alias sml="rlwrap sml"
     which coffee &> /dev/null && alias coffe="coffee"
 
