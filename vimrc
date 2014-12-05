@@ -147,6 +147,7 @@ colorscheme solarized
 " vim-gitgutter settings
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " vim-markdown settings
 let g:vim_markdown_frontmatter = 1
