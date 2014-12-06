@@ -90,7 +90,7 @@ alias reload="source ~/.zshrc"
 alias pyserv="python -m SimpleHTTPServer"
 alias py3serv="python3 -m http.server"
 alias ip="curl curlmyip.com"
-alias purgeswp="find . -regex \'.*.swp$\' -exec rm {}"
+alias purgeswp="find . -regex '.*.swp$' -exec rm {}"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 which ack &> /dev/null && alias TODO="ack TODO"
@@ -152,8 +152,9 @@ case `hostname` in
     export MANPATH="$MANPATH:/afs/club.cc.cmu.edu/contrib/man"
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/afs/club.cc.cmu.edu/contrib/lib"
     alias sml="rlwrap sml"
-    alias vim="~odb/bin/vim"
-    aklog cs.cmu.edu
+    alias vim="~odb/bin/vim -p"
+    aklog cs.cmu.edu &> /dev/null
+    alias cilkinit="source /afs/cs/academic/class/15210-f14/cilk/gccvars_bash.sh"
     ;;
   alarmpi)
     ;;
