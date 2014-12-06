@@ -55,6 +55,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.md setlocal filetype=markdown
   au BufRead,BufNewFile *.md setlocal spell
   au BufRead,BufNewFile *.tex setlocal spell
+  au BufRead,BufNewFile * normal zR
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -226,7 +227,7 @@ noremap <buffer> <silent> <leader>C :s/^\/\///<CR>:noh<CR>
 noremap <buffer> <silent> <leader>f V%zf
 
 " set get rid of obnoxious '-' characters in folds
-set fillchars=fold:\ ,vert:\|
+set fillchars=fold:\ ,
 
 " open help in a new tab
 cabbrev help tab help
@@ -244,3 +245,8 @@ set timeoutlen=100
 
 " Vertical splits use right half of screen
 set splitright
+
+" create folds based on indendation level
+set foldmethod=indent
+nnoremap <buffer> <silent> zc zC
+nnoremap <buffer> <silent> zo zO
