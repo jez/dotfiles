@@ -245,8 +245,3 @@ set timeoutlen=100
 
 " Vertical splits use right half of screen
 set splitright
-
-" create folds based on indendation level
-set foldmethod=indent
-nnoremap <buffer> <silent> zc zC
-nnoremap <buffer> <silent> zo zO
