@@ -3,4 +3,5 @@
 --color-lineno=blue
 --type-set=markdown:ext:md,markdown
 --ignore-dir=.meteor
+--ignore-dir=.sass-cache
 --ignore-file=is:tags
