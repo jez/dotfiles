@@ -271,10 +271,15 @@ vman() {
   vim -R \
     -c ':source $VIMRUNTIME/ftplugin/man.vim' \
     -c ":Man $*" \
+    -c "if line('$') == 1 | cquit | endif" \
     -c ":only" \
     -c ":setlocal nu" \
     -c ":setlocal nomodifiable" \
     -c ":map q :q<CR>"
+
+  if [ "$?" != "0" ]; then
+    echo "No manual entry for $*"
+  fi
 }
 
 # Open diffs in vim
