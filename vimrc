@@ -140,6 +140,7 @@ let g:easytags_resolve_links = 1
 " Syntastic settings
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+au BufRead,BufNewFile *.tex let b:syntastic_mode = "passive"
 
 " Solarized settings
 set background=dark
