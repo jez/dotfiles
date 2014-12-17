@@ -96,6 +96,7 @@ alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 which ack &> /dev/null && alias TODO="ack TODO"
 which ghci &> /dev/null && alias has="ghci"
 which grc &> /dev/null && alias grc="grc -es"
+which texdef &> /dev/null && alias latexdef="texdef --tex latex"
 
 # Git aliases
 alias git-lastmerge="git whatchanged -2 --oneline -p"
