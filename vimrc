@@ -52,19 +52,20 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
-  au BufRead,BufNewFile *.md setlocal filetype=markdown
-  au BufRead,BufNewFile *.md setlocal spell
-  au BufRead,BufNewFile *.tex setlocal spell
-  au BufRead,BufNewFile * normal zR
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  "autocmd FileType text setlocal columns=78
-  "au BufRead,BufNewFile *.md setlocal columns=80
   au BufNewFile,BufRead *.sig set filetype=sml
+
+  au BufRead,BufNewFile *.md setlocal filetype=markdown
+  au BufRead,BufNewFile *.md setlocal spell
+  au BufRead,BufNewFile *.md setlocal tw=80
+
+  au BufRead,BufNewFile *.cls setlocal filetype=tex
+  au BufRead,BufNewFile *.tex setlocal spell
+  au BufRead,BufNewFile *.tex setlocal tw=80
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
