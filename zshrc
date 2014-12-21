@@ -282,21 +282,6 @@ vdiff() {
   diff $@ | vim -
 }
 
-# Opens a note
-ne() {
-  vim -c ":Note $*"
-}
-
-## New Note: calls vim notes plugin
-n() {
-  vim -c :Note
-}
-
-# Searches Notes
-nls() {
-  ls ~/Notes/ | egrep -i "$*"
-}
-
 init_django_completion() {
   if [ -n "$VIRTUAL_ENV" ]; then
     if [ -n "`grep \"django_bash_completion\" ${VIRTUAL_ENV}/bin/postactivate`" ]; then
