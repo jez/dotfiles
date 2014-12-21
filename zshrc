@@ -270,7 +270,7 @@ man() {
 
 # Open man pages in vim
 vman() {
-  vim "+SuperMan $@"
+  vim -c "SuperMan $*"
 
   if [ "$?" != "0" ]; then
     echo "No manual entry for $*"
