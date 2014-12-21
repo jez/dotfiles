@@ -97,3 +97,6 @@
 [submodule "vim/bundle/tmuxline.vim"]
 	path = vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
+[submodule "vim/bundle/vim-superman"]
+	path = vim/bundle/vim-superman
+	url = https://github.com/Z1MM32M4N/vim-superman

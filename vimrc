@@ -218,9 +218,6 @@ noremap <buffer> <silent> Y y$
 " use ~ to toggle case as an operator, not a motion
 set tildeop
 
-" better manpage support
-source $VIMRUNTIME/ftplugin/man.vim
-
 " Show nested tree mode when viewing directories
 let g:netrw_liststyle=3
 
