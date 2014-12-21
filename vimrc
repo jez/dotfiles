@@ -247,3 +247,6 @@ set timeoutlen=100
 
 " Vertical splits use right half of screen
 set splitright
+
+" better man page support
+noremap K :Man <cword>
