@@ -67,6 +67,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.tex setlocal spell
   au BufRead,BufNewFile *.tex setlocal tw=80
 
+  au BufRead,BufNewFile .amethyst setlocal filetype=json
+
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
