@@ -87,8 +87,9 @@ alias cdd="cd .."
 alias vim="vim -p"
 alias resolve='cd "`pwd -P`"'
 alias reload="source ~/.zshrc"
-alias pyserv="python -m SimpleHTTPServer"
+alias py2serv="python -m SimpleHTTPServer"
 alias py3serv="python3 -m http.server"
+alias pyserv="py3serv"
 alias ip="curl curlmyip.com"
 alias purgeswp="find . -regex '.*.swp$' -exec rm {}"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
