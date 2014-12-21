@@ -181,22 +181,22 @@ set writebackup
 set number
 
 " Make it so that these commands don't complain
-command WQ wq
-command Wq wq
-command Wqa wqa
-command W w
-command Q q
+command! WQ wq
+command! Wq wq
+command! Wqa wqa
+command! W w
+command! Q q
 
 " Save readonly files using sudo
-command WS w !sudo tee %
+command! WS w !sudo tee %
 
 " Helper commands for running Make with my Makefiles
-command V make view
-command Wv w | make view
-command WV w | make view
+command! V make view
+command! Wv w | make view
+command! WV w | make view
 
 " Use :C to clear hlsearch
-command C noh
+command! C noh
 
 set linebreak
 set scrolloff=3
@@ -237,10 +237,10 @@ cabbrev help tab help
 " qt or tq to close tab
 cabbrev qt tabclose
 cabbrev tq tabclose
-command Qt qt
-command QT qt
-command Tq qt
-command TQ qt
+command! Qt qt
+command! QT qt
+command! Tq qt
+command! TQ qt
 
 " Lower ^[ timeout
 set timeoutlen=100
