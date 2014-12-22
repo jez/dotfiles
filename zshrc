@@ -168,6 +168,8 @@ case `hostname` in
     ;;
   scottylabs)
     ;;
+  ghost.zimmerman.io)
+    alias ack="ack-grep"
   *)
     ;;
 esac
