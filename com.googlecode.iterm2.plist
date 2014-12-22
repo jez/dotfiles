@@ -10943,9 +10943,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>516 266 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 301 710 491 0 0 1440 877 </string>
+	<string>730 154 710 461 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>300 303 710 491 0 0 1440 900 </string>
+	<string>216 310 710 491 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -12467,7 +12467,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-12-17T03:35:06Z</date>
+	<date>2014-12-22T15:06:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
