@@ -367,6 +367,7 @@ case `hostname` in
   ghost.zimmerman.io)
     PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
     PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
+    PROMPT_PURE_USERNAME_COLOR="%{$cmagentab%}"
     PROMPT_PURE_FAILURE_COLOR="%F{magenta}"
     ;;
   *)
