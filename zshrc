@@ -333,37 +333,14 @@ bindkey -M viins '\e/' vi-search-fix
 
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# To color each machine's prompt differently
+# ----- pure prompt settings -----
+# defaults
+PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
+
+# per machine settings
 case `hostname` in
-  #*MacBook*)
-  #  PROMPT_PURE_DIR_COLOR="%F{093}"
-  #  ;;
-  #*andrew*|*gates*|*shark*)
-  #  PROMPT_PURE_DIR_COLOR="%F{076}"
-  #  ;;
-  #alarmpi)
-  #  PROMPT_PURE_DIR_COLOR="%F{027}"
-  #  ;;
-  #jake-raspi)
-  #  PROMPT_PURE_DIR_COLOR="%F{164}"
-  #  ;;
-  #*xubuntu*)
-  #  PROMPT_PURE_DIR_COLOR="%F{057}"
-  #  ;;
-  #pop.scottylabs.org)
-  #  PROMPT_PURE_DIR_COLOR="%F{227}"
-  #  ;;
-  #scottylabs)
-  #  PROMPT_PURE_DIR_COLOR="%F{202}"
-  #  ;;
-  #metagross)
-  #  PROMPT_PURE_DIR_COLOR="%F{027}"
-  #  ;;
-  #*)
-  #  PROMPT_PURE_DIR_COLOR="%F{196}"
-  #  ;;
   *MacBook*)
-    PROMPT_PURE_DIR_COLOR="$cmagentab"
+    PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
     ;;
   *andrew*|*gates*|*shark*)
     mesg n
@@ -382,7 +359,7 @@ case `hostname` in
     PROMPT_PURE_DIR_COLOR="%F{yellow}"
     ;;
   scottylabs)
-    PROMPT_PURE_DIR_COLOR="$credb"
+    PROMPT_PURE_DIR_COLOR="%{$credb%}"
     ;;
   ghost.zimmerman.io)
     PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
@@ -394,13 +371,7 @@ case `hostname` in
     ;;
 esac
 
-#PROMPT_PURE_VCS_COLOR="%F{cyan}"
-#PROMPT_PURE_EXEC_TIME_COLOR="%F{blue}"
-PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
-#PROMPT_PURE_FAILURE_COLOR="%F{yellow}"
-
 PURE_NO_SSH_USERNAME=1
-
 PURE_GIT_PULL=0
 prompt pure
 
