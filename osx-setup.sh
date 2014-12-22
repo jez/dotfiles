@@ -15,7 +15,7 @@
 # and doesn't finish.                                                         #
 #                                                                             #
 # TODO:                                                                       #
-#   - Make this into an AppleScript that can spawn and install actuall apps.  #
+#   - Utilize Homebrew Cask to install actual apps.                           #
 #                                                                             #
 # =========================================================================== #
 
