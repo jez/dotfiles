@@ -60,8 +60,8 @@ if has("autocmd")
   au BufNewFile,BufRead *.sig set filetype=sml
 
   au BufRead,BufNewFile *.md setlocal filetype=markdown
-  au BufRead,BufNewFile *.md setlocal spell
-  au BufRead,BufNewFile *.md setlocal tw=80
+  au BufRead,BufNewFile *.md,*.markdown setlocal spell
+  au BufRead,BufNewFile *.md,*.markdown setlocal tw=80
 
   au BufRead,BufNewFile *.cls setlocal filetype=tex
   au BufRead,BufNewFile *.tex setlocal spell
@@ -128,7 +128,7 @@ endfunction
 
 " delimitMate settings
 let delimitMate_expand_cr = 1
-au BufRead,BufNewFile *.md let b:delimitMate_nesting_quotes = ["`"]
+au BufRead,BufNewFile *.md,*.markdown let b:delimitMate_nesting_quotes = ["`"]
 
 " Tagbar settings
 nmap <silent> <leader>b :TagbarToggle<CR>
@@ -159,10 +159,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
-
-" vim-notes settings
-let g:notes_directories = ['~/Dropbox/Notes']
-let g:notes_suffix = '.txt'
 
 " ----------------------------------------------------------------------------
 
