@@ -170,6 +170,7 @@ case `hostname` in
     ;;
   ghost.zimmerman.io)
     alias ack="ack-grep"
+    ;;
   *)
     ;;
 esac
