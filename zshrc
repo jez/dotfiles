@@ -168,10 +168,6 @@ case `hostname` in
     ;;
   scottylabs)
     ;;
-  metagross)
-    export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
-    alias ack="ack-grep"
-    ;;
   *)
     ;;
 esac
@@ -233,7 +229,7 @@ update() {
       ;;
     *andrew*|*gates*|*shark*)
       ;;
-    metagross)
+    ghost.zimmerman.io)
       echo "$cblueb==>$cwhiteb Updating package lists...$cnone"
       sudo apt-get update
 
@@ -388,8 +384,10 @@ case `hostname` in
   scottylabs)
     PROMPT_PURE_DIR_COLOR="$credb"
     ;;
-  metagross)
-    PROMPT_PURE_DIR_COLOR="%F{blue}"
+  ghost.zimmerman.io)
+    PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
+    PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
+    PROMPT_PURE_FAILURE_COLOR="%F{magenta}"
     ;;
   *)
     PROMPT_PURE_DIR_COLOR="%F{red}"
