@@ -48,3 +48,8 @@ cd -
 # login from different session to test dotfiles!
 
 sudo apt-get install tree ack-grep htop
+
+# custom motd
+sudo chmod -x /etc/update-motd.d/00-header
+sudo chmod -x /etc/update-motd.d/10-help-text
+# pick a motd and copy it to /etc/motd
