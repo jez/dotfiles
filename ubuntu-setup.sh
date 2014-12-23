@@ -39,7 +39,7 @@ sudo apt-get install exuberant-ctags
 
 # install dotfiles
 git clone https://github.com/Z1MM32M4N/dotfiles ~/.dotfiles
-cd ~/.dotfiles 
+cd ~/.dotfiles
 git submodule init
 git submodule update
 rcup rcrc && rcup
