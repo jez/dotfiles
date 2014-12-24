@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vim-superman"]
 	path = vim/bundle/vim-superman
 	url = https://github.com/Z1MM32M4N/vim-superman
+[submodule "vim/bundle/Dockerfile.vim"]
+	path = vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim
