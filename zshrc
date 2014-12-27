@@ -340,6 +340,7 @@ source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 # ----- pure prompt settings -----
 # defaults
 PROMPT_PURE_SUCCESS_COLOR="%F{cyan}"
+PROMPT_PURE_NO_SUBMODULES="--ignore-submodules"
 
 # per machine settings
 case `hostname` in
