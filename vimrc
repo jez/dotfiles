@@ -149,6 +149,8 @@ au BufRead,BufNewFile *.dtx let b:syntastic_mode = "passive"
 " Solarized settings
 set background=dark
 colorscheme solarized
+" no underline for fold previews
+hi! Folded cterm=NONE term=NONE
 
 " vim-gitgutter settings
 hi clear SignColumn
