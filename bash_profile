@@ -107,7 +107,7 @@ case $HOSTNAME in
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-    # aliases 
+    # aliases
     alias resethostname='sudo scutil --set HostName Jacobs-MacBook-Air'
     alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
     alias vim="/usr/local/bin/vim"
@@ -124,14 +124,14 @@ case $HOSTNAME in
     eval "$(rbenv init -)"
 
     alias bex="bundle exec"
-    
-    # Settings for virtualenv and virtualenvwrapper 
+
+    # Settings for virtualenv and virtualenvwrapper
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
     #echo -n '.'
 
     ;;
-  *andrew*|*gates*|*shark*) 
+  *andrew*|*gates*|*shark*)
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="$PATH:/afs/club/contrib/bin";
