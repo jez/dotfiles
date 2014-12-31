@@ -1,6 +1,5 @@
 # Set up Vim-style tab completion
 TAB: menu-complete
-set show-all-if-unmodified off
 set show-all-if-ambiguous on
 
 # If a tab-completed file is a symlink to a directory,
