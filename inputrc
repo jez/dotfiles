@@ -1,10 +1,15 @@
+# Set up Vim-style tab completion
 TAB: menu-complete
 set show-all-if-unmodified off
 set show-all-if-ambiguous on
+
+# If a tab-completed file is a symlink to a directory,
+# treat it like a directory not a file
 set mark-symlinked-directories on
+
+# Use GNU ls colors when tab-completing files
 set colored-stats on
+
+# Edit with Vi keybindings
 set editing-mode vi
 set keymap vi
-
-"\C-x\C-r": re-read-init-file
-"\C-x\C-p": menu-complete-display-prefix
