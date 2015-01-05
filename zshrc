@@ -101,6 +101,8 @@ which grc &> /dev/null && alias grc="grc -es"
 which texdef &> /dev/null && alias latexdef="texdef --tex latex"
 
 # Git aliases
+eval "$(hub alias -s)"
+
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
 
