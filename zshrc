@@ -271,6 +271,7 @@ man() {
 }
 
 # Open man pages in vim
+compdef vman="man"
 vman() {
   vim -c "SuperMan $*"
 
