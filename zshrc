@@ -99,6 +99,7 @@ which ack &> /dev/null && alias TODO="ack TODO"
 which ghci &> /dev/null && alias has="ghci"
 which grc &> /dev/null && alias grc="grc -es"
 which texdef &> /dev/null && alias latexdef="texdef --tex latex"
+which youtube-dl &> /dev/null && alias youtube-mp3="youtube-dl --extract-audo --audio-format mp3"
 
 # Git aliases
 eval "$(hub alias -s)"
