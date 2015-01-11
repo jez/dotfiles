@@ -197,7 +197,9 @@ command! WV w | make view
 command! C noh
 
 set linebreak
-set breakindent
+if version > 74
+  set breakindent
+endif
 set scrolloff=3
 
 " Make it so that using long, wrapped lines will behave like normal lines
