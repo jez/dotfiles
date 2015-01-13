@@ -102,7 +102,7 @@ which texdef &> /dev/null && alias latexdef="texdef --tex latex"
 which youtube-dl &> /dev/null && alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 
 # Git aliases
-eval "$(hub alias -s)"
+eval "$(hub alias -s 2> /dev/null)"
 
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
