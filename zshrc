@@ -119,8 +119,14 @@ alias gs="git status"
 alias gd="git diff"
 alias gdw="git diff --color-words"
 
-alias gl="git log --pretty=oneline --graph --decorate --abbrev-commit"
-alias gll="git log --pretty=oneline --graph --decorate --abbrev-commit --all"
+# pretty Git log
+alias gl='git log --graph --pretty="%C(bold green)%h%Creset%C(auto)%d%Creset %s"'
+# pretty Git log, all references
+alias gll='git log --graph --all --pretty="%C(bold green)%h%Creset%C(auto)%d%Creset %s"'
+# pretty Git log, show authors
+alias gla='git log --graph --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s"'
+# pretty Git log, all references, show authors
+alias glla='git log --graph --all --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s"'
 
 # ----- per machine setup ----------------------------------------------------
 case `hostname` in
