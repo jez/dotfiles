@@ -197,7 +197,7 @@ command! WV w | make view
 command! C noh
 
 set linebreak
-if version > 74
+if version > 74354
   set breakindent
 endif
 set scrolloff=3
