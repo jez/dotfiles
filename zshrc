@@ -14,6 +14,7 @@
 export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 
 # Load oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
 export ZSH="$HOME/.oh-my-zsh/"
 export CASE_SENSITIVE="true"
 plugins=(brew brew-cask)
