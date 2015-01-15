@@ -33,7 +33,7 @@ brew update
 # Not necessary on OS X 10.10 (Yosemite)
 export PATH="/usr/local/bin:$PATH"
 
-# Install and setup git 
+# Install and setup git
 brew install git
 git config --global user.name "Jacob Zimmerman"
 git config --global user.email "zimmerman.jake@gmail.com"
@@ -60,7 +60,7 @@ brew install vim
 brew tap thoughtbot/formulae
 brew install rcm
 git clone https://github.com/Z1MM32M4N/dotfiles ~/.dotfiles
-cd ~/.dotfiles 
+cd ~/.dotfiles
 git submodule init
 git submodule update
 rcup rcrc && rcup
