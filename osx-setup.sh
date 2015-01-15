@@ -106,6 +106,7 @@ brew cask install amethyst
 brew cask install inskape
 brew cask install calibre
 brew cask install fitbit-connect
+brew cask install rcdefaultapp
 
 # Install python
 brew install python
