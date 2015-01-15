@@ -29,7 +29,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 brew update
 
-# Set up out PATH until we clone our dotfiles
+# Set up PATH until we clone our dotfiles
 # Not necessary on OS X 10.10 (Yosemite)
 export PATH="/usr/local/bin:$PATH"
 
@@ -59,6 +59,7 @@ brew install vim
 # Set up dotfiles
 brew tap thoughtbot/formulae
 brew install rcm
+# If you are not Jake Zimmerman, you will want to fork this repo first
 git clone https://github.com/Z1MM32M4N/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
@@ -73,8 +74,7 @@ exit
 # Download and import iTerm colors
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
 open ~/Desktop/iTerm2-Color-Schemes/schemes/*itermcolors
-echo "iTerm2 colorschemes imported."
-echo "Be sure to edit your preferences (colors, font, etc.)"
+# Be sure to change the location to load iTerm config defaults from
 
 # Install ruby
 brew install rbenv
@@ -88,6 +88,24 @@ $ rbenv local 1.9.3-p0
 $ rbenv rehash
 EOF
 echo "http://octopress.org/docs/setup/rbenv/"
+
+# Install Homebrew Cask
+brew install caskroom/cask/brew-cask
+
+# Install iTerm2
+brew cask install iterm2
+
+# Other utilities
+brew cask install alfred
+brew cask alfred
+brew cask install google-chrome
+brew cask install google-drive
+brew cask install dropbox
+brew cask install spotify
+brew cask install amethyst
+brew cask install inskape
+brew cask install calibre
+brew cask install fitbit-connect
 
 # Install python
 brew install python
