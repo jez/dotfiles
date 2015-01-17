@@ -123,11 +123,11 @@ alias gdw="git diff --color-words"
 # pretty Git log
 alias gl='git log --graph --pretty="%C(bold green)%h%Creset%C(auto)%d%Creset %s"'
 # pretty Git log, all references
-alias gll='git log --graph --all --pretty="%C(bold green)%h%Creset%C(auto)%d%Creset %s"'
+alias gll='gl --all'
 # pretty Git log, show authors
 alias gla='git log --graph --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s"'
 # pretty Git log, all references, show authors
-alias glla='git log --graph --all --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s"'
+alias glla='gla --all'
 
 # ----- per machine setup ----------------------------------------------------
 case `hostname` in
