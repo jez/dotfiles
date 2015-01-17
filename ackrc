@@ -2,6 +2,7 @@
 --color-match=green
 --color-lineno=blue
 --type-set=markdown:ext:md,markdown
+--type-set=erb=.erb
 --ignore-dir=.meteor
 --ignore-dir=.sass-cache
 --ignore-file=is:tags
