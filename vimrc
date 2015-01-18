@@ -129,6 +129,8 @@ endfunction
 " delimitMate settings
 let delimitMate_expand_cr = 1
 au BufRead,BufNewFile *.md,*.markdown let b:delimitMate_nesting_quotes = ["`"]
+au FileType tex let b:delimitMate_quotes = ""
+au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
 
 " Tagbar settings
 nmap <silent> <leader>b :TagbarToggle<CR>
