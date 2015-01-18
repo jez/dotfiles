@@ -167,7 +167,9 @@ case `hostname` in
     alias sml="rlwrap sml"
     alias vim="~odb/bin/vim -p"
     aklog cs.cmu.edu &> /dev/null
-    alias cilkinit="source /afs/cs/academic/class/15210-f14/cilk/gccvars_bash.sh"
+    ;;
+  *gates*)
+    export PATH="$PATH:/usr/local/ispc"
     ;;
   alarmpi)
     ;;
