@@ -103,3 +103,6 @@
 [submodule "vim/bundle/scss-syntax.vim"]
 	path = vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim
+[submodule "vim/bundle/vim-ispc"]
+	path = vim/bundle/vim-ispc
+	url = https://github.com/Z1MM32M4N/vim-ispc
