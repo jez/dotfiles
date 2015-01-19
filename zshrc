@@ -161,7 +161,6 @@ case `hostname` in
     # ruby...
     # To use Homebrew's directories rather than ~/.rbenv
     export RBENV_ROOT="/usr/local/var/rbenv"
-    export PATH="$PATH"
     eval "$(rbenv init -)"
 
     alias bex="bundle exec"
@@ -173,7 +172,7 @@ case `hostname` in
     source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
     ;;
-  *andrew*|*gates*|*shark*)
+  *andrew*|*shark*)
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="/afs/club/contrib/bin:$PATH";
@@ -182,8 +181,6 @@ case `hostname` in
     alias sml="rlwrap sml"
     alias vim="~odb/bin/vim -p"
     aklog cs.cmu.edu &> /dev/null
-    ;;
-  *gates*)
     export PATH="$PATH:/usr/local/ispc"
     ;;
   alarmpi)
