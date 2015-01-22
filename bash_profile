@@ -339,7 +339,7 @@ color_my_prompt() {
   if [ $(id -u) -eq 0 ]; then
     local __prompt_tail="\[$cred\]#\[$cnone\]";
   else
-    local __prompt_tail="\[$ccyan\]$(echo -en '\u276F')\[${cnone}\]";
+    local __prompt_tail="\[$ccyan\]$(echo -en '\xe2\x9d\xaf')\[${cnone}\]";
   fi
 
   export PS1="\n\[$prompt_dir_color\]\w\[${cnone}\] $__git_branch_color$__git_branch\[$cnone\]\n$__prompt_tail "
