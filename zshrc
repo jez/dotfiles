@@ -13,8 +13,6 @@
 [ -z "$PS1" ] && return
 export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 
-echo -n "Loading oh-my-zsh..."
-
 # Load oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 export ZSH="$HOME/.oh-my-zsh/"
@@ -22,12 +20,8 @@ export CASE_SENSITIVE="true"
 plugins=(brew brew-cask)
 source $ZSH/oh-my-zsh.sh
 
-echo -ne "\rLoading utility colors..."
-
 # Load utility colors
 source ~/.COLORS
-
-echo -ne "\rChecking for updates..."
 
 # ----- daily updates --------------------------------------------------------
 [ ! -e $HOME/.last_update ] && touch $HOME/.last_update
@@ -63,8 +57,6 @@ fi
 # ============================================================================
 # ============================================================================
 
-echo -ne "\rSetting miscellaneous settings..."
-
 # ----- miscellaneous  -------------------------------------------------------
 setopt autocd completealiases extendedglob nomatch no_case_glob histappend
 
@@ -83,8 +75,6 @@ export EDITOR="vim"
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-
-echo -ne "\rInitializing aliases..."
 
 # ----- aliases --------------------------------------------------------------
 # General aliases
@@ -142,8 +132,6 @@ alias glla='gla --all'
 # ----- per machine setup ----------------------------------------------------
 case `hostname` in
   *Jacobs-MacBook-Air*)
-    echo -ne "\rMacBook Air settings..."
-
     # GNU coreutils with their actual names
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
@@ -157,7 +145,6 @@ case `hostname` in
     ### Added by the Heroku Toolbelt
     export PATH="/usr/local/heroku/bin:$PATH"
 
-    echo -ne "\rInitializing rbenv..."
     # ruby...
     # To use Homebrew's directories rather than ~/.rbenv
     export RBENV_ROOT="/usr/local/var/rbenv"
@@ -165,14 +152,12 @@ case `hostname` in
 
     alias bex="bundle exec"
 
-    echo -ne "\rInitializing virtualenvwrapper..."
-
     # Settings for virtualenv and virtualenvwrapper
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
     ;;
-  *andrew*|*shark*)
+  *andrew*)
     # Source files that make working on these servers easier
     #source ~/.bashrc_gpi;
     export PATH="/afs/club/contrib/bin:$PATH";
@@ -202,16 +187,12 @@ esac
 
 case `uname` in
   Darwin)
-    echo -ne "\rDarwin settings..."
-
     # Non standard aliases
     which ggrep &> /dev/null && alias grep="ggrep --color=auto";
     which gls &> /dev/null && alias ls="gls -p --color";
     which gdircolors &> /dev/null && alias dircolors="gdircolors";
     which gdate &> /dev/null && alias date="gdate";
     which gsort &> /dev/null && alias duls="du -h -d1 | gsort -hr"
-
-    echo -ne "\r Initializing zsh completion..."
 
     if [ -e $(brew --prefix)/etc/zsh_completion ]; then
       source $(brew --prefix)/etc/zsh_completion
@@ -222,7 +203,6 @@ case `uname` in
     ;;
 esac
 
-echo -ne "\rLoading dir colors and italics..."
 # ----- appearance -----------------------------------------------------------
 # Load LS_COLORS
 eval `dircolors ~/.dir_colors`
@@ -348,8 +328,6 @@ vi-search-fix() {
   zle .vi-history-search-backward
 }
 
-echo -ne "\rGeneral zsh settings..."
-
 # ----- zsh stuff -------------------------------------------------------------
 zstyle :compinstall filename $HOME/.zshrc
 
@@ -367,11 +345,7 @@ autoload vi-search-fix
 zle -N vi-search-fix
 bindkey -M viins '\e/' vi-search-fix
 
-echo -ne "\rInitialize zsh syntax highlighting..."
-
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
-
-echo -ne "\rConfigure pure prompt..."
 
 # ----- pure prompt settings -----
 # defaults
@@ -413,10 +387,6 @@ case `hostname` in
     ;;
 esac
 
-echo -ne "\rSet prompt to pure..."
-
 PURE_NO_SSH_USERNAME=1
 PURE_GIT_PULL=0
 prompt pure
-
-echo -ne "\r"
