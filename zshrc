@@ -167,6 +167,8 @@ case `hostname` in
     alias vim="~odb/bin/vim -p"
     aklog cs.cmu.edu &> /dev/null
     export PATH="$PATH:/usr/local/ispc"
+    alias gl='git log --graph --pretty="%C(bold green)%h%Creset%C(blue)%d%Creset %s"'
+    alias gla='git log --graph --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(blue)%d%Creset %s"'
     ;;
   alarmpi)
     ;;
