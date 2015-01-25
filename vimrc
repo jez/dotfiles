@@ -131,6 +131,8 @@ let delimitMate_expand_cr = 1
 au BufRead,BufNewFile *.md,*.markdown let b:delimitMate_nesting_quotes = ["`"]
 au FileType tex let b:delimitMate_quotes = ""
 au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+au FileType python let b:delimitMate_expand_cr = 1
 
 " Tagbar settings
 nmap <silent> <leader>b :TagbarToggle<CR>
