@@ -60,7 +60,7 @@ brew install vim
 brew tap thoughtbot/formulae
 brew install rcm
 # If you are not Jake Zimmerman, you will want to fork this repo first
-git clone https://github.com/Z1MM32M4N/dotfiles ~/.dotfiles
+git clone https://github.com/jez/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
 git submodule update

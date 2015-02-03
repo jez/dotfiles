@@ -24,7 +24,7 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "zfunctions/pure"]
 	path = zfunctions/pure
-	url = https://github.com/Z1MM32M4N/pure
+	url = https://github.com/jez/pure
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
@@ -96,7 +96,7 @@
 	url = https://github.com/edkolev/tmuxline.vim
 [submodule "vim/bundle/vim-superman"]
 	path = vim/bundle/vim-superman
-	url = https://github.com/Z1MM32M4N/vim-superman
+	url = https://github.com/jez/vim-superman
 [submodule "vim/bundle/Dockerfile.vim"]
 	path = vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim
@@ -105,4 +105,4 @@
 	url = https://github.com/cakebaker/scss-syntax.vim
 [submodule "vim/bundle/vim-ispc"]
 	path = vim/bundle/vim-ispc
-	url = https://github.com/Z1MM32M4N/vim-ispc
+	url = https://github.com/jez/vim-ispc
