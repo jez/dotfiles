@@ -2,4 +2,24 @@ typeset -U path
 
 fpath=( "$HOME/.zfunctions" $fpath )
 
-aklog cs.cmu.edu
+case `hostname` in
+  *Jacobs-MacBook-Air*)
+    ;;
+  *andrew*)
+    aklog cs.cmu.edu
+    ;;
+  alarmpi)
+    ;;
+  jake-raspi)
+    ;;
+  *xubuntu*)
+    ;;
+  pop.scottylabs.org)
+    ;;
+  scottylabs)
+    ;;
+  ghost.zimmerman.io)
+    ;;
+  *)
+    ;;
+esac
