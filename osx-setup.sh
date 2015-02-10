@@ -64,7 +64,8 @@ git clone https://github.com/jez/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
 git submodule update
-rcup rcrc && rcup
+# Symlink directories instead of copying them. Use with rcdn -S '*:*'
+rcup rcrc && rcup -S '*:*'
 cd -
 
 # Now that dotfiles have been installed, exit and re-open iTerm2
