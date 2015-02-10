@@ -1,18 +1,48 @@
-" An example for a vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Dec 17
+" File:       .vimrc
+" Author:     Jake Zimmerman <jake@zimmerman.io>
+" Modified:   2015 Feb 10
 "
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" Adapted from Bram Moolenaar's example vimrc.
+"
+" This vimrc heavily favors Solarized colors. If you don't have your terminal
+" configured to use these colors, you should head over to
+"
+"     http://ethanschoonover.com/solarized
+"
+" and grab a color theme for your terminal (like iTerm2 or Terminal.app). If
+" your terminal doesn't support theming, you'll want to manually change the
+" appropriate colors.
+"
+" INSTALLATION INSTRUCTIONS
+"
+" Presumably, you've gotten your hands on this file because you forked my
+" dotfiles repository. I keep all my Vim plugins as submodules, so after you
+" clone you'll have to run
+"
+"     $ git submodule init
+"     $ git submodule update
+"
+" to grab the required dependencies. Once you've done this, you can either
+" manually move the `vimrc` file to `~/.vimrc` and the `vim/` folder to
+" `~/.vim`, or you can be a little smarter and use a tool like rcm
+" (https://github.com/thoughtbot/rcm) to manage this process.
+"
+" ISSUES
+"
+" If you encounter an issue while using this vimrc, please leave a *detailed*
+" description of the issue and what'd you expect to happen in the issue
+" tracker:
+"
+"     https://github.com/jez/dotfiles/issues
+"
+" CONTRIBUTING
+"
+" These are my personal configuration files, so I might be a little hesitant
+" to accept pull requests. If you've fixed a bug though, go ahead and I'll
+" take a look at it.
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
+" ----- General Settings  -----------------------------------------------------
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -21,16 +51,69 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=50		" keep 50 lines of command line history
-set ruler		      " show the cursor position all the time
-                  " clock
-" set rulerformat=%55(%{strftime('%I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
-set showcmd		    " display incomplete commands
-set incsearch		  " do incremental searching
+set history=1000       " keep 1000 lines of command line history
+set number             " line numbers
+set ruler              " show the cursor position all the time
+set showcmd            " display incomplete commands
+set incsearch          " do incremental searching
+set linebreak          " wrap lines on 'word' boundaries
+set scrolloff=3        " don't let the cursor touch the edge of the viewport
+set splitright         " Vertical splits use right half of screen
+set timeoutlen=100     " Lower ^[ timeout
+set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
+set tildeop            " use ~ to toggle case as an operator, not a motion
+if has('breakindent')
+  set breakindent      " Indent wrapped lines up to the same level
+endif
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" Tab settings
+set expandtab          " Expand tabs into spaces
+set tabstop=2          " default to 2 spaces for a hard tab
+set softtabstop=2      " default to 2 spaces for the soft tab
+set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
+
+" ----- Convenience commands and cabbrev's ------------------------------------
+
+" Make these commonly mistyped commands still work
+command! WQ wq
+command! Wq wq
+command! Wqa wqa
+command! W w
+command! Q q
+
+" Use :C to clear hlsearch
+command! C nohlsearch
+
+" Force write readonly files using sudo
+command! WS w !sudo tee %
+
+" open help in a new tab
+cabbrev help tab help
+
+" My LaTeX Makefiles all have a `view` target which compiles and opens the PDF
+" This command saves the file then runs that target
+command! Wv w | make view
+command! WV w | make view
+
+" ----- Custom keybindings ----------------------------------------------------
+
+" Make navigating long, wrapped lines behave like normal lines
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
+noremap <silent> ^ g^
+noremap <silent> _ g_
+
+" use 'Y' to yank to the end of a line, instead of the whole line
+noremap <silent> Y y$
+
+" take first suggested spelling as correct spelling and replace
+noremap <silent> z! z=1<CR><CR>
+" NOTE: This feature requires a longer timeoutlen. To use it, up the
+"       timeoutlen above.
+
+" ----- Terminal-as-GUI settings ----------------------------------------------
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -44,76 +127,67 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
+" ----- Not-quite-general-but-don't-belong-anywhere-else Settings -------------
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
+augroup vimrc
+  " Clear the current autocmd group, in case we're re-sourcing the file
   au!
 
-  au BufNewFile,BufRead *.sig set filetype=sml
+  " Jump to the last known cursor position when opening a file.
+  autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 
+augroup END
+
+" ----- Filetype Settings -----------------------------------------------------
+
+" Enable file type detection.
+filetype plugin indent on
+
+augroup myFiletypes
+  au!
+
+  " Patch filetypes for common extensions
+
+  " SML signature files
+  au BufRead,BufNewFile *.sig setlocal filetype=sml
+  " Markdown files
   au BufRead,BufNewFile *.md setlocal filetype=markdown
-  au BufRead,BufNewFile *.md,*.markdown setlocal spell
-  au BufRead,BufNewFile *.md,*.markdown setlocal tw=80
-
+  " LaTeX class files
   au BufRead,BufNewFile *.cls setlocal filetype=tex
-  au BufRead,BufNewFile *.tex setlocal spell
-  au BufRead,BufNewFile *.tex setlocal tw=80
-
+  " Amethyst config file
   au BufRead,BufNewFile .amethyst setlocal filetype=json
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+  " Turn on spell checking and 80-char lines by default for these filetypes
+  au FileType markdown,tex setlocal spell
+  au FileType markdown,tex setlocal tw=80
 
-  augroup END
+augroup END
 
-else
+" ----- Pathogen and Plugin Settings ------------------------------------------
 
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
-endif
-
-" =========================================================================== "
-"                                                                             "
-"                                 MY CHANGES                                  "
-"                                                                             "
-" =========================================================================== "
-
-" ----- Pathogen and Plugins -------------------------------------------------
+" Pathogen is in a non-standard location: modify the rtp to reflect that
 set rtp+=~/.vim/bundle/pathogen
+
+" Let Pathogen take over the runtimepath to make plugins in ~/.vim/bundle work
 execute pathogen#infect()
 
+" Generate all helptags on startup
 Helptags
 
-" vim-airline settings
+" ----- bling/vim-airline settings -----
+" Fancy arrow symbols, requires a patched font
 let g:airline_powerline_fonts = 1
+" Show PASTE if in paste mode
 let g:airline_detect_paste=1
+" Always show statusbar
 set laststatus=2
+" Slightly modify the theme colors
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 function! AirlineThemePatch(palette)
-  if g:airline_theme == 'solarized'
+  if g:airline_theme == 'solarized' && g:solarized_termcolors == 16
     " normal mode background: s:base03
     let a:palette.normal.airline_a[2] = 8
     " normal mode foreground: s:green
@@ -126,18 +200,21 @@ function! AirlineThemePatch(palette)
   endif
 endfunction
 
-" delimitMate settings
+" ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
-au BufRead,BufNewFile *.md,*.markdown let b:delimitMate_nesting_quotes = ["`"]
-au FileType tex let b:delimitMate_quotes = ""
-au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-au FileType python let b:delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
 
-" Tagbar settings
+" ----- majutsushi/tagbar settings -----
+" Open/close tagbar with \b
 nmap <silent> <leader>b :TagbarToggle<CR>
 
-" EasyTags settings
+" ----- xolox/vim-easytags settings -----
 set tags=./tags;,~/.vimtags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
@@ -145,111 +222,38 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
-" Syntastic settings
+" ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
-au BufRead,BufNewFile *.tex let b:syntastic_mode = "passive"
-au BufRead,BufNewFile *.dtx let b:syntastic_mode = "passive"
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
 
-" Solarized settings
+" ----- altercation/vim-colors-solarized settings -----
+" Toggle this to "light" for light colorscheme
 set background=dark
-colorscheme solarized
-" no underline for fold previews
+
+" Uncomment the next line if your terminal is not configured for solarized
+"let g:solarized_termcolors=256
+
+" Remove the underline Solarized places under Folded previews
 hi! Folded cterm=NONE term=NONE
 
-" vim-gitgutter settings
+" Set the colorscheme
+colorscheme solarized
+
+" ----- airblade/vim-gitgutter settings -----
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" vim-markdown settings
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_folding_disabled = 1
+" ----- jez/vim-superman settings -----
+" better man page support
+noremap K :SuperMan <cword><CR>
 
-" ----------------------------------------------------------------------------
-
-" Tab settings
-set expandtab          "Expand tabs into spaces
-set tabstop=2          "default to 2 spaces for a hard tab
-set softtabstop=2      "default to 2 spaces for the soft tab
-set shiftwidth=2       "for when <TAB> is pressed at the beginning of a line
-
-" Use a backup file but don't create a new one when overwriting
-" :help nobackup for more information
-set nobackup
-set writebackup
-
-" Line numbers
-set number
-
-" Make it so that these commands don't complain
-command! WQ wq
-command! Wq wq
-command! Wqa wqa
-command! W w
-command! Q q
-
-" Save readonly files using sudo
-command! WS w !sudo tee %
-
-" Helper commands for running Make with my Makefiles
-command! V make view
-command! Wv w | make view
-command! WV w | make view
-
-" Use :C to clear hlsearch
-command! C noh
-
-set linebreak
-set scrolloff=3
-
-" Make it so that using long, wrapped lines will behave like normal lines
-noremap <buffer> <silent> k gk
-noremap <buffer> <silent> j gj
-noremap <buffer> <silent> 0 g0
-noremap <buffer> <silent> $ g$
-noremap <buffer> <silent> ^ g^
-noremap <buffer> <silent> _ g_
-
-" take first suggested spelling as correct spelling and replace
-noremap <buffer> <silent> z! z=1<CR><CR>
-
-" use 'Y' to yank to the end of a line
-noremap <buffer> <silent> Y y$
-
-" use ~ to toggle case as an operator, not a motion
-set tildeop
-
-" Show nested tree mode when viewing directories
+" ----- Builtin Vim plugins -----
+" When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
 
-" \c and \C to comment and uncomment lines in visual block mode
-noremap <buffer> <silent> <leader>c :s/^/\/\//<CR>:noh<CR>
-noremap <buffer> <silent> <leader>C :s/^\/\///<CR>:noh<CR>
-
-" \f to make manual folds on { or }
-noremap <buffer> <silent> <leader>f V%zf
-
-" set get rid of obnoxious '-' characters in folds
-set fillchars=fold:\ ,
-
-" open help in a new tab
-cabbrev help tab help
-
-" qt or tq to close tab
-cabbrev qt tabclose
-cabbrev tq tabclose
-command! Qt qt
-command! QT qt
-command! Tq qt
-command! TQ qt
-
-" Lower ^[ timeout
-set timeoutlen=100
-
-" Vertical splits use right half of screen
-set splitright
-
-" better man page support
-noremap K :Man <cword>
+" -----------------------------------------------------------------------------
