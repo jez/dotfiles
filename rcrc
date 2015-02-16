@@ -1,1 +1,2 @@
 EXCLUDES="com.googlecode.iterm2.plist *setup.sh"
+SYMLINK_DIRS="*:*"
