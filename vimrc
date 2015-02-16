@@ -62,7 +62,7 @@ set splitright         " Vertical splits use right half of screen
 set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
-if has('breakindent')
+if exists('&breakindent')
   set breakindent      " Indent wrapped lines up to the same level
 endif
 
