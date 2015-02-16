@@ -255,5 +255,8 @@ noremap K :SuperMan <cword><CR>
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
+" Don't create .netrwhist files
+let g:netrw_dirhistmax = 0
+
 
 " -----------------------------------------------------------------------------
