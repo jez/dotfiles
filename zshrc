@@ -11,6 +11,7 @@
 
 # Make sure we are running interactively, else stop
 [ -z "$PS1" ] && return
+[[ $(hostname) =~ greatwhite ]] && return
 export PATH=".:$HOME/bin:/usr/local/bin:$PATH"
 
 # Load oh-my-zsh
