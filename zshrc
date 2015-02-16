@@ -156,6 +156,8 @@ case `hostname` in
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
+    # On OS X, use neovim for the lulz
+    alias vim="nvim -p"
     ;;
   *andrew*)
     # Source files that make working on these servers easier
