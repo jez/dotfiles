@@ -106,3 +106,6 @@
 [submodule "vim/bundle/vim-ispc"]
 	path = vim/bundle/vim-ispc
 	url = https://github.com/jez/vim-ispc
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
