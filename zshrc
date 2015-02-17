@@ -159,6 +159,9 @@ case `hostname` in
 
     # On OS X, use neovim for the lulz
     alias vim="nvim -p"
+
+    # fzf fuzzy file finding
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     ;;
   *andrew*)
     # Source files that make working on these servers easier
