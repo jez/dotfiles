@@ -44,7 +44,9 @@ else
   }
 fi
 zle     -N   fzf-file-widget
-bindkey '^T' fzf-file-widget
+# Modified to match ctrlp.vim
+#bindkey '^T' fzf-file-widget
+bindkey '^P' fzf-file-widget
 
 # ALT-C - cd into the selected directory
 fzf-cd-widget() {
