@@ -2,13 +2,13 @@
 # ---------
 unalias fzf 2> /dev/null
 unset fzf 2> /dev/null
-if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.2/bin" ]]; then
-  export PATH="/usr/local/Cellar/fzf/0.9.2/bin:$PATH"
+if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.3/bin" ]]; then
+  export PATH="/usr/local/Cellar/fzf/0.9.3/bin:$PATH"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- =~ i ]] && source /usr/local/Cellar/fzf/0.9.2/fzf-completion.zsh
+[[ $- =~ i ]] && source /usr/local/Cellar/fzf/0.9.3/fzf-completion.zsh
 
 # Key bindings
 # ------------
@@ -44,9 +44,7 @@ else
   }
 fi
 zle     -N   fzf-file-widget
-# Modified to match ctrlp.vim
-#bindkey '^T' fzf-file-widget
-bindkey '^P' fzf-file-widget
+bindkey '^T' fzf-file-widget
 
 # ALT-C - cd into the selected directory
 fzf-cd-widget() {
