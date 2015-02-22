@@ -252,6 +252,10 @@ let g:airline#extensions#tabline#enabled = 1
 " better man page support
 noremap K :SuperMan <cword><CR>
 
+" ----- jistr/vim-nerdtree-tabs -----
+" Open/close NERDTree Tabs with \t
+nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
