@@ -213,6 +213,7 @@ augroup END
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
 nmap <silent> <leader>b :TagbarToggle<CR>
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " ----- xolox/vim-easytags settings -----
 set tags=./tags;,~/.vimtags
