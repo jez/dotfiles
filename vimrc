@@ -199,6 +199,7 @@ function! AirlineThemePatch(palette)
     let a:palette.normal.airline_z[3] = 2
   endif
 endfunction
+let g:airline#extensions#tabline#enabled = 1
 
 " ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
@@ -247,7 +248,6 @@ colorscheme solarized
 " ----- airblade/vim-gitgutter settings -----
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#tabline#enabled = 1
 
 " ----- jez/vim-superman settings -----
 " better man page support
