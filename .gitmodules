@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-nerdtree-tabs"]
 	path = vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs
+[submodule "vim/bundle/vim-c0"]
+	path = vim/bundle/vim-c0
+	url = https://github.com/jez/vim-c0
