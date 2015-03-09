@@ -1,2 +1,2 @@
 EXCLUDES="com.googlecode.iterm2.plist *setup.sh"
-SYMLINK_DIRS="*:*"
+SYMLINK_DIRS="vim zfunctions oh-my-zsh"

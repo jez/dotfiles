@@ -1,0 +1,82 @@
+Host ghost
+Hostname ghost.zimmerman.io
+User jake
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host *.cmu.edu andrew gates shark greatwhite milkshark
+User jezimmer
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host andrew
+Hostname unix.andrew.cmu.edu
+
+Host gates
+Hostname ghc30.ghc.andrew.cmu.edu
+
+Host shark
+Hostname shark.ics.cs.cmu.edu
+
+Host blacklight
+User zimmermj
+Hostname blacklight.psc.teragrid.org
+
+Host sl-unix
+Hostname unix.scottylabs.org
+User jake
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host sl-dev-git
+Hostname unix.scottylabs.org
+User git
+IdentityFile "/Users/Jake/.ssh/id_rsa"
+IdentitiesOnly yes
+
+Host sl-secure
+Hostname secure.scottylabs.org
+User jake
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host sl-secure-git
+Hostname secure.scottylabs.org
+User git
+IdentityFile "/Users/Jake/.ssh/id_rsa"
+IdentitiesOnly yes
+
+Host sldev slprod slauth
+User jake
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host sldev
+Hostname dev.scottylabs.org
+
+Host slprod
+Hostname prod.scottylabs.org
+
+Host slauth
+Hostname auth.scottylabs.org
+
+Host greatwhite
+Hostname greatwhite.ics.cs.cmu.edu
+
+Host milkshark
+Hostname milkshark.ics.cs.cmu.edu
+
+Host heroku.personal
+  Hostname heroku.com
+  IdentityFile "/Users/Jake/.ssh/id_rsa"
+  IdentitiesOnly yes
+
+Host heroku.scottylabs
+  Hostname heroku.com
+  IdentityFile /Users/Jake/.ssh/identity.heroku.scottylabs
+  IdentitiesOnly yes
+
+Host heroku.gitorial
+  Hostname heroku.com
+  IdentityFile "/Users/Jake/.ssh/identity.heroku.gitorial"
+  IdentitiesOnly yes

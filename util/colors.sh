@@ -1,6 +1,12 @@
-#!/bin/bash
-
-# Shortcuts for common bash colors
+#
+# colors.sh - convenient shortcut variables for common shell colors
+#
+# Usage:
+#   Once you've sourced this file,
+#
+#       echo "This word is${cblue}blue${cnone} :D"
+#
+#   This works anywhere that shell variables are expanded.
 
 # ANSI colors
 export cnone="$(echo -ne '\033[0m')"
@@ -37,13 +43,13 @@ export sreset="$(echo -ne '\033[0m')"
 
 # Utility function to pick any xterm-256 color
 # Usage:
-#  $(color256 fg attr bg)
-#  fore - 256 xterm color code
-#  attr - one of:
-#       - 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-#  back - 256 xterm color code
+#   $(color256 fg attr bg)
+#   fg - 256 xterm color code
+#   attr - one of:
+#        - 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+#   bg - 256 xterm color code
 # You may omit either (bg) or (style and bg)
-function color256 () { 
+function color256 () {
   if [ -z $3 ]; then echo -ne "\033[$2;48;5;$3;38;5;$1m"; return; fi
   if [ -z $2 ]; then echo -ne "\033[$2;38;5;$1;40m"; return; fi
   if [ -z $1 ]; then echo -ne "\033[0;38;5;$1;40m"; return; fi
