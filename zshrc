@@ -221,7 +221,7 @@ esac
 
 # ----- appearance -----------------------------------------------------------
 # Load LS_COLORS
-eval `dircolors ~/.dir_colors`
+eval `dircolors ~/.dircolors`
 # Turn on italics
 tic ~/.xterm-256color-italic.terminfo
 export TERM=xterm-256color-italic
