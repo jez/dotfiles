@@ -38,11 +38,9 @@ rm rcm_1.2.3-1_all.deb
 sudo apt-get install exuberant-ctags
 
 # install dotfiles
-git clone https://github.com/jez/dotfiles ~/.dotfiles
+git clone --recursive https://github.com/jez/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-git submodule init
-git submodule update
-rcup rcrc && rcup
+RCRC="./rcrc" rcup
 cd -
 
 # login from different session to test dotfiles!
