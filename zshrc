@@ -57,7 +57,7 @@ load_module ~/.util/host.sh
 load_module ~/.util/misc.sh
 
 # prompt settings
-load_module ~/.util/prompt.sh
+load_module ~/.util/prompt.zsh
 
 # Hacks to override things after finishing
 load_module ~/.util/after.sh
