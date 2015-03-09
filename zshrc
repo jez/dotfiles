@@ -59,6 +59,9 @@ load_module ~/.util/misc.sh
 # prompt settings
 load_module ~/.util/prompt.sh
 
+# Hacks to override things after finishing
+load_module ~/.util/after.sh
+
 # load helper functions
 for module in ~/.util/functions/*.sh; do
   load_module $module
