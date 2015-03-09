@@ -44,9 +44,6 @@ alias vim="nvim -p"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
-# Requires gnubin PATH modifications from above
-alias ls="ls -p --color";
-
 # ----- Ruby and Python -------------------------------------------------------
 
 # ruby...
