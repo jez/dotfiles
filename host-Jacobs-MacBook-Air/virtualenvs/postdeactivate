@@ -1,0 +1,11 @@
+#!/bin/bash
+# This hook is run after every virtualenv is deactivated.
+
+export GEM_HOME="$OLD_GEM_HOME"
+unset OLD_GEM_HOME
+
+export GEM_PATH="$OLD_GEM_PATH"
+unset OLD_GEM_PATH
+
+export PATH="$OLD_PATH"
+unset OLD_PATH
