@@ -61,11 +61,6 @@ export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
-# fzf fuzzy file finding
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Modify keydings to match ctrlp.vim
-bindkey '^P' fzf-file-widget
-
 # update-host
 # Usage:
 #     update-host
