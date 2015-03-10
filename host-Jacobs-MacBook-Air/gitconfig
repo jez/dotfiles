@@ -18,10 +18,10 @@
 [hub]
 	protocol = https
 [color "decorate"]
-  head = bold white
-  branch = bold magenta
-  remotebranch = blue
-  tag = bold red
+	head = bold white
+	branch = bold magenta
+	remotebranch = blue
+	tag = bold red
 [color "diff"]
 	whitespace = red reverse
 [help]
