@@ -39,17 +39,29 @@ well as modularity to make swapping code in and out easier under when using rcm.
 For example, most of my `zshrc` is actually chopped up into files hidden within
 the `util/` directory.
 
+
+## Noteworthy Dotfile Hacks
+
+I blogged about the snippets of my dotfiles that I find noteworthy
+[here][noteworthy], if you'd rather read English than drudge through config file
+code.
+
+
 ## Credits
 
 I've rewritten my dotfiles many times (hence the above comic XD), and each time
 I've been influenced by someone new. These people include [bezi][bezi],
 [tomshen][tomshen], and [holman][holman].
 
+
 ## LICENSE
 
 MIT License. See LICENSE.
 
+[rcm]: https://github.com/thoughtbot/rcm
+
+[noteworthy]: http://blog.zimmerman.io/2015/03/10/noteworthy-dotfile-hacks/
+
 [bezi]: https://github.com/bezi
 [tomshen]: https://github.com/tomshen
 [holman]: https://github.com/holman
-[rcm]: https://github.com/thoughtbot/rcm
