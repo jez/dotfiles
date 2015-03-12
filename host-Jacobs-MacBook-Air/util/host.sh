@@ -39,7 +39,7 @@ which coffee &> /dev/null && alias coffe="coffee"
 alias bex="bundle exec"
 
 # Use neovim for the lulz
-alias vim="nvim -p"
+#alias vim="nvim -p"
 
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
