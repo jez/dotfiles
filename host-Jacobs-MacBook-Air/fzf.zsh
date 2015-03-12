@@ -2,23 +2,22 @@
 # ---------
 unalias fzf 2> /dev/null
 unset fzf 2> /dev/null
-if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.3/bin" ]]; then
-  export PATH="/usr/local/Cellar/fzf/0.9.3/bin:$PATH"
+if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.4-1/bin" ]]; then
+  export PATH="/usr/local/Cellar/fzf/0.9.4-1/bin:$PATH"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- =~ i ]] && source /usr/local/Cellar/fzf/0.9.3/fzf-completion.zsh
+[[ $- =~ i ]] && source "/usr/local/Cellar/fzf/0.9.4-1/fzf-completion.zsh"
 
 # Key bindings
 # ------------
 # CTRL-T - Paste the selected file path(s) into the command line
 __fsel() {
-  set -o nonomatch
-  command find * -path '*/\.*' -prune \
+  command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
     -o -type f -print \
     -o -type d -print \
-    -o -type l -print 2> /dev/null | fzf -m | while read item; do
+    -o -type l -print 2> /dev/null | sed 1d | cut -b3- | fzf -m | while read item; do
     printf '%q ' "$item"
   done
   echo
@@ -48,8 +47,8 @@ bindkey '^T' fzf-file-widget
 
 # ALT-C - cd into the selected directory
 fzf-cd-widget() {
-  cd "${$(set -o nonomatch; command find -L * -path '*/\.*' -prune \
-          -o -type d -print 2> /dev/null | fzf):-.}"
+  cd "${$(command find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+    -o -type d -print 2> /dev/null | sed 1d | cut -b3- | fzf +m):-.}"
   zle reset-prompt
 }
 zle     -N    fzf-cd-widget
@@ -57,7 +56,7 @@ bindkey '\ec' fzf-cd-widget
 
 # CTRL-R - Paste the selected command from history into the command line
 fzf-history-widget() {
-  LBUFFER=$(fc -l 1 | fzf +s +m -n2..,.. | sed "s/ *[0-9*]* *//")
+  LBUFFER=$(fc -l 1 | fzf +s --tac +m -n2..,.. | sed "s/ *[0-9*]* *//")
   zle redisplay
 }
 zle     -N   fzf-history-widget
