@@ -4,6 +4,7 @@
 # colorize grep and ls
 alias grep="grep --color=auto"
 alias ls="ls -p --color=auto"
+alias l="ls"
 
 # manipulate files verbosely (print log of what happened)
 alias cp="cp -v"
