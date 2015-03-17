@@ -71,6 +71,9 @@ alias gs="git status"
 alias gd="git diff"
 alias gdw="git diff --color-words"
 
+alias gf="git fetch"
+alias gfp="git fetch --prune"
+
 # resuable format strings
 GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
