@@ -13,6 +13,8 @@ alias rm="rm -v"
 
 # so much easier to type than `cd ..`
 alias cdd="cd .."
+alias cddd="cd ../.."
+alias cdddd="cd ../../.."
 
 # open multiple files in Vim tabs
 alias vim="vim -p"
