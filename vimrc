@@ -59,6 +59,7 @@ set incsearch          " do incremental searching
 set linebreak          " wrap lines on 'word' boundaries
 set scrolloff=3        " don't let the cursor touch the edge of the viewport
 set splitright         " Vertical splits use right half of screen
+set splitbelow         " Horizontal splits use bottom half of screen
 set timeoutlen=100     " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds
 set tildeop            " use ~ to toggle case as an operator, not a motion
