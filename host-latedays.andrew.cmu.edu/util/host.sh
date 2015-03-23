@@ -17,6 +17,7 @@
 # Computer Club contributed software
 export PATH="/afs/club/contrib/bin:$PATH";
 export MANPATH="$MANPATH:/afs/club.cc.cmu.edu/contrib/man"
+export LD_LIBRARY_PATH="/afs/club.cc.cmu.edu/contrib/lib"
 
 export MANPATH="$MANPATH:$HOME/share/man"
 
@@ -34,12 +35,3 @@ PROMPT_PURE_DIR_COLOR="%F{green}"
 
 # Don't let people write messages to me
 mesg n
-
-# update-host
-# Usage:
-#     update-host
-#
-# You should never have to call this. It's called when you call `update`
-update-host () {
-  # nothing host-specific to update!
-}

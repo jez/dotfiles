@@ -17,14 +17,14 @@
 # Computer Club contributed software
 export PATH="/afs/club/contrib/bin:$PATH";
 export MANPATH="$MANPATH:/afs/club.cc.cmu.edu/contrib/man"
+# This might be really bad (overwrites LD_LIBRARY_PATH)
+export LD_LIBRARY_PATH="/afs/club.cc.cmu.edu/contrib/lib"
 
 # 15-418 C++ build environment
 export PATH="$PATH:/usr/local/ispc"
 export PATH="/usr/local/cuda-6.5/bin:$PATH"
 export PATH="/usr/lib64/openmpi/bin:$PATH"
 
-# This might be really bad (overwrites LD_LIBRARY_PATH)
-export LD_LIBRARY_PATH="/afs/club.cc.cmu.edu/contrib/lib"
 export LD_LIBRARY_PATH="/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/lib64/openmpi/lib:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="./lib:$LD_LIBRARY_PATH"
