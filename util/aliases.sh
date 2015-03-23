@@ -93,6 +93,6 @@ alias glla='gla --all'
 
 # it doesn't make sense to repeat this for each specific host;
 # it's Linux specific
-if [ $(uname) = "Linux " ]; then
+if [ $(uname) = "Linux" ]; then
   which tree &> /dev/null && alias tree="tree -C -F --dirsfirst"
 fi
