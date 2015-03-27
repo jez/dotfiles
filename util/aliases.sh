@@ -52,6 +52,28 @@ alias purgeswp="find . -regex '.*.swp$' -exec rm {}"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 
+# Hackery because I'm fed up
+if which ag &> /dev/null ; then
+  # hooray!
+  true
+elif which ack &> /dev/null ; then
+  # nice. have you heard of ag?
+  alias ag="ack"
+elif git rev-parse --is-inside-work-tree &> /dev/null ; then
+  # uhh...
+  alias ag="git grep"
+else
+  # sigh pie...
+  function ag() {
+    if [ -n "$2" ]; then
+      files="$2"
+    else
+      files=*
+    fi
+    grep -n -r "$1" $files
+  }
+fi
+
 
 # ----- Git aliases -----------------------------------------------------------
 
