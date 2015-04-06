@@ -30,6 +30,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 alias resethostname='sudo scutil --set HostName Jacobs-MacBook-Air'
 
 alias kinitandrew="kinit jezimmer@ANDREW.CMU.EDU"
+alias ka="kinitandrew"
 
 alias sml="rlwrap sml"
 
