@@ -19,6 +19,11 @@ alias ack="ack-grep"
 
 # ----- Prompt  ---------------------------------------------------------------
 
+export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
+export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
+export PROMPT_PURE_USERNAME_COLOR="%{$cmagentab%}"
+export PROMPT_PURE_FAILURE_COLOR="%F{magenta}"
+
 # ----- Miscellaneous ---------------------------------------------------------
 
 update-host () {
