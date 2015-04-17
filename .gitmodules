@@ -118,3 +118,6 @@
 [submodule "vim/bundle/vim-c0"]
 	path = vim/bundle/vim-c0
 	url = https://github.com/jez/vim-c0
+[submodule "vim/bundle/nginx-vim-syntax"]
+	path = vim/bundle/nginx-vim-syntax
+	url = https://github.com/evanmiller/nginx-vim-syntax
