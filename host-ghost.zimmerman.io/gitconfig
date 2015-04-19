@@ -16,4 +16,5 @@
   whitespace = red reverse
 [help]
   autocorrect = 18
-
+[core]
+  pager = less -F -X
