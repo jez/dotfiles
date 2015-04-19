@@ -111,6 +111,15 @@ alias gla="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
 # pretty Git log, all references, show authors
 alias glla='gla --all'
 
+# ----- Docker aliases --------------------------------------------------------
+
+# docker-compose is far too long to type
+alias fig="docker-compose"
+
+alias clean-containers='docker rm -v $(docker ps -a -q -f status=exited)'
+alias clean-images='docker rmi $(docker images -q -f dangling=true)'
+# TODO: alias clean-volumes='...'
+
 # ----- Linux specific --------------------------------------------------------
 
 # it doesn't make sense to repeat this for each specific host;
