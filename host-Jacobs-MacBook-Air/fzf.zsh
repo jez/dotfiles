@@ -1,20 +1,20 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.7/bin" ]]; then
-  export PATH="$PATH:/usr/local/Cellar/fzf/0.9.7/bin"
+if [[ ! "$PATH" =~ "/usr/local/Cellar/fzf/0.9.11/bin" ]]; then
+  export PATH="$PATH:/usr/local/Cellar/fzf/0.9.11/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" =~ "/usr/local/Cellar/fzf/0.9.7/man" && -d "/usr/local/Cellar/fzf/0.9.7/man" ]]; then
-  export MANPATH="$MANPATH:/usr/local/Cellar/fzf/0.9.7/man"
+if [[ ! "$MANPATH" =~ "/usr/local/Cellar/fzf/0.9.11/man" && -d "/usr/local/Cellar/fzf/0.9.11/man" ]]; then
+  export MANPATH="$MANPATH:/usr/local/Cellar/fzf/0.9.11/man"
 fi
 
 # Auto-completion
 # ---------------
-# [[ $- =~ i ]] && source "/usr/local/Cellar/fzf/0.9.7/shell/completion.zsh"
+# [[ $- =~ i ]] && source "/usr/local/Cellar/fzf/0.9.11/shell/completion.zsh"
 
 # Key bindings
 # ------------
-source "/usr/local/Cellar/fzf/0.9.7/shell/key-bindings.zsh"
+source "/usr/local/Cellar/fzf/0.9.11/shell/key-bindings.zsh"
 
