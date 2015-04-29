@@ -28,6 +28,8 @@ which texdef &> /dev/null && alias latexdef="texdef --tex latex"
 # Easily download an MP3 from youtube on the command line
 which youtube-dl &> /dev/null && alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 
+which doctoc &> /dev/null && alias doctoc='doctoc --title="## Table of Contents"'
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
