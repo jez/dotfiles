@@ -99,6 +99,7 @@ alias gdw="git diff --color-words"
 
 alias gf="git fetch"
 alias gfp="git fetch --prune"
+alias gpf="git pull --ff-only"
 
 # resuable format strings
 GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
