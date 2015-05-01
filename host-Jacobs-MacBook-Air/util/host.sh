@@ -79,4 +79,7 @@ update-host () {
 
   echo "$cblueb==>$cwhiteb Checking for outdated brew packages...$cnone"
   brew outdated --verbose
+
+  echo "$cblueb==>$cwhiteb Checking for outdated npm packages...$cnone"
+  npm -g outdated
 }
