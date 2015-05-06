@@ -129,4 +129,6 @@ alias clean-images='docker rmi $(docker images -q -f dangling=true)'
 # it's Linux specific
 if [ $(uname) = "Linux" ]; then
   which tree &> /dev/null && alias tree="tree -C -F --dirsfirst"
+else
+  which tree &> /dev/null && alias tree="tree -F --dirsfirst"
 fi
