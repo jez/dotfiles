@@ -61,7 +61,7 @@ if which ag &> /dev/null ; then
 elif which ack &> /dev/null ; then
   # nice. have you heard of ag?
   alias ag="ack"
-elif git rev-parse --is-inside-work-tree &> /dev/null ; then
+elif [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ] ; then
   # uhh...
   alias ag="git grep"
 else
