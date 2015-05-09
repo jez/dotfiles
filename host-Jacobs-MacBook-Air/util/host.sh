@@ -82,4 +82,8 @@ update-host () {
 
   echo "$cblueb==>$cwhiteb Checking for outdated npm packages...$cnone"
   npm -g outdated
+
+  echo "$cblueb==>$cwhiteb Checking for outdated pip packages...$cnone"
+  pip list --outdated
+
 }
