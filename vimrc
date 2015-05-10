@@ -240,11 +240,11 @@ set background=dark
 " Uncomment the next line if your terminal is not configured for solarized
 "let g:solarized_termcolors=256
 
-" Remove the underline Solarized places under Folded previews
-hi! Folded cterm=NONE term=NONE
-
 " Set the colorscheme
 colorscheme solarized
+
+" Remove the underline Solarized places under Folded previews
+hi! Folded cterm=NONE term=NONE
 
 " ----- airblade/vim-gitgutter settings -----
 hi clear SignColumn
