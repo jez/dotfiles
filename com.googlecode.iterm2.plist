@@ -10948,13 +10948,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>742 78 608 223 0 0 1440 877 </string>
+	<string>714 275 608 94 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>213 266 924 485 0 0 1440 900 </string>
+	<string>307 288 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 364 710 491 0 0 1440 877 </string>
+	<string>44 226 710 491 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 710 491 0 0 1440 877 </string>
+	<string>372 323 710 491 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>189 223 710 491 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
@@ -12478,7 +12478,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-02-22T20:31:36Z</date>
+	<date>2015-05-12T15:17:31Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -12528,6 +12528,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.1</string>
 </dict>
 </plist>
