@@ -19,6 +19,8 @@ alias cdddd="cd ../../.."
 # open multiple files in Vim tabs
 alias vim="vim -p"
 
+alias bex="bundle exec"
+
 # Redirect stderr and stdout when using GRC
 which grc &> /dev/null && alias grc="grc -es"
 

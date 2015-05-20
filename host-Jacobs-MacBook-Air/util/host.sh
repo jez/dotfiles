@@ -37,8 +37,6 @@ alias sml="rlwrap sml"
 # Double double letters are hard
 which coffee &> /dev/null && alias coffe="coffee"
 
-alias bex="bundle exec"
-
 # Use neovim for the lulz
 alias vim="nvim -p"
 
