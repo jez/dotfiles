@@ -206,3 +206,11 @@ npm install -g jade
 # Desktop
 #   - Sort By
 #     - Snap to Grid
+#
+# Finder
+#   - General
+#     - New Finder windows show
+#       - $HOME
+#   - Advanced
+#     - Show all filename extensions
+#     - no Show warning before changing an extension
