@@ -37,6 +37,9 @@ export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
+# cd to project root directory
+alias cdr="cd ~/src/composer"
+
 # update-host
 # Usage:
 #     update-host
