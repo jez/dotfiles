@@ -1,0 +1,24 @@
+[user]
+	name = Jake Zimmerman
+	email = jakez@dropbox.com
+[color]
+	ui = true
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[blame]
+	pager = vimpager
+[core]
+	pager = less -F -X
+[hub]
+	protocol = https
+[color "decorate"]
+	head = bold white
+	branch = bold magenta
+	remotebranch = blue
+	tag = bold red
+[color "diff"]
+	whitespace = red reverse
+[help]
+	autocorrect = 18
