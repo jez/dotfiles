@@ -151,3 +151,55 @@ pip install grip
 
 # After installing node
 npm install -g jade
+
+# GUI Settings
+# TODO: Automate this
+#
+# System Preferences
+#   - General
+#     - Use dark menubar and doc
+#   - Dock
+#     - Automatically hide and show the dock
+#   - Trackpad
+#     - Point & Click
+#       - Tap to click
+#   - Date & Time
+#     - Clock
+#       - Show date
+#   - Accessibility
+#     - Trackpad Options...
+#       - Enable dragging
+#   - Keyboard
+#     - Keyboard
+#       - Key repeat
+#         - Fast
+#       - Delay until repeat
+#         - Short
+#       - Modifier Keys...
+#         - Swap Caps to Ctrl
+#     - Shortcuts
+#       - Mission Control
+#         - Mission Control
+#           - Move left a space: Option + Shift + [
+#           - Move right a space: Option + Shift + ]
+#       - Spotlight
+#         - Show Spotlight search: Ctrl + Space
+#           - Don't forget to install alfred and change to Command + Space
+#       - Accessibility
+#         - Invert colors
+#       - App Shortcuts
+#         - Spotify.app
+#           - Add
+#             - "Toggle Fullscreen"
+#             - Ctrl + Command + F
+#
+# Alfred
+#   - General
+#     - Alfred Hotkey
+#       - Command + Space
+#   - Appearance
+#     - Theme
+#       - OS X Yosemite Dark
+#     - Options
+#       - Hide hat on Alfred window
+
