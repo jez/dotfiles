@@ -258,6 +258,10 @@ noremap K :SuperMan <cword><CR>
 " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
+" ----- mxw/vim-jsx -----
+" Syntax highlighting for JSX
+let g:jsx_ext_required = 0
+
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
