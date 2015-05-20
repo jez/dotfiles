@@ -79,3 +79,6 @@ bindkey -M viins '\e/' vi-search-fix
 # Plugin for syntax highlighting the command line
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
