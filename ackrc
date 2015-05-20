@@ -6,3 +6,4 @@
 --ignore-dir=.meteor
 --ignore-dir=.sass-cache
 --ignore-file=is:tags
+--type-set=ts:ext:ts
