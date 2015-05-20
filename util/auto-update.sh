@@ -34,23 +34,21 @@ UPDATE_THRESHOLD="86400"
 last_check=0
 time_now=0
 
-last_check_string=$(ls -l $HOME/.last_update | awk '{print $6" "$7" "$8}')
-
 # Darwin uses BSD, check for gdate, else use date
 if [[ $(uname) = "Darwin" && -n $(which gdate) ]]; then
-  last_login=$(gdate -d"$last_check_string" +%s)
+  last_login=$(gdate -r ~/.last_update +%s)
   time_now=$(gdate +%s)
 else
   # Ensure this is GNU grep
   if [ -n "$(date --version 2> /dev/null | grep GNU)" ]; then
-    last_login=$(date -d"$last_check_string" +%s)
+    last_login=$(date -r ~/.last_update +%s)
     time_now=$(date +%s)
   fi
 fi
 
 time_since_check=$((time_now - last_login))
 
-if [ "$time_since_check" -ge 86400 ]; then
+if [ "$time_since_check" -ge "$UPDATE_THRESHOLD" ]; then
   echo "$cred==>$cwhiteb Your system is out of date!$cnone"
   echo 'Run `update` to bring it up to date.'
 fi
