@@ -202,4 +202,7 @@ npm install -g jade
 #       - OS X Yosemite Dark
 #     - Options
 #       - Hide hat on Alfred window
-
+#
+# Desktop
+#   - Sort By
+#     - Snap to Grid
