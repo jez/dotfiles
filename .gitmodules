@@ -121,3 +121,6 @@
 [submodule "vim/bundle/nginx-vim-syntax"]
 	path = vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
