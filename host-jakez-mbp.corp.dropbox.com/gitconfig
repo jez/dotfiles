@@ -22,3 +22,6 @@
 	whitespace = red reverse
 [help]
 	autocorrect = 18
+[alias]
+	dark-theme = config --global color.decorate.head 'bold white'
+	light-theme = config --global color.decorate.head 'bold black'
