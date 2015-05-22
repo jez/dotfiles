@@ -15,7 +15,7 @@
       "key": "j"
   },
 
-  "focus-follows-mouse": true,
+  "focus-follows-mouse": false,
   "enables-layout-hud": false,
   "enables-layout-hud-on-space-change": false
 }
