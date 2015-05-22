@@ -31,6 +31,10 @@ alias vim="nvim -p"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
+export COMPOSER_HOME="$HOME/path/to/composer"
+alias vsv="$COMPOSER_HOME/bin/vm/sv"
+alias vmsh="$COMPOSER_HOME/bin/vm/vmsh"
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
