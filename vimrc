@@ -66,6 +66,7 @@ set tildeop            " use ~ to toggle case as an operator, not a motion
 if exists('&breakindent')
   set breakindent      " Indent wrapped lines up to the same level
 endif
+set nowildmenu         " reset default nvim configuration to Vim
 
 " Tab settings
 set expandtab          " Expand tabs into spaces
