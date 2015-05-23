@@ -43,6 +43,9 @@ alias vim="nvim -p"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
+# ignore jrnl entries (abuse histignorespace)
+alias jrnl=" jrnl"
+
 # ----- Ruby and Python -------------------------------------------------------
 
 # ruby...
