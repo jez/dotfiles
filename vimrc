@@ -160,6 +160,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.cls setlocal filetype=tex
   " Amethyst config file
   au BufRead,BufNewFile .amethyst setlocal filetype=json
+  " jrnl config file
+  au BufRead,BufNewFile .jrnl_config setlocal filetype=json
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType markdown,tex setlocal spell
