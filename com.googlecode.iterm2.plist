@@ -10950,7 +10950,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>714 275 608 94 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>307 288 924 485 0 0 1440 900 </string>
+	<string>307 272 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>44 226 710 491 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -12414,6 +12414,10 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453357556.24873298</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>453870046.95852</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -12478,7 +12482,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-12T15:17:31Z</date>
+	<date>2015-05-21T02:59:36Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -12528,6 +12532,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
