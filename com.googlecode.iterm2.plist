@@ -869,9 +869,11 @@
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
 	<key>NSWindow Frame Preferences</key>
-	<string>3796 351 924 485 2560 0 2560 1417 </string>
+	<string>269 110 924 485 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>640 5 640 386 0 0 1280 777 </string>
+	<string>0 16 1278 761 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>2560 11 2558 1406 2560 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -895,11 +897,11 @@
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.14145712554454803</real>
+				<real>0.14145714044570923</real>
 				<key>Green Component</key>
-				<real>0.10840645432472229</real>
+				<real>0.10840655118227005</real>
 				<key>Red Component</key>
-				<real>0.81926983594894409</real>
+				<real>0.81926977634429932</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -1034,11 +1036,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.86405980587005615</real>
+				<real>0.15170273184776306</real>
 				<key>Green Component</key>
-				<real>0.95794391632080078</real>
+				<real>0.11783610284328461</real>
 				<key>Red Component</key>
-				<real>0.98943418264389038</real>
+				<real>0.0</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -1057,11 +1059,11 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.38298487663269043</real>
+				<real>0.56363654136657715</real>
 				<key>Green Component</key>
-				<real>0.35665956139564514</real>
+				<real>0.56485837697982788</real>
 				<key>Red Component</key>
-				<real>0.27671992778778076</real>
+				<real>0.50599193572998047</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -1074,20 +1076,20 @@
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.43850564956665039</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.40717673301696777</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.32436618208885193</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.79781103134155273</real>
+				<real>0.19370138645172119</real>
 				<key>Green Component</key>
-				<real>0.89001238346099854</real>
+				<real>0.15575926005840302</real>
 				<key>Red Component</key>
-				<real>0.91611063480377197</real>
+				<real>0.0</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -1108,11 +1110,11 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.43850564956665039</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.40717673301696777</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.32436618208885193</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Guid</key>
 			<string>C5BD9F48-5800-4EC9-B108-19A328E0E7AA</string>
@@ -1447,20 +1449,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.38298487663269043</real>
+				<real>0.56363654136657715</real>
 				<key>Green Component</key>
-				<real>0.35665956139564514</real>
+				<real>0.56485837697982788</real>
 				<key>Red Component</key>
-				<real>0.27671992778778076</real>
+				<real>0.50599193572998047</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.79781103134155273</real>
+				<real>0.19370138645172119</real>
 				<key>Green Component</key>
-				<real>0.89001238346099854</real>
+				<real>0.15575926005840302</real>
 				<key>Red Component</key>
-				<real>0.91611063480377197</real>
+				<real>0.0</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -2332,7 +2334,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453786274.35912597</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>454354294.64194</real>
+	<real>454527098.41938502</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2397,7 +2399,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-26T17:30:51Z</date>
+	<date>2015-05-28T17:30:51Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
