@@ -231,17 +231,30 @@ augroup END
 nmap <silent> <leader>b :TagbarToggle<CR>
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
+" Treat .ts in Vim as .ts in ctags
+"let g:tagbar_type_typescript = {
+"  \ 'ctagstype': 'typescript',
+"  \ 'kinds': [
+"    \ 'c:classes',
+"    \ 'n:modules',
+"    \ 'f:functions',
+"    \ 'v:variables',
+"    \ 'v:varlambdas',
+"    \ 'm:members',
+"    \ 'i:interfaces',
+"    \ 'e:enums',
+"  \ ]
+"\ }
+
+" Treat .ts in Vim as .js in ctags
 let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
+  \ 'ctagstype': 'JavaScript',
   \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
     \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
+    \ 'c:classes',
     \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
+    \ 'p:properties',
+    \ 'v:globals',
   \ ]
 \ }
 
