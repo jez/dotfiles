@@ -31,7 +31,10 @@ alias vim="nvim -p"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
+# cd to project root directory
+
 export COMPOSER_HOME="$HOME/src/composer"
+alias cdr="cd $COMPOSER_HOME"
 alias vsv="$COMPOSER_HOME/bin/vm/sv"
 alias vmsh="$COMPOSER_HOME/bin/vm/vmsh"
 
@@ -40,9 +43,6 @@ alias vmsh="$COMPOSER_HOME/bin/vm/vmsh"
 export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
 
 # ----- Miscellaneous ---------------------------------------------------------
-
-# cd to project root directory
-alias cdr="cd ~/src/composer"
 
 # update-host
 # Usage:
