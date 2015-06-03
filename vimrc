@@ -228,7 +228,7 @@ augroup END
 
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
-nmap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " Treat .ts in Vim as .ts in ctags
@@ -297,11 +297,15 @@ noremap K :SuperMan <cword><CR>
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+nnoremap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
 " ----- mxw/vim-jsx -----
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
+
+" ----- fzf -----
+set rtp+=/usr/local/Cellar/fzf/0.9.12
+nnoremap <C-P> :FZF<CR>
 
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
