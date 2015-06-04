@@ -82,3 +82,4 @@ source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
+alias help="run-help"
