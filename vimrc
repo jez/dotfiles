@@ -307,6 +307,12 @@ let g:jsx_ext_required = 0
 set rtp+=/usr/local/Cellar/fzf/0.9.12
 nnoremap <C-P> :FZF<CR>
 
+" <CR> to open in new tab, <C-E> for current buffer
+let g:fzf_action = {
+  \ 'ctrl-m': 'tabedit',
+  \ 'ctrl-e': 'edit',
+\}
+
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
