@@ -311,6 +311,8 @@ nnoremap <C-P> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-m': 'tabedit',
   \ 'ctrl-e': 'edit',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-s': 'split',
 \}
 
 " ----- Builtin Vim plugins -----
