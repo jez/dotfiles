@@ -14,7 +14,7 @@
 [hub]
 	protocol = https
 [color "decorate"]
-	head = bold black
+	head = bold white
 	branch = bold magenta
 	remotebranch = blue
 	tag = bold red
