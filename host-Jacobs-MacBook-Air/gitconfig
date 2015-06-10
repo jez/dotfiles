@@ -30,3 +30,6 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[alias]
+	dark-theme = config --global color.decorate.head 'bold white'
+	light-theme = config --global color.decorate.head 'bold black'
