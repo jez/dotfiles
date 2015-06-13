@@ -313,6 +313,7 @@ let g:fzf_action = {
   \ 'ctrl-e': 'edit',
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-s': 'split',
+  \ 'ctrl-r': 'read',
 \}
 
 " ----- Builtin Vim plugins -----
