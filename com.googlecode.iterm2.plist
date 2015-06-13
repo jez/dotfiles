@@ -858,6 +858,12 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>1</string>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>1</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -868,12 +874,38 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>302</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>714 275 608 94 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>3796 351 924 485 2560 0 2560 1417 </string>
+	<string>307 272 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2560 11 2558 1406 2560 0 2560 1417 </string>
+	<string>0 386 710 491 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2560 11 2558 1406 2560 0 2560 1417 </string>
+	<string>372 323 710 491 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>189 223 710 491 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -897,11 +929,11 @@
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.14145712554454803</real>
+				<real>0.14145714044570923</real>
 				<key>Green Component</key>
-				<real>0.10840645432472229</real>
+				<real>0.10840655118227005</real>
 				<key>Red Component</key>
-				<real>0.81926983594894409</real>
+				<real>0.81926977634429932</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -1036,11 +1068,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.86405980587005615</real>
+				<real>0.15170273184776306</real>
 				<key>Green Component</key>
-				<real>0.95794391632080078</real>
+				<real>0.11783610284328461</real>
 				<key>Red Component</key>
-				<real>0.98943418264389038</real>
+				<real>0.0</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -1059,11 +1091,11 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.38298487663269043</real>
+				<real>0.56363654136657715</real>
 				<key>Green Component</key>
-				<real>0.35665956139564514</real>
+				<real>0.56485837697982788</real>
 				<key>Red Component</key>
-				<real>0.27671992778778076</real>
+				<real>0.50599193572998047</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -1076,20 +1108,20 @@
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.43850564956665039</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.40717673301696777</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.32436618208885193</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.79781103134155273</real>
+				<real>0.19370138645172119</real>
 				<key>Green Component</key>
-				<real>0.89001238346099854</real>
+				<real>0.15575926005840302</real>
 				<key>Red Component</key>
-				<real>0.91611063480377197</real>
+				<real>0.0</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -1110,11 +1142,11 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.43850564956665039</real>
+				<real>0.51685798168182373</real>
 				<key>Green Component</key>
-				<real>0.40717673301696777</real>
+				<real>0.50962930917739868</real>
 				<key>Red Component</key>
-				<real>0.32436618208885193</real>
+				<real>0.44058024883270264</real>
 			</dict>
 			<key>Guid</key>
 			<string>C5BD9F48-5800-4EC9-B108-19A328E0E7AA</string>
@@ -1449,20 +1481,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.38298487663269043</real>
+				<real>0.56363654136657715</real>
 				<key>Green Component</key>
-				<real>0.35665956139564514</real>
+				<real>0.56485837697982788</real>
 				<key>Red Component</key>
-				<real>0.27671992778778076</real>
+				<real>0.50599193572998047</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.79781103134155273</real>
+				<real>0.19370138645172119</real>
 				<key>Green Component</key>
-				<real>0.89001238346099854</real>
+				<real>0.15575926005840302</real>
 				<key>Red Component</key>
-				<real>0.91611063480377197</real>
+				<real>0.0</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -2332,9 +2364,9 @@
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453786274.35912597</real>
+	<real>453357556.24873298</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>454613499.45025003</real>
+	<real>455873866.29765898</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2383,7 +2415,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/jakez/.dotfiles</string>
+	<string>/Users/jake/.dotfiles</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2399,7 +2431,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-29T17:30:51Z</date>
+	<date>2015-06-13T07:37:41Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
