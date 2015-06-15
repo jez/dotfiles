@@ -37,6 +37,7 @@ export COMPOSER_HOME="$HOME/src/composer"
 alias cdr="cd $COMPOSER_HOME"
 alias vsv="$COMPOSER_HOME/bin/vm/sv"
 alias vmsh="$COMPOSER_HOME/bin/vm/vmsh"
+alias todo="ag 'TODO.jakez'"
 
 # ----- Prompt  ---------------------------------------------------------------
 
