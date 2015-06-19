@@ -11,6 +11,7 @@
 	pager = vimpager
 [core]
 	pager = less -F -X
+	excludesfile = /Users/jakez/.gitignore
 [hub]
 	protocol = https
 [color "decorate"]
