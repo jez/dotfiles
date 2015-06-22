@@ -304,7 +304,7 @@ nnoremap <silent> <leader>t :NERDTreeTabsToggle<CR>
 let g:jsx_ext_required = 0
 
 " ----- fzf -----
-set rtp+=/usr/local/Cellar/fzf/0.9.12
+set rtp+=/usr/local/Cellar/fzf/0.10.0
 nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
