@@ -272,6 +272,7 @@ let g:syntastic_warning_symbol = "▲"
 augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
+  au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
 augroup END
 
 " ----- altercation/vim-colors-solarized settings -----
@@ -321,7 +322,6 @@ let g:fzf_action = {
 let g:netrw_liststyle=3
 " Don't create .netrwhist files
 let g:netrw_dirhistmax = 0
-
 
 " -----------------------------------------------------------------------------
 " vim:ft=vim
