@@ -8,6 +8,15 @@
     "fullscreen"
   ],
 
+  "focus-ccw": {
+      "mod": "mod1",
+      "key": "k"
+  },
+  "focus-cw": {
+      "mod": "mod1",
+      "key": "j"
+  },
+
   "swap-ccw": {
       "mod": "mod2",
       "key": "k"
