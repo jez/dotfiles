@@ -62,7 +62,7 @@ alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 # Hackery because I'm fed up
 if which ag &> /dev/null ; then
   # hooray!
-  alias ag="ag --color-path '1;30' --color-match '0;31' --color-line-number '0;34'"
+  alias ag="ag --color-path '0;35' --color-match '1;37' --color-line-number '0;34'"
 elif which ack &> /dev/null ; then
   # nice. have you heard of ag?
   alias ag="ack"
