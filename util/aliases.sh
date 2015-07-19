@@ -55,7 +55,7 @@ alias pyserv="py3serv"
 alias chromemem="ps -ev | grep -i chrome | awk '{print \$12}' | awk '{for(i=1;i<=NF;i++)s+=\$i}END{print s}'"
 
 # Remove garbage files
-alias purgeswp="find . -regex '.*.swp$' -exec rm {}"
+alias purgeswp="find . -regex '.*.swp$' | xargs rm"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 
