@@ -273,6 +273,7 @@ augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
   au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
+  au FileType typescript let b:syntastic_mode = "passive"
 augroup END
 
 " ----- altercation/vim-colors-solarized settings -----
