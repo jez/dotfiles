@@ -305,6 +305,12 @@ nnoremap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
 
+" ----- ntpeters/vim-better-whitespace -----
+" Don't highlight whitespace in git commit messages (for diffs)...
+let g:better_whitespace_filetypes_blacklist=['gitcommit']
+" ... but strip it on save so that we're still safe
+autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
+
 " ----- fzf -----
 set rtp+=/usr/local/Cellar/fzf/HEAD
 nnoremap <C-P> :FZF<CR>
