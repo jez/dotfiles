@@ -26,3 +26,7 @@
 [alias]
 	dark-theme = config --global color.decorate.head 'bold white'
 	light-theme = config --global color.decorate.head 'bold black'
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
