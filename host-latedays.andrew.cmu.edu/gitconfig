@@ -1,5 +1,5 @@
 [include]
-  path = util/gitconfig
+  path = .util/gitconfig
 [user]
 	name = Jacob Zimmerman
 	email = zimmerman.jake@gmail.com
