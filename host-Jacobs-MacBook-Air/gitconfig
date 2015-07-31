@@ -1,35 +1,15 @@
+[include]
+  path = util/gitconfig
 [user]
 	name = Jacob Zimmerman
 	email = zimmerman.jake@gmail.com
-[color]
-	ui = true
-[push]
-	default = simple
 [credential]
 	helper = osxkeychain
-[blame]
-	pager = vimpager
-[core]
-	pager = less -F -X
 [github]
 	user = jez
 [ghi]
 	token = !security find-internet-password -a jez -s github.com -l 'ghi token' -w
-[hub]
-	protocol = https
-[color "decorate"]
-	head = bold white
-	branch = bold magenta
-	remotebranch = blue
-	tag = bold red
-[color "diff"]
-	whitespace = red reverse
-[help]
-	autocorrect = 18
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[alias]
-	dark-theme = config --global color.decorate.head 'bold white'
-	light-theme = config --global color.decorate.head 'bold black'

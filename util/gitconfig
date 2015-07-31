@@ -1,0 +1,26 @@
+[alias]
+	dark-theme = config --global color.decorate.head 'bold white'
+	light-theme = config --global color.decorate.head 'bold black'
+	review = !vim $(git ls-files -m) +\"tabdo Gdiff\" +gt
+[color]
+	ui = true
+[color "decorate"]
+	head = bold white
+	branch = bold magenta
+	remotebranch = blue
+	tag = bold red
+[color "diff"]
+	whitespace = red reverse
+[core]
+	pager = less -F -X
+	excludesfile = /Users/jakez/.gitignore
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[help]
+	autocorrect = 18
+[hub]
+	protocol = https
+[push]
+	default = simple

@@ -1,19 +1,7 @@
+[include]
+  path = util/gitconfig
 [user]
 	name = Jacob Zimmerman
 	email = zimmerman.jake@gmail.com
-[color]
-  ui = auto
-  interactive = auto
 [credential]
 	helper = cache --timeout=3600
-[blame]
-  pager = less -S -r
-[core]
-  pager = less -F -X
-[color "decorate"]
-  head = bold white
-  branch = bold magenta
-  remotebranch = blue
-  tag = bold red
-[push]
-	default = current

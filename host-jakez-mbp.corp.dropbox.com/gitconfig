@@ -1,32 +1,7 @@
+[include]
+  path = util/gitconfig
 [user]
 	name = Jake Zimmerman
 	email = jakez@dropbox.com
-[color]
-	ui = true
-[push]
-	default = simple
 [credential]
 	helper = osxkeychain
-[blame]
-	pager = vimpager
-[core]
-	pager = less -F -X
-	excludesfile = /Users/jakez/.gitignore
-[hub]
-	protocol = https
-[color "decorate"]
-	head = bold white
-	branch = bold magenta
-	remotebranch = blue
-	tag = bold red
-[color "diff"]
-	whitespace = red reverse
-[help]
-	autocorrect = 18
-[alias]
-	dark-theme = config --global color.decorate.head 'bold white'
-	light-theme = config --global color.decorate.head 'bold black'
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
