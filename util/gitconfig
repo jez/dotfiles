@@ -1,7 +1,7 @@
 [alias]
 	dark-theme = config --global color.decorate.head 'bold white'
 	light-theme = config --global color.decorate.head 'bold black'
-	review = !vim $(git ls-files -m) +\"tabdo Gdiff\" +gt
+	review = !vim $(git ls-files -m) +\"tabdo Gdiff\"
 [color]
 	ui = true
 [color "decorate"]
