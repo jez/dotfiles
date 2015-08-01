@@ -1,6 +1,10 @@
 
 # Use Vim as the system-wide editor
-export EDITOR="vim"
+if which nvim &> /dev/null then
+  export EDITOR="nvim"
+else
+  export EDITOR="vim"
+fi
 
 # Load LS_COLORS
 eval $(dircolors ~/.dircolors)
