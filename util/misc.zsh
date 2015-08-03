@@ -40,6 +40,10 @@ bindkey "^U" backward-kill-line
 # Make ^H and backspace behave correctly
 bindkey "^H" backward-delete-char
 
+# history search backwords with j/k in normal mode
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
+
 # Tab complete options like Vim rather than sh
 setopt -Y
 export MENU_COMPLETE=1
