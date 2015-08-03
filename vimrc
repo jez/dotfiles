@@ -177,8 +177,8 @@ augroup composerDev
   au!
 
   " For Composer Style Guide
-  set tw=80
-  set cc=80
+  set tw=100
+  set cc=100
 augroup END
 
 " ----- Pathogen and Plugin Settings ------------------------------------------
