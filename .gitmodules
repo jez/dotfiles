@@ -130,9 +130,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
-[submodule "vim/bundle/github-vim"]
-	path = vim/bundle/github-vim
-	url = https://github.com/solars/github-vim
 [submodule "vim/bundle/vim-cjsx"]
 	path = vim/bundle/vim-cjsx
 	url = https://github.com/mtscout6/vim-cjsx
