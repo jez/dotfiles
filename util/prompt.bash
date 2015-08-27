@@ -32,6 +32,9 @@ color_my_prompt() {
     metagross)
       local prompt_dir_color="${cblue}"
       ;;
+    lern2unix)
+      local prompt_dir_color="${cyellow}"
+      ;;
     *)
       local prompt_dir_color="${cred}"
       ;;
