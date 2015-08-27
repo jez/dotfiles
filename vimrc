@@ -173,14 +173,6 @@ augroup myFiletypes
 
 augroup END
 
-augroup composerDev
-  au!
-
-  " For Composer Style Guide
-  set tw=100
-  set cc=100
-augroup END
-
 " ----- Pathogen and Plugin Settings ------------------------------------------
 
 " Pathogen is in a non-standard location: modify the rtp to reflect that
