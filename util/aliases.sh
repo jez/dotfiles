@@ -137,3 +137,6 @@ if [ $(uname) = "Linux" ]; then
 else
   which tree &> /dev/null && alias tree="tree -F --dirsfirst"
 fi
+
+# if tree doesn't exist, the return condition will be false when we exit
+true
