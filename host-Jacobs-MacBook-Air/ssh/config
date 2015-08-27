@@ -66,6 +66,10 @@ Hostname greatwhite.ics.cs.cmu.edu
 Host milkshark
 Hostname milkshark.ics.cs.cmu.edu
 
+Host lern2unix
+Hostname www.lern2unix.com
+User jezimmer
+
 Host heroku.personal
   Hostname heroku.com
   IdentityFile "/Users/Jake/.ssh/id_rsa"
