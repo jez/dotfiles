@@ -2,8 +2,8 @@
   path = .util/gitconfig
 [user]
 	name = Jacob Zimmerman
-	email = zimmerman.jake@gmail.com
+	email = jezimmer@andrew.cmu.edu
 [credential]
 	helper = cache
 [push]
-	default = simple
+	default = current

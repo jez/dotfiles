@@ -22,5 +22,3 @@
 	autocorrect = 18
 [hub]
 	protocol = https
-[push]
-	default = simple
