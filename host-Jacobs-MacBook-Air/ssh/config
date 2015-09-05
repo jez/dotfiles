@@ -70,6 +70,9 @@ Host lern2unix
 Hostname www.lern2unix.com
 User jezimmer
 
+Host gpi
+Hostname gpi01.ugrad.cs.cmu.edu
+
 Host heroku.personal
   Hostname heroku.com
   IdentityFile "/Users/Jake/.ssh/id_rsa"
