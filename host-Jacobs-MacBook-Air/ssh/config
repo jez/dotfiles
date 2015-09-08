@@ -4,7 +4,7 @@ User jake
 GSSAPIAuthentication yes
 GSSAPIDelegateCredentials yes
 
-Host *.cmu.edu andrew gates shark greatwhite milkshark
+Host *.cmu.edu andrew gates shark greatwhite milkshark gpi
 User jezimmer
 GSSAPIAuthentication yes
 GSSAPIDelegateCredentials yes
