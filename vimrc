@@ -290,10 +290,6 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " better man page support
 noremap K :SuperMan <cword><CR>
 
-" ----- jistr/vim-nerdtree-tabs -----
-" Open/close NERDTree Tabs with \t
-nnoremap <silent> <leader>t :NERDTreeTabsToggle<CR>
-
 " ----- mxw/vim-jsx -----
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
