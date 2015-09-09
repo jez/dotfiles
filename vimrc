@@ -300,6 +300,10 @@ let g:better_whitespace_filetypes_blacklist=['gitcommit']
 " ... but strip it on save so that we're still safe
 autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
 
+" ----- vim-pandoc/vim-pandoc -----
+let g:pandoc#modules#disabled = ['folding']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['python']
+
 " ----- fzf -----
 set rtp+=/usr/local/Cellar/fzf/HEAD
 nnoremap <C-P> :FZF<CR>
