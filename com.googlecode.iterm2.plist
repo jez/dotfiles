@@ -862,6 +862,8 @@
 	<string>1</string>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>1</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -872,17 +874,38 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>319</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
 	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
 	<dict>
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>714 158 608 77 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>3796 351 924 485 2560 0 2560 1417 </string>
+	<string>516 62 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2560 11 2558 1406 2560 0 2560 1417 </string>
+	<string>717 50 710 491 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3840 11 1277 1406 2560 0 2560 1417 </string>
+	<string>0 386 710 491 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>189 223 710 491 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -1440,7 +1463,7 @@
 			<key>Normal Font</key>
 			<string>MenloForPowerline-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
@@ -2341,9 +2364,9 @@
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453786274.35912597</real>
+	<real>453357556.24873298</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>458159749.73003399</real>
+	<real>463774567.938923</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2392,7 +2415,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/jakez/.dotfiles</string>
+	<string>/Users/jake/.dotfiles</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2408,7 +2431,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-09T18:35:04Z</date>
+	<date>2015-09-12T18:16:05Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
