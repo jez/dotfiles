@@ -87,4 +87,7 @@ update-host () {
   echo "$cblueb==>$cwhiteb Checking for outdated pip packages...$cnone"
   pip list --outdated
 
+  echo "$cblueb==>$cwhiteb Checking for outdated pip3 packages...$cnone"
+  pip3 list --outdated
+
 }
