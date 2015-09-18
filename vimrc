@@ -169,8 +169,8 @@ augroup myFiletypes
   au BufRead,BufNewFile .jrnl_config setlocal filetype=json
 
   " Turn on spell checking and 80-char lines by default for these filetypes
-  au FileType markdown,tex setlocal spell
-  au FileType markdown,tex setlocal tw=80
+  au FileType pandoc,markdown,tex setlocal spell
+  au FileType pandoc,markdown,tex setlocal tw=80
 
 augroup END
 
@@ -303,6 +303,7 @@ autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
 " ----- vim-pandoc/vim-pandoc -----
 let g:pandoc#modules#disabled = ['folding']
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python']
+let g:pandoc#formatting#mode = 'h'
 
 " ----- fzf -----
 set rtp+=/usr/local/Cellar/fzf/HEAD
