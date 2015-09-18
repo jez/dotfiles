@@ -285,6 +285,10 @@ hi! Folded cterm=NONE term=NONE
 " ----- airblade/vim-gitgutter settings -----
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
+nnoremap <Leader>p :GitGutterPrevHunk<CR>
+nnoremap <Leader>n :GitGutterNextHunk<CR>
+nnoremap <Leader>r :GitGutterRevertHunk<CR>
+nnoremap <Leader>s :GitGutterStageHunk<CR>
 
 " ----- jez/vim-superman settings -----
 " better man page support
