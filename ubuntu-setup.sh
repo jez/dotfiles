@@ -19,13 +19,6 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install make git
 
-# configure git
-git config --global user.name "Jacob Zimmerman"
-git config --global user.email "zimmerman.jake@gmail.com"
-git config --global color.ui true
-git config --global push.default simple
-git config --global credential.helper cache
-
 # use zsh
 chsh -s $(which zsh)
 
@@ -45,9 +38,13 @@ cd -
 
 # login from different session to test dotfiles!
 
+# The minimal host-specific setup is to make a gitconfig and a util/host.sh
+# file. See ghost for a good example.
+
 sudo apt-get install tree ack-grep htop
 
 # custom motd
 sudo chmod -x /etc/update-motd.d/00-header
 sudo chmod -x /etc/update-motd.d/10-help-text
 # pick a motd and copy it to /etc/motd
+
