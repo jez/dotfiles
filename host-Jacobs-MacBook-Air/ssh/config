@@ -1,89 +1,90 @@
-Host ghost
-Hostname ghost.zimmerman.io
-User jake
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
+# ----- Personal ----- {{{
+  Host ghost
+  Hostname ghost.zimmerman.io
+  User jake
+# }}}
 
-Host *.cmu.edu andrew gates shark greatwhite milkshark gpi
-User jezimmer
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
+# ----- CMU ----- {{{
+  Host *.cmu.edu andrew gates shark greatwhite milkshark gpi
+  User jezimmer
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
 
-Host andrew
-Hostname unix.andrew.cmu.edu
+  # --- CMU General --- {{{
+    Host andrew
+    Hostname unix.andrew.cmu.edu
 
-Host gates
-Hostname ghc30.ghc.andrew.cmu.edu
+    Host gates
+    Hostname ghc30.ghc.andrew.cmu.edu
 
-Host shark
-Hostname shark.ics.cs.cmu.edu
+    Host shark
+    Hostname shark.ics.cs.cmu.edu
 
-Host blacklight
-User zimmermj
-Hostname blacklight.psc.teragrid.org
+    Host blacklight
+    User zimmermj
+    Hostname blacklight.psc.teragrid.org
+  # }}}
 
-Host sl-unix
-Hostname unix.scottylabs.org
-User jake
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
+  # --- Autolab --- {{{
+    Host greatwhite
+    Hostname greatwhite.ics.cs.cmu.edu
 
-Host sl-dev-git
-Hostname unix.scottylabs.org
-User git
-IdentityFile "/Users/Jake/.ssh/id_rsa"
-IdentitiesOnly yes
+    Host milkshark
+    Hostname milkshark.ics.cs.cmu.edu
+  # }}}
 
-Host sl-secure
-Hostname secure.scottylabs.org
-User jake
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
+  # --- GPI --- {{{
+    Host lern2unix
+    Hostname www.lern2unix.com
+    User jezimmer
 
-Host sl-secure-git
-Hostname secure.scottylabs.org
-User git
-IdentityFile "/Users/Jake/.ssh/id_rsa"
-IdentitiesOnly yes
+    Host gpi
+    Hostname gpi01.ugrad.cs.cmu.edu
+  # }}}
+# }}}
 
-Host sldev slprod slauth
-User jake
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials yes
+# ----- ScottyLabs ----- {{{
+  Host sl-unix-cmu
+  User jake
+  Hostname unix-cmu.scottylabs.org
 
-Host sldev
-Hostname dev.scottylabs.org
+  # --- Old Servers --- {{{
+    Host sl-unix sl-secure
+    User jake
 
-Host slprod
-Hostname prod.scottylabs.org
+    Host sl-unix
+    Hostname unix.scottylabs.org
+    Host sl-secure
+    Hostname secure.scottylabs.org
 
-Host slauth
-Hostname auth.scottylabs.org
+    # gitolite config
+    Host sl-dev-git sl-secure-git
+    User git
+    IdentityFile "/Users/Jake/.ssh/id_rsa"
+    IdentitiesOnly yes
 
-Host greatwhite
-Hostname greatwhite.ics.cs.cmu.edu
+    Host sl-dev-git
+    Hostname unix.scottylabs.org
+    Host sl-secure-git
+    Hostname secure.scottylabs.org
+  # }}}
+# }}}
 
-Host milkshark
-Hostname milkshark.ics.cs.cmu.edu
-
-Host lern2unix
-Hostname www.lern2unix.com
-User jezimmer
-
-Host gpi
-Hostname gpi01.ugrad.cs.cmu.edu
-
-Host heroku.personal
+# ----- Deprecated ----- {{{
+  Host heroku.personal
   Hostname heroku.com
   IdentityFile "/Users/Jake/.ssh/id_rsa"
   IdentitiesOnly yes
 
-Host heroku.scottylabs
+  Host heroku.scottylabs
   Hostname heroku.com
   IdentityFile /Users/Jake/.ssh/identity.heroku.scottylabs
   IdentitiesOnly yes
 
-Host heroku.gitorial
+  Host heroku.gitorial
   Hostname heroku.com
   IdentityFile "/Users/Jake/.ssh/identity.heroku.gitorial"
   IdentitiesOnly yes
+# }}}
+
+# vim:fdm=marker
