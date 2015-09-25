@@ -1,10 +1,6 @@
 {
   "layouts": [
     "tall",
-    "widescreen-tall",
-    "wide",
-    "row",
-    "column",
     "fullscreen"
   ],
 
