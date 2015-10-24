@@ -119,6 +119,10 @@ noremap <silent> z! z=1<CR><CR>
 " NOTE: This feature requires a longer timeoutlen. To use it, up the
 "       timeoutlen above.
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " ----- Terminal-as-GUI settings ----------------------------------------------
 
 " In many terminal emulators the mouse works just fine, thus enable it.
