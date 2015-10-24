@@ -171,6 +171,8 @@ augroup myFiletypes
   au BufRead,BufNewFile .amethyst setlocal filetype=json
   " jrnl config file
   au BufRead,BufNewFile .jrnl_config setlocal filetype=json
+  " Processing Java file
+  au BufRead,BufNewFile *.pde setlocal filetype=java
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
