@@ -314,7 +314,7 @@ autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
 
 " ----- vim-pandoc/vim-pandoc -----
 let g:pandoc#modules#disabled = ['folding']
-let g:pandoc#syntax#codeblocks#embeds#langs = ['python']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh']
 let g:pandoc#formatting#mode = 'h'
 
 " ----- fzf -----
