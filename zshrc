@@ -47,11 +47,11 @@ load_module ~/.util/auto-update.sh
 # zsh-specific settings
 load_module ~/.util/misc.zsh
 
-# Host-independent aliases
-load_module ~/.util/aliases.sh
-
 # host-specific settings. This file changes per host according to rcm.
 load_module ~/.util/host.sh
+
+# Host-independent aliases
+load_module ~/.util/aliases.sh
 
 # host-specific zsh settings.
 load_module ~/.util/host.zsh
