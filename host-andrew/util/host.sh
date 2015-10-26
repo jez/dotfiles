@@ -20,6 +20,10 @@ export MANPATH="$MANPATH:/afs/club.cc.cmu.edu/contrib/man"
 # This might be really bad (overwrites LD_LIBRARY_PATH)
 export LD_LIBRARY_PATH="/afs/club.cc.cmu.edu/contrib/lib"
 
+# GPI contributed software
+export PATH="$PATH:/afs/cs.cmu.edu/academic/class/15131-f15/bin"
+export MANPATH="$MANPATH:/afs/cs.cmu.edu/academic/class/15131-f15/share/man"
+
 # 15-418 C++ build environment
 export PATH="$PATH:/usr/local/ispc"
 export PATH="/usr/local/cuda-6.5/bin:$PATH"
