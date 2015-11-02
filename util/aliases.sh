@@ -17,7 +17,7 @@ alias cddd="cd ../.."
 alias cdddd="cd ../../.."
 
 # open multiple files in Vim tabs
-alias vim="vim -p"
+alias vim &> /dev/null || alias vim="vim -p"
 
 alias bex="bundle exec"
 
