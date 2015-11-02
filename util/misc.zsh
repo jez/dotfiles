@@ -25,9 +25,10 @@ plugins=(brew brew-cask)
 source $ZSH/oh-my-zsh.sh
 
 # General zshzle options
-setopt autocd             # cd by just typing in a directory name
+setopt autocd                # cd by just typing in a directory name
 setopt completealiases
-#setopt extendedglob       # use #, ^, and ~ as glob characters
+#setopt extendedglob         # use #, ^, and ~ as glob characters
+setopt interactive_comments   # type comments at the command line
 setopt nomatch
 setopt no_case_glob
 
@@ -81,7 +82,9 @@ zle -N vi-search-fix
 bindkey -M viins '\e/' vi-search-fix
 
 # Plugin for syntax highlighting the command line
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[comment]='fg=green,bold'
 
 unalias run-help 2> /dev/null
 autoload run-help
