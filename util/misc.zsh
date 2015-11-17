@@ -48,6 +48,8 @@ setopt completealiases            # tab completion includes aliases
 setopt nomatch                    # warn me if a glob doesn't match anything
 setopt no_case_glob               # globbing is case insensitive
 setopt interactive_comments       # commands preceded with '#' aren't run
+setopt menu_complete              # Show completions like Vim (cycle through)
+export MENU_COMPLETE=1
 #setopt extendedglob              # use #, ^, and ~ as glob characters
                                   # I've disabled this because it makes zsh
                                   # behave more like bash, at the price of
@@ -66,11 +68,6 @@ bindkey "^H" backward-delete-char
 # history search backwords with j/k in normal mode
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
-
-
-# Tab complete options like Vim rather than sh
-setopt -Y
-export MENU_COMPLETE=1
 
 
 # Initialize zsh history files
