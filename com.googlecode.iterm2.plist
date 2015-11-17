@@ -859,7 +859,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSColorPanelMode</key>
-	<string>1</string>
+	<string>5</string>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>1</string>
 	<key>NSFontPanelAttributes</key>
@@ -897,13 +897,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>714 158 608 77 0 0 1440 900 </string>
+	<string>714 37 608 82 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>516 62 924 485 0 0 1440 900 </string>
+	<string>241 221 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>717 50 710 491 0 0 1440 877 </string>
+	<string>0 11 717 866 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 386 710 491 0 0 1440 900 </string>
+	<string>665 911 955 1046 -295 900 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>189 223 710 491 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
@@ -2366,7 +2366,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453357556.24873298</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>463774567.938923</real>
+	<real>468796039.92859203</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2427,11 +2427,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-09-12T18:16:05Z</date>
+	<date>2015-11-09T21:07:15Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2481,6 +2481,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.1</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
