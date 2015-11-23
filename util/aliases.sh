@@ -21,8 +21,9 @@ alias vim &> /dev/null || alias vim="vim -p"
 
 alias bex="bundle exec"
 
-# I'm pretty proud of this one
+# I'm pretty proud of these ones
 alias :q="clear"
+alias :tabe="vim"
 
 # Redirect stderr and stdout when using GRC
 which grc &> /dev/null && alias grc="grc -es"
