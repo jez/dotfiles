@@ -318,7 +318,7 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
 let g:pandoc#formatting#mode = 'h'
 
 " ----- fzf -----
-set rtp+=/usr/local/Cellar/fzf/HEAD
+set rtp+=/usr/local/opt/fzf
 nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
