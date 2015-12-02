@@ -67,6 +67,7 @@ set colorcolumn=+0     " show a column whenever textwidth is set
 if exists('&breakindent')
   set breakindent      " Indent wrapped lines up to the same level
 endif
+set foldnestmax=1      " Only fold up to one level deep
 
 " Show potential matches above completion, complete first immediately
 set wildmenu
