@@ -1,7 +1,11 @@
-[alias]
-	dark-theme = config --global color.decorate.head 'bold white'
-	light-theme = config --global color.decorate.head 'bold black'
-	review = !vim -p $(git ls-files -m) +\"tabdo Gdiff\"
+# Core settings
+[core]
+	pager = less -F -X
+	excludesfile = /Users/jakez/.gitignore
+[help]
+	autocorrect = 18
+
+# Color settings
 [color]
 	ui = true
 [color "decorate"]
@@ -11,14 +15,19 @@
 	tag = bold red
 [color "diff"]
 	whitespace = red reverse
-[core]
-	pager = less -F -X
-	excludesfile = /Users/jakez/.gitignore
-[diff]
-	tool = vimdiff
+
+# Aliases
+[alias]
+  # aliases to quickly change settings (in this file) for decorate colors
+	dark-theme = config --global color.decorate.head 'bold white'
+	light-theme = config --global color.decorate.head 'bold black'
+  # split-diff style review using vim-fugitive Gdiff
+	review = !vim -p $(git ls-files -m) +\"tabdo Gdiff\"
+
+# Difftool settings
 [difftool]
 	prompt = false
-[help]
-	autocorrect = 18
+
+# GitHub-specific
 [hub]
 	protocol = https
