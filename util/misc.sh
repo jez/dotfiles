@@ -7,7 +7,7 @@ else
 fi
 
 # Load LS_COLORS
-eval $(dircolors ~/.dircolors)
+which dircolors &> /dev/null && eval $(dircolors ~/.dircolors)
 # now, when we us `ls` we'll get solarized-colored files and directories!
 
 # Turn on italics
