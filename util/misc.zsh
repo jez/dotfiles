@@ -93,6 +93,9 @@ zstyle ':completion:*' verbose false
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 
+# Use zsh's awesome pattern move
+autoload -Uz zmv
+
 
 # Sometimes pressing ESC + / quickly (i.e., to do a reverse-i-search with
 # bindkey -v turned on) would not work properly. This fixes it.
