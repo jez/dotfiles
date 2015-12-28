@@ -226,6 +226,7 @@ EXEC 01;38;5;64
 .pyc        00;38;5;240
 .class      00;38;5;240
 .cache      00;38;5;240
+*tags       00;38;5;240
 
 # Audio formats (orange)
 .aac    00;38;5;166
