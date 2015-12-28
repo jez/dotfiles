@@ -1,0 +1,13 @@
+# Hack to get tmux to work like my normal shells
+#
+# In particular, tries to fix this issue with fzf:
+#
+#   https://github.com/junegunn/fzf/issues/176
+#
+# Inspired by
+#
+#     https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/<Paste>
+#
+screen-256color-italic|screen version of xterm-256color-italic,
+  use=screen-256color-italic,
+  use=xterm-256color-italic,
