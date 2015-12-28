@@ -2,7 +2,7 @@
 # ----- General ---------------------------------------------------------------
 
 # colorize grep and ls
-alias grep="ggrep --color=auto"
+alias grep &> /dev/null || alias grep="grep --color=auto"
 alias ls="ls -p --color=auto"
 alias l="ls"
 
