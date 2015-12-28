@@ -78,6 +78,7 @@ set expandtab          " Expand tabs into spaces
 set tabstop=2          " default to 2 spaces for a hard tab
 set softtabstop=2      " default to 2 spaces for the soft tab
 set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
+set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
 
 " ----- Convenience commands and cabbrev's ------------------------------------
 
