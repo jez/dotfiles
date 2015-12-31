@@ -45,7 +45,7 @@ which coffee &> /dev/null && alias coffe="coffee"
 alias vim="nvim -p"
 
 # Override BSD grep with GNU equivalent
-which ggrep &> /dev/null && alias grep="ggrep --color=auto";
+which ggrep &> /dev/null && alias grep="ggrep --color=auto"
 
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" jrnl"
