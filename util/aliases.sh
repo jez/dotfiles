@@ -36,6 +36,9 @@ which youtube-dl &> /dev/null && alias youtube-mp3="youtube-dl --extract-audio -
 
 which doctoc &> /dev/null && alias doctoc='doctoc --title="## Table of Contents"'
 
+# Pretend that tmux is XDG Base Directory conformant
+which tmux &> /dev/null && alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
