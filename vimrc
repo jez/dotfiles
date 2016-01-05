@@ -321,6 +321,15 @@ let g:pandoc#modules#disabled = ['folding', 'chdir']
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
 let g:pandoc#formatting#mode = 'h'
 
+" ----- mileszs/ack.vim -----
+" ag is faster
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+let g:ackhighlight = 1
+let g:ack_use_dispatch = 1
+nnoremap <leader>a :Ack<SPACE>
+
 " ----- fzf -----
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-P> :FZF<CR>
