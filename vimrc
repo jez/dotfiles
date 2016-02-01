@@ -167,6 +167,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.sig setlocal filetype=sml
   " Markdown files
   au BufRead,BufNewFile *.md setlocal filetype=markdown
+  " Treat all .tex files as latex
+  au BufRead,BufNewFile *.tex setlocal filetype=tex
   " LaTeX class files
   au BufRead,BufNewFile *.cls setlocal filetype=tex
   " Amethyst config file
