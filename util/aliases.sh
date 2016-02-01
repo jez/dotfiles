@@ -39,6 +39,9 @@ which doctoc &> /dev/null && alias doctoc='doctoc --title="## Table of Contents"
 # Pretend that tmux is XDG Base Directory conformant
 which tmux &> /dev/null && alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 
+# Use --no-bold for Solarized colors
+alias icdiff="icdiff --no-bold"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
