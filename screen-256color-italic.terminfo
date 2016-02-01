@@ -8,6 +8,17 @@
 #
 #     https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/<Paste>
 #
+# TODO:
+#   This doesn't actually have italics. Ironic, right? For whatever reason,
+#   when I run Vim with italics turned on here, it highlights italic text in
+#   gray.
+#
+# Old version:
+#   screen-256color-italic|screen version of xterm-256color-italic,
+#     sitm=\E[3m, ritm=\E[23m,
+#     kbs=\177,
+#     use=screen-256color,
+
 screen-256color-italic|screen version of xterm-256color-italic,
+  kbs=\177,
   use=screen-256color,
-  use=xterm-256color-italic,
