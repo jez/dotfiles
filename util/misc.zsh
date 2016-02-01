@@ -55,6 +55,10 @@ export MENU_COMPLETE=1
                                   # behave more like bash, at the price of
                                   # giving up features I didn't really use.
 
+# Don't try to strip the space between the end of a line and a | character
+# (See http://superuser.com/questions/613685/)
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
+
 
 # Turn on vi keybindings <3 <3 <3 :D and other things
 bindkey -v
