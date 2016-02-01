@@ -182,6 +182,8 @@ augroup myFiletypes
   au FileType pandoc,markdown,tex setlocal spell
   au FileType pandoc,markdown,tex setlocal tw=80
 
+  au FileType sml setlocal iskeyword+='
+
 augroup END
 
 " ----- Pathogen and Plugin Settings ------------------------------------------
@@ -224,7 +226,7 @@ let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
+  au FileType sml let b:delimitMate_quotes = "\""
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
@@ -344,6 +346,10 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-r': 'read',
 \}
+
+" ----- a.vim -----
+let g:alternateExtensions_sml = "sig"
+let g:alternateExtensions_sig = "sml"
 
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
