@@ -300,6 +300,7 @@ hi! Folded cterm=NONE term=NONE
 " ----- airblade/vim-gitgutter settings -----
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|pandoc|rst|org'
 nnoremap <Leader>r :GitGutterRevertHunk<CR>
 nnoremap <Leader>s :GitGutterStageHunk<CR>
 " overrides these bindings
