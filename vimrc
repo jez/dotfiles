@@ -83,11 +83,11 @@ set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
 " ----- Convenience commands and cabbrev's ------------------------------------
 
 " Make these commonly mistyped commands still work
-command! WQ wq
-command! Wq wq
-command! Wqa wqa
-command! W w
-command! Q q
+command! -bang WQ wq<bang>
+command! -bang Wq wq<bang>
+command! -bang Wqa wqa<bang>
+command! -bang W w<bang>
+command! -bang Q q<bang>
 
 " Use :C to clear hlsearch
 command! C nohlsearch
