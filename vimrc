@@ -277,7 +277,11 @@ augroup mySyntastic
   au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
   au FileType typescript let b:syntastic_mode = "passive"
   au FileType cpp let b:syntastic_mode = "passive"
+  au FileType sml let g:syntastic_always_populate_loc_list = 1
+  au FileType sml let g:syntastic_auto_loc_list = 1
 augroup END
+
+nnoremap <Leader>S :SyntasticToggleMode<CR>
 
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
