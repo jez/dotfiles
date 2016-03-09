@@ -15,7 +15,7 @@
     Hostname unix.andrew.cmu.edu
 
     Host gates
-    Hostname ghc30.ghc.andrew.cmu.edu
+    Hostname ghc50.ghc.andrew.cmu.edu
 
     Host shark
     Hostname shark.ics.cs.cmu.edu
