@@ -163,8 +163,6 @@ augroup myFiletypes
 
   " Patch filetypes for common extensions
 
-  " SML signature files
-  au BufRead,BufNewFile *.sig setlocal filetype=sml
   " Markdown files
   au BufRead,BufNewFile *.md setlocal filetype=markdown
   " Treat all .tex files as latex
@@ -181,8 +179,6 @@ augroup myFiletypes
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
   au FileType pandoc,markdown,tex setlocal tw=80
-
-  au FileType sml setlocal iskeyword+='
 
 augroup END
 
@@ -226,7 +222,6 @@ let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType sml let b:delimitMate_quotes = "\""
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
@@ -348,10 +343,6 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-r': 'read',
 \}
-
-" ----- a.vim -----
-let g:alternateExtensions_sml = "sig"
-let g:alternateExtensions_sig = "sml"
 
 " ----- Builtin Vim plugins -----
 " When viewing directories, show nested tree mode
