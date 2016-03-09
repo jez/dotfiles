@@ -142,3 +142,6 @@
 [submodule "vim-dispatch"]
 	path = vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/bundle/vim-better-sml"]
+	path = vim/bundle/vim-better-sml
+	url = https://github.com/jez/vim-better-sml.git
