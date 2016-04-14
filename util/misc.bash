@@ -6,8 +6,10 @@ set -o vi
 shopt -s autocd
 
 # bash completion (bash installed through Homebrew)
-if [ -e $(which brew &> /dev/null && brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion
+if which brew &> /dev/null; then
+  if [ -e $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+  fi
 fi
 
 # pip bash completion
