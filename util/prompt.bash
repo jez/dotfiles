@@ -35,6 +35,9 @@ color_my_prompt() {
     lern2unix)
       local prompt_dir_color="${cyellow}"
       ;;
+    nlp)
+      local prompt_dir_color="${cyellow}"
+      ;;
     *)
       local prompt_dir_color="${cred}"
       ;;
