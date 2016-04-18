@@ -66,6 +66,9 @@ alias purgeswp="find . -regex '.*.swp$' | xargs rm"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
 alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 
+# I don't care if Homebrew thinks this is bad, it's super convenient
+alias sudo-htop='sudo chown root:wheel $(which htop) && sudo chmod u+s $(which htop)'
+
 # Hackery because I'm fed up
 if which ag &> /dev/null ; then
   # hooray!
