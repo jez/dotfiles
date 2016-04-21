@@ -24,6 +24,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export ANDROID_HOME="/Users/jake/Library/Android/sdk"
 export PATH="$PATH:/Users/jake/Library/Android/sdk/platform-tools:/Users/jake/Library/Android/sdk/tools"
 
+export PATH="$PATH:$HOME/.local/bin"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
