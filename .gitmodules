@@ -154,3 +154,6 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/vim-haskell-indent"]
+	path = vim/bundle/vim-haskell-indent
+	url = https://github.com/itchyny/vim-haskell-indent
