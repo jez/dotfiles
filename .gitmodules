@@ -71,7 +71,7 @@
 	path = vim/bundle/HTML-AutoCloseTag
 	url = https://github.com/vim-scripts/HTML-AutoCloseTag
 [submodule "vim/bundle/vim-jade"]
-	path = vim/bundle/vim-jade
+	path = vim/bundle/vim-pug
 	url = https://github.com/digitaltoad/vim-pug
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
