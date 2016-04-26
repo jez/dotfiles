@@ -334,6 +334,15 @@ endif
 let g:ackhighlight = 1
 nnoremap <leader>a :Ack<SPACE>
 
+" ----- eagletmt/ghcmod-vim -----
+augroup haskellMaps
+  au!
+  nnoremap <leader>t :GhcModType<CR>
+  nnoremap <leader>x :GhcModTypeClear<CR>
+  nnoremap <leader>i :GhcModTypeInsert<CR>
+  nnoremap <leader>f :GhcModSplitFunCase<CR>
+augroup END
+
 " ----- fzf -----
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-P> :FZF<CR>

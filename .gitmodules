@@ -145,3 +145,9 @@
 [submodule "vim/bundle/vim-better-sml"]
 	path = vim/bundle/vim-better-sml
 	url = https://github.com/jez/vim-better-sml.git
+[submodule "vim/bundle/ghcmod-vim"]
+	path = vim/bundle/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
