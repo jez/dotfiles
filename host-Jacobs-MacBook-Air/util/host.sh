@@ -29,6 +29,9 @@ export PATH="$PATH:$HOME/.local/bin"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Disable Homebrew analytics until Homebrew/brew#145 is addressed
+export HOMEBREW_NO_ANALYTICS=1
+
 # ----- aliases ---------------------------------------------------------------
 
 # OS X has an annoying tendency of trying to change your hostname.
