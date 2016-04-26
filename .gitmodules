@@ -140,7 +140,7 @@
 	path = vim/bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
 [submodule "vim-dispatch"]
-	path = vim-dispatch
+	path = vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/vim-better-sml"]
 	path = vim/bundle/vim-better-sml
