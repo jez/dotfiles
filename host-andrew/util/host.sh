@@ -29,6 +29,10 @@ export PATH="$PATH:/usr/local/ispc"
 export PATH="/usr/local/cuda-6.5/bin:$PATH"
 export PATH="/usr/lib64/openmpi/bin:$PATH"
 
+# 15-210 staff (doit library)
+export PATH="$PATH:/afs/cs.cmu.edu/academic/class/15210-s16/bin/"
+export PYTHONPATH="$PYTHONPATH:/afs/cs.cmu.edu/academic/class/15210-s16/lib/"
+
 export LD_LIBRARY_PATH="/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="/usr/lib64/openmpi/lib:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="./lib:$LD_LIBRARY_PATH"
