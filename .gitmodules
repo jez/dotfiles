@@ -45,7 +45,7 @@
 	url = https://github.com/tpope/vim-pathogen
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+	url = https://github.com/vim-airline/vim-airline
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
@@ -72,7 +72,7 @@
 	url = https://github.com/vim-scripts/HTML-AutoCloseTag
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade
+	url = https://github.com/digitaltoad/vim-pug
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = https://github.com/tomasr/molokai
