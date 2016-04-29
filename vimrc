@@ -336,6 +336,7 @@ endif
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 1
 nnoremap <leader>a :Ack<SPACE>
+nnoremap <leader>* :Ack<SPACE><cword><CR>
 
 " ----- eagletmt/ghcmod-vim -----
 augroup haskellMaps
