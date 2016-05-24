@@ -21,6 +21,12 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# ----- From Stripe IT department ---------------------------------------------
+
+export PATH="/Users/jzimmerman/stripe/henson/bin:$PATH"
+source /Users/jzimmerman/.rbenvrc
+source ~/.stripe-repos.sh
+
 # ----- aliases ---------------------------------------------------------------
 
 # Double double letters are hard
