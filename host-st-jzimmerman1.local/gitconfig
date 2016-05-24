@@ -1,0 +1,19 @@
+[include]
+	path = .util/gitconfig
+[user]
+	name = Jake Zimmerman
+	email = jzimmerman@stripe.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+
+# --- Added by Stripe IT department ---
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+# http://stackoverflow.com/questions/18257622/why-is-git-core-preloadindex-default-value-false
+[core]
+	preloadindex = true
+
