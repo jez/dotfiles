@@ -18,19 +18,19 @@
 
 # Aliases
 [alias]
-  # aliases to quickly change settings (in this file) for decorate colors
+	# aliases to quickly change settings (in this file) for decorate colors
 	dark-theme = config --global color.decorate.head 'bold white'
 	light-theme = config --global color.decorate.head 'bold black'
-  # split-diff style review using vim-fugitive Gdiff
+	# split-diff style review using vim-fugitive Gdiff
 	review = !vim -p $(git ls-files -m) +\"tabdo Gdiff\"
-  # split-diff, using icdiff
-  icdiff = --paginate difftool --tool icdiff
+	# split-diff, using icdiff
+	icdiff = --paginate difftool --tool icdiff
 
 # Difftool settings
 [difftool]
 	prompt = false
 [difftool "icdiff"]
-  cmd = icdiff --no-bold --line-numbers -L \"$BASE\" -L \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+	cmd = icdiff --no-bold --line-numbers -L \"$BASE\" -L \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 
 # GitHub-specific
 [hub]
