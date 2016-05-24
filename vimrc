@@ -177,10 +177,13 @@ augroup myFiletypes
   au BufRead,BufNewFile *.pde setlocal filetype=java
   " Gradle files
   au BufRead,BufNewFile *.gradle setlocal filetype=groovy
+  " gitconfig files
+  au BufRead,BufNewFile gitconfig setlocal filetype=gitconfig
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
   au FileType pandoc,markdown,tex setlocal tw=80
+  au FileType gitconfig setlocal noexpandtab
 
 augroup END
 
