@@ -41,6 +41,9 @@ alias vim="nvim -p"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
+alias cdsc="cd ~/stripe/checkout-js"
+alias cds="cd ~/stripe"
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
