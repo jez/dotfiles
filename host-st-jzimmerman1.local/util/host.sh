@@ -21,6 +21,9 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+export PATH="$PATH:./node_modules/.bin"
+export PATH="$PATH:/usr/local/sbin"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="/Users/jzimmerman/stripe/henson/bin:$PATH"
