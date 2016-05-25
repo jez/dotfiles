@@ -1,7 +1,7 @@
 # Core settings
 [core]
 	pager = less -F -X
-	excludesfile = /Users/jakez/.gitignore
+	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 18
 
