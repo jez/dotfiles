@@ -17,3 +17,7 @@
 [core]
 	preloadindex = true
 
+[github]
+	user = jez
+[ghi]
+	token = !security find-internet-password -a jez -s github.com -l 'ghi token' -w
