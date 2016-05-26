@@ -33,21 +33,22 @@ brew update
 # Not necessary on OS X 10.10 (Yosemite)
 export PATH="/usr/local/bin:$PATH"
 
+# Install iTerm2
+brew cask install iterm2
+
 # Install and setup git
 brew install git
-git config --global user.name "Jacob Zimmerman"
-git config --global user.email "zimmerman.jake@gmail.com"
-git config --global color.ui true
-git config --global push.default simple
-git config --global credential.helper osxkeychain
+
+# Install Hub for convenience before we start doing Git commands
+brew install hub
 
 # Install newest bash and zsh and make zsh the login shell
 brew install bash
 brew install bash-completion
-echo "`brew --prefix`/bin/bash" | sudo tee -a /etc/shells
+echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
 brew install zsh
-echo "`brew --prefix`/bin/zsh" | sudo tee -a /etc/shells
-chsh -s "`brew --prefix`/bin/zsh"
+echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells
+chsh -s "$(brew --prefix)/bin/zsh"
 
 # Install gnu coreutils
 brew install coreutils
@@ -60,20 +61,42 @@ brew install vim
 brew tap thoughtbot/formulae
 brew install rcm
 # If you are not Jake Zimmerman, you will want to fork this repo first
-git clone --recursive https://github.com/jez/dotfiles ~/.dotfiles
+hub clone --recursive jez/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 # Make sure we use correct rcrc, as there will be no ~/.rcrc yet
 RCRC="./rcrc" rcup
 cd -
 
+# Set up host-specific (git, sh, zsh, etc.)
+# The best way to do this is to look at MacBook Air, Dropbox, & Stripe manually
+# Files you'll almost certainly need in some form:
+#   gitignore, gitconfig, host.sh, host.zsh
+# You may also want to look at:
+#   ssh/config
+
+
 # Now that dotfiles have been installed, exit and re-open iTerm2
 exit
-# TODO repoen iTerm2
 
 # Download and import iTerm colors
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
-open ~/Desktop/iTerm2-Color-Schemes/schemes/*itermcolors
-# Be sure to change the location to load iTerm config defaults from
+open ~/Desktop/iTerm2-Color-Schemes/schemes/
+# Import whichever you'd like by selecting and pressing Cmd + O
+
+# Use iTerm2 settings file by going to preferences and selecting to load
+# preferences from a folder: ~/.dotfiles
+
+# Install neovim for the lulz
+brew tap neovim/neovim
+brew install neovim
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
+
+# Install fzf
+brew install fzf
+/usr/local/opt/fzf/install
+mkrc -o ~/.fzf.zsh
+rm ~/.fzf.bash
 
 # Install ruby
 brew install rbenv
@@ -87,12 +110,6 @@ $ rbenv local 1.9.3-p0
 $ rbenv rehash
 EOF
 echo "http://octopress.org/docs/setup/rbenv/"
-
-# Install Homebrew Cask
-brew install caskroom/cask/brew-cask
-
-# Install iTerm2
-brew cask install iterm2
 
 # Other utilities
 brew cask install alfred
@@ -126,6 +143,7 @@ brew install heroku-toolbelt
 brew install imagemagick
 brew install watch
 brew install rlwrap
+brew install icdiff
 
 # After installing Xcode
 # TODO install Xcode using script
@@ -158,8 +176,25 @@ npm install -g jade
 # System Preferences
 #   - General
 #     - Use dark menubar and doc
+#   - Desktop & Screen Saver
+#     - Desktop
+#       - Source: Pokemon
+#         - Change picture: when logging in
+#     - Screen Saver
+#       - Classic
+#         - Source: Pokemon
+#         - Shuffle slide order
+#       - Hot Corners...
+#         - Bottom left: Start Screen Saver
 #   - Dock
 #     - Automatically hide and show the dock
+#   - Mission Control
+#     - no Automatically rearrange spaces based on recent use
+#     - Dashboard: As Space
+#   - if on MacBook Pro:
+#     - Display
+#       - Display
+#         - Looks like 1680 x 1050
 #   - Trackpad
 #     - Point & Click
 #       - Tap to click
@@ -167,6 +202,9 @@ npm install -g jade
 #     - Clock
 #       - Show date
 #   - Accessibility
+#     - Zoom
+#       - Use scroll gesture with modifier keys to zoom
+#       - Unckeck "Smooth images"
 #     - Trackpad Options...
 #       - Enable dragging
 #   - Keyboard
@@ -214,3 +252,15 @@ npm install -g jade
 #   - Advanced
 #     - Show all filename extensions
 #     - no Show warning before changing an extension
+#   - Favorites
+#     - Desktop
+#     - Documents
+#     - Dropbox
+#     - Screenshots
+#     - Applications
+#     - Home
+#   - Sort By:
+#     - View > [hold Option] Sort by ... > Name
+#
+# Downloads
+#   - Remove Downloads, symlink to Desktop
