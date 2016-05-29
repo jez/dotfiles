@@ -179,6 +179,9 @@ augroup myFiletypes
   au BufRead,BufNewFile *.gradle setlocal filetype=groovy
   " gitconfig files
   au BufRead,BufNewFile gitconfig setlocal filetype=gitconfig
+  " JavaScript linting files
+  au BufRead,BufNewFile .eslintrc setlocal filetype=json
+  au BufRead,BufNewFile .jscsrc setlocal filetype=json
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
