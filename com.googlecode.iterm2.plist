@@ -1043,7 +1043,7 @@
 	<key>HideTab</key>
 	<true/>
 	<key>HighlightTabLabels</key>
-	<true/>
+	<false/>
 	<key>HotKeyBookmark</key>
 	<string>C5BD9F48-5800-4EC9-B108-19A328E0E7AA</string>
 	<key>HotKeyTogglesWindow</key>
