@@ -287,11 +287,56 @@ augroup mySyntastic
   au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
   au FileType typescript let b:syntastic_mode = "passive"
   au FileType cpp let b:syntastic_mode = "passive"
+
+  " Disabled; handled by Neomake
+  au FileType javascript let b:syntastic_mode = "passive"
+  au FileType css let b:syntastic_mode = "passive"
+
   au FileType sml let g:syntastic_always_populate_loc_list = 1
   au FileType sml let g:syntastic_auto_loc_list = 1
 augroup END
 
 nnoremap <leader>S :SyntasticToggleMode<CR>
+
+" ----- neomake/neomake -----
+function! NeomakeFilterFiletypes() abort
+  " These must exist. If you want to remove them, set them to empty instead.
+  " You may also want to disable Syntastic when Neomake is enabled.
+  let whitelist = ['javascript', 'css']
+  let blacklist = []
+
+  " Disable each maker in the blacklist
+  for ft in blacklist
+    let varname = 'g:neomake_'.ft.'_enabled_makers'
+    exe 'let' varname '= []'
+  endfor
+
+  if len(whitelist)
+    " Make sure at least one filetype is whitelisted
+    let whitelisted = 0
+    for ft in split(&filetype, '\.')
+      if index(whitelist, ft) > -1
+        let whitelisted = 1
+      endif
+    endfor
+
+    if !whitelisted
+      return
+    endif
+  endif
+
+  Neomake
+endfunction
+autocmd! BufWritePost * call NeomakeFilterFiletypes()
+
+let g:neomake_error_sign = {
+    \ 'text': '✘',
+    \ 'texthl': 'Error',
+    \ }
+let g:neomake_warning_sign = {
+    \ 'text': '▲',
+    \ 'texthl': 'Todo',
+    \ }
 
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
