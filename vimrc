@@ -332,6 +332,13 @@ function! NeomakeFilterFiletypes() abort
 endfunction
 autocmd! BufWritePost * call NeomakeFilterFiletypes()
 
+let g:neomake_css_enabled_makers = ['rework_stripe']
+let g:neomake_css_rework_stripe_maker = {
+      \ 'exe': 'node',
+      \ 'args': ['scripts/csslint.js', 'src/styles'],
+      \ 'errorformat': '%Z  error  %m near line %l:%c.%.%#,%E%f',
+      \ }
+
 let g:neomake_error_sign = {
     \ 'text': '✘',
     \ 'texthl': 'Error',
