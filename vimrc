@@ -224,6 +224,7 @@ function! AirlineThemePatch(palette)
   endif
 endfunction
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 0
 
 " ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
