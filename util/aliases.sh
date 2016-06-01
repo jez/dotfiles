@@ -96,6 +96,8 @@ fi
 
 # hub is a command line wrapper for using Git with GitHub
 eval "$(hub alias -s 2> /dev/null)"
+# We want to use '#' as a markdown character, so let's use '%' for comments
+alias hubmdpr="hub -c core.commentChar='%' pull-request"
 
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
