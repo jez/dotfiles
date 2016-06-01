@@ -46,7 +46,8 @@ alias cds="cd ~/stripe"
 
 # ----- Prompt  ---------------------------------------------------------------
 
-export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
+export PROMPT_PURE_DIR_COLOR="%{$ccyan%}"
+export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
