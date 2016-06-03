@@ -348,6 +348,8 @@ let g:neomake_warning_sign = {
     \ 'texthl': 'Todo',
     \ }
 
+let g:neomake_open_list = 1
+
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
 set background=dark
