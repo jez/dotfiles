@@ -391,15 +391,16 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
-" ----- mileszs/ack.vim -----
-" ag is faster
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-let g:ackhighlight = 1
-let g:ack_use_dispatch = 1
-nnoremap <leader>a :Ack<SPACE>
-nnoremap <leader>* :Ack<SPACE><cword><CR>
+" ----- mhinz/grepper -----
+let g:grepper = {
+    \ 'tools': ['ag', 'git', 'grep'],
+    \ 'open':  1,
+    \ 'jump':  0,
+    \ 'highlight':  1,
+    \ }
+
+nnoremap <leader>a :Grepper<CR>
+nnoremap <leader>* :Grepper -cword -noprompt<CR>
 
 " ----- eagletmt/ghcmod-vim -----
 augroup haskellMaps

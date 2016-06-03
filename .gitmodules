@@ -160,3 +160,6 @@
 [submodule "vim/bundle/neomake"]
 	path = vim/bundle/neomake
 	url = https://github.com/neomake/neomake.git
+[submodule "vim/bundle/vim-grepper"]
+	path = vim/bundle/vim-grepper
+	url = https://github.com/mhinz/vim-grepper.git
