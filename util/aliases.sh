@@ -105,6 +105,9 @@ alias git-last="git whatchanged -1 --oneline -p"
 alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
 alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
 
+# Files that have been modified between the current branch and master
+alias git-files='git diff --name-only $(git rev-parse --abbrev-ref HEAD) $(git merge-base $(git rev-parse --abbrev-ref HEAD) master)'
+
 alias gco="git checkout"
 
 alias ga="git add"
