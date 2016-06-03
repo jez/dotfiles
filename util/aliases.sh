@@ -102,6 +102,8 @@ alias hubmdpr="hub -c core.commentChar='%' pull-request"
 
 alias git-lastmerge="git whatchanged -2 --oneline -p"
 alias git-last="git whatchanged -1 --oneline -p"
+alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
+alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
 
 alias gco="git checkout"
 
