@@ -1,3 +1,3 @@
 agc() {
-  ag --color --group $@ | cut -c -100
+  ag --color --group -W 100 $@
 }
