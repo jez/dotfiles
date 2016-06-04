@@ -215,6 +215,10 @@ Helptags
 let g:airline_powerline_fonts = 1
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
+" Don't take up extra space with +/-/~ of 0
+let g:airline#extensions#hunks#non_zero_only = 1
+" Limit wordcount to where it makes sense
+let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|pandoc|rst|org'
 " Always show statusbar
 set laststatus=2
 " Slightly modify the theme colors
@@ -378,8 +382,6 @@ hi! Folded cterm=NONE term=NONE
 " }}}
 " ----- airblade/vim-gitgutter settings ----- {{{
 hi clear SignColumn
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|pandoc|rst|org'
 nnoremap <leader>r :GitGutterRevertHunk<CR>
 nnoremap <leader>s :GitGutterStageHunk<CR>
 " overrides these bindings
