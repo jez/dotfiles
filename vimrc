@@ -42,7 +42,7 @@
 " to accept pull requests. If you've fixed a bug though, go ahead and I'll
 " take a look at it.
 
-" ----- General Settings  -----------------------------------------------------
+" ----- General Settings  ----------------------------------------------- {{{
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -80,7 +80,8 @@ set softtabstop=2      " default to 2 spaces for the soft tab
 set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
 set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
 
-" ----- Convenience commands and cabbrev's ------------------------------------
+" }}}
+" ----- Convenience commands and cabbrev's ------------------------------ {{{
 
 " Make these commonly mistyped commands still work
 command! -bang WQ wq<bang>
@@ -103,7 +104,8 @@ cabbrev help tab help
 command! Wv w | make view
 command! WV w | make view
 
-" ----- Custom keybindings ----------------------------------------------------
+" }}}
+" ----- Custom keybindings ---------------------------------------------- {{{
 
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
@@ -125,7 +127,8 @@ map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> t
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" ----- Terminal-as-GUI settings ----------------------------------------------
+" }}}
+" ----- Terminal-as-GUI settings ---------------------------------------- {{{
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -139,7 +142,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" ----- Not-quite-general-but-don't-belong-anywhere-else Settings -------------
+" }}}
+" ----- Not-quite-general-but-don't-belong-anywhere-else Settings ------- {{{
 
 augroup vimrc
   " Clear the current autocmd group, in case we're re-sourcing the file
@@ -153,7 +157,8 @@ augroup vimrc
 
 augroup END
 
-" ----- Filetype Settings -----------------------------------------------------
+" }}}
+" ----- Filetype Settings ----------------------------------------------- {{{
 
 " Enable file type detection.
 filetype plugin indent on
@@ -193,7 +198,8 @@ augroup myFiletypes
 
 augroup END
 
-" ----- Pathogen and Plugin Settings ------------------------------------------
+" }}}
+" ----- Pathogen and Plugin Settings ------------------------------------ {{{
 
 " Pathogen is in a non-standard location: modify the rtp to reflect that
 set rtp+=~/.vim/bundle/pathogen
@@ -204,7 +210,7 @@ execute pathogen#infect()
 " Generate all helptags on startup
 Helptags
 
-" ----- bling/vim-airline settings -----
+" ----- bling/vim-airline settings ----- {{{
 " Fancy arrow symbols, requires a patched font
 let g:airline_powerline_fonts = 1
 " Show PASTE if in paste mode
@@ -229,7 +235,8 @@ endfunction
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 0
 
-" ----- Raimondi/delimitMate settings -----
+" }}}
+" ----- Raimondi/delimitMate settings ----- {{{
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
@@ -238,7 +245,8 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
-" ----- majutsushi/tagbar settings -----
+" }}}
+" ----- majutsushi/tagbar settings ----- {{{
 " Open/close tagbar with \b
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 " Order tags based on file order; don't sort alphabetically
@@ -272,7 +280,8 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
-" ----- xolox/vim-easytags settings -----
+" }}}
+" ----- xolox/vim-easytags settings ----- {{{
 set tags=./tags;,~/.vimtags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
@@ -280,7 +289,8 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
-" ----- scrooloose/syntastic settings -----
+" }}}
+" ----- scrooloose/syntastic settings ----- {{{
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 let g:syntastic_check_on_wq = 0
@@ -301,7 +311,8 @@ augroup END
 
 nnoremap <leader>S :SyntasticToggleMode<CR>
 
-" ----- neomake/neomake -----
+" }}}
+" ----- neomake/neomake ----- {{{
 function! NeomakeFilterFiletypes() abort
   " These must exist. If you want to remove them, set them to empty instead.
   " You may also want to disable Syntastic when Neomake is enabled.
@@ -350,7 +361,8 @@ let g:neomake_warning_sign = {
 
 let g:neomake_open_list = 1
 
-" ----- altercation/vim-colors-solarized settings -----
+" }}}
+" ----- altercation/vim-colors-solarized settings ----- {{{
 " Toggle this to "light" for light colorscheme
 set background=dark
 
@@ -363,7 +375,8 @@ colorscheme solarized
 " Remove the underline Solarized places under Folded previews
 hi! Folded cterm=NONE term=NONE
 
-" ----- airblade/vim-gitgutter settings -----
+" }}}
+" ----- airblade/vim-gitgutter settings ----- {{{
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|pandoc|rst|org'
@@ -373,27 +386,32 @@ nnoremap <leader>s :GitGutterStageHunk<CR>
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gn :GitGutterNextHunk<CR>
 
-" ----- jez/vim-superman settings -----
+" }}}
+" ----- jez/vim-superman settings ----- {{{
 " better man page support
 noremap K :SuperMan <cword><CR>
 
-" ----- mxw/vim-jsx -----
+" }}}
+" ----- mxw/vim-jsx ----- {{{
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
 
-" ----- ntpeters/vim-better-whitespace -----
+" }}}
+" ----- ntpeters/vim-better-whitespace ----- {{{
 " Don't highlight whitespace in git commit messages (for diffs)...
 let g:better_whitespace_filetypes_blacklist=['gitcommit']
 " ... but strip it on save so that we're still safe
 autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
 
-" ----- vim-pandoc/vim-pandoc -----
+" }}}
+" ----- vim-pandoc/vim-pandoc ----- {{{
 let g:pandoc#modules#disabled = ['folding', 'chdir']
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
-" ----- mhinz/grepper -----
+" }}}
+" ----- mhinz/grepper ----- {{{
 let g:grepper = {
     \ 'tools': ['ag', 'git', 'grep'],
     \ 'open':  1,
@@ -404,7 +422,8 @@ let g:grepper = {
 nnoremap <leader>a :Grepper<CR>
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
 
-" ----- eagletmt/ghcmod-vim -----
+" }}}
+" ----- eagletmt/ghcmod-vim ----- {{{
 augroup haskellMaps
   au!
   nnoremap <leader>t :GhcModType<CR>
@@ -413,7 +432,8 @@ augroup haskellMaps
   nnoremap <leader>f :GhcModSplitFunCase<CR>
 augroup END
 
-" ----- fzf -----
+" }}}
+" ----- fzf ----- {{{
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-P> :FZF<CR>
 
@@ -426,11 +446,14 @@ let g:fzf_action = {
   \ 'ctrl-r': 'read',
 \}
 
-" ----- Builtin Vim plugins -----
+" }}}
+" ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
 " Don't create .netrwhist files
 let g:netrw_dirhistmax = 0
 
+" }}}
+" }}}
 " -----------------------------------------------------------------------------
-" vim:ft=vim
+" vim:ft=vim fdm=marker
