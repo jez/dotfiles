@@ -287,6 +287,15 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
+let g:tagbar_type_coffee = {
+  \ 'ctagstype': 'CoffeeScript',
+  \ 'kinds': [
+    \ 'f:functions',
+    \ 'c:classes',
+    \ 'v:variables',
+  \ ]
+\ }
+
 " }}}
 " ----- xolox/vim-easytags settings ----- {{{
 set tags=./tags;,~/.vimtags
