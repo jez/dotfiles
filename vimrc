@@ -396,6 +396,7 @@ hi! Folded cterm=NONE term=NONE
 hi clear SignColumn
 nnoremap <leader>r :GitGutterRevertHunk<CR>
 nnoremap <leader>s :GitGutterStageHunk<CR>
+nnoremap <leader>h :GitGutterLineHighlightsToggle<CR>
 " overrides these bindings
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gn :GitGutterNextHunk<CR>
