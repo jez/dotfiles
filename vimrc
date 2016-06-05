@@ -391,6 +391,11 @@ nnoremap <leader>s :GitGutterStageHunk<CR>
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gn :GitGutterNextHunk<CR>
 
+" I have a patched Solarized plugin that sets these groups up
+hi! link GitGutterAdd    gitgutterAdd
+hi! link GitGutterChange gitgutterChange
+hi! link GitGutterDelete gitgutterDelete
+
 " }}}
 " ----- jez/vim-superman settings ----- {{{
 " better man page support
