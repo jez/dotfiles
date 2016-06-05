@@ -394,13 +394,15 @@ hi! Folded cterm=NONE term=NONE
 " }}}
 " ----- airblade/vim-gitgutter settings ----- {{{
 hi clear SignColumn
-nnoremap <leader>r :GitGutterRevertHunk<CR>
-nnoremap <leader>s :GitGutterStageHunk<CR>
-nnoremap <leader>h :GitGutterLineHighlightsToggle<CR>
-" overrides these bindings
+
+nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+
+" overrides these bindings from vanilla Vim
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gn :GitGutterNextHunk<CR>
-let g:gitgutter_updatetime=500
+
+" Update signs faster. Proceed at own risk (might be expensive for you).
+set updatetime=500
 
 " I have a patched Solarized plugin that sets these groups up
 hi! link GitGutterAdd    gitgutterAdd
