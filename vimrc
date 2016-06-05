@@ -390,6 +390,7 @@ nnoremap <leader>s :GitGutterStageHunk<CR>
 " overrides these bindings
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gn :GitGutterNextHunk<CR>
+let g:gitgutter_updatetime=500
 
 " I have a patched Solarized plugin that sets these groups up
 hi! link GitGutterAdd    gitgutterAdd
