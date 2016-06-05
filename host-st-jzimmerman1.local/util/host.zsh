@@ -41,6 +41,9 @@ _gen_fzf_default_opts() {
   local cyan="37"
   local green="64"
 
+  # fzf uses ncurses for it's UI. ncurses doesn't support 24-bit color, and
+  # last time I tried, I couldn't get the ANSI 16 colors to play nicely.
+
   # Solarized Dark color scheme for fzf
   export FZF_DEFAULT_OPTS="
     --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:-1,hl+:$blue
