@@ -120,8 +120,6 @@ noremap <silent> Y y$
 
 " take first suggested spelling as correct spelling and replace
 noremap <silent> z! z=1<CR><CR>
-" NOTE: This feature requires a longer timeoutlen. To use it, up the
-"       timeoutlen above.
 
 map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
