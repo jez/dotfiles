@@ -285,6 +285,20 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
+let g:tagbar_type_javascript = {
+  \ 'ctagstype': 'js',
+  \ 'replace': 1,
+  \ 'ctagsbin': '~/bin/gtags',
+  \ 'kinds': [
+    \ 'c:class',
+    \ 'm:method',
+    \ 'p:property',
+    \ 'f:function',
+    \ 'o:object',
+    \ 'n:constant',
+  \ ],
+\ }
+
 let g:tagbar_type_coffee = {
   \ 'ctagstype': 'CoffeeScript',
   \ 'kinds': [
