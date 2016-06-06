@@ -317,6 +317,12 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
+let g:easytags_languages = {
+\   'javascript.jsx': {
+\     'cmd': '~/bin/gtags',
+\     'stdout_opt': '-f -'
+\   }
+\ }
 " }}}
 " ----- scrooloose/syntastic settings ----- {{{
 let g:syntastic_error_symbol = '✘'
