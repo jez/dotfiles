@@ -223,21 +223,11 @@ let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|pandoc|rst|org'
 " Always show statusbar
 set laststatus=2
 " Slightly modify the theme colors
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-  if g:airline_theme == 'solarized' && g:solarized_termcolors == 16
-    " normal mode background: s:base03
-    let a:palette.normal.airline_a[2] = 8
-    " normal mode foreground: s:green
-    let a:palette.normal.airline_a[3] = 2
-
-    " line no. background: s:base03
-    let a:palette.normal.airline_z[2] = 8
-    " line no. foreground: s:green
-    let a:palette.normal.airline_z[3] = 2
-  endif
-endfunction
+let g:airline_solarized_normal_green = 1
+" Fancy stuff in tabline as well
 let g:airline#extensions#tabline#enabled = 1
+" Disable this because it causes an issue with FZF + NeoVim
+" https://github.com/neovim/neovim/issues/4487
 let g:airline#extensions#branch#enabled = 0
 
 " }}}
