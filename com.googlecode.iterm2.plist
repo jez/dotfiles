@@ -1839,6 +1839,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
+			<key>Thin Strokes</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
