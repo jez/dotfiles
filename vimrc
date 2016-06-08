@@ -292,8 +292,8 @@ let g:tagbar_type_javascript = {
 let g:tagbar_type_coffee = {
   \ 'ctagstype': 'CoffeeScript',
   \ 'kinds': [
-    \ 'f:functions',
     \ 'c:classes',
+    \ 'f:functions',
     \ 'v:variables',
   \ ]
 \ }
