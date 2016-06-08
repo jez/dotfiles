@@ -138,7 +138,9 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+endif
 
+if exists('+termguicolors')
   " This lets us use 24-bit "true" colors in the terminal
   set termguicolors
 endif
