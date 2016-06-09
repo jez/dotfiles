@@ -27,6 +27,7 @@ which coffee &> /dev/null && alias coffe="coffee"
 
 # Use neovim for the lulz
 alias vim="nvim -p"
+alias vimdiff="nvim -d"
 
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
