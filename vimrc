@@ -436,6 +436,9 @@ let g:better_whitespace_filetypes_blacklist=['gitcommit']
 " ... but strip it on save so that we're still safe
 autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
 
+" Use Solarized colors for highlighting
+highlight Extrawhitespace ctermbg=red guibg=#dc322f
+
 " }}}
 " ----- vim-pandoc/vim-pandoc ----- {{{
 let g:pandoc#modules#disabled = ['folding', 'chdir']
