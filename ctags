@@ -15,9 +15,10 @@
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
 
---regex-CoffeeScript=/(^|=[ \t])*class ([A-Za-z.]+)( extends [A-Za-z.]+)?$/\2/c,class/
---regex-CoffeeScript=/^[ \t]*@?([A-Za-z.]+):.*[-=]>.*$/\1/f,function/
---regex-CoffeeScript=/^[ \t]*([A-Za-z.]+)[ \t]+=.*[-=]>.*$/\1/f,function/
+--regex-CoffeeScript=/(^|=[ \t])*class ([A-Za-z.)]+)( extends [A-Za-z.]+)?$/\2/c,class/
+--regex-CoffeeScript=/^[ \t]*@?([A-Za-z._]+):[ \t]*(\([^)]*\)[ \t])?[-=]>.*$/\1/f,function/
+--regex-CoffeeScript=/^[ \t]*([A-Za-z._]+)[ \t]+=[ \t]*(\([^)]*\)[ \t])?[-=]>.*$/\1/f,function/
+--regex-CoffeeScript=/^[ \t]*([A-Z_]+)[ \t]+=[^-=>\n]*$/\1/n,constant/
 --regex-CoffeeScript=/^[ \t]*([A-Za-z.]+)[ \t]+=[^-=>\n]*$/\1/v,variable/
 
 
