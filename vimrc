@@ -296,6 +296,7 @@ let g:tagbar_type_coffee = {
   \ 'kinds': [
     \ 'n:constants',
     \ 'c:classes',
+    \ 'm:methods',
     \ 'f:functions',
   \ ]
 \ }
