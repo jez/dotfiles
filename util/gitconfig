@@ -1,6 +1,6 @@
 # Core settings
 [core]
-	pager = less -F -X
+	pager = diff-highlight | less -F -X
 	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 18
@@ -26,11 +26,15 @@
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
 
-# Difftool settings
+# Diff & Difftool settings
+[diff]
+	compactionHeuristic = true
 [difftool]
 	prompt = false
 [difftool "icdiff"]
 	cmd = icdiff --no-bold --line-numbers -L \"$BASE\" -L \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+[interactive]
+	diffFilter = diff-highlight
 
 # GitHub-specific
 [hub]
