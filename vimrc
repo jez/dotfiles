@@ -248,6 +248,10 @@ augroup END
 " ----- majutsushi/tagbar settings ----- {{{
 " Open/close tagbar with \b
 nnoremap <silent> <leader>b :TagbarToggle<CR>
+
+" Always open tagbar for CoffeeScript files
+au! FileType coffee TagbarOpen
+
 " Order tags based on file order; don't sort alphabetically
 let g:tagbar_sort = 0
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
