@@ -163,3 +163,6 @@
 [submodule "vim/bundle/vim-grepper"]
 	path = vim/bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
+[submodule "vim/bundle/vim-github-hub"]
+	path = vim/bundle/vim-github-hub
+	url = git://github.com/jez/vim-github-hub.git
