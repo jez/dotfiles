@@ -166,3 +166,6 @@
 [submodule "vim/bundle/vim-github-hub"]
 	path = vim/bundle/vim-github-hub
 	url = git://github.com/jez/vim-github-hub.git
+[submodule "vim/bundle/vim-qf"]
+	path = vim/bundle/vim-qf
+	url = git://github.com/romainl/vim-qf.git

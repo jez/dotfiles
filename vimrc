@@ -466,6 +466,10 @@ nnoremap <leader>a :Grepper<CR>
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
 
 " }}}
+" ----- romainl/vim-qf ----- {{{
+" Because grepper no longer has keybindings in the Quickfix window
+let g:qf_mapping_ack_style = 1
+" }}}
 " ----- eagletmt/ghcmod-vim ----- {{{
 augroup haskellMaps
   au!
