@@ -133,6 +133,7 @@ alias gpf="git pull --ff-only"
 # resuable format strings
 GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
+GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
 
 # pretty Git log
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
@@ -142,6 +143,11 @@ alias gll='gl --all'
 alias gla="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
 # pretty Git log, all references, show authors
 alias glla='gla --all'
+# pretty Git log, show authors, align messages
+alias glala="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
+# pretty Git log, all references, show authors, align messages
+alias glalal="glala --all"
+
 
 # ----- Docker aliases --------------------------------------------------------
 
