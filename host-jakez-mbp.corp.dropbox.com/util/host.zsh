@@ -23,6 +23,7 @@
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND='ag -l -g ""'
 
+# This is one of many color schemes for fzf. Check the fzf wiki for more
 _gen_fzf_default_opts() {
   local base03="234"
   local base02="235"
@@ -61,6 +62,7 @@ _gen_fzf_default_opts
 # Modify fzf keydings to match ctrlp.vim
 bindkey '^P' fzf-file-widget
 bindkey '^N' fzf-cd-widget
+# Use zsh Normal Mode + / (reverse-i-search) to use fzf instead
 bindkey -M vicmd '/' fzf-history-widget
 bindkey '^[/' fzf-history-widget
 
