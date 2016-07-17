@@ -199,6 +199,9 @@ augroup myFiletypes
   au FileType gitconfig setlocal noexpandtab
   au FileType go setlocal noexpandtab
 
+  " Use coneal characters with SML
+  au FileType sml setlocal conceallevel=2
+
 augroup END
 
 " }}}
