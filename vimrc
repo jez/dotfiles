@@ -435,6 +435,18 @@ hi! link GitGutterDelete gitgutterDelete
 noremap K :SuperMan <cword><CR>
 
 " }}}
+" ----- pangloss/vim-javascript ----- {{{
+let g:javascript_conceal_function       = "λ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+"let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+"let g:javascript_conceal_NaN            = "ℕ"
+"let g:javascript_conceal_prototype      = "¶"
+"let g:javascript_conceal_static         = "•"
+"let g:javascript_conceal_super          = "Ω"
+"let g:javascript_conceal_arrow_function = "⇒"
+" }}}
 " ----- mxw/vim-jsx ----- {{{
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
