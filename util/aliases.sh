@@ -118,6 +118,7 @@ alias gap="git add --patch"
 
 alias gc="git commit -v"
 alias gca="gc -a"
+alias gcmd="git -c core.commentChar='%' commit -v --template=$HOME/.util/gitmessage.md"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
 
