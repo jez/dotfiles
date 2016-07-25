@@ -32,7 +32,7 @@
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
-	message = log -n1 --format="%s%n%n%b"
+	message = log -n1 --format=\"%s%n%n%b\"
 
 # Diff & Difftool settings
 [diff]
