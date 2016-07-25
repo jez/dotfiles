@@ -21,8 +21,11 @@
 	# aliases to quickly change settings (in this file) for decorate colors
 	dark-theme = config --global color.decorate.head 'bold white'
 	light-theme = config --global color.decorate.head 'bold black'
+	# list files which have changed since REVIEW_BASE
+	# (defaults to 'master' in zshrc)
+	files = !git diff --name-only $(git merge-base --fork-point \"$REVIEW_BASE\")
 	# split-diff style review using vim-fugitive Gdiff
-	review = !vim -p $(git ls-files -m) +\"tabdo Gdiff\"
+	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
