@@ -24,6 +24,9 @@
 	# list files which have changed since REVIEW_BASE
 	# (defaults to 'master' in zshrc)
 	files = !git diff --name-only $(git merge-base --fork-point \"$REVIEW_BASE\")
+	# Same as above, but with a diff stat instead of just names
+	# (better for interactive use)
+	stat = !git diff --stat $(git merge-base --fork-point \"$REVIEW_BASE\")
 	# split-diff style review using vim-fugitive Gdiff
 	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
 	# split-diff, using icdiff
