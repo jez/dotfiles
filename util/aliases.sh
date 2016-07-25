@@ -105,9 +105,6 @@ alias git-last="git whatchanged -1 --oneline -p"
 alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
 alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
 
-# Just the commit message of the named commit.
-alias git-print-msg="git log --format=%B -n 1"
-
 # Files that have been modified between the current branch and master
 alias git-files='git diff --name-only $(git rev-parse --abbrev-ref HEAD) $(git merge-base $(git rev-parse --abbrev-ref HEAD) master)'
 
