@@ -31,6 +31,7 @@ export PATH="$PATH:/usr/local/sbin"
 
 export PATH="/Users/jzimmerman/stripe/henson/bin:$PATH"
 source /Users/jzimmerman/.rbenvrc
+rbenv rehash
 source ~/.stripe-repos.sh
 
 # ----- aliases ---------------------------------------------------------------
