@@ -27,6 +27,8 @@ export PATH="$PATH:/usr/local/opt/git/share/git-core/contrib/diff-highlight"
 export PATH="$PATH:./node_modules/.bin"
 export PATH="$PATH:/usr/local/sbin"
 
+export PATH="$PATH:$HOME/.local/bin"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="/Users/jzimmerman/stripe/henson/bin:$PATH"
@@ -48,6 +50,11 @@ which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
 alias cdsc="cd ~/stripe/checkout-js"
 alias cds="cd ~/stripe"
+
+# ----- Haskell ---------------------------------------------------------------
+
+# Have Haskell Stack use XDG Base Directory spec
+export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # ----- Prompt  ---------------------------------------------------------------
 
