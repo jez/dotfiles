@@ -347,6 +347,9 @@ augroup END
 
 nnoremap <leader>S :SyntasticToggleMode<CR>
 
+" Follow `source` statements in shell code
+let g:syntastic_sh_shellcheck_args = "-x"
+
 " }}}
 " ----- neomake/neomake ----- {{{
 function! NeomakeFilterFiletypes() abort
