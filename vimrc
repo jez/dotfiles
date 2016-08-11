@@ -419,6 +419,8 @@ hi! Folded cterm=NONE term=NONE
 hi clear SignColumn
 
 nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>r  :GitGutterUndoHunk<CR>
+nnoremap <leader>s  :GitGutterStageHunk<CR>
 
 " overrides these bindings from vanilla Vim
 nnoremap gp :GitGutterPrevHunk<CR>
