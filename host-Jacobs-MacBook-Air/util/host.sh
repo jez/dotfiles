@@ -59,7 +59,7 @@ which ggrep &> /dev/null && alias grep="ggrep --color=auto"
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" jrnl"
 
-# ----- Ruby, Python, and Haskell ---------------------------------------------
+# ----- Specific programs -----------------------------------------------------
 
 # ruby...
 # To use Homebrew's directories rather than ~/.rbenv
@@ -72,6 +72,9 @@ source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
 # Have Haskell Stack use XDG Base Directory spec
 export STACK_ROOT="$XDG_DATA_HOME/stack"
+
+# GNUPG-specific settings
+source ~/.util/gnupg.sh
 
 # ----- Prompt  ---------------------------------------------------------------
 

@@ -3,6 +3,7 @@
 [user]
 	name = Jacob Zimmerman
 	email = zimmerman.jake@gmail.com
+	signingkey = 541964F7
 [credential]
 	helper = osxkeychain
 [github]
@@ -15,3 +16,5 @@
 	required = true
 [push]
 	default = simple
+[commit]
+	gpgsign = true
