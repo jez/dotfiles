@@ -104,7 +104,7 @@ update-host () {
   npm -g outdated
 
   echo "$cblueb==>$cwhiteb Checking for outdated pip packages...$cnone"
-  pip list --outdated
+  pip2 list --outdated
 
   echo "$cblueb==>$cwhiteb Checking for outdated pip3 packages...$cnone"
   pip3 list --outdated
