@@ -15,6 +15,9 @@ alias rm="rm -v"
 alias cdd="cd .."
 alias cddd="cd ../.."
 alias cdddd="cd ../../.."
+alias cddddd="cd ../../../.."
+alias cdddddd="cd ../../../../.."
+alias cddddddd="cd ../../../../../.."
 
 # open multiple files in Vim tabs
 alias vim &> /dev/null || alias vim="vim -p"
