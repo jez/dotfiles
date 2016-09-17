@@ -258,7 +258,7 @@ augroup END
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " Always open tagbar for CoffeeScript files
-au! FileType coffee TagbarOpen
+"au! FileType coffee TagbarOpen
 
 " Order tags based on file order; don't sort alphabetically
 let g:tagbar_sort = 0
