@@ -87,6 +87,7 @@ fi
 
 # hub is a command line wrapper for using Git with GitHub
 eval "$(hub alias -s 2> /dev/null)"
+
 # We want to use '#' as a markdown character, so let's use '%' for comments
 alias hubmdpr="hub -c core.commentChar='%' pull-request"
 
@@ -157,7 +158,7 @@ alias clean-images='docker rmi $(docker images -q -f dangling=true)'
 
 # it doesn't make sense to repeat this for each specific host;
 # it's Linux specific
-if [ $(uname) = "Linux" ]; then
+if [ "$(uname)" = "Linux" ]; then
   which tree &> /dev/null && alias tree="tree -C -F --dirsfirst"
 else
   which tree &> /dev/null && alias tree="tree -F --dirsfirst"
