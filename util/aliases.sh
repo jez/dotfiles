@@ -72,27 +72,14 @@ alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 # I don't care if Homebrew thinks this is bad, it's super convenient
 alias sudo-htop='sudo chown root:wheel $(which htop) && sudo chmod u+s $(which htop)'
 
-# Hackery because I'm fed up
-if which ag &> /dev/null ; then
-  # hooray!
-  alias ag="ag --color-path '0;35' --color-match '1;37' --color-line-number '0;34'"
-  #alias ag="ag --color-path '0;35' --color-match '1;30' --color-line-number '0;34'"
-elif which ack &> /dev/null ; then
-  # nice. have you heard of ag?
-  alias ag="ack"
-elif [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ] ; then
-  # uhh...
-  alias ag="git grep"
+AG_DARK="ag --color-path '0;35' --color-match '1;37' --color-line-number '0;34'"
+AG_LIGHT="ag --color-path '0;35' --color-match '1;30' --color-line-number '0;34'"
+if [ "$SOLARIZED" = "dark" ]; then
+  alias ag="$AG_DARK"
+elif [ "$SOLARIZED" = "light" ]; then
+  alias ag="$AG_LIGHT"
 else
-  # sigh pie...
-  function ag() {
-    if [ -n "$2" ]; then
-      files="$2"
-    else
-      files=*
-    fi
-    grep -n -r "$1" $files
-  }
+  alias ag="$AG_DARK"
 fi
 
 
@@ -146,6 +133,15 @@ alias glla='gla --all'
 alias glala="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
 # pretty Git log, all references, show authors, align messages
 alias glalal="glala --all"
+
+# We want to set up git log's decorate colors depending on the Solarized theme
+if [ "$SOLARIZED" = "dark" ]; then
+  git dark-theme
+elif [ "$SOLARIZED" = "light" ]; then
+  git light-theme
+else
+  git dark-theme
+fi
 
 
 # ----- Docker aliases --------------------------------------------------------

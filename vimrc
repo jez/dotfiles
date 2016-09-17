@@ -407,8 +407,13 @@ let g:neomake_open_list = 1
 
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
-" Toggle this to "light" for light colorscheme
-set background=dark
+if $SOLARIZED ==? "dark"
+  set background=dark
+elseif $SOLARIZED == "light"
+  set background=light
+else
+  set background=dark
+endif
 
 " Uncomment the next line if your terminal is not configured for solarized
 "let g:solarized_termcolors=256
