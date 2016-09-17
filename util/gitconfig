@@ -4,6 +4,8 @@
 	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 18
+[pull]
+	ff = only
 
 # Color settings
 [color]
