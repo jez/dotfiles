@@ -505,6 +505,12 @@ augroup haskellMaps
 augroup END
 
 " }}}
+
+" ----- jez/vim-better-sml ----- {{{
+" Uncomment to have same-width conceal characters
+"let g:sml_greek_tyvar_show_tick = 1
+
+" }}}
 " ----- fzf ----- {{{
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-P> :FZF<CR>
