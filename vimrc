@@ -190,6 +190,11 @@ augroup myFiletypes
   " JavaScript linting files
   au BufRead,BufNewFile .eslintrc setlocal filetype=json
   au BufRead,BufNewFile .jscsrc setlocal filetype=json
+  " 15-411 intermediate language filetypes
+  au BufRead,BufNewFile *.l1 setlocal filetype=c0
+  au BufRead,BufNewFile *.l2 setlocal filetype=c0
+  au BufRead,BufNewFile *.l3 setlocal filetype=c0
+  au BufRead,BufNewFile *.l4 setlocal filetype=c0
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
