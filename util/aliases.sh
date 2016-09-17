@@ -51,7 +51,7 @@ alias icdiff="icdiff --no-bold"
 alias duls="du -h -d1 | sort -hr"
 
 # print my IP
-alias ip="curl curlmyip.com"
+alias ip="curl ifconfig.co"
 
 # resolve a symlink in the PWD to a fully qualified directory
 alias resolve='cd "`pwd -P`"'
