@@ -20,6 +20,9 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Use executables installed to a project by npm
+export PATH="$PATH:node_modules/.bin"
+
 # Add diff-highlight from Git contrib
 export PATH="$PATH:/usr/local/opt/git/share/git-core/contrib/diff-highlight"
 
