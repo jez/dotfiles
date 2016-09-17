@@ -70,7 +70,9 @@ alias jrnl=" jrnl"
 # ruby...
 # To use Homebrew's directories rather than ~/.rbenv
 export RBENV_ROOT="/usr/local/var/rbenv"
-eval "$(rbenv init -)"
+export PATH="$PATH:/usr/local/var/rbenv/shims"
+# We want to set our PATH manually, so skip this line in the init code
+eval "$(rbenv init - | tail -n +2)"
 
 # Settings for virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
