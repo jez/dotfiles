@@ -33,7 +33,7 @@ export PATH="$PATH:/Users/jake/Library/Android/sdk/platform-tools:/Users/jake/Li
 export PATH="$PATH:$HOME/.local/bin"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH:/usr/local/heroku/bin"
 
 # Disable Homebrew analytics until Homebrew/brew#145 is addressed
 export HOMEBREW_NO_ANALYTICS=1
