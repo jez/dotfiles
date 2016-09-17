@@ -35,6 +35,9 @@ export PATH="$PATH:$HOME/.local/bin"
 ### Added by the Heroku Toolbelt
 export PATH="$PATH:/usr/local/heroku/bin"
 
+# cc0 is installed to home bin folder
+export PATH="$PATH:$HOME/bin/cc0.d/bin"
+
 # Disable Homebrew analytics until Homebrew/brew#145 is addressed
 export HOMEBREW_NO_ANALYTICS=1
 
