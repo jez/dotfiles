@@ -29,6 +29,12 @@ export PATH="$PATH:/usr/local/ispc"
 export PATH="/usr/local/cuda-6.5/bin:$PATH"
 export PATH="/usr/lib64/openmpi/bin:$PATH"
 
+# 15-415 environment
+export PGPORT=50173
+export PGHOST=/tmp
+alias startpg415="pg_ctl -D $HOME/private/15415/db415 -o '-k /tmp' start"
+alias stoppg415="pg_ctl -D $HOME/private/15415/db415 stop"
+
 # 15-210 staff (doit library)
 export PATH="$PATH:/afs/cs.cmu.edu/academic/class/15210-s16/bin/"
 export PYTHONPATH="$PYTHONPATH:/afs/cs.cmu.edu/academic/class/15210-s16/lib/"
