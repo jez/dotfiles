@@ -52,6 +52,10 @@ alias sml="rlwrap sml"
 alias gl='git log --graph --pretty="%C(bold green)%h%Creset%C(blue)%d%Creset %s"'
 alias gla='git log --graph --pretty="%C(bold green)%h%Creset %C(yellow)%an%Creset%C(blue)%d%Creset %s"'
 
+# Use neovim for the lulz
+alias vim="nvim -p"
+alias vimdiff="nvim -d"
+
 # ----- Prompt  ---------------------------------------------------------------
 
 PROMPT_PURE_DIR_COLOR="%F{green}"
