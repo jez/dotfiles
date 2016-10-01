@@ -172,3 +172,6 @@
 [submodule "vim/bundle/alex.vim"]
 	path = vim/bundle/alex.vim
 	url = git@github.com:andy-morris/alex.vim.git
+[submodule "vim/bundle/happy.vim"]
+	path = vim/bundle/happy.vim
+	url = https://github.com/andy-morris/happy.vim
