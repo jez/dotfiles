@@ -169,3 +169,6 @@
 [submodule "vim/bundle/vim-qf"]
 	path = vim/bundle/vim-qf
 	url = git://github.com/romainl/vim-qf.git
+[submodule "vim/bundle/alex.vim"]
+	path = vim/bundle/alex.vim
+	url = git@github.com:andy-morris/alex.vim.git
