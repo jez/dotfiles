@@ -110,9 +110,14 @@ command! WV w | make view
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
 noremap <silent> j gj
+noremap <silent> gk k
+noremap <silent> gj j
 noremap <silent> 0 g0
+noremap <silent> g0 0
 noremap <silent> $ g$
+noremap <silent> g$ $
 noremap <silent> ^ g^
+noremap <silent> g^ ^
 noremap <silent> _ g_
 
 " use 'Y' to yank to the end of a line, instead of the whole line
