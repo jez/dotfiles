@@ -516,6 +516,7 @@ augroup END
 " }}}
 " ----- fzf ----- {{{
 set rtp+=/usr/local/opt/fzf
+set rtp+=/afs/cs/academic/class/15131-f15/opt/fzf
 nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
