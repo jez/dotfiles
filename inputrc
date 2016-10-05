@@ -9,6 +9,11 @@ set mark-symlinked-directories on
 # Use GNU ls colors when tab-completing files
 set colored-stats on
 
-# Edit with Vi keybindings
+## Edit with Vi keybindings
 set editing-mode vi
-set keymap vi
+$if mode=vi
+set keymap vi-command
+"k": history-search-backward
+"j": history-search-forward
+set keymap vi-insert
+$endif
