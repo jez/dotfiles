@@ -34,6 +34,8 @@ export PGPORT=50173
 export PGHOST=/tmp
 alias startpg415="pg_ctl -D $HOME/private/15415/db415 -o '-k /tmp' start"
 alias stoppg415="pg_ctl -D $HOME/private/15415/db415 stop"
+alias startpgtemp415="pg_ctl -D /tmp/jezimmer-db415 -o '-k /tmp' start"
+alias stoppgtemp415="pg_ctl -D /tmp/jezimmer-db415 stop"
 
 # 15-210 staff (doit library)
 export PATH="$PATH:/afs/cs.cmu.edu/academic/class/15210-s16/bin/"
