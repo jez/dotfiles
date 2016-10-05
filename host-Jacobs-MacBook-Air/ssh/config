@@ -5,7 +5,7 @@
 # }}}
 
 # ----- CMU ----- {{{
-  Host *.cmu.edu andrew gates shark greatwhite milkshark gpi
+  Host *.cmu.edu andrew gates databases shark greatwhite milkshark gpi
   User jezimmer
   GSSAPIAuthentication yes
   GSSAPIDelegateCredentials yes
@@ -16,6 +16,9 @@
 
     Host gates
     Hostname ghc50.ghc.andrew.cmu.edu
+
+    Host databases
+    Hostname ghc74.ghc.andrew.cmu.edu
 
     Host shark
     Hostname shark.ics.cs.cmu.edu
