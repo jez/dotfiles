@@ -21,12 +21,15 @@ alias cddddddd="cd ../../../../../.."
 
 # open multiple files in Vim tabs
 alias vim &> /dev/null || alias vim="vim -p"
+alias vimv="vim -O"
 
 alias bex="bundle exec"
 
 # I'm pretty proud of these ones
 alias :q="clear"
 alias :tabe="vim"
+alias :Vs="vimv"
+alias :vs="vimv"
 
 # Redirect stderr and stdout when using GRC
 which grc &> /dev/null && alias grc="grc -es"
