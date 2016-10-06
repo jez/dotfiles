@@ -68,6 +68,9 @@ if exists('&breakindent')
   set breakindent      " Indent wrapped lines up to the same level
 endif
 set foldnestmax=1      " Only fold up to one level deep
+set list               " Show certain non-printing characters as printed
+set listchars-=trail:- " Don't show trailing whitespace in listchars output
+                       " (I use vim-better-whitespace for trailing whitespace)
 
 " Show potential matches above completion, complete first immediately
 set wildmenu
