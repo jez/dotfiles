@@ -37,6 +37,8 @@
 	icdiff = --paginate difftool --tool icdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
 	message = log -n1 --format=\"%s%n%n%b\"
+	# Get last commit authored by me
+	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
 
 # Diff & Difftool settings
 [diff]
