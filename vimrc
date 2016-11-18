@@ -127,7 +127,10 @@ noremap <silent> _ g_
 noremap <silent> Y y$
 
 " take first suggested spelling as correct spelling and replace
-noremap <silent> z! z=1<CR><CR>
+noremap <silent> <leader>z z=1<CR><CR>
+
+" mash kj in insert mode to get out
+inoremap <silent> kj <ESC>
 
 map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
