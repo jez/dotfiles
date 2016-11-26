@@ -165,13 +165,13 @@
 	url = https://github.com/mhinz/vim-grepper.git
 [submodule "vim/bundle/vim-github-hub"]
 	path = vim/bundle/vim-github-hub
-	url = git://github.com/jez/vim-github-hub.git
+	url = https://github.com/jez/vim-github-hub.git
 [submodule "vim/bundle/vim-qf"]
 	path = vim/bundle/vim-qf
-	url = git://github.com/romainl/vim-qf.git
+	url = https://github.com/romainl/vim-qf.git
 [submodule "vim/bundle/alex.vim"]
 	path = vim/bundle/alex.vim
-	url = git@github.com:andy-morris/alex.vim.git
+	url = https://github.com/andy-morris/alex.vim.git
 [submodule "vim/bundle/happy.vim"]
 	path = vim/bundle/happy.vim
 	url = https://github.com/andy-morris/happy.vim
