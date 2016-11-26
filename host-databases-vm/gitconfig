@@ -1,0 +1,9 @@
+[include]
+	path = .util/gitconfig
+[user]
+	name = Jacob Zimmerman
+	email = zimmerman.jake@gmail.com
+[credential]
+	helper = cache
+[push]
+	default = simple
