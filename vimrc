@@ -233,6 +233,9 @@ augroup myFiletypes
   " Use coneal characters with LaTeX
   au FileType tex setlocal conceallevel=2
 
+  " Wrap long lines in quickfix windows
+  autocmd FileType qf setlocal wrap
+
 augroup END
 
 " }}}
