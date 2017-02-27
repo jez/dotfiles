@@ -4,7 +4,17 @@ let texMathList=[
   \ ['_',                  '_'],
   \ ['{',                  '{'],
   \ ['}',                  '}'],
-  \ ['\\',                  '↵'],
+  \ ['\\',                 '↵'],
+  \ ['iff',                '⇔'],
+  \ ['leftrightarrow',     '↔'],
+  \ ['longleftrightarrow', '↔'],
+  \ ['patheq',             '↔'],
+  \ ['whnorm',             '⇓'],
+  \ ['whred',              '↝'],
+  \ ['synth',              '⇒'],
+  \ ['check',              '⇐'],
+  \ ['langle',             '〈'],
+  \ ['rangle',              '〉'],
   \ ]
 for texmath in texMathList
   if texmath[0] =~# '\w$'
@@ -14,6 +24,8 @@ for texmath in texMathList
   endif
 endfor
 
+syn match texMathSymbol '\\,' contained conceal
+syn match texMathSymbol '\\quad' contained conceal
 
 fun! SuperSub(group,leader,pat,cchar)
   exe 'syn match '.a:group." '".a:leader.a:pat."' contained conceal cchar=".a:cchar
@@ -28,3 +40,6 @@ call SuperSub('texSubscript', '_', 'n', 'ₙ')
 call SuperSub('texSubscript', '_', 'p', 'ₚ')
 call SuperSub('texSubscript', '_', 's', 'ₛ')
 call SuperSub('texSubscript', '_', 't', 'ₜ')
+
+call TexNewMathZone("M","mathpar",1)
+
