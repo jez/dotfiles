@@ -228,6 +228,12 @@ EXEC 01;38;5;64
 .class      00;38;5;240
 .cache      00;38;5;240
 *tags       00;38;5;240
+*grm.desc   00;38;5;240
+*grm.sig    00;38;5;240
+*grm.sml    00;38;5;240
+*lex.sml    00;38;5;240
+*old.sml    00;38;5;240
+*old.sig    00;38;5;240
 
 # Audio formats (orange)
 .aac    00;38;5;166
