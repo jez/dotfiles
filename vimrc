@@ -377,6 +377,8 @@ augroup mySyntastic
 
   au FileType sml let g:syntastic_always_populate_loc_list = 1
   au FileType sml let g:syntastic_auto_loc_list = 1
+
+  au FileType purescript let g:syntastic_auto_loc_list = 1
 augroup END
 
 nnoremap <leader>S :SyntasticToggleMode<CR>
@@ -539,7 +541,23 @@ augroup END
 " ----- jez/vim-better-sml ----- {{{
 " Uncomment to have same-width conceal characters
 "let g:sml_greek_tyvar_show_tick = 1
-
+" }}}
+" ----- raichoo/purescript-vim ----- {{{
+let g:purescript_indent_case = 2
+" }}}
+" ----- FrigoEU/psc-ide-vim ----- {{{
+augroup pscide
+  au!
+  au FileType purescript nnoremap <leader>t :PSCIDEtype<CR>
+  au FileType purescript nnoremap <leader>S :PSCIDEapplySuggestion<CR>
+  au FileType purescript nnoremap <leader>pa :PSCIDEaddTypeAnnotation<CR>
+  au FileType purescript nnoremap <leader>i :PSCIDEimportIdentifier<CR>
+  au FileType purescript nnoremap <leader>L :PSCIDEload<CR>
+  au FileType purescript nnoremap <leader>pp :PSCIDEpursuit<CR>
+  au FileType purescript nnoremap <leader>pc :PSCIDEcaseSplit<CR>
+  au FileType purescript nnoremap <leader>qd :PSCIDEremoveImportQualifications<CR>
+  au FileType purescript nnoremap <leader>qa :PSCIDEaddImportQualifications<CR>
+augroup END
 " }}}
 " ----- fzf ----- {{{
 set rtp+=/usr/local/opt/fzf
