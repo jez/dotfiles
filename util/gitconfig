@@ -39,6 +39,7 @@
 	message = log -n1 --format=\"%s%n%n%b\"
 	# Get last commit authored by me
 	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
+	root = rev-parse --show-toplevel
 
 # Diff & Difftool settings
 [diff]
