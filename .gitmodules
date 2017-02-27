@@ -175,3 +175,12 @@
 [submodule "vim/bundle/happy.vim"]
 	path = vim/bundle/happy.vim
 	url = https://github.com/andy-morris/happy.vim
+[submodule "vim/bundle/goyo.vim"]
+	path = vim/bundle/goyo.vim
+	url = git://github.com/junegunn/goyo.vim.git
+[submodule "vim/bundle/psc-ide-vim"]
+	path = vim/bundle/psc-ide-vim
+	url = https://github.com/FrigoEU/psc-ide-vim/
+[submodule "vim/bundle/purescript-vim"]
+	path = vim/bundle/purescript-vim
+	url = https://github.com/raichoo/purescript-vim
