@@ -36,6 +36,7 @@
 # completion plugins easier, but it could be removed if you don't want that
 # many completion plugins.
 DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
 export CASE_SENSITIVE="true"
 export ZSH="$HOME/.oh-my-zsh/"
 plugins=(brew brew-cask)
