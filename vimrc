@@ -537,7 +537,9 @@ augroup haskellMaps
 augroup END
 
 " }}}
-
+" ----- junegunn/goyo.vim ----- {{{
+nnoremap <silent> <leader>W :Goyo<CR>
+" }}}
 " ----- jez/vim-better-sml ----- {{{
 " Uncomment to have same-width conceal characters
 "let g:sml_greek_tyvar_show_tick = 1
