@@ -47,7 +47,7 @@
 # }}}
 
 # ----- ScottyLabs ----- {{{
-  Host sl-unix-cmu sl-cclub
+  Host sl-unix sl-cclub
   User jake
 
   Host sl-unix
