@@ -530,10 +530,10 @@ let g:qf_mapping_ack_style = 1
 " ----- eagletmt/ghcmod-vim ----- {{{
 augroup haskellMaps
   au!
-  nnoremap <leader>t :GhcModType<CR>
-  nnoremap <leader>x :GhcModTypeClear<CR>
-  nnoremap <leader>i :GhcModTypeInsert<CR>
-  nnoremap <leader>f :GhcModSplitFunCase<CR>
+  au FileType haskell nnoremap <leader>t :GhcModType<CR>
+  au FileType haskell nnoremap <leader>x :GhcModTypeClear<CR>
+  au FileType haskell nnoremap <leader>i :GhcModTypeInsert<CR>
+  au FileType haskell nnoremap <leader>f :GhcModSplitFunCase<CR>
 augroup END
 
 " }}}
