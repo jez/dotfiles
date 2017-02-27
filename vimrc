@@ -227,6 +227,11 @@ augroup myFiletypes
 
   " Use coneal characters with SML
   au FileType sml setlocal conceallevel=2
+  au FileType mllex setlocal conceallevel=2
+  au FileType mlyacc setlocal conceallevel=2
+
+  " Use coneal characters with LaTeX
+  au FileType tex setlocal conceallevel=2
 
 augroup END
 
