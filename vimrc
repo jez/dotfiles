@@ -498,6 +498,9 @@ let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
 " }}}
+" ----- vim-pandoc/vim-pandoc-syntax ----- {{{
+let g:pandoc#syntax#use_definition_lists = 0
+" }}}
 " ----- mhinz/grepper ----- {{{
 let g:grepper = {
     \ 'tools': ['ag', 'git', 'grep'],
