@@ -124,10 +124,10 @@ noremap <silent> g^ ^
 noremap <silent> _ g_
 
 " use 'Y' to yank to the end of a line, instead of the whole line
-noremap <silent> Y y$
+nnoremap <silent> Y y$
 
 " take first suggested spelling as correct spelling and replace
-noremap <silent> <leader>z z=1<CR><CR>
+nnoremap <silent> <leader>z z=1<CR><CR>
 
 " mash kj in insert mode to get out
 inoremap <silent> kj <ESC>
