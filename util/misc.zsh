@@ -129,3 +129,5 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 alias help="run-help"
 
+# Use tab completion for Vim SuperMan
+which compdef &> /dev/null && compdef vman="man"
