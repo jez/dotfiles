@@ -233,6 +233,9 @@ augroup myFiletypes
   " Use coneal characters with LaTeX
   au FileType tex setlocal conceallevel=2
 
+  " Reset concealcursor in Vim help
+  au Filetype help setlocal concealcursor=
+
   " Wrap long lines in quickfix windows
   autocmd FileType qf setlocal wrap
 
@@ -447,6 +450,8 @@ colorscheme solarized
 
 " Remove the underline Solarized places under Folded previews
 hi! Folded cterm=NONE term=NONE
+
+hi link helpCommand Constant
 
 " }}}
 " ----- airblade/vim-gitgutter settings ----- {{{
