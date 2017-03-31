@@ -548,6 +548,19 @@ nnoremap <silent> <leader>W :Goyo<CR>
 " ----- jez/vim-better-sml ----- {{{
 " Uncomment to have same-width conceal characters
 "let g:sml_greek_tyvar_show_tick = 1
+
+"let g:sml_show_all_unused_warnings = 1
+"let g:sml_hide_cmlib_unused_warnings = 1
+"let g:sml_jump_to_def_new_tab = 1
+
+augroup smlMaps
+  au!
+  au FileType sml nnoremap <leader>t :SMLTypeQuery<CR>
+  au FileType sml nnoremap gd :SMLJumpToDef<CR>
+augroup END
+
+" Check for unused variables
+"let g:syntastic_sml_checkers = ["smlnj", "unused"]
 " }}}
 " ----- raichoo/purescript-vim ----- {{{
 let g:purescript_indent_case = 2
