@@ -20,6 +20,9 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Use up-to-date sqlite3
+export PATH="/usr/local/opt/sqlite3/bin:$PATH"
+
 # Use executables installed to a project by npm
 export PATH="$PATH:node_modules/.bin"
 
