@@ -14,7 +14,8 @@ let texMathList=[
   \ ['synth',              '⇒'],
   \ ['check',              '⇐'],
   \ ['langle',             '〈'],
-  \ ['rangle',              '〉'],
+  \ ['rangle',             '〉'],
+  \ ['pto',                '→'],
   \ ]
 for texmath in texMathList
   if texmath[0] =~# '\w$'
