@@ -48,6 +48,10 @@ which tmux &> /dev/null && alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf
 # Use --no-bold for Solarized colors
 alias icdiff="icdiff --no-bold"
 
+# Node module for lorem-ipsum
+alias words="lorem-ipsum --units words --count"
+alias paras="lorem-ipsum --units paragraphs --count"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
