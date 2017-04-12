@@ -6,6 +6,7 @@ let texMathList=[
   \ ['}',                  '}'],
   \ ['\\',                 '↵'],
   \ ['iff',                '⇔'],
+  \ ['implies',            '⇒'],
   \ ['leftrightarrow',     '↔'],
   \ ['longleftrightarrow', '↔'],
   \ ['patheq',             '↔'],
