@@ -6,6 +6,8 @@
 	autocorrect = 18
 [pull]
 	ff = only
+[log]
+	date = relative
 
 # Color settings
 [color]
