@@ -281,3 +281,6 @@ Recursors
 recursor
 reify
 schedulings
+assignables
+memoization
+memoized
