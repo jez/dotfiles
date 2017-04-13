@@ -1163,26 +1163,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1202,26 +1202,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781097173690796</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001232385635376</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.9161105751991272</real>
 			</dict>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Link Color</key>
 			<dict>
@@ -1241,13 +1241,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -1504,26 +1504,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1543,26 +1543,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781097173690796</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001232385635376</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.9161105751991272</real>
 			</dict>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Link Color</key>
 			<dict>
@@ -1582,13 +1582,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -1809,11 +1809,13 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Desktop</string>
+	<string>~/.dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 521}</string>
+	<key>NSNavPanelExpandedStateForSaveMode</key>
+	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1845,7 +1847,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>779 181 608 77 0 0 1440 900 </string>
+	<string>612 155 608 77 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>0 421 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -1853,9 +1855,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>183 480 918 381 0 0 1440 900 </string>
+	<string>183 256 918 495 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 267 594 603 0 0 1440 877 </string>
+	<string>720 10 717 867 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 424 654 447 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2538,7 +2540,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MenloForPowerline-Regular 12</string>
+			<string>MenloForPowerline-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2601,7 +2603,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
@@ -2718,7 +2720,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0040249824523926</real>
+			<real>1.0586301217596215</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2990,13 +2992,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Bound Hosts</key>
 			<array/>
@@ -3008,18 +3010,20 @@
 			<integer>100</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -3039,13 +3043,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781097173690796</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001232385635376</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.9161105751991272</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -3068,13 +3072,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.407176673412323</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436615228652954</real>
 			</dict>
 			<key>Guid</key>
 			<string>B60F9AEE-DA4D-4092-9594-B5A612DEC015</string>
@@ -3402,7 +3406,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MenloForPowerline-Regular 12</string>
+			<string>MenloForPowerline-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3424,13 +3428,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298481702804565</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665953159332275</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671989798545837</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -3580,7 +3584,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0040249824523926</real>
+			<real>1.0582242012023928</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
