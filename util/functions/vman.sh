@@ -7,10 +7,12 @@
 # zsh completion if in zsh
 which compdef &> /dev/null && compdef vman="man"
 vman() {
-  vim -c "SuperMan $*"
-
-  if [ "$?" != "0" ]; then
+  # Check that manpage exists to prevent visual noise.
+  if ! man -d "$@" &> /dev/null; then
     echo "No manual entry for $*"
+    exit 1
   fi
+
+  vim -c "SuperMan $*"
 }
 

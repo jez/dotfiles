@@ -19,6 +19,3 @@ if ! echo $TERM | grep 'italic' &> /dev/null; then
 fi
 # Things will break if you don't have these terminfo changes applied on _every_
 # host that you use; i.e., every box that you ssh into
-
-# Load vman command from Vim SuperMan plugin
-export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
