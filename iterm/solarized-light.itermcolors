@@ -241,26 +241,26 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.56363654136657715</real>
+		<real>0.38298481702804565</real>
 		<key>Color Space</key>
 		<string>Calibrated</string>
 		<key>Green Component</key>
-		<real>0.56485837697982788</real>
+		<real>0.35665953159332275</real>
 		<key>Red Component</key>
-		<real>0.50599193572998047</real>
+		<real>0.27671989798545837</real>
 	</dict>
 	<key>Cursor Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.51685798168182373</real>
+		<real>0.43850564956665039</real>
 		<key>Color Space</key>
 		<string>Calibrated</string>
 		<key>Green Component</key>
-		<real>0.50962930917739868</real>
+		<real>0.407176673412323</real>
 		<key>Red Component</key>
-		<real>0.44058024883270264</real>
+		<real>0.32436615228652954</real>
 	</dict>
 	<key>Cursor Guide Color</key>
 	<dict>
@@ -280,26 +280,26 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.19370138645172119</real>
+		<real>0.79781097173690796</real>
 		<key>Color Space</key>
 		<string>Calibrated</string>
 		<key>Green Component</key>
-		<real>0.15575926005840302</real>
+		<real>0.89001232385635376</real>
 		<key>Red Component</key>
-		<real>0.0</real>
+		<real>0.9161105751991272</real>
 	</dict>
 	<key>Foreground Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.51685798168182373</real>
+		<real>0.43850564956665039</real>
 		<key>Color Space</key>
 		<string>Calibrated</string>
 		<key>Green Component</key>
-		<real>0.50962930917739868</real>
+		<real>0.407176673412323</real>
 		<key>Red Component</key>
-		<real>0.44058024883270264</real>
+		<real>0.32436615228652954</real>
 	</dict>
 	<key>Link Color</key>
 	<dict>
@@ -319,13 +319,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.56363654136657715</real>
+		<real>0.38298481702804565</real>
 		<key>Color Space</key>
 		<string>Calibrated</string>
 		<key>Green Component</key>
-		<real>0.56485837697982788</real>
+		<real>0.35665953159332275</real>
 		<key>Red Component</key>
-		<real>0.50599193572998047</real>
+		<real>0.27671989798545837</real>
 	</dict>
 	<key>Selection Color</key>
 	<dict>
