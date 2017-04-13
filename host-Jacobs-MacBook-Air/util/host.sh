@@ -84,6 +84,9 @@ source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 # Have Haskell Stack use XDG Base Directory spec
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 
+# Have Smackage use XDG Base Directory spec
+export SMACKAGE_HOME="$XDG_DATA_HOME/smackage"
+
 # GNUPG-specific settings
 source ~/.util/gnupg.sh
 
