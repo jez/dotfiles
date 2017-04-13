@@ -132,9 +132,6 @@ nnoremap <silent> <leader>z z=1<CR><CR>
 " easier to type \v than :WV on my keyboard
 nnoremap <silent> <leader>v :WV<CR>
 
-" mash kj in insert mode to get out
-inoremap <silent> kj <ESC>
-
 map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
