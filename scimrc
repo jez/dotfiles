@@ -1,0 +1,12 @@
+# Looks really nice with Solarized color scheme
+color "type=HEADINGS fg=DEFAULT_COLOR bg=BLACK bold=0"
+color "type=CELL_SELECTION fg=WHITE bg=GREEN bold=1"
+color "type=CELL_SELECTION_SC fg=WHITE bg=YELLOW bold=0"
+
+# Swapping these mappings makes more sense to me:
+# use gg/G to jump within a column
+# Unfortunately, there's no mappings for visual mode
+nnoremap "gg" "^"
+nnoremap "^" "gg"
+nnoremap "G" "#"
+nnoremap "#" "G"
