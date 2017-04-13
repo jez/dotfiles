@@ -142,15 +142,6 @@ alias glala="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
 # pretty Git log, all references, show authors, align messages
 alias glalal="glala --all"
 
-# We want to set up git log's decorate colors depending on the Solarized theme
-if [ "$SOLARIZED" = "dark" ]; then
-  git dark-theme
-elif [ "$SOLARIZED" = "light" ]; then
-  git light-theme
-else
-  git dark-theme
-fi
-
 
 # ----- Docker aliases --------------------------------------------------------
 

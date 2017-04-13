@@ -13,7 +13,7 @@
 [color]
 	ui = true
 [color "decorate"]
-	head = bold white
+	head = magenta
 	branch = bold magenta
 	remotebranch = blue
 	tag = bold red
@@ -22,11 +22,6 @@
 
 # Aliases
 [alias]
-	# aliases to quickly change settings (in this file) for decorate colors
-	# n.b.: This has to use a "!" because otherwise the Git won't
-	#       expand "~" to the home directory. The "!" does shell expansion.
-	dark-theme = !git config --file ~/.util/gitconfig color.decorate.head \"bold white\"
-	light-theme = !git config --file ~/.util/gitconfig color.decorate.head \"bold black\"
 	# list files which have changed since REVIEW_BASE
 	# (defaults to 'master' in zshrc)
 	files = !git diff --name-only $(git merge-base --fork-point \"$REVIEW_BASE\")
