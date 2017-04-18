@@ -273,7 +273,8 @@ let g:airline#extensions#tmuxline#enabled = 0
 
 " }}}
 " ----- Raimondi/delimitMate settings ----- {{{
-let delimitMate_expand_cr = 1
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_excluded_regions = ''
 augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
