@@ -26,6 +26,18 @@
 #   Maybe some day I'll turn this into a fully-configurable file, but for now
 #   most things are hard coded.
 
+case "$SOLARIZED" in
+  dark)
+    cemph="$cwhiteb"
+    ;;
+  light)
+    cemph="$cgray"
+    ;;
+  *)
+    cemph="$cwhiteb"
+    ;;
+esac
+
 # Number of seconds to wait before printing a reminder
 UPDATE_THRESHOLD="86400"
 
@@ -49,7 +61,7 @@ fi
 time_since_check=$((time_now - last_login))
 
 if [ "$time_since_check" -ge "$UPDATE_THRESHOLD" ]; then
-  echo "$cred==>$cwhiteb Your system is out of date!$cnone"
+  echo "$cred==>$cemph Your system is out of date!$cnone"
   echo 'Run `update` to bring it up to date.'
 fi
 
@@ -68,12 +80,12 @@ update() {
 
   # Update dotfiles repo
   cd ~/.dotfiles/
-  echo "$cblueb==>$cwhiteb Updating dotfiles...$cnone"
+  echo "$cblueb==>$cemph Updating dotfiles...$cnone"
   git fetch --quiet origin
   if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo "$credb  --> outdated.$cnone"; fi
 
   # Update each submodule in the dotfiles repo
-  echo "$cblueb==>$cwhiteb Checking for outdated dotfiles submodules...$cnone"
+  echo "$cblueb==>$cemph Checking for outdated dotfiles submodules...$cnone"
   git submodule foreach --quiet 'git fetch --quiet && if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then echo $path; fi'
   cd - &> /dev/null
 
