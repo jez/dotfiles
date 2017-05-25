@@ -56,6 +56,9 @@ set number             " line numbers
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
 set incsearch          " do incremental searching
+if exists('&inccommand')
+  set inccommand=split " like incsearch, but do it for commands (like :s)
+endif
 set linebreak          " wrap lines on 'word' boundaries
 set scrolloff=3        " don't let the cursor touch the edge of the viewport
 set splitright         "   Vertical splits  use   right half  of screen
