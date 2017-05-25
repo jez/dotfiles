@@ -115,6 +115,9 @@ command! WV w | make view
 " }}}
 " ----- Custom keybindings ---------------------------------------------- {{{
 
+map <space> <leader>
+nnoremap <CR> :
+
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
 noremap <silent> j gj
