@@ -230,6 +230,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.l2 setlocal filetype=c0
   au BufRead,BufNewFile *.l3 setlocal filetype=c0
   au BufRead,BufNewFile *.l4 setlocal filetype=c0
+  " SQLite-specific file
+  au BufRead,BufNewFile *.sqlite setlocal filetype=sql
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
