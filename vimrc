@@ -139,7 +139,8 @@ nnoremap <silent> Y y$
 " take first suggested spelling as correct spelling and replace
 nnoremap <silent> <leader>z z=1<CR><CR>
 
-" easier to type \v than :WV on my keyboard
+nnoremap <leader>ww :w<CR>
+nnoremap <leader>wa :wa<CR>
 nnoremap <silent> <leader>v :WV<CR>
 
 map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
