@@ -22,6 +22,15 @@
       "key": "j"
   },
 
+  "focus-screen-1": {
+    "mod": "mod1",
+    "key": "o"
+  },
+  "focus-screen-2": {
+    "mod": "mod1",
+    "key": "p"
+  },
+
   "focus-follows-mouse": false,
   "enables-layout-hud": false,
   "enables-layout-hud-on-space-change": false
