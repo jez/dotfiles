@@ -117,6 +117,8 @@ command! WV w | make view
 
 map <space> <leader>
 nnoremap <CR> :
+nnoremap s <nop>
+nnoremap S <nop>
 
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
