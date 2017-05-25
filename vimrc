@@ -403,7 +403,8 @@ augroup mySyntastic
   au FileType purescript let g:syntastic_auto_loc_list = 1
 augroup END
 
-nnoremap <leader>S :SyntasticToggleMode<CR>
+nnoremap <leader>ST :SyntasticToggleMode<CR>
+nnoremap <leader>SR :SyntasticReset<CR>
 
 " Follow `source` statements in shell code
 let g:syntastic_sh_shellcheck_args = "-x"
