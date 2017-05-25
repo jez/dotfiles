@@ -184,3 +184,6 @@
 [submodule "vim/bundle/purescript-vim"]
 	path = vim/bundle/purescript-vim
 	url = https://github.com/raichoo/purescript-vim
+[submodule "vim/bundle/vim-css-color"]
+	path = vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color
