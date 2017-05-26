@@ -32,6 +32,8 @@
 	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
+	# show the before, changes, and after for one tracked image
+	diff-img = difftool --tool imgdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
 	message = log -n1 --format=\"%s%n%n%b\"
 	# Get last commit authored by me
@@ -45,6 +47,8 @@
 	prompt = false
 [difftool "icdiff"]
 	cmd = icdiff --no-bold --line-numbers -L \"$BASE\" -L \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+[difftool "imgdiff"]
+	cmd = git-imgdiff
 [interactive]
 	diffFilter = diff-highlight
 
