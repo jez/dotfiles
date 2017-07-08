@@ -424,6 +424,27 @@ let g:neomake_warning_sign = {
 let g:neomake_open_list = 1
 
 " }}}
+" ----- w0rp/ale ----- {{{
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = "▲"
+
+let g:airline#extensions#ale#enabled = 1
+
+" Open the loclist if there were errors
+let g:ale_open_list = 1
+
+" Only lint on save
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+
+nnoremap <leader>AT :ALEToggle
+
+let g:ale_linters = {
+  \ 'tex': [],
+  \ 'haskell': [],
+  \ }
+" }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
 if $SOLARIZED ==? "dark"
   set background=dark
