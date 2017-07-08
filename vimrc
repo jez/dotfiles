@@ -532,6 +532,19 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
+augroup pandocSettings
+  au!
+
+  " Auto-populate next line with things like blockquotes '>'
+  au FileType pandoc setlocal formatoptions+=c
+
+  " Indent and de-indent with TAB and SHIFT + TAB
+  au Filetype pandoc nnoremap <TAB> >>
+  au Filetype pandoc nnoremap <S-TAB> <<
+  au Filetype pandoc inoremap <TAB> <C-t>
+  au Filetype pandoc inoremap <S-TAB> <C-d>
+augroup END
+
 " }}}
 " ----- vim-pandoc/vim-pandoc-syntax ----- {{{
 let g:pandoc#syntax#use_definition_lists = 0
