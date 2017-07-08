@@ -269,6 +269,27 @@ execute pathogen#infect()
 " Generate all helptags on startup
 Helptags
 
+" ----- altercation/vim-colors-solarized settings ----- {{{
+if $SOLARIZED ==? "dark"
+  set background=dark
+elseif $SOLARIZED == "light"
+  set background=light
+else
+  set background=dark
+endif
+
+" Uncomment the next line if your terminal is not configured for solarized
+"let g:solarized_termcolors=256
+
+" Set the colorscheme
+colorscheme solarized
+
+" Remove the underline Solarized places under Folded previews
+hi! Folded cterm=NONE term=NONE
+
+hi link helpCommand Constant
+
+" }}}
 " ----- bling/vim-airline settings ----- {{{
 " Fancy arrow symbols, requires a patched font
 let g:airline_powerline_fonts = 1
@@ -291,97 +312,7 @@ let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#tmuxline#enabled = 0
 
 " }}}
-" ----- Raimondi/delimitMate settings ----- {{{
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_excluded_regions = ''
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType pandoc let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-  au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END
 
-" }}}
-" ----- majutsushi/tagbar settings ----- {{{
-" Open/close tagbar with \b
-nnoremap <silent> <leader>b :TagbarToggle<CR>
-
-" Always open tagbar for CoffeeScript files
-"au! FileType coffee TagbarOpen
-
-" Order tags based on file order; don't sort alphabetically
-let g:tagbar_sort = 0
-"autocmd BufEnter * nested :call tagbar#autoopen(0)
-
-" Treat .ts in Vim as .ts in ctags
-"let g:tagbar_type_typescript = {
-"  \ 'ctagstype': 'typescript',
-"  \ 'kinds': [
-"    \ 'c:classes',
-"    \ 'n:modules',
-"    \ 'f:functions',
-"    \ 'v:variables',
-"    \ 'v:varlambdas',
-"    \ 'm:members',
-"    \ 'i:interfaces',
-"    \ 'e:enums',
-"  \ ]
-"\ }
-
-" Treat .ts in Vim as .js in ctags
-let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'JavaScript',
-  \ 'kinds': [
-    \ 'f:functions',
-    \ 'c:classes',
-    \ 'm:members',
-    \ 'p:properties',
-    \ 'v:globals',
-  \ ]
-\ }
-
-let g:tagbar_type_javascript = {
-  \ 'ctagstype': 'js',
-  \ 'replace': 1,
-  \ 'ctagsbin': '~/bin/gtags',
-  \ 'kinds': [
-    \ 'c:class',
-    \ 'm:method',
-    \ 'p:property',
-    \ 'f:function',
-    \ 'o:object',
-    \ 'n:constant',
-  \ ],
-\ }
-
-let g:tagbar_type_coffee = {
-  \ 'ctagstype': 'CoffeeScript',
-  \ 'kinds': [
-    \ 'n:constants',
-    \ 'c:classes',
-    \ 'm:methods',
-    \ 'f:functions',
-  \ ]
-\ }
-
-" }}}
-" ----- xolox/vim-easytags settings ----- {{{
-set tags=./tags;,~/.vimtags
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-
-let g:easytags_languages = {
-\   'javascript.jsx': {
-\     'cmd': '~/bin/gtags',
-\     'stdout_opt': '-f -'
-\   }
-\ }
-" }}}
 " ----- scrooloose/syntastic settings ----- {{{
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
@@ -453,52 +384,151 @@ let g:neomake_warning_sign = {
 let g:neomake_open_list = 1
 
 " }}}
-" ----- altercation/vim-colors-solarized settings ----- {{{
-if $SOLARIZED ==? "dark"
-  set background=dark
-elseif $SOLARIZED == "light"
-  set background=light
-else
-  set background=dark
-endif
 
-" Uncomment the next line if your terminal is not configured for solarized
-"let g:solarized_termcolors=256
+" ----- majutsushi/tagbar settings ----- {{{
+" Open/close tagbar with \b
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
-" Set the colorscheme
-colorscheme solarized
+" Always open tagbar for CoffeeScript files
+"au! FileType coffee TagbarOpen
 
-" Remove the underline Solarized places under Folded previews
-hi! Folded cterm=NONE term=NONE
+" Order tags based on file order; don't sort alphabetically
+let g:tagbar_sort = 0
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
 
-hi link helpCommand Constant
+" Treat .ts in Vim as .ts in ctags
+"let g:tagbar_type_typescript = {
+"  \ 'ctagstype': 'typescript',
+"  \ 'kinds': [
+"    \ 'c:classes',
+"    \ 'n:modules',
+"    \ 'f:functions',
+"    \ 'v:variables',
+"    \ 'v:varlambdas',
+"    \ 'm:members',
+"    \ 'i:interfaces',
+"    \ 'e:enums',
+"  \ ]
+"\ }
+
+" Treat .ts in Vim as .js in ctags
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'JavaScript',
+  \ 'kinds': [
+    \ 'f:functions',
+    \ 'c:classes',
+    \ 'm:members',
+    \ 'p:properties',
+    \ 'v:globals',
+  \ ]
+\ }
+
+let g:tagbar_type_javascript = {
+  \ 'ctagstype': 'js',
+  \ 'replace': 1,
+  \ 'ctagsbin': '~/bin/gtags',
+  \ 'kinds': [
+    \ 'c:class',
+    \ 'm:method',
+    \ 'p:property',
+    \ 'f:function',
+    \ 'o:object',
+    \ 'n:constant',
+  \ ],
+\ }
+
+let g:tagbar_type_coffee = {
+  \ 'ctagstype': 'CoffeeScript',
+  \ 'kinds': [
+    \ 'n:constants',
+    \ 'c:classes',
+    \ 'm:methods',
+    \ 'f:functions',
+  \ ]
+\ }
 
 " }}}
-" ----- airblade/vim-gitgutter settings ----- {{{
-hi clear SignColumn
+" ----- romainl/vim-qf ----- {{{
+" Because grepper no longer has keybindings in the Quickfix window
+let g:qf_mapping_ack_style = 1
+" }}}
+" ----- mhinz/grepper ----- {{{
+let g:grepper = {
+    \ 'tools': ['ag', 'git', 'grep'],
+    \ 'open':  1,
+    \ 'jump':  0,
+    \ 'highlight':  1,
+    \ }
 
-nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>r  :GitGutterUndoHunk<CR>
-nnoremap <leader>s  :GitGutterStageHunk<CR>
+nnoremap <leader>a :Grepper<CR>
+nnoremap <leader>* :Grepper -cword -noprompt<CR>
 
-" overrides these bindings from vanilla Vim
-nnoremap gp :GitGutterPrevHunk<CR>
-nnoremap gn :GitGutterNextHunk<CR>
+" }}}
+" ----- fzf ----- {{{
+set rtp+=/usr/local/opt/fzf
+set rtp+=/afs/cs/academic/class/15131-f15/opt/fzf
+nnoremap <C-P> :FZF<CR>
 
-" Update signs faster. Proceed at own risk (might be expensive for you).
-set updatetime=500
+" <CR> to open in new tab, <C-E> for current buffer
+let g:fzf_action = {
+  \ 'ctrl-m': 'tabedit',
+  \ 'ctrl-e': 'edit',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-r': 'read',
+\}
 
-" I have a patched Solarized plugin that sets these groups up
-hi! link GitGutterAdd    gitgutterAdd
-hi! link GitGutterChange gitgutterChange
-hi! link GitGutterDelete gitgutterDelete
+" }}}
 
+" ----- Raimondi/delimitMate settings ----- {{{
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_excluded_regions = ''
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType pandoc let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+  au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
+
+" }}}
+" ----- ntpeters/vim-better-whitespace ----- {{{
+" Don't highlight whitespace in git commit messages (for diffs)...
+let g:better_whitespace_filetypes_blacklist=['gitcommit']
+" ... but strip it on save so that we're still safe
+autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
+
+" Use Solarized colors for highlighting
+highlight Extrawhitespace ctermbg=red guibg=#dc322f
+
+" }}}
+" ----- xolox/vim-easytags settings ----- {{{
+set tags=./tags;,~/.vimtags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+
+let g:easytags_languages = {
+\   'javascript.jsx': {
+\     'cmd': '~/bin/gtags',
+\     'stdout_opt': '-f -'
+\   }
+\ }
 " }}}
 " ----- jez/vim-superman settings ----- {{{
 " better man page support
 noremap K :SuperMan <cword><CR>
 
 " }}}
+" ----- junegunn/goyo.vim ----- {{{
+nnoremap <silent> <leader>W :Goyo<CR>
+" }}}
+
+" ----- Filetype-related plugins -----
+
 " ----- pangloss/vim-javascript ----- {{{
 let g:javascript_conceal_function       = "λ"
 let g:javascript_conceal_null           = "ø"
@@ -516,16 +546,7 @@ let g:javascript_conceal_undefined      = "¿"
 let g:jsx_ext_required = 0
 
 " }}}
-" ----- ntpeters/vim-better-whitespace ----- {{{
-" Don't highlight whitespace in git commit messages (for diffs)...
-let g:better_whitespace_filetypes_blacklist=['gitcommit']
-" ... but strip it on save so that we're still safe
-autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
-
-" Use Solarized colors for highlighting
-highlight Extrawhitespace ctermbg=red guibg=#dc322f
-
-" }}}
+"
 " ----- vim-pandoc/vim-pandoc ----- {{{
 let g:pandoc#modules#disabled = ['folding', 'chdir']
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
@@ -549,35 +570,7 @@ augroup END
 " ----- vim-pandoc/vim-pandoc-syntax ----- {{{
 let g:pandoc#syntax#use_definition_lists = 0
 " }}}
-" ----- mhinz/grepper ----- {{{
-let g:grepper = {
-    \ 'tools': ['ag', 'git', 'grep'],
-    \ 'open':  1,
-    \ 'jump':  0,
-    \ 'highlight':  1,
-    \ }
 
-nnoremap <leader>a :Grepper<CR>
-nnoremap <leader>* :Grepper -cword -noprompt<CR>
-
-" }}}
-" ----- romainl/vim-qf ----- {{{
-" Because grepper no longer has keybindings in the Quickfix window
-let g:qf_mapping_ack_style = 1
-" }}}
-" ----- eagletmt/ghcmod-vim ----- {{{
-augroup haskellMaps
-  au!
-  au FileType haskell nnoremap <leader>t :GhcModType<CR>
-  au FileType haskell nnoremap <leader>x :GhcModTypeClear<CR>
-  au FileType haskell nnoremap <leader>i :GhcModTypeInsert<CR>
-  au FileType haskell nnoremap <leader>f :GhcModSplitFunCase<CR>
-augroup END
-
-" }}}
-" ----- junegunn/goyo.vim ----- {{{
-nnoremap <silent> <leader>W :Goyo<CR>
-" }}}
 " ----- jez/vim-better-sml ----- {{{
 " Uncomment to have same-width conceal characters
 "let g:sml_greek_tyvar_show_tick = 1
@@ -612,21 +605,7 @@ augroup pscide
   au FileType purescript nnoremap <leader>qa :PSCIDEaddImportQualifications<CR>
 augroup END
 " }}}
-" ----- fzf ----- {{{
-set rtp+=/usr/local/opt/fzf
-set rtp+=/afs/cs/academic/class/15131-f15/opt/fzf
-nnoremap <C-P> :FZF<CR>
 
-" <CR> to open in new tab, <C-E> for current buffer
-let g:fzf_action = {
-  \ 'ctrl-m': 'tabedit',
-  \ 'ctrl-e': 'edit',
-  \ 'ctrl-v': 'vsplit',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-r': 'read',
-\}
-
-" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
@@ -636,4 +615,14 @@ let g:netrw_dirhistmax = 0
 " }}}
 " }}}
 " -----------------------------------------------------------------------------
+
+" if has('nvim')
+"   tnoremap <C-f>n <C-\><C-n>
+"   tnoremap <C-f>q <C-\><C-n>:q
+"   tnoremap <C-h> <C-\><C-n><C-w>h
+"   tnoremap <C-j> <C-\><C-n><C-w>j
+"   tnoremap <C-k> <C-\><C-n><C-w>k
+"   tnoremap <C-l> <C-\><C-n><C-w>l
+" endif
+
 " vim:ft=vim fdm=marker
