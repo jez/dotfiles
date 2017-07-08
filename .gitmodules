@@ -21,7 +21,7 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "zfunctions/pure"]
 	path = zfunctions/pure
-	url = https://github.com/jez/pure
+	url = git@github.com:jez/pure.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
@@ -30,7 +30,7 @@
 	url = https://github.com/tpope/vim-surround
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/jez/vim-colors-solarized
+	url = git@github.com:jez/vim-colors-solarized.git
 [submodule "vim/bundle/a.vim"]
 	path = vim/bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim
@@ -90,7 +90,7 @@
 	url = https://github.com/edkolev/tmuxline.vim
 [submodule "vim/bundle/vim-superman"]
 	path = vim/bundle/vim-superman
-	url = https://github.com/jez/vim-superman
+	url = git@github.com:jez/vim-superman.git
 [submodule "vim/bundle/Dockerfile.vim"]
 	path = vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim
@@ -99,10 +99,10 @@
 	url = https://github.com/cakebaker/scss-syntax.vim
 [submodule "vim/bundle/vim-ispc"]
 	path = vim/bundle/vim-ispc
-	url = https://github.com/jez/vim-ispc
+	url = git@github.com:jez/vim-ispc.git
 [submodule "vim/bundle/vim-c0"]
 	path = vim/bundle/vim-c0
-	url = https://github.com/jez/vim-c0
+	url = git@github.com:jez/vim-c0.git
 [submodule "vim/bundle/nginx-vim-syntax"]
 	path = vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax
@@ -138,7 +138,7 @@
 	url = https://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/vim-better-sml"]
 	path = vim/bundle/vim-better-sml
-	url = https://github.com/jez/vim-better-sml.git
+	url = git@github.com:jez/vim-better-sml.git
 [submodule "vim/bundle/vimproc.vim"]
 	path = vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
@@ -156,7 +156,7 @@
 	url = https://github.com/mhinz/vim-grepper.git
 [submodule "vim/bundle/vim-github-hub"]
 	path = vim/bundle/vim-github-hub
-	url = https://github.com/jez/vim-github-hub.git
+	url = git@github.com:jez/vim-github-hub.git
 [submodule "vim/bundle/vim-qf"]
 	path = vim/bundle/vim-qf
 	url = https://github.com/romainl/vim-qf.git
