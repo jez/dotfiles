@@ -382,34 +382,34 @@ let g:easytags_languages = {
 \   }
 \ }
 " }}}
-" ----- scrooloose/syntastic settings ----- {{{
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-let g:syntastic_check_on_wq = 0
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-  au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
-  au FileType typescript let b:syntastic_mode = "passive"
-  au FileType cpp let b:syntastic_mode = "passive"
+" " ----- scrooloose/syntastic settings ----- {{{
+" let g:syntastic_error_symbol = '✘'
+" let g:syntastic_warning_symbol = "▲"
+" let g:syntastic_check_on_wq = 0
+" augroup mySyntastic
+"   au!
+"   au FileType tex let b:syntastic_mode = "passive"
+"   au BufRead,BufNewFile *.cjsx let b:syntastic_mode = "passive"
+"   au FileType typescript let b:syntastic_mode = "passive"
+"   au FileType cpp let b:syntastic_mode = "passive"
 
-  " Disabled; handled by Neomake
-  au FileType javascript let b:syntastic_mode = "passive"
-  au FileType css let b:syntastic_mode = "passive"
+"   " Disabled; handled by Neomake
+"   au FileType javascript let b:syntastic_mode = "passive"
+"   au FileType css let b:syntastic_mode = "passive"
 
-  au FileType sml let g:syntastic_always_populate_loc_list = 1
-  au FileType sml let g:syntastic_auto_loc_list = 1
+"   au FileType sml let g:syntastic_always_populate_loc_list = 1
+"   au FileType sml let g:syntastic_auto_loc_list = 1
 
-  au FileType purescript let g:syntastic_auto_loc_list = 1
-augroup END
+"   au FileType purescript let g:syntastic_auto_loc_list = 1
+" augroup END
 
-nnoremap <leader>ST :SyntasticToggleMode<CR>
-nnoremap <leader>SR :SyntasticReset<CR>
+" nnoremap <leader>ST :SyntasticToggleMode<CR>
+" nnoremap <leader>SR :SyntasticReset<CR>
 
-" Follow `source` statements in shell code
-let g:syntastic_sh_shellcheck_args = "-x"
+" " Follow `source` statements in shell code
+" let g:syntastic_sh_shellcheck_args = "-x"
 
-" }}}
+" " }}}
 " ----- neomake/neomake ----- {{{
 function! NeomakeFilterFiletypes() abort
   " These must exist. If you want to remove them, set them to empty instead.
