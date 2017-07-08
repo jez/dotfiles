@@ -184,6 +184,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/bundle/intero/neovim"]
-	path = vim/bundle/intero/neovim
+[submodule "vim/bundle/intero-neovim"]
+	path = vim/bundle/intero-neovim
 	url = https://github.com/parsonsmatt/intero-neovim
