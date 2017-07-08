@@ -411,36 +411,7 @@ let g:easytags_languages = {
 
 " " }}}
 " ----- neomake/neomake ----- {{{
-function! NeomakeFilterFiletypes() abort
-  " These must exist. If you want to remove them, set them to empty instead.
-  " You may also want to disable Syntastic when Neomake is enabled.
-  let whitelist = ['javascript', 'css']
-  let blacklist = []
-
-  " Disable each maker in the blacklist
-  for ft in blacklist
-    let varname = 'g:neomake_'.ft.'_enabled_makers'
-    exe 'let' varname '= []'
-  endfor
-
-  if len(whitelist)
-    " Make sure at least one filetype is whitelisted
-    let whitelisted = 0
-    for ft in split(&filetype, '\.')
-      if index(whitelist, ft) > -1
-        let whitelisted = 1
-      endif
-    endfor
-
-    if !whitelisted
-      return
-    endif
-  endif
-
-  Neomake
-endfunction
-autocmd! BufWritePost * call NeomakeFilterFiletypes()
-
+" Use neomake only as a dependency for other plugins. Otherwise, prefer ALE.
 let g:neomake_error_sign = {
     \ 'text': '✘',
     \ 'texthl': 'Error',
