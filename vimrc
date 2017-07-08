@@ -557,14 +557,27 @@ nnoremap <leader>* :Grepper -cword -noprompt<CR>
 " Because grepper no longer has keybindings in the Quickfix window
 let g:qf_mapping_ack_style = 1
 " }}}
-" ----- eagletmt/ghcmod-vim ----- {{{
-augroup haskellMaps
+" ----- parsonsmatt/intero-neovim ----- {{{
+augroup interoMaps
   au!
-  au FileType haskell nnoremap <leader>t :GhcModType<CR>
-  au FileType haskell nnoremap <leader>x :GhcModTypeClear<CR>
-  au FileType haskell nnoremap <leader>i :GhcModTypeInsert<CR>
-  au FileType haskell nnoremap <leader>f :GhcModSplitFunCase<CR>
+
+  au BufWritePost *.hs InteroReload
+
+  au FileType haskell nnoremap <leader>io :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <leader>ik :InteroKill<CR>
+  au FileType haskell nnoremap <leader>ih :InteroHide<CR>
+
+  au FileType haskell nnoremap <leader>ir :InteroReload<CR>
+  au FileType haskell nnoremap <leader>il :InteroLoadCurrentModule<CR>
+
+  au FileType haskell nnoremap <leader>t :InteroGenericType<CR>
+  au FileType haskell nnoremap <leader>T :InteroType<CR>
+  au FileType haskell nnoremap <leader>ii :InteroInfo<CR>
+
+  au FileType haskell nnoremap <leader>jd :InteroGoToDef<CR>
+  au FileType haskell nnoremap <leader>iu :InteroUses<CR>
 augroup END
+
 
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
