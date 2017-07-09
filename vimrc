@@ -125,6 +125,7 @@ map <space> <leader>
 nnoremap <CR> :
 nnoremap s <nop>
 nnoremap <M-Enter> <CR>
+nnoremap : <nop>
 nnoremap S <nop>
 
 " Make navigating long, wrapped lines behave like normal lines
