@@ -146,9 +146,8 @@ nnoremap <silent> Y y$
 " take first suggested spelling as correct spelling and replace
 nnoremap <silent> <leader>z z=1<CR><CR>
 
-nnoremap <leader>ww :w<CR>
-nnoremap <leader>wa :wa<CR>
-nnoremap <silent> <leader>v :WV<CR>
+" See WV command above
+nnoremap <silent> <leader>w :WV<CR>
 
 " See Vte command above
 nnoremap <silent> <leader>v :Vte<CR>
