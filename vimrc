@@ -46,6 +46,8 @@
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
+scriptencoding utf-8
+" vint: -ProhibitSetNoCompatible
 set nocompatible
 
 " allow backspacing over everything in insert mode
@@ -171,7 +173,7 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has('gui_running')
   syntax on
   set hlsearch
 endif
@@ -257,7 +259,7 @@ augroup myFiletypes
   au FileType tex setlocal conceallevel=2
 
   " Reset concealcursor in Vim help
-  au Filetype help setlocal concealcursor=
+  au FileType help setlocal concealcursor=
 
   " Wrap long lines in quickfix windows
   autocmd FileType qf setlocal wrap
@@ -268,7 +270,7 @@ augroup END
 " ----- Pathogen and Plugin Settings ------------------------------------ {{{
 
 " Pathogen is in a non-standard location: modify the rtp to reflect that
-set rtp+=~/.vim/bundle/pathogen
+set runtimepath+=~/.vim/bundle/pathogen
 
 " Let Pathogen take over the runtimepath to make plugins in ~/.vim/bundle work
 execute pathogen#infect()
@@ -433,7 +435,7 @@ let g:neomake_open_list = 1
 " }}}
 " ----- w0rp/ale ----- {{{
 let g:ale_sign_error = '✘'
-let g:ale_sign_warning = "▲"
+let g:ale_sign_warning = '▲'
 
 let g:airline#extensions#ale#enabled = 1
 
@@ -453,9 +455,9 @@ let g:ale_linters = {
   \ }
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
-if $SOLARIZED ==? "dark"
+if $SOLARIZED ==? 'dark'
   set background=dark
-elseif $SOLARIZED == "light"
+elseif $SOLARIZED ==? 'light'
   set background=light
 else
   set background=dark
@@ -499,16 +501,16 @@ noremap K :SuperMan <cword><CR>
 
 " }}}
 " ----- pangloss/vim-javascript ----- {{{
-let g:javascript_conceal_function       = "λ"
-let g:javascript_conceal_null           = "ø"
-let g:javascript_conceal_this           = "@"
-"let g:javascript_conceal_return         = "⇚"
-let g:javascript_conceal_undefined      = "¿"
-"let g:javascript_conceal_NaN            = "ℕ"
-"let g:javascript_conceal_prototype      = "¶"
-"let g:javascript_conceal_static         = "•"
-"let g:javascript_conceal_super          = "Ω"
-"let g:javascript_conceal_arrow_function = "⇒"
+let g:javascript_conceal_function       = 'λ'
+let g:javascript_conceal_null           = 'ø'
+let g:javascript_conceal_this           = '@'
+"let g:javascript_conceal_return         = '⇚'
+let g:javascript_conceal_undefined      = '¿'
+"let g:javascript_conceal_NaN            = 'ℕ'
+"let g:javascript_conceal_prototype      = '¶'
+"let g:javascript_conceal_static         = '•'
+"let g:javascript_conceal_super          = 'Ω'
+"let g:javascript_conceal_arrow_function = '⇒'
 " }}}
 " ----- mxw/vim-jsx ----- {{{
 " Syntax highlighting for JSX
@@ -519,7 +521,9 @@ let g:jsx_ext_required = 0
 " Don't highlight whitespace in git commit messages (for diffs)...
 let g:better_whitespace_filetypes_blacklist=['gitcommit']
 " ... but strip it on save so that we're still safe
-autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
+augroup vimBetterWhiteSpace
+  autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
+augroup END
 
 " Use Solarized colors for highlighting
 highlight Extrawhitespace ctermbg=red guibg=#dc322f
@@ -625,8 +629,8 @@ augroup pscide
 augroup END
 " }}}
 " ----- fzf ----- {{{
-set rtp+=/usr/local/opt/fzf
-set rtp+=/afs/cs/academic/class/15131-f15/opt/fzf
+set runtimepath+=/usr/local/opt/fzf
+set runtimepath+=/afs/cs/academic/class/15131-f15/opt/fzf
 nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
