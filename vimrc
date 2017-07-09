@@ -593,23 +593,23 @@ let g:intero_use_neomake = 0
 augroup interoMaps
   au!
 
-  au BufWritePost *.hs InteroReload
+  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
+  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
+  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
 
-  au FileType haskell nnoremap <leader>io :InteroOpen<CR><C-W>H
-  au FileType haskell nnoremap <leader>ik :InteroKill<CR>
-  au FileType haskell nnoremap <leader>ih :InteroHide<CR>
+  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
 
-  au FileType haskell nnoremap <leader>ir :InteroReload<CR>
-  au FileType haskell nnoremap <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>t :InteroGenericType<CR>
+  au FileType haskell nnoremap <silent> <leader>T :InteroType<CR>
+  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
+  " au FileType haskell nnoremap <silent> <leader>ii :InteroInfo<CR>
 
-  au FileType haskell nnoremap <leader>t :InteroGenericType<CR>
-  au FileType haskell nnoremap <leader>T :InteroType<CR>
-  au FileType haskell nnoremap <leader>ii :InteroInfo<CR>
-
-  au FileType haskell nnoremap <leader>jd :InteroGoToDef<CR>
-  au FileType haskell nnoremap <leader>iu :InteroUses<CR>
+  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+  au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
 augroup END
-
 
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
