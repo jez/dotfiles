@@ -106,9 +106,6 @@
 [submodule "vim/bundle/nginx-vim-syntax"]
 	path = vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax
-[submodule "vim/bundle/vim-scala"]
-	path = vim/bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
@@ -133,15 +130,9 @@
 [submodule "vim/bundle/vim-pandoc-syntax"]
 	path = vim/bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "vim-dispatch"]
-	path = vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/vim-better-sml"]
 	path = vim/bundle/vim-better-sml
 	url = git@github.com:jez/vim-better-sml.git
-[submodule "vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
