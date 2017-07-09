@@ -123,7 +123,6 @@ command! Ste split | terminal
 
 map <space> <leader>
 nnoremap <CR> :
-nnoremap s <nop>
 nnoremap <M-Enter> <CR>
 nnoremap : <nop>
 nnoremap S <nop>
@@ -566,12 +565,17 @@ augroup END
 let g:pandoc#syntax#use_definition_lists = 0
 " }}}
 " ----- mhinz/grepper ----- {{{
-let g:grepper = {
-    \ 'tools': ['ag', 'git', 'grep'],
-    \ 'open':  1,
-    \ 'jump':  0,
-    \ 'highlight':  1,
-    \ }
+let g:grepper = {}
+" Only use ag for grepping
+let g:grepper.tools = ['ag']
+" Highlight search matches (like it were hlsearch)
+let g:grepper.highlight = 1
+" Defalt to searching the entire repo; otherwise, search 'filecwd' (see help)
+let g:grepper.dir = 'repo,filecwd'
+
+" Launch grepper with operator support
+nmap s <plug>(GrepperOperator)
+xmap s <plug>(GrepperOperator)
 
 nnoremap <leader>a :Grepper<CR>
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
