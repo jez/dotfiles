@@ -114,6 +114,10 @@ cabbrev help tab help
 command! Wv w | make view
 command! WV w | make view
 
+" Open terminal in a split split
+command! Vte vsplit | terminal
+command! Ste split | terminal
+
 " }}}
 " ----- Custom keybindings ---------------------------------------------- {{{
 
@@ -145,6 +149,9 @@ nnoremap <leader>ww :w<CR>
 nnoremap <leader>wa :wa<CR>
 nnoremap <silent> <leader>v :WV<CR>
 
+" See Vte command above
+nnoremap <silent> <leader>v :Vte<CR>
+
 map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -156,12 +163,14 @@ noremap <silent> gR gT
 nnoremap <leader>y "+y
 vnoremap <silent> <leader>y "+y
 
-" Terminal Emulator keys
-tnoremap <C-Space> <C-\><C-n>
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+" Neovim Terminal Emulator keys
+if has('nvim')
+  tnoremap <M-e> <C-\><C-n>
+  tnoremap <C-h> <C-\><C-n><C-w>h
+  tnoremap <C-j> <C-\><C-n><C-w>j
+  tnoremap <C-k> <C-\><C-n><C-w>k
+  tnoremap <C-l> <C-\><C-n><C-w>l
+endif
 
 " }}}
 " ----- Terminal-as-GUI settings ---------------------------------------- {{{
