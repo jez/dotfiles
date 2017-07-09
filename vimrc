@@ -458,12 +458,14 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 
-nnoremap <leader>AT :ALEToggle
+nnoremap <leader>AT :ALEToggle<CR>
 
-let g:ale_linters = {
-  \ 'tex': [],
-  \ 'haskell': [],
-  \ }
+let g:ale_linters = {}
+let g:ale_linters.tex = []
+" Since we're using Intero + Neomake instead of ALE for compilation errors
+" Note: you'll have to run 'stack build ghc-mod' once per project
+let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
+
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
 if $SOLARIZED ==? 'dark'
