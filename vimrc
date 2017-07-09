@@ -124,6 +124,7 @@ command! Ste split | terminal
 map <space> <leader>
 nnoremap <CR> :
 nnoremap s <nop>
+nnoremap <M-Enter> <CR>
 nnoremap S <nop>
 
 " Make navigating long, wrapped lines behave like normal lines
@@ -271,7 +272,9 @@ augroup myFiletypes
   au FileType help setlocal concealcursor=
 
   " Wrap long lines in quickfix windows
-  autocmd FileType qf setlocal wrap
+  au FileType qf setlocal wrap
+  " Set cursorline in quickfix windows
+  au FileType qf setlocal cursorline
 
 augroup END
 
