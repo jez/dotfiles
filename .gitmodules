@@ -178,3 +178,6 @@
 [submodule "vim/bundle/intero-neovim"]
 	path = vim/bundle/intero-neovim
 	url = https://github.com/parsonsmatt/intero-neovim
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
