@@ -45,7 +45,6 @@ source $ZSH/oh-my-zsh.sh
 
 # General zshzle options
 setopt autocd                     # cd by just typing in a directory name
-setopt completealiases            # tab completion includes aliases
 setopt nomatch                    # warn me if a glob doesn't match anything
 setopt no_case_glob               # globbing is case insensitive
 setopt interactive_comments       # commands preceded with '#' aren't run

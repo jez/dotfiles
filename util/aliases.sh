@@ -108,6 +108,8 @@ alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
 export REVIEW_BASE='master'
 
 alias gco="git checkout"
+alias gob="git checkout -b"
+alias goB="git checkout -B"
 
 alias ga="git add"
 alias gap="git add --patch"
