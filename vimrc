@@ -153,9 +153,7 @@ nnoremap <silent> <leader>w :WV<CR>
 " See Vte command above
 nnoremap <silent> <leader>v :Vte<CR>
 
-map <leader>c :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
 " Easier to type on my keyboard than gt and gT
 noremap <silent> gr gt
