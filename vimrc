@@ -599,6 +599,7 @@ augroup interoMaps
 
   au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
   au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
+  au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
 augroup END
 
 " }}}
