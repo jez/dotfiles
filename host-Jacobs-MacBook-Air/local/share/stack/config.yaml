@@ -1,0 +1,10 @@
+# This file contains default non-project-specific settings for 'stack', used
+# in all projects.  For more information about stack's configuration, see
+# http://docs.haskellstack.org/en/stable/yaml_configuration/
+#
+templates:
+  params:
+    author-email: zimmerman.jake@gmail.com
+    author-name: Jake Zimmerman
+    github-username: jez
+
