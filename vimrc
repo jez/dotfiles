@@ -122,10 +122,11 @@ command! Ste split | terminal
 " ----- Custom keybindings ---------------------------------------------- {{{
 
 map <space> <leader>
-nnoremap <CR> :
-nnoremap <M-Enter> <CR>
-nnoremap : <nop>
-nnoremap S <nop>
+noremap <CR> :
+noremap <M-Enter> <CR>
+noremap : <nop>
+noremap <M-:> :
+noremap S <nop>
 
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
