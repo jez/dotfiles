@@ -91,6 +91,7 @@ zstyle ':completion:*' verbose false
 
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
+autoload -Uz bashcompinit && bashcompinit
 
 # Use zsh's awesome pattern move
 autoload -Uz zmv
@@ -131,3 +132,5 @@ which compdef &> /dev/null && compdef vman="man"
 if [ -e $(which brew &> /dev/null && brew --prefix)/etc/zsh_completion ]; then
   source $(brew --prefix)/etc/zsh_completion
 fi
+
+eval "$(stack --bash-completion-script stack)"
