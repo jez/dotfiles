@@ -475,17 +475,8 @@ else
   set background=dark
 endif
 
-" Uncomment the next line if your terminal is not configured for solarized
-"let g:solarized_termcolors=256
-
 " Set the colorscheme
 colorscheme solarized
-
-" Remove the underline Solarized places under Folded previews
-hi! Folded cterm=NONE term=NONE
-
-hi link helpCommand Constant
-
 " }}}
 " ----- airblade/vim-gitgutter settings ----- {{{
 hi clear SignColumn
