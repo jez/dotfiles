@@ -80,11 +80,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 
-# zsh completion (zsh installed through Homebrew)
-if [ -e $(which brew &> /dev/null && brew --prefix)/etc/zsh_completion ]; then
-  source $(brew --prefix)/etc/zsh_completion
-fi
-
 zstyle :compinstall filename $HOME/.zshrc
 
 ## case-insensitive (all),partial-word and then substring completion
@@ -128,5 +123,11 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 alias help="run-help"
 
+
 # Use tab completion for Vim SuperMan
 which compdef &> /dev/null && compdef vman="man"
+
+# zsh completion (zsh installed through Homebrew)
+if [ -e $(which brew &> /dev/null && brew --prefix)/etc/zsh_completion ]; then
+  source $(brew --prefix)/etc/zsh_completion
+fi
