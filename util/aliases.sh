@@ -19,6 +19,9 @@ alias cddddd="cd ../../../.."
 alias cdddddd="cd ../../../../.."
 alias cddddddd="cd ../../../../../.."
 
+# use popd to navigate directory stack (like "Back" in a browser)
+alias b="popd"
+
 # open multiple files in Vim tabs
 alias vim &> /dev/null || alias vim="vim -p"
 alias vimv="vim -O"
