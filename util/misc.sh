@@ -20,3 +20,6 @@ else
 fi
 # Things will break if you don't have these terminfo changes applied on _every_
 # host that you use; i.e., every box that you ssh into
+
+# Max line-length in man pages (also respected by Vim's man.vim plugin!)
+export MANWIDTH=80
