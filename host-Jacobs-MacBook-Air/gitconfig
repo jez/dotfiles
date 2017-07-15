@@ -3,7 +3,7 @@
 [user]
 	name = Jacob Zimmerman
 	email = zimmerman.jake@gmail.com
-	signingkey = 541964F7
+	signingkey = DEDE40C0
 [credential]
 	helper = osxkeychain
 [github]
