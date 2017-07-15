@@ -36,6 +36,8 @@
 	diff-img = difftool --tool imgdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
 	message = log -n1 --format=\"%s%n%n%b\"
+	# Show a markdown-formatted summary of commits from REVIEW_BASE until HEAD
+	pr-summary = !git log --reverse --format=\"- **%s** (%h)%n%n%w(72,2,2)%b\" \"$REVIEW_BASE\"..HEAD
 	# Get last commit authored by me
 	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
 	root = rev-parse --show-toplevel
