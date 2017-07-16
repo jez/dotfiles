@@ -113,6 +113,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 # Change comment color for Solarized color palette
 ZSH_HIGHLIGHT_STYLES[comment]='fg=green,bold'
+zle_highlight+=(paste:none)
 
 
 # man pages don't exist for zsh builtins (things like setopt, fg, bg, jobs,
