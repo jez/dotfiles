@@ -57,6 +57,9 @@ TERM screen-w
 TERM screen.linux
 TERM st
 TERM st-256color
+TERM tmux-color
+TERM tmux-256color
+TERM tmux-256color-italic
 TERM vt100
 TERM xterm
 TERM xterm-16color
