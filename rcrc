@@ -1,2 +1,2 @@
 EXCLUDES="com.googlecode.iterm2.plist *setup.sh README.md LICENSE fonts iterm"
-SYMLINK_DIRS="vim zfunctions oh-my-zsh"
+SYMLINK_DIRS="vim zfunctions oh-my-zsh irssi"

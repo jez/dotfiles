@@ -4,3 +4,7 @@ tags
 # TODO(jez) This is a hcak to ignore Neovim-specific configuration,
 # as it involves symbolic links.
 vim/init.vim
+
+
+irssi/_windowlist
+irssi/config.autosave
