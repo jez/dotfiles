@@ -249,6 +249,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.l4 setlocal filetype=c0
   " SQLite-specific file
   au BufRead,BufNewFile *.sqlite setlocal filetype=sql
+  " Ensure that *.hs files are haskell files (sometimes Stack scripts aren't)
+  au BufRead,BufNewFile *.hs setlocal filetype=haskell
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
@@ -461,7 +463,6 @@ nnoremap <leader>AT :ALEToggle<CR>
 
 let g:ale_linters = {}
 let g:ale_linters.tex = []
-" Since we're using Intero + Neomake instead of ALE for compilation errors
 " Note: you'll have to run 'stack build ghc-mod' once per project
 let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
 
@@ -576,6 +577,32 @@ nnoremap <leader>* :Grepper -cword -noprompt<CR>
 " Because grepper no longer has keybindings in the Quickfix window
 let g:qf_mapping_ack_style = 1
 " }}}
+" ----- neovimhaskell/haskell-vim ----- {{{
+let g:haskell_indent_case_alternative = 1
+let g:haskell_indent_let_no_in = 0
+let g:haskell_indent_if = 2
+let g:haskell_indent_before_where = 2
+" }}}
+" ----- alx471/vim-hindent and stylish ----- {{{
+let g:hindent_on_save = 0
+
+function! HaskellFormat(which) abort
+  if a:which ==# 'hindent' || a:which ==# 'both'
+    :Hindent
+  endif
+  if a:which ==# 'stylish' || a:which ==# 'both'
+    silent! exe 'undojoin'
+    silent! exe 'keepjumps %!stylish-haskell'
+  endif
+endfunction
+
+augroup haskellStylish
+  au!
+  au FileType haskell nnoremap <leader>hi :Hindent<CR>
+  au FileType haskell nnoremap <leader>hs :call HaskellFormat('stylish')<CR>
+  au FileType haskell nnoremap <leader>hf :call HaskellFormat('both')<CR>
+augroup END
+" }}}
 " ----- parsonsmatt/intero-neovim ----- {{{
 let g:intero_start_immediately = 0
 let g:intero_use_neomake = 0
@@ -592,8 +619,8 @@ augroup interoMaps
   au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
   au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
 
-  au FileType haskell nnoremap <silent> <leader>t :InteroGenericType<CR>
-  au FileType haskell nnoremap <silent> <leader>T :InteroType<CR>
+  au FileType haskell map <leader>t <Plug>InteroGenericType
+  au FileType haskell map <leader>T <Plug>InteroType
   au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
   " au FileType haskell nnoremap <silent> <leader>ii :InteroInfo<CR>
 
@@ -601,7 +628,6 @@ augroup interoMaps
   au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
   au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
 augroup END
-
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
 nnoremap <silent> <leader>W :Goyo<CR>
