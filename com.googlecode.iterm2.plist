@@ -1788,6 +1788,8 @@
 	<integer>32</integer>
 	<key>HotkeyCode</key>
 	<integer>49</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524288</integer>
 	<key>IRMemory</key>
@@ -1835,7 +1837,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -1851,15 +1853,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>0 421 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 382 700 392 0 0 1440 900 </string>
+	<string>2050 336 700 392 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>183 256 918 495 0 0 1440 900 </string>
+	<string>2241 335 937 512 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 10 717 867 0 0 1440 877 </string>
+	<string>1440 -180 1920 1057 1440 -180 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 424 654 447 0 0 1440 877 </string>
+	<string>0 495 810 585 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 588 710 492 0 0 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_C5BD9F48-5800-4EC9-B108-19A328E0E7AA</key>
@@ -2700,7 +2702,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color-italic</string>
+			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
@@ -3564,7 +3566,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color-italic</string>
+			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
@@ -4451,7 +4453,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-12T13:23:57Z</date>
+	<date>2017-07-16T00:18:45Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -4503,7 +4505,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.beta.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
