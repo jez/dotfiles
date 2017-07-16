@@ -29,7 +29,7 @@
 	# (better for interactive use)
 	stat = !git diff --stat $(git merge-base --fork-point \"$REVIEW_BASE\")
 	# split-diff style review using vim-fugitive Gdiff
-	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
+	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
 	# show the before, changes, and after for one tracked image
