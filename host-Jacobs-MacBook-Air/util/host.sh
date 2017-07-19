@@ -41,6 +41,8 @@ export PATH="$PATH:/usr/local/heroku/bin"
 # cc0 is installed to home bin folder
 export PATH="$PATH:$HOME/bin/cc0.d/bin"
 
+
+
 # Disable Homebrew analytics until Homebrew/brew#145 is addressed
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -89,6 +91,9 @@ export SMACKAGE_HOME="$XDG_DATA_HOME/smackage"
 
 # GNUPG-specific settings
 source ~/.util/gnupg.sh
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # ----- Prompt  ---------------------------------------------------------------
 
