@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <root>
+  <!--
+    Add this to ~/Library/Application\ Support/Karabiner/private.xml:
+
+    <?xml version="1.0"?>
+    <root>
+      <include path="{{ ENV_HOME }}/.dotfiles/host-Jacobs-MacBook-Air/private.xml" />
+    </root>
+  -->
   <appdef>
     <appname>TERMINAL</appname>
     <equal>com.apple.Terminal</equal>
