@@ -186,4 +186,4 @@
 	url = git://github.com/alx741/vim-hindent.git
 [submodule "vim/bundle/haskell-vim"]
 	path = vim/bundle/haskell-vim
-	url = git@github.com:jez/haskell-vim.git
+	url = git@github.com:neovimhaskell/haskell-vim.git
