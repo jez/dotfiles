@@ -16,4 +16,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export SOLARIZED="dark"
 
 # Change my iTerm2 profile based on $SOLARIZED setting
-echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
+if [ "$TERM" = "iTerm.app" ]; then
+  echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
+fi
