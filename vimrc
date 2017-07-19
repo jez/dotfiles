@@ -276,6 +276,8 @@ augroup myFiletypes
   " Set cursorline in quickfix windows
   au FileType qf setlocal cursorline
 
+  " Show color column in Haskell files
+  au FileType haskell setlocal cc=80
 augroup END
 
 " }}}
