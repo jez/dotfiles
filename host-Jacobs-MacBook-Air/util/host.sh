@@ -95,6 +95,12 @@ source ~/.util/gnupg.sh
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Change my iTerm2 profile based on SOLARIZED variable
+# See also: ~/.util/functions/itpt.sh
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+  echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
+fi
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
