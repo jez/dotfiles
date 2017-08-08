@@ -78,6 +78,11 @@ cd -
 # Now that dotfiles have been installed, exit and re-open iTerm2
 exit
 
+# Set up iTerm2
+#
+# Load preferences from folder (choose: ~/.dotfiles)
+# Install Menlo for Powerline (from ~/.dotfiles/fonts/)
+
 # Download and import iTerm colors
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
 open ~/Desktop/iTerm2-Color-Schemes/schemes/
@@ -215,6 +220,7 @@ npm install -g jade
 #         - Short
 #       - Modifier Keys...
 #         - Swap Caps to Ctrl
+#       - Show keyboard and emoji viewers in menu bar
 #     - Shortcuts
 #       - Mission Control
 #         - Mission Control
@@ -230,6 +236,18 @@ npm install -g jade
 #           - Add
 #             - "Toggle Fullscreen"
 #             - Ctrl + Command + F
+#         - Google Chrome.app
+#           - Add
+#             - "Select Next Tab"
+#             - Cmd + Option + ]
+#             - "Select Previous Tab"
+#             - Cmd + Option + [
+#         - Sketch.app
+#           - Add
+#             - "ArtboardZoom - Zoom to selected Artboard"
+#             - Ctrl + Space
+#             - "Show Smart Guides"
+#             - Cmd + R
 #
 # Alfred
 #   - General
@@ -244,6 +262,10 @@ npm install -g jade
 # Desktop
 #   - Sort By
 #     - Snap to Grid
+#
+# Menu Bar
+#   - Battery Icon
+#     - Show Percentage
 #
 # Finder
 #   - General
@@ -264,3 +286,21 @@ npm install -g jade
 #
 # Downloads
 #   - Remove Downloads, symlink to Desktop
+#
+# Chrome
+#
+# - Setting up personal laptop?
+#   - Sign into personal Chrome. Done.
+# - Setting up work laptop?
+#   - Copy these from personal account:
+#     - chrome://settings
+#     - chrome://extensions
+#     - Enable keyboard shortcuts for Inbox
+#     - Vimium settings
+#     - Stylebot settings
+#
+# Messages
+#
+# - Add iCloud account
+# - Be sure to sync contacts
+# - Google when you need help
