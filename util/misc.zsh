@@ -134,4 +134,4 @@ if [ -e $(which brew &> /dev/null && brew --prefix)/etc/zsh_completion ]; then
   source $(brew --prefix)/etc/zsh_completion
 fi
 
-eval "$(stack --bash-completion-script stack)"
+which stack && eval "$(stack --bash-completion-script stack)"
