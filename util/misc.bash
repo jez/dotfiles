@@ -14,3 +14,4 @@ fi
 
 # pip bash completion
 which pip &> /dev/null && eval `pip completion --bash`
+true
