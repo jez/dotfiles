@@ -177,7 +177,7 @@ npm install -g jade
 
 # GUI Settings
 # TODO: Automate this
-#
+
 # System Preferences
 #   - General
 #     - Use dark menubar and doc
@@ -218,6 +218,7 @@ npm install -g jade
 #         - Fast
 #       - Delay until repeat
 #         - Short
+#       - Touch Bar shows: Expanded Control Strip
 #       - Modifier Keys...
 #         - Swap Caps to Ctrl
 #       - Show keyboard and emoji viewers in menu bar
@@ -248,7 +249,7 @@ npm install -g jade
 #             - Ctrl + Space
 #             - "Show Smart Guides"
 #             - Cmd + R
-#
+
 # Alfred
 #   - General
 #     - Alfred Hotkey
@@ -258,15 +259,15 @@ npm install -g jade
 #       - OS X Yosemite Dark
 #     - Options
 #       - Hide hat on Alfred window
-#
+
 # Desktop
 #   - Sort By
 #     - Snap to Grid
-#
+
 # Menu Bar
 #   - Battery Icon
 #     - Show Percentage
-#
+
 # Finder
 #   - General
 #     - New Finder windows show
@@ -283,10 +284,10 @@ npm install -g jade
 #     - Home
 #   - Sort By:
 #     - View > [hold Option] Sort by ... > Name
-#
+
 # Downloads
 #   - Remove Downloads, symlink to Desktop
-#
+
 # Chrome
 #
 # - Setting up personal laptop?
@@ -298,7 +299,7 @@ npm install -g jade
 #     - Enable keyboard shortcuts for Inbox
 #     - Vimium settings
 #     - Stylebot settings
-#
+
 # Messages
 #
 # - Add iCloud account
