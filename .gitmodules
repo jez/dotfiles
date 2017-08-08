@@ -162,7 +162,7 @@
 	url = git://github.com/junegunn/goyo.vim.git
 [submodule "vim/bundle/psc-ide-vim"]
 	path = vim/bundle/psc-ide-vim
-	url = https://github.com/FrigoEU/psc-ide-vim/
+	url = https://github.com/FrigoEU/psc-ide-vim.git
 [submodule "vim/bundle/purescript-vim"]
 	path = vim/bundle/purescript-vim
 	url = https://github.com/raichoo/purescript-vim
