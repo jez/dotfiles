@@ -1,3 +1,2 @@
-#!/bin/bash
-
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Load host-specific zshenv configurations
+[ -f ~/.util/host.profile ] && source ~/.util/host.profile
