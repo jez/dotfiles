@@ -1,1 +1,3 @@
-source ~/.bash_profile
+export PATH=/usr/local/bin:$PATH
+. /Users/jez/.rbenvrc
+. ~/.stripe-repos.sh
