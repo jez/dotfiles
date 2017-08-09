@@ -212,6 +212,9 @@ npm install -g jade
 #       - Unckeck "Smooth images"
 #     - Trackpad Options...
 #       - Enable dragging
+#   - Sound
+#     - Sound Effects
+#       - Play feedback when volume is changed
 #   - Keyboard
 #     - Keyboard
 #       - Key repeat
