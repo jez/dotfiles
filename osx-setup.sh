@@ -128,6 +128,7 @@ brew cask install inskape
 brew cask install calibre
 brew cask install fitbit-connect
 brew cask install rcdefaultapp
+brew cask install karabiner
 
 # Install python
 brew install python

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<root>
+  <!--
+    Add this to ~/Library/Application\ Support/Karabiner/private.xml:
+
+    <?xml version="1.0"?>
+    <root>
+      <include path="{{ ENV_HOME }}/.dotfiles/host-st-jez1/private.xml" />
+    </root>
+  -->
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.apple.Terminal</equal>
+    <equal>iTerm</equal>
+    <equal>net.sourceforge.iTerm</equal>
+    <equal>com.googlecode.iterm2</equal>
+    <equal>co.zeit.hyperterm</equal>
+    <equal>co.zeit.hyper</equal>
+    <suffix>alacritty</suffix>
+  </appdef>
+
+  <item>
+    <name>Holding Esc toggles Normal Mode</name>
+    <appendix>Esc sends raw Esc</appendix>
+    <appendix></appendix>
+    <appendix>Lowering the Holding Threshold setting is recommended (200ms)</appendix>
+    <identifier>remap.private_vimnormal_escape_toggle</identifier>
+    <!-- Normal Mode on in mode-allowing context: Esc exits Normal Mode, holding Esc sends raw Esc. -->
+    <block>
+      <config_only>notsave.ubiq_vimnormal</config_only>
+      <config_not>option.vimnormal_escape_enters_only</config_not>
+      <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::ESCAPE,
+        KeyCode::VK_NONE,
+        KeyCode::VK_LOCK_ALL_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_ubiq_vimnormal,
+        {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+      </autogen>
+    </block>
+    <!-- Normal Mode on in mode-allowing context: Esc remains in Normal Mode, holding Esc sends raw Esc. -->
+    <block>
+      <config_only>notsave.ubiq_vimnormal, option.vimnormal_escape_enters_only</config_only>
+      <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::ESCAPE,
+        KeyCode::VK_NONE,
+        KeyCode::VK_LOCK_ALL_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_ubiq_vimnormal,
+        {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+      </autogen>
+    </block>
+    <!-- Normal Mode off in mode-allowing context: Esc enters Normal Mode, holding Esc sends raw Esc. -->
+    <block>
+      <config_not>notsave.ubiq_vimnormal</config_not>
+      <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::ESCAPE,
+        KeyCode::VK_NONE,
+        KeyCode::VK_LOCK_ALL_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_ubiq_vimnormal,
+        {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+      </autogen>
+    </block>
+    <!-- Normal Mode on in mode-prohibiting context: Esc sends raw Esc and exits Normal Mode. -->
+    <block>
+      <config_only>notsave.ubiq_vimnormal</config_only>
+      <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::VK_LOCK_ALL_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_ubiq_vimnormal,
+        {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }},
+        KeyCode::ESCAPE
+      </autogen>
+    </block>
+  </item>
+
+</root>
