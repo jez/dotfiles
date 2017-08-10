@@ -78,6 +78,8 @@ set listchars-=trail:- " Don't show trailing whitespace in listchars output
                        " (I use vim-better-whitespace for trailing whitespace)
 set listchars-=eol:$   " Don't show trailing end-of-line characters
                        " (I use vim-better-whitespace for trailing whitespace)
+set noshowmode         " Don't show "-- INSERT --" in insert mode
+                       " Preseves things like echo'd messages
 
 " Show potential matches above completion, complete first immediately
 set wildmenu
