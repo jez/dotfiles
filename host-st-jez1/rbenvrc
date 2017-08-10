@@ -2,7 +2,10 @@
 # This is a shell fragment that initializes rbenv, if it
 # has not been inited yet. Managed by puppet - DO NOT EDIT
 #
-if ! echo $PATH | grep -q rbenv; then
-  export PATH="/Users/jez/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
+
+# NOTE(jez): This is commented out so that tmux works.
+# tmux hides things in the PATH when it starts up that it probably shouldn't.
+# if ! echo $PATH | grep -q rbenv; then
+# fi
+export PATH="/Users/jez/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
