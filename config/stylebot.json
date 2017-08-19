@@ -1,0 +1,793 @@
+{
+  "augustss.blogspot.se": {
+    "_enabled": true,
+    "_rules": {
+      "pre": {
+        "width": "650px"
+      }
+    }
+  },
+  "autolab.andrew.cmu.edu": {
+    "_enabled": false,
+    "_rules": {
+      "#pageBody.container": {
+        "max-width": "100%",
+        "width": "initial"
+      }
+    }
+  },
+  "autolab.andrew.cmu.edu/courses/*/assessments/*/submissions/*/view": {
+    "_enabled": true,
+    "_rules": {
+      "#code-box pre": {
+        "background-color": "#002b36"
+      },
+      "#code-list": {
+        "background-color": "inherit"
+      },
+      "#code-list li": {
+        "background-color": "inherit"
+      },
+      ".hljs": {
+        "background": "#002b36",
+        "color": "#839496",
+        "display": "block",
+        "overflow-x": "auto",
+        "padding": "0.5em"
+      },
+      ".hljs-attribute, .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-class .hljs-title, .hljs-type": {
+        "color": "#dc322f"
+      },
+      ".hljs-built_in, .hljs-deletion": {
+        "color": "#b58900"
+      },
+      ".hljs-comment, .hljs-quote": {
+        "color": "#586e75"
+      },
+      ".hljs-emphasis": {
+        "font-style": "italic"
+      },
+      ".hljs-formula": {
+        "background": "#073642"
+      },
+      ".hljs-keyword, .hljs-selector-tag, .hljs-addition": {
+        "color": "#859900"
+      },
+      ".hljs-number, .hljs-string, .hljs-meta .hljs-meta-string, .hljs-literal, .hljs-doctag, .hljs-regexp": {
+        "color": "#2aa198"
+      },
+      ".hljs-strong": {
+        "font-weight": "bold"
+      },
+      ".hljs-symbol, .hljs-bullet, .hljs-subst, .hljs-meta, .hljs-meta .hljs-keyword, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-link": {
+        "color": "#cb4b16"
+      },
+      ".hljs-title, .hljs-section, .hljs-name, .hljs-selector-id, .hljs-selector-class": {
+        "color": "#268bd2"
+      },
+      "comment0": {
+        "comment": "/*\n\nOrginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>\n\n*/"
+      },
+      "comment1": {
+        "comment": "/* Solarized Green */"
+      },
+      "comment2": {
+        "comment": "/* Solarized Cyan */"
+      },
+      "comment3": {
+        "comment": "/* Solarized Blue */"
+      },
+      "comment4": {
+        "comment": "/* Solarized Yellow */"
+      },
+      "comment5": {
+        "comment": "/* Solarized Orange */"
+      },
+      "comment6": {
+        "comment": "/* Solarized Red */"
+      },
+      "div.ann-box": {
+        "border": "none"
+      },
+      "div.ann-box>div.body, form.annotation-form": {
+        "background-color": "#657b83",
+        "color": "#002b36",
+        "font-weight": "bold",
+        "word-break": "initial"
+      },
+      "div.ann-box>div.header": {
+        "background-color": "#839496",
+        "color": "#fdf6e3",
+        "font-weight": "normal"
+      },
+      "div.page-wrapper": {
+        "background-color": "#002b36",
+        "color": "#839496"
+      },
+      "form.annotation-form": {
+        "border": "none"
+      },
+      "form.annotation-form hr": {
+        "border-color": "#839496"
+      },
+      "pre, code": {
+        "font-family": "Menlo"
+      },
+      "span.edit.glyphicon.glyphicon-edit, span.delete.glyphicon.glyphicon-remove": {
+        "color": "inherit"
+      },
+      "span.score-box span:first-child": {
+        "background-color": "#586e75"
+      },
+      "span.score-box span:last-child": {
+        "background-color": "#657b83"
+      }
+    }
+  },
+  "beej.us": {
+    "_enabled": true,
+    "_rules": {
+      "html body": {
+        "max-width": "700px"
+      }
+    }
+  },
+  "blog.mozilla.org": {
+    "_enabled": true,
+    "_rules": {
+      "div.entry-content p": {
+        "font-size": "18px",
+        "line-height": "1.45em"
+      }
+    }
+  },
+  "configure.ergodox-ez.com": {
+    "_enabled": true,
+    "_rules": {
+      ".key.dual-function .keytop": {
+        "background": "#333333"
+      },
+      ".key.word.dual-function": {
+        "background": "#222"
+      },
+      ".key.word.dual-function .primary": {
+        "color": "#ccc"
+      },
+      ".keytop": {
+        "border": "solid 1px rgba(0,0,0,0.5)"
+      }
+    }
+  },
+  "cristal.inria.fr": {
+    "_enabled": true,
+    "_rules": {
+      "body blockquote p, body blockquote li": {
+        "font-family": "Georgia",
+        "font-size": "20px",
+        "line-height": "28px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      },
+      "body blockquote pre": {
+        "background-color": "#eee",
+        "font-family": "Menlo",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "padding": "20px",
+        "width": "900px"
+      }
+    }
+  },
+  "csvkit.readthedocs.io": {
+    "_enabled": true,
+    "_rules": {
+      "div.highlight pre": {
+        "font-family": "Menlo",
+        "font-size": "14px"
+      }
+    }
+  },
+  "danluu.com": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "line-height": "1.3",
+        "width": "650px"
+      }
+    }
+  },
+  "demo.clab.cs.cmu.edu": {
+    "_enabled": true,
+    "_rules": {
+      "#content": {
+        "width": "700px"
+      },
+      "at1": {
+        "at": true,
+        "expanded_text": "/* latin-ext */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n/* latin */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/MDadn8DQ_3oT6kvnUq_2r_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n",
+        "text": "@import url(https://fonts.googleapis.com/css?family=Lato);",
+        "type": "@import",
+        "url": "https://fonts.googleapis.com/css?family=Lato"
+      },
+      "body": {
+        "font-family": "Lato",
+        "font-size": "17px",
+        "letter-spacing": "0",
+        "line-height": "1.4"
+      }
+    }
+  },
+  "docs.autolab.cs.cmu.edu": {
+    "_enabled": true,
+    "_rules": {
+      "at1": {
+        "at": true,
+        "expanded_text": "/* latin-ext */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n/* latin */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/MDadn8DQ_3oT6kvnUq_2r_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n",
+        "text": "@import url(https://fonts.googleapis.com/css?family=Lato);",
+        "type": "@import",
+        "url": "https://fonts.googleapis.com/css?family=Lato"
+      },
+      "div.content": {
+        "font-family": "Lato",
+        "font-size": "17px"
+      }
+    }
+  },
+  "gethttpsforfree.com": {
+    "_enabled": true,
+    "_rules": {
+      "body": {
+        "margin": "0 auto",
+        "max-width": "630px",
+        "padding": "0 15px"
+      }
+    }
+  },
+  "github.com": {
+    "_enabled": true,
+    "_rules": {
+      "#readme > .markdown-body": {
+        "border-top": "0",
+        "margin-left": "90px",
+        "width": "790px"
+      },
+      "#readme > h3": {
+        "border-bottom": "1px solid rgba(27,31,35,0.15)",
+        "border-radius": "3px"
+      },
+      ".comment-form-textarea, .merge-commit-message": {
+        "min-height": "300px"
+      },
+      ".comment-form-textarea, .merge-commit-message, .merge-commit-title": {
+        "font-family": "Menlo"
+      }
+    }
+  },
+  "groups.csail.mit.edu": {
+    "_enabled": true,
+    "_rules": {
+      "html body": {
+        "font-family": "Palatino",
+        "font-size": "18px",
+        "hyphens": "auto",
+        "line-height": "1.35em",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "text-align": "justify",
+        "width": "600px"
+      }
+    }
+  },
+  "hackage.haskell.org": {
+    "_enabled": true,
+    "_rules": {
+      "#content": {
+        "max-width": "600px\n"
+      },
+      "pre, code, .src": {
+        "font-family": "Menlo",
+        "font-size": "0.8rem",
+        "line-height": "1.3"
+      }
+    }
+  },
+  "http://www.cs.virginia.edu/~robins/YouAndYourResearch.html": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "font-size": "20px",
+        "line-height": "28px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      }
+    }
+  },
+  "jozefg.bitbucket.io": {
+    "_enabled": true,
+    "_rules": {
+      "#content": {
+        "font-family": "Palatino",
+        "font-size": "1.1rem",
+        "line-height": "1.2"
+      },
+      "body": {
+        "width": "675px"
+      },
+      "pre, code": {
+        "font-family": "Menlo",
+        "font-size": "1rem"
+      }
+    }
+  },
+  "llvm.org": {
+    "_enabled": true,
+    "_rules": {
+      "body": {
+        "margin-bottom": "0",
+        "margin-left": "320px",
+        "margin-right": "320px",
+        "margin-top": "0"
+      }
+    }
+  },
+  "localhost:6419": {
+    "_enabled": true,
+    "_rules": {
+      ".main-content .container": {
+        "width": "790px"
+      }
+    }
+  },
+  "nbviewer.jupyter.org": {
+    "_enabled": true,
+    "_rules": {
+      "div.text_cell_render.border-box-sizing.rendered_html p": {
+        "font-family": "Helvetica Neue",
+        "font-size": "18px",
+        "width": "700px"
+      }
+    }
+  },
+  "news.ycombinator.com": {
+    "_enabled": true,
+    "_rules": {
+      "#hnmain": {
+        "margin-left": "30px",
+        "margin-right": "30px",
+        "width": "700px"
+      },
+      ".admin": {
+        "font-size": ".85rem"
+      },
+      ".admin td": {
+        "font-size": ".85rem"
+      },
+      ".adtitle": {
+        "font-size": "9pt"
+      },
+      ".comhead": {
+        "font-size": ".8rem"
+      },
+      ".comment": {
+        "font-size": ".9rem"
+      },
+      ".default": {
+        "font-size": "1rem"
+      },
+      ".pagetop": {
+        "font-size": "1rem"
+      },
+      ".subtext": {
+        "font-size": ".7rem"
+      },
+      ".subtext td": {
+        "font-size": ".7rem"
+      },
+      ".title": {
+        "font-size": "1rem"
+      },
+      ".yclinks": {
+        "font-size": ".8rem"
+      },
+      "at1": {
+        "at": true,
+        "expanded_text": "/* latin-ext */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n/* latin */\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/MDadn8DQ_3oT6kvnUq_2r_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\n}\n",
+        "text": "@import url(https://fonts.googleapis.com/css?family=Lato);",
+        "type": "@import",
+        "url": "https://fonts.googleapis.com/css?family=Lato"
+      },
+      "body": {
+        "font-size": "1rem"
+      },
+      "body, td, .admin td, .subtext td, input[type=\"submit\"], .default, .admin, .title, .adtitle, .subtext, .yclinks, .pagetop, .comhead, .comment": {
+        "font-family": "Lato"
+      },
+      "input": {
+        "font-family": "Menlo",
+        "font-size": "1rem"
+      },
+      "pre, code": {
+        "font-family": "Menlo"
+      },
+      "td": {
+        "font-size": "1rem"
+      },
+      "textarea": {
+        "font-family": "Menlo",
+        "font-size": "1rem"
+      }
+    }
+  },
+  "nlp.stanford.edu": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-size": "16px",
+        "padding-left": "30px"
+      },
+      "#query": {
+        "font-family": "monospace",
+        "font-size": "16px",
+        "height": "75px",
+        "width": "500px"
+      }
+    }
+  },
+  "people.fas.harvard.edu": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-size": "18px",
+        "line-height": "22px",
+        "width": "650px"
+      }
+    }
+  },
+  "piazza.com": {
+    "_enabled": true,
+    "_rules": {
+      "p, .post_region_content.note, .post_region_content li, .discussion_content li": {
+        "font-family": "BlinkMacSystemFont",
+        "font-size": "16px",
+        "max-width": "600px"
+      },
+      "tt, code, kbd, samp": {
+        "font-family": "Menlo"
+      }
+    }
+  },
+  "psy.swansea.ac.uk": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "font-size": "18px",
+        "line-height": "1.3",
+        "width": "750px"
+      },
+      "at1": {
+        "at": true,
+        "expanded_text": "@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: url(http://fonts.gstatic.com/l/font?kit=CTMFq2pxfpXJxi8q43NZYgLUuEpTyoUstqEm5AMlJo4&skey=ca45512e77838097) format('woff2');\n}\n",
+        "text": "@import url(http://fonts.googleapis.com/css?family=Georgia);",
+        "type": "@import",
+        "url": "http://fonts.googleapis.com/css?family=Georgia"
+      }
+    }
+  },
+  "rhaas.blogspot.com": {
+    "_enabled": true,
+    "_rules": {
+      "div.date-outer": {
+        "font-family": "BlinkMacSystemFont",
+        "font-size": "1.3em"
+      },
+      "div.post-body.entry-content b": {
+        "font-family": "BlinkMacSystemFont"
+      },
+      "h3.post-title.entry-title": {
+        "font-family": "BlinkMacSystemFont"
+      }
+    }
+  },
+  "sml-family.org": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      },
+      "at1": {
+        "at": true,
+        "expanded_text": "/* cyrillic-ext */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=3Va96OIy0K7XohCXHW3JlVKPGs1ZzpMvnHX-7fPOuAc&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\n}\n/* cyrillic */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=pDdUHdM2l4zkSwEYbh4NRlKPGs1ZzpMvnHX-7fPOuAc&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\n}\n/* greek-ext */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=hc35P_WTUA_EyueTlCQlOVKPGs1ZzpMvnHX-7fPOuAc&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+1F00-1FFF;\n}\n/* greek */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=kOpfJs_FUnITLAFMUO1CCVKPGs1ZzpMvnHX-7fPOuAc&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+0370-03FF;\n}\n/* latin-ext */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=Pd2d_smr57qlVvBsFuPub1KPGs1ZzpMvnHX-7fPOuAc&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n/* latin */\n@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Georgia'), url(http://fonts.gstatic.com/l/font?kit=CTMFq2pxfpXJxi8q43NZYgLUuEpTyoUstqEm5AMlJo4&skey=ca45512e77838097&v=v8) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\n}\n",
+        "text": "@import url(http://fonts.googleapis.com/css?family=Georgia);",
+        "type": "@import",
+        "url": "http://fonts.googleapis.com/css?family=Georgia"
+      }
+    }
+  },
+  "sqlite.org": {
+    "_enabled": true,
+    "_rules": {
+      "html body": {
+        "width": "700px"
+      }
+    }
+  },
+  "svpow.com": {
+    "_enabled": true,
+    "_rules": {
+      "div.entrybody p": {
+        "font-size": "1.4em"
+      }
+    }
+  },
+  "tldp.org": {
+    "_enabled": true,
+    "_rules": {
+      "body": {
+        "font-family": "\"BlinkMacSystemFont\"",
+        "font-size": "1.2rem",
+        "line-height": "1.4",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "800px"
+      },
+      "p": {
+        "width": "700px"
+      },
+      "pre": {
+        "font-family": "Menlo"
+      },
+      "tt": {
+        "font-family": "Menlo"
+      }
+    }
+  },
+  "www.catb.org": {
+    "_enabled": true,
+    "_rules": {
+      "body.article": {
+        "font-size": "18px",
+        "line-height": "24px",
+        "width": "700px"
+      },
+      "div.content": {
+        "width": "900px"
+      }
+    }
+  },
+  "www.cs.cmu.edu/~pattis/quotations.html": {
+    "_enabled": true,
+    "_rules": {
+      "html body": {
+        "margin": "auto",
+        "width": "700px"
+      },
+      "tbody tr td": {
+        "font-family": "Palatino",
+        "font-size": "18px",
+        "line-height": "24px",
+        "padding": "10px"
+      }
+    }
+  },
+  "www.daviddfriedman.com": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      },
+      "at2": {
+        "at": true,
+        "expanded_text": "@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: url(http://fonts.gstatic.com/l/font?kit=CTMFq2pxfpXJxi8q43NZYgLUuEpTyoUstqEm5AMlJo4&skey=ca45512e77838097) format('woff2');\n}\n",
+        "text": "@import url(http://fonts.googleapis.com/css?family=Georgia);",
+        "type": "@import",
+        "url": "http://fonts.googleapis.com/css?family=Georgia"
+      },
+      "p.western font": {
+        "font-family": "Georgia",
+        "line-height": "1.35em"
+      }
+    }
+  },
+  "www.facebook.com": {
+    "_enabled": true,
+    "_rules": {
+      "Select an element": {}
+    }
+  },
+  "www.gnu.org/software/libc/manual": {
+    "_enabled": true,
+    "_rules": {
+      "at1": {
+        "at": true,
+        "expanded_text": "/* cyrillic-ext */\n@font-face {\n  font-family: 'EB Garamond';\n  font-style: normal;\n  font-weight: 400;\n  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFfZraR2Tg8w2lzm7kLNL0-w.woff2) format('woff2');\n  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\n}\n/* cyrillic */\n@font-face {\n  font-family: 'EB Garamond';\n  font-style: normal;\n  font-weight: 400;\n  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFV4sYYdJg5dU2qzJEVSuta0.woff2) format('woff2');\n  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\n}\n/* vietnamese */\n@font-face {\n  font-family: 'EB Garamond';\n  font-style: normal;\n  font-weight: 400;\n  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFdDiNsR5a-9Oe_Ivpu8XWlY.woff2) format('woff2');\n  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\n}\n/* latin-ext */\n@font-face {\n  font-family: 'EB Garamond';\n  font-style: normal;\n  font-weight: 400;\n  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFaE8kM4xWR1_1bYURRojRGc.woff2) format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n/* latin */\n@font-face {\n  font-family: 'EB Garamond';\n  font-style: normal;\n  font-weight: 400;\n  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFYgp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n",
+        "text": "@import url(https://fonts.googleapis.com/css?family=EB+Garamond);",
+        "type": "@import",
+        "url": "https://fonts.googleapis.com/css?family=EB+Garamond"
+      },
+      "body": {
+        "font-family": "\"EB Garamond\"",
+        "font-size": "1.2rem",
+        "line-height": "1.4",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "800px"
+      },
+      "p": {
+        "width": "700px"
+      }
+    }
+  },
+  "www.haskell.org/happy/doc/html/": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "width": "700px"
+      }
+    }
+  },
+  "www.kalzumeus.com": {
+    "_enabled": true,
+    "_rules": {
+      "div.entry p": {
+        "font-size": "18px"
+      }
+    }
+  },
+  "www.madore.org": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "BlinkMacSystemFont",
+        "font-size": "18px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      }
+    }
+  },
+  "www.mlton.org": {
+    "_enabled": true,
+    "_rules": {
+      "body.article": {
+        "width": "750px"
+      }
+    }
+  },
+  "www.nltk.org/book/,www.nltk.org/howto/": {
+    "_enabled": true,
+    "_rules": {
+      "at1": {
+        "at": true,
+        "text": "@import url(http://fonts.googleapis.com/css?family=EB+Garamond);",
+        "type": "@import",
+        "url": "http://fonts.googleapis.com/css?family=EB+Garamond"
+      },
+      "body": {
+        "font-family": "EB Garamond",
+        "font-size": "20px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "width": "700px"
+      },
+      "p.caption": {
+        "font-style": "italic",
+        "margin-left": "30px",
+        "margin-right": "30px"
+      }
+    }
+  },
+  "www.podval.org": {
+    "_enabled": true,
+    "_rules": {
+      " html body": {
+        "font-family": "Georgia",
+        "font-size": "18px",
+        "width": "700px"
+      },
+      "at1": {
+        "at": true,
+        "expanded_text": "@font-face {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  src: url(http://fonts.gstatic.com/l/font?kit=CTMFq2pxfpXJxi8q43NZYgLUuEpTyoUstqEm5AMlJo4&skey=ca45512e77838097) format('woff2');\n}\n",
+        "text": "@import url(http://fonts.googleapis.com/css?family=Georgia);",
+        "type": "@import",
+        "url": "http://fonts.googleapis.com/css?family=Georgia"
+      }
+    }
+  },
+  "www.postgresql.org": {
+    "_enabled": true,
+    "_rules": {
+      "#docContent": {
+        "font-size": "16px",
+        "line-height": "19px",
+        "width": "700px"
+      },
+      "pre": {
+        "width": "1000px"
+      }
+    }
+  },
+  "www.reddit.com": {
+    "_enabled": true,
+    "_rules": {
+      "at1": {
+        "at": true,
+        "expanded_text": "",
+        "text": "@import url('https://fonts.googleapis.com/css?family=Roboto');",
+        "type": "@import",
+        "url": "'https://fonts.googleapis.com/css?family=Roboto'"
+      },
+      "div.md p, div.md li": {
+        "font-family": "\"Helvetica Neue\"",
+        "font-size": "16px",
+        "line-height": "20px",
+        "max-width": "600px"
+      },
+      "div.md strong": {
+        "font-weight": "600"
+      },
+      "div.md textarea": {
+        "font-family": "Menlo"
+      }
+    }
+  },
+  "www.smlnj.org": {
+    "_enabled": true,
+    "_rules": {
+      "body": {
+        "font-size": "20px",
+        "line-height": "1.4",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "max-width": "750px"
+      }
+    }
+  },
+  "www.stephendiehl.com": {
+    "_enabled": true,
+    "_rules": {
+      "p": {
+        "font-size": "16px",
+        "width": "600px"
+      }
+    }
+  },
+  "www.twitlonger.com": {
+    "_enabled": true,
+    "_rules": {
+      "#posttext": {
+        "font-family": "BlinkMacSystemFont",
+        "font-size": "1.2em",
+        "line-height": "1.4"
+      }
+    }
+  },
+  "www.wikiwand.com": {
+    "_enabled": true,
+    "_rules": {
+      "article.ng-scope.narrow_column.no_cover.loaded": {
+        "width": "700px"
+      }
+    }
+  },
+  "www2.cmp.uea.ac.uk": {
+    "_enabled": true,
+    "_rules": {
+      "html body": {
+        "font-family": "Georgia",
+        "line-height": "1.4",
+        "max-width": "700px"
+      }
+    }
+  }
+}

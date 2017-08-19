@@ -1,2 +1,2 @@
-EXCLUDES="com.googlecode.iterm2.plist *setup.sh README.md LICENSE fonts iterm private.xml"
+EXCLUDES="com.googlecode.iterm2.plist *setup.sh README.md LICENSE fonts iterm private.xml config/stylebot.json"
 SYMLINK_DIRS="vim zfunctions oh-my-zsh irssi"
