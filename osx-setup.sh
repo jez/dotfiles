@@ -129,6 +129,7 @@ brew cask install calibre
 brew cask install fitbit-connect
 brew cask install rcdefaultapp
 brew cask install karabiner
+brew cask install flux
 
 # Install python
 brew install python
@@ -213,6 +214,8 @@ npm install -g jade
 #       - Unckeck "Smooth images"
 #     - Trackpad Options...
 #       - Enable dragging
+#     - Display
+#       - Unckeck "Shake mouse pointer to locate"
 #   - Sound
 #     - Sound Effects
 #       - Play feedback when volume is changed
@@ -237,10 +240,6 @@ npm install -g jade
 #       - Accessibility
 #         - Invert colors
 #       - App Shortcuts
-#         - Spotify.app
-#           - Add
-#             - "Toggle Fullscreen"
-#             - Ctrl + Command + F
 #         - Google Chrome.app
 #           - Add
 #             - "Select Next Tab"
@@ -271,6 +270,10 @@ npm install -g jade
 # Menu Bar
 #   - Battery Icon
 #     - Show Percentage
+
+# Spotify
+#   - View
+#     - Uncheck "Right sidebar"
 
 # Finder
 #   - General
