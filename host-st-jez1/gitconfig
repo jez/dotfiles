@@ -2,7 +2,7 @@
 	path = .util/gitconfig
 [user]
 	name = Jake Zimmerman
-	email = jez@stripe.com
+	email = zimmerman.jake@gmail.com
 [credential]
 	helper = osxkeychain
 [push]
