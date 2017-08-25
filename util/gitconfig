@@ -54,6 +54,11 @@
 [interactive]
 	diffFilter = diff-highlight
 
+# Merge conflict settings
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+
 # GitHub-specific
 [hub]
 	protocol = git

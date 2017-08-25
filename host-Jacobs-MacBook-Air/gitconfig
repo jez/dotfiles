@@ -18,3 +18,5 @@
 	default = simple
 [commit]
 	gpgsign = true
+[mergetool "vimdiff"]
+	path = nvim

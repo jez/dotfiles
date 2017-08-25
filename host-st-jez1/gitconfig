@@ -7,6 +7,8 @@
 	helper = osxkeychain
 [push]
 	default = simple
+[mergetool "vimdiff"]
+	path = nvim
 
 # --- Added by Stripe IT department ---
 
