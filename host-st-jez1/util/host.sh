@@ -67,6 +67,7 @@ fi
 
 # ----- Prompt  ---------------------------------------------------------------
 
+export PROMPT_PURE_SKIP_DIRTY_CHECK=1
 export PROMPT_PURE_DIR_COLOR="%{$ccyan%}"
 export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
 
