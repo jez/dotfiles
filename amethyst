@@ -1,4 +1,9 @@
 {
+  "-other-layouts": [
+    "tall-right",
+    "middle-wide"
+  ],
+
   "layouts": [
     "tall",
     "fullscreen"
