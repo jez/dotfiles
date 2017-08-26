@@ -106,7 +106,7 @@ rm ~/.fzf.bash
 # Install ruby
 brew install rbenv
 brew install ruby-build
-echo "rbenv is insatlled."
+echo "rbenv is installed."
 echo "You'll still have to install ruby 1.9.3 for Octopress."
 cat << EOF
 (within Octopress project root directory)
