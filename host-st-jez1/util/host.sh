@@ -29,6 +29,9 @@ export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:$HOME/.local/bin"
 
+# Use Homebrew Python 2 as default 'python' binary
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
@@ -52,6 +55,10 @@ alias cdsc="cd ~/stripe/checkout-js"
 alias cds="cd ~/stripe"
 
 # ----- Specific Programs -----------------------------------------------------
+
+# Settings for virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
 # Have Haskell Stack use XDG Base Directory spec
 export STACK_ROOT="$XDG_DATA_HOME/stack"
