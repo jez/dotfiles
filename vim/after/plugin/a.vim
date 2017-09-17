@@ -9,6 +9,6 @@
 "
 " You can't rebind mappings until after the plugin has made them, and the
 " vimrc loads first, so they have to go here.
-iunmap <Leader>ih
-iunmap <Leader>is
-iunmap <Leader>ihn
+silent! iunmap <Leader>ih
+silent! iunmap <Leader>is
+silent! iunmap <Leader>ihn
