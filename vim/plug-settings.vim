@@ -83,11 +83,16 @@ augroup mydelimitMate
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
   au FileType pandoc let b:delimitMate_nesting_quotes = ["`"]
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
   au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
 " }}}
+" ----- alvan/vim-closetag ----- {{{
+let g:closetag_filenames = '*.html,*.jsx,*.md,*.markdown'
+
+"  }}}
 " ----- majutsushi/tagbar settings ----- {{{
 " Open/close tagbar with \b
 nnoremap <silent> <leader>b :TagbarToggle<CR>

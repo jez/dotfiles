@@ -196,3 +196,6 @@
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
+[submodule "vim/bundle/vim-closetag"]
+	path = vim/bundle/vim-closetag
+	url = git://github.com/alvan/vim-closetag.git
