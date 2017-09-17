@@ -408,7 +408,7 @@ augroup interoMaps
   au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
   au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
 
-  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+  au FileType haskell nnoremap <silent> <leader>ir :w \| :InteroReload<CR>
   au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
   au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
 
@@ -423,7 +423,7 @@ augroup interoMaps
 augroup END
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
-nnoremap <silent> <leader>W :Goyo<CR>
+nnoremap <silent> <leader>w :Goyo<CR>
 " }}}
 " ----- jez/vim-better-sml ----- {{{
 " Uncomment to have same-width conceal characters

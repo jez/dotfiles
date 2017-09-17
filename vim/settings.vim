@@ -119,7 +119,7 @@ nnoremap <silent> <leader>zf V$%zf
 nnoremap <silent> zT zMzvzczO
 
 " See WV command above
-nnoremap <silent> <leader>w :WV<CR>
+" nnoremap <silent> <leader>w :WV<CR>
 
 " See Vte command above
 nnoremap <silent> <leader>v :Vte<CR>
@@ -130,8 +130,7 @@ nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(
 noremap <silent> gr gt
 noremap <silent> gR gT
 
-nnoremap <leader>y "+y
-vnoremap <silent> <leader>y "+y
+noremap <silent> <leader>y "+y
 
 nnoremap <silent> <Leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
