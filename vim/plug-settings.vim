@@ -289,6 +289,11 @@ hi! link GitGutterDelete gitgutterDelete
 
 
 " }}}
+" ----- tpope/vim-rhubarb settings ----- {{{
+
+let g:github_enterprise_urls = ['https://git.corp.stripe.com']
+
+" }}}
 " ----- jez/vim-superman settings ----- {{{
 " better man page support
 noremap K :SuperMan <cword><CR>
@@ -311,6 +316,16 @@ let g:javascript_plugin_flow = 1
 " ----- mxw/vim-jsx ----- {{{
 " Syntax highlighting for JSX
 let g:jsx_ext_required = 0
+
+" }}}
+" ----- flowtype/vim-flow ----- {{{
+" Only use Flow for type information and jump to def
+let g:flow#enable = 0
+let g:flow#omnifunc = 0
+
+augroup flowMaps
+  au FileType javascript map <leader>t :FlowType<CR>
+augroup END
 
 " }}}
 " ----- ntpeters/vim-better-whitespace ----- {{{
