@@ -85,6 +85,8 @@ command! WV w | make view
 command! Vte vsplit | terminal
 command! Ste split | terminal
 
+" Open scratch buffer in a split on left
+command! Vsnew vert new | norm <C-w>H
 
 " ----- Custom keybindings --------------------------------------------------
 
@@ -130,6 +132,9 @@ noremap <silent> gR gT
 
 nnoremap <leader>y "+y
 vnoremap <silent> <leader>y "+y
+
+nnoremap <silent> <Leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " Neovim Terminal Emulator keys
 if has('nvim')
