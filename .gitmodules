@@ -111,7 +111,7 @@
 	url = https://github.com/leafgarland/typescript-vim
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx
+	url = https://github.com/jez/vim-jsx
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
