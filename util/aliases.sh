@@ -30,6 +30,9 @@ alias bex="bundle exec"
 
 # I'm pretty proud of these ones
 alias :q="clear"
+alias clera="clear"
+alias lcera="clear"
+alias lcear="clear"
 alias :tabe="vim"
 alias :Vs="vimv"
 alias :vs="vimv"
