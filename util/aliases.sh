@@ -94,6 +94,7 @@ elif [ "$SOLARIZED" = "light" ]; then
 else
   alias ag="$AG_DARK"
 fi
+alias agt="ag --ignore='*test*'"
 
 
 # ----- Git aliases -----------------------------------------------------------
