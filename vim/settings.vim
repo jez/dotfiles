@@ -44,6 +44,9 @@ set listchars-=eol:$   " Don't show trailing end-of-line characters
 set noshowmode         " Don't show "-- INSERT --" in insert mode
                        " Preseves things like echo'd messages
 set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
+if executable('par')
+  set formatprg=par
+endif
 
 " Show potential matches above completion, complete first immediately
 set wildmenu
