@@ -329,7 +329,8 @@ let g:flow#enable = 0
 let g:flow#omnifunc = 0
 
 augroup flowMaps
-  au FileType javascript map <leader>t :FlowType<CR>
+  au FileType javascript nnoremap <leader>t :FlowType<CR>
+  au FileType javascript nnoremap gd :FlowJumpToDef<CR>
 augroup END
 
 " }}}
