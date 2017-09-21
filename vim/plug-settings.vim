@@ -249,6 +249,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_set_quickfix = 1
 
 nnoremap <leader>et :ALEToggle<CR>
+nnoremap <leader>ef :ALEFix<CR>
 
 let g:ale_linters = {}
 let g:ale_linters.tex = []
@@ -256,6 +257,14 @@ let g:ale_linters.tex = []
 let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
 " For stripe: use 'erubis' instead of 'erubylint'
 let g:ale_linters.eruby = ['erubis']
+
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['prettier']
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --bracket-spacing false --parser flow'
+
+augroup aleMaps
+  au FileType javascript let g:ale_fix_on_save = 1
+augroup END
 
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
