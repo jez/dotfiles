@@ -450,6 +450,13 @@ augroup interoMaps
   au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
   au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
   au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
+
+  " hoogle bindings (stack install hoogle && hoogle generate)
+
+  " Query hoogle for what's under the cursor, and put it in the intero buffer
+  au FileType haskell noremap <silent> <leader>iq :InteroSend<SPACE>:!hoogle<SPACE><C-R><C-W><CR>
+  " qUery hoogle for a User prompted string
+  au FileType haskell noremap <leader>iu :InteroSend<SPACE>:!hoogle<SPACE>
 augroup END
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
