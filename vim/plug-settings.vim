@@ -267,13 +267,19 @@ let g:ale_linters.tex = []
 let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
 " For stripe: use 'erubis' instead of 'erubylint'
 let g:ale_linters.eruby = ['erubis']
+" CSS warnings were mostly chunderous
+let g:ale_linters.css = []
 
+" Be sure to never install 'prettier' globally, or you will be running
+" prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['prettier']
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --bracket-spacing false --parser flow'
+let g:ale_fixers.css = ['prettier']
+let g:ale_javascript_prettier_use_local_config = 1
 
 augroup aleMaps
   au FileType javascript let g:ale_fix_on_save = 1
+  au FileType css let g:ale_fix_on_save = 1
 augroup END
 
 " }}}
