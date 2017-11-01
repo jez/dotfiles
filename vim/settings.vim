@@ -144,6 +144,8 @@ if has('nvim')
   tnoremap <C-l> <C-\><C-n><C-w>l
 endif
 
+" ----- Custom digraphs -----------------------------------------------------
+digraph \|- 8866
 
 " ----- Terminal-as-GUI settings --------------------------------------------
 
