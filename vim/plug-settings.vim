@@ -464,7 +464,7 @@ augroup interoMaps
   au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
   " au FileType haskell nnoremap <silent> <leader>ii :InteroInfo<CR>
 
-  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+  au FileType haskell nnoremap <silent> gd :InteroGoToDef<CR>
   au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
   au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
 
