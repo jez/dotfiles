@@ -12,4 +12,4 @@ packages: []
 extra-deps: []
 resolver: lts-8.21
 ghc-options:
-  "*": -Wall -Wcompat -Wimplicit-prelude -Wmissing-signatures -Wmissing-import-lists
+  "*": -Wall -Wcompat
