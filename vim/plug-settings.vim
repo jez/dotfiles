@@ -94,6 +94,7 @@ augroup END
 " }}}
 " ----- alvan/vim-closetag ----- {{{
 let g:closetag_filenames = '*.html,*.jsx,*.md,*.markdown,*.erb'
+let g:closetag_close_shortcut = ''
 
 "  }}}
 " ----- majutsushi/tagbar settings ----- {{{
