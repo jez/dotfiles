@@ -421,6 +421,7 @@ let g:haskell_indent_case_alternative = 1
 let g:haskell_indent_let_no_in = 0
 let g:haskell_indent_if = 2
 let g:haskell_indent_before_where = 2
+let g:haskell_classic_highlighting = 1
 " }}}
 " ----- alx471/vim-hindent and stylish ----- {{{
 let g:hindent_on_save = 0
