@@ -42,6 +42,8 @@
 " to accept pull requests. If you've fixed a bug though, go ahead and I'll
 " take a look at it.
 
+scriptencoding utf-8
+
 " ----- Pathogen and Plugin Settings ----------------------------------------
 
 " Pathogen is in a non-standard location: modify the rtp to reflect that
