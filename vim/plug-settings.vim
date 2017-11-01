@@ -384,10 +384,10 @@ augroup pandocSettings
   au FileType pandoc setlocal formatoptions+=c
 
   " Indent and de-indent with TAB and SHIFT + TAB
-  au Filetype pandoc nnoremap <TAB> >>
-  au Filetype pandoc nnoremap <S-TAB> <<
-  au Filetype pandoc inoremap <TAB> <C-t>
-  au Filetype pandoc inoremap <S-TAB> <C-d>
+  au FileType pandoc nnoremap <TAB> >>
+  au FileType pandoc nnoremap <S-TAB> <<
+  au FileType pandoc inoremap <TAB> <C-t>
+  au FileType pandoc inoremap <S-TAB> <C-d>
 augroup END
 
 " }}}
