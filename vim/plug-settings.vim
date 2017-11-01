@@ -515,6 +515,26 @@ augroup pscide
   au FileType purescript nnoremap gd :<C-U>call PSCIDEgoToDefinition("", PSCIDEgetKeyword())<CR>
 augroup END
 " }}}
+" ----- benmills/vimux ----- {{{
+let g:VimuxOrientation = 'h'
+" This is really 'width' because of the above setting
+let g:VimuxHeight = '50'
+let g:VimuxPromptString = '❯ '
+
+nnoremap <silent> <leader><up> :VimuxRunLastCommand<CR>
+nnoremap <silent> <leader>vp :VimuxPromptCommand<CR>
+
+augroup vimuxMappings
+  au!
+
+  au FileType javascript nnoremap <silent> <leader>if :VimuxRunCommand 'flow --color=always \| less -F -X'<CR>
+  au FileType javascript nnoremap <silent> <leader>id :VimuxRunCommand 'yarn run flowdev'<CR>
+
+  au FileType haskell nnoremap <silent> <leader>ib :VimuxRunCommand 'stack build'<CR>
+
+  au FileType purescript nnoremap <silent> <leader>ib :VimuxRunCommand 'pulp build'<CR>
+augroup END
+" }}}
 " ----- fzf ----- {{{
 set runtimepath+=/usr/local/opt/fzf
 set runtimepath+=/afs/cs/academic/class/15131-f15/opt/fzf
