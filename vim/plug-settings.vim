@@ -501,15 +501,17 @@ let g:purescript_indent_case = 2
 " ----- FrigoEU/psc-ide-vim ----- {{{
 augroup pscide
   au!
-  au FileType purescript nnoremap <leader>t :PSCIDEtype<CR>
-  au FileType purescript nnoremap <leader>S :PSCIDEapplySuggestion<CR>
-  au FileType purescript nnoremap <leader>pa :PSCIDEaddTypeAnnotation<CR>
-  au FileType purescript nnoremap <leader>i :PSCIDEimportIdentifier<CR>
-  au FileType purescript nnoremap <leader>L :PSCIDEload<CR>
-  au FileType purescript nnoremap <leader>pp :PSCIDEpursuit<CR>
-  au FileType purescript nnoremap <leader>pc :PSCIDEcaseSplit<CR>
-  au FileType purescript nnoremap <leader>qd :PSCIDEremoveImportQualifications<CR>
-  au FileType purescript nnoremap <leader>qa :PSCIDEaddImportQualifications<CR>
+  au FileType purescript nnoremap <leader>t :<C-U>call PSCIDEtype(PSCIDEgetKeyword(), v:true)<CR>
+  au FileType purescript nnoremap <leader>S :<C-U>call PSCIDEapplySuggestion()<CR>
+  au FileType purescript nnoremap <leader>pT :<C-U>call PSCIDEaddTypeAnnotation(matchstr(getline(line(".")), '^\s*\zs\k\+\ze'))<CR>
+  au FileType purescript nnoremap <leader>pa :<C-U>call PSCIDEaddTypeAnnotation()<CR>
+  au FileType purescript nnoremap <leader>i :<C-U>call PSCIDEimportIdentifier(PSCIDEgetKeyword())<CR>
+  au FileType purescript nnoremap <leader>pr :<C-U>call PSCIDEload(0)<CR>
+  au FileType purescript nnoremap <leader>pp :<C-U>call PSCIDEpursuit(PSCIDEgetKeyword())<CR>
+  au FileType purescript nnoremap <leader>pc :<C-U>call PSCIDEcaseSplit("!")<CR>
+  au FileType purescript nnoremap <leader>pe :<C-U>call PSCIDEaddClause("")<CR>
+  au FileType purescript nnoremap <leader>qa :<C-U>call PSCIDEaddImportQualifications()<CR>
+  au FileType purescript nnoremap gd :<C-U>call PSCIDEgoToDefinition("", PSCIDEgetKeyword())<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
