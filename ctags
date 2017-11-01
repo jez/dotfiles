@@ -46,3 +46,15 @@
 --regex-js=/^[ \t]+([A-Za-z$_][A-Za-z0-9_$]+)[ \t]*\([^;)]*\)[ \t]*\{/\1/m,method/
 --regex-js=/['"]*([A-Za-z$][A-Za-z0-9_$]+)['"]*:[ \t]*function[ \t]*\(/\1/m,method/
 --regex-js=/([A-Za-z0-9_$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*function[ \t]*\(/\2/m,method/
+
+--langdef=markdown
+--langmap=markdown:.md
+--langmap=markdown:+.markdown
+--regex-markdown=/^#[ \t](.*)/#    \1/h,Headings/
+--regex-markdown=/^##[ \t](.*)/##   \1/h,Headings/
+--regex-markdown=/^###[ \t](.*)/###  \1/h,Headings/
+--regex-markdown=/^####[ \t](.*)/#### \1/h,Headings/
+--regex-markdown=/(<h1[^>]*>)/#    \1/h,Headings/
+--regex-markdown=/(<h2[^>]*>)/##   \1/h,Headings/
+--regex-markdown=/(<h3[^>]*>)/###  \1/h,Headings/
+--regex-markdown=/(<h4[^>]*>)/#### \1/h,Headings/

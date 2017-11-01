@@ -170,6 +170,13 @@ if executable('ripper-tags')
   \ }
 endif
 
+let g:tagbar_type_eruby = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Headings',
+    \ ]
+    \ }
+
 " }}}
 " ----- xolox/vim-easytags settings ----- {{{
 set tags=./tags;,~/.vimtags
