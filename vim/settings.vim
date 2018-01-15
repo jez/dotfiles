@@ -179,6 +179,10 @@ nnoremap <silent> <leader>gp :!grip -b % &> /dev/null &<CR><CR>
 nnoremap <M-Up> ddkP
 nnoremap <M-Down> ddp
 
+" * and # just highlight, don't jump
+nnoremap * :keepjumps normal! *N<CR>
+nnoremap # :keepjumps normal! #N<CR>
+
 " Neovim Terminal Emulator keys
 if has('nvim')
   tnoremap <M-e> <C-\><C-n>
