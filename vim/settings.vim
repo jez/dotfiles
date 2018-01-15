@@ -113,6 +113,23 @@ noremap <M-Enter> <CR>
 noremap <M-:> :
 noremap S <nop>
 
+function! ToggleKJEsc() abort
+  if empty(maparg('kj', 'i'))
+    inoremap kj <ESC>
+    echo 'kj enabled'
+  else
+    iunmap kj
+    echo 'kj disabled'
+  end
+endfunction
+nnoremap <silent> <leader>kj :call ToggleKJEsc()<CR>
+inoremap <silent> <C-j> <ESC>:call ToggleKJEsc()<CR>
+call system('ioreg -p IOUSB | grep -iq ergodox')
+if v:shell_error
+  " Ergodox not connected, so probably using internal keyboard.
+  silent! call ToggleKJEsc()
+endif
+
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
 noremap <silent> j gj
