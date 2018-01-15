@@ -62,6 +62,9 @@ which tmux &> /dev/null && alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf
 # Use --no-bold for Solarized colors
 alias icdiff="icdiff --no-bold"
 
+# dump syntax highlighted file to screen
+alias hicat='highlight -O truecolor --style=solarized-$SOLARIZED'
+
 # Node module for lorem-ipsum
 alias words="lorem-ipsum --units words --count"
 alias paras="lorem-ipsum --units paragraphs --count"
