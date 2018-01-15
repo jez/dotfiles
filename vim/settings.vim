@@ -164,6 +164,9 @@ noremap <silent> gr gt
 noremap <silent> gR gT
 
 noremap <silent> <leader>y "+y
+noremap <silent> <leader>Y "+Y
+noremap <silent> <leader>d "+d
+noremap <silent> <leader>D "+D
 
 nnoremap <silent> <Leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
