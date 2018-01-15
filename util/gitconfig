@@ -27,7 +27,7 @@
 	files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
 	# Same as above, but with a diff stat instead of just names
 	# (better for interactive use)
-	stat = !git diff --stat $(git merge-base --fork-point \"$REVIEW_BASE\")
+	stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
 	# split-diff style review using vim-fugitive Gdiff
 	review = !$EDITOR -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
 	reviewf = !$EDITOR -p $(git files | fzf -m --reverse --height 40%) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
