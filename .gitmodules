@@ -208,3 +208,6 @@
 [submodule "vim/bundle/Tabmerge"]
 	path = vim/bundle/Tabmerge
 	url = git://github.com/vim-scripts/Tabmerge.git
+[submodule "vim/bundle/vim-toml"]
+	path = vim/bundle/vim-toml
+	url = git@github.com:cespare/vim-toml.git
