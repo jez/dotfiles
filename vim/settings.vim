@@ -88,6 +88,19 @@ command! Ste split | terminal
 " Open scratch buffer in a split on left
 command! Vsnew vert new | norm <C-w>H
 
+" Replace curly quotes with straight quotes
+function! Nocurly() abort
+  " vint: -ProhibitCommandWithUnintendedSideEffect
+  " vint: -ProhibitCommandRelyOnUser
+  silent! %s/‘/'/g
+  silent! %s/’/'/g
+  silent! %s/“/"/g
+  silent! %s/”/"/g
+  " vint: +ProhibitCommandRelyOnUser
+  " vint: +ProhibitCommandWithUnintendedSideEffect
+endfunction
+command! Nocurly call Nocurly()
+
 " Merge current tab with the tab to the left
 noremap <C-w>m :Tabmerge<CR>
 
