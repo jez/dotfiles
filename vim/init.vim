@@ -7,6 +7,9 @@
 " General 'set xyz', 'command', and 'map' settings
 source $HOME/.vim/settings.vim
 
+" Digraphs (separate file because syntax highlighting breaks...)
+source $HOME/.vim/digraphs.vim
+
 " Filetype-specific settings (registering and using filetypes)
 source $HOME/.vim/ft-settings.vim
 

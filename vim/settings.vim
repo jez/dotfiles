@@ -144,9 +144,6 @@ if has('nvim')
   tnoremap <C-l> <C-\><C-n><C-w>l
 endif
 
-" ----- Custom digraphs -----------------------------------------------------
-digraph \|- 8866
-
 " ----- Terminal-as-GUI settings --------------------------------------------
 
 " In many terminal emulators the mouse works just fine, thus enable it.
