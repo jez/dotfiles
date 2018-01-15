@@ -79,6 +79,12 @@ if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi
 
+# Go
+export GOPATH="$HOME/golang"
+export PATH="$PATH:$GOPATH/bin"
+export CGO_CFLAGS="-I/usr/local/include"
+export CGO_LDFLAGS="-L/usr/local/lib"
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_SKIP_DIRTY_CHECK=1
