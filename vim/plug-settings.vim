@@ -276,6 +276,7 @@ let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_rust_cargo_check_all_targets = 0
 
 augroup aleMaps
   au FileType javascript let g:ale_fix_on_save = 1
@@ -533,6 +534,11 @@ augroup vimuxMappings
   au FileType haskell nnoremap <silent> <leader>ib :VimuxRunCommand 'stack build'<CR>
 
   au FileType purescript nnoremap <silent> <leader>ib :VimuxRunCommand 'pulp build'<CR>
+
+  au FileType rust nnoremap <silent> <leader>if :VimuxRunCommand 'cargo check \| less -F -X'<CR>
+  au FileType rust nnoremap <silent> <leader>ib :VimuxRunCommand 'cargo build \| less -F -X'<CR>
+  au FileType rust nnoremap <silent> <leader>id :VimuxRunCommand 'cargo doc --open'<CR>
+  au FileType rust nnoremap <silent> <leader>ir :VimuxRunCommand 'cargo run'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
