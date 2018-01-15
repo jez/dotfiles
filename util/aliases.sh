@@ -159,6 +159,10 @@ GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
 
+# only branches with 'jez' in them, including their remote counter parts
+# (especially useful when in a repo with lots of other people)
+ONLY_JEZ="--branches='*jez*' --remotes='*jez*' master origin/master"
+
 # pretty Git log
 alias gl="git log --graph $GIT_PRETTY_FORMAT"
 # pretty Git log, all references
@@ -171,6 +175,11 @@ alias glla='gla --all'
 alias glala="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
 # pretty Git log, all references, show authors, align messages
 alias glalal="glala --all"
+
+# It doesn't make sense to combine $ONLY_JEZ with --all
+alias glj="gl $ONLY_JEZ"
+alias glaj="gla $ONLY_JEZ"
+alias glalaj="glala $ONLY_JEZ"
 
 
 # ----- Docker aliases --------------------------------------------------------
