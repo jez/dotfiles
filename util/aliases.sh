@@ -69,6 +69,9 @@ alias hicat='highlight -O truecolor --style=solarized-$SOLARIZED'
 alias words="lorem-ipsum --units words --count"
 alias paras="lorem-ipsum --units paragraphs --count"
 
+# Show a summary of my jrnl. 'viewjrnl' is defined in https://github.com/jez/bin
+alias jrnlsum="viewjrnl -from '10 days ago'"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
