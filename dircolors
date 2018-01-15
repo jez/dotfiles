@@ -177,6 +177,7 @@ EXEC 01;38;5;64
 .eps    00;38;5;136
 .CR2    00;38;5;136
 .ico    00;38;5;136
+.pdf    00;38;5;136
 
 # Files of special interest (base1 + bold)
 .tex             01;38;5;245
