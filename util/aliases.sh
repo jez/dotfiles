@@ -3,7 +3,7 @@
 
 # colorize grep and ls
 alias grep &> /dev/null || alias grep="grep --color=auto"
-alias ls="ls -p --color=auto"
+alias ls='ls -p --color=auto -w $(($COLUMNS<120?$COLUMNS:120))'
 alias l="ls"
 
 # manipulate files verbosely (print log of what happened)
