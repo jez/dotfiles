@@ -6,6 +6,9 @@ alias grep &> /dev/null || alias grep="grep --color=auto"
 alias ls='ls -p --color=auto -w $(($COLUMNS<120?$COLUMNS:120))'
 alias l="ls"
 
+# 'r' in zsh is set up to repeat the last command (!!)
+alias r="true"
+
 # manipulate files verbosely (print log of what happened)
 alias cp="cp -v"
 alias mv="mv -v"
