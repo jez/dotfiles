@@ -208,7 +208,11 @@ endif
 
 if exists('+termguicolors')
   " This lets us use 24-bit "true" colors in the terminal
-  set termguicolors
+  if $TERM_PROGRAM ==# 'iTerm.app'
+    set termguicolors
+  else
+    " alacritty + goyo.vim isn't working well right now
+  endif
 endif
 
 " NeoVim and iTerm2 have support to display different cursor shapes than just
