@@ -211,3 +211,6 @@
 [submodule "vim/bundle/vim-toml"]
 	path = vim/bundle/vim-toml
 	url = git@github.com:cespare/vim-toml.git
+[submodule "vim/bundle/neoformat"]
+	path = vim/bundle/neoformat
+	url = git@github.com:sbdchd/neoformat.git
