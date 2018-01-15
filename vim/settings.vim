@@ -171,6 +171,10 @@ noremap <silent> <leader>D "+D
 nnoremap <silent> <leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
+" Preview the current file as a Markdown file in the browser
+" Requires https://github.com/joeyespo/grip
+nnoremap <silent> <leader>gp :!grip -b % &> /dev/null &<CR><CR>
+
 " Neovim Terminal Emulator keys
 if has('nvim')
   tnoremap <M-e> <C-\><C-n>
