@@ -27,7 +27,12 @@ alias b="popd"
 
 # open multiple files in Vim tabs
 alias vim &> /dev/null || alias vim="vim -p"
+
+# open multiple files in Vim vertical splits
 alias vimv="vim -O"
+
+# open Vim directly to Goyo mode (distraction-free writing mode)
+alias vimg="vim +Goyo"
 
 alias bex="bundle exec"
 
