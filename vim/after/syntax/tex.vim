@@ -18,6 +18,7 @@ let texMathList=[
   \ ['rangle',             '〉'],
   \ ['pto',                '→'],
   \ ['coloncolon',         '∷'],
+  \ ['shortuparrow',       '↑'],
   \ ]
 for texmath in texMathList
   if texmath[0] =~# '\w$'
