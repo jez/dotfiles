@@ -424,24 +424,16 @@ let g:haskell_indent_if = 2
 let g:haskell_indent_before_where = 2
 let g:haskell_classic_highlighting = 1
 " }}}
-" ----- alx471/vim-hindent and stylish ----- {{{
+" ----- alx471/vim-hindent ----- {{{
+" TODO(jez) If brittany works out, remove hindent Vim plugin
 let g:hindent_on_save = 0
-
-function! HaskellFormat(which) abort
-  if a:which ==# 'hindent' || a:which ==# 'both'
-    :Hindent
-  endif
-  if a:which ==# 'stylish' || a:which ==# 'both'
-    silent! exe 'undojoin'
-    silent! exe 'keepjumps %!stylish-haskell'
-  endif
-endfunction
-
-augroup haskellStylish
+" }}}
+" ----- sbdchd/neoformat ----- {{{
+let g:neoformat_enabled_haskell = ['brittany', 'stylish-haskell']
+augroup neoformatMaps
   au!
-  au FileType haskell nnoremap <leader>hi :Hindent<CR>
-  au FileType haskell nnoremap <leader>hs :call HaskellFormat('stylish')<CR>
-  au FileType haskell nnoremap <leader>hf :call HaskellFormat('both')<CR>
+  au FileType haskell nnoremap <leader>hf :Neoformat \| :w<CR>
+  au FileType haskell let g:neoformat_run_all_formatters = 1
 augroup END
 " }}}
 " ----- parsonsmatt/intero-neovim ----- {{{
