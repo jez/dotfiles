@@ -168,8 +168,8 @@ noremap <silent> <leader>Y "+Y
 noremap <silent> <leader>d "+d
 noremap <silent> <leader>D "+D
 
-nnoremap <silent> <Leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <silent> <leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " Neovim Terminal Emulator keys
 if has('nvim')
