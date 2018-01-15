@@ -59,6 +59,8 @@ alias cds="cd ~/stripe"
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" jrnl"
 
+alias todo='$EDITOR ~/stripe/notes/todo.md +Goyo'
+
 # ----- Specific Programs -----------------------------------------------------
 
 # Settings for virtualenv and virtualenvwrapper
