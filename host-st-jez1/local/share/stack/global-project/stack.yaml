@@ -10,6 +10,6 @@ flags: {}
 extra-package-dbs: []
 packages: []
 extra-deps: []
-resolver: lts-8.21
+resolver: lts-10.3
 ghc-options:
   "*": -Wall -Wcompat
