@@ -42,7 +42,7 @@ load_module ~/.util/before.sh
 load_module ~/.util/colors.sh
 
 # Remind the user to update and provide mechanism for updating easily
-load_module ~/.util/auto-update.sh
+#load_module ~/.util/auto-update.sh
 
 # zsh-specific settings
 load_module ~/.util/misc.zsh
