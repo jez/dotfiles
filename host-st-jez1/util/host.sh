@@ -41,6 +41,8 @@ source ~/.stripe-repos.sh
 
 # ----- aliases ---------------------------------------------------------------
 
+alias sml="rlwrap sml"
+
 # Double double letters are hard
 which coffee &> /dev/null && alias coffe="coffee"
 
