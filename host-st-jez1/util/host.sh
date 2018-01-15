@@ -56,6 +56,9 @@ which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 alias cdsc="cd ~/stripe/checkout-js"
 alias cds="cd ~/stripe"
 
+# ignore jrnl entries (abuse histignorespace)
+alias jrnl=" jrnl"
+
 # ----- Specific Programs -----------------------------------------------------
 
 # Settings for virtualenv and virtualenvwrapper
