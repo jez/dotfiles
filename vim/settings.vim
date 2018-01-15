@@ -88,6 +88,9 @@ command! Ste split | terminal
 " Open scratch buffer in a split on left
 command! Vsnew vert new | norm <C-w>H
 
+" Merge current tab with the tab to the left
+noremap <C-w>m :Tabmerge<CR>
+
 " ----- Custom keybindings --------------------------------------------------
 
 map <space> <leader>
