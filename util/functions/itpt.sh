@@ -20,7 +20,7 @@ itpt() {
   elif [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     true
   else # alacritty
-    local __config="$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+    local __config="$HOME/.dotfiles/config/alacritty/alacritty.yml"
     if [ "$SOLARIZED" = "dark" ]; then
       sed -E -i.bak 's/# ([[:alpha:]].*)(## solarized-dark ##)/\1\2/' "$__config"
       sed -E -i.bak 's/([[:alpha:]].*)(## solarized-light ##)/# \1\2/' "$__config"
