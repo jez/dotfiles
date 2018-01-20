@@ -6,7 +6,8 @@
 
   "layouts": [
     "tall",
-    "fullscreen"
+    "fullscreen",
+    "middle-wide"
   ],
 
   "focus-ccw": {
