@@ -40,6 +40,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.sqlite setlocal filetype=sql
   " Ensure that *.hs files are haskell files (sometimes Stack scripts aren't)
   au BufRead,BufNewFile *.hs setlocal filetype=haskell
+  " EJS files are really just html
+  au BufRead,BufNewFile *.ejs setlocal filetype=html
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
