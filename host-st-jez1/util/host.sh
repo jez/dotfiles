@@ -61,6 +61,9 @@ alias jrnl=" jrnl"
 
 alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 
+alias stacknewsimple="stack new ~/prog/haskell/jez-simple.hsfiles"
+alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
+
 # ----- Specific Programs -----------------------------------------------------
 
 # Settings for virtualenv and virtualenvwrapper
