@@ -12,3 +12,7 @@
 
 
 source ~/.util/fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -C /Users/jez/stripe/space-commander/bin/commands/sc-complete sc
+complete -C /Users/jez/stripe/space-commander/bin/commands/sc-complete _sc
