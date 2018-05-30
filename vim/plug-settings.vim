@@ -70,11 +70,12 @@ set laststatus=2
 let g:airline_solarized_normal_green = 1
 " Fancy stuff in tabline as well
 let g:airline#extensions#tabline#enabled = 1
-" Disable this because it causes an issue with FZF + NeoVim
-" https://github.com/neovim/neovim/issues/4487
-let g:airline#extensions#branch#enabled = 0
 " Don't try to re-init tmuxline every time (I've made special modifications)
 let g:airline#extensions#tmuxline#enabled = 0
+" Don't use tagbar
+let g:airline#extensions#tagbar#enabled = 0
+" Don't show line percentage
+let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'maxlinenr', ' %3v'])
 
 " }}}
 " ----- Raimondi/delimitMate settings ----- {{{
