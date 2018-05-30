@@ -59,7 +59,7 @@ alias cds="cd ~/stripe"
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" jrnl"
 
-alias todo='$EDITOR ~/stripe/notes/todo.md +Goyo'
+alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 
 # ----- Specific Programs -----------------------------------------------------
 
