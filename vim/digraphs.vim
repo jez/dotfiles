@@ -29,3 +29,7 @@ digraph (9 9320
 digraph .> 10095
 " ↦
 digraph \|> 8614
+" ↩
+digraph hl 8617
+" ↪
+digraph hr 8618
