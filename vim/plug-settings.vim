@@ -239,7 +239,7 @@ nnoremap <leader>ef :ALEFix<CR>
 let g:ale_linters = {}
 let g:ale_linters.tex = []
 " Note: you'll have to run 'stack build ghc-mod' once per project
-let g:ale_linters.haskell = ['stack-ghc-mod', 'hlint']
+let g:ale_linters.haskell = ['hlint']
 " For stripe: use 'erubis' instead of 'erubylint'
 let g:ale_linters.eruby = ['erubis']
 " CSS warnings were mostly chunderous
