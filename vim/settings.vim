@@ -159,7 +159,7 @@ nnoremap <silent> zT zMzvzczO
 " nnoremap <silent> <leader>w :WV<CR>
 
 " See Vte command above
-nnoremap <silent> <leader>v :Vte<CR>
+nnoremap <silent> <leader>> :Vte<CR>
 
 nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
@@ -235,5 +235,4 @@ augroup vimrc
         \ endif
 
 augroup END
-
 
