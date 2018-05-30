@@ -319,8 +319,8 @@ let g:flow#enable = 0
 let g:flow#omnifunc = 0
 
 augroup flowMaps
-  au FileType javascript nnoremap <leader>t :FlowType<CR>
-  au FileType javascript nnoremap gd :FlowJumpToDef<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>t :FlowType<CR>
+  au FileType javascript nnoremap <silent> <buffer> gd :FlowJumpToDef<CR>
 augroup END
 
 " }}}
@@ -407,30 +407,30 @@ let g:intero_use_neomake = 1
 augroup interoMaps
   au!
 
-  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR><C-W>H
-  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
-  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
-  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>io :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <buffer> <leader>ih :InteroHide<CR>
+  " au FileType haskell nnoremap <silent> <buffer> <leader>is :InteroStart<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>ik :InteroKill<CR>
 
-  au FileType haskell nnoremap <silent> <leader>ir :w \| :InteroReload<CR>
-  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
-  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>ir :w \| :InteroReload<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>if :InteroLoadCurrentFile<CR>
 
-  au FileType haskell map <leader>t <Plug>InteroGenericType
-  au FileType haskell map <leader>T <Plug>InteroType
-  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
-  " au FileType haskell nnoremap <silent> <leader>ii :InteroInfo<CR>
+  au FileType haskell map <silent> <buffer> <leader>t <Plug>InteroGenericType
+  au FileType haskell map <silent> <buffer> <leader>T <Plug>InteroType
+  au FileType haskell nnoremap <silent> <buffer> <leader>it :InteroTypeInsert<CR>
+  " like :InteroInfo, but without echo'ing the message
 
-  au FileType haskell nnoremap <silent> gd :InteroGoToDef<CR>
-  au FileType haskell nnoremap <silent> <leader>iu :InteroUses<CR>
-  au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
+  au FileType haskell nnoremap <silent> <buffer> gd :InteroGoToDef<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>iu :InteroUses<CR>
+  " au FileType haskell nnoremap <silent> <buffer> <leader>ist :InteroSetTargets<SPACE>
 
   " hoogle bindings (stack install hoogle && hoogle generate)
 
   " Query hoogle for what's under the cursor, and put it in the intero buffer
-  au FileType haskell noremap <silent> <leader>iq :InteroSend<SPACE>:!hoogle<SPACE><C-R><C-W><CR>
+  au FileType haskell noremap <silent> <buffer> <leader>iq :InteroSend<SPACE>:!hoogle<SPACE><C-R><C-W><CR>
   " qUery hoogle for a User prompted string
-  au FileType haskell noremap <leader>iu :InteroSend<SPACE>:!hoogle<SPACE>
+  au FileType haskell noremap <silent> <buffer> <leader>iu :InteroSend<SPACE>:!hoogle<SPACE>
 augroup END
 " }}}
 " ----- junegunn/goyo.vim ----- {{{
