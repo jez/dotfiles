@@ -143,8 +143,9 @@ alias gcam="git commit -am"
 
 alias gs="git status"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gdw="git diff --color-words"
-alias gds="git icdiff"
+alias gicd="git icdiff"
 
 alias gf="git fetch"
 alias gfp="git fetch --prune"
