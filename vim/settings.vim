@@ -179,10 +179,6 @@ nnoremap <silent> <leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " Requires https://github.com/joeyespo/grip
 nnoremap <silent> <leader>gp :!grip -b % &> /dev/null &<CR><CR>
 
-" Reorder lines
-nnoremap <M-Up> ddkP
-nnoremap <M-Down> ddp
-
 " * and # just highlight, don't jump
 nnoremap * :keepjumps normal! *N<CR>
 nnoremap # :keepjumps normal! #N<CR>
