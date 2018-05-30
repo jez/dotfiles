@@ -393,10 +393,12 @@ let g:haskell_classic_highlighting = 1
 let g:hindent_on_save = 0
 " }}}
 " ----- sbdchd/neoformat ----- {{{
-let g:neoformat_enabled_haskell = ['brittany', 'stylish-haskell']
+let g:neoformat_enabled_haskell = ['brittany', 'stylishhaskell']
 augroup neoformatMaps
   au!
-  au FileType haskell nnoremap <leader>hf :Neoformat \| :w<CR>
+  " https://github.com/sbdchd/neoformat/issues/134
+  au BufWritePre *.hs try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+
   au FileType haskell let g:neoformat_run_all_formatters = 1
 augroup END
 " }}}
@@ -420,10 +422,21 @@ augroup interoMaps
   au FileType haskell map <silent> <buffer> <leader>T <Plug>InteroType
   au FileType haskell nnoremap <silent> <buffer> <leader>it :InteroTypeInsert<CR>
   " like :InteroInfo, but without echo'ing the message
+  au FileType haskell noremap <silent> <buffer> <leader>ii :InteroSend<SPACE>:info<SPACE><C-R><C-W><CR>
+  au FileType haskell noremap <silent> <buffer> <leader>in :InteroSend<SPACE>:kind<SPACE><C-R><C-W><CR>
 
   au FileType haskell nnoremap <silent> <buffer> gd :InteroGoToDef<CR>
   au FileType haskell nnoremap <silent> <buffer> <leader>iu :InteroUses<CR>
   " au FileType haskell nnoremap <silent> <buffer> <leader>ist :InteroSetTargets<SPACE>
+
+  " Yank the 'i' register so that we don't conflict with the unnamed register
+  au FileType haskell noremap <silent> <buffer> <leader>is "iy:InteroSend<SPACE><C-R>i<CR>
+
+  au FileType haskell noremap <silent> <buffer> <leader>ic :InteroSend<SPACE>:!clear<CR>
+  " Turn warnings off
+  au FileType haskell noremap <silent> <buffer> <leader>iw :InteroSend<SPACE>:set -w<CR>
+  " Turn warnings on
+  au FileType haskell noremap <silent> <buffer> <leader>iW :InteroSend<SPACE>:set -Wall<CR>
 
   " hoogle bindings (stack install hoogle && hoogle generate)
 
