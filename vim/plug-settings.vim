@@ -488,17 +488,29 @@ augroup END
 " ----- benmills/vimux ----- {{{
 let g:VimuxOrientation = 'h'
 " This is really 'width' because of the above setting
-let g:VimuxHeight = '50'
+let g:VimuxHeight = '38'
 let g:VimuxPromptString = '❯ '
 
 nnoremap <silent> <leader><up> :VimuxRunLastCommand<CR>
 nnoremap <silent> <leader>vp :VimuxPromptCommand<CR>
+
+" TODO(jez) Start stripe.vim plugin/monorepo for Stripe-specific Vim config
+function PayTest() abort
+  let l:filename = expand('%')
+  let l:lineno = line('.')
+  call VimuxRunCommand('pay test '.l:filename.' -l '.l:lineno)
+endfunction
 
 augroup vimuxMappings
   au!
 
   au FileType javascript nnoremap <silent> <leader>if :VimuxRunCommand 'flow --color=always \| less -F -X'<CR>
   au FileType javascript nnoremap <silent> <leader>id :VimuxRunCommand 'yarn run flowdev'<CR>
+  au FileType javascript nnoremap <silent> <leader>ij :VimuxRunCommand 'yarn test '.@%<CR>
+  au FileType javascript nnoremap <silent> <leader>ik :VimuxRunCommand 'yarn run test-browser-tests-only'<CR>
+  au FileType javascript nnoremap <silent> <leader>ibk :VimuxRunCommand 'yarn run test-browser'<CR>
+
+  au FileType ruby nnoremap <silent> <leader>pt :w \| :call PayTest()<CR>
 
   au FileType haskell nnoremap <silent> <leader>ib :VimuxRunCommand 'stack build'<CR>
 
