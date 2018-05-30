@@ -1,6 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
@@ -14,24 +13,23 @@ env:
   # `infocmp xterm-256color`.
   TERM: xterm-256color
 
-# Window dimensions in character columns and lines
-# (changes require restart)
-dimensions:
-  columns: 80
-  lines: 24
+window:
+  # Window dimensions in character columns and lines
+  # (changes require restart)
+  dimensions:
+    columns: 80
+    lines: 24
 
-# Adds this many blank pixels of padding around the window
-# Units are physical pixels; this is not DPI aware.
-# (change requires restart)
-padding:
-  x: 2
-  y: 2
+  # Adds this many blank pixels of padding around the window
+  # Units are physical pixels; this is not DPI aware.
+  # (change requires restart)
+  padding:
+    x: 2
+    y: 2
 
-# The FreeType rasterizer needs to know the device DPI for best results
-# (changes require restart)
-dpi:
-  x: 128
-  y: 128
+  # Window decorations
+  # Setting this to false will result in window without borders and title bar.
+  decorations: true
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -43,19 +41,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Menlo for Powerline # should be "Menlo" or something on macOS.
+    family: Menlo for Powerline
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: Menlo for Powerline # should be "Menlo" or something on macOS.
+    family: Menlo for Powerline
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The italic font face
   italic:
-    family: Menlo for Powerline # should be "Menlo" or something on macOS.
+    family: Menlo for Powerline
     # Style can be specified to pick a specific face.
     # style: Italic
 
@@ -66,7 +64,7 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0.0
-    y: 1.0
+    y: 1.1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
@@ -150,6 +148,74 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
+# Background opacity
+background_opacity: 1.0
+
+# Mouse bindings
+#
+# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
+# be specified.
+#
+# Values for `mouse`:
+# - Middle
+# - Left
+# - Right
+# - Numeric identifier such as `5`
+#
+# Values for `action`:
+# - Paste
+# - PasteSelection
+# - Copy (TODO)
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # Faux Scrollback
+  #
+  # The `faux_scrollback_lines` setting controls the number
+  # of lines the terminal should scroll when the alternate
+  # screen buffer is active. This is used to allow mouse
+  # scrolling for applications like `man`.
+  #
+  # To disable this completely, set `faux_scrollback_lines` to 0.
+  faux_scrollback_lines: 1
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+dynamic_title: true
+
+hide_cursor_when_typing: true
+
+# Style of the cursor
+#
+# Values for 'cursor_style':
+# - Block
+# - Underline
+# - Beam
+cursor_style: Block
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+#
+# shell:
+#   program: /bin/bash
+#   args:
+#     - --login
+
 # Key bindings
 #
 # Each binding is defined as an object with some properties. Most of the
@@ -158,6 +224,9 @@ visual_bell:
 # as well (F1, F2, ..). The number keys above the main keyboard are encoded as
 # `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
 # etc.  These all match the glutin::VirtualKeyCode variants.
+#
+# A list with all available `key` names can be found here:
+# https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
 #
 # Possible values for `mods`
 # `Command`, `Super` refer to the super/command/windows key
@@ -182,30 +251,30 @@ visual_bell:
 #   `command` must be a map containing a `program` string, and `args` array of
 #     strings. For example:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
-#
-# Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
-# (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
-# then run `showkey -a` to get the sequence associated to a key combination.
 key_bindings:
+  - { key: V,        mods: Command, action: Paste                        }
+  - { key: C,        mods: Command, action: Copy                         }
   - { key: Q,        mods: Command, action: Quit                         }
   - { key: W,        mods: Command, action: Quit                         }
-  - { key: C,        mods: Command, action: Copy                         }
-  - { key: V,        mods: Command, action: Paste                        }
+  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
+  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
+  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
   - { key: N,        mods: Command, command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
-  - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Command, action: ResetFontSize                }
   - { key: Equals,   mods: Command, action: IncreaseFontSize             }
-  - { key: Subtract, mods: Command, action: DecreaseFontSize             }
-  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
-  - { key: Home,                    chars: "\x1b[1~",  mode: ~AppCursor  }
-  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
-  - { key: End,                     chars: "\x1b[4~",  mode: ~AppCursor  }
+  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
   - { key: PageDown,                chars: "\x1b[6~"                     }
+  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
+  - { key: Back,                    chars: "\x7f"                        }
+  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+  - { key: Insert,                  chars: "\x1b[2~"                     }
+  - { key: Delete,                  chars: "\x1b[3~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
   - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
@@ -226,7 +295,6 @@ key_bindings:
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
   - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
-  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
   - { key: F1,                      chars: "\x1bOP"                      }
   - { key: F2,                      chars: "\x1bOQ"                      }
   - { key: F3,                      chars: "\x1bOR"                      }
@@ -239,43 +307,58 @@ key_bindings:
   - { key: F10,                     chars: "\x1b[21~"                    }
   - { key: F11,                     chars: "\x1b[23~"                    }
   - { key: F12,                     chars: "\x1b[24~"                    }
-  - { key: Back,                    chars: "\x7f"                        }
-  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
-  - { key: Insert,                  chars: "\x1b[2~"                     }
-  - { key: Delete,                  chars: "\x1b[3~"                     }
+  - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
+  - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
+  - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
+  - { key: F4,       mods: Shift,   chars: "\x1b[1;2S"                   }
+  - { key: F5,       mods: Shift,   chars: "\x1b[15;2~"                  }
+  - { key: F6,       mods: Shift,   chars: "\x1b[17;2~"                  }
+  - { key: F7,       mods: Shift,   chars: "\x1b[18;2~"                  }
+  - { key: F8,       mods: Shift,   chars: "\x1b[19;2~"                  }
+  - { key: F9,       mods: Shift,   chars: "\x1b[20;2~"                  }
+  - { key: F10,      mods: Shift,   chars: "\x1b[21;2~"                  }
+  - { key: F11,      mods: Shift,   chars: "\x1b[23;2~"                  }
+  - { key: F12,      mods: Shift,   chars: "\x1b[24;2~"                  }
+  - { key: F1,       mods: Control, chars: "\x1b[1;5P"                   }
+  - { key: F2,       mods: Control, chars: "\x1b[1;5Q"                   }
+  - { key: F3,       mods: Control, chars: "\x1b[1;5R"                   }
+  - { key: F4,       mods: Control, chars: "\x1b[1;5S"                   }
+  - { key: F5,       mods: Control, chars: "\x1b[15;5~"                  }
+  - { key: F6,       mods: Control, chars: "\x1b[17;5~"                  }
+  - { key: F7,       mods: Control, chars: "\x1b[18;5~"                  }
+  - { key: F8,       mods: Control, chars: "\x1b[19;5~"                  }
+  - { key: F9,       mods: Control, chars: "\x1b[20;5~"                  }
+  - { key: F10,      mods: Control, chars: "\x1b[21;5~"                  }
+  - { key: F11,      mods: Control, chars: "\x1b[23;5~"                  }
+  - { key: F12,      mods: Control, chars: "\x1b[24;5~"                  }
+  - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
+  - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
+  - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
+  - { key: F4,       mods: Alt,     chars: "\x1b[1;6S"                   }
+  - { key: F5,       mods: Alt,     chars: "\x1b[15;6~"                  }
+  - { key: F6,       mods: Alt,     chars: "\x1b[17;6~"                  }
+  - { key: F7,       mods: Alt,     chars: "\x1b[18;6~"                  }
+  - { key: F8,       mods: Alt,     chars: "\x1b[19;6~"                  }
+  - { key: F9,       mods: Alt,     chars: "\x1b[20;6~"                  }
+  - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
+  - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
+  - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
+  - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
+  - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
+  - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
+  - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
+  - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
+  - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
+  - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
+  - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
+  - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
+  - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
+  - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
+  - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
 
-# Mouse bindings
-#
-# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
-# be specified.
-#
-# Values for `mouse`:
-# - Middle
-# - Left
-# - Right
-# - Numeric identifier such as `5`
-#
-# Values for `action`:
-# - Paste
-# - PasteSelection
-# - Copy (TODO)
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+## # The FreeType rasterizer needs to know the device DPI for best results
+## # (changes require restart)
+## dpi:
+##   x: 128
+##   y: 128
 
-mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-hide_cursor_when_typing: true
-
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
