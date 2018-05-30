@@ -34,4 +34,9 @@
 # This is a sindresorhus/pure configuration option
 [ -z "$PURE_GIT_PULL" ] && PURE_GIT_PULL=0
 
+# Using ^L by default will hide the first line of my prompt (with the pwd).
+# Also, in tmux, ^L means "move to pane to the left"
+# We rebind ^Y here so that it just runs 'clear', which fixes both problems
+bindkey -s '^Y' 'clear\n'
+
 prompt pure
