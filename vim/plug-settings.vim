@@ -204,7 +204,6 @@ let g:easytags_languages = {
 
 " }}}
 " ----- neomake/neomake ----- {{{
-" Use neomake only as a dependency for other plugins. Otherwise, prefer ALE.
 let g:neomake_error_sign = {
     \ 'text': '✘',
     \ 'texthl': 'Error',
@@ -214,7 +213,10 @@ let g:neomake_warning_sign = {
     \ 'texthl': 'Todo',
     \ }
 
-let g:neomake_open_list = 1
+let g:neomake_open_list = 0
+
+" Use neomake only as a dependency for other plugins. Otherwise, prefer ALE.
+let g:ale_emit_conflict_warnings = 0
 
 " }}}
 " ----- w0rp/ale ----- {{{
@@ -411,7 +413,7 @@ augroup END
 " }}}
 " ----- parsonsmatt/intero-neovim ----- {{{
 let g:intero_start_immediately = 0
-let g:intero_use_neomake = 0
+let g:intero_use_neomake = 1
 
 augroup interoMaps
   au!
