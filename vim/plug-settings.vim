@@ -250,12 +250,16 @@ let g:ale_linters.css = []
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.css = ['prettier']
+let g:ale_fixers.pandoc = ['prettier']
+let g:ale_fixers.markdown = ['prettier']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
 augroup aleMaps
   au FileType javascript let g:ale_fix_on_save = 1
   au FileType css let g:ale_fix_on_save = 1
+  au FileType pandoc let g:ale_fix_on_save = 1
+  au FileType markdown let g:ale_fix_on_save = 1
 augroup END
 
 " }}}
