@@ -537,6 +537,17 @@ let g:fzf_action = {
 \}
 
 " }}}
+" ----- merlin ----- {{{
+" TODO(jez) It's possible this setup only works for the Flow codebase.
+" If you end up revisiting this config, it looks like ALE supports merlin...?
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute 'set rtp+=' . g:opamshare . '/merlin/vim'
+execute 'helptags ' . substitute(system('opam config var share'),'\n$','','''') .  '/merlin/vim/doc'
+
+" Conflicts with synstack viewer. Choose different key
+nnoremap <leader>x :MerlinClearEnclosing<CR>
+
+" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
