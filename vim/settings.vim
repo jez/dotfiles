@@ -108,10 +108,14 @@ noremap <C-w>m :Tabmerge<CR>
 
 map <space> <leader>
 noremap <CR> :
-noremap <M-Enter> <CR>
-" noremap : <nop>
-noremap <M-:> :
 noremap S <nop>
+
+" Ideally I'd be able to specify no <M- keybindings in insert mode. For now,
+" whitelist them as they come up:
+inoremap <M-k> <ESC>k
+inoremap <M-j> <ESC>j
+inoremap <M-Enter> <ESC>:
+inoremap <M-p> <ESC>p
 
 function! ToggleKJEsc() abort
   if empty(maparg('kj', 'i'))
