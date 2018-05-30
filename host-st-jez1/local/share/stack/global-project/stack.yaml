@@ -12,4 +12,4 @@ packages: []
 extra-deps: []
 resolver: lts-10.3
 ghc-options:
-  "*": -Wall -Wcompat
+  "$locals": -Wall -Wcompat
