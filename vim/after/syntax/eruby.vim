@@ -1,4 +1,6 @@
 
+" TODO(jez) Add this to a Stripe ruby plugin
+
 " We don't use indented code blocks in pay-server.
 " But sometimes we do indent the Markdown within `<% md do %>` blocks.
 " So we use this convenient setting to disable highlighting those blocks.
