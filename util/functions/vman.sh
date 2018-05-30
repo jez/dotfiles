@@ -16,6 +16,6 @@ vman() {
     return 1
   fi
 
-  vim -c "SuperMan $*"
+  vim -c "SuperMan $*" -c "Goyo"
 }
 
