@@ -88,6 +88,13 @@ export PATH="$PATH:$GOPATH/bin"
 export CGO_CFLAGS="-I/usr/local/include"
 export CGO_LDFLAGS="-L/usr/local/lib"
 
+# # nvm
+# export NVM_DIR="$HOME/.nvm"
+# source "$(brew --prefix nvm)/nvm.sh"
+
+# OCaml
+eval $(opam config env)
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_SKIP_DIRTY_CHECK=1
