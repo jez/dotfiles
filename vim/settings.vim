@@ -81,14 +81,10 @@ cabbrev help tab help
 command! Wv w | make view
 command! WV w | make view
 
-" Open terminal in a split split
-command! Vte vsplit | terminal
-command! Ste split | terminal
-
-" Open scratch buffer in a split on left
+" Open new (empty) buffer in a split on left
 command! Vsnew vert new | norm <C-w>H
 
-" Replace curly quotes with straight quotes
+" Replace curly quotes with straight quotes in the entire file.
 function! Nocurly() abort
   " vint: -ProhibitCommandWithUnintendedSideEffect
   " vint: -ProhibitCommandRelyOnUser
@@ -106,9 +102,71 @@ noremap <C-w>m :Tabmerge<CR>
 
 " ----- Custom keybindings --------------------------------------------------
 
+" <space> is usually a motion meaning the same as 'l' (one letter forward)
+" Much more useful if we make it be <leader>!
+" (Uses map instead of mapleader so that this doesn't affect insert mode.)
 map <space> <leader>
+
+" 'Enter' is easier for me to hit on my keyboard than :
 noremap <CR> :
+
+" I have no use for this (it's the same as C)
 noremap S <nop>
+
+" Make navigating long, wrapped lines behave like normal lines
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> gk k
+noremap <silent> gj j
+noremap <silent> 0 g0
+noremap <silent> g0 0
+noremap <silent> $ g$
+noremap <silent> g$ $
+noremap <silent> ^ g^
+noremap <silent> g^ ^
+noremap <silent> _ g_
+
+" Highlight the current word under the cursor (instead of highlight + next)
+nnoremap * :keepjumps normal! *N<CR>
+nnoremap # :keepjumps normal! #N<CR>
+
+" goto file in new tab, instead of in current buffer
+nnoremap <silent> gf <C-W>gf
+nnoremap <silent> gF <C-W>gF
+
+" use 'Y' to yank to the end of a line, instead of the whole line
+nnoremap <silent> Y y$
+
+" take first suggested spelling as correct spelling and replace
+nnoremap <silent> <leader>z z=1<CR><CR>
+
+" Create a manual fold with the region determined by going to the end of the
+" line, entering visual line mode, then jumping to the matching brace. So:
+"
+"     const foldThisFunction = (x) => {
+"       // ...
+"     }
+"
+" cursor on first line will fold entire function definition, etc.
+nnoremap <silent> <leader>zf $V%zf
+
+" Make the fold that we're currently in the only fold showing; collapse all
+" other folds. Mnemonic: "z This"
+nnoremap <silent> zT zMzvzczO
+
+" Show the stack of syntax groups under the cursor.
+" Useful for debugging Vim colorschemes.
+nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
+
+" Easier to type on my keyboard than gt and gT
+noremap <silent> gr gt
+noremap <silent> gR gT
+
+" Some <leader> mappings to cut / copy to system clipboard.
+noremap <silent> <leader>y "+y
+noremap <silent> <leader>Y "+Y
+noremap <silent> <leader>d "+d
+noremap <silent> <leader>D "+D
 
 " Ideally I'd be able to specify no <M- keybindings in insert mode. For now,
 " whitelist them as they come up:
@@ -127,64 +185,29 @@ function! ToggleKJEsc() abort
   end
 endfunction
 nnoremap <silent> <leader>kj :call ToggleKJEsc()<CR>
-inoremap <silent> <C-j> <ESC>:call ToggleKJEsc()<CR>
 call system('ioreg -p IOUSB | grep -iq ergodox')
 if v:shell_error
   " Ergodox not connected, so probably using internal keyboard.
   silent! call ToggleKJEsc()
 endif
 
-" Make navigating long, wrapped lines behave like normal lines
-noremap <silent> k gk
-noremap <silent> j gj
-noremap <silent> gk k
-noremap <silent> gj j
-noremap <silent> 0 g0
-noremap <silent> g0 0
-noremap <silent> $ g$
-noremap <silent> g$ $
-noremap <silent> ^ g^
-noremap <silent> g^ ^
-noremap <silent> _ g_
+" ----- Terminal features ---------------------------------------------------
+" Some of these only work in Neovim.
 
-" use 'Y' to yank to the end of a line, instead of the whole line
-nnoremap <silent> Y y$
+" Open terminal in a split split
+command! Vte vsplit | terminal
+command! Ste split | terminal
 
-" take first suggested spelling as correct spelling and replace
-nnoremap <silent> <leader>z z=1<CR><CR>
-nnoremap <silent> <leader>zf V$%zf
-nnoremap <silent> zT zMzvzczO
-
-" See WV command above
-" nnoremap <silent> <leader>w :WV<CR>
-
-" See Vte command above
+" Create a terminal buffer split to the right.
 nnoremap <silent> <leader>> :Vte<CR>
 
-nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
-
-" Easier to type on my keyboard than gt and gT
-noremap <silent> gr gt
-noremap <silent> gR gT
-
-noremap <silent> <leader>y "+y
-noremap <silent> <leader>Y "+Y
-noremap <silent> <leader>d "+d
-noremap <silent> <leader>D "+D
-
+" Resize the current vertical split (either larger or smaller)
 nnoremap <silent> <leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
-" Preview the current file as a Markdown file in the browser
-" Requires https://github.com/joeyespo/grip
-nnoremap <silent> <leader>gp :!grip -b % &> /dev/null &<CR><CR>
-
-" * and # just highlight, don't jump
-nnoremap * :keepjumps normal! *N<CR>
-nnoremap # :keepjumps normal! #N<CR>
-
-" Neovim Terminal Emulator keys
-if has('nvim')
+" Keybindings to switch panes when in an embedded terminal buffer
+" (Neovim-specific)
+if exists(':tnoremap')
   tnoremap <M-e> <C-\><C-n>
   tnoremap <C-h> <C-\><C-n><C-w>h
   tnoremap <C-j> <C-\><C-n><C-w>j
@@ -211,8 +234,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" NeoVim and iTerm2 have support to display different cursor shapes than just
-" the standard white block.
+" NeoVim and iTerm2 support displaying more cursor shapes than just a block.
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
   \,sm:block-blinkwait175-blinkoff150-blinkon175
