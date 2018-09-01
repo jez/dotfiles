@@ -211,3 +211,6 @@
 [submodule "vim/bundle/neoformat"]
 	path = vim/bundle/neoformat
 	url = git@github.com:sbdchd/neoformat.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/jez/vim-json
