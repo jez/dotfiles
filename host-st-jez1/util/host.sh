@@ -21,6 +21,9 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Use bison from Homebrew
+export PATH="/usr/local/opt/bison/bin:$PATH"
+
 # Add diff-highlight from Git contrib
 export PATH="$PATH:/usr/local/opt/git/share/git-core/contrib/diff-highlight"
 
@@ -28,9 +31,6 @@ export PATH="$PATH:./node_modules/.bin"
 export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:$HOME/.local/bin"
-
-# Use Homebrew Python 2 as default 'python' binary
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # ----- From Stripe IT department ---------------------------------------------
 
@@ -60,6 +60,10 @@ alias cds="cd ~/stripe"
 alias jrnl=" jrnl"
 
 alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
+alias scratch='$EDITOR ~/notes/scratch.txt +Goyo'
+
+alias sb='bazel build //main:sorbet --config=dbg'
+alias st='bazel test //... --config=dbg --test_output=errors'
 
 alias stacknewsimple="stack new ~/prog/haskell/jez-simple.hsfiles"
 alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
