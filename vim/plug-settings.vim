@@ -238,10 +238,12 @@ nnoremap <leader>ef :ALEFix<CR>
 
 let g:ale_linters = {}
 let g:ale_linters.tex = []
-" Note: you'll have to run 'stack build ghc-mod' once per project
+" We're using intero-neovim + Neomake for Haskell errors
 let g:ale_linters.haskell = ['hlint']
 " For stripe: use 'erubis' instead of 'erubylint'
 let g:ale_linters.eruby = ['erubis']
+" Use language server for Flow to try things out
+let g:ale_linters.javascript = ['flow-language-server']
 " CSS warnings were mostly chunderous
 let g:ale_linters.css = []
 
@@ -252,14 +254,21 @@ let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.pandoc = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
+let g:ale_fixers.cpp = ['clang-format']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
+
+" Linter-specific settings
+let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
 
 augroup aleMaps
   au FileType javascript let g:ale_fix_on_save = 1
   au FileType css let g:ale_fix_on_save = 1
   au FileType pandoc let g:ale_fix_on_save = 1
   au FileType markdown let g:ale_fix_on_save = 1
+  au FileType cpp let g:ale_fix_on_save = 1
+
+  au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
 
 " }}}
@@ -319,7 +328,9 @@ let g:flow#enable = 0
 let g:flow#omnifunc = 0
 
 augroup flowMaps
-  au FileType javascript nnoremap <silent> <buffer> <leader>t :FlowType<CR>
+  " Flow has an extra "expand aliases" setting that's not exposed through LSP
+  au FileType javascript nnoremap <silent> <buffer> <leader>T :FlowTypeExpandAliases<CR>
+  " Standalone jump to def works better than the LSP one w.r.t. imports
   au FileType javascript nnoremap <silent> <buffer> gd :FlowJumpToDef<CR>
 augroup END
 
@@ -338,7 +349,7 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 " }}}
 " ----- vim-pandoc/vim-pandoc ----- {{{
 let g:pandoc#modules#disabled = ['folding', 'chdir']
-let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'sml', 'zsh', 'c']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['js=javascript', 'bash=zsh', 'hs=haskell']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
@@ -387,10 +398,6 @@ let g:haskell_indent_let_no_in = 0
 let g:haskell_indent_if = 2
 let g:haskell_indent_before_where = 2
 let g:haskell_classic_highlighting = 1
-" }}}
-" ----- alx471/vim-hindent ----- {{{
-" TODO(jez) If brittany works out, remove hindent Vim plugin
-let g:hindent_on_save = 0
 " }}}
 " ----- sbdchd/neoformat ----- {{{
 let g:neoformat_enabled_haskell = ['brittany', 'stylishhaskell']
@@ -456,11 +463,22 @@ nnoremap <silent> <leader>w :Goyo<CR>
 "let g:sml_show_all_unused_warnings = 1
 "let g:sml_hide_cmlib_unused_warnings = 1
 "let g:sml_jump_to_def_new_tab = 1
+"let g:sml_repl_backend = 'vimux'
+
+let g:sml_auto_create_def_use = 'always'
 
 augroup smlMaps
   au!
   au FileType sml nnoremap <leader>t :SMLTypeQuery<CR>
   au FileType sml nnoremap gd :SMLJumpToDef<CR>
+
+  au FileType sml nnoremap <silent> <buffer> <leader>is :SMLReplStart<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>ik :SMLReplStop<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>if :SMLReplBuild<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>io :SMLReplOpen<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>iu :SMLReplUse<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>ic :SMLReplClear<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>ip :SMLReplPrintDepth<CR>
 augroup END
 
 " Check for unused variables
@@ -491,11 +509,11 @@ let g:VimuxOrientation = 'h'
 let g:VimuxHeight = '38'
 let g:VimuxPromptString = '❯ '
 
-nnoremap <silent> <leader><up> :VimuxRunLastCommand<CR>
-nnoremap <silent> <leader>vp :VimuxPromptCommand<CR>
+" Focus the Vimux pane
+nnoremap <silent> <leader>vi :VimuxInspectRunner<CR>
 
 " TODO(jez) Start stripe.vim plugin/monorepo for Stripe-specific Vim config
-function PayTest() abort
+function! PayTest() abort
   let l:filename = expand('%')
   let l:lineno = line('.')
   call VimuxRunCommand('pay test '.l:filename.' -l '.l:lineno)
@@ -504,7 +522,7 @@ endfunction
 augroup vimuxMappings
   au!
 
-  au FileType javascript nnoremap <silent> <leader>if :VimuxRunCommand 'flow --color=always \| less -F -X'<CR>
+  au FileType javascript nnoremap <silent> <leader>if :VimuxRunCommand 'flow --color=always --message-width="$COLUMNS" \| less -F -X'<CR>
   au FileType javascript nnoremap <silent> <leader>id :VimuxRunCommand 'yarn run flowdev'<CR>
   au FileType javascript nnoremap <silent> <leader>ij :VimuxRunCommand 'yarn test '.@%<CR>
   au FileType javascript nnoremap <silent> <leader>ik :VimuxRunCommand 'yarn run test-browser-tests-only'<CR>
@@ -520,6 +538,9 @@ augroup vimuxMappings
   au FileType rust nnoremap <silent> <leader>ib :VimuxRunCommand 'cargo build \| less -F -X'<CR>
   au FileType rust nnoremap <silent> <leader>id :VimuxRunCommand 'cargo doc --open'<CR>
   au FileType rust nnoremap <silent> <leader>ir :VimuxRunCommand 'cargo run'<CR>
+
+  au FileType cpp let g:VimuxResetSequence = 'qa C-u'
+  au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'bazel build //main:sorbet --config=dbg'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
@@ -548,6 +569,20 @@ execute 'helptags ' . substitute(system('opam config var share'),'\n$','','''') 
 nnoremap <leader>x :MerlinClearEnclosing<CR>
 
 " }}}
+" ----- autozimu/LanguageClient-neovim ----- {{{
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+augroup LanguageClient
+  au!
+  au FileType reason nnoremap <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType reason nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType reason nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType reason nnoremap <silent> <leader>io :copen<CR>
+  au FileType reason nnoremap <silent> <leader>ik :cclose<CR>
+augroup END
+" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
@@ -558,4 +593,3 @@ let g:netrw_dirhistmax = 0
 
 " -----------------------------------------------------------------------------
 " vim:ft=vim fdm=marker
-
