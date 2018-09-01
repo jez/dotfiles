@@ -1,5 +1,6 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
@@ -15,6 +16,7 @@ env:
 
 window:
   # Window dimensions in character columns and lines
+  # Falls back to size specified by window manager if set to 0x0.
   # (changes require restart)
   dimensions:
     columns: 80
@@ -252,18 +254,20 @@ live_config_reload: true
 #     strings. For example:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
 key_bindings:
-  - { key: V,        mods: Command, action: Paste                        }
-  - { key: C,        mods: Command, action: Copy                         }
-  - { key: Q,        mods: Command, action: Quit                         }
-  - { key: W,        mods: Command, action: Quit                         }
+  - { key: V,        mods: Super,   action: Paste                        }
+  - { key: C,        mods: Super,   action: Copy                         }
+  - { key: Paste,                   action: Paste                        }
+  - { key: Copy,                    action: Copy                         }
+  - { key: Q,        mods: Super,   action: Quit                         }
+  - { key: W,        mods: Super,   action: Quit                         }
+  - { key: N,        mods: Super,   command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
+  - { key: Key0,     mods: Super,   action: ResetFontSize                }
+  - { key: Equals,   mods: Super,   action: IncreaseFontSize             }
+  - { key: Subtract, mods: Super,   action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: N,        mods: Command, command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
-  - { key: Key0,     mods: Command, action: ResetFontSize                }
-  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
-  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
@@ -343,22 +347,15 @@ key_bindings:
   - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
   - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
   - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
-  - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
-  - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
-  - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
-  - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
-  - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
-  - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
-  - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
-  - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
-  - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
-  - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
-  - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
-  - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
-
-## # The FreeType rasterizer needs to know the device DPI for best results
-## # (changes require restart)
-## dpi:
-##   x: 128
-##   y: 128
-
+  - { key: F1,       mods: Super,   chars: "\x1b[1;3P"                   }
+  - { key: F2,       mods: Super,   chars: "\x1b[1;3Q"                   }
+  - { key: F3,       mods: Super,   chars: "\x1b[1;3R"                   }
+  - { key: F4,       mods: Super,   chars: "\x1b[1;3S"                   }
+  - { key: F5,       mods: Super,   chars: "\x1b[15;3~"                  }
+  - { key: F6,       mods: Super,   chars: "\x1b[17;3~"                  }
+  - { key: F7,       mods: Super,   chars: "\x1b[18;3~"                  }
+  - { key: F8,       mods: Super,   chars: "\x1b[19;3~"                  }
+  - { key: F9,       mods: Super,   chars: "\x1b[20;3~"                  }
+  - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
+  - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
+  - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
