@@ -1,2 +1,3 @@
 :set prompt "\ESC[34m\STXλ> \ESC[\STXm"
-:set prompt2 "\ESC[34m\STXλ| \ESC[\STXm"
+:set prompt-cont "\ESC[34m\STXλ| \ESC[\STXm"
+:set -XOverloadedStrings
