@@ -189,7 +189,7 @@
 	url = git://github.com/tpope/vim-rhubarb.git
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
-	url = git://github.com/flowtype/vim-flow.git
+	url = git://github.com/jez/vim-flow.git
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
