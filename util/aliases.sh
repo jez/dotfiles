@@ -151,6 +151,8 @@ alias gf="git fetch"
 alias gfp="git fetch --prune"
 alias gpf="git pull --ff-only"
 
+alias grbc="git rebase --continue"
+
 alias gr="git review"
 alias gro="git reviewone"
 alias grf="git reviewf"
