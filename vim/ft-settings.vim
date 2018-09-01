@@ -42,6 +42,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.hs setlocal filetype=haskell
   " EJS files are really just html
   au BufRead,BufNewFile *.ejs setlocal filetype=html
+  " rbi files (ruby interfaces) are valid ruby
+  au BufRead,BufNewFile *.rbi setlocal filetype=ruby
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
@@ -71,4 +73,14 @@ augroup myFiletypes
   au FileType haskell setlocal cc=80
   au FileType ruby setlocal cc=80
   au FileType javascript setlocal cc=80
+  au FileType cpp setlocal cc=120
+
+  " Fix up some commentstrings
+  au FileType cpp setlocal commentstring=//%s
+
+  " Change indentation level in some languages
+  " TODO(jez) This should be in .editorconfig at some point
+  au FileType cpp setlocal tabstop=4
+  au FileType cpp setlocal softtabstop=4
+  au FileType cpp setlocal shiftwidth=4
 augroup END
