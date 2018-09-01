@@ -1,13 +1,13 @@
 {
   "-other-layouts": [
     "tall-right",
-    "middle-wide"
+    "middle-wide",
+    "widescreen-tall"
   ],
 
   "layouts": [
     "tall",
-    "fullscreen",
-    "middle-wide"
+    "fullscreen"
   ],
 
   "focus-ccw": {
