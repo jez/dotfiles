@@ -299,6 +299,7 @@ colorscheme solarized
 hi clear SignColumn
 
 nnoremap <leader>ht :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>hm :let g:gitgutter_diff_base = 'master'<CR>:e<CR>
 nnoremap <leader>r  :GitGutterUndoHunk<CR>
 nnoremap <leader>s  :GitGutterStageHunk<CR>
 
