@@ -569,21 +569,39 @@ let g:fzf_action = {
 
 " }}}
 " ----- merlin ----- {{{
-" TODO(jez) It's possible this setup only works for the Flow codebase.
-" If you end up revisiting this config, it looks like ALE supports merlin...?
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opamshare . '/merlin/vim'
-execute 'helptags ' . substitute(system('opam config var share'),'\n$','','''') .  '/merlin/vim/doc'
+" TODO(jez) Set up Merlin again sometime.
 
 " Conflicts with synstack viewer. Choose different key
 nnoremap <leader>x :MerlinClearEnclosing<CR>
 
 " }}}
 " ----- autozimu/LanguageClient-neovim ----- {{{
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ }
+let g:LanguageClient_diagnosticsDisplay = {
+      \     1: {
+      \         "name": "Error",
+      \         "texthl": "ALEError",
+      \         "signText": "✘",
+      \         "signTexthl": "Error",
+      \     },
+      \     2: {
+      \         "name": "Warning",
+      \         "texthl": "ALEWarning",
+      \         "signText": "▲",
+      \         "signTexthl": "Todo",
+      \     },
+      \     3: {
+      \         "name": "Information",
+      \         "texthl": "ALEError",
+      \         "signText": "✘",
+      \         "signTexthl": "Error",
+      \     },
+      \     4: {
+      \         "name": "Hint",
+      \         "texthl": "ALEWarning",
+      \         "signText": "➤",
+      \         "signTexthl": "Todo",
+      \     },
+      \ }
 augroup LanguageClient
   au!
   au FileType reason nnoremap <leader>cm :call LanguageClient_contextMenu()<CR>
