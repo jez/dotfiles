@@ -274,6 +274,9 @@ let g:ale_rust_cargo_check_all_targets = 0
 " Linter-specific settings
 let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
 
+" Don't cd into folder first for shellcheck
+let g:ale_sh_shellcheck_cd_buffer = 0
+
 augroup aleMaps
   au FileType javascript let g:ale_fix_on_save = 1
   au FileType css let g:ale_fix_on_save = 1
