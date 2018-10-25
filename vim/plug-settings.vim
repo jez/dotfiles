@@ -202,6 +202,11 @@ let g:easytags_languages = {
 \   }
 \ }
 
+" Easytags tag highlighting in pay-server is super slow.
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
+  let g:easytags_auto_highlight = 0
+end
+
 " }}}
 " ----- neomake/neomake ----- {{{
 let g:neomake_error_sign = {
