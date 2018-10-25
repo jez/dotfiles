@@ -595,6 +595,14 @@ augroup LanguageClient
   au FileType ruby nnoremap <silent> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType ruby nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
   au FileType ruby nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
+
+  if fnamemodify(getcwd(), ':p') =~# '^'.$HOME.'/stripe/pay-server\>'
+    " let g:LanguageClient_serverCommands.ruby = ['sorbet/scripts/typecheck_devel', '--lsp']
+    " let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
+    " Need to make sure that there's an optimized build of sorbet somewhere.
+  else
+    au FileType ruby let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '-vvv', '--debug-log-file=/usr/local/var/sorbet.log', bufname('%')]
+  endif
 augroup END
 " }}}
 " ----- Builtin Vim plugins ----- {{{
