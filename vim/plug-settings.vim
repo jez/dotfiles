@@ -252,6 +252,12 @@ let g:ale_linters.javascript = ['flow-language-server']
 " CSS warnings were mostly chunderous
 let g:ale_linters.css = []
 
+let g:ale_linters.ruby = ['sorbet', 'ruby']
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
+  " Only use rubocop in pay-server (many rules don't make sense elsewhere)
+  let g:ale_linters.ruby += ['rubocop']
+endif
+
 " Be sure to never install 'prettier' globally, or you will be running
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
