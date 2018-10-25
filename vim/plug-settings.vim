@@ -486,6 +486,7 @@ augroup smlMaps
   au FileType sml nnoremap <silent> <buffer> <leader>iu :SMLReplUse<CR>
   au FileType sml nnoremap <silent> <buffer> <leader>ic :SMLReplClear<CR>
   au FileType sml nnoremap <silent> <buffer> <leader>ip :SMLReplPrintDepth<CR>
+  au FileType sml nnoremap <silent> <buffer> <leader>iz :SMLReplShell<CR>
 augroup END
 
 " Check for unused variables
