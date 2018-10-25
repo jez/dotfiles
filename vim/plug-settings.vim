@@ -282,6 +282,9 @@ augroup aleMaps
   au FileType scala let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
+
+  " Disable ALE in cpp until we turn it on
+  au FileType cpp ALEDisable
 augroup END
 
 " }}}
@@ -625,6 +628,33 @@ augroup LanguageClient
   else
     au FileType ruby let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '-vvv', '--debug-log-file=/usr/local/var/sorbet.log', bufname('%')]
   endif
+augroup END
+" }}}
+" ----- lyuts/vim-rtags ----- {{{
+let g:rtagsUseDefaultMappings = 0
+
+augroup rtagsMaps
+  au!
+  au FileType cpp noremap <leader>t :call rtags#SymbolInfo()<CR>
+  au FileType cpp noremap gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+  au FileType cpp noremap gD :call rtags#JumpTo(g:NEW_TAB)<CR>
+  au FileType cpp noremap <leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+  au FileType cpp noremap <leader>rS :call rtags#JumpTo(g:H_SPLIT)<CR>
+  au FileType cpp noremap <leader>rV :call rtags#JumpTo(g:V_SPLIT)<CR>
+  au FileType cpp noremap <leader>rp :call rtags#JumpToParent()<CR>
+  au FileType cpp noremap <leader>rf :call rtags#FindRefs()<CR>
+  au FileType cpp noremap <leader>rF :call rtags#FindRefsCallTree()<CR>
+  au FileType cpp noremap <leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+  au FileType cpp noremap <leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+  au FileType cpp noremap <leader>rr :call rtags#ReindexFile()<CR>
+  au FileType cpp noremap <leader>rl :call rtags#ProjectList()<CR>
+  au FileType cpp noremap <leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
+  au FileType cpp noremap <leader>rv :call rtags#FindVirtuals()<CR>
+  au FileType cpp noremap <leader>rb :call rtags#JumpBack()<CR>
+  au FileType cpp noremap <leader>rh :call rtags#ShowHierarchy()<CR>
+  au FileType cpp noremap <leader>rC :call rtags#FindSuperClasses()<CR>
+  au FileType cpp noremap <leader>rc :call rtags#FindSubClasses()<CR>
+  au FileType cpp noremap <leader>rd :call rtags#Diagnostics()<CR>
 augroup END
 " }}}
 " ----- Builtin Vim plugins ----- {{{
