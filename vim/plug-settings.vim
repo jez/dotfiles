@@ -266,6 +266,7 @@ let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.pandoc = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.cpp = ['clang-format']
+let g:ale_fixers.scala = ['scalafmt']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
@@ -278,6 +279,7 @@ augroup aleMaps
   au FileType pandoc let g:ale_fix_on_save = 1
   au FileType markdown let g:ale_fix_on_save = 1
   au FileType cpp let g:ale_fix_on_save = 1
+  au FileType scala let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
@@ -551,6 +553,8 @@ augroup vimuxMappings
   " I have some shell aliases set up for building Sorbet
   au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'sb'<CR>
   au FileType cpp nnoremap <silent> <buffer> <leader>it :VimuxRunCommand 'st'<CR>
+
+  au FileType scala nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'scalac "'.bufname("%").'"'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
