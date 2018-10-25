@@ -548,7 +548,9 @@ augroup vimuxMappings
   au FileType rust nnoremap <silent> <leader>ir :VimuxRunCommand 'cargo run'<CR>
 
   au FileType cpp let g:VimuxResetSequence = 'qa C-u'
-  au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'bazel build //main:sorbet --config=dbg'<CR>
+  " I have some shell aliases set up for building Sorbet
+  au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'sb'<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>it :VimuxRunCommand 'st'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
@@ -589,6 +591,10 @@ augroup LanguageClient
   au FileType reason nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
   au FileType reason nnoremap <silent> <leader>io :copen<CR>
   au FileType reason nnoremap <silent> <leader>ik :cclose<CR>
+
+  au FileType ruby nnoremap <silent> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType ruby nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType ruby nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
 augroup END
 " }}}
 " ----- Builtin Vim plugins ----- {{{
