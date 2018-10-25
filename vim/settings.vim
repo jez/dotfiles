@@ -113,6 +113,9 @@ noremap <CR> :
 " I have no use for this (it's the same as C)
 noremap S <nop>
 
+" This always messes me up
+noremap K <nop>
+
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
 noremap <silent> j gj
@@ -249,4 +252,3 @@ augroup vimrc
         \ endif
 
 augroup END
-

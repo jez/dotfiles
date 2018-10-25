@@ -321,11 +321,6 @@ hi! link GitGutterDelete gitgutterDelete
 let g:github_enterprise_urls = ['https://git.corp.stripe.com']
 
 " }}}
-" ----- jez/vim-superman settings ----- {{{
-" better man page support
-noremap K :SuperMan <cword><CR>
-
-" }}}
 " ----- pangloss/vim-javascript ----- {{{
 let g:javascript_plugin_flow = 1
 " }}}
