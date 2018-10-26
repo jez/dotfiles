@@ -238,6 +238,8 @@ EXEC 01;38;5;64
 *lex.sml    00;38;5;240
 *old.sml    00;38;5;240
 *old.sig    00;38;5;240
+.du         00;38;5;240
+.ud         00;38;5;240
 
 # Audio formats (orange)
 .aac    00;38;5;166
