@@ -63,7 +63,12 @@ alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 alias scratch='$EDITOR ~/notes/scratch.txt +Goyo'
 
 alias sb='bazel build //main:sorbet --config=dbg'
+alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt'
+alias sbr='bazel build //main:sorbet --config=release'
 alias st='bazel test //... --config=dbg --test_output=errors'
+sto() {
+  bazel test "$1" --config=dbg --test_output=errors "${@:2}"
+}
 
 alias stacknewsimple="stack new ~/prog/haskell/jez-simple.hsfiles"
 alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
@@ -98,6 +103,10 @@ export CGO_LDFLAGS="-L/usr/local/lib"
 
 # OCaml
 eval $(opam config env)
+
+# rtags
+# rc is the rtags client, and uses the same config filename as rcm
+alias rc="rc --no-rc"
 
 # ----- Prompt  ---------------------------------------------------------------
 
