@@ -99,8 +99,8 @@ alias purgeicon='find . -name Icon -exec rm -f {} \; -print'
 # I don't care if Homebrew thinks this is bad, it's super convenient
 alias sudo-htop='sudo chown root:wheel $(which htop) && sudo chmod u+s $(which htop)'
 
-AG_DARK="ag --color-path '0;35' --color-match '1;37' --color-line-number '0;34'"
-AG_LIGHT="ag --color-path '0;35' --color-match '1;30' --color-line-number '0;34'"
+AG_DARK="ag --hidden --color-path '0;35' --color-match '1;37' --color-line-number '0;34'"
+AG_LIGHT="ag --hidden --color-path '0;35' --color-match '1;30' --color-line-number '0;34'"
 if [ "$SOLARIZED" = "dark" ]; then
   alias ag="$AG_DARK"
 elif [ "$SOLARIZED" = "light" ]; then
