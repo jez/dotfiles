@@ -137,6 +137,7 @@ alias gca="gc -a"
 alias gcmd="git -c core.commentChar='%' commit -v --template=$HOME/.util/gitmessage.md"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
+alias gcan="git commit -a --amend --no-edit"
 
 alias gs="git status"
 alias gd="git diff"
