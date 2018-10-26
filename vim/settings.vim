@@ -98,7 +98,7 @@ endfunction
 command! Nocurly call Nocurly()
 
 " Merge current tab with the tab to the left
-noremap <C-w>m :Tabmerge<CR>
+noremap <C-w>m :Tabmerge right<CR>
 
 " ----- Custom keybindings --------------------------------------------------
 

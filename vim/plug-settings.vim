@@ -614,6 +614,7 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "signTexthl": "Todo",
       \     },
       \ }
+let g:LanguageClient_serverCommands = {}
 augroup LanguageClient
   au!
   au FileType reason nnoremap <leader>cm :call LanguageClient_contextMenu()<CR>
@@ -636,6 +637,7 @@ augroup LanguageClient
 augroup END
 " }}}
 " ----- lyuts/vim-rtags ----- {{{
+let g:rtagsRcCmd = "rc --no-rc"
 let g:rtagsUseDefaultMappings = 0
 
 augroup rtagsMaps

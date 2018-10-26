@@ -44,6 +44,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.ejs setlocal filetype=html
   " rbi files (ruby interfaces) are valid ruby
   au BufRead,BufNewFile *.rbi setlocal filetype=ruby
+  " .cfg.exp files are valid dot files
+  au BufRead,BufNewFile *.cfg.exp setlocal filetype=dot
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
@@ -74,6 +76,8 @@ augroup myFiletypes
   au FileType ruby setlocal cc=80
   au FileType javascript setlocal cc=80
   au FileType cpp setlocal cc=120
+  au FileType sh setlocal cc=80
+  au FileType scala setlocal cc=80
 
   " Fix up some commentstrings
   au FileType cpp setlocal commentstring=//%s
