@@ -125,9 +125,6 @@ alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
 alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
 alias git-personal-ssh="git config core.sshCommand 'ssh -i ~/.ssh/id_rsa -F /dev/null'"
 
-# for use with `git files` and `git review` aliases in gitconfig
-export REVIEW_BASE='master'
-
 alias gco="git checkout"
 alias gob="git checkout -b"
 alias goB="git checkout -B"
