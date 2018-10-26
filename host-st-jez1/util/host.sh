@@ -57,10 +57,10 @@ alias cdsc="cd ~/stripe/checkout-js"
 alias cds="cd ~/stripe"
 
 # ignore jrnl entries (abuse histignorespace)
-alias jrnl=" jrnl"
+alias jrnl=" noglob jrnl"
 
 alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
-alias scratch='$EDITOR ~/notes/scratch.txt +Goyo'
+alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
 
 alias sb='bazel build //main:sorbet --config=dbg'
 alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt'
