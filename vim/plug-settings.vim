@@ -258,12 +258,6 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   let g:ale_linters.ruby += ['rubocop']
 endif
 
-let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
-  " Only use clangd in sorbet
-  let g:ale_linters.cpp = ['clangd']
-endif
-
 " Be sure to never install 'prettier' globally, or you will be running
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
@@ -271,14 +265,10 @@ let g:ale_fixers.javascript = ['prettier']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.pandoc = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
-let g:ale_fixers.cpp = ['clang-format']
 let g:ale_fixers.reason = ['refmt']
 let g:ale_fixers.scala = ['scalafmt']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
-
-" Linter-specific settings
-let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
 
 " Don't cd into folder first for shellcheck
 let g:ale_sh_shellcheck_cd_buffer = 0
@@ -288,12 +278,29 @@ augroup aleMaps
   au FileType css let g:ale_fix_on_save = 1
   au FileType pandoc let g:ale_fix_on_save = 1
   au FileType markdown let g:ale_fix_on_save = 1
-  au FileType cpp let g:ale_fix_on_save = 1
   au FileType reason let g:ale_fix_on_save = 1
   au FileType scala let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
+
+" ----- Folder-specific settings -----
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
+  " Use clangd for diagnostics
+  let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
+  let g:ale_linters.cpp = ['clangd']
+  " clangd is LSP-based so I could use :ALEHover / :ALEGoToDefinition, but
+  " I find it slower than rtags. See my vim-rtags setup below.
+
+  " Sorbet wants clang-format to put the #include for a *.h file with the same
+  " name as the current *.cpp / *.cc file at the top of the #include list
+  let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
+  let g:ale_fixers.cpp = ['clang-format']
+
+  augroup aleSorbetMaps
+    au FileType cpp let g:ale_fix_on_save = 1
+  augroup END
+endif
 
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
