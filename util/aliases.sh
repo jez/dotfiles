@@ -109,6 +109,7 @@ else
   alias ag="$AG_DARK"
 fi
 alias agt="ag --ignore='*test*'"
+alias ago="ag --nobreak --noheading --nofilename --nogroup --only-matching"
 
 alias payweb-time="overtime show Europe/Berlin Europe/London America/New_York America/Denver America/Los_Angeles"
 
