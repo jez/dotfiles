@@ -258,6 +258,12 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   let g:ale_linters.ruby += ['rubocop']
 endif
 
+let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
+  " Only use clangd in sorbet
+  let g:ale_linters.cpp = ['clangd']
+endif
+
 " Be sure to never install 'prettier' globally, or you will be running
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
@@ -287,9 +293,6 @@ augroup aleMaps
   au FileType scala let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
-
-  " Disable ALE in cpp until we turn it on
-  au FileType cpp ALEDisable
 augroup END
 
 " }}}
