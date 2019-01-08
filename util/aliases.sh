@@ -113,6 +113,14 @@ alias ago="ag --nobreak --noheading --nofilename --nogroup --only-matching"
 
 alias payweb-time="overtime show Europe/Berlin Europe/London America/New_York America/Denver America/Los_Angeles"
 
+# Takes output like 'foo.txt:12: ...' (i.e., output from git grep --line)
+# and keeps only the foo.txt:12 part
+alias fileline="cut -d : -f 1-2"
+
+# Given input like foo.txt:12 on their own lines, +1 / -1 to all the line numbers
+alias nextline="awk 'BEGIN { FS = \":\"} {print \$1 \":\" (\$2 + 1)}'"
+alias prevline="awk 'BEGIN { FS = \":\"} {print \$1 \":\" (\$2 - 1)}'"
+
 # ----- Git aliases -----------------------------------------------------------
 
 # hub is a command line wrapper for using Git with GitHub
