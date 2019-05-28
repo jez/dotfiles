@@ -19,8 +19,8 @@
 
 # Configure fzf to ignore files that aren't tracked by Git
 # (depends on ag, the_silver_searcher, being installed).
-export FZF_DEFAULT_COMMAND='fd --type f --ignore-file .ignore'
-export FZF_CTRL_T_COMMAND='fd --type f --ignore-file .ignore'
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --ignore-file '$HOME/.gitignore'"
+export FZF_CTRL_T_COMMAND="fd --type f --hidden --ignore-file '$HOME/.gitignore'"
 
 # This is one of many color schemes for fzf. Check the fzf wiki for more
 _gen_fzf_default_opts() {
