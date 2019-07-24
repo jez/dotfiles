@@ -165,7 +165,6 @@ alias gro="git reviewone"
 alias grf="git reviewf"
 
 # resuable format strings
-GIT_PRETTY_FORMAT="--pretty=\"%C(bold green)%h%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
 
@@ -173,24 +172,29 @@ GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset
 # (especially useful when in a repo with lots of other people)
 ONLY_JEZ="--branches='*jez*' --remotes='*jez*' master origin/master"
 
-# pretty Git log
-alias gl="git log --graph $GIT_PRETTY_FORMAT"
-# pretty Git log, all references
-alias gll='gl --all'
+# exclude tags (Sorbet tags are super annoying)
+EXCLUDE_TAGS="--decorate-refs-exclude='tags/*'"
+
 # pretty Git log, show authors
-alias gla="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
+alias glat="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
 # pretty Git log, all references, show authors
-alias glla='gla --all'
+alias gllat='glat --all'
 # pretty Git log, show authors, align messages
-alias glala="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
+alias glalat="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
 # pretty Git log, all references, show authors, align messages
-alias glalal="glala --all"
+alias glalalt="glala --all"
 
 # It doesn't make sense to combine $ONLY_JEZ with --all
-alias glj="gl $ONLY_JEZ"
-alias glaj="gla $ONLY_JEZ"
-alias glalaj="glala $ONLY_JEZ"
+alias glajt="glat $ONLY_JEZ"
+alias glalajt="glalat $ONLY_JEZ"
 
+# non-tag versions of the above
+alias gla="glat $EXCLUDE_TAGS"
+alias glla="gllat $EXCLUDE_TAGS"
+alias glala="glalat $EXCLUDE_TAGS"
+alias glalal="glalalt $EXCLUDE_TAGS"
+alias glaj="glajt $EXCLUDE_TAGS"
+alias glalaj="glalajt $EXCLUDE_TAGS"
 
 # ----- Docker aliases --------------------------------------------------------
 
