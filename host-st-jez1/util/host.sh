@@ -32,6 +32,13 @@ export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:$HOME/.local/bin"
 
+# Globally installed yarn executables
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+
+# We're using thrift0.9 at Stripe
+export PATH="$PATH:/usr/local/opt/thrift@0.9/bin"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
@@ -62,13 +69,15 @@ alias jrnl=" noglob jrnl"
 alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
 
-alias sb='bazel build //main:sorbet --config=dbg'
-alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt'
-alias sbr='bazel build //main:sorbet --config=release'
-alias st='bazel test //... --config=dbg --test_output=errors'
-sto() {
-  bazel test "$1" --config=dbg --test_output=errors "${@:2}"
-}
+alias sb='bazel build //main:sorbet -c opt'
+alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
+alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
+alias sbr='bazel build //main:sorbet --config=release-mac'
+alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
+alias sto='bazel test -c opt --test_output=errors'
+alias stg='bazel test --config=dbg --test_output=errors --test_summary=terse test'
+alias stog='bazel test --config=dbg --test_output=errors'
+export SORBET_SILENCE_DEV_MESSAGE=1
 
 alias stacknewsimple="stack new ~/prog/haskell/jez-simple.hsfiles"
 alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
@@ -77,6 +86,9 @@ alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
 
 # Settings for virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
 # Have Haskell Stack use XDG Base Directory spec
@@ -102,7 +114,7 @@ export CGO_LDFLAGS="-L/usr/local/lib"
 # source "$(brew --prefix nvm)/nvm.sh"
 
 # OCaml
-eval $(opam config env)
+eval "$(opam env)"
 
 # rtags
 # rc is the rtags client, and uses the same config filename as rcm
