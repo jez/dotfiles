@@ -45,6 +45,10 @@ set noshowmode         " Don't show "-- INSERT --" in insert mode
                        " Preseves things like echo'd messages
 set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
 
+" Make splits look more like tmux, with thin chars
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE
+
 " Show potential matches above completion, complete first immediately
 set wildmenu
 set wildmode=full
@@ -193,12 +197,9 @@ endif
 " ----- Terminal features ---------------------------------------------------
 " Some of these only work in Neovim.
 
-" Open terminal in a split split
+" Open terminal in a split
 command! Vte vsplit | terminal
 command! Ste split | terminal
-
-" Create a terminal buffer split to the right.
-nnoremap <silent> <leader>> :Vte<CR>
 
 " Resize the current vertical split (either larger or smaller)
 nnoremap <silent> <leader>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
@@ -212,6 +213,46 @@ if exists(':tnoremap')
   tnoremap <C-j> <C-\><C-n><C-w>j
   tnoremap <C-k> <C-\><C-n><C-w>k
   tnoremap <C-l> <C-\><C-n><C-w>l
+endif
+
+" Keybindings that make Vim behave like tmux when not inside tmux
+if $TMUX ==# ''
+  tnoremap <C-f>1 <C-\><C-n>1gt
+  tnoremap <C-f>2 <C-\><C-n>2gt
+  tnoremap <C-f>3 <C-\><C-n>3gt
+  tnoremap <C-f>4 <C-\><C-n>4gt
+  tnoremap <C-f>5 <C-\><C-n>5gt
+  tnoremap <C-f>6 <C-\><C-n>6gt
+  tnoremap <C-f>7 <C-\><C-n>7gt
+  tnoremap <C-f>8 <C-\><C-n>8gt
+  tnoremap <C-f>9 <C-\><C-n>9gt
+
+  tnoremap <C-f>" <C-\><C-n>:Vte<CR>
+  tnoremap <C-f>% <C-\><C-n>:Ste<CR>
+  tnoremap <C-f>c <C-\><C-n>:tabe term://zsh<CR>
+
+  " Need recursive map to pick up fzf mapping
+  tmap <C-f><C-p> <C-\><C-n><C-p>
+  tnoremap <C-f><CR> <C-\><C-n>:
+
+  tmap <C-f>- <C-\><C-n><leader>-
+  tmap <C-f>= <C-\><C-n><leader>=
+
+  nnoremap <C-f>1 1gt
+  nnoremap <C-f>2 2gt
+  nnoremap <C-f>3 3gt
+  nnoremap <C-f>4 4gt
+  nnoremap <C-f>5 5gt
+  nnoremap <C-f>6 6gt
+  nnoremap <C-f>7 7gt
+  nnoremap <C-f>8 8gt
+  nnoremap <C-f>9 9gt
+  nnoremap <C-f>" :Vte<CR>
+  nnoremap <C-f>% :Ste<CR>
+  nnoremap <C-f>c :tabe term://zsh<CR>
+
+  nmap <C-f>- <leader>-
+  nmap <C-f>= <leader>=
 endif
 
 " ----- Terminal-as-GUI settings --------------------------------------------

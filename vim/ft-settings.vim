@@ -87,4 +87,10 @@ augroup myFiletypes
   au FileType cpp setlocal tabstop=4
   au FileType cpp setlocal softtabstop=4
   au FileType cpp setlocal shiftwidth=4
+
+  au TermOpen * setlocal nonumber
+  au TermOpen * setlocal scrolloff=0
+  au TermOpen * startinsert
+  " Auto-close terminal buffer when it ends
+  au TermClose * q
 augroup END

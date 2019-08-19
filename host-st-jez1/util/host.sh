@@ -57,6 +57,17 @@ which coffee &> /dev/null && alias coffe="coffee"
 alias vim="nvim -p"
 alias vimdiff="nvim -d"
 
+if [ "$NVIM_LISTEN_ADDRESS" != "" ]; then
+  alias vim="nvr -p"
+  vimv() {
+    case $# in
+      0) nvr +tabnew ;;
+      1) nvr -p "$1" ;;
+      *) nvr -p "$1" && shift && nvr -O "$@" ;;
+    esac
+  }
+fi
+
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
