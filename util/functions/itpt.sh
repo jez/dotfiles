@@ -32,5 +32,9 @@ itpt() {
     fi
   fi
 
+  if [ -n "$TMUX" ]; then
+    tmux source "$XDG_CONFIG_HOME/tmux/solarized-$SOLARIZED.tmuxline"
+  fi
+
   echo "Profile toggled. Open new tab for full effect."
 }

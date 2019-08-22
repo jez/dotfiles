@@ -41,9 +41,6 @@ alias bex="bundle exec"
 
 # I'm pretty proud of these ones
 alias :q="clear"
-alias clera="clear"
-alias lcera="clear"
-alias lcear="clear"
 alias :tabe="vim"
 alias :Vs="vimv"
 alias :vs="vimv"
@@ -55,7 +52,7 @@ which grc &> /dev/null && alias grc="grc -es"
 which texdef &> /dev/null && alias latexdef="texdef --tex latex"
 
 # Easily download an MP3 from youtube on the command line
-which youtube-dl &> /dev/null && alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
+alias youtube-mp3="noglob youtube-dl --extract-audio --audio-format mp3"
 
 which doctoc &> /dev/null && alias doctoc='doctoc --title="## Table of Contents"'
 
@@ -114,11 +111,27 @@ fi
 alias agt="ag --ignore='*test*'"
 alias ago="ag --nobreak --noheading --nofilename --nogroup --only-matching"
 
+RG_DARK="rg -S --hidden --colors 'match:fg:white' --colors 'match:style:bold' --colors 'line:fg:blue'"
+RG_LIGHT="rg -S --hidden --colors 'match:fg:black' --colors 'match:style:bold' --colors 'line:fg:blue'"
+if [ "$SOLARIZED" = "dark" ]; then
+  alias rg="$RG_DARK"
+elif [ "$SOLARIZED" = "light" ]; then
+  alias rg="$RG_LIGHT"
+else
+  alias rg="$RG_DARK"
+fi
+alias rgt=$'ag --glob=\'!test\''
+alias rgo="ag --no-heading --no-filename --no-line-number --only-matching"
+
+alias gg="git grep"
+
 alias payweb-time="overtime show Europe/Berlin Europe/London America/New_York America/Denver America/Los_Angeles"
 
 # Takes output like 'foo.txt:12: ...' (i.e., output from git grep --line)
 # and keeps only the foo.txt:12 part
 alias fileline="cut -d : -f 1-2"
+alias onlyloclines="sed -e '/^ /d; /^$/d; /^Errors:/d'"
+alias onlylocs="onlyloclines | fileline"
 
 # Given input like foo.txt:12 on their own lines, +1 / -1 to all the line numbers
 alias nextline="awk 'BEGIN { FS = \":\"} {print \$1 \":\" (\$2 + 1)}'"

@@ -36,7 +36,9 @@
 
 # Using ^L by default will hide the first line of my prompt (with the pwd).
 # Also, in tmux, ^L means "move to pane to the left"
-# We rebind ^Y here so that it just runs 'clear', which fixes both problems
-bindkey -s '^Y' 'clear\n'
+# We rebind ^Y here so that it just runs both clear and prompt_pure_precmd.
+clear-screen() { echoti clear; prompt_pure_precmd; zle redisplay; }
+zle -N clear-screen
+bindkey '^Y' clear-screen
 
 prompt pure
