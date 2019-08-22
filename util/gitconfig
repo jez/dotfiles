@@ -22,19 +22,24 @@
 
 # Aliases
 [alias]
+	cp = cherry-pick
+	fp = push --force-with-lease
+	bd = branch -D
+	# the SHA to compare diffs against
+	review-base = !git merge-base HEAD \"${review_base:-master}\"
 	# list files which have changed since review_base
-	files = !git diff --name-only $(git merge-base HEAD \"${review_base:-master}\")
+	files = !git diff --name-only $(git review-base)
 	# Same as above, but with a diff stat instead of just names
 	# (better for interactive use)
-	stat = !git diff --stat $(git merge-base HEAD \"${review_base:-master}\")
+	stat = !git diff --stat $(git review-base)
 	# split-diff style review using vim-fugitive Gdiff
 	review = !$EDITOR -p $(git files) +\"tabdo Gdiff ${review_base:-master}\" +\"let g:gitgutter_diff_base = '${review_base:-master}'\"
 	reviewone = !$EDITOR -p +\"tabdo Gdiff ${review_base:-master}\" +\"let g:gitgutter_diff_base = '${review_base:-master}'\"
 	reviewf = !$EDITOR -p $(git files | fzf -m --reverse --height 40%) +\"tabdo Gdiff ${review_base:-master}\" +\"let g:gitgutter_diff_base = '${review_base:-master}'\"
 	# For when the diff is too big to review with :Gdiff
-	diff-review = !git diff $(git merge-base --fork-point \"${review_base:-master}\")
+	diff-review = !git diff $(git review-base)
 	# Review by commit
-	by-commit = !git log -p --reverse $(git merge-base --fork-point \"${review_base:-master}\")..HEAD
+	by-commit = !git log -p --reverse $(git review-base)..HEAD
 	# split-diff, using icdiff
 	icdiff = --paginate difftool --tool icdiff
 	# show the before, changes, and after for one tracked image
@@ -46,6 +51,7 @@
 	# Get last commit authored by me
 	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
 	root = rev-parse --show-toplevel
+
 
 # Diff & Difftool settings
 [diff]
