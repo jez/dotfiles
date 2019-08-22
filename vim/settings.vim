@@ -45,10 +45,6 @@ set noshowmode         " Don't show "-- INSERT --" in insert mode
                        " Preseves things like echo'd messages
 set cinkeys-=0#        " Let #pragma directives appear anywhere in a line
 
-" Make splits look more like tmux, with thin chars
-set fillchars+=vert:│
-hi VertSplit ctermbg=NONE guibg=NONE
-
 " Show potential matches above completion, complete first immediately
 set wildmenu
 set wildmode=full
@@ -136,6 +132,8 @@ nnoremap # :keepjumps normal! #N<CR>
 " goto file in new tab, instead of in current buffer
 nnoremap <silent> gf <C-W>gf
 nnoremap <silent> gF <C-W>gF
+vnoremap <silent> gf <C-W>gf
+vnoremap <silent> gF <C-W>gF
 
 " use 'Y' to yank to the end of a line, instead of the whole line
 nnoremap <silent> Y y$

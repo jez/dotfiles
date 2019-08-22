@@ -248,25 +248,30 @@ let g:ale_linters.haskell = ['hlint']
 " For stripe: use 'erubis' instead of 'erubylint'
 let g:ale_linters.eruby = ['erubis']
 " Use language server for Flow to try things out
-let g:ale_linters.javascript = ['flow-language-server']
+let g:ale_linters.javascript = ['eslint', 'flow-language-server']
 " CSS warnings were mostly chunderous
 let g:ale_linters.css = []
 
-let g:ale_linters.ruby = ['sorbet', 'ruby']
+let g:ale_linters.ruby = ['ruby']
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   " Only use rubocop in pay-server (many rules don't make sense elsewhere)
   let g:ale_linters.ruby += ['rubocop']
 endif
 
+let g:ale_linters.rust = ['rls']
+let g:ale_rust_rls_toolchain = 'stable'
+
 " Be sure to never install 'prettier' globally, or you will be running
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
-let g:ale_fixers.javascript = ['prettier']
+let g:ale_fixers.javascript = ['prettier', 'eslint']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.pandoc = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.reason = ['refmt']
 let g:ale_fixers.scala = ['scalafmt']
+let g:ale_fixers.rust = ['rustfmt']
+let g:ale_fixers.haskell = ['brittany', 'stylish-haskell']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
@@ -280,6 +285,8 @@ augroup aleMaps
   au FileType markdown let g:ale_fix_on_save = 1
   au FileType reason let g:ale_fix_on_save = 1
   au FileType scala let g:ale_fix_on_save = 1
+  au FileType rust let g:ale_fix_on_save = 1
+  au FileType haskell let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
@@ -289,8 +296,11 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
   " Use clangd for diagnostics
   let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
   let g:ale_linters.cpp = ['clangd']
-  " clangd is LSP-based so I could use :ALEHover / :ALEGoToDefinition, but
-  " I find it slower than rtags. See my vim-rtags setup below.
+  augroup aleClangdMaps
+    au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
+    au FileType cpp nnoremap <silent> <buffer> gD :ALEGoToDefinitionInTab<CR>
+    au FileType cpp nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
+  augroup END
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
   " name as the current *.cpp / *.cc file at the top of the #include list
@@ -314,6 +324,11 @@ endif
 
 " Set the colorscheme
 colorscheme solarized
+
+" Make splits look more like tmux, with thin chars
+" (Has to be after solarized to take effect)
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE
 " }}}
 " ----- airblade/vim-gitgutter settings ----- {{{
 hi clear SignColumn
@@ -376,7 +391,7 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 " }}}
 " ----- vim-pandoc/vim-pandoc ----- {{{
 let g:pandoc#modules#disabled = ['folding', 'chdir']
-let g:pandoc#syntax#codeblocks#embeds#langs = ['js=javascript', 'bash=zsh', 'hs=haskell']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh', 'hs=haskell']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 let g:pandoc#formatting#mode = 'h'
 
@@ -387,10 +402,10 @@ augroup pandocSettings
   au FileType pandoc setlocal formatoptions+=c
 
   " Indent and de-indent with TAB and SHIFT + TAB
-  au FileType pandoc nnoremap <TAB> >>
-  au FileType pandoc nnoremap <S-TAB> <<
-  au FileType pandoc inoremap <TAB> <C-t>
-  au FileType pandoc inoremap <S-TAB> <C-d>
+  au FileType pandoc nnoremap <buffer> <TAB> >>
+  au FileType pandoc nnoremap <buffer> <S-TAB> <<
+  au FileType pandoc inoremap <buffer> <TAB> <C-t>
+  au FileType pandoc inoremap <buffer> <S-TAB> <C-d>
 augroup END
 
 " }}}
@@ -399,8 +414,9 @@ let g:pandoc#syntax#use_definition_lists = 0
 " }}}
 " ----- mhinz/grepper ----- {{{
 let g:grepper = {}
-" Only use ag for grepping
-let g:grepper.tools = ['ag']
+" Only use rg for grepping
+let g:grepper.tools = ['rg']
+" See ~/.vim/after for more grepper settings
 " Highlight search matches (like it were hlsearch)
 let g:grepper.highlight = 1
 " Defalt to searching the entire repo; otherwise, search 'filecwd' (see help)
@@ -421,6 +437,7 @@ let g:qf_mapping_ack_style = 1
 " }}}
 " ----- neovimhaskell/haskell-vim ----- {{{
 let g:haskell_indent_case_alternative = 1
+let g:haskell_indent_in = 0
 let g:haskell_indent_let_no_in = 0
 let g:haskell_indent_if = 2
 let g:haskell_indent_before_where = 2
@@ -496,8 +513,8 @@ let g:sml_auto_create_def_use = 'always'
 
 augroup smlMaps
   au!
-  au FileType sml nnoremap <leader>t :SMLTypeQuery<CR>
-  au FileType sml nnoremap gd :SMLJumpToDef<CR>
+  au FileType sml nnoremap <buffer> <leader>t :SMLTypeQuery<CR>
+  au FileType sml nnoremap <buffer> gd :SMLJumpToDef<CR>
 
   au FileType sml nnoremap <silent> <buffer> <leader>is :SMLReplStart<CR>
   au FileType sml nnoremap <silent> <buffer> <leader>ik :SMLReplStop<CR>
@@ -518,17 +535,17 @@ let g:purescript_indent_case = 2
 " ----- FrigoEU/psc-ide-vim ----- {{{
 augroup pscide
   au!
-  au FileType purescript nnoremap <leader>t :<C-U>call PSCIDEtype(PSCIDEgetKeyword(), v:true)<CR>
-  au FileType purescript nnoremap <leader>S :<C-U>call PSCIDEapplySuggestion()<CR>
-  au FileType purescript nnoremap <leader>pT :<C-U>call PSCIDEaddTypeAnnotation(matchstr(getline(line(".")), '^\s*\zs\k\+\ze'))<CR>
-  au FileType purescript nnoremap <leader>pa :<C-U>call PSCIDEaddTypeAnnotation()<CR>
-  au FileType purescript nnoremap <leader>i :<C-U>call PSCIDEimportIdentifier(PSCIDEgetKeyword())<CR>
-  au FileType purescript nnoremap <leader>pr :<C-U>call PSCIDEload(0)<CR>
-  au FileType purescript nnoremap <leader>pp :<C-U>call PSCIDEpursuit(PSCIDEgetKeyword())<CR>
-  au FileType purescript nnoremap <leader>pc :<C-U>call PSCIDEcaseSplit("!")<CR>
-  au FileType purescript nnoremap <leader>pe :<C-U>call PSCIDEaddClause("")<CR>
-  au FileType purescript nnoremap <leader>qa :<C-U>call PSCIDEaddImportQualifications()<CR>
-  au FileType purescript nnoremap gd :<C-U>call PSCIDEgoToDefinition("", PSCIDEgetKeyword())<CR>
+  au FileType purescript nnoremap <buffer> <leader>t :<C-U>call PSCIDEtype(PSCIDEgetKeyword(), v:true)<CR>
+  au FileType purescript nnoremap <buffer> <leader>S :<C-U>call PSCIDEapplySuggestion()<CR>
+  au FileType purescript nnoremap <buffer> <leader>pT :<C-U>call PSCIDEaddTypeAnnotation(matchstr(getline(line(".")), '^\s*\zs\k\+\ze'))<CR>
+  au FileType purescript nnoremap <buffer> <leader>pa :<C-U>call PSCIDEaddTypeAnnotation()<CR>
+  au FileType purescript nnoremap <buffer> <leader>i :<C-U>call PSCIDEimportIdentifier(PSCIDEgetKeyword())<CR>
+  au FileType purescript nnoremap <buffer> <leader>pr :<C-U>call PSCIDEload(0)<CR>
+  au FileType purescript nnoremap <buffer> <leader>pp :<C-U>call PSCIDEpursuit(PSCIDEgetKeyword())<CR>
+  au FileType purescript nnoremap <buffer> <leader>pc :<C-U>call PSCIDEcaseSplit("!")<CR>
+  au FileType purescript nnoremap <buffer> <leader>pe :<C-U>call PSCIDEaddClause("")<CR>
+  au FileType purescript nnoremap <buffer> <leader>qa :<C-U>call PSCIDEaddImportQualifications()<CR>
+  au FileType purescript nnoremap <buffer> gd :<C-U>call PSCIDEgoToDefinition("", PSCIDEgetKeyword())<CR>
 augroup END
 " }}}
 " ----- benmills/vimux ----- {{{
@@ -550,22 +567,22 @@ endfunction
 augroup vimuxMappings
   au!
 
-  au FileType javascript nnoremap <silent> <leader>if :VimuxRunCommand 'flow --color=always --message-width="$COLUMNS" \| less -F -X'<CR>
-  au FileType javascript nnoremap <silent> <leader>id :VimuxRunCommand 'yarn run flowdev'<CR>
-  au FileType javascript nnoremap <silent> <leader>ij :VimuxRunCommand 'yarn test '.@%<CR>
-  au FileType javascript nnoremap <silent> <leader>ik :VimuxRunCommand 'yarn run test-browser-tests-only'<CR>
-  au FileType javascript nnoremap <silent> <leader>ibk :VimuxRunCommand 'yarn run test-browser'<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'flow --color=always --message-width="$COLUMNS" \| less -F -X'<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>id :VimuxRunCommand 'yarn run flowdev'<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>ij :VimuxRunCommand 'yarn test '.@%<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>ik :VimuxRunCommand 'yarn run test-browser-tests-only'<CR>
+  au FileType javascript nnoremap <silent> <buffer> <leader>ibk :VimuxRunCommand 'yarn run test-browser'<CR>
 
-  au FileType ruby nnoremap <silent> <leader>pt :w \| :call PayTest()<CR>
+  au FileType ruby nnoremap <silent> <buffer> <leader>pt :w \| :call PayTest()<CR>
 
-  au FileType haskell nnoremap <silent> <leader>ib :VimuxRunCommand 'stack build'<CR>
+  au FileType haskell nnoremap <silent> <buffer> <leader>ib :VimuxRunCommand 'stack build'<CR>
 
-  au FileType purescript nnoremap <silent> <leader>ib :VimuxRunCommand 'pulp build'<CR>
+  au FileType purescript nnoremap <silent> <buffer> <leader>ib :VimuxRunCommand 'pulp build'<CR>
 
-  au FileType rust nnoremap <silent> <leader>if :VimuxRunCommand 'cargo check \| less -F -X'<CR>
-  au FileType rust nnoremap <silent> <leader>ib :VimuxRunCommand 'cargo build \| less -F -X'<CR>
-  au FileType rust nnoremap <silent> <leader>id :VimuxRunCommand 'cargo doc --open'<CR>
-  au FileType rust nnoremap <silent> <leader>ir :VimuxRunCommand 'cargo run'<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'cargo check \| less -F -X'<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>ib :VimuxRunCommand 'cargo build \| less -F -X'<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>id :VimuxRunCommand 'cargo doc --open'<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>ir :VimuxRunCommand 'cargo run'<CR>
 
   au FileType cpp let g:VimuxResetSequence = 'qa C-u'
   " I have some shell aliases set up for building Sorbet
@@ -591,11 +608,18 @@ let g:fzf_action = {
 
 " }}}
 " ----- merlin ----- {{{
-" TODO(jez) Set up Merlin again sometime.
 
-" Conflicts with synstack viewer. Choose different key
+let g:opamconfigvarshare = system('opam config var share 2> /dev/null')
+if !v:shell_error
+  let g:opamshare = substitute(g:opamconfigvarshare,'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+endif
+
 nnoremap <leader>x :MerlinClearEnclosing<CR>
 
+" }}}
+" ----- godlygeek/Tabularize ----- {{{
+nnoremap <leader>\| vip:Tabularize /\|<CR><C-o>
 " }}}
 " ----- autozimu/LanguageClient-neovim ----- {{{
 let g:LanguageClient_diagnosticsDisplay = {
@@ -625,25 +649,25 @@ let g:LanguageClient_diagnosticsDisplay = {
       \     },
       \ }
 let g:LanguageClient_serverCommands = {}
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
+  let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
+else
+  " TODO(jez) This should be updated to figure out when we can use a
+  " sorbet/config file
+  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '-e', '0', '~/.local/share/empty']
+endif
+
 augroup LanguageClient
   au!
-  au FileType reason nnoremap <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType reason nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
-  au FileType reason nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType reason nnoremap <silent> <leader>io :copen<CR>
-  au FileType reason nnoremap <silent> <leader>ik :cclose<CR>
+  au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType reason nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType reason nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType reason nnoremap <silent> <buffer> <leader>io :copen<CR>
+  au FileType reason nnoremap <silent> <buffer> <leader>ik :cclose<CR>
 
-  au FileType ruby nnoremap <silent> <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType ruby nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType ruby nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
-
-  if fnamemodify(getcwd(), ':p') =~# '^'.$HOME.'/stripe/pay-server\>'
-    " let g:LanguageClient_serverCommands.ruby = ['sorbet/scripts/typecheck_devel', '--lsp']
-    " let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
-    " Need to make sure that there's an optimized build of sorbet somewhere.
-  else
-    au FileType ruby let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '-vvv', '--debug-log-file=/usr/local/var/sorbet.log', bufname('%')]
-  endif
+  au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
 augroup END
 " }}}
 " ----- lyuts/vim-rtags ----- {{{
@@ -652,26 +676,26 @@ let g:rtagsUseDefaultMappings = 0
 
 augroup rtagsMaps
   au!
-  au FileType cpp noremap <leader>t :call rtags#SymbolInfo()<CR>
-  au FileType cpp noremap gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
-  au FileType cpp noremap gD :call rtags#JumpTo(g:NEW_TAB)<CR>
-  au FileType cpp noremap <leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
-  au FileType cpp noremap <leader>rS :call rtags#JumpTo(g:H_SPLIT)<CR>
-  au FileType cpp noremap <leader>rV :call rtags#JumpTo(g:V_SPLIT)<CR>
-  au FileType cpp noremap <leader>rp :call rtags#JumpToParent()<CR>
-  au FileType cpp noremap <leader>rf :call rtags#FindRefs()<CR>
-  au FileType cpp noremap <leader>rF :call rtags#FindRefsCallTree()<CR>
-  au FileType cpp noremap <leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-  au FileType cpp noremap <leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-  au FileType cpp noremap <leader>rr :call rtags#ReindexFile()<CR>
-  au FileType cpp noremap <leader>rl :call rtags#ProjectList()<CR>
-  au FileType cpp noremap <leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
-  au FileType cpp noremap <leader>rv :call rtags#FindVirtuals()<CR>
-  au FileType cpp noremap <leader>rb :call rtags#JumpBack()<CR>
-  au FileType cpp noremap <leader>rh :call rtags#ShowHierarchy()<CR>
-  au FileType cpp noremap <leader>rC :call rtags#FindSuperClasses()<CR>
-  au FileType cpp noremap <leader>rc :call rtags#FindSubClasses()<CR>
-  au FileType cpp noremap <leader>rd :call rtags#Diagnostics()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>t :call rtags#SymbolInfo()<CR>
+  " au FileType cpp nnoremap <buffer> gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+  " au FileType cpp nnoremap <buffer> gD :call rtags#JumpTo(g:NEW_TAB)<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rS :call rtags#JumpTo(g:H_SPLIT)<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rV :call rtags#JumpTo(g:V_SPLIT)<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rp :call rtags#JumpToParent()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rf :call rtags#FindRefs()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rF :call rtags#FindRefsCallTree()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rr :call rtags#ReindexFile()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rl :call rtags#ProjectList()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rv :call rtags#FindVirtuals()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rb :call rtags#JumpBack()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rh :call rtags#ShowHierarchy()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rC :call rtags#FindSuperClasses()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rc :call rtags#FindSubClasses()<CR>
+  " au FileType cpp nnoremap <buffer> <leader>rd :call rtags#Diagnostics()<CR>
 augroup END
 " }}}
 " ----- Builtin Vim plugins ----- {{{

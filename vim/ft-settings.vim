@@ -88,6 +88,9 @@ augroup myFiletypes
   au FileType cpp setlocal softtabstop=4
   au FileType cpp setlocal shiftwidth=4
 
+  " Add comment character when pressing 'o' or Enter
+  au FileType sh setlocal formatoptions+=ro
+
   au TermOpen * setlocal nonumber
   au TermOpen * setlocal scrolloff=0
   au TermOpen * startinsert
