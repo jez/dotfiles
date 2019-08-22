@@ -220,9 +220,6 @@
 [submodule "vim/bundle/LanguageClient-neovim"]
 	path = vim/bundle/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
-[submodule "vim/bundle/vim-rtags"]
-	path = vim/bundle/vim-rtags
-	url = https://github.com/lyuts/vim-rtags
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc

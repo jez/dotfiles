@@ -670,34 +670,6 @@ augroup LanguageClient
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
 augroup END
 " }}}
-" ----- lyuts/vim-rtags ----- {{{
-let g:rtagsRcCmd = "rc --no-rc"
-let g:rtagsUseDefaultMappings = 0
-
-augroup rtagsMaps
-  au!
-  " au FileType cpp nnoremap <buffer> <leader>t :call rtags#SymbolInfo()<CR>
-  " au FileType cpp nnoremap <buffer> gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
-  " au FileType cpp nnoremap <buffer> gD :call rtags#JumpTo(g:NEW_TAB)<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rJ :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rS :call rtags#JumpTo(g:H_SPLIT)<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rV :call rtags#JumpTo(g:V_SPLIT)<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rp :call rtags#JumpToParent()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rf :call rtags#FindRefs()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rF :call rtags#FindRefsCallTree()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rr :call rtags#ReindexFile()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rl :call rtags#ProjectList()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rv :call rtags#FindVirtuals()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rb :call rtags#JumpBack()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rh :call rtags#ShowHierarchy()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rC :call rtags#FindSuperClasses()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rc :call rtags#FindSubClasses()<CR>
-  " au FileType cpp nnoremap <buffer> <leader>rd :call rtags#Diagnostics()<CR>
-augroup END
-" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
