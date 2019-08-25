@@ -156,7 +156,7 @@
 	url = https://github.com/andy-morris/happy.vim
 [submodule "vim/bundle/goyo.vim"]
 	path = vim/bundle/goyo.vim
-	url = git://github.com/junegunn/goyo.vim.git
+	url = git@github.com:junegunn/goyo.vim.git
 [submodule "vim/bundle/psc-ide-vim"]
 	path = vim/bundle/psc-ide-vim
 	url = https://github.com/FrigoEU/psc-ide-vim.git
@@ -183,16 +183,16 @@
 	url = git@github.com:jez/haskell-vim.git
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/bundle/vim-rhubarb
-	url = git://github.com/tpope/vim-rhubarb.git
+	url = git@github.com:tpope/vim-rhubarb.git
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
-	url = git://github.com/jez/vim-flow.git
+	url = git@github.com:jez/vim-flow.git
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
-	url = git://github.com/terryma/vim-multiple-cursors.git
+	url = git@github.com:terryma/vim-multiple-cursors.git
 [submodule "vim/bundle/vim-closetag"]
 	path = vim/bundle/vim-closetag
-	url = git://github.com/alvan/vim-closetag.git
+	url = git@github.com:alvan/vim-closetag.git
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = git@github.com:benmills/vimux.git
@@ -201,13 +201,13 @@
 	url = https://github.com/rust-lang/rust.vim
 [submodule "vim/bundle/Tabmerge"]
 	path = vim/bundle/Tabmerge
-	url = git://github.com/vim-scripts/Tabmerge.git
+	url = git@github.com:vim-scripts/Tabmerge.git
 [submodule "vim/bundle/vim-toml"]
 	path = vim/bundle/vim-toml
 	url = git@github.com:cespare/vim-toml.git
 [submodule "vim/bundle/neoformat"]
 	path = vim/bundle/neoformat
-	url = git@github.com:sbdchd/neoformat.git
+	url = https://github.com/sbdchd/neoformat.git
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/jez/vim-json
