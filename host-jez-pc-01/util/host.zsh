@@ -11,8 +11,7 @@
 #   - n/a
 
 
-# TODO(jez) linux
-# source ~/.util/fzf.zsh
+source ~/.util/fzf.zsh
 
 # Not needed yet.
 # source ~/.util/skip-dirty.zsh
