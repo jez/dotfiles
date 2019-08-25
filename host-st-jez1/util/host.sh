@@ -53,13 +53,15 @@ alias sml="rlwrap sml"
 # Double double letters are hard
 which coffee &> /dev/null && alias coffe="coffee"
 
-# Use neovim for the lulz
-alias vim="nvim -p"
-alias vimdiff="nvim -d"
-
-if [ "$NVIM_LISTEN_ADDRESS" != "" ]; then
+if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
+  alias vim="nvim -p"
+  alias vimv="nvim -O"
+  alias vimt="vim +term"
+else
   alias vim="nvr -p"
+  unalias vimv 2> /dev/null || true
   vimv() {
+    echo "$#"
     case $# in
       0) nvr +tabnew ;;
       1) nvr -p "$1" ;;
@@ -67,6 +69,8 @@ if [ "$NVIM_LISTEN_ADDRESS" != "" ]; then
     esac
   }
 fi
+
+alias vimdiff="nvim -d"
 
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
