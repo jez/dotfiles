@@ -223,3 +223,6 @@
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
+[submodule "vim/bundle/vim-reason-plus"]
+	path = vim/bundle/vim-reason-plus
+	url = https://github.com/reasonml-editor/vim-reason-plus
