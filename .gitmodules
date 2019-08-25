@@ -183,7 +183,7 @@
 	url = https://github.com/tpope/vim-repeat
 [submodule "vim/bundle/haskell-vim"]
 	path = vim/bundle/haskell-vim
-	url = git@github.com:neovimhaskell/haskell-vim.git
+	url = git@github.com:jez/haskell-vim.git
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/bundle/vim-rhubarb
 	url = git://github.com/tpope/vim-rhubarb.git
