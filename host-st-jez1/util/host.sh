@@ -131,6 +131,9 @@ eval "$(opam env)"
 # rc is the rtags client, and uses the same config filename as rcm
 alias rc="rc --no-rc"
 
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_DIR_COLOR="%{$ccyan%}"
