@@ -120,8 +120,8 @@ elif [ "$SOLARIZED" = "light" ]; then
 else
   alias rg="$RG_DARK"
 fi
-alias rgt=$'ag --glob=\'!test\''
-alias rgo="ag --no-heading --no-filename --no-line-number --only-matching"
+alias rgt=$'rg --glob=\'!test\''
+alias rgo="rg --no-heading --no-filename --no-line-number --only-matching"
 
 alias gg="git grep"
 
