@@ -100,6 +100,9 @@ This turned out to be not that hard.
   - Gnome settings
   - `dconf dump / > full-backup`
   - `sudo apt install xautomation`
+- Spotify
+  - Installed through store
+  - `sudo sed -i -e 's/^Exec=spotify/\0 --force-device-scale-factor=2/' /usr/share/applications/spotify.desktop`
 
 
 ## TODO
