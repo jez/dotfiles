@@ -61,7 +61,6 @@ else
   alias vim="nvr -p"
   unalias vimv 2> /dev/null || true
   vimv() {
-    echo "$#"
     case $# in
       0) nvr +tabnew ;;
       1) nvr -p "$1" ;;
