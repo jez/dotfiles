@@ -1,0 +1,266 @@
+[com/system76/hidpi]
+mode='hidpi'
+enable=false
+
+[com/github/donadigo/eddy]
+window-x=45
+mime-types=['application/vnd.debian.binary-package', 'application/x-deb']
+window-y=77
+
+[io/elementary/appcenter/settings]
+window-x=730
+reset-paid-apps=false
+paid-apps=@as []
+window-y=376
+
+[org/freedesktop/tracker/miner/files]
+index-recursive-directories=['&DESKTOP', '&DOCUMENTS', '&DOWNLOAD', '&MUSIC', '&PICTURES', '&VIDEOS', '/usr/share/applications']
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+show-size-column=true
+show-hidden=false
+sidebar-width=148
+sort-column='name'
+window-position=(732, 295)
+sort-order='ascending'
+location-mode='path-bar'
+sort-directories-first=true
+window-size=(1096, 822)
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-width=600
+window-height=480
+
+[org/gnome/file-roller/listing]
+sort-method='name'
+sort-type='ascending'
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+
+[org/gnome/system/location]
+enabled=true
+
+[org/gnome/desktop/notifications]
+application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify']
+show-in-lock-screen=true
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/io-elementary-appcenter]
+application-id='io.elementary.appcenter.desktop'
+
+[org/gnome/desktop/notifications/application/google-chrome]
+application-id='google-chrome.desktop'
+
+[org/gnome/desktop/notifications/application/com-github-donadigo-eddy]
+application-id='com.github.donadigo.eddy.desktop'
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+delay=uint32 250
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=true
+speed=-0.15000000000000002
+accel-profile='adaptive'
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/wm/keybindings]
+cycle-group-backward=@as []
+unmaximize=@as []
+move-to-workspace-up=['<Primary><Shift><Alt>braceright']
+cycle-panels-backward=@as []
+panel-run-dialog=@as []
+switch-panels=@as []
+switch-input-source=@as []
+toggle-maximized=@as []
+switch-to-workspace-down=['<Shift><Alt>braceright']
+move-to-workspace-last=['<Alt><Super>Return']
+maximize=['<Super>Return']
+panel-main-menu=['<Super>space']
+move-to-monitor-up=@as []
+cycle-windows-backward=@as []
+begin-move=@as []
+move-to-workspace-1=['<Primary><Shift><Alt>q']
+cycle-windows=@as []
+move-to-monitor-left=@as []
+switch-to-workspace-1=@as []
+begin-resize=@as []
+cycle-panels=@as []
+move-to-monitor-right=@as []
+switch-panels-backward=@as []
+move-to-workspace-2=['<Primary><Shift><Alt>w']
+move-to-workspace-down=['<Primary><Shift><Alt>braceleft']
+cycle-group=@as []
+switch-input-source-backward=@as []
+show-desktop=@as []
+move-to-workspace-3=['<Primary><Shift><Alt>e']
+switch-to-workspace-last=@as []
+move-to-monitor-down=@as []
+toggle-fullscreen=@as []
+close=['<Super>q']
+switch-to-workspace-up=['<Shift><Alt>braceleft']
+move-to-workspace-4=['<Primary><Shift><Alt>r']
+
+[org/gnome/desktop/privacy]
+report-technical-problems=true
+
+[org/gnome/desktop/screensaver]
+lock-delay=uint32 0
+
+[org/gnome/desktop/sound]
+theme-name='__custom'
+event-sounds=true
+
+[org/gnome/desktop/interface]
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='Pop'
+
+[org/gnome/desktop/app-folders/folders/Pop-System]
+translate=true
+name='System.directory'
+apps=['gnome-language-selector.desktop', 'gnome-session-properties.desktop', 'gnome-system-monitor.desktop', 'im-config.desktop', 'nm-connection-editor.desktop', 'nvidia-settings.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.seahorse.Application.desktop', 'software-properties-gnome.desktop', 'system76-driver.desktop', 'system76-firmware.desktop']
+
+[org/gnome/desktop/app-folders/folders/Pop-Utility]
+translate=true
+name='X-GNOME-Utilities.directory'
+apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'eog.desktop', 'gucharmap.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Totem.desktop', 'simple-scan.desktop', 'yelp.desktop']
+
+[org/gnome/desktop/app-folders/folders/Pop-Office]
+translate=true
+name='Office.directory'
+apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
+
+[org/gnome/desktop/search-providers]
+disable-external=false
+disabled=['org.gnome.Calendar.desktop', 'io.elementary.appcenter.desktop']
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+sources=[('xkb', 'us')]
+xkb-options=@as []
+
+[org/gnome/desktop/session]
+idle-delay=uint32 720
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,43,54)'
+foreground-color='rgb(131,148,150)'
+font='Menlo for Powerline 13'
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/gedit/preferences/editor]
+scheme='pop-light'
+
+[org/gnome/mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[org/gnome/mutter]
+experimental-features=['x11-randr-fractional-scaling']
+overlay-key=''
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-last-coordinates=(37.556201439884809, -122.325)
+night-light-temperature=uint32 3613
+night-light-schedule-automatic=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+screensaver=''
+control-center=''
+home=''
+magnifier-zoom-in=''
+window-screenshot-clip=''
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/']
+email=''
+media=''
+search=''
+calculator=''
+screenshot='<Shift><Super>numbersign'
+screenshot-clip=''
+terminal=''
+window-screenshot='<Shift><Super>at'
+magnifier-zoom-out=''
+screenreader=''
+area-screenshot='<Shift><Super>dollar'
+area-screenshot-clip=''
+screencast=''
+magnifier=''
+eject=''
+www=''
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11]
+command='xte "keyup Super_L" "keyup BackSpace" "keydown Control_L" "keydown Shift_L" "keydown BackSpace" "keyup Shift_L" "keyup Control_L" "keydown Super_L"'
+name='Delete backwards one line'
+binding='<Super>BackSpace'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10]
+command='xte "keyup Alt_L" "keyup BackSpace" "keydown Control_L" "keydown BackSpace" "keyup Control_L" "keydown Alt_L"'
+name='Delete backwards one word'
+binding='<Alt>BackSpace'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+command='xte "keyup Super_L" "keyup Shift_L" "keyup t" "keydown Control_L" "keydown Shift_L" "key t" "keyup Shift_L" "keyup Control_L"'
+name='Reopen closed tab'
+binding='<Shift><Super>t'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+command='xte "keyup Super_L" "keyup t" "keydown Control_L" "key t" "keyup Control_L"'
+name='New tab'
+binding='<Super>t'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+command='xte "keyup Super_L" "keyup w" "keydown Control_L" "key w" "keyup Control_L"'
+name='Close tab'
+binding='<Super>w'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+command='xte "keyup Super_L" "keyup x" "keydown Control_L" "key x" "keyup Control_L"'
+name='Cut'
+binding='<Super>x'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+command='xte "keyup Super_L" "keyup v" "keydown Control_L" "key v" "keyup Control_L"'
+name='Paste'
+binding='<Super>v'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+command='xte "keyup Super_L" "keyup c" "keydown Control_L" "key c" "keyup Control_L"'
+name='Copy'
+binding='<Super>c'
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-type='suspend'
+
+[org/gnome/control-center]
+last-panel='universal-access'
+
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
+[org/gnome/shell]
+favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
+
+[org/gnome/shell/keybindings]
+toggle-overview=['<Primary>Up']
+open-application-menu=@as []
+toggle-application-view=@as []
+focus-active-notification=@as []
+toggle-message-tray=@as []
