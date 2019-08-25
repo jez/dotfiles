@@ -5,3 +5,7 @@ source ~/.profile
 ### BEGIN HENSON
 export PATH="/Users/jez/stripe/henson/bin:$PATH"
 ### END HENSON
+
+if [ -f "$HOME/.bashrc" ]; then
+  source "$HOME/.bashrc"
+fi
