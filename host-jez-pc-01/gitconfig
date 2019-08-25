@@ -1,0 +1,15 @@
+[include]
+	path = .util/gitconfig
+[user]
+	name = Jake Zimmerman
+	email = zimmerman.jake@gmail.com
+; TODO(jez) Linux
+; [credential]
+; 	helper = osxkeychain
+[push]
+	default = simple
+[mergetool "vimdiff"]
+	path = nvim
+
+[github]
+	user = jez
