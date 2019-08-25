@@ -10,6 +10,6 @@ flags: {}
 extra-package-dbs: []
 packages: []
 extra-deps: []
-resolver: lts-12.4
+resolver: lts-13.0
 ghc-options:
   "$locals": -Wall -Wcompat
