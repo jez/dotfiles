@@ -1,2 +1,2 @@
-EXCLUDES="tags com.googlecode.iterm2.plist dconf.bak osx-setup.sh ubuntu-setup.sh linux-notes.md README.md LICENSE fonts iterm private.xml config/stylebot.json"
+EXCLUDES="tags com.googlecode.iterm2.plist dconf.bak osx-setup.sh ubuntu-setup.sh linux-setup.md README.md LICENSE fonts iterm private.xml config/stylebot.json"
 SYMLINK_DIRS="vim zfunctions oh-my-zsh irssi"
