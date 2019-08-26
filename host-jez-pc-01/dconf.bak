@@ -172,8 +172,8 @@ experimental-features=['x11-randr-fractional-scaling']
 overlay-key=''
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-left=@as []
-toggle-tiled-right=@as []
+toggle-tiled-left=['<Shift><Alt>Left']
+toggle-tiled-right=['<Shift><Alt>Right']
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
@@ -257,6 +257,7 @@ use-background-color=true
 
 [org/gnome/shell]
 favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
+enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
 
 [org/gnome/shell/keybindings]
 toggle-overview=['<Primary>Up']
