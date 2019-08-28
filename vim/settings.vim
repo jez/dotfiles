@@ -129,6 +129,10 @@ noremap <silent> _ g_
 nnoremap * :keepjumps normal! *N<CR>
 nnoremap # :keepjumps normal! #N<CR>
 
+" Recursive to pick up the * mapping
+nmap g* *:vimgrep // %<CR>
+nmap g# #:vimgrep // %<CR>
+
 " goto file in new tab, instead of in current buffer
 nnoremap <silent> gf <C-W>gf
 nnoremap <silent> gF <C-W>gF
