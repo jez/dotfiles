@@ -654,7 +654,7 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
-  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '-e', '0', '~/.local/share/empty']
+  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
 augroup LanguageClient
