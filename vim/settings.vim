@@ -279,9 +279,18 @@ if exists('+termguicolors')
 endif
 
 " NeoVim and iTerm2 support displaying more cursor shapes than just a block.
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-  \,sm:block-blinkwait175-blinkoff150-blinkon175
+if $ALACRITTY_LOG
+  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
+    \,i-ci:ver25-Cursor/lCursor
+    \,r-cr:hor20-Cursor/lCursor
+else
+  set guicursor=n-v-c:block
+    \,i-ci-ve:ver25
+    \,r-cr:hor20
+    \,o:hor50
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,sm:block-blinkwait175-blinkoff150-blinkon175
+endif
 
 
 " ----- Not-quite-general-but-don't-belong-anywhere-else Settings -----------
