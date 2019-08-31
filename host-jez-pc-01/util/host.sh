@@ -52,8 +52,6 @@ export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 
 # ----- aliases ---------------------------------------------------------------
 
-alias sml="rlwrap sml"
-
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
   alias vim="nvim -p"
   alias vimv="nvim -O"
@@ -75,12 +73,18 @@ alias vimdiff="nvim -d"
 # open Vim directly to Goyo mode (distraction-free writing mode)
 alias vimg="nvim +Goyo"
 
+alias open="xdg-open"
+
+# TODO(jez) Linux
+# alias sml="rlwrap sml"
+
 # TODO(jez) Linux
 # Override BSD grep with GNU equivalent
 # which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
+# TODO(jez) Linux
 # ignore jrnl entries (abuse histignorespace)
-alias jrnl=" noglob jrnl"
+# alias jrnl=" noglob jrnl"
 
 # TODO(jez) linux
 # alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
