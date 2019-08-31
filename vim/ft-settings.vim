@@ -46,6 +46,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.rbi setlocal filetype=ruby
   " .cfg.exp files are valid dot files
   au BufRead,BufNewFile *.cfg.exp setlocal filetype=dot
+  " *.BUILD files are Bazel build files
+  au BufRead,BufNewFile *.BUILD setlocal filetype=bzl
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
