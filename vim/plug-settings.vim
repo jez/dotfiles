@@ -596,8 +596,11 @@ augroup vimuxMappings
 augroup END
 " }}}
 " ----- fzf ----- {{{
-set runtimepath+=/usr/local/opt/fzf
-set runtimepath+=/afs/cs/academic/class/15131-f15/opt/fzf
+if split(system('uname')) ==# ['Linux']
+  set runtimepath+=/home/linuxbrew/.linuxbrew/opt/fzf
+else
+  set runtimepath+=/usr/local/opt/fzf
+endif
 nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
