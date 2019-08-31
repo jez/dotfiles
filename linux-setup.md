@@ -115,6 +115,10 @@ This turned out to be not that hard.
 - GitHub setup
   - Generated and added a new SSH key to GitHub
     - <https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
+- TERM problems
+  - tmux is installed via brew, which links against it's own ncurses
+  - less (and other programs) are installed outside of brew, and use a different
+    version, so sometimes they'll say that the TERM is not fully funcitonal
 
 ## TODO
 
