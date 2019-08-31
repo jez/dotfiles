@@ -15,5 +15,7 @@ $if mode=vi
 set keymap vi-command
 "k": history-search-backward
 "j": history-search-forward
+Control-y: clear-screen
 set keymap vi-insert
+Control-y: clear-screen
 $endif
