@@ -103,33 +103,38 @@ This turned out to be not that hard.
 - Spotify
   - Installed through store
   - `sudo sed -i -e 's/^Exec=spotify/\0 --force-device-scale-factor=2/' /usr/share/applications/spotify.desktop`
-
+- Dropbox
+  - Download from: <https://www.dropbox.com/install?os=linux>
+  - `sudo apt install` the deb
+  - Follow these instructions to put the Dropbox icon in the tray:
+    - <https://pop.system76.com/docs/status-icons/>
+    - `sudo apt install gnome-shell-extension-appindicator`
+    - `gnome-shell-extension-prefs`
+  - Bump the max_user_watches to a super high number.
+    - <https://web.archive.org/web/20161106193425/http://blog.sorah.jp/2012/01/24/inotify-limitation>
+- GitHub setup
+  - Generated and added a new SSH key to GitHub
+    - <https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
 
 ## TODO
 
-- Figure out how to get the better BIOS with fancy colors.
-- Double check my RAM speed.
-- Set up dotfiles
-- Try out just window manager, no desktop
-- Make startup from power off faster
-- Get `Displays` and `Mouse` to show back up in Gnome search
-- Higher key repeat
+- Change background
+- Transfer Spotify music
+
+- Dotfiles / config
+  - Make sure that the right rbenv settings end up in your dotfiles. See Sorbet
+    setup above.
+  - Grep for TODO(jez) linux
+  - Double check bash_profile stuff
+  - Fix itpt script
+    - Make it work with `nvr '+set bg=light'`
+
+- Try out tiling window manager
 - Faster scroll speed
-- CPU temp monitoring
-- Lock after inactive
-- Tiling window manager
-
+- CPU temp monitoring (waiting on kernel patch)
+- Figure out internet splitting
 - Make keybindings more like macOS
-- Make sure that the right rbenv settings end up in your dotfiles. See Sorbet
-  setup above.
-- Figure out why our bazel setup required a system version of Ruby (from apt)
-- Potentially buy bluetooth / wifi card
-- Make sure there have been no issues with internet splitter
-- `open` replacement (open a picture for example)
-- Figure out why monitor won't play sound
-- Docs about adding SSH key to GitHub
-- Document installing fonts
-- Get cursor shapes working in alacritty
-- Get files from dropbox
-- Double check bash_profile stuff
+  - Swap command and control?
 
+- Sorbet
+  - Figure out why our bazel setup required a system version of Ruby (from apt)
