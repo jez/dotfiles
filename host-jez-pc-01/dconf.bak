@@ -13,6 +13,13 @@ reset-paid-apps=false
 paid-apps=@as []
 window-y=376
 
+[apps/seahorse/windows/key-manager]
+width=600
+height=476
+
+[apps/seahorse/listing]
+sidebar-width=170
+
 [org/freedesktop/tracker/miner/files]
 index-recursive-directories=['&DESKTOP', '&DOCUMENTS', '&DOWNLOAD', '&MUSIC', '&PICTURES', '&VIDEOS', '/usr/share/applications']
 
@@ -44,14 +51,17 @@ show-path=false
 enabled=true
 
 [org/gnome/desktop/notifications]
-application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify']
+application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify', 'dropbox']
 show-in-lock-screen=true
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
+[org/gnome/desktop/notifications/application/dropbox]
+application-id='dropbox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
-
-[org/gnome/desktop/notifications/application/io-elementary-appcenter]
-application-id='io.elementary.appcenter.desktop'
 
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
@@ -59,8 +69,8 @@ application-id='google-chrome.desktop'
 [org/gnome/desktop/notifications/application/com-github-donadigo-eddy]
 application-id='com.github.donadigo.eddy.desktop'
 
-[org/gnome/desktop/notifications/application/spotify]
-application-id='spotify.desktop'
+[org/gnome/desktop/notifications/application/io-elementary-appcenter]
+application-id='io.elementary.appcenter.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 delay=uint32 250
@@ -150,7 +160,7 @@ sources=[('xkb', 'us')]
 xkb-options=@as []
 
 [org/gnome/desktop/session]
-idle-delay=uint32 720
+idle-delay=uint32 600
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(0,43,54)'
@@ -160,9 +170,6 @@ font='Menlo for Powerline 13'
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
-
-[org/gnome/gedit/preferences/editor]
-scheme='pop-light'
 
 [org/gnome/mutter/wayland/keybindings]
 restore-shortcuts=@as []
@@ -175,9 +182,53 @@ overlay-key=''
 toggle-tiled-left=['<Shift><Alt>Left']
 toggle-tiled-right=['<Shift><Alt>Right']
 
+[org/gnome/gedit/preferences/editor]
+scheme='pop-light'
+
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
+[org/gnome/control-center]
+last-panel='power'
+
+[org/gnome/calculator]
+source-currency=''
+source-units='degree'
+button-mode='basic'
+word-size=64
+base=10
+angle-units='degrees'
+accuracy=9
+show-thousands=false
+window-position=(25, 57)
+show-zeroes=false
+target-units='radian'
+number-format='automatic'
+target-currency=''
+
+[org/gnome/nautilus/window-state]
+initial-size=(1280, 1361)
+maximized=false
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/shell]
+favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
+enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
+
+[org/gnome/shell/keybindings]
+toggle-overview=['<Primary>Up']
+open-application-menu=@as []
+toggle-application-view=@as []
+focus-active-notification=@as []
+toggle-message-tray=@as []
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(37.556201439884809, -122.325)
+night-light-last-coordinates=(37.565200719942403, -122.325)
 night-light-temperature=uint32 3613
 night-light-schedule-automatic=false
 
@@ -247,21 +298,4 @@ binding='<Super>c'
 
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-type='suspend'
-
-[org/gnome/control-center]
-last-panel='universal-access'
-
-[org/gnome/eog/view]
-background-color='rgb(0,0,0)'
-use-background-color=true
-
-[org/gnome/shell]
-favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
-enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
-
-[org/gnome/shell/keybindings]
-toggle-overview=['<Primary>Up']
-open-application-menu=@as []
-toggle-application-view=@as []
-focus-active-notification=@as []
-toggle-message-tray=@as []
+sleep-inactive-ac-timeout=1800
