@@ -167,11 +167,13 @@ nnoremap <silent> <leader>c :echo map(synstack(line('.'), col('.')), 'synIDattr(
 noremap <silent> gr gt
 noremap <silent> gR gT
 
-" Some <leader> mappings to cut / copy to system clipboard.
+" Some <leader> mappings to cut / copy / paste with system clipboard.
 noremap <silent> <leader>y "+y
 noremap <silent> <leader>Y "+Y
 noremap <silent> <leader>d "+d
 noremap <silent> <leader>D "+D
+noremap <silent> <leader>p "+p
+noremap <silent> <leader>P "+P
 
 " Ideally I'd be able to specify no <M- keybindings in insert mode. For now,
 " whitelist them as they come up:
