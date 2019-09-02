@@ -134,6 +134,11 @@ move-to-workspace-4=['<Primary><Shift><Alt>r']
 
 [org/gnome/desktop/screensaver]
 lock-delay=uint32 0
+picture-options='zoom'
+color-shading-type='solid'
+secondary-color='#000000000000'
+picture-uri='file:///home/jez/Pictures/Wallpapers/130Gyarados.jpg'
+primary-color='#000000000000'
 
 [org/gnome/desktop/privacy]
 report-technical-problems=true
@@ -320,7 +325,7 @@ include-pointer=false
 include-border=true
 delay=0
 last-save-directory='file:///home/jez/Desktop/Screenshots'
-auto-save-directory='//home/jez/Desktop/Screenshots'
+auto-save-directory='file:///home/jez/Desktop/Screenshots'
 border-effect='none'
 
 [org/gnome/system/location]
