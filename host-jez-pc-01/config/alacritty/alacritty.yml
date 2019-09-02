@@ -60,7 +60,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 11
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -259,7 +259,7 @@ key_bindings:
   - { key: Copy,                    action: Copy                         }
   - { key: Q,        mods: Super,   action: Quit                         }
   - { key: W,        mods: Super,   action: Quit                         }
-  - { key: N,        mods: Super,   command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
+  - { key: N,        mods: Super,   command: { program: "/usr/bin/alacritty", args: [] } }
   - { key: Return,   mods: Super,   action: ToggleFullscreen             }
   - { key: Key0,     mods: Super,   action: ResetFontSize                }
   - { key: Equals,   mods: Super,   action: IncreaseFontSize             }
