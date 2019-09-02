@@ -47,17 +47,26 @@ list-mode='as-folder'
 name-column-width=250
 show-path=false
 
-[org/gnome/system/location]
-enabled=true
+[org/gnome/shell]
+favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
+enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
+
+[org/gnome/shell/keybindings]
+toggle-overview=['<Primary>Up']
+open-application-menu=@as []
+toggle-application-view=@as []
+focus-active-notification=@as []
+toggle-message-tray=@as []
 
 [org/gnome/desktop/notifications]
-application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify', 'dropbox']
+application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify', 'dropbox', 'org-gnome-nautilus']
 show-in-lock-screen=true
 
 [org/gnome/desktop/notifications/application/spotify]
 application-id='spotify.desktop'
 
 [org/gnome/desktop/notifications/application/dropbox]
+show-banners=false
 application-id='dropbox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
@@ -71,6 +80,9 @@ application-id='com.github.donadigo.eddy.desktop'
 
 [org/gnome/desktop/notifications/application/io-elementary-appcenter]
 application-id='io.elementary.appcenter.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 delay=uint32 250
@@ -120,15 +132,22 @@ close=['<Super>q']
 switch-to-workspace-up=['<Shift><Alt>braceleft']
 move-to-workspace-4=['<Primary><Shift><Alt>r']
 
-[org/gnome/desktop/privacy]
-report-technical-problems=true
-
 [org/gnome/desktop/screensaver]
 lock-delay=uint32 0
+
+[org/gnome/desktop/privacy]
+report-technical-problems=true
 
 [org/gnome/desktop/sound]
 theme-name='__custom'
 event-sounds=true
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+color-shading-type='solid'
+secondary-color='#000000'
+picture-uri='file:///home/jez/Pictures/Wallpapers/130Gyarados.jpg'
+primary-color='#000000'
 
 [org/gnome/desktop/interface]
 gtk-im-module='gtk-im-context-simple'
@@ -162,15 +181,6 @@ xkb-options=@as []
 [org/gnome/desktop/session]
 idle-delay=uint32 600
 
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-background-color='rgb(0,43,54)'
-foreground-color='rgb(131,148,150)'
-font='Menlo for Powerline 13'
-
-[org/gnome/evolution-data-server]
-migrated=true
-network-monitor-gio-name=''
-
 [org/gnome/mutter/wayland/keybindings]
 restore-shortcuts=@as []
 
@@ -182,15 +192,32 @@ overlay-key=''
 toggle-tiled-left=['<Shift><Alt>Left']
 toggle-tiled-right=['<Shift><Alt>Right']
 
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
 [org/gnome/gedit/preferences/editor]
 scheme='pop-light'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,43,54)'
+foreground-color='rgb(131,148,150)'
+font='Menlo for Powerline 13'
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
 use-background-color=true
 
+[org/gnome/nautilus/window-state]
+initial-size=(1280, 1361)
+maximized=false
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
 [org/gnome/control-center]
-last-panel='power'
+last-panel='background'
 
 [org/gnome/calculator]
 source-currency=''
@@ -201,34 +228,15 @@ base=10
 angle-units='degrees'
 accuracy=9
 show-thousands=false
-window-position=(25, 57)
+window-position=(1553, 897)
 show-zeroes=false
 target-units='radian'
 number-format='automatic'
 target-currency=''
 
-[org/gnome/nautilus/window-state]
-initial-size=(1280, 1361)
-maximized=false
-
-[org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
-search-filter-time-type='last_modified'
-
-[org/gnome/shell]
-favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
-enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
-
-[org/gnome/shell/keybindings]
-toggle-overview=['<Primary>Up']
-open-application-menu=@as []
-toggle-application-view=@as []
-focus-active-notification=@as []
-toggle-message-tray=@as []
-
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(37.565200719942403, -122.325)
+night-light-last-coordinates=(37.556201439884809, -122.325)
 night-light-temperature=uint32 3613
 night-light-schedule-automatic=false
 
@@ -238,18 +246,15 @@ control-center=''
 home=''
 magnifier-zoom-in=''
 window-screenshot-clip=''
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
 email=''
 media=''
 search=''
 calculator=''
-screenshot='<Shift><Super>numbersign'
-screenshot-clip=''
 terminal=''
-window-screenshot='<Shift><Super>at'
+screenshot-clip=''
 magnifier-zoom-out=''
 screenreader=''
-area-screenshot='<Shift><Super>dollar'
 area-screenshot-clip=''
 screencast=''
 magnifier=''
@@ -265,6 +270,16 @@ binding='<Super>BackSpace'
 command='xte "keyup Alt_L" "keyup BackSpace" "keydown Control_L" "keydown BackSpace" "keyup Control_L" "keydown Alt_L"'
 name='Delete backwards one word'
 binding='<Alt>BackSpace'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+command='gnome-screenshot'
+name='Save a screenshot'
+binding='<Shift><Super>numbersign'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+command='gnome-screenshot --area'
+name='Save a screenshot of an area'
+binding='<Shift><Super>dollar'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 command='xte "keyup Super_L" "keyup Shift_L" "keyup t" "keydown Control_L" "keydown Shift_L" "key t" "keyup Shift_L" "keyup Control_L"'
@@ -299,3 +314,14 @@ binding='<Super>c'
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-type='suspend'
 sleep-inactive-ac-timeout=1800
+
+[org/gnome/gnome-screenshot]
+include-pointer=false
+include-border=true
+delay=0
+last-save-directory='file:///home/jez/Desktop/Screenshots'
+auto-save-directory='//home/jez/Desktop/Screenshots'
+border-effect='none'
+
+[org/gnome/system/location]
+enabled=true
