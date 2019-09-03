@@ -119,15 +119,15 @@ This turned out to be not that hard.
   - tmux is installed via brew, which links against it's own ncurses
   - less (and other programs) are installed outside of brew, and use a different
     version, so sometimes they'll say that the TERM is not fully funcitonal
+- Spotify local files:
+  - Go into settings
+  - Point local files at ~/Dropbox/Music/Spotify
+  - Also, probably need to do this to get local files to play:
+    - <https://github.com/olejon/spotcommander/wiki/LocalFiles>
 
 ## TODO
 
-- Change background
-- Transfer Spotify music
-
 - Dotfiles / config
-  - Make sure that the right rbenv settings end up in your dotfiles. See Sorbet
-    setup above.
   - Grep for TODO(jez) linux
   - Double check bash_profile stuff
   - Fix itpt script
