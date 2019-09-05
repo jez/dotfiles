@@ -73,6 +73,8 @@ alias vimdiff="nvim -d"
 alias vimg="nvim +Goyo"
 
 alias open="xdg-open"
+alias pbcopy="xclip -in -sel clip"
+alias pbpaste="xclip -out -sel clip"
 
 # TODO(jez) Linux
 # alias sml="rlwrap sml"
