@@ -294,7 +294,9 @@ augroup END
 " ----- Folder-specific settings -----
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
   " Use clangd for diagnostics
-  let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
+  if split(system('uname')) ==# ['Darwin']
+    let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
+  endif
   let g:ale_linters.cpp = ['clangd']
   augroup aleClangdMaps
     au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
