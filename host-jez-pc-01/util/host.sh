@@ -34,9 +34,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 rbenv rehash
 
-# TODO(jez) linux
-# # Rust
-# export PATH="$HOME/.cargo/bin:$PATH"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # TODO(jez) linux
 # # Change my iTerm2 profile based on SOLARIZED variable
