@@ -662,7 +662,7 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
-  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
+  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--enable-experimental-lsp-autocomplete', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
 augroup LanguageClient
@@ -676,6 +676,8 @@ augroup LanguageClient
   au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
 " }}}
 " ----- Builtin Vim plugins ----- {{{
