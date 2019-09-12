@@ -156,6 +156,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gdw="git diff --color-words"
+alias gdr="git diff-review"
 alias gicd="git icdiff"
 
 alias gf="git fetch"
