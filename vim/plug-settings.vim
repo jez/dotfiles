@@ -656,6 +656,8 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "signTexthl": "Todo",
       \     },
       \ }
+" let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
+" let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
