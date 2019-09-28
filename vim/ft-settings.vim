@@ -98,4 +98,7 @@ augroup myFiletypes
   au TermOpen * startinsert
   " Auto-close terminal buffer when it ends
   au TermClose * q
+
+  " Always show sign column in Ruby files so that screen doesn't bounce around
+  au FileType ruby setlocal signcolumn=yes
 augroup END
