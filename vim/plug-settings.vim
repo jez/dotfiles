@@ -634,8 +634,9 @@ let g:LanguageClient_diagnosticsDisplay = {
       \     1: {
       \         "name": "Error",
       \         "texthl": "ALEError",
-      \         "signText": "✘",
-      \         "signTexthl": "Error",
+      \         "signText": "●",
+      \         "signTexthl": "gitgutterDelete",
+      \         "virtualTexthl": "gitgutterDelete",
       \     },
       \     2: {
       \         "name": "Warning",
@@ -646,8 +647,8 @@ let g:LanguageClient_diagnosticsDisplay = {
       \     3: {
       \         "name": "Information",
       \         "texthl": "ALEError",
-      \         "signText": "✘",
-      \         "signTexthl": "Error",
+      \         "signText": "ℹ",
+      \         "signTexthl": "gitgutterDelete",
       \     },
       \     4: {
       \         "name": "Hint",
@@ -656,8 +657,8 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "signTexthl": "Todo",
       \     },
       \ }
-" let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
-" let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
+let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
+let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
@@ -667,7 +668,7 @@ else
   let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--enable-experimental-lsp-autocomplete', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
-augroup LanguageClient
+augroup jezLanguageClient
   au!
   au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType reason nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
@@ -678,6 +679,7 @@ augroup LanguageClient
   au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType ruby nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
   au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
