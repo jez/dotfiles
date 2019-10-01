@@ -684,6 +684,27 @@ augroup jezLanguageClient
   au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
 " }}}
+" ----- Shougo/deoplete.nvim ----- {{{
+" augroup jezDeoplete
+"   au!
+"   au FileType ruby nnoremap <silent> <buffer> <leader>ic :call deoplete#enable()<CR>
+" augroup END
+
+" call deoplete#custom#option('sources', {
+" \ '_': [],
+" \ 'ruby': ['LanguageClient'],
+" \})
+" }}}
+" ----- neoclide/coc.nvim ----- {{{
+" augroup jezCocVim
+"   au!
+"   au FileType ruby nnoremap <silent> <buffer> <leader>t :call CocAction('doHover')<CR>
+"   au FileType ruby nnoremap <silent> <buffer> gd <Plug>(coc-definition)
+"   au FileType ruby nnoremap <silent> <buffer> gy <Plug>(coc-type-definition)
+"   au FileType ruby nnoremap <silent> <buffer> ge <Plug>(coc-diagnostic-info)
+" augroup END
+" inoremap <silent> <expr> <c-space> coc#refresh()
+" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3

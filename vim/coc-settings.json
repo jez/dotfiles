@@ -1,0 +1,12 @@
+{
+  "suggest.autoTrigger": ["none"],
+  "languageserver": {
+    "sorbet-dev": {
+      "command": "sorbet",
+      "args": ["--lsp", "--enable-experimental-lsp-autocomplete", "--debug-log-file=/tmp/sorbet-coc.nvim.log", "-e", "0", "/Users/jez/.local/share/empty"],
+      "filetypes": ["ruby"]
+    }
+  },
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.hoverTarget": "float"
+}
