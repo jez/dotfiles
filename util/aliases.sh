@@ -151,6 +151,7 @@ alias gcmd="git -c core.commentChar='%' commit -v --template=$HOME/.util/gitmess
 alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gcan="git commit -a --amend --no-edit"
+alias gcne="git commit --amend --no-edit"
 
 alias gs="git status"
 alias gd="git diff"
