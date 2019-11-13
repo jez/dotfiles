@@ -13,6 +13,7 @@
 
 source ~/.util/fzf.zsh
 source ~/.util/skip-dirty.zsh
+source ~/.util/bazel.zsh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -C /Users/jez/stripe/space-commander/bin/commands/sc-complete sc
