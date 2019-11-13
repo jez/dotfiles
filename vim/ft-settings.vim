@@ -48,6 +48,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.cfg.exp setlocal filetype=dot
   " *.BUILD files are Bazel build files
   au BufRead,BufNewFile *.BUILD setlocal filetype=bzl
+  " *.ypp files are bison / yacc
+  au BufRead,BufNewFile *.ypp setlocal filetype=yacc
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
@@ -83,6 +85,7 @@ augroup myFiletypes
 
   " Fix up some commentstrings
   au FileType cpp setlocal commentstring=//%s
+  au FileType yacc setlocal commentstring=//%s
 
   " Change indentation level in some languages
   " TODO(jez) This should be in .editorconfig at some point
