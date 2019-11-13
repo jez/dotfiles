@@ -12,6 +12,7 @@
 
 
 source ~/.util/fzf.zsh
+source ~/.util/bazel.zsh
 
 # Not needed yet.
 # source ~/.util/skip-dirty.zsh

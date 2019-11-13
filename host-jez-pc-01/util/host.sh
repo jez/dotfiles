@@ -96,8 +96,8 @@ alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=stati
 alias sbr='bazel build //main:sorbet --config=release-mac'
 alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
 alias sto='bazel test -c opt --test_output=errors'
-alias stg='bazel test --config=dbg --test_output=errors --test_summary=terse test'
-alias stog='bazel test --config=dbg --test_output=errors'
+alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --test_summary=terse test'
+alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
 
 # TODO(jez) linux
