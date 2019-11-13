@@ -571,13 +571,6 @@ let g:VimuxPromptString = '❯ '
 " Focus the Vimux pane
 nnoremap <silent> <leader>vi :VimuxInspectRunner<CR>
 
-" TODO(jez) Start stripe.vim plugin/monorepo for Stripe-specific Vim config
-function! PayTest() abort
-  let l:filename = expand('%')
-  let l:lineno = line('.')
-  call VimuxRunCommand('pay test '.l:filename.' -l '.l:lineno)
-endfunction
-
 augroup vimuxMappings
   au!
 
@@ -586,8 +579,6 @@ augroup vimuxMappings
   au FileType javascript nnoremap <silent> <buffer> <leader>ij :VimuxRunCommand 'yarn test '.@%<CR>
   au FileType javascript nnoremap <silent> <buffer> <leader>ik :VimuxRunCommand 'yarn run test-browser-tests-only'<CR>
   au FileType javascript nnoremap <silent> <buffer> <leader>ibk :VimuxRunCommand 'yarn run test-browser'<CR>
-
-  au FileType ruby nnoremap <silent> <buffer> <leader>pt :w \| :call PayTest()<CR>
 
   au FileType haskell nnoremap <silent> <buffer> <leader>ib :VimuxRunCommand 'stack build'<CR>
 
