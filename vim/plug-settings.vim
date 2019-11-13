@@ -705,6 +705,9 @@ augroup END
 " augroup END
 " inoremap <silent> <expr> <c-space> coc#refresh()
 " }}}
+" ----- AnsiEsc.vim ----- {{{
+let g:no_cecutil_maps = 1
+" }}}
 " ----- Builtin Vim plugins ----- {{{
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
