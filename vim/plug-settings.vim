@@ -422,6 +422,14 @@ let g:grepper.tools = ['rg']
 " See ~/.vim/after for more grepper settings
 " Highlight search matches (like it were hlsearch)
 let g:grepper.highlight = 1
+" Don't use the quickfix list. In Neovim 0.4.2, this causes grepper to get
+" into a weird state. Repro:
+" vim -p foo bar
+" :Grepper foo<CR>
+" gr
+" :Grepper foo<CR>
+" Observe that the screen is now irrecoverably half height
+let g:grepper.quickfix = 0
 " Defalt to searching the entire repo; otherwise, search 'filecwd' (see help)
 " let g:grepper.dir = 'repo,filecwd'
 let g:grepper.dir = 'filecwd'
