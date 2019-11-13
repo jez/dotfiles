@@ -635,8 +635,8 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "name": "Error",
       \         "texthl": "ALEError",
       \         "signText": "●",
-      \         "signTexthl": "gitgutterDelete",
-      \         "virtualTexthl": "gitgutterDelete",
+      \         "signTexthl": "LCHighlightedError",
+      \         "virtualTexthl": "LCHighlightedError",
       \     },
       \     2: {
       \         "name": "Warning",
@@ -648,7 +648,8 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "name": "Information",
       \         "texthl": "ALEError",
       \         "signText": "ℹ",
-      \         "signTexthl": "gitgutterDelete",
+      \         "signTexthl": "LCHighlightedWarn",
+      \         "virtualTexthl": "LCHighlightedWarn",
       \     },
       \     4: {
       \         "name": "Hint",
