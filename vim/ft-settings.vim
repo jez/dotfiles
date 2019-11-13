@@ -97,10 +97,13 @@ augroup myFiletypes
   au FileType sh setlocal formatoptions+=ro
 
   au TermOpen * setlocal nonumber
-  au TermOpen * setlocal scrolloff=0
   au TermOpen * startinsert
   " Auto-close terminal buffer when it ends
   au TermClose * q
+
+  " scrolloff can only be set globally
+  au BufEnter term://* set scrolloff=0
+  au BufLeave term://* set scrolloff=4
 
   " Always show sign column in Ruby files so that screen doesn't bounce around
   au FileType ruby setlocal signcolumn=yes
