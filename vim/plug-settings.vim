@@ -300,9 +300,9 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
   " let g:ale_linters.cpp = ['clangd']
   let g:ale_linters.cpp = []
   augroup aleClangdMaps
-    au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
-    au FileType cpp nnoremap <silent> <buffer> gD :ALEGoToDefinitionInTab<CR>
-    au FileType cpp nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
+    " au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
+    " au FileType cpp nnoremap <silent> <buffer> gD :ALEGoToDefinitionInTab<CR>
+    " au FileType cpp nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
   augroup END
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
@@ -665,7 +665,7 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
-  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--enable-experimental-lsp-autocomplete', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
+  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
 augroup jezLanguageClient
@@ -682,6 +682,13 @@ augroup jezLanguageClient
   au FileType ruby nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
   au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
+
+  au FileType cpp nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType cpp nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
+  au FileType cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
 " }}}
 " ----- Shougo/deoplete.nvim ----- {{{
