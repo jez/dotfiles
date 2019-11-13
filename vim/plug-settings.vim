@@ -295,9 +295,10 @@ augroup END
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
   " Use clangd for diagnostics
   if split(system('uname')) ==# ['Darwin']
-    let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm/bin/clangd'
+    let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm@8/bin/clangd'
   endif
-  let g:ale_linters.cpp = ['clangd']
+  " let g:ale_linters.cpp = ['clangd']
+  let g:ale_linters.cpp = []
   augroup aleClangdMaps
     au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
     au FileType cpp nnoremap <silent> <buffer> gD :ALEGoToDefinitionInTab<CR>
@@ -661,7 +662,7 @@ let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
 let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
-  let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
+  " let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
@@ -670,11 +671,11 @@ endif
 
 augroup jezLanguageClient
   au!
-  au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType reason nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
-  au FileType reason nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType reason nnoremap <silent> <buffer> <leader>io :copen<CR>
-  au FileType reason nnoremap <silent> <buffer> <leader>ik :cclose<CR>
+"   au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+"   au FileType reason nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+"   au FileType reason nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+"   au FileType reason nnoremap <silent> <buffer> <leader>io :copen<CR>
+"   au FileType reason nnoremap <silent> <buffer> <leader>ik :cclose<CR>
 
   au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
