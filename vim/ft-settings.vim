@@ -96,10 +96,14 @@ augroup myFiletypes
   " Add comment character when pressing 'o' or Enter
   au FileType sh setlocal formatoptions+=ro
 
-  au TermOpen * setlocal nonumber
-  au TermOpen * startinsert
-  " Auto-close terminal buffer when it ends
-  au TermClose * q
+  if has('##TermOpen')
+    au TermOpen * setlocal nonumber
+    au TermOpen * startinsert
+  endif
+  if has('##TermClose')
+    " Auto-close terminal buffer when it ends
+    au TermClose * q
+  endif
 
   " scrolloff can only be set globally
   au BufEnter term://* set scrolloff=0
