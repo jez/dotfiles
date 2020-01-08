@@ -292,18 +292,9 @@ augroup aleMaps
 augroup END
 
 " ----- Folder-specific settings -----
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet'
-  " Use clangd for diagnostics
-  if split(system('uname')) ==# ['Darwin']
-    let g:ale_cpp_clangd_executable = '/usr/local/opt/llvm@8/bin/clangd'
-  endif
-  " let g:ale_linters.cpp = ['clangd']
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet' ||
+      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/sorbet/sorbet'
   let g:ale_linters.cpp = []
-  augroup aleClangdMaps
-    " au FileType cpp nnoremap <silent> <buffer> gd :ALEGoToDefinition<CR>
-    " au FileType cpp nnoremap <silent> <buffer> gD :ALEGoToDefinitionInTab<CR>
-    " au FileType cpp nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
-  augroup END
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
   " name as the current *.cpp / *.cc file at the top of the #include list
@@ -669,6 +660,11 @@ else
   let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet' ||
+      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/sorbet/sorbet'
+  let g:LanguageClient_serverCommands.cpp = ['/usr/local/opt/llvm/bin/clangd']
+endif
+
 augroup jezLanguageClient
   au!
 "   au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
@@ -689,6 +685,7 @@ augroup jezLanguageClient
   au FileType cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
 " }}}
