@@ -1,0 +1,4 @@
+.agignore
+tags
+.DS_Store
+lib/foo.rb
