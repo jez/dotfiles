@@ -115,6 +115,7 @@ noremap S <nop>
 
 " This always messes me up
 noremap K <nop>
+noremap Q <nop>
 
 " Make navigating long, wrapped lines behave like normal lines
 noremap <silent> k gk
