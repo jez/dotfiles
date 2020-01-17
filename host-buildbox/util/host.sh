@@ -17,13 +17,10 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-# TODO(jez)
-# Add diff-highlight from Git contrib
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight"
-
 export PATH="$PATH:./node_modules/.bin"
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 
 # Globally installed yarn executables
 export PATH="$PATH:$HOME/.yarn/bin"
@@ -71,6 +68,7 @@ alias pbcopy="xclip -in -sel clip"
 alias pbpaste="xclip -out -sel clip"
 
 alias sb='bazel build //main:sorbet -c opt'
+alias sbl='bazel build -c opt'
 alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
 alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
 alias sbr='bazel build //main:sorbet --config=release-mac'
