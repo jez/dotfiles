@@ -80,8 +80,9 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 
 # ----- Specific Programs -----------------------------------------------------
 
-export PROMPT_PURE_DIR_COLOR="%{$cgreen%}"
+export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
 export PROMPT_PURE_SUCCESS_COLOR="%{$ccyan%}"
+export TMUXLINE_ACCENT_COLOR="colour13"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
