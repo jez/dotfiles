@@ -26,10 +26,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 
-# TODO(jez) rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-# rbenv rehash
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+rbenv rehash
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
