@@ -39,6 +39,8 @@ if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi
 
+export TZ=/usr/share/zoneinfo/America/Los_Angeles
+
 # ----- aliases ---------------------------------------------------------------
 
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
