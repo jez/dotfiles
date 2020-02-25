@@ -95,7 +95,6 @@ open ~/Desktop/iTerm2-Color-Schemes/schemes/
 brew tap neovim/neovim
 brew install neovim
 ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 # Install fzf
 brew install fzf
