@@ -44,7 +44,7 @@ export PATH="$PATH:/usr/local/opt/thrift@0.9/bin"
 export PATH="$HOME/stripe/henson/bin:$PATH"
 source "$HOME/.rbenvrc"
 rbenv rehash
-source ~/.stripe-repos.sh
+# source ~/.stripe-repos.sh
 
 # ----- aliases ---------------------------------------------------------------
 
