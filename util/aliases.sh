@@ -133,6 +133,7 @@ eval "$(hub alias -s 2> /dev/null)"
 # We want to use '#' as a markdown character, so let's use '%' for comments
 alias hubmdpr="hub -c core.commentChar='%' pull-request"
 alias hubmd="hub -c core.commentChar='%'"
+alias hubci="hub ci-status --verbose"
 
 alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
 alias git-check-dirty="unset PROMPT_PURE_SKIP_DIRTY_CHECK"
