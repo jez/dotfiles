@@ -12,9 +12,6 @@
 
 # --- Added by Stripe IT department ---
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-
 [github]
 	user = jez
 [ghi]
