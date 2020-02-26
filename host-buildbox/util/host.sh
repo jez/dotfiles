@@ -68,13 +68,13 @@ alias open="xdg-open"
 alias pbcopy="xclip -in -sel clip"
 alias pbpaste="xclip -out -sel clip"
 
-alias sb='bazel build //main:sorbet -c opt'
-alias sbl='bazel build -c opt'
+alias sb='bazel build //main:sorbet'
+alias sbl='bazel build'
 alias sbg='bazel build //main:sorbet --config=dbg'
-alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt'
-alias sbr='bazel build //main:sorbet --config=release-mac'
-alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
-alias sto='bazel test -c opt --test_output=errors'
+alias sbo='bazel build //main:sorbet --config=debugsymbols'
+alias sbr='bazel build //main:sorbet --config=release-linux'
+alias st='bazel test --test_output=errors --test_summary=terse test'
+alias sto='bazel test --test_output=errors'
 alias stg='bazel test --config=dbg --test_output=errors --test_summary=terse test'
 alias stog='bazel test --config=dbg --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
