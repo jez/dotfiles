@@ -86,6 +86,7 @@ augroup myFiletypes
   au FileType scala setlocal cc=80
 
   " Fix up some commentstrings
+  au FileType c setlocal commentstring=//%s
   au FileType cpp setlocal commentstring=//%s
   au FileType yacc setlocal commentstring=//%s
 
@@ -94,6 +95,8 @@ augroup myFiletypes
   au FileType cpp setlocal tabstop=4
   au FileType cpp setlocal softtabstop=4
   au FileType cpp setlocal shiftwidth=4
+
+  au FileType c setlocal tabstop=8
 
   " Add comment character when pressing 'o' or Enter
   au FileType sh setlocal formatoptions+=ro
