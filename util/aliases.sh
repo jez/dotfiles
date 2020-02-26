@@ -79,6 +79,9 @@ alias pyserv="py3serv"
 # How much memory is Chrome using right now?
 alias chromemem="ps -ev | grep -i chrome | awk '{print \$12}' | awk '{for(i=1;i<=NF;i++)s+=\$i}END{print s}'"
 
+# Re-export SSH_AUTH_SOCK using value from outside tmux
+alias reauthsock='eval "export $(tmux showenv SSH_AUTH_SOCK)"'
+
 # Remove garbage files
 alias purgeswp="find . -regex '.*.swp$' | xargs rm"
 alias purgedrive='find ~/GoogleDrive/ -name Icon -exec rm -f {} \; -print'
