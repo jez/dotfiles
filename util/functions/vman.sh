@@ -15,6 +15,6 @@ vman() {
     return 1
   fi
 
-  ${EDITOR:-vim} -c "SuperMan $*" -c "Goyo"
+  ${EDITOR:-vim} -c 'autocmd! User GoyoLeave :qall' -c "SuperMan $*" -c "Goyo"
 }
 
