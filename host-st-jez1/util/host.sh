@@ -74,13 +74,13 @@ alias vimdiff="nvim -d"
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 
-alias cdsc="cd ~/stripe/checkout-js"
-alias cds="cd ~/stripe"
+alias stop-servers='pay exec sudo svc -d /etc/service/scripts_bin_servers_daemon/'
+alias start-servers='pay exec sudo svc -u /etc/service/scripts_bin_servers_daemon/'
 
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" noglob jrnl"
 
-alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
+alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo -c "autocmd User GoyoLeave :qall"'
 alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
 
 alias sb='bazel build //main:sorbet -c opt'
