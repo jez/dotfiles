@@ -162,6 +162,7 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gdw="git diff --color-words"
 alias gdr="git diff-review"
+alias gbc="git by-commit"
 alias gicd="git icdiff"
 
 alias gf="git fetch"
