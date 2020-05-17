@@ -50,6 +50,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.BUILD setlocal filetype=bzl
   " *.ypp files are bison / yacc
   au BufRead,BufNewFile *.ypp setlocal filetype=yacc
+  " *.rl files are ragel files
+  au BufRead,BufNewFile *.rl setlocal filetype=ragel
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,markdown,tex setlocal spell
