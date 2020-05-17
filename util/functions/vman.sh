@@ -11,11 +11,10 @@ vman() {
   if [ $# -eq 0 ]; then
     echo "What manual page do you want?";
     return 1
-  elif ! man -d "$@" &> /dev/null; then
-    echo "No manual entry for $*"
+  elif ! man -w "$@" > /dev/null; then
     return 1
   fi
 
-  vim -c "SuperMan $*" -c "Goyo"
+  ${EDITOR:-vim} -c "SuperMan $*" -c "Goyo"
 }
 
