@@ -1,0 +1,73 @@
+{
+  "title": "Double-tap shift -> caps lock (rev 2)",
+  "rules": [
+    {
+      "description": "Double-tap shift -> caps lock",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "shift pressed",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "shift pressed",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "shift"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "shift pressed",
+                  "value": 1
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "shift pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
