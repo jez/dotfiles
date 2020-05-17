@@ -39,7 +39,9 @@ if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi
 
-export TZ=/usr/share/zoneinfo/America/Los_Angeles
+export TZ=/usr/share/zoneinfo/America/Chicago
+export LANG="en_US.utf8"
+export LC_CTYPE="en_US.utf8"
 
 # ----- aliases ---------------------------------------------------------------
 
