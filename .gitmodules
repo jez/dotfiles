@@ -223,3 +223,6 @@
 [submodule "vim/bundle/ragel.vim"]
 	path = vim/bundle/ragel.vim
 	url = https://github.com/jneen/ragel.vim
+[submodule "vim/bundle/vim-llvm"]
+	path = vim/bundle/vim-llvm
+	url = git://github.com/rhysd/vim-llvm.git
