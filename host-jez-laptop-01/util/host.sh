@@ -7,6 +7,10 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
+# Catalina
+export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
+export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
+
 # Use GNU coreutils with their actual names
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
