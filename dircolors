@@ -95,10 +95,10 @@ TERM xterm-termite
 ## Special files
 
 NORMAL 0 # no color code at all
-#FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
 DIR 00;34 # directory 01;34
-LINK 00;36 # symbolic link. (If you set this to 'target' instead of a
+LINK 00;36 # symbolic link.
+EXEC 00;32 # files with execute permissions
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 48;5;230;38;5;136;01 # pipe
@@ -113,8 +113,45 @@ CAPABILITY 30;41 # file with capability
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
-# This is for files with execute permission:
-EXEC 00;32
+
+# Files of special interest (base2)
+*Makefile   00;37
+*Rakefile   00;37
+*README     00;37
+*README.txt 00;37
+*README.md  00;37
+
+# "unimportant" files as logs and backups (base01)
+.log        01;32
+.bak        01;32
+.aux        01;32
+.lof        01;32
+.lol        01;32
+.lot        01;32
+.out        01;32
+.toc        01;32
+.bbl        01;32
+.blg        01;32
+*~          01;32
+*#          01;32
+.part       01;32
+.incomplete 01;32
+.swp        01;32
+.tmp        01;32
+.temp       01;32
+.o          01;32
+.pyc        01;32
+.class      01;32
+.cache      01;32
+*tags       01;32
+*grm.desc   01;32
+*grm.sig    01;32
+*grm.sml    01;32
+*lex.sml    01;32
+*old.sml    01;32
+*old.sig    01;32
+.du         01;32
+.ud         01;32
 
 ## Archives or compressed (violet + bold for compression)
 .tar    01;35
@@ -179,68 +216,6 @@ EXEC 00;32
 .ico    00;33
 .pdf    00;33
 
-# Files of special interest (base1 + bold)
-.tex             01;36
-.rdf             01;36
-.owl             01;36
-.n3              01;36
-.ttl             01;36
-.nt              01;36
-.torrent         01;36
-.xml             01;36
-*Makefile        01;36
-*Rakefile        01;36
-*build.xml       01;36
-*rc              01;36
-*profile         01;36
-*1               01;36
-.nfo             01;36
-*README          01;36
-*README.txt      01;36
-*readme.txt      01;36
-.md              01;36
-*README.markdown 01;36
-.ini             01;36
-.yml             01;36
-.cfg             01;36
-.conf            01;36
-.c               01;36
-.cpp             01;36
-.cc              01;36
-*Dockerfile      01;36
-
-# "unimportant" files as logs and backups (base01)
-.log        01;36
-.bak        01;36
-.aux        01;36
-.lof        01;36
-.lol        01;36
-.lot        01;36
-.out        01;36
-.toc        01;36
-.bbl        01;36
-.blg        01;36
-*~          01;36
-*#          01;36
-.part       01;36
-.incomplete 01;36
-.swp        01;36
-.tmp        01;36
-.temp       01;36
-.o          01;36
-.pyc        01;36
-.class      01;36
-.cache      01;36
-*tags       01;36
-*grm.desc   01;36
-*grm.sig    01;36
-*grm.sml    01;36
-*lex.sml    01;36
-*old.sml    01;36
-*old.sig    01;36
-.du         01;36
-.ud         01;36
-
 # Audio formats (orange)
 .aac    01;31
 .au     01;31
@@ -254,7 +229,6 @@ EXEC 00;32
 .ra     01;31
 .wav    01;31
 .m4a    01;31
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
 .axa    01;31
 .oga    01;31
 .spx    01;31
@@ -285,10 +259,7 @@ EXEC 00;32
 .m2ts   01;31
 .divx   01;31
 .webm   01;31
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axv 01;31
-.anx 01;31
-.ogv 01;31
-.ogx 01;31
-
-
+.axv    01;31
+.anx    01;31
+.ogv    01;31
+.ogx    01;31
