@@ -276,14 +276,17 @@ augroup END
 
 " ----- Folder-specific settings -----
 if filereadable("./.clang-format")
+  let g:ale_linters.c = []
   let g:ale_linters.cpp = []
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
   " name as the current *.cpp / *.cc file at the top of the #include list
   let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
+  let g:ale_fixers.c = ['clang-format']
   let g:ale_fixers.cpp = ['clang-format']
 
   augroup aleSorbetMaps
+    au FileType c let g:ale_fix_on_save = 1
     au FileType cpp let g:ale_fix_on_save = 1
   augroup END
 endif
@@ -577,6 +580,7 @@ augroup END
 " ----- fzf ----- {{{
 if split(system('uname')) ==# ['Linux']
   set runtimepath+=/home/linuxbrew/.linuxbrew/opt/fzf
+  set runtimepath+=/home/jez/.fzf
 else
   set runtimepath+=/usr/local/opt/fzf
 endif
@@ -670,34 +674,23 @@ endif
 
 let g:LanguageClient_serverCommands.rust = ['rls']
 
+function! JezLanguageClientRestart() abort
+  LanguageClientStop
+  LanguageClientStart
+endfunction
+
 augroup jezLanguageClient
   au!
-  au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
-  au FileType ruby nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
-  au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
-  au FileType ruby nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
-  au FileType ruby nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
-  au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
+  au FileType ruby,rust,cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 
-  au FileType rust nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType rust nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType rust nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
-  au FileType rust nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
-  au FileType rust nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
-  au FileType rust nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
-  au FileType rust nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
-  au FileType rust inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
-
-  au FileType cpp nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
-  au FileType cpp nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
-  au FileType cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
-  au FileType cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
-  au FileType cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
-  au FileType cpp nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
-  au FileType cpp nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
-  au FileType cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
+  au FileType ruby,rust,cpp nnoremap <silent> <buffer> <leader>ik :call JezLanguageClientRestart()<CR>
 augroup END
 " }}}
 " ----- Shougo/deoplete.nvim ----- {{{
