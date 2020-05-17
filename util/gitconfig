@@ -8,6 +8,8 @@
 	ff = only
 [log]
 	date = relative
+[diff]
+	colorMoved = yes
 
 # Color settings
 [color]
