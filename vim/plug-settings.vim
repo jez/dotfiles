@@ -203,7 +203,8 @@ let g:easytags_languages = {
 \ }
 
 " Easytags tag highlighting in pay-server is super slow.
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server' ||
+      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/ruby'
   let g:easytags_auto_highlight = 0
 end
 
@@ -649,11 +650,26 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "signTexthl": "Todo",
       \     },
       \ }
+let g:LanguageClient_documentHighlightDisplay = {
+      \     1: {
+      \         "name": "Text",
+      \         "texthl": "Search",
+      \     },
+      \     2: {
+      \         "name": "Read",
+      \         "texthl": "Search",
+      \     },
+      \     3: {
+      \         "name": "Write",
+      \         "texthl": "Search",
+      \     },
+      \ }
 let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
 let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
-  " let g:LanguageClient_serverCommands.ruby = ['~/stripe/pay-server/sorbet/scripts/typecheck_devel', '--lsp']
+if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server' ||
+      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/ps-worktree'
+  let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
