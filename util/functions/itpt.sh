@@ -36,5 +36,22 @@ itpt() {
     tmux source "$XDG_CONFIG_HOME/tmux/solarized-$SOLARIZED.tmuxline"
   fi
 
+  local __dircolors="$HOME/.dotfiles/dircolors"
+  if [ "$SOLARIZED" = "dark" ]; then
+    sed -E -i.bak 's/00;30 (## solarized-light ##)/00;37 ## solarized-dark ##/' "$__dircolors"
+    sed -E -i.bak 's/01;36 (## solarized-light ##)/01;32 ## solarized-dark ##/' "$__dircolors"
+    rm "$__dircolors.bak" > /dev/null
+  elif [ "$SOLARIZED" = "light" ]; then
+    sed -E -i.bak 's/00;37 (## solarized-dark ##)/00;30 ## solarized-light ##/' "$__dircolors"
+    sed -E -i.bak 's/01;32 (## solarized-dark ##)/01;36 ## solarized-light ##/' "$__dircolors"
+    rm "$__dircolors.bak" > /dev/null
+  fi
+  command -v dircolors &> /dev/null && eval "$(dircolors ~/.dircolors)"
+
+  if [ "$FZF_DEFAULT_OPTS_DARK" != "" ] || [ "$FZF_DEFAULT_OPTS_LIGHT" != "" ]; then
+    source "$HOME/.util/fzf.zsh"
+  fi
+
+
   echo "Profile toggled. Open new tab for full effect."
 }

@@ -114,44 +114,44 @@ STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (
 OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 
-# Files of special interest (base2)
-*Makefile   00;37
-*Rakefile   00;37
-*README     00;37
-*README.txt 00;37
-*README.md  00;37
+# Files of special interest (base02 light, base2 dark)
+*Makefile   00;37 ## solarized-dark ##
+*Rakefile   00;37 ## solarized-dark ##
+*README     00;37 ## solarized-dark ##
+*README.txt 00;37 ## solarized-dark ##
+*README.md  00;37 ## solarized-dark ##
 
-# "unimportant" files as logs and backups (base01)
-.log        01;32
-.bak        01;32
-.aux        01;32
-.lof        01;32
-.lol        01;32
-.lot        01;32
-.out        01;32
-.toc        01;32
-.bbl        01;32
-.blg        01;32
-*~          01;32
-*#          01;32
-.part       01;32
-.incomplete 01;32
-.swp        01;32
-.tmp        01;32
-.temp       01;32
-.o          01;32
-.pyc        01;32
-.class      01;32
-.cache      01;32
-*tags       01;32
-*grm.desc   01;32
-*grm.sig    01;32
-*grm.sml    01;32
-*lex.sml    01;32
-*old.sml    01;32
-*old.sig    01;32
-.du         01;32
-.ud         01;32
+# "unimportant" files as logs and backups (base1 light, base01 dark)
+.log        01;32 ## solarized-dark ##
+.bak        01;32 ## solarized-dark ##
+.aux        01;32 ## solarized-dark ##
+.lof        01;32 ## solarized-dark ##
+.lol        01;32 ## solarized-dark ##
+.lot        01;32 ## solarized-dark ##
+.out        01;32 ## solarized-dark ##
+.toc        01;32 ## solarized-dark ##
+.bbl        01;32 ## solarized-dark ##
+.blg        01;32 ## solarized-dark ##
+*~          01;32 ## solarized-dark ##
+*#          01;32 ## solarized-dark ##
+.part       01;32 ## solarized-dark ##
+.incomplete 01;32 ## solarized-dark ##
+.swp        01;32 ## solarized-dark ##
+.tmp        01;32 ## solarized-dark ##
+.temp       01;32 ## solarized-dark ##
+.o          01;32 ## solarized-dark ##
+.pyc        01;32 ## solarized-dark ##
+.class      01;32 ## solarized-dark ##
+.cache      01;32 ## solarized-dark ##
+*tags       01;32 ## solarized-dark ##
+*grm.desc   01;32 ## solarized-dark ##
+*grm.sig    01;32 ## solarized-dark ##
+*grm.sml    01;32 ## solarized-dark ##
+*lex.sml    01;32 ## solarized-dark ##
+*old.sml    01;32 ## solarized-dark ##
+*old.sig    01;32 ## solarized-dark ##
+.du         01;32 ## solarized-dark ##
+.ud         01;32 ## solarized-dark ##
 
 ## Archives or compressed (violet + bold for compression)
 .tar    01;35
