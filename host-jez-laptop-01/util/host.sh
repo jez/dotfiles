@@ -108,4 +108,5 @@ fi
 # TODO(jez) Host colors
 export PROMPT_PURE_DIR_COLOR="%{$ccyan%}"
 export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
+export TMUXLINE_ACCENT_COLOR="colour06"
 
