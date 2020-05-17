@@ -258,9 +258,6 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   let g:ale_linters.ruby += ['rubocop']
 endif
 
-let g:ale_linters.rust = ['rls']
-let g:ale_rust_rls_toolchain = 'stable'
-
 " Be sure to never install 'prettier' globally, or you will be running
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
@@ -292,8 +289,7 @@ augroup aleMaps
 augroup END
 
 " ----- Folder-specific settings -----
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet' ||
-      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/sorbet/sorbet'
+if filereadable("./.clang-format")
   let g:ale_linters.cpp = []
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
@@ -304,6 +300,10 @@ if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet' ||
   augroup aleSorbetMaps
     au FileType cpp let g:ale_fix_on_save = 1
   augroup END
+endif
+
+if filereadable("./compile_commands.json")
+  let g:ale_linters.cpp = []
 endif
 
 " }}}
@@ -660,10 +660,14 @@ else
   let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
 endif
 
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet' ||
-      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/sorbet/sorbet'
-  let g:LanguageClient_serverCommands.cpp = ['/usr/local/opt/llvm/bin/clangd']
+if filereadable("./compile_commands.json")
+  let clangd = glob('bazel-*/external/llvm_toolchain/bin/clangd', 0, 1)
+  if len(clangd) == 1
+    let g:LanguageClient_serverCommands.cpp = [clangd[0]]
+  endif
 endif
+
+let g:LanguageClient_serverCommands.rust = ['rls']
 
 augroup jezLanguageClient
   au!
@@ -678,7 +682,16 @@ augroup jezLanguageClient
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType ruby nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType ruby nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
+
+  au FileType rust nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
+  au FileType rust nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
+  au FileType rust nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
+  au FileType rust nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
+  au FileType rust inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 
   au FileType cpp nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType cpp nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
