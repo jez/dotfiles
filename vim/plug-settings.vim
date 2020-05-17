@@ -109,21 +109,6 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 let g:tagbar_sort = 0
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
-" Treat .ts in Vim as .ts in ctags
-"let g:tagbar_type_typescript = {
-"  \ 'ctagstype': 'typescript',
-"  \ 'kinds': [
-"    \ 'c:classes',
-"    \ 'n:modules',
-"    \ 'f:functions',
-"    \ 'v:variables',
-"    \ 'v:varlambdas',
-"    \ 'm:members',
-"    \ 'i:interfaces',
-"    \ 'e:enums',
-"  \ ]
-"\ }
-
 " Treat .ts in Vim as .js in ctags
 let g:tagbar_type_typescript = {
   \ 'ctagstype': 'JavaScript',
@@ -687,12 +672,6 @@ let g:LanguageClient_serverCommands.rust = ['rls']
 
 augroup jezLanguageClient
   au!
-"   au FileType reason nnoremap <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
-"   au FileType reason nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
-"   au FileType reason nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
-"   au FileType reason nnoremap <silent> <buffer> <leader>io :copen<CR>
-"   au FileType reason nnoremap <silent> <buffer> <leader>ik :cclose<CR>
-
   au FileType ruby nnoremap <silent> <buffer> <leader>cm :call LanguageClient_contextMenu()<CR>
   au FileType ruby nnoremap <silent> <buffer> gd :call LanguageClient#textDocument_definition()<CR>
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
