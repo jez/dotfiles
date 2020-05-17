@@ -35,7 +35,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Change my iTerm2 profile based on SOLARIZED variable
 # See also: ~/.util/functions/itpt.sh
-if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+if [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$LC_TERMINAL" = "iTerm2" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi
 
