@@ -33,3 +33,7 @@ digraph \|> 8614
 digraph hl 8617
 " ↪
 digraph hr 8618
+" ✔
+digraph ck 10004
+" ✘
+digraph xx 10008
