@@ -143,6 +143,9 @@ vnoremap <silent> gF <C-W>gF
 " use 'Y' to yank to the end of a line, instead of the whole line
 nnoremap <silent> Y y$
 
+nnoremap <silent> cn :cnext<CR>
+nnoremap <silent> cp :cprevious<CR>
+
 " take first suggested spelling as correct spelling and replace
 nnoremap <silent> <leader>z z=1<CR><CR>
 
