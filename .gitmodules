@@ -55,9 +55,6 @@
 [submodule "vim/bundle/vim-misc"]
 	path = vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
-[submodule "vim/bundle/vim-easytags"]
-	path = vim/bundle/vim-easytags
-	url = https://github.com/xolox/vim-easytags
 [submodule "vim/bundle/HTML-AutoCloseTag"]
 	path = vim/bundle/HTML-AutoCloseTag
 	url = https://github.com/vim-scripts/HTML-AutoCloseTag
