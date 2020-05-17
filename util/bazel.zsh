@@ -10,7 +10,7 @@ _fzf_complete_bazel() {
   if [ ${#tokens[@]} -ge 3 ] && [ "${tokens[2]}" = "test" ]; then
     _fzf_complete_bazel_test "$@"
   else
-    _fzf_complete '-m' "$@" < <(command bazel query '//...' 2> /dev/null)
+    _fzf_complete '-m' "$@" < <(command bazel query 'deps(//...)' 2> /dev/null)
   fi
 }
 
