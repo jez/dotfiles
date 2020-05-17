@@ -698,6 +698,7 @@ augroup jezLanguageClient
   au FileType ruby nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType ruby nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType ruby nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType ruby nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
   au FileType ruby nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType ruby inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 
@@ -706,6 +707,7 @@ augroup jezLanguageClient
   au FileType rust nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType rust nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType rust nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType rust nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
   au FileType rust nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType rust inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 
@@ -714,6 +716,7 @@ augroup jezLanguageClient
   au FileType cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
   au FileType cpp nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 augroup END
