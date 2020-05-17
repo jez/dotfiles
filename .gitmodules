@@ -220,3 +220,6 @@
 [submodule "vim/bundle/vim-reason-plus"]
 	path = vim/bundle/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus
+[submodule "vim/bundle/ragel.vim"]
+	path = vim/bundle/ragel.vim
+	url = https://github.com/jneen/ragel.vim
