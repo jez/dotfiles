@@ -141,6 +141,8 @@ let g:ale_linters.eruby = ['erubis']
 let g:ale_linters.javascript = ['eslint', 'flow-language-server']
 " CSS warnings were mostly chunderous
 let g:ale_linters.css = []
+" Using LanguageClient-neovim for Rust
+let g:ale_linters.rust = []
 
 let g:ale_linters.ruby = ['ruby']
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
@@ -527,14 +529,15 @@ let g:LanguageClient_diagnosticsDisplay = {
       \         "name": "Warning",
       \         "texthl": "ALEWarning",
       \         "signText": "▲",
-      \         "signTexthl": "Todo",
+      \         "signTexthl": "LCHighlightedWarn",
+      \         "virtualTexthl": "LCHighlightedWarn",
       \     },
       \     3: {
       \         "name": "Information",
       \         "texthl": "ALEError",
       \         "signText": "ℹ",
-      \         "signTexthl": "LCHighlightedWarn",
-      \         "virtualTexthl": "LCHighlightedWarn",
+      \         "signTexthl": "LCHighlightedInfo",
+      \         "virtualTexthl": "LCHighlightedInfo",
       \     },
       \     4: {
       \         "name": "Hint",
