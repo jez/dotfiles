@@ -21,6 +21,8 @@
 	tag = bold red
 [color "diff"]
 	whitespace = red reverse
+	newMoved = blue
+
 
 # Aliases
 [alias]
