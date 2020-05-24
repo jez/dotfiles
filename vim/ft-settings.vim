@@ -82,6 +82,7 @@ augroup myFiletypes
   au FileType ruby setlocal cc=80
   au FileType javascript setlocal cc=80
   au FileType cpp setlocal cc=120
+  au FileType cpp setlocal tw=100 " but shorten wrapped comments a bit.
   au FileType sh setlocal cc=80
   au FileType scala setlocal cc=80
 
