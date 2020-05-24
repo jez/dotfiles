@@ -70,13 +70,13 @@ alias jrnl=" noglob jrnl"
 # alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 # alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
 
-alias sb='bazel build //main:sorbet -c opt'
-alias sbl='bazel build -c opt'
+alias sb='bazel build //main:sorbet'
+alias sbl='bazel build'
 alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
 alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
 alias sbr='bazel build //main:sorbet --config=release-mac'
-alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
-alias sto='bazel test -c opt --test_output=errors'
+alias st='bazel test --test_output=errors --test_summary=terse test'
+alias sto='bazel test --test_output=errors'
 alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --test_summary=terse test'
 alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
