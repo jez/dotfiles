@@ -565,7 +565,7 @@ let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server' ||
       \ fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/ps-worktree'
-  let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
+  "let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
