@@ -120,8 +120,9 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # ----- Prompt  ---------------------------------------------------------------
 
-export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
-export PROMPT_PURE_SUCCESS_COLOR="%{$ccyan%}"
+export PROMPT_PURE_DIR_COLOR="%{$cblue%}"
+export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
+export TMUXLINE_ACCENT_COLOR="colour04"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
