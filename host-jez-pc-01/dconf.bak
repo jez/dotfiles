@@ -1,73 +1,122 @@
-[com/system76/hidpi]
-mode='hidpi'
-enable=false
-
-[com/github/donadigo/eddy]
-window-x=45
-mime-types=['application/vnd.debian.binary-package', 'application/x-deb']
-window-y=77
-
-[io/elementary/appcenter/settings]
-window-x=730
-reset-paid-apps=false
-paid-apps=@as []
-window-y=376
-
-[apps/seahorse/windows/key-manager]
-width=600
-height=476
+[apps/fluxgui]
+autostart=true
+colortemp='3400'
+latitude='37.5636'
+longitude='-122.3221'
+zipcode='94401'
 
 [apps/seahorse/listing]
 sidebar-width=170
 
+[apps/seahorse/windows/key-manager]
+height=476
+width=600
+
+[com/github/donadigo/eddy]
+mime-types=['application/vnd.debian.binary-package', 'application/x-deb']
+window-x=45
+window-y=77
+
+[com/system76/hidpi]
+enable=true
+mode='hidpi'
+
+[desktop/ibus/general]
+preload-engines=['xkb:us::eng']
+version='1.5.22'
+
+[io/elementary/appcenter/settings]
+last-refresh-time=int64 1592447577
+paid-apps=@as []
+reset-paid-apps=false
+window-height=592
+window-width=1032
+window-x=726
+window-y=496
+
 [org/freedesktop/tracker/miner/files]
 index-recursive-directories=['&DESKTOP', '&DOCUMENTS', '&DOWNLOAD', '&MUSIC', '&PICTURES', '&VIDEOS', '/usr/share/applications']
 
-[org/gtk/settings/file-chooser]
-date-format='regular'
-show-size-column=true
-show-hidden=false
-sidebar-width=148
-sort-column='name'
-window-position=(732, 295)
-sort-order='ascending'
-location-mode='path-bar'
-sort-directories-first=true
-window-size=(1096, 822)
+[org/gnome/Totem]
+active-plugins=['rotation', 'autoload-subtitles', 'screenshot', 'skipto', 'media_player_keys', 'apple-trailers', 'movie-properties', 'save-file', 'recent', 'vimeo', 'variable-rate', 'screensaver']
+subtitle-encoding='UTF-8'
 
-[org/gnome/file-roller/ui]
-sidebar-width=200
-window-width=600
-window-height=480
+[org/gnome/calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(1553, 897)
+word-size=64
 
-[org/gnome/file-roller/listing]
-sort-method='name'
-sort-type='ascending'
-list-mode='as-folder'
-name-column-width=250
-show-path=false
+[org/gnome/calendar]
+active-view='year'
+window-maximized=true
+window-position=(0, 32)
+window-size=(2560, 1362)
 
-[org/gnome/shell]
-favorite-apps=['google-chrome.desktop', 'gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop']
-enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
+[org/gnome/control-center]
+last-panel='upgrade'
 
-[org/gnome/shell/keybindings]
-toggle-overview=['<Primary>Up']
-open-application-menu=@as []
-toggle-application-view=@as []
-focus-active-notification=@as []
-toggle-message-tray=@as []
+[org/gnome/desktop/app-folders/folders/Pop-Office]
+apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
+name='Office'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Pop-System]
+apps=['gnome-language-selector.desktop', 'gnome-session-properties.desktop', 'gnome-system-monitor.desktop', 'im-config.desktop', 'nm-connection-editor.desktop', 'nvidia-settings.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.seahorse.Application.desktop', 'software-properties-gnome.desktop', 'system76-driver.desktop', 'system76-firmware.desktop']
+name='System'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Pop-Utility]
+apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'eog.desktop', 'gucharmap.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Totem.desktop', 'simple-scan.desktop', 'yelp.desktop']
+name='Utilities'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/jez/Pictures/130Gyarados.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/calendar]
+show-weekdate=false
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+sources=[('xkb', 'us')]
+xkb-options=@as []
+
+[org/gnome/desktop/interface]
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='Pop'
+toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify', 'dropbox', 'org-gnome-nautilus']
-show-in-lock-screen=true
+application-children=['io-elementary-appcenter', 'google-chrome', 'com-github-donadigo-eddy', 'gnome-power-panel', 'spotify', 'dropbox', 'org-gnome-nautilus', 'steam', 'slack', 'net-lutris-lutris', 'firefox', 'gnome-control-center']
+show-banners=true
+show-in-lock-screen=false
 
-[org/gnome/desktop/notifications/application/spotify]
-application-id='spotify.desktop'
+[org/gnome/desktop/notifications/application/com-github-donadigo-eddy]
+application-id='com.github.donadigo.eddy.desktop'
 
 [org/gnome/desktop/notifications/application/dropbox]
-show-banners=false
 application-id='dropbox.desktop'
+show-banners=false
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-control-center]
+application-id='gnome-control-center.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
@@ -75,119 +124,144 @@ application-id='gnome-power-panel.desktop'
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
 
-[org/gnome/desktop/notifications/application/com-github-donadigo-eddy]
-application-id='com.github.donadigo.eddy.desktop'
-
 [org/gnome/desktop/notifications/application/io-elementary-appcenter]
 application-id='io.elementary.appcenter.desktop'
 
+[org/gnome/desktop/notifications/application/net-lutris-lutris]
+application-id='net.lutris.Lutris.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/slack]
+application-id='slack.desktop'
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
+[org/gnome/desktop/notifications/application/steam]
+application-id='steam.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 delay=uint32 250
 
 [org/gnome/desktop/peripherals/mouse]
-natural-scroll=true
-speed=-0.15000000000000002
 accel-profile='adaptive'
+natural-scroll=true
+speed=-0.47142857142857142
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
 
-[org/gnome/desktop/wm/keybindings]
-cycle-group-backward=@as []
-unmaximize=@as []
-move-to-workspace-up=['<Primary><Shift><Alt>braceright']
-cycle-panels-backward=@as []
-panel-run-dialog=@as []
-switch-panels=@as []
-switch-input-source=@as []
-toggle-maximized=@as []
-switch-to-workspace-down=['<Shift><Alt>braceright']
-move-to-workspace-last=['<Alt><Super>Return']
-maximize=['<Super>Return']
-panel-main-menu=['<Super>space']
-move-to-monitor-up=@as []
-cycle-windows-backward=@as []
-begin-move=@as []
-move-to-workspace-1=['<Primary><Shift><Alt>q']
-cycle-windows=@as []
-move-to-monitor-left=@as []
-switch-to-workspace-1=@as []
-begin-resize=@as []
-cycle-panels=@as []
-move-to-monitor-right=@as []
-switch-panels-backward=@as []
-move-to-workspace-2=['<Primary><Shift><Alt>w']
-move-to-workspace-down=['<Primary><Shift><Alt>braceleft']
-cycle-group=@as []
-switch-input-source-backward=@as []
-show-desktop=@as []
-move-to-workspace-3=['<Primary><Shift><Alt>e']
-switch-to-workspace-last=@as []
-move-to-monitor-down=@as []
-toggle-fullscreen=@as []
-close=['<Super>q']
-switch-to-workspace-up=['<Shift><Alt>braceleft']
-move-to-workspace-4=['<Primary><Shift><Alt>r']
-
-[org/gnome/desktop/screensaver]
-lock-delay=uint32 0
-picture-options='zoom'
-color-shading-type='solid'
-secondary-color='#000000000000'
-picture-uri='file:///home/jez/Pictures/Wallpapers/130Gyarados.jpg'
-primary-color='#000000000000'
-
 [org/gnome/desktop/privacy]
+disable-microphone=false
 report-technical-problems=true
 
-[org/gnome/desktop/sound]
-theme-name='__custom'
-event-sounds=true
-
-[org/gnome/desktop/background]
-picture-options='zoom'
+[org/gnome/desktop/screensaver]
 color-shading-type='solid'
-secondary-color='#000000'
-picture-uri='file:///home/jez/Pictures/Wallpapers/130Gyarados.jpg'
-primary-color='#000000'
-
-[org/gnome/desktop/interface]
-gtk-im-module='gtk-im-context-simple'
-gtk-theme='Pop'
-
-[org/gnome/desktop/app-folders/folders/Pop-System]
-translate=true
-name='System.directory'
-apps=['gnome-language-selector.desktop', 'gnome-session-properties.desktop', 'gnome-system-monitor.desktop', 'im-config.desktop', 'nm-connection-editor.desktop', 'nvidia-settings.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.seahorse.Application.desktop', 'software-properties-gnome.desktop', 'system76-driver.desktop', 'system76-firmware.desktop']
-
-[org/gnome/desktop/app-folders/folders/Pop-Utility]
-translate=true
-name='X-GNOME-Utilities.directory'
-apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'eog.desktop', 'gucharmap.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Totem.desktop', 'simple-scan.desktop', 'yelp.desktop']
-
-[org/gnome/desktop/app-folders/folders/Pop-Office]
-translate=true
-name='Office.directory'
-apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
+lock-delay=uint32 0
+picture-options='zoom'
+picture-uri='file:///home/jez/Pictures/130Gyarados.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/search-providers]
 disable-external=false
 disabled=['org.gnome.Calendar.desktop', 'io.elementary.appcenter.desktop']
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
 
-[org/gnome/desktop/input-sources]
-current=uint32 0
-sources=[('xkb', 'us')]
-xkb-options=@as []
-
 [org/gnome/desktop/session]
 idle-delay=uint32 600
 
-[org/gnome/mutter/wayland/keybindings]
-restore-shortcuts=@as []
+[org/gnome/desktop/sound]
+event-sounds=true
+theme-name='__custom'
+
+[org/gnome/desktop/wm/keybindings]
+begin-move=@as []
+begin-resize=@as []
+close=['<Super>q']
+cycle-group=@as []
+cycle-group-backward=@as []
+cycle-panels=@as []
+cycle-panels-backward=@as []
+cycle-windows=@as []
+cycle-windows-backward=@as []
+maximize=['<Super>Return']
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
+move-to-workspace-1=['<Primary><Shift><Alt>q']
+move-to-workspace-2=['<Primary><Shift><Alt>w']
+move-to-workspace-3=['<Primary><Shift><Alt>e']
+move-to-workspace-4=['<Primary><Shift><Alt>r']
+move-to-workspace-down=['<Primary><Shift><Alt>braceleft']
+move-to-workspace-last=['<Alt><Super>Return']
+move-to-workspace-up=['<Primary><Shift><Alt>braceright']
+panel-main-menu=['<Super>space']
+panel-run-dialog=@as []
+show-desktop=@as []
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-panels=@as []
+switch-panels-backward=@as []
+switch-to-workspace-1=@as []
+switch-to-workspace-down=['<Shift><Alt>braceright']
+switch-to-workspace-last=@as []
+switch-to-workspace-up=['<Shift><Alt>braceleft']
+toggle-fullscreen=@as []
+toggle-maximized=@as []
+unmaximize=@as []
+
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
+[org/gnome/gedit/plugins]
+active-plugins=['docinfo', 'filebrowser', 'spell', 'modelines', 'time']
+
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/jez/Desktop'
+
+[org/gnome/gedit/preferences/editor]
+scheme='pop-light'
+
+[org/gnome/gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 700)
+state=87168
+
+[org/gnome/gnome-screenshot]
+auto-save-directory='file:///home/jez/Desktop/Screenshots'
+border-effect='none'
+delay=0
+include-border=true
+include-pointer=false
+last-save-directory='file:///home/jez/Desktop/Screenshots'
 
 [org/gnome/mutter]
 experimental-features=['x11-randr-fractional-scaling']
@@ -197,136 +271,103 @@ overlay-key=''
 toggle-tiled-left=['<Shift><Alt>Left']
 toggle-tiled-right=['<Shift><Alt>Right']
 
-[org/gnome/evolution-data-server]
-migrated=true
-network-monitor-gio-name=''
+[org/gnome/mutter/wayland/keybindings]
+restore-shortcuts=@as []
 
-[org/gnome/gedit/preferences/editor]
-scheme='pop-light'
+[org/gnome/nautilus/list-view]
+default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']
+default-visible-columns=['name', 'size', 'date_modified', 'starred']
 
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-background-color='rgb(0,43,54)'
-foreground-color='rgb(131,148,150)'
-font='Menlo for Powerline 13'
-
-[org/gnome/eog/view]
-background-color='rgb(0,0,0)'
-use-background-color=true
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
 initial-size=(1280, 1361)
 maximized=false
 
-[org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
-search-filter-time-type='last_modified'
-
-[org/gnome/control-center]
-last-panel='background'
-
-[org/gnome/calculator]
-source-currency=''
-source-units='degree'
-button-mode='basic'
-word-size=64
-base=10
-angle-units='degrees'
-accuracy=9
-show-thousands=false
-window-position=(1553, 897)
-show-zeroes=false
-target-units='radian'
-number-format='automatic'
-target-currency=''
+[org/gnome/settings-daemon/peripherals/keyboard]
+numlock-state='off'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(37.556201439884809, -122.325)
-night-light-temperature=uint32 3613
+night-light-last-coordinates=(37.583199280057592, -122.325)
 night-light-schedule-automatic=false
+night-light-schedule-from=18.0
+night-light-temperature=uint32 3912
 
 [org/gnome/settings-daemon/plugins/media-keys]
-screensaver=''
-control-center=''
-home=''
-magnifier-zoom-in=''
-window-screenshot-clip=''
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
-email=''
-media=''
-search=''
-calculator=''
-terminal=''
-screenshot-clip=''
-magnifier-zoom-out=''
-screenreader=''
-area-screenshot-clip=''
-screencast=''
-magnifier=''
-eject=''
-www=''
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11]
-command='xte "keyup Super_L" "keyup BackSpace" "keydown Control_L" "keydown Shift_L" "keydown BackSpace" "keyup Shift_L" "keyup Control_L" "keydown Super_L"'
-name='Delete backwards one line'
-binding='<Super>BackSpace'
+area-screenshot=['']
+area-screenshot-clip=['']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
+magnifier=['']
+magnifier-zoom-in=['']
+magnifier-zoom-out=['']
+screencast=['']
+screenreader=['']
+screensaver=['']
+screenshot=['']
+screenshot-clip=['']
+terminal=['']
+window-screenshot=['']
+window-screenshot-clip=['']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10]
+binding='<Alt>BackSpace'
 command='xte "keyup Alt_L" "keyup BackSpace" "keydown Control_L" "keydown BackSpace" "keyup Control_L" "keydown Alt_L"'
 name='Delete backwards one word'
-binding='<Alt>BackSpace'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
-command='gnome-screenshot'
-name='Save a screenshot'
-binding='<Shift><Super>numbersign'
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11]
+binding='<Super>BackSpace'
+command='xte "keyup Super_L" "keyup BackSpace" "keydown Control_L" "keydown Shift_L" "keydown BackSpace" "keyup Shift_L" "keyup Control_L" "keydown Super_L"'
+name='Delete backwards one line'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+binding='<Shift><Super>dollar'
 command='gnome-screenshot --area'
 name='Save a screenshot of an area'
-binding='<Shift><Super>dollar'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
-command='xte "keyup Super_L" "keyup Shift_L" "keyup t" "keydown Control_L" "keydown Shift_L" "key t" "keyup Shift_L" "keyup Control_L"'
-name='Reopen closed tab'
-binding='<Shift><Super>t'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
-command='xte "keyup Super_L" "keyup t" "keydown Control_L" "key t" "keyup Control_L"'
-name='New tab'
-binding='<Super>t'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-command='xte "keyup Super_L" "keyup w" "keydown Control_L" "key w" "keyup Control_L"'
-name='Close tab'
-binding='<Super>w'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-command='xte "keyup Super_L" "keyup x" "keydown Control_L" "key x" "keyup Control_L"'
-name='Cut'
-binding='<Super>x'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-command='xte "keyup Super_L" "keyup v" "keydown Control_L" "key v" "keyup Control_L"'
-name='Paste'
-binding='<Super>v'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-command='xte "keyup Super_L" "keyup c" "keydown Control_L" "key c" "keyup Control_L"'
-name='Copy'
-binding='<Super>c'
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+binding='<Shift><Super>numbersign'
+command='gnome-screenshot'
+name='Save a screenshot'
 
 [org/gnome/settings-daemon/plugins/power]
-sleep-inactive-ac-type='suspend'
+power-button-action='suspend'
 sleep-inactive-ac-timeout=1800
+sleep-inactive-ac-type='nothing'
 
-[org/gnome/gnome-screenshot]
-include-pointer=false
-include-border=true
-delay=0
-last-save-directory='file:///home/jez/Desktop/Screenshots'
-auto-save-directory='file:///home/jez/Desktop/Screenshots'
-border-effect='none'
+[org/gnome/settings-daemon/plugins/xsettings]
+antialiasing='grayscale'
+hinting='slight'
+
+[org/gnome/shell]
+enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'donotdisturb@kylecorry31.github.io', 'pop-shop-details@system76.com', 'pop-suspend-button@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com']
+favorite-apps=['gnome-control-center.desktop', 'com.alacritty.Alacritty.desktop', 'firefox.desktop']
+
+[org/gnome/shell/keybindings]
+focus-active-notification=@as []
+open-application-menu=@as []
+toggle-application-view=@as []
+toggle-message-tray=@as []
+toggle-overview=['<Primary>Up']
 
 [org/gnome/system/location]
 enabled=true
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,43,54)'
+font='Menlo for Powerline 13'
+foreground-color='rgb(131,148,150)'
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+sidebar-width=148
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+window-position=(732, 211)
+window-size=(1096, 822)
