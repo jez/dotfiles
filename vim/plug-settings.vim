@@ -198,6 +198,7 @@ if filereadable("./.clang-format")
 endif
 
 if filereadable("./compile_commands.json")
+  let g:ale_linters.c = []
   let g:ale_linters.cpp = []
 endif
 
@@ -575,7 +576,11 @@ endif
 if filereadable("./compile_commands.json")
   let clangd = glob('bazel-*/external/llvm_toolchain/bin/clangd', 0, 1)
   if len(clangd) == 1
+    let g:LanguageClient_serverCommands.c = [clangd[0]]
     let g:LanguageClient_serverCommands.cpp = [clangd[0]]
+  else
+    let g:LanguageClient_serverCommands.c = ['clangd']
+    let g:LanguageClient_serverCommands.cpp = ['clangd']
   endif
 endif
 
