@@ -39,7 +39,7 @@ if [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$LC_TERMINAL" = "iTerm2" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi
 
-export TZ=/usr/share/zoneinfo/America/Chicago
+export TZ=/usr/share/zoneinfo/America/Los_Angeles
 export LANG="en_US.utf8"
 export LC_CTYPE="en_US.utf8"
 
