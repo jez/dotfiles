@@ -1,5 +1,21 @@
 #!/bin/bash
+# =========================================================================== #
+#                                                                             #
+#  popos-setup.sh                                                             #
+#                                                                             #
+#  Author:  Jake Zimmerman                                                    #
+#  Email:   jake@zimmerman.io                                                 #
+#                                                                             #
+# This is a list of commands to be run on a fresh Pop!_OS installation.       #
+# It is not meant to be run as a script.                                      #
+# Run these command manually, in case something has changed.                  #
+#                                                                             #
+# =========================================================================== #
 set -euo pipefail
+exit
+
+# -- on laptop, not on Desktop --
+ssh-copy-id -i ~/.ssh/id_rsa.pub jez@jez-pc-01
 
 # Homebrew on Linux -> https://docs.brew.sh/Homebrew-on-Linux
 # installed into `/home/linuxbrew/.linuxbrew`
