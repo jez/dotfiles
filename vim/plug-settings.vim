@@ -521,21 +521,21 @@ nnoremap <leader>\| vip:Tabularize /\|<CR><C-o>
 let g:LanguageClient_diagnosticsDisplay = {
       \     1: {
       \         "name": "Error",
-      \         "texthl": "ALEError",
+      \         "texthl": "SpellBad",
       \         "signText": "●",
       \         "signTexthl": "LCHighlightedError",
       \         "virtualTexthl": "LCHighlightedError",
       \     },
       \     2: {
       \         "name": "Warning",
-      \         "texthl": "ALEWarning",
+      \         "texthl": "SpellBad",
       \         "signText": "▲",
       \         "signTexthl": "LCHighlightedWarn",
       \         "virtualTexthl": "LCHighlightedWarn",
       \     },
       \     3: {
       \         "name": "Information",
-      \         "texthl": "ALEError",
+      \         "texthl": "SpellBad",
       \         "signText": "ℹ",
       \         "signTexthl": "LCHighlightedInfo",
       \         "virtualTexthl": "LCHighlightedInfo",
