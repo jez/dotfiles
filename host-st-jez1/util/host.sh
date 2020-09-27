@@ -43,6 +43,9 @@ export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 # We're using thrift0.9 at Stripe
 export PATH="$PATH:/usr/local/opt/thrift@0.9/bin"
 
+# Find clangd from Homebrew, but put it last (fallback)
+export PATH="$PATH:/usr/local/opt/llvm/bin"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"

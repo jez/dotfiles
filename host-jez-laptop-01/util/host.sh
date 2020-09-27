@@ -37,6 +37,9 @@ rbenv rehash
 # SML/NJ
 export PATH="$PATH:/usr/local/smlnj/bin"
 
+# Find clangd from Homebrew, but put it last (fallback)
+export PATH="$PATH:/usr/local/opt/llvm/bin"
+
 # ----- aliases ---------------------------------------------------------------
 
 alias sml="rlwrap sml"
