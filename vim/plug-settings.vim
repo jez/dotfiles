@@ -202,6 +202,11 @@ if filereadable("./compile_commands.json")
   let g:ale_linters.cpp = []
 endif
 
+if filereadable("build/compile_commands.json")
+  let g:ale_linters.c = []
+  let g:ale_linters.cpp = []
+endif
+
 " }}}
 " ----- altercation/vim-colors-solarized settings ----- {{{
 if $SOLARIZED ==? 'dark'
@@ -585,6 +590,12 @@ if filereadable("./compile_commands.json")
     let g:LanguageClient_serverCommands.cpp = ['clangd']
   endif
 endif
+
+if filereadable("build/compile_commands.json")
+  " TODO(jez) Might be nice to find a platform-agnostic, suitable clangd, like above
+  let g:LanguageClient_serverCommands.c = ['clangd', '--compile-commands-dir=build']
+  let g:LanguageClient_serverCommands.cpp = ['clangd', '--compile-commands-dir=build']
+end
 
 let g:LanguageClient_serverCommands.rust = ['rls']
 
