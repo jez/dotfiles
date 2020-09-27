@@ -37,3 +37,12 @@ digraph hr 8618
 digraph ck 10004
 " ✘
 digraph xx 10008
+" mnemonic: hairline (one eighth blocks) https://en.wikipedia.org/wiki/Block_Elements
+" ▏
+digraph HL 9615
+" ▕
+digraph HR 9621
+" ▔
+digraph HT 9620
+" ▁
+digraph HB 9601
