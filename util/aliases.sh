@@ -60,6 +60,10 @@ alias paras="lorem-ipsum --units paragraphs --count"
 # Show a summary of my jrnl. 'viewjrnl' is defined in https://github.com/jez/bin
 alias jrnlsum="viewjrnl -from '10 days ago'"
 
+# CMake
+alias cmg="cmake -S . -B build -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug"
+alias cm="cmake --build build"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
