@@ -593,8 +593,8 @@ endif
 
 if filereadable("build/compile_commands.json")
   " TODO(jez) Might be nice to find a platform-agnostic, suitable clangd, like above
-  let g:LanguageClient_serverCommands.c = ['clangd', '--compile-commands-dir=build']
-  let g:LanguageClient_serverCommands.cpp = ['clangd', '--compile-commands-dir=build']
+  let g:LanguageClient_serverCommands.c = ['clangd', '--compile-commands-dir=build', '--background-index']
+  let g:LanguageClient_serverCommands.cpp = ['clangd', '--compile-commands-dir=build', '--background-index']
   let g:LanguageClient_rootMarkers = ['build/compile_commands.json']
 end
 
