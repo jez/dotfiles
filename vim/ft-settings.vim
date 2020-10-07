@@ -93,11 +93,9 @@ augroup myFiletypes
 
   " Change indentation level in some languages
   " TODO(jez) This should be in .editorconfig at some point
-  au FileType cpp setlocal tabstop=4
-  au FileType cpp setlocal softtabstop=4
-  au FileType cpp setlocal shiftwidth=4
-
-  au FileType c setlocal tabstop=8
+  au FileType c,cpp setlocal tabstop=8
+  au FileType c,cpp setlocal softtabstop=4
+  au FileType c,cpp setlocal shiftwidth=4
 
   " Add comment character when pressing 'o' or Enter
   au FileType sh setlocal formatoptions+=ro
