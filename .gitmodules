@@ -223,3 +223,6 @@
 [submodule "vim/bundle/vim-llvm"]
 	path = vim/bundle/vim-llvm
 	url = git://github.com/rhysd/vim-llvm.git
+[submodule "vim/bundle/vim-sorbet"]
+	path = vim/bundle/vim-sorbet
+	url = git://github.com/jez/vim-sorbet.git
