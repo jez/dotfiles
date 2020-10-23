@@ -619,7 +619,9 @@ augroup jezLanguageClient
 augroup END
 " }}}
 " ----- jez/vim-sorbet ----- {{{
-let g:sorbet_lsp_extra_args = ['--debug-log-file=/tmp/sorbet-nvim.log']
+if fnamemodify(getcwd(), ':p') !~# $HOME.'/stripe/pay-server'
+  let g:sorbet_lsp_extra_args = ['--debug-log-file=/tmp/sorbet-nvim.log']
+endif
 " }}}
 " ----- Shougo/deoplete.nvim ----- {{{
 " augroup jezDeoplete
