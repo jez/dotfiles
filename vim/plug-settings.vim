@@ -44,6 +44,8 @@
 
 scriptencoding utf-8
 
+let s:script_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 " ----- Pathogen and Plugin Settings ----------------------------------------
 
 " Pathogen is in a non-standard location: modify the rtp to reflect that
@@ -611,6 +613,9 @@ augroup jezLanguageClient
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> <leader>ik :call JezLanguageClientRestart()<CR>
 
   au FileType ruby let g:LanguageClient_echoProjectRoot = 0
+  " Can merge this with settings.json in vim-sorbet after this lands:
+  " https://github.com/autozimu/LanguageClient-neovim/pull/1112
+  au FileType ruby let g:LanguageClient_settingsPath = [s:script_dir.'/settings.json', '.vim/settings.json']
 augroup END
 " }}}
 " ----- jez/vim-sorbet ----- {{{
