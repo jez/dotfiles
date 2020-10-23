@@ -648,6 +648,7 @@ let g:no_cecutil_maps = 1
 let g:netrw_liststyle=3
 " Don't create .netrwhist files
 let g:netrw_dirhistmax = 0
+let g:yacc_uses_cpp = 1
 
 " }}}
 
