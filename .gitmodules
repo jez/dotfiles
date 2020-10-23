@@ -120,7 +120,7 @@
 	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule "vim/bundle/vim-pandoc-syntax"]
 	path = vim/bundle/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+	url = git@github.com:jez/vim-pandoc-syntax.git
 [submodule "vim/bundle/vim-better-sml"]
 	path = vim/bundle/vim-better-sml
 	url = git@github.com:jez/vim-better-sml.git
