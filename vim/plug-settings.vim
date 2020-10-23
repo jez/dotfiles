@@ -75,7 +75,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 " Don't use tagbar
 let g:airline#extensions#tagbar#enabled = 0
 " Don't show line percentage
-let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'maxlinenr', ' %3v'])
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ' %3v'])
 
 " }}}
 " ----- Raimondi/delimitMate settings ----- {{{
@@ -571,7 +571,7 @@ let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server' ||
       \ fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/ps-worktree'
-  "let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
+  let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
 else
   " TODO(jez) This should be updated to figure out when we can use a
   " sorbet/config file
