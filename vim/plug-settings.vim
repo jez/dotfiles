@@ -569,14 +569,6 @@ let g:LanguageClient_documentHighlightDisplay = {
 let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
 let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
-if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server' ||
-      \ fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/ps-worktree'
-  let g:LanguageClient_serverCommands.ruby = ['pay', 'exec', 'scripts/bin/typecheck', '--lsp']
-else
-  " TODO(jez) This should be updated to figure out when we can use a
-  " sorbet/config file
-  let g:LanguageClient_serverCommands.ruby = ['sorbet', '--lsp', '--debug-log-file=/tmp/sorbet-nvim.log', '-e', '0', '~/.local/share/empty']
-endif
 
 if filereadable("./compile_commands.json")
   " Some projects I work on build with Bazel, and care that they must be built
@@ -617,7 +609,12 @@ augroup jezLanguageClient
   au FileType ruby,rust,c,cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
 
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> <leader>ik :call JezLanguageClientRestart()<CR>
+
+  au FileType ruby let g:LanguageClient_echoProjectRoot = 0
 augroup END
+" }}}
+" ----- jez/vim-sorbet ----- {{{
+let g:sorbet_lsp_extra_args = ['--debug-log-file=/tmp/sorbet-nvim.log']
 " }}}
 " ----- Shougo/deoplete.nvim ----- {{{
 " augroup jezDeoplete
