@@ -210,7 +210,7 @@
 	url = https://github.com/octol/vim-cpp-enhanced-highlight
 [submodule "vim/bundle/LanguageClient-neovim"]
 	path = vim/bundle/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim
+	url = git@github.com:jez/LanguageClient-neovim.git
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
@@ -222,7 +222,7 @@
 	url = https://github.com/jneen/ragel.vim
 [submodule "vim/bundle/vim-llvm"]
 	path = vim/bundle/vim-llvm
-	url = git://github.com/rhysd/vim-llvm.git
+	url = https://github.com/rhysd/vim-llvm.git
 [submodule "vim/bundle/vim-sorbet"]
 	path = vim/bundle/vim-sorbet
-	url = git://github.com/jez/vim-sorbet.git
+	url = git@github.com:jez/vim-sorbet.git
