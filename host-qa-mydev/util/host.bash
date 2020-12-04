@@ -1,0 +1,1 @@
+source ~/.util/fzf.bash
