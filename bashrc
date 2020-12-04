@@ -47,11 +47,14 @@ load_module ~/.util/colors.sh
 # bash-specific settings
 load_module ~/.util/misc.bash
 
+# host-specific settings. This file changes per host according to rcm.
+load_module ~/.util/host.sh
+
 # Host-independent aliases
 load_module ~/.util/aliases.sh
 
-# host-specific settings. This file changes per host according to rcm.
-load_module ~/.util/host.sh
+# host-specific bash settings.
+load_module ~/.util/host.bash
 
 # miscellaneous, shell-agnostic settings
 load_module ~/.util/misc.sh
