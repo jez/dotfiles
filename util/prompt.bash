@@ -38,23 +38,33 @@ color_my_prompt() {
     nlp)
       local prompt_dir_color="${cyellow}"
       ;;
+    qa-mydev--*)
+      local prompt_dir_color="${cmagenta}"
+      ;;
     *)
       local prompt_dir_color="${cred}"
       ;;
   esac
 
+  if [ -n "$SSH_CONNECTION" ]; then
+    local __ssh_suffix=" \u@\h"
+  else
+    local __ssh_suffix=""
+  fi
+
+
   # change the color of the git branch depending on whether the repo is "messy" or "clean"
   local __git_branch_color='$(if [ -z "$(git status --porcelain 2> /dev/null)" ]; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi)'
 
-  local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+  local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\ \(\\\\\1\)/`'
 
   if [ $(id -u) -eq 0 ]; then
-    local __prompt_tail="\[$cred\]#\[$cnone\]";
+    local __prompt_tail="\[$cred\]\#\[$cnone\]";
   else
     local __prompt_tail="\[$ccyan\]$(echo -en '\xe2\x9d\xaf')\[${cnone}\]";
   fi
 
-  export PS1="\n\[$prompt_dir_color\]\w\[${cnone}\] $__git_branch_color$__git_branch\[$cnone\]\n$__prompt_tail "
+  export PS1="\n\[$prompt_dir_color\]\w\[${cnone}\]$__git_branch_color$__git_branch\[$cnone\]$__ssh_suffix\n$__prompt_tail "
 }
 color_my_prompt
 #echo -n '.'
