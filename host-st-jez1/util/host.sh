@@ -103,6 +103,11 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 alias stacknewsimple="stack new ~/prog/haskell/jez-simple.hsfiles"
 alias stacknewstandard="stack new ~/prog/haskell/jez-standard.hsfiles"
 
+alias hubcio="hub ci-status --format '%U%n' | head -n 1 | xargs open"
+alias hubcisips="hub ci-status --format '%t %U%n' | grep '^stripe-internal-pay-server ' | cut -d' ' -f 2 | xargs open"
+
+alias paycifix='LESS=-RFX pay ci:fix "$(hub ci-status --format "%U%n" | head -n 1 | sed -e "s+https://cibot.corp.stripe.com/builds/++")"'
+
 # ----- Specific Programs -----------------------------------------------------
 
 # Settings for virtualenv and virtualenvwrapper
