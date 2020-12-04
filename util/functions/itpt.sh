@@ -52,6 +52,7 @@ itpt() {
     source "$HOME/.util/fzf.zsh"
   fi
 
+  export BAT_THEME="Solarized ($SOLARIZED)"
 
   echo "Profile toggled. Open new tab for full effect."
 }

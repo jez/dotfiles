@@ -23,3 +23,5 @@ fi
 
 # Max line-length in man pages (also respected by Vim's man.vim plugin!)
 export MANWIDTH=80
+
+source ~/.util/bat.sh
