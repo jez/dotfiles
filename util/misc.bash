@@ -12,6 +12,4 @@ if which brew &> /dev/null; then
   fi
 fi
 
-# pip bash completion
-which pip &> /dev/null && eval `pip completion --bash`
 true
