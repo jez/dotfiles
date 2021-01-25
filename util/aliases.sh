@@ -163,6 +163,7 @@ alias gcan="git commit -a --amend --no-edit"
 alias gcne="git commit --amend --no-edit"
 
 alias gs="git status"
+alias gss="git status --short"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gdw="git diff --color-words"
