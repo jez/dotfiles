@@ -1,0 +1,6 @@
+# I couldn't figure out how to chsh to zsh on devboxes
+
+# Make sure we are running interactively, else stop
+[ -z "$PS1" ] && return
+
+exec zsh

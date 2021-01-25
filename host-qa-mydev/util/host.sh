@@ -60,9 +60,8 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 
 # ----- Prompt  ---------------------------------------------------------------
 
-export PROMPT_PURE_DIR_COLOR="%{$cgreen%}"
-export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
-export TMUXLINE_ACCENT_COLOR="colour02"
+export PROMPT_PURE_DIR_COLOR="%{$cmagenta%}"
+export TMUXLINE_ACCENT_COLOR="colour05"
 
 # ----- Miscellaneous ---------------------------------------------------------
 
