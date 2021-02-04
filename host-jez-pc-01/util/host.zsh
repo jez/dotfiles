@@ -13,6 +13,7 @@
 
 source ~/.util/fzf.zsh
 source ~/.util/bazel.zsh
+source ~/.util/lldb.zsh
 
 # Not needed yet.
 # source ~/.util/skip-dirty.zsh
