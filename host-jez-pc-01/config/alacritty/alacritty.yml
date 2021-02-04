@@ -86,15 +86,15 @@ debug:
 # Colors (Solarized Light + Dark)
 colors:
   primary:
-    foreground: '0x839496'    ## solarized-dark ##
-    background: '0x002b36'    ## solarized-dark ##
-    # foreground: '0x657b83'    ## solarized-light ##
-    # background: '0xfdf6e3'    ## solarized-light ##
+    # foreground: '0x839496'    ## solarized-dark ##
+    # background: '0x002b36'    ## solarized-dark ##
+    foreground: '0x657b83'    ## solarized-light ##
+    background: '0xfdf6e3'    ## solarized-light ##
   cursor:
-    text: '0x073642'    ## solarized-dark ##
-    cursor: '0x839496'    ## solarized-dark ##
-    # text: '0xeee8d5'    ## solarized-light ##
-    # cursor: '0x657b83'    ## solarized-light ##
+    # text: '0x073642'    ## solarized-dark ##
+    # cursor: '0x839496'    ## solarized-dark ##
+    text: '0xeee8d5'    ## solarized-light ##
+    cursor: '0x657b83'    ## solarized-light ##
 
   # Normal colors
   normal:
