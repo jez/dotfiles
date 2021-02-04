@@ -68,7 +68,7 @@
 	path = vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
 [submodule "fonts"]
-	path = fonts
+	path = fonts/menlo-for-powerline
 	url = https://github.com/abertsch/Menlo-for-Powerline
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
