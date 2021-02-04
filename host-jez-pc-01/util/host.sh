@@ -46,9 +46,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 #   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 # fi
 
-# TODO(jez) Linux
-# # OCaml
-# eval "$(opam env)"
+# OCaml
+eval "$(opam env)"
 
 # ----- aliases ---------------------------------------------------------------
 
@@ -96,7 +95,7 @@ alias sb='bazel build //main:sorbet -c opt'
 alias sbl='bazel build -c opt'
 alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
 alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
-alias sbr='bazel build //main:sorbet --config=release-mac'
+alias sbr='bazel build //main:sorbet --config=release-linux'
 alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
 alias sto='bazel test -c opt --test_output=errors'
 alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --test_summary=terse test'

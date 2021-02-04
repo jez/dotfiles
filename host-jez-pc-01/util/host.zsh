@@ -17,6 +17,5 @@ source ~/.util/bazel.zsh
 # Not needed yet.
 # source ~/.util/skip-dirty.zsh
 
-# TODO(jez) linux
 # OPAM configuration
-# source /Users/jez/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
