@@ -20,4 +20,4 @@ complete -C /Users/jez/stripe/space-commander/bin/commands/sc-complete sc
 complete -C /Users/jez/stripe/space-commander/bin/commands/sc-complete _sc
 
 # OPAM configuration
-source /Users/jez/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
