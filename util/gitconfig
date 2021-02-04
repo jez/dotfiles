@@ -77,4 +77,4 @@
 
 # GitHub-specific
 [hub]
-	protocol = git
+	protocol = ssh
