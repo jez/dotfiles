@@ -223,3 +223,6 @@
 [submodule "vim/bundle/vim-sorbet"]
 	path = vim/bundle/vim-sorbet
 	url = git@github.com:jez/vim-sorbet.git
+[submodule "fonts/Menlo-for-Powerline"]
+	path = fonts/Menlo-for-Powerline
+	url = https://github.com/abertsch/Menlo-for-Powerline
