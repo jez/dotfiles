@@ -33,6 +33,8 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: 'none'
 
+  dynamic_title: true
+
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
 
@@ -43,30 +45,30 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Menlo for Powerline
+    family: Iosevka Fixed
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: Menlo for Powerline
+    family: Iosevka Fixed
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The italic font face
   italic:
-    family: Menlo for Powerline
+    family: Iosevka Fixed
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 11
+  size: 14
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: -1
-    y: 1
+    x: 0
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
@@ -87,15 +89,15 @@ debug:
 # Colors (Solarized Light + Dark)
 colors:
   primary:
-    foreground: '0x839496'    ## solarized-dark ##
-    background: '0x002b36'    ## solarized-dark ##
-    # foreground: '0x657b83'    ## solarized-light ##
-    # background: '0xfdf6e3'    ## solarized-light ##
+    # foreground: '0x839496'    ## solarized-dark ##
+    # background: '0x002b36'    ## solarized-dark ##
+    foreground: '0x657b83'    ## solarized-light ##
+    background: '0xfdf6e3'    ## solarized-light ##
   cursor:
-    text: '0x073642'    ## solarized-dark ##
-    cursor: '0x839496'    ## solarized-dark ##
-    # text: '0xeee8d5'    ## solarized-light ##
-    # cursor: '0x657b83'    ## solarized-light ##
+    # text: '0x073642'    ## solarized-dark ##
+    # cursor: '0x839496'    ## solarized-dark ##
+    text: '0xeee8d5'    ## solarized-light ##
+    cursor: '0x657b83'    ## solarized-light ##
 
   # Normal colors
   normal:
@@ -143,9 +145,9 @@ colors:
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
+# visual_bell:
+#   animation: EaseOutExpo
+#   duration: 0
 
 # Background opacity
 background_opacity: 1.0
@@ -193,8 +195,6 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: true
 
-dynamic_title: true
-
 # Style of the cursor
 #
 # Values for 'cursor_style':
@@ -202,8 +202,11 @@ dynamic_title: true
 # - Underline
 # - Beam
 cursor:
-  style: Block
+  style:
+    shape: Block
+    blinking: On
   unfocused_hollow: true
+  blink_interval: 550
 
 # Live config reload (changes require restart)
 live_config_reload: true
@@ -264,7 +267,7 @@ key_bindings:
   - { key: Return,   mods: Super,   action: ToggleFullscreen             }
   - { key: Key0,     mods: Super,   action: ResetFontSize                }
   - { key: Equals,   mods: Super,   action: IncreaseFontSize             }
-  - { key: Subtract, mods: Super,   action: DecreaseFontSize             }
+  - { key: Minus,    mods: Super,   action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
