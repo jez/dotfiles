@@ -90,6 +90,7 @@ augroup myFiletypes
   au FileType c setlocal commentstring=//%s
   au FileType cpp setlocal commentstring=//%s
   au FileType yacc setlocal commentstring=//%s
+  au FileType json setlocal commentstring=//%s
 
   " Change indentation level in some languages
   " TODO(jez) This should be in .editorconfig at some point
