@@ -623,6 +623,41 @@ if fnamemodify(getcwd(), ':p') !~# $HOME.'/stripe/pay-server'
   let g:sorbet_lsp_extra_args = ['--debug-log-file=/tmp/sorbet-nvim.log']
 endif
 " }}}
+" ----- puremourning/vimspector ----- {{{
+let g:vimspector_install_gadgets = ['vscode-cpptools', 'CodeLLDB']
+
+nmap <leader>gc <Plug>VimspectorContinue
+nmap <leader>gq <Plug>VimspectorStop
+nmap <leader>gr         <Plug>VimspectorRestart
+nmap <leader>gp         <Plug>VimspectorPause
+nmap <leader>gb <Plug>VimspectorToggleBreakpoint
+nmap <leader>gm <Plug>VimspectorAddFunctionBreakpoint
+nmap <leader>gn <Plug>VimspectorStepOver
+nmap <leader>gs <Plug>VimspectorStepInto
+nmap <leader>gf <Plug>VimspectorStepOut
+nmap <leader>gi <Plug>VimspectorBalloonEval
+nnoremap <leader>ge :VimspectorEval<CR>
+nnoremap <leader>gx :VimspectorEval<CR>-exec<space>
+nnoremap <leader>gw :VimspectorWatch<CR>
+nnoremap <leader>gz :VimspectorReset<CR>
+nnoremap <leader>go :call feedkeys(":VimspectorShowOutput \<Tab>", 'tn')<CR>
+" " These are some unmapped mappings
+" nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+" nmap <leader><F8> <Plug>VimspectorRunToCursor
+
+sign define vimspectorBP         text=\ ● texthl=LCHighlightedError
+sign define vimspectorBPCond     text=\ ◆ texthl=LCHighlightedError
+sign define vimspectorBPDisabled text=\ ● texthl=LCHighlightedInfo
+sign define vimspectorPC         text=\ ▶ texthl=LCHighlightedWarn linehl=CursorLine
+sign define vimspectorPCBP       text=●▶  texthl=LCHighlightedWarn linehl=CursorLine
+" sign vimspectorCurrentThread text=▶  texthl=MatchParen linehl=CursorLine
+
+let g:vimspector_sidebar_width = 80
+
+" " works but looks bad
+" au User VimspectorUICreated call nvim_win_close(g:vimspector_session_windows.watches, v:false)
+
+" }}}
 " ----- Shougo/deoplete.nvim ----- {{{
 " augroup jezDeoplete
 "   au!
