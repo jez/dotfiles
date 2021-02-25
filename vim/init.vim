@@ -15,3 +15,6 @@ source $HOME/.vim/ft-settings.vim
 
 " Everything else: plugin settings.
 source $HOME/.vim/plug-settings.vim
+
+" Host-specific settings (different by platform, using rcm)
+source $HOME/.util/host.vim
