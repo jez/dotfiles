@@ -506,13 +506,14 @@ let g:fzf_action = {
 " }}}
 " ----- merlin ----- {{{
 
-let g:opamconfigvarshare = system('opam config var share 2> /dev/null')
-if !v:shell_error
-  let g:opamshare = substitute(g:opamconfigvarshare,'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
-endif
+" 40ms
+" let g:opamconfigvarshare = system('opam config var share 2> /dev/null')
+" if !v:shell_error
+"   let g:opamshare = substitute(g:opamconfigvarshare,'\n$','','''')
+"   execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" endif
 
-nnoremap <leader>x :MerlinClearEnclosing<CR>
+" nnoremap <leader>x :MerlinClearEnclosing<CR>
 
 " }}}
 " ----- godlygeek/Tabularize ----- {{{
