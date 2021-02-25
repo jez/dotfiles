@@ -226,3 +226,6 @@
 [submodule "fonts/Menlo-for-Powerline"]
 	path = fonts/Menlo-for-Powerline
 	url = https://github.com/abertsch/Menlo-for-Powerline
+[submodule "vim/bundle/vimspector"]
+	path = vim/bundle/vimspector
+	url = https://github.com/puremourning/vimspector
