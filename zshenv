@@ -6,9 +6,9 @@ typeset -U path
 fpath=( "$HOME/.zfunctions" $fpath )
 
 # From https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
-if command -v brew &> /dev/null; then
-  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
-fi
+# if command -v brew &> /dev/null; then
+#   fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+# fi
 
 # Load host-specific zshenv configurations
 [ -f ~/.util/host.zshenv ] && source ~/.util/host.zshenv
