@@ -150,6 +150,7 @@ let g:ale_linters.ruby = ['ruby']
 if fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/pay-server'
   " Only use rubocop in pay-server (many rules don't make sense elsewhere)
   let g:ale_linters.ruby += ['rubocop']
+  let g:ale_ruby_rubocop_executable = 'scripts/bin/rubocop-daemon/rubocop'
 endif
 
 " Be sure to never install 'prettier' globally, or you will be running
