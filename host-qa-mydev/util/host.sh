@@ -47,13 +47,13 @@ alias vimdiff="nvim -d"
 # open Vim directly to Goyo mode (distraction-free writing mode)
 alias vimg="nvim +Goyo"
 
-alias sb='bazel build //main:sorbet -c opt'
-alias sbl='bazel build -c opt'
+alias sb='bazel build //main:sorbet'
+alias sbl='bazel build'
 alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
-alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
+alias sbo='bazel build //main:sorbet --config=debugsymbols --config=static-libs'
 alias sbr='bazel build //main:sorbet --config=release-mac'
-alias st='bazel test -c opt --test_output=errors --test_summary=terse test'
-alias sto='bazel test -c opt --test_output=errors'
+alias st='bazel test --test_output=errors --test_summary=terse test'
+alias sto='bazel test --test_output=errors'
 alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --test_summary=terse test'
 alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
