@@ -1,6 +1,6 @@
 
 _fzf_complete_bazel_test() {
-  _fzf_complete '-m' "$@" < <(command bazel query 'tests(//...)' 2> /dev/null)
+  _fzf_complete '-m' "$@" < <(command bazel query 'tests(//...) + kind(test_suite, //...)' 2> /dev/null)
 }
 
 _fzf_complete_bazel() {

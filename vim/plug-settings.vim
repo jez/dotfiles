@@ -568,6 +568,11 @@ let g:LanguageClient_loggingLevel = 'INFO' " Use highest logging level
 let g:LanguageClient_loggingFile = '/tmp/languageclient-neovim.log'
 let g:LanguageClient_serverCommands = {}
 
+" if split(system('hostname')) ==# ['st-jez1'] && fnamemodify(getcwd(), ':p') =~# $HOME.'/stripe/sorbet_llvm'
+"   let clangd = 'bazel-sorbet_llvm/external/llvm_toolchain/bin/clangd'
+"   let g:LanguageClient_serverCommands.c = ['pay', 'exec', clangd, '--path-mappings=/Users/jez/stripe/sorbet_llvm=/pay/src/sorbet_llvm']
+"   let g:LanguageClient_serverCommands.cpp = ['pay', 'exec', clangd, '--path-mappings=/Users/jez/stripe/sorbet_llvm=/pay/src/sorbet_llvm']
+" else
 if filereadable("./compile_commands.json")
   " Some projects I work on build with Bazel, and care that they must be built
   " with a specific version of Clang and the LLVM toolchain.
@@ -580,6 +585,7 @@ if filereadable("./compile_commands.json")
     let g:LanguageClient_serverCommands.cpp = ['clangd']
   endif
 endif
+" endif
 
 if filereadable("build/compile_commands.json")
   " TODO(jez) Might be nice to find a platform-agnostic, suitable clangd, like above
