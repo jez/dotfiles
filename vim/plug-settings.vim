@@ -288,10 +288,8 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 
 " }}}
 " ----- vim-pandoc/vim-pandoc ----- {{{
-let g:pandoc#modules#disabled = ['folding', 'chdir']
 let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh', 'hs=haskell']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
-let g:pandoc#formatting#mode = 'h'
 
 augroup pandocSettings
   au!

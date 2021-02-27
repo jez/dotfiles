@@ -12,7 +12,7 @@ augroup myFiletypes
   " Patch filetypes for common extensions
 
   " Markdown files
-  au BufRead,BufNewFile *.md setlocal filetype=markdown
+  au BufRead,BufNewFile,BufFilePost *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md setlocal filetype=pandoc
   " Treat all .tex files as latex
   au BufRead,BufNewFile *.tex setlocal filetype=tex
   " LaTeX class files

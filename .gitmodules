@@ -112,9 +112,6 @@
 [submodule "vim/bundle/vim-cjsx"]
 	path = vim/bundle/vim-cjsx
 	url = https://github.com/mtscout6/vim-cjsx
-[submodule "vim/bundle/vim-pandoc"]
-	path = vim/bundle/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule "vim/bundle/vim-pandoc-syntax"]
 	path = vim/bundle/vim-pandoc-syntax
 	url = git@github.com:jez/vim-pandoc-syntax.git
