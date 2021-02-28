@@ -636,8 +636,8 @@ nmap <leader>gn <Plug>VimspectorStepOver
 nmap <leader>gs <Plug>VimspectorStepInto
 nmap <leader>gf <Plug>VimspectorStepOut
 nmap <leader>gi <Plug>VimspectorBalloonEval
-nnoremap <leader>ge :VimspectorEval<CR>
-nnoremap <leader>gx :VimspectorEval<CR>-exec<space>
+nnoremap <leader>ge :VimspectorEval<space>
+nnoremap <leader>gx :VimspectorEval -exec<space>
 nnoremap <leader>gw :VimspectorWatch<CR>
 nnoremap <leader>gz :VimspectorReset<CR>
 nnoremap <leader>go :call feedkeys(":VimspectorShowOutput \<Tab>", 'tn')<CR>
