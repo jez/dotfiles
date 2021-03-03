@@ -17,7 +17,7 @@ _fzf_complete_bazel() {
     # This is the reason why things like @ruby_2_6//:ruby.tar.gz don't show up
     # in the output: they're not a dep of anything in //..., but they are deps
     # of @ruby_2_6//...
-    _fzf_complete '-m' "$@" < <(command bazel query --keep_going --noshow_progress "kind('(binary rule|generated file)', deps(//...))" 2> /dev/null)
+    _fzf_complete '-m' "$@" < <(command bazel query --keep_going --noshow_progress "kind('(binary rule)|(generated file)', deps(//...))" 2> /dev/null)
   fi
 }
 
