@@ -54,8 +54,8 @@ augroup myFiletypes
   au BufRead,BufNewFile *.rl setlocal filetype=ragel
 
   " Turn on spell checking and 80-char lines by default for these filetypes
-  au FileType pandoc,markdown,tex setlocal spell
-  au FileType pandoc,markdown,tex setlocal tw=80
+  au FileType pandoc,pandoc.ghpull,markdown,tex setlocal spell
+  au FileType pandoc,pandoc.ghpull,markdown,tex setlocal tw=80
 
   " Always use tabs
   au FileType gitconfig setlocal noexpandtab
