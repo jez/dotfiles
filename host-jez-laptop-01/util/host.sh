@@ -69,9 +69,8 @@ which ggrep &> /dev/null && alias grep="ggrep --color=auto";
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" noglob jrnl"
 
-# TODO(jez) todo alias
-# alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
-# alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
+alias todo='$EDITOR ~/notes/stream/todo.md +Goyo'
+alias facecam='$EDITOR ~/notes/stream/facecam.txt +Goyo'
 
 alias sb='bazel build //main:sorbet -c opt'
 alias sbl='bazel build -c opt'
