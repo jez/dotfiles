@@ -38,7 +38,7 @@
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 export CASE_SENSITIVE="true"
-export ZSH="$HOME/.oh-my-zsh/"
+export ZSH="$HOME/.oh-my-zsh"
 plugins=(brew brew-cask)
 source $ZSH/oh-my-zsh.sh
 
