@@ -87,9 +87,9 @@ alias pbpaste="xclip -out -sel clip"
 # ignore jrnl entries (abuse histignorespace)
 # alias jrnl=" noglob jrnl"
 
-# TODO(jez) linux
-# alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
-# alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
+alias todo='$EDITOR ~/notes/stream/todo.md +Goyo'
+alias facecam='$EDITOR ~/notes/stream/facecam.txt +Goyo'
+alias current-song=$'watch --interval 10 --no-title --color \'eval "$(sp eval)" && printf "🎵: $cgreen$SPOTIFY_TITLE$cnone\nBy: $ccyan$SPOTIFY_ARTIST$cnone"\''
 
 alias sb='bazel build //main:sorbet -c opt'
 alias sbl='bazel build -c opt'
