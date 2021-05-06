@@ -575,7 +575,7 @@ let g:LanguageClient_serverCommands = {}
 if filereadable("./compile_commands.json")
   " Some projects I work on build with Bazel, and care that they must be built
   " with a specific version of Clang and the LLVM toolchain.
-  let clangd = glob('bazel-*/external/llvm_toolchain/bin/clangd', 0, 1)
+  let clangd = glob('bazel-*/external/llvm_toolchain*/bin/clangd', 0, 1)
   if len(clangd) == 1
     let g:LanguageClient_serverCommands.c = [clangd[0]]
     let g:LanguageClient_serverCommands.cpp = [clangd[0]]
