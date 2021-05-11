@@ -29,6 +29,8 @@
 	cp = cherry-pick
 	fp = push --force-with-lease
 	bd = branch -D
+	# Delete local branch and branch with the same name on origin remote
+	bdo = !git branch -D "$@" && git push "${remote:-origin}" "${@/#/:}" && :
 	# the SHA to compare diffs against
 	review-base = !git merge-base HEAD \"${review_base:-origin/master}\"
 	# list files which have changed since review_base
