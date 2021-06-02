@@ -108,14 +108,6 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 
 # ----- Specific Programs -----------------------------------------------------
 
-# TODO(jez) linux
-# # Settings for virtualenv and virtualenvwrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-# source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
-
 # Have Haskell Stack use XDG Base Directory spec
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 
@@ -124,6 +116,8 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 export PROMPT_PURE_DIR_COLOR="%{$cblue%}"
 export PROMPT_PURE_SUCCESS_COLOR="%{$cmagentab%}"
 export TMUXLINE_ACCENT_COLOR="colour04"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # ----- Miscellaneous ---------------------------------------------------------
 

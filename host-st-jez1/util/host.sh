@@ -35,6 +35,7 @@ export PATH="$PATH:./node_modules/.bin"
 export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/stripe/bin"
 
 # Globally installed yarn executables
 export PATH="$PATH:$HOME/.yarn/bin"
@@ -111,10 +112,9 @@ alias paycifix='LESS=-RFX pay ci:fix "$(hub ci-status --format "%U%n" | head -n 
 # ----- Specific Programs -----------------------------------------------------
 
 # Settings for virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/stripe
 source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 
 # Have Haskell Stack use XDG Base Directory spec
@@ -149,6 +149,7 @@ alias rc="rc --no-rc"
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 # ----- Prompt  ---------------------------------------------------------------
 
 export PROMPT_PURE_DIR_COLOR="%{$ccyan%}"

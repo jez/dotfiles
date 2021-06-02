@@ -85,14 +85,6 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 
 # ----- Specific Programs -----------------------------------------------------
 
-# TODO(jez) virtualenvwrapper
-# # Settings for virtualenv and virtualenvwrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-# source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
-
 # Have Haskell Stack use XDG Base Directory spec
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 

@@ -87,6 +87,8 @@ export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
 export PROMPT_PURE_SUCCESS_COLOR="%{$ccyan%}"
 export TMUXLINE_ACCENT_COLOR="colour13"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # ----- Miscellaneous ---------------------------------------------------------
 
 # update-host
