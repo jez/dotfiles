@@ -1,0 +1,13 @@
+{
+  "default_hour": 9,
+  "timeformat": "%Y-%m-%d %H:%M",
+  "linewrap": 79,
+  "encrypt": true,
+  "editor": "nvim",
+  "default_minute": 0,
+  "highlight": true,
+  "journals": {
+    "default": "/Users/jez/stripe/notes/journal.txt"
+  },
+  "tagsymbols": "@"
+}
