@@ -2,15 +2,18 @@
 # Toggle the current color scheme between Solarized Light and Solarized Dark
 # Mnemonic: iTerm2 Profile Toggle
 
+script_path="$(realpath "$0")"
+dotfiles_dir=${script_path%/util/functions/itpt.sh}
+
 itpt() {
   if [ "$SOLARIZED" = "dark" ]; then
-    sed -i.bak 's/"dark"/"light"/' ~/.util/before.sh
-    rm ~/.util/before.sh.bak > /dev/null
+    sed -i.bak 's/"dark"/"light"/' "$dotfiles_dir/util/before.sh"
+    rm "$dotfiles_dir/util/before.sh.bak" > /dev/null
 
     export SOLARIZED="light"
   elif [ "$SOLARIZED" = "light" ]; then
-    sed -i.bak 's/"light"/"dark"/' ~/.util/before.sh
-    rm ~/.util/before.sh.bak > /dev/null
+    sed -i.bak 's/"light"/"dark"/' "$dotfiles_dir/util/before.sh"
+    rm "$dotfiles_dir/util/before.sh.bak" > /dev/null
 
     export SOLARIZED="dark"
   fi
@@ -37,7 +40,7 @@ itpt() {
     tmux source "$XDG_CONFIG_HOME/tmux/solarized-$SOLARIZED.tmuxline"
   fi
 
-  local __dircolors="$HOME/.dircolors"
+  local __dircolors="$dotfiles_dir/dircolors"
   if [ "$SOLARIZED" = "dark" ]; then
     sed -E -i.bak 's/00;30 (## solarized-light ##)/00;37 ## solarized-dark ##/' "$__dircolors"
     sed -E -i.bak 's/01;36 (## solarized-light ##)/01;32 ## solarized-dark ##/' "$__dircolors"
@@ -47,11 +50,11 @@ itpt() {
     sed -E -i.bak 's/01;32 (## solarized-dark ##)/01;36 ## solarized-light ##/' "$__dircolors"
     rm "$__dircolors.bak" > /dev/null
   fi
-  command -v dircolors &> /dev/null && eval "$(dircolors ~/.dircolors)"
+  command -v dircolors &> /dev/null && eval "$(dircolors "$dotfiles_dir/dircolors")"
 
   if [ "$FZF_DEFAULT_OPTS_DARK" != "" ] || [ "$FZF_DEFAULT_OPTS_LIGHT" != "" ]; then
-    # shellcheck disable=SC1090
-    source "$HOME/.util/fzf.zsh"
+    # shellcheck disable=SC1091
+    source "$dotfiles_dir/util/fzf.zsh"
   fi
 
   export BAT_THEME="Solarized ($SOLARIZED)"
