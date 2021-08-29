@@ -20,6 +20,10 @@ function chpwd() {
     /Users/jez/zoolander/*) ;&
     /Users/jez/stripe/zoolander) ;&
     /Users/jez/stripe/zoolander/*) ;&
+    /Users/jez/gocode) ;&
+    /Users/jez/gocode/*) ;&
+    /Users/jez/stripe/gocode) ;&
+    /Users/jez/stripe/gocode/*) ;&
     /Users/jez/stripe/checkout) ;&
     /Users/jez/stripe/checkout/*) ;&
     /Users/jez/prog/pl/flow) ;&
