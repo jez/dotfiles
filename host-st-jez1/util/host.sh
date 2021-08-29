@@ -50,9 +50,11 @@ export PATH="$PATH:/usr/local/opt/llvm/bin"
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
+export PATH="$PATH:$HOME/stripe/space-commander/bin"
 source "$HOME/.rbenvrc"
 rbenv rehash
 # source ~/.stripe-repos.sh
+eval "$(nodenv init -)"
 
 # ----- aliases ---------------------------------------------------------------
 
@@ -140,7 +142,7 @@ export CGO_LDFLAGS="-L/usr/local/lib"
 # source "$(brew --prefix nvm)/nvm.sh"
 
 # OCaml
-eval "$(opam env)"
+# eval "$(opam env)"
 
 # rtags
 # rc is the rtags client, and uses the same config filename as rcm
