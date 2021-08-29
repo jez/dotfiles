@@ -335,6 +335,8 @@ xmap s <plug>(GrepperOperator)
 nnoremap <leader>a :Grepper<CR>
 nnoremap <leader>* :Grepper -cword -noprompt<CR>
 
+hi link GrepperQuery Normal
+
 " }}}
 " ----- romainl/vim-qf ----- {{{
 " Because grepper no longer has keybindings in the Quickfix window
