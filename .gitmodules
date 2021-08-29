@@ -72,7 +72,7 @@
 	url = https://github.com/tpope/vim-fugitive
 [submodule "vim/bundle/vim-liquid"]
 	path = vim/bundle/vim-liquid
-	url = https://github.com/tpope/vim-liquid
+	url = git@github.com/jez/vim-liquid.git
 [submodule "vim/bundle/vim-tmux-navigator"]
 	path = vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
