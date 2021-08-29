@@ -503,6 +503,10 @@ let g:fzf_action = {
       \ 'ctrl-r': 'read',
       \ }
 
+let g:fzf_layout = {
+      \ 'down': '40%'
+      \ }
+
 " }}}
 " ----- merlin ----- {{{
 
