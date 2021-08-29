@@ -323,6 +323,8 @@ let g:grepper.highlight = 1
 " gr
 " :Grepper foo<CR>
 " Observe that the screen is now irrecoverably half height
+" NOTE: This appears to have been fixed (probably in 0.5.0+?) but loclist is
+" still preferrable.
 let g:grepper.quickfix = 0
 " Defalt to searching the entire repo; otherwise, search 'filecwd' (see help)
 " let g:grepper.dir = 'repo,filecwd'
