@@ -65,6 +65,9 @@ alias jrnlsum="viewjrnl -from '10 days ago'"
 alias cmg="cmake -S . -B build -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug"
 alias cm="cmake --build build"
 
+alias cmr="cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+alias cmrb="cmake --build build-release"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
