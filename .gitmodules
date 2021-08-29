@@ -223,3 +223,6 @@
 [submodule "vim/bundle/vimspector"]
 	path = vim/bundle/vimspector
 	url = https://github.com/puremourning/vimspector
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
