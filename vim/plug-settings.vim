@@ -496,12 +496,12 @@ nnoremap <C-P> :FZF<CR>
 
 " <CR> to open in new tab, <C-E> for current buffer
 let g:fzf_action = {
-  \ 'ctrl-m': 'tabedit',
-  \ 'ctrl-e': 'edit',
-  \ 'ctrl-v': 'vsplit',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-r': 'read',
-\}
+      \ 'ctrl-m': 'tabedit',
+      \ 'ctrl-e': 'edit',
+      \ 'ctrl-v': 'vsplit',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-r': 'read',
+      \ }
 
 " }}}
 " ----- merlin ----- {{{
