@@ -34,6 +34,8 @@ set tildeop            " use ~ to toggle case as an operator, not a motion
 set colorcolumn=+0     " show a column whenever textwidth is set
 if exists('&breakindent')
   set breakindent      " Indent wrapped lines up to the same level
+  " Use the contents of 'formatlistpat' to make hanging indent
+  set breakindentopt+=list:-1
 endif
 set foldnestmax=4      " Only fold up to one level deep
 set list               " Show certain non-printing characters as printed
