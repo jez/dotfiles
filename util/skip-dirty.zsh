@@ -24,6 +24,8 @@ function chpwd() {
     /Users/jez/gocode/*) ;&
     /Users/jez/stripe/gocode) ;&
     /Users/jez/stripe/gocode/*) ;&
+    /Users/jez/stripe/puppet-config) ;&
+    /Users/jez/stripe/puppet-config/*) ;&
     /Users/jez/stripe/checkout) ;&
     /Users/jez/stripe/checkout/*) ;&
     /Users/jez/prog/pl/flow) ;&
