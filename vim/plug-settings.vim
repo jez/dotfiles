@@ -358,9 +358,10 @@ let g:neoformat_enabled_bzl = ['buildifier']
 augroup neoformatMaps
   au!
   " https://github.com/sbdchd/neoformat/issues/134
-  au BufWritePre *.hs try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
-  au BufWritePre *BUILD try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
-  au BufWritePre *.bzl try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  au BufWritePre *.hs       try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  au BufWritePre *BUILD     try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  au BufWritePre *WORKSPACE try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  au BufWritePre *.bzl      try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
 
   au FileType haskell let g:neoformat_run_all_formatters = 1
 augroup END
