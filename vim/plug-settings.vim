@@ -618,6 +618,7 @@ augroup jezLanguageClient
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> <leader>t :call LanguageClient#textDocument_hover()<CR>
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> K :call LanguageClient#explainErrorAtPoint()<CR>
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> gy :call LanguageClient#textDocument_typeDefinition()<CR>
+  au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> gi :call LanguageClient#textDocument_implementation()<CR>
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> <leader>ir :call LanguageClient#textDocument_references()<CR>
   au FileType ruby,rust,c,cpp nnoremap <silent> <buffer> <leader>. :call LanguageClient#textDocument_codeAction()<CR>
   au FileType ruby,rust,c,cpp inoremap <silent> <buffer> <C-g><C-p> <C-x><C-o>
@@ -647,7 +648,8 @@ nmap <leader>gm <Plug>VimspectorAddFunctionBreakpoint
 nmap <leader>gn <Plug>VimspectorStepOver
 nmap <leader>gs <Plug>VimspectorStepInto
 nmap <leader>gf <Plug>VimspectorStepOut
-nmap <leader>gi <Plug>VimspectorBalloonEval
+" gi is now go to implementation
+" nmap <leader>gi <Plug>VimspectorBalloonEval
 nnoremap <leader>ge :VimspectorEval<space>
 nnoremap <leader>gx :VimspectorEval -exec<space>
 nnoremap <leader>gw :VimspectorWatch<CR>
