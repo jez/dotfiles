@@ -72,3 +72,8 @@ color_my_prompt
 # Turn the color back to normal after the command executes
 #trap 'echo -ne "\033[0m"' DEBUG
 #echo -en '.\r'
+
+# Using ^L by default will hide the first line of my prompt (with the pwd).
+# Also, in tmux, ^L means "move to pane to the left"
+# We rebind ^Y here so that it just runs clear
+bind -x '"\C-y":"clear && echo"'
