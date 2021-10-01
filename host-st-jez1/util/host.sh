@@ -47,6 +47,9 @@ export PATH="$PATH:/usr/local/opt/thrift@0.9/bin"
 # Find clangd from Homebrew, but put it last (fallback)
 export PATH="$PATH:/usr/local/opt/llvm/bin"
 
+# For gcloud command, to deploy srb.help
+export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
