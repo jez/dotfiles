@@ -493,6 +493,8 @@ augroup vimuxMappings
   au FileType cpp nnoremap <silent> <buffer> <leader>it :VimuxRunCommand 'st'<CR>
 
   au FileType scala nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'scalac "'.bufname("%").'"'<CR>
+
+  au FileType ruby nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'ruby "'.bufname("%").'"'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
