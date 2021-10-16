@@ -192,7 +192,7 @@
 	url = https://github.com/sbdchd/neoformat.git
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
-	url = https://github.com/jez/vim-json
+	url = git@github.com:jez/vim-json.git
 [submodule "vim/bundle/vim-cpp-enhanced-highlight"]
 	path = vim/bundle/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight
