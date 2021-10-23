@@ -714,5 +714,36 @@ let g:yacc_uses_cpp = 1
 
 " }}}
 
+function! SorbetShowSymbolCallback(response) abort
+  echom json_encode(a:response)
+  if !has_key(a:response, 'result')
+    echohl WarningMsg | echo json_encode(a:response) | echohl None
+    return
+  endif
+
+  call setreg('"', a:response.result.name)
+
+  echo a:response.result.name
+endfunction
+
+function! SorbetShowSymbol() abort
+  let l:Callback = function('SorbetShowSymbolCallback')
+  let l:textDocumentIdentifier = {
+        \ 'uri': 'file://'.LSP#filename(),
+        \ }
+  let l:position = {
+        \ 'line': LSP#line(),
+        \ 'character': LSP#character(),
+        \ }
+  let l:textDocumentPositionParams = {
+        \ 'textDocument': l:textDocumentIdentifier,
+        \ 'position': l:position,
+        \ }
+
+  return LanguageClient#Call('sorbet/showSymbol', l:textDocumentPositionParams, l:Callback)
+endfunction
+
+au FileType ruby nnoremap <silent> <buffer> <leader>iy :call SorbetShowSymbol()<CR>
+
 " -----------------------------------------------------------------------------
 " vim:ft=vim fdm=marker
