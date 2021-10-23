@@ -191,7 +191,7 @@ if filereadable("./.clang-format")
 
   " Sorbet wants clang-format to put the #include for a *.h file with the same
   " name as the current *.cpp / *.cc file at the top of the #include list
-  let g:ale_c_clangformat_options = '-style=file -assume-filename=%s'
+  let g:ale_c_clangformat_options = '-style=file'
   let g:ale_fixers.c = ['clang-format']
   let g:ale_fixers.cpp = ['clang-format']
 
