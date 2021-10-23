@@ -72,6 +72,8 @@ command! -bang Wqa wqa<bang>
 command! -bang W w<bang>
 command! -bang Q q<bang>
 
+command! -bang Now noautocmd w<bang>
+
 " Use :C to clear hlsearch
 command! C nohlsearch
 
@@ -147,6 +149,8 @@ vnoremap <silent> gF <C-W>gF
 
 " use 'Y' to yank to the end of a line, instead of the whole line
 nnoremap <silent> Y y$
+
+nnoremap <silent> U u:noa w<CR>
 
 nnoremap <silent> cn :cnext<CR>
 nnoremap <silent> cp :cprevious<CR>
