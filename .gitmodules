@@ -91,9 +91,6 @@
 [submodule "vim/bundle/vim-c0"]
 	path = vim/bundle/vim-c0
 	url = git@github.com:jez/vim-c0.git
-[submodule "vim/bundle/typescript-vim"]
-	path = vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/jez/vim-jsx
