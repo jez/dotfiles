@@ -322,6 +322,10 @@ endif
     \,sm:block-blinkwait175-blinkoff150-blinkon175
 " endif
 
+if exists('+guifont')
+  set guifont=Iosevka\ Fixed:h14
+endif
+
 
 " ----- Not-quite-general-but-don't-belong-anywhere-else Settings -----------
 
