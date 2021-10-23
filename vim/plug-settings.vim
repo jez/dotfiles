@@ -355,6 +355,12 @@ let g:haskell_classic_highlighting = 1
 " ----- sbdchd/neoformat ----- {{{
 let g:neoformat_enabled_haskell = ['brittany', 'stylishhaskell']
 let g:neoformat_enabled_bzl = ['buildifier']
+let g:neoformat_enabled_ruby = ['rubyfmt']
+let g:neoformat_ruby_rubyfmt = {
+        \ 'exe': 'rubyfmt',
+        \ 'stdin': 1,
+        \ 'no_append': 1,
+        \ }
 augroup neoformatMaps
   au!
   " https://github.com/sbdchd/neoformat/issues/134
@@ -362,6 +368,9 @@ augroup neoformatMaps
   au BufWritePre *BUILD     try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
   au BufWritePre *WORKSPACE try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
   au BufWritePre *.bzl      try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  " One day we will make this not do undojion, but it's too good for testing to keep off
+  au BufWritePre *.rb       try            | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+  " au BufWritePre *.rb       try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
 
   au FileType haskell let g:neoformat_run_all_formatters = 1
 augroup END
