@@ -12,8 +12,12 @@ function chpwd() {
   case $PWD in
     /Users/jez/ps) ;&
     /Users/jez/ps/*) ;&
+    /Users/jez/psb) ;&
+    /Users/jez/psb/*) ;&
     /Users/jez/stripe/pay-server) ;&
     /Users/jez/stripe/pay-server/*) ;&
+    /Users/jez/stripe-b/pay-server) ;&
+    /Users/jez/stripe-b/pay-server/*) ;&
     /Users/jez/stripe/ps-worktree) ;&
     /Users/jez/stripe/ps-worktree/*) ;&
     /Users/jez/zoolander) ;&
