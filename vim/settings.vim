@@ -63,6 +63,9 @@ set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
 " Enable file type detection.
 filetype plugin indent on
 
+" This used to be the default, neovim 0.6.0 flipped the default
+set nohidden
+
 " ----- Convenience commands and cabbrev's ----------------------------------
 
 " Make these commonly mistyped commands still work
