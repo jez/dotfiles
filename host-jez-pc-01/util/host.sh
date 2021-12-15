@@ -94,6 +94,7 @@ alias current-song=$'watch --interval 10 --no-title --color \'eval "$(sp eval)" 
 alias sb='bazel build //main:sorbet -c opt'
 alias sbl='bazel build -c opt'
 alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
+alias sbgo='bazel build --config=dbg --config=static-libs'
 alias sbo='bazel build //main:sorbet --config=debugsymbols -c opt --config=static-libs'
 alias sbr='bazel build //main:sorbet --config=release-linux'
 alias st='bazel test -c opt --test_output=errors --test_summary=terse test'

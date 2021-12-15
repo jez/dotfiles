@@ -24,6 +24,7 @@ _fzf_complete_bazel() {
 # See aliases in ~/.util/host.sh
 _fzf_complete_sb() { _fzf_complete_bazel "$@" }
 _fzf_complete_sbg() { _fzf_complete_bazel "$@" }
+_fzf_complete_sbgo() { _fzf_complete_bazel "$@" }
 _fzf_complete_sbo() { _fzf_complete_bazel "$@" }
 _fzf_complete_sbr() { _fzf_complete_bazel "$@" }
 _fzf_complete_sbl() { _fzf_complete_bazel "$@" }
