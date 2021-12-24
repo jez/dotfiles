@@ -161,6 +161,11 @@ nnoremap <silent> cp :cprevious<CR>
 " take first suggested spelling as correct spelling and replace
 nnoremap <silent> <leader>z z=1<CR><CR>
 
+" correct the previous spelling mistake in the file without leaving insert
+" mode
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
 " Create a manual fold with the region determined by going to the end of the
 " line, entering visual line mode, then jumping to the matching brace. So:
 "
