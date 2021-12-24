@@ -289,7 +289,7 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 
 " }}}
 " ----- vim-pandoc/vim-pandoc ----- {{{
-let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh', 'hs=haskell']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 
 augroup pandocSettings
