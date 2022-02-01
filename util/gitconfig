@@ -24,6 +24,13 @@
 [color "diff"]
 	whitespace = red reverse
 	newMoved = blue
+	func = blue
+	meta = reverse
+[color "interactive"]
+	prompt = blue
+	header = yellow
+	help = magenta
+	error = bold red
 
 
 # Aliases
