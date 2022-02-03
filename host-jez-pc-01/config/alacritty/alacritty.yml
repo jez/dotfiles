@@ -199,8 +199,13 @@ selection:
 # - Underline
 # - Beam
 cursor:
-  style: Block
+  style:
+    shape: Block
+    blinking: On
+    # TODO(jez) vim disables blinking by default, but you can use guicursor to fix it
+    # blinking: Always
   unfocused_hollow: true
+  blink_interval: 500
 
 # Live config reload (changes require restart)
 live_config_reload: true
