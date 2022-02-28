@@ -120,6 +120,17 @@ colors:
     # white:   '0xfdf6e3'    ## solarized-original ##
     white:   '0x93a1a1'    ## solarized-light-patched ##
 
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area.
+  #
+  # Allowed values are CellForeground/CellBackground, which reference the
+  # affected cell, or hexadecimal colors like #ff00ff.
+  selection:
+   text: CellForeground
+   # background: '0x073642'    ## solarized-dark ##
+   background: '0xeee8d5'    ## solarized-light ##
+
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
