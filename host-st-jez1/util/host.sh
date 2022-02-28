@@ -17,19 +17,26 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
 # Catalina
 export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
 export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
 
 # Use GNU coreutils with their actual names
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Use bison from Homebrew
 export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 
 # Add diff-highlight from Git contrib
 export PATH="$PATH:/usr/local/opt/git/share/git-core/contrib/diff-highlight"
+export PATH="$PATH:/opt/homebrew/opt/git/share/git-core/contrib/diff-highlight"
 
 export PATH="$PATH:./node_modules/.bin"
 export PATH="$PATH:/usr/local/sbin"
@@ -42,10 +49,10 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 
 # We're using thrift0.9 at Stripe
-export PATH="$PATH:/usr/local/opt/thrift@0.9/bin"
+export PATH="$PATH:/opt/homebrew/opt/thrift@0.9/bin"
 
 # Find clangd from Homebrew, but put it last (fallback)
-export PATH="$PATH:/usr/local/opt/llvm/bin"
+export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
 
 # For gcloud command, to deploy srb.help
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
