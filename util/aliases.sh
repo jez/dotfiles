@@ -75,6 +75,8 @@ alias duls="du -h -d1 | sort -hr"
 
 # print my IP
 alias ip="curl ifconfig.co"
+alias ipv4="curl -4 ifconfig.co"
+alias ipv6="curl -6 ifconfig.co"
 
 # resolve a symlink in the PWD to a fully qualified directory
 alias resolve='cd "`pwd -P`"'

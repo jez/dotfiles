@@ -288,7 +288,7 @@ augroup END
 highlight Extrawhitespace ctermbg=red guibg=#dc322f
 
 " }}}
-" ----- vim-pandoc/vim-pandoc ----- {{{
+" ----- vim-pandoc/vim-pandoc-syntax ----- {{{
 let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh']
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 
@@ -305,8 +305,6 @@ augroup pandocSettings
   au FileType pandoc inoremap <buffer> <S-TAB> <C-d>
 augroup END
 
-" }}}
-" ----- vim-pandoc/vim-pandoc-syntax ----- {{{
 let g:pandoc#syntax#use_definition_lists = 0
 " }}}
 " ----- mhinz/grepper ----- {{{
@@ -499,8 +497,8 @@ augroup vimuxMappings
 
   au FileType cpp let g:VimuxResetSequence = 'qa C-u'
   " I have some shell aliases set up for building Sorbet
-  au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'sb'<CR>
-  au FileType cpp nnoremap <silent> <buffer> <leader>it :VimuxRunCommand 'st'<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'sbg'<CR>
+  au FileType cpp nnoremap <silent> <buffer> <leader>it :VimuxRunCommand 'stg'<CR>
 
   au FileType scala nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'scalac "'.bufname("%").'"'<CR>
 

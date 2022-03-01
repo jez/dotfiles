@@ -203,6 +203,9 @@ inoremap <M-j> <ESC>j
 inoremap <M-Enter> <ESC>:
 inoremap <M-p> <ESC>p
 
+noremap <C-g><C-g> :echo wordcount().words." words"<CR>
+inoremap <C-g><C-g> <C-o>:echo wordcount().words." words"<CR>
+
 function! ToggleKJEsc() abort
   if empty(maparg('kj', 'i'))
     inoremap kj <ESC>
