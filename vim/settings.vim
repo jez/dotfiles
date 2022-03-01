@@ -302,19 +302,25 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" TODO(jez) Should be able to delete once the next version of tmux is released
+" (3.3 maybe? or else 3.4). Newer alacritty version supports all the blink
+" attributes that we can set in guicursor here, so that's good, but then also
+" neovim inside tmux wasn't interpretting the blink attributes right. The
+" workaround is to either use HEAD tmux release or to ask alacritty to Always
+" blink the cursor, instead of just On, which will listen for term codes.
 " NeoVim and iTerm2 support displaying more cursor shapes than just a block.
-if $ALACRITTY_LOG
-  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
-    \,i-ci:ver25-Cursor/lCursor
-    \,r-cr:hor20-Cursor/lCursor
-else
+" if $ALACRITTY_LOG
+"   set guicursor=n-v-c:block-Cursor/lCursor-blinkon0
+"     \,i-ci:ver25-Cursor/lCursor
+"     \,r-cr:hor20-Cursor/lCursor
+" else
   set guicursor=n-v-c:block
     \,i-ci-ve:ver25
     \,r-cr:hor20
     \,o:hor50
-    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/Cursor
     \,sm:block-blinkwait175-blinkoff150-blinkon175
-endif
+" endif
 
 
 " ----- Not-quite-general-but-don't-belong-anywhere-else Settings -----------
