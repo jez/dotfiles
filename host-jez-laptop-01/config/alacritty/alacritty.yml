@@ -33,6 +33,9 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: 'none'
 
+  # Background opacity
+  opacity: 1.0
+
   dynamic_title: true
 
 # Display tabs using this many cells (changes require restart)
@@ -47,7 +50,7 @@ font:
   normal:
     family: Iosevka Fixed
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
@@ -59,27 +62,29 @@ font:
   italic:
     family: Iosevka Fixed
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Regular Italic
 
   # Point size of the font
-  size: 14
+  size: 15
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 2
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 0
+    y: 2
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
+  # Seems broken on Big Sur: <https://github.com/alacritty/alacritty/issues/4616>
+  # Use `style: Light` on the fonts to work around. When you upgrade.
   use_thin_strokes: true
 
 debug:
@@ -112,16 +117,27 @@ colors:
 
   # Bright colors (change original/patched manually)
   bright:
-    # black:   '0x002b36'    ## solarized-original ##
-    black:   '0x586e75'    ## solarized-dark-patched ##
+    black:   '0x002b36'    ## solarized-original ##
+    # black:   '0x586e75'    ## solarized-dark-patched ##
     red:     '0xcb4b16'
     green:   '0x586e75'
     yellow:  '0x657b83'
     blue:    '0x839496'
     magenta: '0x6c71c4'
     cyan:    '0x93a1a1'
-    white:   '0xfdf6e3'    ## solarized-original ##
-    # white:   '0x93a1a1'    ## solarized-light-patched ##
+    # white:   '0xfdf6e3'    ## solarized-original ##
+    white:   '0x93a1a1'    ## solarized-light-patched ##
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area.
+  #
+  # Allowed values are CellForeground/CellBackground, which reference the
+  # affected cell, or hexadecimal colors like #ff00ff.
+  selection:
+   text: CellForeground
+   # background: '0x073642'    ## solarized-dark ##
+   background: '0xeee8d5'    ## solarized-light ##
 
 # Visual Bell
 #
@@ -148,9 +164,6 @@ colors:
 # visual_bell:
 #   animation: EaseOutExpo
 #   duration: 0
-
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #
@@ -191,6 +204,10 @@ mouse:
 
   hide_when_typing: true
 
+# Seems like this is only having an effect outside tmux
+scrolling:
+  multiplier: 5
+
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: true
@@ -205,8 +222,10 @@ cursor:
   style:
     shape: Block
     blinking: On
+    # TODO(jez) vim disables blinking by default, but you can use guicursor to fix it
+    # blinking: Always
   unfocused_hollow: true
-  blink_interval: 550
+  blink_interval: 500
 
 # Live config reload (changes require restart)
 live_config_reload: true
@@ -263,7 +282,7 @@ key_bindings:
   - { key: Copy,                    action: Copy                         }
   - { key: Q,        mods: Super,   action: Quit                         }
   - { key: W,        mods: Super,   action: Quit                         }
-  - { key: N,        mods: Super,   command: { program: "/usr/bin/alacritty", args: [] } }
+  - { key: N,        mods: Super,   command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
   - { key: Return,   mods: Super,   action: ToggleFullscreen             }
   - { key: Key0,     mods: Super,   action: ResetFontSize                }
   - { key: Equals,   mods: Super,   action: IncreaseFontSize             }
