@@ -279,7 +279,7 @@ key_bindings:
   - { key: Copy,                    action: Copy                         }
   - { key: Q,        mods: Super,   action: Quit                         }
   - { key: W,        mods: Super,   action: Quit                         }
-  - { key: N,        mods: Super,   command: { program: "/Applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
+  - { key: N,        mods: Super,   command: { program: "/Users/jez/stripe/applications/Alacritty.app/Contents/MacOS/alacritty", args: [] } }
   - { key: Return,   mods: Super,   action: ToggleFullscreen             }
   - { key: Key0,     mods: Super,   action: ResetFontSize                }
   - { key: Equals,   mods: Super,   action: IncreaseFontSize             }
