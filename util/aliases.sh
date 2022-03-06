@@ -193,7 +193,7 @@ alias grf="git reviewf"
 alias gitprune='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 
 # resuable format strings
-# GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %C(auto)%cs%Creset%C(auto)%d%Creset %s\""
+# GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(auto)%cs%Creset %C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
 GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
 
