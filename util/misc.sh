@@ -12,9 +12,11 @@ which dircolors &> /dev/null && eval $(dircolors ~/.dircolors)
 
 # Turn on italics
 if echo $TERM | grep 'tmux' &> /dev/null; then
-  tic ~/.tmux-256color.terminfo
+  # The -x is required for "treat unknown capabilities as user-defined"
+  tic -x ~/.tmux-256color.terminfo
 elif echo $TERM | grep 'xterm' &> /dev/null; then
-  tic ~/.xterm-256color.terminfo
+  # The -x is required for "treat unknown capabilities as user-defined"
+  tic -x ~/.xterm-256color.terminfo
 else
   export TERM=xterm-256color
 fi

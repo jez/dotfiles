@@ -10,4 +10,5 @@
 #
 xterm-256color|xterm with 256 colors and italic,
   sitm=\E[3m, ritm=\E[23m,
+  Smulx=\E[4:%p1%dm,
   use=xterm-256color,

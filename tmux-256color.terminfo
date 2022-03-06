@@ -14,6 +14,7 @@
 #       will then only need these lines:
 #
 # tmux-256color|tmux with 256 colors,
+#         Smulx=\E[4:%p1%dm,
 #         use=st-256color, use=tmux,
 tmux-256color|tmux with 256 colors,
   am, hs, km, mir, msgr, xenl,
@@ -44,4 +45,4 @@ tmux-256color|tmux with 256 colors,
   sgr=\E[0%?%p6%t;1%;%?%p1%t;3%;%?%p2%t;4%;%?%p3%t;7%;%?%p4%t;5%;%?%p5%t;2%;m%?%p9%t\016%e\017%;,
   sgr0=\E[m\017, sitm=\E[3m, smacs=^N, smcup=\E[?1049h,
   smir=\E[4h, smkx=\E[?1h\E=, smso=\E[7m, smul=\E[4m,
-  tbc=\E[3g, tsl=\E]0;,
+  Smulx=\E[4:%p1%dm, tbc=\E[3g, tsl=\E]0;,
