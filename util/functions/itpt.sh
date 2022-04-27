@@ -24,7 +24,13 @@ itpt() {
   elif [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     true
   else # alacritty
-    local __config="$HOME/.config/alacritty/alacritty.yml"
+    if ! command -v realpath &> /dev/null; then
+      echo "Install 'realpath' to toggle the Alacritty profile"
+      return 1
+    fi
+
+    local __config
+    __config="$(realpath "$HOME/.config/alacritty/alacritty.yml")"
     if [ "$SOLARIZED" = "dark" ]; then
       sed -E -i.bak 's/# ([[:alpha:]].*)(## solarized-dark ##)/\1\2/' "$__config"
       sed -E -i.bak 's/([[:alpha:]].*)(## solarized-light ##)/# \1\2/' "$__config"
