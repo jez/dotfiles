@@ -33,6 +33,9 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: 'none'
 
+  # Background opacity
+  opacity: 1.0
+
   dynamic_title: true
 
 # When true, bold text is drawn using the bright variant of colors.
@@ -156,9 +159,6 @@ colors:
 # visual_bell:
 #   animation: EaseOutExpo
 #   duration: 0
-
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #
