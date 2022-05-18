@@ -65,5 +65,28 @@ itpt() {
 
   export BAT_THEME="Solarized ($SOLARIZED)"
 
+  vscode_settings=
+  case "$(uname)" in
+    Darwin)
+      vscode_settings="$HOME/Library/Application Support/Code/User/settings.json"
+      ;;
+    Linux)
+      vscode_settings="$HOME/.config/Code/User/settings.json"
+      ;;
+  esac
+  vscode_color_theme=
+  case "$SOLARIZED" in
+    light)
+      vscode_color_theme="Better Solarized Light"
+      ;;
+    dark)
+      vscode_color_theme="Better Solarized Dark"
+      ;;
+  esac
+  if command code &> /dev/null && [ "$vscode_settings" != "" ]; then
+    sed -E -i.bak "s/\"workbench.colorTheme\":.*/\"workbench.colorTheme\": \"$vscode_color_theme\",/" "$vscode_settings"
+    rm "$vscode_settings.bak" > /dev/null
+  fi
+
   echo "Profile toggled. Open new tab for full effect."
 }
