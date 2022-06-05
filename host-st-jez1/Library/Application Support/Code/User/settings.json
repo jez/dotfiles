@@ -1,0 +1,43 @@
+{
+    "update.mode": "none",
+    "security.workspace.trust.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Better Solarized Light",
+    "editor.fontFamily": "Iosevka Fixed, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.renderLineHighlight": "none",
+    "editor.guides.indentation": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.currentLine.pullRequests.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "files.insertFinalNewline": true,
+    "editor.renderFinalNewline": false,
+    "remote.autoForwardPorts": false,
+    "remote.restoreForwardedPorts": false,
+    "remote.SSH.enableAgentForwarding": false,
+    "remote.SSH.path": "sc-ssh-wrapper",
+    "remote.SSH.useLocalServer": true,
+    "debug.javascript.automaticallyTunnelRemoteServer": false,
+    "update.channel": "none",
+    "telemetry.enableTelemetry": false,
+    // ------------------------- Copied from pay-server --------------------------------------
+    "ruby.intellisense": false,
+    "files.associations": {
+      "*.rbi": "ruby",
+    },
+    // Disable unwanted ruby extension features. We use Sorbet instead of this language server.
+    "ruby.useLanguageServer": false,
+    // Word-based suggestions conflict with Sorbet-powered autocompletion
+    "[ruby]": {
+      "editor.wordBasedSuggestions": false
+    },
+    // We only want to run "prettier" et al on specific languages; see below.
+    "editor.formatOnSave": false,
+}
