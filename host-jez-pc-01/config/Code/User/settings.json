@@ -1,0 +1,34 @@
+{
+    "security.workspace.trust.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Better Solarized Dark",
+    "editor.fontFamily": "Iosevka Fixed, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.renderLineHighlight": "none",
+    "editor.guides.indentation": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.currentLine.pullRequests.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "files.insertFinalNewline": true,
+    "editor.renderFinalNewline": false,
+    "ruby.intellisense": false,
+    "files.associations": {
+      "*.rbi": "ruby",
+    },
+    // Disable unwanted ruby extension features. We use Sorbet instead of this language server.
+    "ruby.useLanguageServer": false,
+    // Word-based suggestions conflict with Sorbet-powered autocompletion
+    "[ruby]": {
+      "editor.wordBasedSuggestions": false
+    },
+    "editor.formatOnSave": false,
+    "workbench.preferredDarkColorTheme": "Better Solarized Dark",
+    "workbench.preferredLightColorTheme": "Better Solarized Light",
+    "window.autoDetectColorScheme": true,
+}
