@@ -68,6 +68,9 @@ alias cm="cmake --build build"
 alias cmr="cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 alias cmrb="cmake --build build-release"
 
+# Fastmod
+alias fastmoda="fastmod --accept-all"
+
 # ----- aliases that are actually full-blown commands -------------------------
 
 # list disk usage statistics for the current folder
