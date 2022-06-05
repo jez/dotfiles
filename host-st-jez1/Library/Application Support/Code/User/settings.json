@@ -26,18 +26,7 @@
     "remote.SSH.useLocalServer": true,
     "debug.javascript.automaticallyTunnelRemoteServer": false,
     "update.channel": "none",
-    "telemetry.enableTelemetry": false,
-    // ------------------------- Copied from pay-server --------------------------------------
-    "ruby.intellisense": false,
-    "files.associations": {
-      "*.rbi": "ruby",
-    },
-    // Disable unwanted ruby extension features. We use Sorbet instead of this language server.
-    "ruby.useLanguageServer": false,
-    // Word-based suggestions conflict with Sorbet-powered autocompletion
-    "[ruby]": {
-      "editor.wordBasedSuggestions": false
-    },
-    // We only want to run "prettier" et al on specific languages; see below.
-    "editor.formatOnSave": false,
+    "workbench.preferredDarkColorTheme": "Better Solarized Dark",
+    "workbench.preferredLightColorTheme": "Better Solarized Light",
+    "window.autoDetectColorScheme": true,
 }
