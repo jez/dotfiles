@@ -65,5 +65,16 @@ itpt() {
 
   export BAT_THEME="Solarized ($SOLARIZED)"
 
+  if command -v dconf &> /dev/null && grep -q "DISTRIB_ID=Pop" /etc/lsb-release; then
+    case "$SOLARIZED" in
+      dark)
+        dconf write /org/gnome/desktop/interface/gtk-theme "'Pop-dark'"
+        ;;
+      light)
+        dconf write /org/gnome/desktop/interface/gtk-theme "'Pop'"
+        ;;
+    esac
+  fi
+
   echo "Profile toggled. Open new tab for full effect."
 }
