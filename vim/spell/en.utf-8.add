@@ -454,3 +454,5 @@ typechecks
 middleware
 ParEdit
 lexed
+GiB
+LMDB
