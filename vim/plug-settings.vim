@@ -295,9 +295,6 @@ let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 augroup pandocSettings
   au!
 
-  " Auto-populate next line with things like blockquotes '>'
-  au FileType pandoc setlocal formatoptions+=c
-
   " Indent and de-indent with TAB and SHIFT + TAB
   au FileType pandoc nnoremap <buffer> <TAB> >>
   au FileType pandoc nnoremap <buffer> <S-TAB> <<
