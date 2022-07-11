@@ -6,6 +6,9 @@
 	autocorrect = 18
 [pull]
 	ff = only
+[push]
+	default = simple
+	autoSetupRemote = true
 [log]
 	date = relative
 [diff]
