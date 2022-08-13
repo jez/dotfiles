@@ -3,7 +3,7 @@
     "telemetry.telemetryLevel": "off",
     "workbench.startupEditor": "none",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Better Solarized Dark",
+    "workbench.colorTheme": "Better Solarized Light",
     "editor.fontFamily": "Iosevka Fixed, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
     "editor.renderLineHighlight": "none",
