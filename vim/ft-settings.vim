@@ -59,7 +59,7 @@ augroup myFiletypes
 
   " Cargo-culted from here: https://github.com/vim-pandoc/vim-pandoc/blob/0d4b68eb7f63e43f963a119d60a3e29c2bb822e0/ftplugin/pandoc.vim#L51-L52
   " (not using that plugin because it's slow and opinionated otherwise)
-  au FileType pandoc,pandoc.ghpull,markdown setlocal formatlistpat=\\C^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*]\\s\\+
+  au FileType pandoc,pandoc.ghpull,markdown setlocal formatlistpat=\\C^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*>]\\s\\+
   au FileType pandoc,pandoc.ghpull,markdown setlocal formatoptions+=n
 
   " Always use tabs

@@ -158,6 +158,7 @@ endif
 " prettier on all JavaScript files everywhere.
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['prettier', 'eslint']
+let g:ale_fixers.typescript = ['prettier', 'eslint']
 let g:ale_fixers.css = ['prettier']
 let g:ale_fixers.pandoc = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
@@ -702,6 +703,9 @@ let g:vimspector_sidebar_width = 80
 let g:no_cecutil_maps = 1
 " }}}
 " ----- Builtin Vim plugins ----- {{{
+" matchit.vim plugin ships with Vim, % jumps between ruby keywords etc.
+runtime macros/matchit.vim
+
 " When viewing directories, show nested tree mode
 let g:netrw_liststyle=3
 " Don't create .netrwhist files
