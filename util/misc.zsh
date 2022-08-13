@@ -107,12 +107,23 @@ autoload vi-search-fix
 zle -N vi-search-fix
 bindkey -M viins '\e/' vi-search-fix
 
+# Configure zsh-autoquoter
+ZAQ_PREFIXES+=(
+  'git commit( [^ ]##)# -[^ -]#m'
+  'gcm'
+  'gcam'
+)
+source $HOME/.zfunctions/zsh-autoquoter/zsh-autoquoter.zsh
+
 # Configure zsh-syntax-highlighting
-# (Uses the defaults plus 'brackets', which tell if parens, etc. are unmatched)
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
+# Uses the defaults plus 'brackets' (which tell if parens, etc. are unmatched)
+# and zaq (which is zsh-autoquoter).
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets zaq)
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
 # Change comment color for Solarized color palette
 ZSH_HIGHLIGHT_STYLES[comment]='fg=green,bold'
+# This is possible too, if you ever feel like customizing the underline
+#ZSH_HIGHLIGHT_STYLES[zaq:string]="fg=green,underline"
 zle_highlight+=(paste:none)
 
 
