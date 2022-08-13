@@ -53,6 +53,9 @@ fi
 # OCaml
 eval "$(opam env)"
 
+# Find clangd from Homebrew, but put it last (fallback)
+export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
+
 # ----- aliases ---------------------------------------------------------------
 
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then

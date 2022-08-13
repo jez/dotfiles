@@ -52,7 +52,7 @@ export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$PATH:/opt/homebrew/opt/thrift@0.9/bin"
 
 # Find clangd from Homebrew, but put it last (fallback)
-export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
 
 # For gcloud command, to deploy srb.help
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
