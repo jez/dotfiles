@@ -93,6 +93,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Change my iTerm2 profile based on SOLARIZED variable
 # See also: ~/.util/functions/itpt.sh
+# TODO(jez) light/dark OS mode in iTerm2 prefs
 if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
 fi

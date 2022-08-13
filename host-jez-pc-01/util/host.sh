@@ -39,13 +39,6 @@ fi
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# TODO(jez) linux
-# # Change my iTerm2 profile based on SOLARIZED variable
-# # See also: ~/.util/functions/itpt.sh
-# if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-#   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
-# fi
-
 if command -v tic | grep -q linuxbrew; then
   export TERMINFO_DIRS="$(tic -D | tr '\n' ':' | sed -e 's/:$//')"
 fi

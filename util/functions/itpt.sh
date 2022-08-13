@@ -19,10 +19,18 @@ itpt() {
   fi
 
   # Change my iTerm2 profile based on $SOLARIZED setting
-  if [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$LC_TERMINAL" = "iTerm2" ]; then
-    echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
-  elif [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
-    true
+  # if [ "$TERM_PROGRAM" = "iTerm.app" ] || [ "$LC_TERMINAL" = "iTerm2" ]; then
+  #   echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
+  # elif [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+  #   true
+  # fi
+
+  if command -v osascript &> /dev/null; then
+    macos_dark_mode=false
+    if [ "$SOLARIZED" = "dark" ]; then
+      macos_dark_mode="true"
+    fi
+    osascript -e "tell app \"System Events\" to tell appearance preferences to set dark mode to $macos_dark_mode"
   fi
 
   if ! command -v realpath &> /dev/null; then
