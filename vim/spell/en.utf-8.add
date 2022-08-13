@@ -456,3 +456,5 @@ ParEdit
 lexed
 GiB
 LMDB
+supertype
+segfaults
