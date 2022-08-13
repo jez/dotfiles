@@ -31,4 +31,5 @@
     "window.autoDetectColorScheme": true,
     "telemetry.enableTelemetry": false,
     "typescript.tsdk": "/Users/jez/stripe/pay-server/frontend/js-scripts/node_modules/typescript/lib",
+    "search.smartCase": true,
 }

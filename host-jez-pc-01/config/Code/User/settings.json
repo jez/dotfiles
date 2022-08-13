@@ -31,4 +31,5 @@
     "workbench.preferredDarkColorTheme": "Better Solarized Dark",
     "workbench.preferredLightColorTheme": "Better Solarized Light",
     "window.autoDetectColorScheme": true,
+    "search.smartCase": true,
 }
