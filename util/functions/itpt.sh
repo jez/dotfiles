@@ -23,12 +23,11 @@ itpt() {
     echo -e "\033]50;SetProfile=solarized-$SOLARIZED\a"
   elif [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
     true
-  else # alacritty
-    if ! command -v realpath &> /dev/null; then
-      echo "Install 'realpath' to toggle the Alacritty profile"
-      return 1
-    fi
+  fi
 
+  if ! command -v realpath &> /dev/null; then
+    echo "Install 'realpath' to toggle the Alacritty profile"
+  else
     local __config
     __config="$(realpath "$HOME/.config/alacritty/alacritty.yml")"
     if [ "$SOLARIZED" = "dark" ]; then
@@ -41,6 +40,7 @@ itpt() {
       rm "$__config.bak" > /dev/null
     fi
   fi
+
 
   if [ -n "$TMUX" ]; then
     tmux source "$XDG_CONFIG_HOME/tmux/solarized-$SOLARIZED.tmuxline"
