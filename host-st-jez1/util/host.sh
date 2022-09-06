@@ -133,7 +133,10 @@ source /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
+export CARGO_HOME="/Users/$USER/stripe/cargo"
+export RUSTUP_HOME="/Users/$USER/stripe/rustup"
+export PATH="$PATH:/Users/$USER/stripe/cargo/bin"
 
 # Change my iTerm2 profile based on SOLARIZED variable
 # See also: ~/.util/functions/itpt.sh
