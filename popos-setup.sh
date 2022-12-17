@@ -41,7 +41,8 @@ RCRC=./rcrc rcup
 
 # zsh
 brew install zsh
-echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells
+# should already be in /etc/shells, but if not:
+# echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells
 chsh -s "$(brew --prefix)/bin/zsh"
 
 # neovim
