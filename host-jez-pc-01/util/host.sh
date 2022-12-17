@@ -17,37 +17,59 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-[ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -d /home/linuxbrew/.linuxbrew ] && [ "$HOMEBREW_PREFIX" = "" ]; then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv | grep -v "export PATH")
+fi
 
 # Add diff-highlight from Git contrib
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight"
+if [ "$DIFF_HIGHLIGHT_PATH" = "" ]; then
+  export DIFF_HIGHLIGHT_PATH=/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight
+  export PATH="$PATH:$DIFF_HIGHLIGHT_PATH"
+fi
 
-export PATH="$PATH:./node_modules/.bin"
-
-export PATH="$PATH:$HOME/.local/bin"
+if [ "$NODE_MODULES_BIN_PATH" = "" ]; then
+  export NODE_MODULES_BIN_PATH=./node_modules/.bin
+  export PATH="$PATH:$NODE_MODULES_BIN_PATH"
+fi
 
 # Globally installed yarn executables
-export PATH="$PATH:$HOME/.yarn/bin"
-export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+if [ "$YARN_BIN_PATH" = "" ]; then
+  export YARN_BIN_PATH="$HOME/.yarn/bin"
+  export PATH="$PATH:$YARN_BIN_PATH"
+fi
+if [ "$YARN_NODE_MODULES_PATH" = "" ]; then
+  export YARN_NODE_MODULES_PATH="$HOME/.config/yarn/global/node_modules/.bin"
+  export PATH="$PATH:$YARN_NODE_MODULES_PATH"
+fi
 
-if [ -d "$HOME/.rbenv" ]; then
+if [ -d "$HOME/.rbenv" ] && [ "$RBENV_SHELL" = "" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   rbenv rehash
 fi
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+if [ "$CARGO_BIN" = "" ]; then
+  export CARGO_BIN="$HOME/.cargo/bin"
+  export PATH="$CARGO_BIN:$PATH"
+fi
+
+export TZ="/etc/localtime"
 
 if command -v tic | grep -q linuxbrew; then
   export TERMINFO_DIRS="$(tic -D | tr '\n' ':' | sed -e 's/:$//')"
 fi
 
 # OCaml
-eval "$(opam env)"
+if command opam &> /dev/null; then
+  eval "$(opam env)"
+fi
 
 # Find clangd from Homebrew, but put it last (fallback)
-export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
+if [ "$LLVM_PATH" = "" ]; then
+  export LLVM_PATH="$HOMEBREW_PREFIX/opt/llvm/bin"
+  export PATH="$PATH:$LLVM_PATH"
+fi
 
 # ----- aliases ---------------------------------------------------------------
 

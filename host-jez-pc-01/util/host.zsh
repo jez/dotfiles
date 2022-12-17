@@ -19,4 +19,6 @@ source ~/.util/lldb.zsh
 # source ~/.util/skip-dirty.zsh
 
 # OPAM configuration
-source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+if command -v opam &> /dev/null; then
+  source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
