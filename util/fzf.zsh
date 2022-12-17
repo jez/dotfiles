@@ -48,11 +48,13 @@ _gen_fzf_default_opts() {
   export FZF_DEFAULT_OPTS_DARK="
     --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:-1,hl+:$blue
     --color info:$yellow,prompt:$yellow,pointer:$base3,marker:$base3,spinner:$yellow
+    --no-separator
   "
   # Solarized Light color scheme for fzf
   export FZF_DEFAULT_OPTS_LIGHT="
     --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:-1,hl+:$blue
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
+    --no-separator
   "
 
   if [ "$SOLARIZED" = "dark" ]; then
