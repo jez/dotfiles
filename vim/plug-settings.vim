@@ -279,7 +279,7 @@ augroup END
 " }}}
 " ----- ntpeters/vim-better-whitespace ----- {{{
 " Don't highlight whitespace in git commit messages (for diffs)...
-let g:better_whitespace_filetypes_blacklist=['gitcommit']
+let g:better_whitespace_filetypes_blacklist=['gitcommit', 'fzf']
 " ... but strip it on save so that we're still safe
 augroup vimBetterWhiteSpace
   autocmd FileType gitcommit autocmd BufWritePre <buffer> StripWhitespace
