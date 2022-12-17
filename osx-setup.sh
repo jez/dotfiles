@@ -46,6 +46,8 @@ brew install hub
 brew install bash
 brew install bash-completion
 echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
+
+# (you do actually want to still do this btw)
 brew install zsh
 echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells
 chsh -s "$(brew --prefix)/bin/zsh"
@@ -60,11 +62,20 @@ brew install vim
 # Set up dotfiles
 brew tap thoughtbot/formulae
 brew install rcm
+
+# TODO(jez) Document how to set up all the ssh keys you need
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# On Stripe machines:
+vim ~/.ssh/config
+# comment out the `Host *` section
+
 # If you are not Jake Zimmerman, you will want to fork this repo first
 hub clone --recursive jez/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 # Make sure we use correct rcrc, as there will be no ~/.rcrc yet
 RCRC="./rcrc" rcup
+# or for Stripe laptops:
+RCRC="./rcrc" rcup -B st-jez1 -d ~/stripe/dotfiles
 cd -
 
 # Set up host-specific (git, sh, zsh, etc.)
@@ -81,6 +92,8 @@ exit
 # Set up iTerm2
 #
 # Load preferences from folder (choose: ~/.dotfiles)
+# Install Iosevka Fixed
+#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
 # Install Menlo for Powerline (from ~/.dotfiles/fonts/)
 
 # Download and import iTerm colors
@@ -97,7 +110,7 @@ brew install neovim
 ln -s ~/.vim ~/.config/nvim
 
 # Install fzf
-brew install fzf
+brew install fzf fd
 /usr/local/opt/fzf/install
 mkrc -o ~/.fzf.zsh
 rm ~/.fzf.bash
@@ -309,5 +322,5 @@ npm install -g jade
 # Messages
 #
 # - Add iCloud account
-# - Be sure to sync contacts
+# - Be sure to sync contacts from Google account (not iCloud)
 # - Google when you need help
