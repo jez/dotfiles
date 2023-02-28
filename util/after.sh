@@ -8,6 +8,6 @@ export TMUXLINE_ACCENT_COLOR="${TMUXLINE_ACCENT_COLOR:-colour2}"
 
 # ensure that these directories are available to us
 if [ "$LOCAL_PATH" = "" ]; then
-  export LOCAL_PATH=".:$HOME/bin:/usr/local/bin:$HOME/.local/bin"
+  export LOCAL_PATH=".:$HOME/bin:$HOME/.local/bin"
   export PATH="$LOCAL_PATH:$PATH"
 fi
