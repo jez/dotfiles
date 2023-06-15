@@ -1,5 +1,20 @@
-# I couldn't figure out how to chsh to zsh on devboxes
-# Stolen from remote_default_bashrc_preamble and remote_default_bashrc_appendix
+# We don't have entries in /etc/passwd (because users are managed somehow else)
+# The login shell is instead chosen by `pay ssh` and `pay remote ssh` to set
+# `'$SHELL --login'` as the argument to the `ssh` command that eventually gets
+# run. That runs _after_ whatever the user's configured shell is, so if in the
+# ~/.bashrc (here) the user sets the `SHELL` variable to something else, that
+# will get run by ssh.
+#
+# There is documentation here:
+# https://trailhead.corp.stripe.com/docs/devbox/remote-dev/dotfiles#changing-the-shell
+#
+# That means that
+# - $SHELL is not a "special" or "magic" variable. Though it _is_ set by `bash`
+#   on startup, it's not the sort of thing that if you change it in your bashrc,
+#   it automatically causes the shell to change that instant. Rather, it's just
+#   something that our ssh wrapper scripts allow as a configuration point.
+# - It only affects `pay ssh` and `pay remote ssh`. Directly running `ssh` to a
+#   mydev won't automatically use a different shell.
 
 export ORIGINAL_SHELL=$SHELL
 if [ -f /home/linuxbrew/.linuxbrew/bin/zsh ]; then
@@ -8,6 +23,7 @@ else
   export SHELL=/bin/zsh
 fi
 
+# --- Stolen from remote_default_bashrc_appendix ------------------------------
 # NOTE: we want the shell to only be used in terminals started through:
 # 1. `pay remote ssh`
 # 2. VSCode's "New Terminal"
@@ -40,4 +56,4 @@ if [ "$SHELL" != "$ORIGINAL_SHELL" ]; then
         export SHELL=$ORIGINAL_SHELL
     fi
 fi
-
+# -----------------------------------------------------------------------------
