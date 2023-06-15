@@ -1,6 +1,46 @@
-# I couldn't figure out how to chsh to zsh on devboxes
-
 # Make sure we are running interactively, else stop
 [ -z "$PS1" ] && return
 
-exec zsh
+# I couldn't figure out how to chsh to zsh on devboxes
+# Stolen from remote_default_bashrc_preamble and remote_default_bashrc_appendix
+
+export ORIGINAL_SHELL=$SHELL
+if [ -f /home/linuxbrew/.linuxbrew/bin/zsh ]; then
+  export SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
+else
+  export SHELL=/bin/zsh
+fi
+
+# NOTE: we want the shell to only be used in terminals started through:
+# 1. `pay remote ssh`
+# 2. VSCode's "New Terminal"
+#
+# In other cases, we want to avoid overriding $SHELL, and that's why we set it back to $ORIGINAL_SHELL `remote_default_bashrc_preamble.sh`)
+# This is necessary because some scripts are incompatible with anything but bash.
+if [ "$SHELL" != "$ORIGINAL_SHELL" ]; then
+    if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+        is_vscode=true
+    fi
+
+    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa test" ]]; then
+        is_running_test=true
+    fi
+
+    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa debug" ]]; then
+        is_running_debug=true
+    fi
+
+    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa tail" ]]; then
+        is_running_tail=true
+    fi
+
+    if [[ $is_vscode && ! $is_running_test && ! $is_running_debug && ! $is_running_tail ]]; then
+        # Launch the preferred shell, so the terminal has it.
+        # Note that we don't do this for test runs or debug sessions, as starting the shell there breaks their
+        # behaviour from within VS Code
+        exec $SHELL
+    elif [ -z "$SSH_TTY" ]; then
+        export SHELL=$ORIGINAL_SHELL
+    fi
+fi
+
