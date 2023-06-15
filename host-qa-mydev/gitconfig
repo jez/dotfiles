@@ -10,3 +10,5 @@
 
 [github]
 	user = jez
+[hub]
+	host = git.corp.stripe.com

@@ -64,3 +64,9 @@ curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux6
 # brew install neovim
 ln -s ~/.vim ~/.config/nvim
 
+# TODO(jez) If you decide to install git (~10 min build time)
+# you will need this:
+# cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
+#
+# TODO(jez) Also not automated: set up hub by copying ~/.config/hub, and
+# deleting the unix_socket part
