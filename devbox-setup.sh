@@ -17,6 +17,8 @@ fi
 (
 cd /pay/src/pay-server
 git config user.email jez@stripe.com
+git config core.commitGraph true
+git commit-graph write --reachable
 )
 
 echo 'Installing homebrew'
@@ -49,10 +51,6 @@ cd ~/.vim/bundle/LanguageClient-neovim
 bash install.sh
 cd -
 
-brew install fzf
-/home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
-
-brew install tmux
 
 mkdir -p "$HOME/.local/bin"
 
@@ -63,6 +61,13 @@ curl -fsSL https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-v8.4.0-x86_
 curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
 # brew install neovim
 ln -s ~/.vim ~/.config/nvim
+
+brew install fzf
+/home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
+
+brew install git
+brew install zsh
+brew install --HEAD tmux
 
 # TODO(jez) If you decide to install git (~10 min build time)
 # you will need this:
