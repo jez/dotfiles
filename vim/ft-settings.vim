@@ -103,6 +103,9 @@ augroup myFiletypes
   au FileType c,cpp,bzl setlocal softtabstop=4
   au FileType c,cpp,bzl setlocal shiftwidth=4
 
+  au FileType go setlocal tabstop=8
+  au FileType go setlocal shiftwidth=8
+
   " Add comment character when pressing 'o' or Enter
   au FileType sh setlocal formatoptions+=ro
 
