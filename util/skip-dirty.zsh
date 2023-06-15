@@ -16,8 +16,8 @@ function chpwd() {
     /Users/jez/psb/*) ;&
     /Users/jez/stripe/pay-server) ;&
     /Users/jez/stripe/pay-server/*) ;&
-    /Users/jez/stripe-b/pay-server) ;&
-    /Users/jez/stripe-b/pay-server/*) ;&
+    /pay/src/pay-server) ;&
+    /pay/src/pay-server/*) ;&
     /Users/jez/stripe/ps-worktree) ;&
     /Users/jez/stripe/ps-worktree/*) ;&
     /Users/jez/zoolander) ;&

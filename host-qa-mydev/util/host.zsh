@@ -13,4 +13,4 @@
 
 source ~/.util/fzf.zsh
 source ~/.util/bazel.zsh
-export PROMPT_PURE_SKIP_DIRTY_CHECK=1
+source ~/.util/skip-dirty.zsh
