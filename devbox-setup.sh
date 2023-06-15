@@ -14,6 +14,11 @@ fi
 
 # ----- remote -----
 
+(
+cd /pay/src/pay-server
+git config user.email jez@stripe.com
+)
+
 echo 'Installing homebrew'
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -58,3 +63,4 @@ curl -fsSL https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-v8.4.0-x86_
 curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
 # brew install neovim
 ln -s ~/.vim ~/.config/nvim
+
