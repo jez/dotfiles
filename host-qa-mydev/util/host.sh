@@ -60,8 +60,17 @@ export SORBET_SILENCE_DEV_MESSAGE=1
 
 # ----- Prompt  ---------------------------------------------------------------
 
-export PROMPT_PURE_DIR_COLOR="%{$cmagenta%}"
-export TMUXLINE_ACCENT_COLOR="colour05"
+if [ -f /pay/conf/mydev-remote-name ]; then
+  REMOTE_NAME="$(< /pay/conf/mydev-remote-name)"
+  export REMOTE_NAME
+
+  export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
+  export TMUXLINE_ACCENT_COLOR="colour13"
+else
+  export PROMPT_PURE_DIR_COLOR="%{$cmagenta%}"
+  export TMUXLINE_ACCENT_COLOR="colour05"
+fi
+
 
 # ----- Miscellaneous ---------------------------------------------------------
 
