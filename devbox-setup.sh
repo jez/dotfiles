@@ -21,7 +21,7 @@ git config user.email jez@stripe.com
 
 echo 'Installing homebrew'
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # I tried mucking with the Homebrew source files for linux to get around the
