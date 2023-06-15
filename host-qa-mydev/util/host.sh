@@ -58,6 +58,11 @@ alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --t
 alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
 
+function code() {
+  path="$(realpath "$1")"
+  echo "vscode://vscode-remote/ssh-remote+$REMOTE_NAME/$path"
+}
+
 # ----- Prompt  ---------------------------------------------------------------
 
 if [ -f /pay/conf/mydev-remote-name ]; then
