@@ -24,6 +24,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # Add diff-highlight from Git contrib
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight"
 
+# From /etc/bash.bashrc on mydev
+[ -d /usr/stripe/bin ] && export PATH="$PATH:/usr/stripe/bin"
+
 # ----- aliases ---------------------------------------------------------------
 
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
