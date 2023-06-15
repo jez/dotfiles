@@ -166,6 +166,7 @@ let g:ale_fixers.reason = ['refmt']
 let g:ale_fixers.scala = ['scalafmt']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.haskell = ['brittany', 'stylish-haskell']
+let g:ale_fixers.go = ['gofmt']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
@@ -181,6 +182,7 @@ augroup aleMaps
   au FileType scala let g:ale_fix_on_save = 1
   au FileType rust let g:ale_fix_on_save = 1
   au FileType haskell let g:ale_fix_on_save = 1
+  au FileType go let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
