@@ -1,6 +1,3 @@
-# Make sure we are running interactively, else stop
-[ -z "$PS1" ] && return
-
 # I couldn't figure out how to chsh to zsh on devboxes
 # Stolen from remote_default_bashrc_preamble and remote_default_bashrc_appendix
 
