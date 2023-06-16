@@ -58,6 +58,8 @@ alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --t
 alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
 
+export TZ="America/Los_Angeles"
+
 code() {
   arg1_real_path="$(realpath "$1")"
   echo "vscode://vscode-remote/ssh-remote+$REMOTE_NAME/$arg1_real_path"
