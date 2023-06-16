@@ -133,7 +133,9 @@ zle_highlight+=(paste:none)
 unalias run-help 2> /dev/null
 autoload run-help
 # (again, this path is specific to zsh installed through Homebrew)
-HELPDIR=/usr/local/share/zsh/help
+if command -v brew &> /dev/null && [ "$HELPDIR" = "" ]; then
+  HELPDIR="$(brew --prefix zsh)/share/zsh/help"
+fi
 alias help="run-help"
 
 
