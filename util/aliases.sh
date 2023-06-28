@@ -195,6 +195,7 @@ alias gro="git reviewone"
 alias grf="git reviewf"
 
 alias gitprune='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias fastgitlog='git config core.commitGraph true && git commit-graph write --reachable'
 
 # resuable format strings
 GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(auto)%cs%Creset %C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
