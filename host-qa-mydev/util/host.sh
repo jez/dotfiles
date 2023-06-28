@@ -65,6 +65,8 @@ code() {
   echo "vscode://vscode-remote/ssh-remote+$REMOTE_NAME/$arg1_real_path"
 }
 
+alias mux='tmux new -As "$(< /pay/conf/mydev-remote-name)"'
+
 # ----- Prompt  ---------------------------------------------------------------
 
 if [ -f /pay/conf/mydev-remote-name ]; then

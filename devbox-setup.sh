@@ -66,18 +66,8 @@ brew install fzf
 /home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
 
 brew install git
+cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 brew install zsh
 brew install --HEAD tmux
 
-# TODO(jez) If you decide to install git (~10 min build time)
-# you will need this:
-# cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
-#
-# TODO(jez) You need zsh from Linuxbrew for completions to work
-#
-# TODO(jez) Also not automated: set up hub by copying ~/.config/hub, and
-# deleting the unix_socket part
-#
-# TODO(jez) You need tmux installed from HEAD
-#
 # TODO(jez) Figure out where to put pay configure --no-pay-up-emoji
