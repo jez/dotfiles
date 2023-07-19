@@ -27,11 +27,23 @@ sudo unlink /home
 sudo mount --bind /pay/home /home
 echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
 
+# $HOME gets blown away by the above lines, so we have to recreate what setup.sh does here.
+# TODO(jez) Is there a way to avoid that?
+mkdir -p "$HOME/.ssh"
+cat > "$HOME/.ssh/config" <<EOF
+Host github.com
+    ProxyCommand corkscrew dynamic-egress-proxy.service.envoy 10071 %h %p
+EOF
+
+git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
+
+
 echo 'Installing homebrew'
 
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# TODO(jez) Can we delete this now that we have the unlink+mount dance above?
 # I tried mucking with the Homebrew source files for linux to get around the
 # bottle problem (/home -> /pay/home symlink) but
 # - brew aggressively tries to reset the state to a clean `stable` branch
