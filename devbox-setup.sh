@@ -21,6 +21,14 @@ git config core.commitGraph true
 git commit-graph write --reachable
 )
 
+echo 'Fixing /pay/home mount point for Linuxbrew'
+
+sudo unlink /home
+sudo rm /home
+sudo mkdir /home
+sudo mount --bind /pay/home /home
+echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
+
 echo 'Installing homebrew'
 
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
