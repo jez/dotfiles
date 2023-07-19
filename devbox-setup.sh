@@ -24,7 +24,6 @@ git commit-graph write --reachable
 echo 'Fixing /pay/home mount point for Linuxbrew'
 
 sudo unlink /home
-sudo rm /home
 sudo mkdir /home
 sudo mount --bind /pay/home /home
 echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
