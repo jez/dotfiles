@@ -31,29 +31,35 @@ fi
 # In other cases, we want to avoid overriding $SHELL, and that's why we set it back to $ORIGINAL_SHELL `remote_default_bashrc_preamble.sh`)
 # This is necessary because some scripts are incompatible with anything but bash.
 if [ "$SHELL" != "$ORIGINAL_SHELL" ]; then
-    if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-        is_vscode=true
-    fi
+  if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    is_vscode=true
+  fi
 
-    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa test" ]]; then
-        is_running_test=true
-    fi
+  if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa test" ]]; then
+    is_running_test=true
+  fi
 
-    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa debug" ]]; then
-        is_running_debug=true
-    fi
+  if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa debug" ]]; then
+    is_running_debug=true
+  fi
 
-    if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa tail" ]]; then
-        is_running_tail=true
-    fi
+  if [[ "$BASH_EXECUTION_STRING" =~ "pay --prefer-vscode-2fa tail" ]]; then
+    is_running_tail=true
+  fi
 
-    if [[ $is_vscode && ! $is_running_test && ! $is_running_debug && ! $is_running_tail ]]; then
-        # Launch the preferred shell, so the terminal has it.
-        # Note that we don't do this for test runs or debug sessions, as starting the shell there breaks their
-        # behaviour from within VS Code
-        exec $SHELL
-    elif [ -z "$SSH_TTY" ]; then
-        export SHELL=$ORIGINAL_SHELL
+  if [[ $is_vscode && ! $is_running_test && ! $is_running_debug && ! $is_running_tail ]]; then
+    # Launch the preferred shell, so the terminal has it.
+    # Note that we don't do this for test runs or debug sessions, as starting the shell there breaks their
+    # behaviour from within VS Code
+    exec $SHELL
+  elif [[ $- == *i* ]]; then
+    if shopt -q login_shell; then
+      exec $SHELL --login
+    else
+      exec $SHELL
     fi
+  elif [ -z "$SSH_TTY" ]; then
+    export SHELL=$ORIGINAL_SHELL
+  fi
 fi
 # -----------------------------------------------------------------------------
