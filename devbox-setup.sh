@@ -88,5 +88,6 @@ brew install git
 cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 brew install zsh
 brew install --HEAD tmux
+brew install fastmod
 
 # TODO(jez) Figure out where to put pay configure --no-pay-up-emoji
