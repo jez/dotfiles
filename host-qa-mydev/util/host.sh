@@ -67,6 +67,11 @@ code() {
 
 alias mux='tmux new -As "$(< /pay/conf/mydev-remote-name)"'
 
+unset GIT_AUTHOR_NAME
+unset GIT_COMMITTER_NAME
+unset GIT_AUTHOR_EMAIL
+unset GIT_COMMITTER_EMAIL
+
 # ----- Prompt  ---------------------------------------------------------------
 
 if [ -f /pay/conf/mydev-remote-name ]; then
