@@ -21,22 +21,22 @@ git config core.commitGraph true
 git commit-graph write --reachable
 )
 
-echo 'Fixing /pay/home mount point for Linuxbrew'
+# echo 'Fixing /pay/home mount point for Linuxbrew'
 
-sudo unlink /home
-sudo mkdir /home
-sudo mount --bind /pay/home /home
-echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
+# sudo unlink /home
+# sudo mkdir /home
+# sudo mount --bind /pay/home /home
+# echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
 
-# $HOME gets blown away by the above lines, so we have to recreate what setup.sh does here.
-# TODO(jez) Is there a way to avoid that?
-mkdir -p "$HOME/.ssh"
-cat > "$HOME/.ssh/config" <<EOF
-Host github.com
-    ProxyCommand corkscrew dynamic-egress-proxy.service.envoy 10071 %h %p
-EOF
+# # $HOME gets blown away by the above lines, so we have to recreate what setup.sh does here.
+# # TODO(jez) Is there a way to avoid that?
+# mkdir -p "$HOME/.ssh"
+# cat > "$HOME/.ssh/config" <<EOF
+# Host github.com
+#     ProxyCommand corkscrew dynamic-egress-proxy.service.envoy 10071 %h %p
+# EOF
 
-git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
+# git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
 
 
 echo 'Installing homebrew'
