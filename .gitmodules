@@ -220,3 +220,6 @@
 [submodule "zfunctions/zsh-autoquoter"]
 	path = zfunctions/zsh-autoquoter
 	url = https://github.com/ianthehenry/zsh-autoquoter
+[submodule "vim/bundle/vim-eunuch"]
+	path = vim/bundle/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
