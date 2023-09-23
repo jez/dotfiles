@@ -547,6 +547,8 @@ let g:fzf_layout = {
 nnoremap <leader>\| vip:Tabularize /\|<CR><C-o>
 " }}}
 " ----- autozimu/LanguageClient-neovim ----- {{{
+
+hi! SpellBadInfo       gui=undercurl guisp=#6c71c4
 let g:LanguageClient_diagnosticsDisplay = {
       \     1: {
       \         "name": "Error",
@@ -564,7 +566,7 @@ let g:LanguageClient_diagnosticsDisplay = {
       \     },
       \     3: {
       \         "name": "Information",
-      \         "texthl": "SpellBad",
+      \         "texthl": "SpellBadInfo",
       \         "signText": "ℹ",
       \         "signTexthl": "LCHighlightedInfo",
       \         "virtualTexthl": "LCHighlightedInfo",
