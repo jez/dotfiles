@@ -165,6 +165,8 @@ nnoremap <silent> <leader>z z=1<CR><CR>
 " mode
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+cnoremap <S-C-Left> <Home>
+cnoremap <S-C-Right> <End>
 
 " Create a manual fold with the region determined by going to the end of the
 " line, entering visual line mode, then jumping to the matching brace. So:

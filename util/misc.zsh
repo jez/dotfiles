@@ -66,6 +66,11 @@ bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word
 bindkey "^U" backward-kill-line
 
+bindkey '^[[1;2D' backward-word # Shift + Left
+bindkey '^[[1;2C' forward-word # Shift + Right
+bindkey '^[[1;6D' beginning-of-line # Control + Shift + Left
+bindkey '^[[1;6C' end-of-line # Control + Shift + Right
+
 # Make ^H and backspace behave correctly
 bindkey "^H" backward-delete-char
 
