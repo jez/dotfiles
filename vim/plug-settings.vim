@@ -81,7 +81,10 @@ let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ' %3v']
 
 " }}}
 " ----- Raimondi/delimitMate settings ----- {{{
-let g:delimitMate_expand_cr = 1
+" Define expand return manually, so it plays nice with vim-eunuch
+" (can't be a buffer mapping, and easier if it's an <expr> mapping)
+" let g:delimitMate_expand_cr = 1
+imap <silent><expr> <CR> delimitMate#ExpandReturn()
 let g:delimitMate_excluded_regions = ''
 augroup mydelimitMate
   au!
@@ -256,6 +259,11 @@ hi! link GitGutterDelete gitgutterDelete
 " ----- tpope/vim-rhubarb settings ----- {{{
 
 let g:github_enterprise_urls = ['https://git.corp.stripe.com']
+
+" }}}
+" ----- tpope/vim-eunuch settings ----- {{{
+
+cabbrev <expr> Mover "Move ".expand("%")
 
 " }}}
 " ----- pangloss/vim-javascript ----- {{{
