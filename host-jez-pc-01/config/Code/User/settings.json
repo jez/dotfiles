@@ -16,7 +16,7 @@
     "gitlens.currentLine.pullRequests.enabled": false,
     "gitlens.codeLens.enabled": false,
     "files.insertFinalNewline": true,
-    "editor.renderFinalNewline": false,
+    "editor.renderFinalNewline": "off",
     "ruby.intellisense": false,
     "files.associations": {
       "*.rbi": "ruby",
