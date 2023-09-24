@@ -16,7 +16,7 @@ if echo $TERM | grep 'tmux' &> /dev/null; then
   tic -x ~/.tmux-256color.terminfo
 elif echo $TERM | grep 'xterm' &> /dev/null; then
   # The -x is required for "treat unknown capabilities as user-defined"
-  tic -x ~/.xterm-256color.terminfo
+  tic -x ~/.xterm-256color.terminfo &> /dev/null
 else
   export TERM=xterm-256color
 fi
