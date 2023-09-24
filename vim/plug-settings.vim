@@ -512,6 +512,8 @@ augroup vimuxMappings
 
   au FileType ruby nnoremap <silent> <buffer> <leader>if :VimuxRunCommand 'sorbet "'.bufname("%").'"'<CR>
   au FileType ruby nnoremap <silent> <buffer> <leader>ir :VimuxRunCommand 'ruby "'.bufname("%").'"'<CR>
+
+  au FileType pandoc nnoremap <silent> <buffer> <leader>ip :VimuxRunCommand '_bin/publish "'.bufname("%").'"'<CR>
 augroup END
 " }}}
 " ----- fzf ----- {{{
