@@ -110,6 +110,8 @@ command! Nocurly call Nocurly()
 " Merge current tab with the tab to the left
 noremap <C-w>m :Tabmerge right<CR>
 
+command! Publish !_bin/publish %
+
 " ----- Custom keybindings --------------------------------------------------
 
 " <space> is usually a motion meaning the same as 'l' (one letter forward)
