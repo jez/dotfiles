@@ -96,14 +96,14 @@ gfi() {
 }
 
 # Select commit from git history
-gh() {
-  is_in_git_repo || return
-  git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
-  fzf --height 50% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
-    --header 'Press CTRL-S to toggle sort' \
-    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
-  grep -o "[a-f0-9]\{7,\}"
-}
+# gh() {
+#   is_in_git_repo || return
+#   git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
+#   fzf --height 50% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
+#     --header 'Press CTRL-S to toggle sort' \
+#     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
+#   grep -o "[a-f0-9]\{7,\}"
+# }
 
 # A helper function to join multi-line output from fzf
 join-lines() {
@@ -114,8 +114,8 @@ join-lines() {
 }
 
 fzf-gfi-widget() { local result=$(gfi | join-lines); zle reset-prompt; LBUFFER+=$result }
-fzf-gh-widget()  { local result=$(gh  | join-lines); zle reset-prompt; LBUFFER+=$result }
+# fzf-gh-widget()  { local result=$(gh  | join-lines); zle reset-prompt; LBUFFER+=$result }
 zle -N fzf-gfi-widget
-zle -N fzf-gh-widget
+# zle -N fzf-gh-widget
 bindkey '^gf' fzf-gfi-widget
-bindkey '^gh' fzf-gh-widget
+# bindkey '^gh' fzf-gh-widget
