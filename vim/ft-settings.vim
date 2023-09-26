@@ -61,6 +61,7 @@ augroup myFiletypes
   " (not using that plugin because it's slow and opinionated otherwise)
   au FileType pandoc,pandoc.ghpull,markdown setlocal formatlistpat=\\C^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*>]\\s\\+
   au FileType pandoc,pandoc.ghpull,markdown setlocal formatoptions+=n
+  au FileType pandoc,pandoc.ghpull,markdown let b:surround_indent = 0
 
   " Always use tabs
   au FileType gitconfig setlocal noexpandtab
