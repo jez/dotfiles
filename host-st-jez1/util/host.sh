@@ -30,6 +30,9 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Tmux
+export MANPATH="/opt/homebrew/opt/tmux/share/man:$MANPATH"
+
 # Use bison from Homebrew
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
@@ -145,7 +148,7 @@ export PATH="$PATH:/Users/$USER/stripe/cargo/bin"
 # fi
 
 # Go
-export GOPATH="$HOME/golang"
+export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export CGO_CFLAGS="-I/usr/local/include"
 export CGO_LDFLAGS="-L/usr/local/lib"
