@@ -54,16 +54,17 @@ _gen_fzf_default_opts() {
   export FZF_DEFAULT_OPTS_LIGHT="
     --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:-1,hl+:$blue
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
-    --no-separator
   "
 
+  FZF_DEFAULT_OPTS="--no-separator --bind scroll-up:offset-up+offset-up+offset-up,scroll-down:offset-down+offset-down+offset-down"
   if [ "$SOLARIZED" = "dark" ]; then
-    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS_DARK"
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS_DARK"
   elif [ "$SOLARIZED" = "light" ]; then
-    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS_LIGHT"
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS_LIGHT"
   else
-    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS_DARK"
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS_DARK"
   fi
+  export FZF_DEFAULT_OPTS
 }
 _gen_fzf_default_opts
 
