@@ -45,6 +45,8 @@ else
   remote_devbox=false
 fi
 
+set -x
+
 if ! $remote_devbox; then
   echo 'Installing homebrew'
 
@@ -58,9 +60,23 @@ if ! $remote_devbox; then
 
   brew tap thoughtbot/formulae
   brew install rcm
-fi
 
-set -x
+  mkdir -p "$HOME/.local/bin"
+
+  curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
+
+  curl -fsSL https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-v8.4.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/fd'
+
+  curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
+
+  brew install fzf
+  brew install git
+  cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
+  brew install zsh
+  brew install --HEAD tmux
+  brew install fastmod
+  brew install hub
+fi
 
 cd ~/.dotfiles
 RCRC=./rcrc rcup -f -B qa-mydev
@@ -70,28 +86,7 @@ cd ~/.vim/bundle/LanguageClient-neovim
 bash install.sh
 cd -
 
-
-mkdir -p "$HOME/.local/bin"
-
-curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
-
-curl -fsSL https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-v8.4.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/fd'
-
-curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
-# brew install neovim
 ln -s ~/.vim ~/.config/nvim
-
-if ! $remote_devbox; then
-  brew install fzf
-
-  brew install git
-  brew install zsh
-  brew install --HEAD tmux
-  brew install fastmod
-  brew install hub
-fi
-
-cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 /home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
 
 # TODO(jez) Figure out where to put pay configure --no-pay-up-emoji
