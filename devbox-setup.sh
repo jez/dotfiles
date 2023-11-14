@@ -39,28 +39,28 @@ git commit-graph write --reachable
 # git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
 
 
-echo 'Installing homebrew'
+if [ -f /pay/conf/mydev-remote-name ]; then
+  remote_devbox=true
+else
+  remote_devbox=false
+fi
 
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if ! $remote_devbox; then
+  echo 'Installing homebrew'
 
-# TODO(jez) Can we delete this now that we have the unlink+mount dance above?
-# I tried mucking with the Homebrew source files for linux to get around the
-# bottle problem (/home -> /pay/home symlink) but
-# - brew aggressively tries to reset the state to a clean `stable` branch
-# - it ignores `--force-bottle` if the absolute path doesn't match
-# - when I force it by setting HOMEBREW_SIMULATE_FROM_CURRENT_BRANCH=1, there
-#   was a NoMethodError raised from Homebrew
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+  # Fix zsh compinit warning:
+  #     zsh compinit: insecure directories, run compaudit for list
+  chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh
+  chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh/site-functions
+
+  brew tap thoughtbot/formulae
+  brew install rcm
+fi
 
 set -x
-
-# Fix zsh compinit warning:
-#     zsh compinit: insecure directories, run compaudit for list
-chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh
-chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh/site-functions
-
-brew tap thoughtbot/formulae
-brew install rcm
 
 cd ~/.dotfiles
 RCRC=./rcrc rcup -f -B qa-mydev
@@ -81,14 +81,17 @@ curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux6
 # brew install neovim
 ln -s ~/.vim ~/.config/nvim
 
-brew install fzf
-/home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
+if ! $remote_devbox; then
+  brew install fzf
 
-brew install git
+  brew install git
+  brew install zsh
+  brew install --HEAD tmux
+  brew install fastmod
+  brew install hub
+fi
+
 cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
-brew install zsh
-brew install --HEAD tmux
-brew install fastmod
-brew install hub
+/home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
 
 # TODO(jez) Figure out where to put pay configure --no-pay-up-emoji
