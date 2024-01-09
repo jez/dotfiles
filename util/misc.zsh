@@ -118,6 +118,10 @@ ZAQ_PREFIXES+=(
   'gcm'
   'gcam'
 )
+ZAQ_PREFIXES_GREEDY+=(
+  'lg( -[^ ]##)#'
+  'lgi( -[^ ]##)#'
+)
 source $HOME/.zfunctions/zsh-autoquoter/zsh-autoquoter.zsh
 
 # Configure zsh-syntax-highlighting
