@@ -37,7 +37,7 @@ if exists('&breakindent')
   try
     " Use the contents of 'formatlistpat' to make hanging indent
     set breakindentopt+=list:-1
-  catch E474
+  catch /E474/
   endtry
 endif
 set foldnestmax=4      " Only fold up to one level deep
