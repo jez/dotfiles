@@ -71,12 +71,13 @@ if ! $remote_devbox; then
 
   brew install fzf
   brew install git
-  cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
   brew install zsh
   brew install --HEAD tmux
   brew install fastmod
   brew install hub
 fi
+
+cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 
 cd ~/.dotfiles
 RCRC=./rcrc rcup -f -B qa-mydev
