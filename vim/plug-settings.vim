@@ -96,6 +96,8 @@ augroup mydelimitMate
   au FileType eruby let b:delimitMate_matchpairs = "(:),[:],{:}"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
   au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
+
+  au FileType ruby,pandoc let b:delimitMate_expand_space = 1
 augroup END
 
 " }}}
