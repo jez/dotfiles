@@ -326,6 +326,12 @@ let g:pandoc#syntax#use_definition_lists = 0
 let g:grepper = {}
 " Only use rg for grepping
 let g:grepper.tools = ['rg']
+let g:grepper.tools += ['lg']
+let g:grepper.lg = {
+      \ 'grepprg':    'lg --no-heading --no-color',
+      \ 'grepformat': '%f:%l:%m',
+      \ 'escape':     '\^$.*+?()[]{}|',
+      \ }
 " See ~/.vim/after for more grepper settings
 " Highlight search matches (like it were hlsearch)
 let g:grepper.highlight = 1
