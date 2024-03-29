@@ -11,6 +11,8 @@
 	autoSetupRemote = true
 [log]
 	date = relative
+[rebase]
+	autosquash = true
 [diff]
 	colorMoved = yes
 [init]
