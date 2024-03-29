@@ -12,7 +12,7 @@ augroup myFiletypes
   " Patch filetypes for common extensions
 
   " Markdown files
-  au BufRead,BufNewFile,BufFilePost *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md setlocal filetype=pandoc
+  au BufRead,BufNewFile,BufFilePre,BufFilePost *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md setlocal filetype=pandoc
   " Treat all .tex files as latex
   au BufRead,BufNewFile *.tex setlocal filetype=tex
   " LaTeX class files
@@ -62,6 +62,14 @@ augroup myFiletypes
   au FileType pandoc,pandoc.ghpull,markdown setlocal formatlistpat=\\C^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*>]\\s\\+
   au FileType pandoc,pandoc.ghpull,markdown setlocal formatoptions+=n
   au FileType pandoc,pandoc.ghpull,markdown let b:surround_indent = 0
+
+  " Only make these aliases work in markdown files, where we expect to have
+  " long wrapped lines. Don't make them work in code files, where a wrapped
+  " line is rare and only happens when we have a viewport that's too narrow.
+  au FileType pandoc,pandoc.ghpull,markdown noremap <silent> 0 g0
+  au FileType pandoc,pandoc.ghpull,markdown noremap <silent> g0 0
+  au FileType pandoc,pandoc.ghpull,markdown noremap <silent> $ g$
+  au FileType pandoc,pandoc.ghpull,markdown noremap <silent> g$ $
 
   " Always use tabs
   au FileType gitconfig setlocal noexpandtab
