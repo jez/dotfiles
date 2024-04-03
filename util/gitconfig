@@ -45,7 +45,8 @@
 	fp = push --force-with-lease
 	bd = branch -D
 	# the SHA to compare diffs against
-	review-base = !git merge-base HEAD \"${review_base:-origin/master}\"
+	review-base = !git merge-base \"${review_base:-origin/master}\" \"${1:-HEAD}\"
+	base = review-base
 	# list files which have changed since review_base
 	files = !git diff --name-only $(git review-base)
 	# Same as above, but with a diff stat instead of just names
@@ -71,6 +72,9 @@
 	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
 	root = rev-parse --show-toplevel
 	head = rev-parse HEAD
+	restack = !git rebase --update-refs --onto "${review_base:-origin/master}" "$(git review-base)" "${1:-$(git branch --show-current)}"
+	land = !git rebase --update-refs --onto "${review_base:-origin/master}" "${1:-$(git review-base)}" "${2:-$(git branch --show-current)}"
+	# old-submit-stack = !git branch --format \"%(if)%(upstream)%(then)%(upstream:remotename)%(else)origin%(end) %(refname:lstrip=2)\" --merged HEAD \"$USER-*\" | tac | xargs -L 1 git push --force-with-lease 2>&1 | sed -e '/^remote:/d'
 	# See https://github.com/jez/bin/tree/master/git-submit-stack
 	ss = submit-stack
 
