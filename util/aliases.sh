@@ -196,6 +196,8 @@ alias grf="git reviewf"
 
 alias gbd="git for-each-ref --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads | grep -v '^$' | xargs git branch -D"
 
+alias gfpd="gfp && gbd"
+
 alias gitprune='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias fastgitlog='git config core.commitGraph true && git commit-graph write --reachable'
 
