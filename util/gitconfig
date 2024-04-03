@@ -13,6 +13,7 @@
 	date = relative
 [rebase]
 	autosquash = true
+	updateRefs = true
 [diff]
 	colorMoved = yes
 [init]
