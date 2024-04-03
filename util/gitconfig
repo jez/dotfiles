@@ -70,6 +70,8 @@
 	my-last = log -n1 --format=\"%H\" --author=\"\\([jJ]ake\\)\\|\\([jJ]acob\\) [zZ]immerman\"
 	root = rev-parse --show-toplevel
 	head = rev-parse HEAD
+	# See https://github.com/jez/bin/tree/master/git-submit-stack
+	ss = submit-stack
 
 
 # Diff & Difftool settings
