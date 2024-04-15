@@ -74,6 +74,7 @@
 	head = rev-parse HEAD
 	restack = !git rebase --update-refs --onto "${review_base:-origin/master}" "$(git review-base)" "${1:-$(git branch --show-current)}"
 	land = !git rebase --update-refs --onto "${review_base:-origin/master}" "${1:-$(git review-base)}" "${2:-$(git branch --show-current)}"
+	parent = !git rev-list \"$(git base \"${1:-HEAD}\")^..${1:-HEAD}^\" --no-commit-header --pretty=\"format:%(decorate:prefix=,suffix=,separator=%n,pointer=%n)\" | head -n 1
 	# old-submit-stack = !git branch --format \"%(if)%(upstream)%(then)%(upstream:remotename)%(else)origin%(end) %(refname:lstrip=2)\" --merged HEAD \"$USER-*\" | tac | xargs -L 1 git push --force-with-lease 2>&1 | sed -e '/^remote:/d'
 	# See https://github.com/jez/bin/tree/master/git-submit-stack
 	ss = submit-stack
