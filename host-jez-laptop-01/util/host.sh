@@ -7,13 +7,14 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-# Catalina
-export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
-export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
+# Catalina, seems fixed on Ventura?
+# export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
+# export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
 
 # Use GNU coreutils with their actual names
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# seems to be there already on Ventura? but only inside tmux??
+# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Use bison from Homebrew
 export PATH="/usr/local/opt/bison/bin:$PATH"
