@@ -130,6 +130,9 @@ define_keymap(browsers_regex, {
 
 # ----- Everything but terminals ----- {{{
 
+def unicode_key(codepoint):
+    return [K("Ctrl-Shift-U")] + [K("Key_{}".format(char)) for char in list(codepoint)] + [K("Enter")]
+
 define_keymap(lambda wm_class: wm_class.casefold() not in terminals, {
     # ------- To coordinate with system keyboard shortcuts -------
     # I have very few manual changes in the system keyboard shortcuts (most are
@@ -157,6 +160,10 @@ define_keymap(lambda wm_class: wm_class.casefold() not in terminals, {
     K("Ctrl-Shift-Key_3"):       K("Shift-Print"),          # Screenshots > Take a screenshot
     K("Ctrl-Shift-Key_4"):       K("Print"),                # Screenshots > Take a screenshot interactively
     K("Ctrl-Shift-Key_5"):       K("Shift-Ctrl-Alt-R"),     # Screenshots > Record a screencast interactively
+
+    # ------- Special characters -------
+    K("Alt-Minus"):              unicode_key("2013"),       # EN DASH
+    K("Alt-Shift-Minus"):        unicode_key("2014"),       # EM DASH
 
     # ------- Wordwise -------
     K("Ctrl-Left"):         K("Home"),                      # Beginning of Line
