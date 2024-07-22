@@ -198,6 +198,11 @@ alias gbd="git for-each-ref --format '%(if:equals=[gone])%(upstream:track)%(then
 
 alias gfpd="gfp && gbd"
 
+# TODO(jez) Have this kill the whole command if nothing is selected?
+# This would require binding enter to become whatever process...
+alias gpa="git all-parents | fzf --height \"\${FZF_TMUX_HEIGHT:-30%}\" --reverse"
+alias gpa1="git parent"
+
 alias gitprune='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias fastgitlog='git config core.commitGraph true && git commit-graph write --reachable'
 
@@ -208,7 +213,7 @@ GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset
 
 # only branches with 'jez' in them, including their remote counter parts
 # (especially useful when in a repo with lots of other people)
-ONLY_JEZ="--branches='*jez*' --remotes='*jez*' master origin/master"
+ONLY_JEZ="--branches='jez*' --remotes='jez*' master origin/master"
 
 # exclude tags (Sorbet tags are super annoying)
 EXCLUDE_TAGS="--decorate-refs-exclude='tags/*'"
