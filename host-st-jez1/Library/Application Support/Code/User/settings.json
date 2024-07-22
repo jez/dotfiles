@@ -28,7 +28,7 @@
     "workbench.preferredLightColorTheme": "Better Solarized Light",
     "window.autoDetectColorScheme": true,
     "telemetry.enableTelemetry": false,
-    "typescript.tsdk": "frontend/js-scripts/node_modules/typescript/lib",
+    "typescript.tsdk": "~/stripe/pay-server/frontend/js-scripts/node_modules/typescript/lib",
     "search.smartCase": true,
     "remote.SSH.connectTimeout": 60,
     "C_Cpp.intelliSenseEngine": "Disabled",
@@ -47,7 +47,34 @@
       "typescript": true
     },
     "search.followSymlinks": false,
-    "window.zoomLevel": 1,
     "workbench.editor.tabCloseButton": "left",
     "workbench.colorTheme": "Better Solarized Light",
+    "remote.SSH.configFile": "~/.ssh/devboxes",
+    "gitlens.remotes": [
+      {
+        "domain": "git.corp.stripe.com",
+        "type": "GitHub"
+      }
+    ],
+    "errorLens.enabledInMergeConflict": false,
+    "errorLens.messageBackgroundMode": "message",
+    "errorLens.enabled": true,
+    "ruby.rubocop.hideDisableSuggestions": true,
+    "remote.SSH.enableRemoteCommand": true,
+    "git.openRepositoryInParentFolders": "always",
+    "remote.forwardOnOpen": false,
+    "remote.otherPortsAttributes": {
+      "onAutoForward": "ignore"
+    },
+    "gitlens.ai.experimental.generateCommitMessage.enabled": false,
+    "window.zoomLevel": 1,
+    "workbench.editor.tabActionLocation": "left",
+    "files.simpleDialog.enable": true,
+    "sorbet.highlightUntyped": true,
+    "security.promptForRemoteFileProtocolHandling": false,
+    "ruby.trace.server": "verbose",
+    "editor.occurrencesHighlight": "off",
+    "remote.SSH.enableDynamicForwarding": false,
+    "bazel.lsp.command": "/Users/jez/stripe/starpls/editors/code/bin/starpls",
+    "security.promptForLocalFileProtocolHandling": false,
 }
