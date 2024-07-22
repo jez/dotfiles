@@ -1,0 +1,9 @@
+[Unit]
+Description=Calibre-Web
+
+[Service]
+Type=simple
+ExecStart=/home/jez/bin/books
+
+[Install]
+WantedBy=default.target

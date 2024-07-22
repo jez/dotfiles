@@ -1,0 +1,39 @@
+; Useful commands:
+;
+; - systemctl --user start xkeysnail
+; - systemctl --user stop xkeysnail
+; - systemctl --user daemon-reload
+; - journalctl --follow --user-unit xkeysnail.service
+;
+; Also once upon a time you ran these commands:
+;
+;     sudo groupadd -f uinput
+;     sudo gpasswd -a $USER uinput
+;     cat <<EOF | sudo tee /etc/udev/rules.d/70-xkeysnail.rules
+;     KERNEL=="uinput", GROUP="uinput", MODE="0660", OPTIONS+="static_node=uinput"
+;     KERNEL=="event[0-9]*", GROUP="uinput", MODE="0660"
+;     EOF
+;
+; which you got from this GitHub issue suggestion:
+;
+;     https://github.com/mooz/xkeysnail/issues/64#issuecomment-600380800
+;
+; It required a system reboot.
+
+[Unit]
+Description=xkeysnail
+
+[Service]
+Type=simple
+KillMode=process
+ExecStart=/home/jez/.local/bin/xkeysnail-service.sh
+; Don't restart, if it dies something went wrong and is unlikely
+; to be fixed by restarting.
+; Restart=on-failure
+; RestartSec=3
+; I don't think this is required either: we can just let the process die from SIGTERM
+; ExecStop=pkill -f xkeysnail-service.sh
+Environment=DISPLAY=:1
+
+[Install]
+WantedBy=graphical.target
