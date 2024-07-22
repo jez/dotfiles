@@ -60,6 +60,12 @@ export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
 # For gcloud command, to deploy srb.help
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
+# This works, but I have no use for pyenv shims at the moment, so disabling to make things faster
+# if command -v pyenv &> /dev/null; then
+#   export PATH="$(pyenv root)/shims:$PATH"
+#   pyenv rehash
+# fi
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
