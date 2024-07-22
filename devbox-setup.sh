@@ -39,7 +39,7 @@ git commit-graph write --reachable
 # git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
 
 
-if [ -f /pay/conf/mydev-remote-name ]; then
+if [ -f /pay/conf/mydev-remote-name ] && [ "$(< /pay/conf/mydev-remote-name)" != "" ]; then
   remote_devbox=true
 else
   remote_devbox=false
@@ -72,7 +72,7 @@ if ! $remote_devbox; then
   brew install fzf
   brew install git
   brew install zsh
-  brew install --HEAD tmux
+  brew install tmux
   brew install fastmod
   brew install hub
 fi
