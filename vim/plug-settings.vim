@@ -97,6 +97,13 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
   au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
 
+  " You have to pick one or the other: get expand space for Ruby code blocks
+  " in Markdown files, or no expand space for markdown to-do lists. In to-do
+  " list files, you might want to run:
+  "
+  "     let b:delimitMate_expand_space = 0
+  "
+  " to turn this behavior off.
   au FileType ruby,pandoc let b:delimitMate_expand_space = 1
 augroup END
 
