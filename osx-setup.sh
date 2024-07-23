@@ -60,7 +60,6 @@ brew install coreutils
 brew install vim
 
 # Set up dotfiles
-brew tap thoughtbot/formulae
 brew install rcm
 
 # TODO(jez) Document how to set up all the ssh keys you need
@@ -104,10 +103,11 @@ open ~/Desktop/iTerm2-Color-Schemes/schemes/
 # Use iTerm2 settings file by going to preferences and selecting to load
 # preferences from a folder: ~/.dotfiles
 
-# Install neovim for the lulz
+# Install neovim
 brew tap neovim/neovim
 brew install neovim
 ln -s ~/.vim ~/.config/nvim
+python3 -m pip install pynvim --break-system-packages
 
 # Install fzf
 brew install fzf fd
@@ -118,19 +118,12 @@ rm ~/.fzf.bash
 # Install ruby
 brew install rbenv
 brew install ruby-build
-echo "rbenv is installed."
-echo "You'll still have to install ruby 1.9.3 for Octopress."
-cat << EOF
-(within Octopress project root directory)
-$ rbenv install 1.9.3-p0
-$ rbenv local 1.9.3-p0
-$ rbenv rehash
-EOF
-echo "http://octopress.org/docs/setup/rbenv/"
 
 # Other utilities
-brew cask install alfred
-brew cask alfred
+brew install --cask alfred
+brew install --cask hammerspoon
+brew install --cask karabiner-elements
+
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install dropbox
@@ -140,7 +133,6 @@ brew cask install inskape
 brew cask install calibre
 brew cask install fitbit-connect
 brew cask install rcdefaultapp
-brew cask install karabiner
 brew cask install flux
 
 # Install python
@@ -153,16 +145,12 @@ brew install node
 # Helper utilities
 brew install tree
 brew install wget
-brew install ack
 brew install tmux
 brew install htop
 brew install ctags
-brew install gist
-brew install heroku-toolbelt
 brew install imagemagick
 brew install watch
 brew install rlwrap
-brew install icdiff
 
 # After installing Xcode
 # TODO install Xcode using script
@@ -207,13 +195,16 @@ npm install -g jade
 #         - Bottom left: Start Screen Saver
 #   - Dock
 #     - Automatically hide and show the dock
+#     - Show suggested and recent apps in Dock
+#     - Click wallpaper to reveal desktop > Only in Stage Manager
 #   - Mission Control
 #     - no Automatically rearrange spaces based on recent use
 #     - Dashboard: As Space
 #   - if on MacBook Pro:
-#     - Display
+#     - Displays
 #       - Display
 #         - Looks like 1680 x 1050
+#       - No Automatically adjust brightness
 #   - Trackpad
 #     - Point & Click
 #       - Tap to click
@@ -241,13 +232,18 @@ npm install -g jade
 #       - Modifier Keys...
 #         - Swap Caps to Ctrl
 #       - Show keyboard and emoji viewers in menu bar
+#       - Add Japanese - Romanji
+#       - Automatically switch to a document's input source
+#       - No Correct spelling automatically
+#       - No Capitalize words automatically
+#       - No Add period with double-space
 #     - Shortcuts
 #       - Mission Control
 #         - Mission Control
 #           - Move left a space: Option + Shift + [
 #           - Move right a space: Option + Shift + ]
 #       - Spotlight
-#         - Show Spotlight search: Ctrl + Space
+#         - Show Spotlight search: Option + Space
 #           - Don't forget to install alfred and change to Command + Space
 #       - Accessibility
 #         - Invert colors
@@ -307,6 +303,12 @@ npm install -g jade
 # Downloads
 #   - Remove Downloads, symlink to Desktop
 
+# ~/
+#  bin -> stripe/bin
+#  blog -> stripe/github/blog
+#  jez-notes
+#  sorbet
+
 # Chrome
 #
 # - Setting up personal laptop?
@@ -316,7 +318,6 @@ npm install -g jade
 #     - chrome://settings
 #     - chrome://extensions
 #     - Enable keyboard shortcuts for Inbox
-#     - Vimium settings
 #     - Stylebot settings
 
 # Messages
