@@ -311,6 +311,13 @@ npm install -g jade
 
 # Chrome
 #
+# - Right click on URL bar, "Always Show Full URls"
+# - Transfer Chrome history
+#   - `zip -r ~/Desktop/chrome-history.zip ~/Library/Application\ Support/Google/Chrome/Default/History`
+#   - `scp ~/Desktop/chrome-history.zip st-jez5.local:Desktop`
+#   - `ssh st-jez5.local`
+#   - `unzip chrome-history.zip`
+#   - `mv ~/Library/Application\ Support/Google/Chrome/Default/History ~/Desktop/chrome-history.bak`
 # - Setting up personal laptop?
 #   - Sign into personal Chrome. Done.
 # - Setting up work laptop?
@@ -325,3 +332,14 @@ npm install -g jade
 # - Add iCloud account
 # - Be sure to sync contacts from Google account (not iCloud)
 # - Google when you need help
+# - Messages > Settings > iMessage
+#   - check "Enable Messages in iCloud" and then click Sync Now
+
+# VS Code
+#
+# code --install-extension ginfuru.ginfuru-better-solarized-dark-theme && \
+#     code --install-extension vscodevim.vim && \
+#     code --install-extension ms-vscode.cpptools && \
+#     code --install-extension sorbet.sorbet-vscode-extension && \
+#     code --install-extension orta.vscode-jest && \
+#     code --install-extension usernamehw.errorlens
