@@ -56,6 +56,10 @@ ykman config usb --disable FIDO2 --force
 - [x] Post-replacement checklist
   - <https://confluence.corp.stripe.com/pages/viewpage.action?pageId=326689227>
 - [x] vault passwords
+- [x] Run this in pay-server to get vim-rhubarb to work for Gbrowse:
+  ```
+  git remote set-url origin git.corp.stripe.com:stripe-internal/pay-server.git
+  ```
 
 blurry fonts:
 ```

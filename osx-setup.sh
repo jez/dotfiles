@@ -343,3 +343,4 @@ npm install -g jade
 #     code --install-extension sorbet.sorbet-vscode-extension && \
 #     code --install-extension orta.vscode-jest && \
 #     code --install-extension usernamehw.errorlens
+# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
