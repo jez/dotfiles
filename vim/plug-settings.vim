@@ -646,7 +646,7 @@ if filereadable("build/compile_commands.json")
   let g:LanguageClient_rootMarkers = ['build/compile_commands.json']
 end
 
-let g:LanguageClient_serverCommands.rust = ['rls']
+let g:LanguageClient_serverCommands.rust = ['rust-analyzer']
 
 function! JezLanguageClientRestart() abort
   LanguageClientStop
