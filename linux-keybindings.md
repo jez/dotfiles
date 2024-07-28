@@ -3,9 +3,8 @@
 Go into the keyboard settings, set ~everything to `Disabled` by removing any
 default keybindings, except:
 
-- You can leave the "Move, resize, and swap windows" section largely untouched
-  except unbind "Adjustment mode" (the other things in that section are only
-  keybindings that apply in adjustment mode).
+- "Move, resize, and swap windows" section largely untouched, except:
+  - Set "Adjustment mode" to `Shift + Alt + Return`
 
 - Navigate applications and windows
   - Set "Launch and switch applications" to `Super + Space`
@@ -31,6 +30,7 @@ default keybindings, except:
 
 - Windows
   - Set "Close window" to **only** `Super + Q`
+  - Set "Toggle maximization state" to `Shift + Alt + Space`
 
 - System
   - Set "Show workspaces" to `Ctrl + Up`
