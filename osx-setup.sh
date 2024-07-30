@@ -344,3 +344,7 @@ npm install -g jade
 #     code --install-extension orta.vscode-jest && \
 #     code --install-extension usernamehw.errorlens
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+#
+# Global settings
+#
+# defaults write -g ApplePressAndHoldEnabled -bool false
