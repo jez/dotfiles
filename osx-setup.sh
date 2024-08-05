@@ -348,3 +348,7 @@ npm install -g jade
 # Global settings
 #
 # defaults write -g ApplePressAndHoldEnabled -bool false
+#
+# https://apple.stackexchange.com/questions/465132/how-do-i-turn-off-macos-sonomas-emoji-guessing
+# sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist emoji_enhancements -dict-add Enabled -bool NO
+
