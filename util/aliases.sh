@@ -131,6 +131,7 @@ alias rgo="rg --no-heading --no-filename --no-line-number --only-matching"
 alias gg="git grep"
 
 alias payweb-time="overtime show Europe/Berlin Europe/London America/New_York America/Denver America/Los_Angeles"
+alias afk="caffeinate -i"
 
 # Takes output like 'foo.txt:12: ...' (i.e., output from git grep --line)
 # and keeps only the foo.txt:12 part
