@@ -272,6 +272,21 @@ let g:gitgutter_sign_removed = '▁'
 let g:gitgutter_sign_removed_first_line = '◥'
 
 " }}}
+" ----- tpope/vim-fugitive settings ----- {{{
+
+" These commands got deprecated (:help fugitive-deprecated), but I rely on
+" them too much
+command! -bang Gblame Git blame<bang>
+command! -bang Gcommit Git commit<bang>
+
+augroup jez-fugitive
+  au!
+  " Normally `Enter` in a Gblame view is another way of writing `o`, but I
+  " want `Enter` to mean `:`, like I have mapped everywhere else.
+  au User FugitivePager nnoremap <CR> :
+augroup END
+
+" }}}
 " ----- tpope/vim-rhubarb settings ----- {{{
 
 let g:github_enterprise_urls = ['https://git.corp.stripe.com']
