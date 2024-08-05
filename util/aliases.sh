@@ -143,6 +143,12 @@ alias onlylocs="onlyloclines | fileline"
 alias nextline="awk 'BEGIN { FS = \":\"} {print \$1 \":\" (\$2 + 1)}'"
 alias prevline="awk 'BEGIN { FS = \":\"} {print \$1 \":\" (\$2 - 1)}'"
 
+# Sorbet aliases
+alias topostest="sed -e 's+^test+//test:test_PosTests+; s/__[^.]*\\.rb$//'"
+alias topostests="sed -e 's+^test+//test:test_PosTests+; s/__[^.]*\\.rb$//'"
+alias tolsptest="sed -e 's+^test+//test:test_LSPTests+; s/__[^.]*\\.rb$//'"
+alias tolsptests="sed -e 's+^test+//test:test_LSPTests+; s/__[^.]*\\.rb$//'"
+
 # ----- Git aliases -----------------------------------------------------------
 
 # hub is a command line wrapper for using Git with GitHub
