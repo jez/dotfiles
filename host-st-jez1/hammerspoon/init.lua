@@ -143,7 +143,7 @@ end)
 
 hs.hotkey.bind(hyper, "Z", function()
   -- compose a new je[Z]-note
-  draftInSplitScreen("mux-write jez-notes ~/jez-notes/src", "http://localhost:4001/#all-posts")
+  draftInSplitScreen("mux-write jez-notes ~/jez-notes/src", "http://localhost:4001/jez/#all-posts")
 end)
 
 -- vim:fdm=marker
