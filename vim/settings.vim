@@ -119,6 +119,17 @@ map <space> <leader>
 
 " 'Enter' is easier for me to hit on my keyboard than :
 noremap <CR> :
+augroup jezQuickfixE
+  au!
+  " Make a mapping so that I can still jump to the current line in the
+  " quickfix or location list
+  autocmd FileType qf
+        \ if getwininfo(win_getid())[0]['loclist'] == 1 |
+        \   nnoremap e :.ll<CR> |
+        \ else |
+        \   nnoremap e :.cc<CR> |
+        \ endif
+augroup END
 
 " I have no use for this (it's the same as C)
 noremap S <nop>
