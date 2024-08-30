@@ -76,32 +76,7 @@ function findIndexDifference(list, left, right)
   return nil
 end
 
-hyper = {"cmd", "alt", "ctrl", "shift"}
-
--- -- Hyper + W to remove the current macOS space
--- hs.hotkey.bind(hyper, "W", function()
---   currentSpace = hs.spaces.activeSpaceOnScreen('Main')
---   -- Main is the one with the currently active window.
---   allSpaces = hs.spaces.allSpaces()[hs.screen.mainScreen():getUUID()]
---   currentSpaceIdx = 0
---   for idx, spaceID in ipairs(allSpaces) do
---     if spaceID == currentSpace then
---       currentSpaceIdx = idx
---       break
---     end
---   end
---   if currentSpaceIdx <= 1 then
---     return
---   end
---   newSpace = allSpaces[currentSpaceIdx - 1]
---   hs.spaces.gotoSpace(newSpace)
---   hs.timer.doAfter(0.5, function()
---     hs.spaces.removeSpace(currentSpace)
---   end)
--- end)
-
--- Hyper + C to compose a new blog post
-hs.hotkey.bind(hyper, "C", function()
+function makeAndFocusSpace()
   -- make a new space
   local window = hs.window.focusedWindow()
   local screen = window:screen()
@@ -117,14 +92,58 @@ hs.hotkey.bind(hyper, "C", function()
     hs.eventtap.keyStroke({"alt", "shift"}, "]")
     moveLeftNTimes = moveLeftNTimes - 1
   end
+
   -- Have to wait a long time because macOS animations are slow
   hs.timer.usleep(1000000)
+end
 
-  openChromeWithURL("http://localhost:4000/#all-posts")
+function draftInSplitScreen(command, preview_url)
+  makeAndFocusSpace()
+
+  openChromeWithURL(preview_url)
   -- Open iTerm second so that it's focused at the end
-  openITermAndRunCommand("mux-write")
+  openITermAndRunCommand(command)
   -- Tell Amythyst to swap the windows
   hs.eventtap.keyStroke({"alt", "shift"}, "return")
   -- Tell Amethyst to make iTerm bigger and Chrome smaller
   hs.eventtap.keyStroke({"alt", "shift"}, "l")
+end
+
+hyper = {"cmd", "alt", "ctrl", "shift"}
+
+hs.hotkey.bind(hyper, "W", function()
+  -- remove the current macOS space {{{
+
+  currentSpace = hs.spaces.activeSpaceOnScreen('Main')
+  -- Main is the one with the currently active window.
+  allSpaces = hs.spaces.allSpaces()[hs.screen.mainScreen():getUUID()]
+  currentSpaceIdx = 0
+  for idx, spaceID in ipairs(allSpaces) do
+    if spaceID == currentSpace then
+      currentSpaceIdx = idx
+      break
+    end
+  end
+  if currentSpaceIdx <= 1 then
+    return
+  end
+  newSpace = allSpaces[currentSpaceIdx - 1]
+  hs.spaces.gotoSpace(newSpace)
+  hs.timer.doAfter(0.5, function()
+    hs.spaces.removeSpace(currentSpace)
+  end)
+
+  -- }}}
 end)
+
+hs.hotkey.bind(hyper, "B", function()
+  -- compose a new [B]log post
+  draftInSplitScreen("mux-write", "http://localhost:4000/#all-posts")
+end)
+
+hs.hotkey.bind(hyper, "Z", function()
+  -- compose a new je[Z]-note
+  draftInSplitScreen("mux-write jez-notes ~/jez-notes/src", "http://localhost:4001/#all-posts")
+end)
+
+-- vim:fdm=marker
