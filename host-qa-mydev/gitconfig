@@ -7,6 +7,8 @@
 	default = simple
 [mergetool "vimdiff"]
 	path = nvim
+[core]
+	hooksPath = /usr/share/git-core/templates/hooks
 
 [github]
 	user = jez
