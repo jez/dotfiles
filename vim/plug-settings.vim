@@ -179,6 +179,7 @@ let g:ale_fixers.scala = ['scalafmt']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.haskell = ['brittany', 'stylish-haskell']
 let g:ale_fixers.go = ['gofmt']
+let g:ale_fixers.bzl = ['buildifier']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
@@ -195,6 +196,7 @@ augroup aleMaps
   au FileType rust let g:ale_fix_on_save = 1
   au FileType haskell let g:ale_fix_on_save = 1
   au FileType go let g:ale_fix_on_save = 1
+  au FileType bzl let g:ale_fix_on_save = 1
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
@@ -397,7 +399,6 @@ let g:haskell_classic_highlighting = 1
 " }}}
 " ----- sbdchd/neoformat ----- {{{
 let g:neoformat_enabled_haskell = ['brittany', 'stylishhaskell']
-let g:neoformat_enabled_bzl = ['buildifier']
 " let g:neoformat_enabled_ruby = ['rubyfmt']
 " let g:neoformat_ruby_rubyfmt = {
 "         \ 'exe': 'rubyfmt',
@@ -408,9 +409,6 @@ augroup neoformatMaps
   au!
   " https://github.com/sbdchd/neoformat/issues/134
   au BufWritePre *.hs       try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
-  au BufWritePre *BUILD     try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
-  au BufWritePre *WORKSPACE try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
-  au BufWritePre *.bzl      try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
   " One day we will make this not do undojion, but it's too good for testing to keep off
   " au BufWritePre *.rb       try            | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
   " au BufWritePre *.rb       try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
