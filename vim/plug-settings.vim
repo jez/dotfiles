@@ -333,7 +333,10 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 
 " }}}
 " ----- vim-pandoc/vim-pandoc-syntax ----- {{{
+" Default codeblock languages to recognize
 let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh']
+" Mapping to quickly load new languages
+nnoremap <silent> <expr> <leader>` ':PandocHighlight '.expand('<cword>').'<CR>'
 let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
 
 augroup pandocSettings
