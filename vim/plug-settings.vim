@@ -90,9 +90,12 @@ augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
   au FileType pandoc let b:delimitMate_nesting_quotes = ["`"]
+  au FileType pandoc.* let b:delimitMate_nesting_quotes = ["`"]
+  au FileType gitcommit let b:delimitMate_nesting_quotes = ["`"]
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
   au FileType pandoc let b:delimitMate_matchpairs = "(:),[:],{:}"
+  au FileType pandoc.* let b:delimitMate_matchpairs = "(:),[:],{:}"
   au FileType eruby let b:delimitMate_matchpairs = "(:),[:],{:}"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
   au FileType coffee let b:delimitMate_nesting_quotes = ['"', "'"]
@@ -343,10 +346,10 @@ augroup pandocSettings
   au!
 
   " Indent and de-indent with TAB and SHIFT + TAB
-  au FileType pandoc nnoremap <buffer> <TAB> >>
-  au FileType pandoc nnoremap <buffer> <S-TAB> <<
-  au FileType pandoc inoremap <buffer> <TAB> <C-t>
-  au FileType pandoc inoremap <buffer> <S-TAB> <C-d>
+  au FileType pandoc,pandoc.* nnoremap <buffer> <TAB> >>
+  au FileType pandoc,pandoc.* nnoremap <buffer> <S-TAB> <<
+  au FileType pandoc,pandoc.* inoremap <buffer> <TAB> <C-t>
+  au FileType pandoc,pandoc.* inoremap <buffer> <S-TAB> <C-d>
 augroup END
 
 let g:pandoc#syntax#use_definition_lists = 0
