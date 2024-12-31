@@ -165,7 +165,7 @@
 	url = git@github.com:terryma/vim-multiple-cursors.git
 [submodule "vim/bundle/vim-closetag"]
 	path = vim/bundle/vim-closetag
-	url = git@github.com:alvan/vim-closetag.git
+	url = git@github.com:jez/vim-closetag.git
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = git@github.com:benmills/vimux.git
