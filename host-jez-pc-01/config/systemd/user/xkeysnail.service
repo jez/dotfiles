@@ -19,6 +19,12 @@
 ;     https://github.com/mooz/xkeysnail/issues/64#issuecomment-600380800
 ;
 ; It required a system reboot.
+;
+; You ran this to (attempt?) to make it start automatically after a reboot:
+;
+;     ❯ systemctl --user enable xkeysnail
+;     Created symlink /home/jez/.config/systemd/user/graphical.target.wants/xkeysnail.service → /home/jez/.dotfiles/host-jez-pc-01/config/systemd/user/xkeysnail.service.
+;     Unit /home/jez/.dotfiles/host-jez-pc-01/config/systemd/user/xkeysnail.service is added as a dependency to a non-existent unit graphical.target.
 
 [Unit]
 Description=xkeysnail
