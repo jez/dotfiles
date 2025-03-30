@@ -25,6 +25,10 @@
 ;     ❯ systemctl --user enable xkeysnail
 ;     Created symlink /home/jez/.config/systemd/user/graphical.target.wants/xkeysnail.service → /home/jez/.dotfiles/host-jez-pc-01/config/systemd/user/xkeysnail.service.
 ;     Unit /home/jez/.dotfiles/host-jez-pc-01/config/systemd/user/xkeysnail.service is added as a dependency to a non-existent unit graphical.target.
+;
+; ... then it seemed like there was a problem with that, so I changed the
+; WantedBy to graphical-session.target, and re-ran the `enable` command and it
+; worked (after logging out and logging back in)
 
 [Unit]
 Description=xkeysnail
@@ -42,4 +46,4 @@ ExecStart=/home/jez/.local/bin/xkeysnail-service.sh
 Environment=DISPLAY=:1
 
 [Install]
-WantedBy=graphical.target
+WantedBy=graphical-session.target
