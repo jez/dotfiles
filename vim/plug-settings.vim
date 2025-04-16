@@ -287,7 +287,10 @@ augroup jez-fugitive
   au!
   " Normally `Enter` in a Gblame view is another way of writing `o`, but I
   " want `Enter` to mean `:`, like I have mapped everywhere else.
-  au User FugitivePager nnoremap <CR> :
+  au User FugitivePager silent! unmap <buffer> <CR>
+  au User FugitiveObject silent! unmap <buffer> <CR>
+  au User FugitiveStageBlob silent! unmap <buffer> <CR>
+  au User FugitiveIndex silent! unmap <buffer> <CR>
 augroup END
 
 " }}}
