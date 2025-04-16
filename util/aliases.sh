@@ -132,6 +132,7 @@ alias gg="git grep"
 
 alias payweb-time="overtime show Europe/Berlin Europe/London America/New_York America/Denver America/Los_Angeles"
 alias afk="caffeinate -i"
+alias today="date '+%Y-%m-%d'"
 
 # Takes output like 'foo.txt:12: ...' (i.e., output from git grep --line)
 # and keeps only the foo.txt:12 part
@@ -227,13 +228,14 @@ ONLY_JEZ="--branches='jez*' --remotes='jez*' master origin/master"
 
 # exclude tags (Sorbet tags are super annoying)
 EXCLUDE_TAGS="--decorate-refs-exclude='tags/*'"
+EXCLUDE_PREFETCH="--decorate-refs-exclude='refs/prefetch/*' "
 
 # pretty Git log, show authors
-alias glat="git log --graph $GIT_PRETTY_FORMAT_AUTHOR"
+alias glat="git log --graph $GIT_PRETTY_FORMAT_AUTHOR $EXCLUDE_PREFETCH"
 # pretty Git log, all references, show authors
 alias gllat='glat --all'
 # pretty Git log, show authors, align messages
-alias glalat="git log --graph $GIT_PRETTY_FORMAT_ALIGN"
+alias glalat="git log --graph $GIT_PRETTY_FORMAT_ALIGN $EXCLUDE_PREFETCH"
 # pretty Git log, all references, show authors, align messages
 alias glalalt="glala --all"
 
