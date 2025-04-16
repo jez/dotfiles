@@ -281,6 +281,7 @@ let g:gitgutter_sign_removed_first_line = '◥'
 " them too much
 command! -bang Gblame Git blame<bang>
 command! -bang Gcommit Git commit<bang>
+let g:fugitive_diffsplit_directional_fit = 1
 
 augroup jez-fugitive
   au!

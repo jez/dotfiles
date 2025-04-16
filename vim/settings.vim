@@ -30,6 +30,7 @@ set splitbelow         " Horizontal splits  use  bottom half  of screen
 set timeoutlen=1000    " Lower ^[ timeout
 set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds & diffs
 set fillchars+=diff:\ ,
+set diffopt+=vertical
 set tildeop            " use ~ to toggle case as an operator, not a motion
 set colorcolumn=+0     " show a column whenever textwidth is set
 if exists('&breakindent')
