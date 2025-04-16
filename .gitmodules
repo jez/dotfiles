@@ -205,9 +205,6 @@
 [submodule "vim/bundle/vim-sorbet"]
 	path = vim/bundle/vim-sorbet
 	url = git@github.com:jez/vim-sorbet.git
-[submodule "vim/bundle/vimspector"]
-	path = vim/bundle/vimspector
-	url = https://github.com/puremourning/vimspector
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
