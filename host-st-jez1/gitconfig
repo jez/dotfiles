@@ -19,4 +19,6 @@
 [hub]
 	host = git.corp.stripe.com
 [core]
-    fsmonitor = false
+	fsmonitor = false
+	# Stop running all the Stripe hooks
+	hooksPath =
