@@ -32,6 +32,8 @@ function chpwd() {
     /Users/jez/stripe/puppet-config/*) ;&
     /Users/jez/stripe/checkout) ;&
     /Users/jez/stripe/checkout/*) ;&
+    /Users/jez/stripe/withbridge/monorail) ;&
+    /Users/jez/stripe/withbridge/monorail/*) ;&
     /Users/jez/prog/pl/flow) ;&
     /Users/jez/prog/pl/flow/*) ;&
     /Users/jez/dbx/Documents/Programming/pl/flow) ;&
