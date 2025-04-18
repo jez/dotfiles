@@ -67,7 +67,7 @@ code() {
   echo "vscode://vscode-remote/ssh-remote+$REMOTE_NAME/$arg1_real_path"
 }
 
-alias mux='tmux new -As "$(< /pay/conf/mydev-remote-name)"'
+alias mux='tmux new -As "$(< /pay/conf/box-name)"'
 
 unset GIT_AUTHOR_NAME
 unset GIT_COMMITTER_NAME
