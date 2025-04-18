@@ -21,61 +21,41 @@ git config core.commitGraph true
 git commit-graph write --reachable
 )
 
-# echo 'Fixing /pay/home mount point for Linuxbrew'
-
-# sudo unlink /home
-# sudo mkdir /home
-# sudo mount --bind /pay/home /home
-# echo "/pay/home /home none bind 0 0" | sudo tee -a /etc/fstab
-
-# # $HOME gets blown away by the above lines, so we have to recreate what setup.sh does here.
-# # TODO(jez) Is there a way to avoid that?
-# mkdir -p "$HOME/.ssh"
-# cat > "$HOME/.ssh/config" <<EOF
-# Host github.com
-#     ProxyCommand corkscrew dynamic-egress-proxy.service.envoy 10071 %h %p
-# EOF
-
-# git clone --recursive --jobs="$(nproc)" git@github.com:jez/dotfiles.git "$HOME/.dotfiles"
-
-
-if [ -f /pay/conf/mydev-remote-name ] && [ "$(< /pay/conf/mydev-remote-name)" != "" ]; then
-  remote_devbox=true
-else
-  remote_devbox=false
+if ! [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  echo 'Installing homebrew'
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 set -x
 
-if ! $remote_devbox; then
-  echo 'Installing homebrew'
+# Fix zsh compinit warning:
+#     zsh compinit: insecure directories, run compaudit for list
+chmod -R 755 /home/linuxbrew/.linuxbrew/share/zsh
+chmod -R 755 /home/linuxbrew/.linuxbrew/share/zsh/site-functions
 
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew tap thoughtbot/formulae
+brew install rcm
 
-  # Fix zsh compinit warning:
-  #     zsh compinit: insecure directories, run compaudit for list
-  chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh
-  chmod -R 755 /pay/home/linuxbrew/.linuxbrew/share/zsh/site-functions
+mkdir -p "$HOME/.local/bin"
 
-  brew tap thoughtbot/formulae
-  brew install rcm
+curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
 
-  mkdir -p "$HOME/.local/bin"
+curl -fsSL https://github.com/sharkdp/fd/releases/download/v10.1.0/fd-v10.1.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/fd'
 
-  curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
+curl -fsSL https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
 
-  curl -fsSL https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-v8.4.0-x86_64-unknown-linux-musl.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/fd'
-
-  curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
-
-  brew install fzf
-  brew install git
-  brew install zsh
-  brew install tmux
-  brew install fastmod
-  brew install hub
+install_cmd=(install)
+if [ "$(uname -m)" = "aarch64" ]; then
+  install_cmd+=(--build-from-source)
 fi
+
+brew "${install_cmd[@]}" fzf
+brew "${install_cmd[@]}" git
+brew "${install_cmd[@]}" zsh
+brew "${install_cmd[@]}" tmux
+brew "${install_cmd[@]}" fastmod
+brew "${install_cmd[@]}" hub
 
 cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 
