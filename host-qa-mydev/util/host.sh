@@ -51,13 +51,13 @@ alias vimg="nvim +Goyo"
 
 alias sb='bazel build //main:sorbet'
 alias sbl='bazel build'
-alias sbg='bazel build //main:sorbet --config=dbg --config=static-libs'
-alias sbo='bazel build //main:sorbet --config=debugsymbols --config=static-libs'
+alias sbg='bazel build //main:sorbet --config=dbg'
+alias sbo='bazel build //main:sorbet --config=debugsymbols'
 alias sbr='bazel build //main:sorbet --config=release-mac'
 alias st='bazel test --test_output=errors --test_summary=terse test'
 alias sto='bazel test --test_output=errors'
-alias stg='bazel test --config=dbg --config=static-libs --test_output=errors --test_summary=terse test'
-alias stog='bazel test --config=dbg --config=static-libs --test_output=errors'
+alias stg='bazel test --config=dbg --test_output=errors --test_summary=terse test'
+alias stog='bazel test --config=dbg --test_output=errors'
 export SORBET_SILENCE_DEV_MESSAGE=1
 
 export TZ="America/Los_Angeles"
