@@ -8,7 +8,8 @@
 #
 #   export TERM=xterm-256color
 #
-xterm-256color|xterm with 256 colors and italic,
+xterm-256color|xterm with 256 colors, italic, and strikethrough
   sitm=\E[3m, ritm=\E[23m,
+  smxx=\E[9m, rmxx=\E[29m,
   Smulx=\E[4:%p1%dm,
   use=xterm-256color,
