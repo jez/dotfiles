@@ -109,7 +109,7 @@ alias start-servers='pay exec sudo svc -u /etc/service/scripts_bin_servers_daemo
 # ignore jrnl entries (abuse histignorespace)
 alias jrnl=" noglob jrnl"
 
-alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo -c "autocmd User GoyoLeave :qall"'
+alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
 
 alias sb='bazel build //main:sorbet -c opt'
