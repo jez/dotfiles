@@ -1,4 +1,5 @@
 require("hs.ipc")
+require("rich-link-copy")
 
 -- Function to open a new iTerm2 window and run a command
 function openITermAndRunCommand(command)
@@ -109,6 +110,8 @@ function draftInSplitScreen(command, preview_url)
   hs.eventtap.keyStroke({"alt", "shift"}, "l")
 end
 
+----- Keybindings -------------------------------------------------------------
+
 hyper = {"cmd", "alt", "ctrl", "shift"}
 
 hs.hotkey.bind(hyper, "W", function()
@@ -145,5 +148,7 @@ hs.hotkey.bind(hyper, "Z", function()
   -- compose a new je[Z]-note
   draftInSplitScreen("mux-write jez-notes ~/jez-notes/src", "http://localhost:4001/jez/#all-posts")
 end)
+
+hs.hotkey.bind(hyper, "G", getRichLinkToCurrentChromeTab)
 
 -- vim:fdm=marker
