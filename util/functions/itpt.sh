@@ -37,14 +37,14 @@ itpt() {
     echo "Install 'realpath' to toggle the Alacritty profile"
   else
     local __config
-    __config="$(realpath "$HOME/.config/alacritty/alacritty.yml")"
+    __config="$(realpath "$HOME/.config/alacritty/alacritty.toml")"
     if [ "$SOLARIZED" = "dark" ]; then
-      sed -E -i.bak 's/# ([[:alpha:]].*)(## solarized-dark ##)/\1\2/' "$__config"
-      sed -E -i.bak 's/([[:alpha:]].*)(## solarized-light ##)/# \1\2/' "$__config"
+      sed -E -i.bak 's/# ([^#].*)(## solarized-dark ##)/\1\2/' "$__config"
+      sed -E -i.bak 's/([^#].*)(## solarized-light ##)/# \1\2/' "$__config"
       rm "$__config.bak" > /dev/null
     elif [ "$SOLARIZED" = "light" ]; then
-      sed -E -i.bak 's/([[:alpha:]].*)(## solarized-dark ##)/# \1\2/' "$__config"
-      sed -E -i.bak 's/# ([[:alpha:]].*)(## solarized-light ##)/\1\2/' "$__config"
+      sed -E -i.bak 's/([^#].*)(## solarized-dark ##)/# \1\2/' "$__config"
+      sed -E -i.bak 's/# ([^#].*)(## solarized-light ##)/\1\2/' "$__config"
       rm "$__config.bak" > /dev/null
     fi
   fi
