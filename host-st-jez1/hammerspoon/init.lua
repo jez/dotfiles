@@ -1,5 +1,5 @@
 require("hs.ipc")
-require("rich-link-copy")
+require("md-link-copy")
 
 -- Function to open a new iTerm2 window and run a command
 function openITermAndRunCommand(command)
@@ -117,7 +117,7 @@ hyper = { "cmd", "alt", "ctrl", "shift" }
 hs.hotkey.bind(hyper, "W", function()
   -- remove the current macOS space {{{
 
-  currentSpace = hs.spaces.activeSpaceOnScreen('Main')
+  currentSpace = hs.spaces.activeSpaceOnScreen("Main")
   -- Main is the one with the currently active window.
   allSpaces = hs.spaces.allSpaces()[hs.screen.mainScreen():getUUID()]
   currentSpaceIdx = 0
@@ -150,5 +150,14 @@ hs.hotkey.bind(hyper, "Z", function()
 end)
 
 hs.hotkey.bind(hyper, "G", getRichLinkToCurrentChromeTab)
+
+local window_filter = hs.window.filter.new():setCurrentSpace(true):setDefaultFilter({ visible = true })
+local window_switcher = require("window-switcher").new(window_filter)
+hs.hotkey.bind({ "alt", "shift" }, "J", function()
+  window_switcher:previous()
+end)
+hs.hotkey.bind({ "alt", "shift" }, "K", function()
+  window_switcher:next()
+end)
 
 -- vim:fdm=marker
