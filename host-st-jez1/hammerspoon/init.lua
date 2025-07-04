@@ -16,7 +16,7 @@ function openITermAndRunCommand(command)
   end
 
   -- Create a new window
-  if not iterm:selectMenuItem({"Shell", "New Window"}) then
+  if not iterm:selectMenuItem({ "Shell", "New Window" }) then
     hs.alert.show("Failed to create new iTerm window")
     return
   end
@@ -45,7 +45,7 @@ function openChromeWithURL(url)
   end
 
   -- Create a new window
-  if not chrome:selectMenuItem({"File", "New Window"}) then
+  if not chrome:selectMenuItem({ "File", "New Window" }) then
     hs.alert.show("Failed to create new Chrome window")
     return
   end
@@ -86,11 +86,11 @@ function makeAndFocusSpace()
   -- Go to that new space
   local allSpaces = hs.spaces.allSpaces()
   local spacesOnScreen = allSpaces[screen:getUUID()]
-  local newSpace = spacesOnScreen[#(spacesOnScreen)]
+  local newSpace = spacesOnScreen[#spacesOnScreen]
   local moveLeftNTimes = findIndexDifference(spacesOnScreen, hs.spaces.activeSpaceOnScreen(), newSpace)
   while moveLeftNTimes > 0 do
     -- Tell macOS to move one space left
-    hs.eventtap.keyStroke({"alt", "shift"}, "]")
+    hs.eventtap.keyStroke({ "alt", "shift" }, "]")
     moveLeftNTimes = moveLeftNTimes - 1
   end
 
@@ -105,14 +105,14 @@ function draftInSplitScreen(command, preview_url)
   -- Open iTerm second so that it's focused at the end
   openITermAndRunCommand(command)
   -- Tell Amythyst to swap the windows
-  hs.eventtap.keyStroke({"alt", "shift"}, "return")
+  hs.eventtap.keyStroke({ "alt", "shift" }, "return")
   -- Tell Amethyst to make iTerm bigger and Chrome smaller
-  hs.eventtap.keyStroke({"alt", "shift"}, "l")
+  hs.eventtap.keyStroke({ "alt", "shift" }, "l")
 end
 
 ----- Keybindings -------------------------------------------------------------
 
-hyper = {"cmd", "alt", "ctrl", "shift"}
+hyper = { "cmd", "alt", "ctrl", "shift" }
 
 hs.hotkey.bind(hyper, "W", function()
   -- remove the current macOS space {{{
