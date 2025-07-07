@@ -117,6 +117,7 @@ ZAQ_PREFIXES+=(
   'git commit( [^ ]##)# -[^ -]#m'
   'gcm'
   'gcam'
+  'brag'
 )
 ZAQ_PREFIXES_GREEDY+=(
   'lg( -[^ ]##)#'

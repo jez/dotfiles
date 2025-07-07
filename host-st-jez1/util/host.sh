@@ -111,6 +111,7 @@ alias jrnl=" noglob jrnl"
 
 alias todo='$EDITOR ~/notes/stripe-todo.md +Goyo'
 alias notepad='$EDITOR ~/notes/scratch.txt +Goyo'
+alias brag=' jrnl brag'
 
 alias sb='bazel build //main:sorbet -c opt'
 alias sbg='bazel build //main:sorbet --config=dbg'
