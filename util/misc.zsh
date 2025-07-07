@@ -117,11 +117,11 @@ ZAQ_PREFIXES+=(
   'git commit( [^ ]##)# -[^ -]#m'
   'gcm'
   'gcam'
-  'brag'
 )
 ZAQ_PREFIXES_GREEDY+=(
   'lg( -[^ ]##)#'
   'lgi( -[^ ]##)#'
+  'brag( -[^ ]##)#'
 )
 source $HOME/.zfunctions/zsh-autoquoter/zsh-autoquoter.zsh
 
