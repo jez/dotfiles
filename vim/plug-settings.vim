@@ -181,6 +181,7 @@ let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.haskell = ['brittany', 'stylish-haskell']
 let g:ale_fixers.go = ['gofmt']
 let g:ale_fixers.bzl = ['buildifier']
+let g:ale_fixers.lua = ['stylua']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_rust_cargo_check_all_targets = 0
 
@@ -198,6 +199,7 @@ augroup aleMaps
   au FileType haskell let g:ale_fix_on_save = 1
   au FileType go let g:ale_fix_on_save = 1
   au FileType bzl let g:ale_fix_on_save = 1
+  au FileType lua if filereadable(".stylua.toml") | let g:ale_fix_on_save = 1 | endif
 
   au FileType javascript nnoremap <silent> <buffer> <leader>t :ALEHover<CR>
 augroup END
