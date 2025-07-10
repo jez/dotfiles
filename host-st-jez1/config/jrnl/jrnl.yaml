@@ -13,7 +13,7 @@ journals:
   brag: /Users/jez/Dropbox/Stripe/notes/brag.txt
   default: /Users/jez/Dropbox/Stripe/notes/journal.txt
 linewrap: false
-tagsymbols: '@'
+tagsymbols: '#'
 template: false
 timeformat: '%Y-%m-%d %H:%M'
 version: v4.2.1
