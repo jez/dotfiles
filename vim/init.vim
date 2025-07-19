@@ -17,4 +17,5 @@ source $HOME/.vim/ft-settings.vim
 source $HOME/.vim/plug-settings.vim
 
 " Host-specific settings (different by platform, using rcm)
-source $HOME/.util/host.vim
+" (silence error, because might not be a host-specific file)
+silent! source $HOME/.util/host.vim
