@@ -19,63 +19,44 @@
 #                                                                             #
 # =========================================================================== #
 
-# Install Xcode tools
-xcode-select --install
-# Note: MacVim (and possibly smlnj I'm not quite sure) require a full-blown
-# Xcode installation to work
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Install and set up Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
-brew update
-
-# Set up PATH until we clone our dotfiles
-# Not necessary on OS X 10.10 (Yosemite)
-export PATH="/usr/local/bin:$PATH"
-
-# Install iTerm2
-brew cask install iterm2
-
-# Install and setup git
-brew install git
-
-# Install Hub for convenience before we start doing Git commands
-brew install hub
-
-# Install newest bash and zsh and make zsh the login shell
-brew install bash
-brew install bash-completion
-echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
+brew install git hub coreutils rcm neovim fzf fd tree rg fastmod tmux tree wget htop ctags watch
 
 # (you do actually want to still do this btw)
 brew install zsh
 echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells
 chsh -s "$(brew --prefix)/bin/zsh"
 
-# Install gnu coreutils
-brew install coreutils
-# Note: my bash_profile allows these commands to be run without prefixes
-
-# Install newest vim
-brew install vim
-
-# Set up dotfiles
-brew install rcm
-
-# TODO(jez) Document how to set up all the ssh keys you need
+# Generate an SSH key so you can add it to GitHub
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+ssh-keygen -t ed25519 -C zimmerman.jake@gmail.com -f ~/.ssh/id_ed25519 -N ""
+cat >> ~/.ssh/config <<EOF
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+EOF
+ssh-add ~/.ssh/id_ed25519
+pbcopy < ~/.ssh/id_ed25519.pub
+open https://github.com/settings/keys
+
 # On Stripe machines:
 vim ~/.ssh/config
 # comment out the `Host *` section
+# TODO(jez) Did we get rid of the ~/.ssh/config? Do I need this still? Is it in a different file I need to edit?
 
-# If you are not Jake Zimmerman, you will want to fork this repo first
-hub clone --recursive jez/dotfiles ~/.dotfiles
+git clone --recursive git@github.com:jez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 # Make sure we use correct rcrc, as there will be no ~/.rcrc yet
 RCRC="./rcrc" rcup
+ln -s ~/.vim ~/.config/nvim
 # or for Stripe laptops:
 RCRC="./rcrc" rcup -B st-jez1 -d ~/stripe/dotfiles
 cd -
+
+brew install --cask iterm2 amethyst spotify firefox
+open -a Amethyst.app
 
 # Set up host-specific (git, sh, zsh, etc.)
 # The best way to do this is to look at MacBook Air, Dropbox, & Stripe manually
@@ -84,36 +65,20 @@ cd -
 # You may also want to look at:
 #   ssh/config
 
-
-# Now that dotfiles have been installed, exit and re-open iTerm2
-exit
-
 # Set up iTerm2
 #
+# TODO(jez) Better way to save/load preferences
 # Load preferences from folder (choose: ~/.dotfiles)
-# Install Iosevka Fixed
-#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
-# Install Menlo for Powerline (from ~/.dotfiles/fonts/)
-
-# Download and import iTerm colors
-git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
-open ~/Desktop/iTerm2-Color-Schemes/schemes/
-# Import whichever you'd like by selecting and pressing Cmd + O
-
 # Use iTerm2 settings file by going to preferences and selecting to load
 # preferences from a folder: ~/.dotfiles
+#
+# Install Iosevka Fixed
+#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
 
-# Install neovim
-brew tap neovim/neovim
-brew install neovim
-ln -s ~/.vim ~/.config/nvim
-python3 -m pip install pynvim --break-system-packages
-
-# Install fzf
-brew install fzf fd
-/usr/local/opt/fzf/install
-mkrc -o ~/.fzf.zsh
-rm ~/.fzf.bash
+# Install newest bash and zsh and make zsh the login shell
+brew install bash
+brew install bash-completion
+echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
 
 # Install ruby
 brew install rbenv
@@ -121,61 +86,19 @@ brew install ruby-build
 
 # Other utilities
 brew install --cask alfred
-brew install --cask hammerspoon
-brew install --cask karabiner-elements
+brew install --cask hammerspoon karabiner-elements maestral
 
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install dropbox
-brew cask install spotify
-brew cask install amethyst
-brew cask install inskape
 brew cask install calibre
-brew cask install fitbit-connect
-brew cask install rcdefaultapp
-brew cask install flux
+# brew cask install rcdefaultapp
 
 # Install python
-brew install python
 brew install python3
 
-# Install node
-brew install node
-
 # Helper utilities
-brew install tree
-brew install wget
-brew install tmux
-brew install htop
-brew install ctags
 brew install imagemagick
-brew install watch
-brew install rlwrap
 
-# After installing Xcode
-# TODO install Xcode using script
-sudo xcodebuild -license
-
-# Install MacVim
-brew install macvim
-brew linkapps
-# You may want to install RCDefaultApps to deal with using MacVim for opening
-# text files
-
-# Install smlnj
-brew install smlnj
-
-# After installing python
-
-# Install virtualenvwrapper
-pip install virtualenvwrapper
-# Note: requires relaunching the terminal to work
-
-# Helper utilities
-pip install grip
-
-# After installing node
-npm install -g jade
+# Install neovim
+python3 -m pip install pynvim --break-system-packages
 
 # GUI Settings
 # TODO: Automate this
