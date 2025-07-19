@@ -1,0 +1,712 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+live_config_reload = true
+
+# Colors (Solarized Light + Dark)
+[colors]
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors = true
+
+# Bright colors (change original/patched manually)
+[colors.bright]
+black = "0x002b36"    ## solarized-original ##
+# black =   '0x586e75'    ## solarized-dark-patched ##
+red = "0xcb4b16"
+green = "0x586e75"
+yellow = "0x657b83"
+blue = "0x839496"
+magenta = "0x6c71c4"
+cyan = "0x93a1a1"
+# white =   '0xfdf6e3'    ## solarized-original ##
+white = "0x93a1a1"    ## solarized-light-patched ##
+
+[colors.cursor]
+# text = '0x073642'    ## solarized-dark ##
+# cursor = '0x839496'    ## solarized-dark ##
+text = '0xeee8d5'    ## solarized-light ##
+cursor = '0x657b83'    ## solarized-light ##
+
+[colors.normal]
+black = "0x073642"
+red = "0xdc322f"
+green = "0x859900"
+yellow = "0xb58900"
+blue = "0x268bd2"
+magenta = "0xd33682"
+cyan = "0x2aa198"
+white = "0xeee8d5"
+
+[colors.primary]
+# foreground = '0x839496'    ## solarized-dark ##
+# background = '0x002b36'    ## solarized-dark ##
+foreground = "0x657b83"    ## solarized-light ##
+background = "0xfdf6e3"    ## solarized-light ##
+
+# Selection colors
+#
+# Colors which should be used to draw the selection area.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+[colors.selection]
+# background = '0x073642'    ## solarized-dark ##
+background = "0xeee8d5"    ## solarized-light ##
+text = "CellForeground"
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[debug]
+render_timer = false
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty it self.
+[env]
+# TERM env customization.
+#
+# If this property is not set, alacritty will set it to xterm-256color.
+#
+# Note that some xterm terminfo databases don't declare support for italics.
+# You can verify this by checking for the presence of `smso` and `sitm` in
+# `infocmp xterm-256color`.
+TERM = "xterm-256color"
+
+# Font configuration (changes require restart)
+[font]
+# I don't know why this needs to be 14.4, but this was chosen after noticing
+# that 14 in iTerm2 made a Unicode Full Block (█) character 36px, while it was
+# 35px in Alacritty, so (36/35)*14 = 14.4pt
+size = 14.4
+# OS X only: use thin stroke font rendering. Thin strokes are suitable
+# for retina displays, but for non-retina you probably want this set to
+# false.
+# Seems broken on Big Sur: <https://github.com/alacritty/alacritty/issues/4616>
+# We're using `style: Light` to work around.
+# Update: setting was removed: https://github.com/alacritty/alacritty/issues/4616#issuecomment-1236413444
+# Now we're not using light, and we're using
+# defaults write org.alacritty AppleFontSmoothing -int 0
+# Use this to put it back to the default:
+# defaults delete org.alacritty AppleFontSmoothing
+# use_thin_strokes = true
+
+[font.bold]
+family = "Iosevka Fixed"
+style = "Regular"
+
+# Glyph offset determines the locations of the glyphs within their cells with
+# the default being at the bottom. Increase the x offset to move the glyph to
+# the right, increase the y offset to move the glyph upward.
+[font.glyph_offset]
+x = 0
+y = 0
+# y = 2
+
+[font.italic]
+family = "Iosevka Fixed"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Fixed"
+style = "Regular"
+
+# Offset is the extra space around each character. offset.y can be thought of
+# as modifying the linespacing, and offset.x as modifying the letter spacing.
+[font.offset]
+x = 0
+y = 0
+
+# Key bindings
+#
+# Each binding is defined as an object with some properties. Most of the
+# properties are optional. All of the alphabetical keys should have a letter for
+# the `key` value such as `V`. Function keys are probably what you would expect
+# as well (F1, F2, ..). The number keys above the main keyboard are encoded as
+# `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
+# etc.  These all match the glutin::VirtualKeyCode variants.
+#
+# A list with all available `key` names can be found here:
+# https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
+#
+# Possible values for `mods`
+# `Command`, `Super` refer to the super/command/windows key
+# `Control` for the control key
+# `Shift` for the Shift key
+# `Alt` and `Option` refer to alt/option
+#
+# mods may be combined with a `|`. For example, requiring control and shift
+# looks like:
+#
+# mods: Control|Shift
+#
+# The parser is currently quite sensitive to whitespace and capitalization -
+# capitalization must match exactly, and piped items must not have whitespace
+# around them.
+#
+# Either an `action`, `chars`, or `command` field must be present.
+#   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
+#   `chars` writes the specified string every time that binding is activated.
+#     These should generally be escape sequences, but they can be configured to
+#     send arbitrary strings of bytes.
+#   `command` must be a map containing a `program` string, and `args` array of
+#     strings. For example:
+#     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "V"
+action = "Paste"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "C"
+action = "Copy"
+
+# [[keyboard.bindings]]
+# mods = "Super"
+# key = "Q"
+# action = "Quit"
+#
+# [[keyboard.bindings]]
+# mods = "Super"
+# key = "W"
+# action = "Quit"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "N"
+action = "CreateNewWindow"
+
+# This would work if not for your `window.decorations = "none"` setting
+# [[keyboard.bindings]]
+# mods = "Super"
+# key = "T"
+# action = "CreateNewTab"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "Return"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "Key0"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "Equals"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+mods = "Super"
+key = "Minus"
+action = "DecreaseFontSize"
+
+# [[keyboard.bindings]]
+# chars = "\u001BOH"
+# key = "Home"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[H"
+# key = "Home"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOF"
+# key = "End"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[F"
+# key = "End"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[5;2~"
+# key = "PageUp"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[5;5~"
+# key = "PageUp"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[5~"
+# key = "PageUp"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[6;2~"
+# key = "PageDown"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[6;5~"
+# key = "PageDown"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[6~"
+# key = "PageDown"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[Z"
+# key = "Tab"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u007F"
+# key = "Back"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B\u007F"
+# key = "Back"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[2~"
+# key = "Insert"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[3~"
+# key = "Delete"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2D"
+# key = "Left"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5D"
+# key = "Left"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3D"
+# key = "Left"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[D"
+# key = "Left"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOD"
+# key = "Left"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2C"
+# key = "Right"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5C"
+# key = "Right"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3C"
+# key = "Right"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[C"
+# key = "Right"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOC"
+# key = "Right"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2A"
+# key = "Up"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5A"
+# key = "Up"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3A"
+# key = "Up"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[A"
+# key = "Up"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOA"
+# key = "Up"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2B"
+# key = "Down"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5B"
+# key = "Down"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3B"
+# key = "Down"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[B"
+# key = "Down"
+# mode = "~AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOB"
+# key = "Down"
+# mode = "AppCursor"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOP"
+# key = "F1"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOQ"
+# key = "F2"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOR"
+# key = "F3"
+#
+# [[keyboard.bindings]]
+# chars = "\u001BOS"
+# key = "F4"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[15~"
+# key = "F5"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[17~"
+# key = "F6"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[18~"
+# key = "F7"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[19~"
+# key = "F8"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[20~"
+# key = "F9"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[21~"
+# key = "F10"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[23~"
+# key = "F11"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[24~"
+# key = "F12"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2P"
+# key = "F1"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2Q"
+# key = "F2"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2R"
+# key = "F3"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;2S"
+# key = "F4"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[15;2~"
+# key = "F5"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[17;2~"
+# key = "F6"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[18;2~"
+# key = "F7"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[19;2~"
+# key = "F8"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[20;2~"
+# key = "F9"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[21;2~"
+# key = "F10"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[23;2~"
+# key = "F11"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[24;2~"
+# key = "F12"
+# mods = "Shift"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5P"
+# key = "F1"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5Q"
+# key = "F2"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5R"
+# key = "F3"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;5S"
+# key = "F4"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[15;5~"
+# key = "F5"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[17;5~"
+# key = "F6"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[18;5~"
+# key = "F7"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[19;5~"
+# key = "F8"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[20;5~"
+# key = "F9"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[21;5~"
+# key = "F10"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[23;5~"
+# key = "F11"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[24;5~"
+# key = "F12"
+# mods = "Control"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;6P"
+# key = "F1"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;6Q"
+# key = "F2"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;6R"
+# key = "F3"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;6S"
+# key = "F4"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[15;6~"
+# key = "F5"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[17;6~"
+# key = "F6"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[18;6~"
+# key = "F7"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[19;6~"
+# key = "F8"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[20;6~"
+# key = "F9"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[21;6~"
+# key = "F10"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[23;6~"
+# key = "F11"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[24;6~"
+# key = "F12"
+# mods = "Alt"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3P"
+# key = "F1"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3Q"
+# key = "F2"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3R"
+# key = "F3"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[1;3S"
+# key = "F4"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[15;3~"
+# key = "F5"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[17;3~"
+# key = "F6"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[18;3~"
+# key = "F7"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[19;3~"
+# key = "F8"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[20;3~"
+# key = "F9"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[21;3~"
+# key = "F10"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[23;3~"
+# key = "F11"
+# mods = "Super"
+#
+# [[keyboard.bindings]]
+# chars = "\u001B[24;3~"
+# key = "F12"
+# mods = "Super"
+#
+[mouse]
+# Seems to have been removed?
+# faux_scrolling_lines = 1
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# Seems to have been removed?
+# [mouse.double_click]
+# threshold = 300
+#
+# [mouse.triple_click]
+# threshold = 300
+
+[scrolling]
+multiplier = 5
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+# Window decorations
+# Setting this to false will result in window without borders and title bar.
+decorations = "none"
+dynamic_title = true
+# Background opacity
+opacity = 1.0
+# startup_mode = "Maximized"
+
+# Window dimensions in character columns and lines
+# Falls back to size specified by window manager if set to 0x0.
+# (changes require restart)
+[window.dimensions]
+columns = 80
+lines = 24
+
+# Adds this many blank pixels of padding around the window
+# Units are physical pixels; this is not DPI aware.
+# (change requires restart)
+[window.padding]
+x = 2
+y = 2

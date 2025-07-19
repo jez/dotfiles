@@ -1,0 +1,1 @@
+settings set target.load-cwd-lldbinit true
