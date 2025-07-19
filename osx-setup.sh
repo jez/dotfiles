@@ -22,7 +22,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew install git hub coreutils rcm neovim fzf fd
+brew install git hub coreutils rcm neovim fzf fd tree rg fastmod tmux tree wget htop ctags watch
 
 # (you do actually want to still do this btw)
 brew install zsh
@@ -55,7 +55,7 @@ ln -s ~/.vim ~/.config/nvim
 RCRC="./rcrc" rcup -B st-jez1 -d ~/stripe/dotfiles
 cd -
 
-brew install --cask iterm2 amethyst spotify
+brew install --cask iterm2 amethyst spotify firefox
 open -a Amethyst.app
 
 # Set up host-specific (git, sh, zsh, etc.)
@@ -65,32 +65,15 @@ open -a Amethyst.app
 # You may also want to look at:
 #   ssh/config
 
-
-# Now that dotfiles have been installed, exit and re-open iTerm2
-exit
-
 # Set up iTerm2
 #
+# TODO(jez) Better way to save/load preferences
 # Load preferences from folder (choose: ~/.dotfiles)
-# Install Iosevka Fixed
-#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
-# Install Menlo for Powerline (from ~/.dotfiles/fonts/)
-
-# Download and import iTerm colors
-git clone https://github.com/mbadolato/iTerm2-Color-Schemes ~/Desktop/iTerm2-Color-Schemes
-open ~/Desktop/iTerm2-Color-Schemes/schemes/
-# Import whichever you'd like by selecting and pressing Cmd + O
-
 # Use iTerm2 settings file by going to preferences and selecting to load
 # preferences from a folder: ~/.dotfiles
-
-# Install neovim
-python3 -m pip install pynvim --break-system-packages
-
-# Install fzf
-/usr/local/opt/fzf/install
-mkrc -o ~/.fzf.zsh
-rm ~/.fzf.bash
+#
+# Install Iosevka Fixed
+#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
 
 # Install newest bash and zsh and make zsh the login shell
 brew install bash
@@ -103,26 +86,19 @@ brew install ruby-build
 
 # Other utilities
 brew install --cask alfred
-brew install --cask hammerspoon
-brew install --cask karabiner-elements
+brew install --cask hammerspoon karabiner-elements maestral
 
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install dropbox
-brew cask install spotify
-brew cask install amethyst
-brew cask install inskape
 brew cask install calibre
-brew cask install rcdefaultapp
+# brew cask install rcdefaultapp
 
 # Install python
 brew install python3
 
 # Helper utilities
-brew install tree wget htop ctags watch coreutils rlwrap
 brew install imagemagick
 
-brew install tmux
+# Install neovim
+python3 -m pip install pynvim --break-system-packages
 
 # GUI Settings
 # TODO: Automate this
