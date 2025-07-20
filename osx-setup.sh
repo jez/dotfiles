@@ -96,6 +96,9 @@ brew install --cask alfred hammerspoon calibre
 # Install neovim
 python3 -m pip install pynvim --break-system-packages
 
+# https://github.com/fengyc/wol-rs
+cargo install wol-rs --features bin
+
 # System Preferences
 #   - Keyboard
 #     - Keyboard
