@@ -16,6 +16,7 @@
 # load a module robustly by skipping all remaining modules if any module fails
 # to load
 load_module() {
+  # local start=$(date +%s%N)
   if [ -n "$ABORTED" ]; then
     return
   fi
@@ -30,6 +31,8 @@ load_module() {
       return
     fi
   fi
+  # local end=$(date +%s%N)
+  # 2>&1 printf "$@: %.3f ms\n" "$(((end - start) / 1000000.0))"
 }
 
 # Make sure we are running interactively, else stop
