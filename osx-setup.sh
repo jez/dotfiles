@@ -52,6 +52,14 @@ cd -
 
 open -a Amethyst.app
 
+(
+  cd ~
+  mkdir -p ~/github
+  ln -s ~/Dropbox/Documents/Programming prog
+  ln -s ~/Dropbox/Documents/Programming/io/jez/blog blog
+  ln -s ~/Dropbox/Notes notes
+)
+
 # Install Iosevka Fixed
 #   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
 
