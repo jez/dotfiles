@@ -8,5 +8,5 @@
 #   Source this file.
 
 
-source ~/.util/fzf.zsh
-source ~/.util/bazel.zsh
+load_module ~/.util/fzf.zsh
+load_module ~/.util/bazel.zsh
