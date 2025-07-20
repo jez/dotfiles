@@ -11,11 +11,7 @@
 # I just ran when setting up my OS X installation after a clean re-install.   #
 #                                                                             #
 # You may want to run the individual commands manually, instead of as a       #
-# script. In fact, in it's current state, it calls `exit` halfway through     #
-# and doesn't finish.                                                         #
-#                                                                             #
-# TODO:                                                                       #
-#   - Utilize Homebrew Cask to install actual apps.                           #
+# script.                                                                     #
 #                                                                             #
 # =========================================================================== #
 
@@ -23,6 +19,8 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install git hub coreutils rcm neovim fzf fd tree rg fastmod tmux tree wget htop ctags watch
+brew install --cask iterm2 spotify firefox karabiner-elements maestral
+brew install --cask amethyst tailscale
 
 # (you do actually want to still do this btw)
 brew install zsh
@@ -41,10 +39,7 @@ ssh-add ~/.ssh/id_ed25519
 pbcopy < ~/.ssh/id_ed25519.pub
 open https://github.com/settings/keys
 
-# On Stripe machines:
-vim ~/.ssh/config
-# comment out the `Host *` section
-# TODO(jez) Did we get rid of the ~/.ssh/config? Do I need this still? Is it in a different file I need to edit?
+git clone git@github.com:jez/bin.git ~/bin
 
 git clone --recursive git@github.com:jez/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
@@ -55,8 +50,10 @@ ln -s ~/.vim ~/.config/nvim
 RCRC="./rcrc" rcup -B st-jez1 -d ~/stripe/dotfiles
 cd -
 
-brew install --cask iterm2 amethyst spotify firefox
 open -a Amethyst.app
+
+# Install Iosevka Fixed
+#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
 
 # Set up host-specific (git, sh, zsh, etc.)
 # The best way to do this is to look at MacBook Air, Dropbox, & Stripe manually
@@ -67,13 +64,14 @@ open -a Amethyst.app
 
 # Set up iTerm2
 #
-# TODO(jez) Better way to save/load preferences
 # Load preferences from folder (choose: ~/.dotfiles)
-# Use iTerm2 settings file by going to preferences and selecting to load
-# preferences from a folder: ~/.dotfiles
-#
-# Install Iosevka Fixed
-#   https://github.com/be5invis/Iosevka/blob/master/doc/PACKAGE-LIST.md#packaging-formats
+
+# ----- Non essential ---------------------------------------------------------
+
+# On Stripe machines:
+vim ~/.ssh/config
+# comment out the `Host *` section
+# TODO(jez) Did we get rid of the ~/.ssh/config? Do I need this still? Is it in a different file I need to edit?
 
 # Install newest bash and zsh and make zsh the login shell
 brew install bash
@@ -82,85 +80,20 @@ echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
 
 # Install ruby
 brew install rbenv
-brew install ruby-build
 
 # Other utilities
-brew install --cask alfred
-brew install --cask hammerspoon karabiner-elements maestral
-
-brew cask install calibre
+brew install --cask alfred hammerspoon calibre
 # brew cask install rcdefaultapp
-
-# Install python
-brew install python3
-
-# Helper utilities
-brew install imagemagick
 
 # Install neovim
 python3 -m pip install pynvim --break-system-packages
 
-# GUI Settings
-# TODO: Automate this
-
 # System Preferences
-#   - General
-#     - Use dark menubar and doc
-#   - Desktop & Screen Saver
-#     - Desktop
-#       - Source: Pokemon
-#         - Change picture: when logging in
-#     - Screen Saver
-#       - Classic
-#         - Source: Pokemon
-#         - Shuffle slide order
-#       - Hot Corners...
-#         - Bottom left: Start Screen Saver
-#   - Dock
-#     - Automatically hide and show the dock
-#     - Show suggested and recent apps in Dock
-#     - Click wallpaper to reveal desktop > Only in Stage Manager
-#   - Mission Control
-#     - no Automatically rearrange spaces based on recent use
-#     - Dashboard: As Space
-#   - if on MacBook Pro:
-#     - Displays
-#       - Display
-#         - Looks like 1680 x 1050
-#       - No Automatically adjust brightness
-#   - Trackpad
-#     - Point & Click
-#       - Tap to click
-#   - Date & Time
-#     - Clock
-#       - Show date
-#   - Accessibility
-#     - Zoom
-#       - Use scroll gesture with modifier keys to zoom
-#       - Unckeck "Smooth images"
-#     - Trackpad Options...
-#       - Enable dragging
-#     - Display
-#       - Unckeck "Shake mouse pointer to locate"
-#   - Sound
-#     - Sound Effects
-#       - Play feedback when volume is changed
 #   - Keyboard
 #     - Keyboard
-#       - Key repeat
-#         - Fast
-#       - Delay until repeat
-#         - Short
-#       - Touch Bar shows: Expanded Control Strip
-#       - Modifier Keys...
-#         - Swap Caps to Ctrl
 #       - Show keyboard and emoji viewers in menu bar
 #       - Add Japanese - Romanji
-#       - Automatically switch to a document's input source
-#       - No Correct spelling automatically
-#       - No Capitalize words automatically
-#       - No Add period with double-space
-#     - Shortcuts
+#     - Keyboard Shortcuts...
 #       - Mission Control
 #         - Mission Control
 #           - Move left a space: Option + Shift + [
@@ -168,21 +101,6 @@ python3 -m pip install pynvim --break-system-packages
 #       - Spotlight
 #         - Show Spotlight search: Option + Space
 #           - Don't forget to install alfred and change to Command + Space
-#       - Accessibility
-#         - Invert colors
-#       - App Shortcuts
-#         - Google Chrome.app
-#           - Add
-#             - "Select Next Tab"
-#             - Cmd + Option + ]
-#             - "Select Previous Tab"
-#             - Cmd + Option + [
-#         - Sketch.app
-#           - Add
-#             - "ArtboardZoom - Zoom to selected Artboard"
-#             - Ctrl + Space
-#             - "Show Smart Guides"
-#             - Cmd + R
 
 # Alfred
 #   - General
@@ -194,37 +112,12 @@ python3 -m pip install pynvim --break-system-packages
 #     - Options
 #       - Hide hat on Alfred window
 
-# Desktop
-#   - Sort By
-#     - Snap to Grid
-
-# Menu Bar
-#   - Battery Icon
-#     - Show Percentage
-
-# Spotify
-#   - View
-#     - Uncheck "Right sidebar"
-
 # Finder
-#   - General
-#     - New Finder windows show
-#       - $HOME
-#   - Advanced
-#     - Show all filename extensions
-#     - no Show warning before changing an extension
 #   - Favorites
-#     - Desktop
-#     - Documents
-#     - Dropbox
-#     - Screenshots
-#     - Applications
 #     - Home
-#   - Sort By:
-#     - View > [hold Option] Sort by ... > Name
-
-# Downloads
-#   - Remove Downloads, symlink to Desktop
+#     - Desktop
+#     - Dropbox
+#     - Applications
 
 # ~/
 #  bin -> stripe/bin
@@ -267,11 +160,3 @@ python3 -m pip install pynvim --break-system-packages
 #     code --install-extension orta.vscode-jest && \
 #     code --install-extension usernamehw.errorlens
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-#
-# Global settings
-#
-# defaults write -g ApplePressAndHoldEnabled -bool false
-#
-# https://apple.stackexchange.com/questions/465132/how-do-i-turn-off-macos-sonomas-emoji-guessing
-# sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist emoji_enhancements -dict-add Enabled -bool NO
-
