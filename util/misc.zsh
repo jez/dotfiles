@@ -42,6 +42,11 @@ export CASE_SENSITIVE="true"
 # plugins=(brew brew-cask)
 # source $ZSH/oh-my-zsh.sh
 
+# Set ZSH_CACHE_DIR to the path where cache files should be created
+# or else we will use the default cache/
+if [[ -z "$ZSH_CACHE_DIR" ]]; then
+  ZSH_CACHE_DIR="$ZSH/cache/"
+fi
 
 # General zshzle options
 setopt autocd                     # cd by just typing in a directory name
@@ -54,6 +59,9 @@ export MENU_COMPLETE=1
                                   # I've disabled this because it makes zsh
                                   # behave more like bash, at the price of
                                   # giving up features I didn't really use.
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
 
 # Don't try to strip the space between the end of a line and a | character
 # (See http://superuser.com/questions/613685/)
@@ -78,12 +86,23 @@ bindkey "^H" backward-delete-char
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
+# Make ^W behave more like Vim (back to punctuation)
+WORDCHARS=''
+
 
 # Initialize zsh history files
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
 
 zstyle :compinstall filename $HOME/.zshrc
 
@@ -93,6 +112,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}' #'r:|[._-]=* r:|=*' 'l
 # The following line was moved to ~/.util/after.sh to resolve circular dependencies
 #zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' verbose false
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
