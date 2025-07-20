@@ -36,6 +36,9 @@ load_module() {
 [ -z "$PS1" ] && return
 
 # Hacks to override things before starting
+load_module ~/.util/host_before.sh
+
+# Hacks to override things before starting
 load_module ~/.util/before.sh
 
 # Load utility colors
