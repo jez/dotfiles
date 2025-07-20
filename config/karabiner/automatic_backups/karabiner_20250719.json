@@ -178,15 +178,6 @@
                         "vendor_id": 65261
                     },
                     "manipulate_caps_lock_led": false
-                },
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
-                        }
-                    ]
                 }
             ],
             "fn_function_keys": [
