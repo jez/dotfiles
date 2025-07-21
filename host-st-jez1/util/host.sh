@@ -70,10 +70,9 @@ export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
 export PATH="$PATH:$HOME/stripe/space-commander/bin"
-source "$HOME/.rbenvrc"
-rbenv rehash
+load_module "$HOME/.rbenvrc"
 # source ~/.stripe-repos.sh
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 
 # ----- aliases ---------------------------------------------------------------
 
