@@ -5,4 +5,5 @@ silent! unmap <silent> gri
 silent! unmap <silent> grr
 silent! unmap <silent> gra
 silent! unmap <silent> grn
+silent! unmap <silent> grt
 
