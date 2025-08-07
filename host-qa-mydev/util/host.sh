@@ -76,8 +76,8 @@ unset GIT_COMMITTER_EMAIL
 
 # ----- Prompt  ---------------------------------------------------------------
 
-if [ -f /pay/conf/mydev-remote-name ]; then
-  REMOTE_NAME="$(< /pay/conf/mydev-remote-name)"
+if [ -f /pay/conf/box-name ]; then
+  REMOTE_NAME="$(< /pay/conf/box-name)"
   export REMOTE_NAME
 
   export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
