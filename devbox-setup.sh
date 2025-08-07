@@ -49,7 +49,7 @@ neovim_march="$march"
 if [ "$neovim_march" = "aarch64" ]; then
   neovim_march=arm64
 fi
-curl -fsSL "https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-$neovim_march.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
+curl -fsSL "https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-$neovim_march.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
 
 install_cmd=(install)
 if [ "$march" = "aarch64" ]; then
