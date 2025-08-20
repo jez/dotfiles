@@ -77,6 +77,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # https://apple.stackexchange.com/questions/465132/how-do-i-turn-off-macos-sonomas-emoji-guessing
 sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist emoji_enhancements -dict-add Enabled -bool false
 
+# Disable popup near cursor showing Input Source (A, あ), etc.
+defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0
+
 osascript <<EOF
 tell application "System Events"
     make login item at end with properties { path: "/Applications/Amethyst.app" }
