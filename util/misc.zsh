@@ -50,6 +50,8 @@ fi
 
 # General zshzle options
 setopt autocd                     # cd by just typing in a directory name
+setopt auto_pushd                 # make cd push the directory onto the stack
+setopt pushd_ignore_dups
 setopt nomatch                    # warn me if a glob doesn't match anything
 setopt no_case_glob               # globbing is case insensitive
 setopt interactive_comments       # commands preceded with '#' aren't run
