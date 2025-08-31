@@ -19,9 +19,6 @@
 [submodule "zfunctions/pure"]
 	path = zfunctions/pure
 	url = git@github.com:jez/pure.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround

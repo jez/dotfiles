@@ -1,7 +1,7 @@
 #
 # misc.zsh - Miscellaneous zsh-specific configuration
 #
-# Sets up oh-my-zsh, some completions, fixes ^H and backspace, and more.
+# Sets up some completions, fixes ^H and backspace, and more.
 #
 # Author
 #   Jake Zimmerman <jake@zimmerman.io>
@@ -22,31 +22,10 @@
 #   fpath somewhere. I set my fpath in my ~/.zshenv file, so you might want to
 #   check it out.
 #
-#   I also use Oh My Zsh[2] for some completion plugins. This needs to be cloned
-#   to something like ~/.oh-my-zsh.
-#
 #   [1]: https://github.com/zsh-users/zsh-syntax-highlighting
-#   [2]: https://github.com/robbyrussell/oh-my-zsh
 #
 # TODOs
 #   - This could be more modular.
-
-
-# Load oh-my-zsh. I'm not using this for too much. Mostly, it makes adding
-# completion plugins easier, but it could be removed if you don't want that
-# many completion plugins.
-DISABLE_AUTO_UPDATE="true"
-DISABLE_AUTO_TITLE="true"
-export CASE_SENSITIVE="true"
-# export ZSH="$HOME/.oh-my-zsh"
-# plugins=(brew brew-cask)
-# source $ZSH/oh-my-zsh.sh
-
-# Set ZSH_CACHE_DIR to the path where cache files should be created
-# or else we will use the default cache/
-if [[ -z "$ZSH_CACHE_DIR" ]]; then
-  ZSH_CACHE_DIR="$ZSH/cache/"
-fi
 
 # General zshzle options
 setopt autocd                     # cd by just typing in a directory name
@@ -117,7 +96,6 @@ zstyle ':completion:*' verbose false
 
 # Use caching so that commands like apt and dpkg complete are useable
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
