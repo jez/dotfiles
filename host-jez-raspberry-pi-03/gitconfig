@@ -1,0 +1,10 @@
+[include]
+	path = .util/gitconfig
+[user]
+	name = Jake Zimmerman
+	email = zimmerman.jake@gmail.com
+[mergetool "vimdiff"]
+	path = nvim
+
+[github]
+	user = jez
