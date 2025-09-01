@@ -55,11 +55,7 @@ fi
 
 # ----- aliases ---------------------------------------------------------------
 
-if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
-  alias vim="nvim -p"
-  alias vimv="nvim -O"
-  alias vimt="vim +term"
-else
+if [ "$NVIM_LISTEN_ADDRESS" != "" ]; then
   alias vim="nvr -p"
   unalias vimv 2> /dev/null || true
   vimv() {
@@ -70,8 +66,6 @@ else
     esac
   }
 fi
-
-alias vimdiff="nvim -d"
 
 # Override BSD grep with GNU equivalent
 which ggrep &> /dev/null && alias grep="ggrep --color=auto";

@@ -27,6 +27,16 @@ alias b="popd"
 
 alias bex="bundle exec"
 
+if command -v nvim &> /dev/null; then
+  alias vim="nvim -p"
+  alias vimv="nvim -O"
+  alias vimt="vim +term"
+  alias vimdiff="nvim -d"
+else
+  alias vim="vim -p"
+  alias vimv="vim -O"
+fi
+
 # I'm pretty proud of these ones
 alias :q="clear"
 alias :qall!="clear"
@@ -159,6 +169,7 @@ eval "$(hub alias -s 2> /dev/null)"
 alias hubmdpr="hub -c core.commentChar='%' pull-request"
 alias hubmd="hub -c core.commentChar='%'"
 alias hubci="hub ci-status --verbose"
+alias hubcio="hub ci-status --format '%U%n' | head -n 1 | xargs open"
 alias ptal='hub issue update "$(hub pr show --format="%I")" -a'
 
 alias git-skip-dirty-check="export PROMPT_PURE_SKIP_DIRTY_CHECK='1'"
