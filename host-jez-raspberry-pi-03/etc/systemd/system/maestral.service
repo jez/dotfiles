@@ -1,0 +1,51 @@
+; Originally from:
+;
+;   https://maestral.app/docs/autostart#creating-your-own-systemd-service-file
+;
+; with modifications. Useful references:
+;
+; - https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#
+; - https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html
+; - https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
+; - https://github.com/SamSchott/maestral/issues/53
+;
+; Since this service runs maestral in the foreground, you're not going to be
+; able to interact with it using the `maestral` command directly.
+;
+; - For quick status checks, use the journal:
+;
+;       journalctl --follow --unit maestral.service
+;
+; - Certain commands are powered by talking to the database directly, not the
+;   daemon. For example, `maestral ls` works even in systemd mode.
+;
+; - For other things, you'll have to stop the service, use the command, and
+;   then start the service:
+;
+;       sudo systemctl stop maestral.service
+;       /opt/maestral/venv/bin/maestral start
+;       # ...
+;       /opt/maestral/venv/bin/maestral stop
+;       sudo systemctl start maestral.service
+;
+;   As far as I can tell this should be fine because we set the user to `jez`
+;   and it uses the same cached data regardless of whether it's started in
+;   foreground or background.
+[Unit]
+Description = Maestral daemon
+; If it starts 3 times in 5 minutes, something is wrong.
+StartLimitIntervalSec = 300s
+StartLimitBurst=5
+
+[Service]
+Type = notify
+NotifyAccess = exec
+User=jez
+ExecStart = /opt/maestral/venv/bin/maestral start --foreground
+ExecStop = /opt/maestral/venv/bin/maestral stop
+Restart=on-failure
+WatchdogSec = 30s
+
+[Install]
+WantedBy = default.target
+
