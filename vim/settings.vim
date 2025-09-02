@@ -81,8 +81,11 @@ command! -bang Now noautocmd w<bang>
 " Use :C to clear hlsearch
 command! C nohlsearch
 
-" Force write readonly files using sudo
-command! WS w !sudo tee %
+" Force write readonly files using sudo, silencing the error about the buffer
+" having changed outside of Vim, then forcibly reloading it from disk, and
+" finally setting noreadonly so that we don't keep getting errors about this
+" file not being something we can write.
+command! WS execute 'silent! write !sudo tee % > /dev/null' | edit! | set noreadonly
 
 " open help in a new tab
 cabbrev help tab help
