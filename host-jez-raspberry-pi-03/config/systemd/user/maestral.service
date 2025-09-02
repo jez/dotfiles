@@ -14,7 +14,7 @@
 ;
 ; - For quick status checks, use the journal:
 ;
-;       journalctl --follow --unit maestral.service
+;       journalctl --follow --user-unit maestral.service
 ;
 ; - Certain commands are powered by talking to the database directly, not the
 ;   daemon. For example, `maestral ls` works even in systemd mode.
@@ -22,11 +22,11 @@
 ; - For other things, you'll have to stop the service, use the command, and
 ;   then start the service:
 ;
-;       sudo systemctl stop maestral.service
+;       systemctl --user stop maestral.service
 ;       /opt/maestral/venv/bin/maestral start
 ;       # ...
 ;       /opt/maestral/venv/bin/maestral stop
-;       sudo systemctl start maestral.service
+;       systemctl --user start maestral.service
 ;
 ;   As far as I can tell this should be fine because it's running as a user
 ;   service (started at boot via lingering) and it uses the same cached data
