@@ -1,0 +1,21 @@
+; Start at boot (because we have lingering):
+;   systemctl --user enable check_disk_usage.timer
+;
+; Start now:
+;   systemctl --user start check_disk_usage.timer
+;
+; Check the status:
+;   systemctl --user status check_disk_usage.timer
+;
+; Check the status:
+;   journalctl --user-unit check_disk_usage.timer
+
+[Unit]
+Description = Make sure SD card has enough space
+
+[Timer]
+OnBootSec = 15min
+OnUnitInactiveSec = 10min
+
+[Install]
+WantedBy = timers.target
