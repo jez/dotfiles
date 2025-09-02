@@ -28,9 +28,9 @@
 ;       /opt/maestral/venv/bin/maestral stop
 ;       sudo systemctl start maestral.service
 ;
-;   As far as I can tell this should be fine because we set the user to `jez`
-;   and it uses the same cached data regardless of whether it's started in
-;   foreground or background.
+;   As far as I can tell this should be fine because it's running as a user
+;   service (started at boot via lingering) and it uses the same cached data
+;   regardless of whether it's started in foreground or background.
 [Unit]
 Description = Maestral daemon
 ; If it starts 3 times in 5 minutes, something is wrong.
@@ -40,7 +40,6 @@ StartLimitBurst=5
 [Service]
 Type = notify
 NotifyAccess = exec
-User=jez
 ExecStart = /opt/maestral/venv/bin/maestral start --foreground
 ExecStop = /opt/maestral/venv/bin/maestral stop
 Restart=on-failure
