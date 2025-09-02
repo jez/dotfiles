@@ -1,0 +1,21 @@
+; Start at boot (because we have lingering):
+;   systemctl --user enable sync_and_publish.timer
+;
+; Start now:
+;   systemctl --user start sync_and_publish.timer
+;
+; Check the status:
+;   systemctl --user status sync_and_publish.timer
+;
+; Check the status:
+;   journalctl --user-unit sync_and_publish.timer
+
+[Unit]
+Description = Sync and publish recipes
+
+[Timer]
+OnBootSec = 2min
+OnUnitInactiveSec = 1min
+
+[Install]
+WantedBy = timers.target

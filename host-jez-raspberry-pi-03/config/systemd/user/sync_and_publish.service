@@ -1,0 +1,21 @@
+; No need to start at boot (enable), because the timer will start it.
+;
+; Run once, right now, regardless of timer:
+;   systemctl --user start sync_and_publish.service
+;
+; Check the status:
+;   systemctl --user status sync_and_publish.service
+;
+; Check the status:
+;   journalctl --follow --user-unit sync_and_publish.service
+
+
+[Unit]
+Description = Sync and publish recipes
+
+[Service]
+; When it exits, it will become inactive and not restarted.
+; `Type = oneshot` would leave the service as active, even if it exited.
+; We want inactive, so that OnUnitInactiveSec adds a "sleep" between runs
+Type = exec
+ExecStart = %h/.local/bin/sync_and_publish.sh
