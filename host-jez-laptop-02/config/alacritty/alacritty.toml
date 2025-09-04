@@ -1,4 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
+[general]
 live_config_reload = true
 
 # Colors (Solarized Light + Dark)
