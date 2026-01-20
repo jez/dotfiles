@@ -61,6 +61,10 @@ set tabstop=2          " default to 2 spaces for a hard tab
 set softtabstop=2      " default to 2 spaces for the soft tab
 set shiftwidth=2       " for when <TAB> is pressed at the beginning of a line
 
+if exists('&winborder')
+  set winborder=solid
+endif
+
 " Enable file type detection.
 filetype plugin indent on
 

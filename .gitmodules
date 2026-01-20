@@ -184,9 +184,6 @@
 [submodule "vim/bundle/vim-cpp-enhanced-highlight"]
 	path = vim/bundle/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight
-[submodule "vim/bundle/LanguageClient-neovim"]
-	path = vim/bundle/LanguageClient-neovim
-	url = git@github.com:jez/LanguageClient-neovim.git
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
