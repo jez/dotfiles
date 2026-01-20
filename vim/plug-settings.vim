@@ -344,7 +344,7 @@ highlight Extrawhitespace ctermbg=red guibg=#dc322f
 let g:pandoc#syntax#codeblocks#embeds#langs = ['ruby', 'bash=zsh']
 " Mapping to quickly load new languages
 nnoremap <silent> <expr> <leader>` ':PandocHighlight '.expand('<cword>').'<CR>'
-let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim']
+let g:pandoc#syntax#conceal#blacklist = ['image', 'atx', 'codeblock_delim', 'inlinemathdollar']
 
 augroup pandocSettings
   au!
