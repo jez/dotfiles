@@ -155,10 +155,5 @@ alias help="run-help"
 # Use tab completion for Vim SuperMan
 which compdef &> /dev/null && compdef vman="man"
 
-# zsh completion (zsh installed through Homebrew)
-if [ -e $(which brew &> /dev/null && brew --prefix)/etc/zsh_completion ]; then
-  source $(brew --prefix)/etc/zsh_completion
-fi
-
 which stack &> /dev/null && eval "$(stack --bash-completion-script stack)"
 true
