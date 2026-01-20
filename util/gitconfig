@@ -38,6 +38,8 @@
 	help = magenta
 	error = bold red
 
+[absorb]
+	maxStack=25
 
 # Aliases
 [alias]
