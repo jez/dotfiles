@@ -117,3 +117,19 @@ zle -N fzf-gfi-widget
 # zle -N fzf-gh-widget
 bindkey '^gf' fzf-gfi-widget
 # bindkey '^gh' fzf-gh-widget
+
+# TODO(jez) Move this to aliases.sh?
+alias gcf="gc --fixup"
+# gcf **<TAB>
+_fzf_complete_gcf() {
+   # TODO(jez) Preview window that shows the `--stat` output for that commit?
+  _fzf_complete \
+    --ansi \
+    --color "fg+:-1,bg+:white" \
+    -- "$@" < <(
+    gla --no-graph --color=always "$(git review-base)^"..
+  )
+}
+_fzf_complete_gcf_post() {
+  awk '{ print $2 }'
+}
