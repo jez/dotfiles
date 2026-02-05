@@ -69,9 +69,9 @@ cd ~/.dotfiles
 RCRC=./rcrc rcup -f -B qa-mydev
 # -f to overwrite .profile
 
-cd ~/.vim/bundle/LanguageClient-neovim
-bash install.sh
-cd -
+# cd ~/.vim/bundle/LanguageClient-neovim
+# bash install.sh
+# cd -
 
 ln -s ~/.vim ~/.config/nvim
 /home/linuxbrew/.linuxbrew/opt/fzf/install --completion --key-bindings --no-update-rc
