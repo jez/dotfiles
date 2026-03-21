@@ -41,7 +41,11 @@ mkdir -p "$HOME/.local/bin"
 
 march="$(uname -m)"
 
-curl -fsSL "https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-$march-unknown-linux-musl.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
+case "$march" in
+  aarch64) ripgrep_libc=gnu;;
+  x86_64)  ripgrep_libc=musl;;
+esac
+curl -fsSL "https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-$march-unknown-linux-$ripgrep_libc.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/rg'
 
 curl -fsSL "https://github.com/sharkdp/fd/releases/download/v10.1.0/fd-v10.1.0-$march-unknown-linux-musl.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local/bin" -xvz '*/fd'
 
