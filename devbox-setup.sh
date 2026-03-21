@@ -60,12 +60,8 @@ if [ "$march" = "aarch64" ]; then
   install_cmd+=(--build-from-source)
 fi
 
-brew "${install_cmd[@]}" fzf
-brew "${install_cmd[@]}" git
-brew "${install_cmd[@]}" zsh
-brew "${install_cmd[@]}" tmux
-brew "${install_cmd[@]}" fastmod
-brew "${install_cmd[@]}" hub
+# One command because brew has parallelism over download step
+brew "${install_cmd[@]}" fzf git zsh tmux fastmod hub
 
 cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 
