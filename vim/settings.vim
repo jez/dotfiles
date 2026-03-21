@@ -238,11 +238,16 @@ function! ToggleKJEsc() abort
   end
 endfunction
 nnoremap <silent> <leader>kj :call ToggleKJEsc()<CR>
-call system('ioreg -p IOUSB | grep -iq ergodox')
-if v:shell_error
-  " Ergodox not connected, so probably using internal keyboard.
-  silent! call ToggleKJEsc()
-endif
+try
+  call system('ioreg -p IOUSB | grep -iq ergodox')
+  if v:shell_error
+    " Ergodox not connected, so probably using internal keyboard.
+    silent! call ToggleKJEsc()
+  endif
+catch /^Vim\%((\a\+)\)\=:E145:/
+  " `sudo vim` or `rvim` starts in "restricted mode" where external processes
+  " can't be spawned
+endtry
 
 " ----- Terminal features ---------------------------------------------------
 " Some of these only work in Neovim.
