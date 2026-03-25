@@ -61,9 +61,10 @@ if [ "$march" = "aarch64" ]; then
 fi
 
 # One command because brew has parallelism over download step
-brew "${install_cmd[@]}" fzf git zsh tmux fastmod hub
+brew "${install_cmd[@]}" fzf zsh tmux fastmod hub
 
-cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
+# brew "${install_cmd[@]}" git
+# cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 
 cd ~/.dotfiles
 RCRC=./rcrc rcup -f -B qa-mydev
