@@ -1,3 +1,12 @@
+real_home="/home/$(< /pay/conf/mydev-owner-account)"
+if ! [ -d "$real_home/linuxbrew" ]; then
+  mkdir "$real_home/linuxbrew"
+fi
+
+if ! [ -e /home/linuxbrew ]; then
+  sudo ln -s "$real_home/linuxbrew" /home/linuxbrew
+fi
+
 # We don't have entries in /etc/passwd (because users are managed somehow else)
 # The login shell is instead chosen by `pay ssh` and `pay remote ssh` to set
 # `'$SHELL --login'` as the argument to the `ssh` command that eventually gets
