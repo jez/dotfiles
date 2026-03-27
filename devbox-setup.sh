@@ -21,6 +21,14 @@ git config core.commitGraph true
 git commit-graph write --reachable
 )
 
+if ! [ -d "$HOME/linuxbrew" ]; then
+  mkdir "$HOME/linuxbrew"
+fi
+
+if ! [ -e "/home/linuxbrew" ]; then
+  ln -s /home/linuxbrew "$HOME/linuxbrew"
+fi
+
 if ! [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   echo 'Installing homebrew'
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -56,9 +64,9 @@ fi
 curl -fsSL "https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-$neovim_march.tar.gz" | tar --wildcards --strip-components 1 -C "$HOME/.local" -xzv
 
 install_cmd=(install)
-if [ "$march" = "aarch64" ]; then
-  install_cmd+=(--build-from-source)
-fi
+# if [ "$march" = "aarch64" ]; then
+#   install_cmd+=(--build-from-source)
+# fi
 
 # One command because brew has parallelism over download step
 brew "${install_cmd[@]}" fzf zsh tmux fastmod hub
