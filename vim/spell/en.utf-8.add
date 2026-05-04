@@ -519,3 +519,7 @@ Skimmable
 skimmable
 BLUF
 templated
+symlink
+shellcheck
+deps
+S3
