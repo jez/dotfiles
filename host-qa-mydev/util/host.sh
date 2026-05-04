@@ -24,6 +24,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # Add diff-highlight from Git contrib
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight"
 
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
 export LANG=en_US.UTF-8
 
 # ----- aliases ---------------------------------------------------------------
