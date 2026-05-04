@@ -151,6 +151,7 @@ if not (vim.fn.fnamemodify(vim.fn.getcwd(), ":p") == vim.env.HOME .. "/stripe/pa
 	vim.lsp.config("sorbet", {
 		cmd = sorbet_cmd,
 		filetype = "ruby",
+		root_dir = vim.fn.getcwd(),
 		on_attach = function(client, bufnr)
 			vim.api.nvim_buf_create_user_command(bufnr, "SorbetHierarchyReferences", function()
 				local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
