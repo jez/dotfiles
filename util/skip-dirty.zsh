@@ -12,10 +12,14 @@ function chpwd() {
   case $PWD in
     /Users/jez/ps) ;&
     /Users/jez/ps/*) ;&
+    /Users/jez/mint) ;&
+    /Users/jez/mint/*) ;&
     /Users/jez/psb) ;&
     /Users/jez/psb/*) ;&
     /Users/jez/stripe/pay-server) ;&
     /Users/jez/stripe/pay-server/*) ;&
+    /Users/jez/stripe/mint) ;&
+    /Users/jez/stripe/mint/*) ;&
     /pay/src/pay-server) ;&
     /pay/src/pay-server/*) ;&
     /Users/jez/stripe/ps-worktree) ;&
@@ -38,6 +42,8 @@ function chpwd() {
     /Users/jez/prog/pl/flow/*) ;&
     /Users/jez/dbx/Documents/Programming/pl/flow) ;&
     /Users/jez/dbx/Documents/Programming/pl/flow/*) ;&
+    /Users/jez/stripe/github/vscode) ;&
+    /Users/jez/stripe/github/vscode/*) ;&
     PROMPT_PURE_SKIP_DIRTY_CHECK)
       export PROMPT_PURE_SKIP_DIRTY_CHECK=1
       ;;

@@ -27,7 +27,7 @@
   "workbench.preferredLightColorTheme": "Better Solarized Light",
   "window.autoDetectColorScheme": true,
   "telemetry.enableTelemetry": false,
-  "typescript.tsdk": "~/stripe/pay-server/frontend/js-scripts/node_modules/typescript/lib",
+  "typescript.tsdk": "~/stripe/mint/pay-server/frontend/js-scripts/node_modules/typescript/lib",
   "search.smartCase": true,
   "remote.SSH.connectTimeout": 60,
   "C_Cpp.intelliSenseEngine": "Disabled",
@@ -92,7 +92,7 @@
   "cody.net.proxy.endpoint": "unix://~/.stripeproxy",
   "editor.codeActionsOnSave": {},
   "gitlens.ai.enabled": false,
-  "typescript.native-preview.tsdk": "frontend/js-scripts/scripts",
+  "typescript.native-preview.tsdk": "~/stripe/mint/pay-server/frontend/js-scripts/scripts",
   "errorLens.removeLinebreaks": false,
   "claude-code.claudeProcessWrapper": "/usr/local/bin/claude",
   "claude-code.environmentVariables": [
