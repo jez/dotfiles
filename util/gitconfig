@@ -81,6 +81,7 @@
 	# old-submit-stack = !git branch --format \"%(if)%(upstream)%(then)%(upstream:remotename)%(else)origin%(end) %(refname:lstrip=2)\" --merged HEAD \"$USER-*\" | tac | xargs -L 1 git push --force-with-lease 2>&1 | sed -e '/^remote:/d'
 	# See https://github.com/jez/bin/tree/master/git-submit-stack
 	ss = submit-stack
+	fetch-push = !"git fetch \"$1\" && git push --force-with-lease origin \"$1/$2:refs/heads/$2\" #"
 
 
 # Diff & Difftool settings
