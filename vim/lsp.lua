@@ -88,7 +88,7 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "ruby", "rust", "c", "cpp" },
+	pattern = { "ruby", "rust", "c", "cpp", "go" },
 	callback = function()
 		local opts = { noremap = true, silent = true, buffer = true }
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -173,9 +173,42 @@ if not (vim.fn.fnamemodify(vim.fn.getcwd(), ":p") == vim.env.HOME .. "/stripe/pa
 end
 
 -- }}}
+-- Go --------------------------------------------------------------------- {{{
+
+local results = vim.fs.find("bin/gopls.sh", {
+	upward = true,
+	path = vim.fn.getcwd(),
+})
+
+if #results > 0 then
+	gopls_cmd = { results[1] }
+else
+	gopls_cmd = { "gopls" }
+end
+
+vim.lsp.config("gopls", {
+	cmd = gopls_cmd,
+	filetypes = { "go" },
+	settings = {
+		gopls = {
+			["build.directoryFilters"] = {
+				"-bazel-bin",
+				"-bazel-gocode",
+				"-bazel-out",
+				"-bazel-testlogs",
+				"-vendor/github.com/containernetworking/plugins/pkg/ns",
+				"-vendor/github.com/bsm/go-sparkey",
+				"-puppet-config",
+			},
+			["formatting.local"] = "git.corp.stripe.com/stripe-internal/gocode",
+		},
+	},
+})
+
+-- }}}
 
 -- Enable everything ------------------------------------------------------
 -- vim.lsp.enable({ "rust-analyzer", "clangd", "sorbet", "harper" })
-vim.lsp.enable({ "rust-analyzer", "clangd", "sorbet" })
+vim.lsp.enable({ "rust-analyzer", "clangd", "sorbet", "gopls" })
 
 -- vim:fdm=marker
