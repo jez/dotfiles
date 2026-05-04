@@ -117,6 +117,8 @@ vim.lsp.config("rust-analyzer", {
 local clangd_cmd
 if vim.fn.filereadable("build/compile_commands.json") == 1 then
 	clangd_cmd = { "clangd", "--compile-commands-dir=build", "--background-index" }
+elseif vim.fn.filereadable("bazel-sorbet/external/llvm_toolchain_15_0_7/bin/clangd") == 1 then
+	clangd_cmd = { "bazel-sorbet/external/llvm_toolchain_15_0_7/bin/clangd" }
 else
 	clangd_cmd = { "clangd" }
 end
