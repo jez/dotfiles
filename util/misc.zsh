@@ -67,6 +67,31 @@ bindkey "^H" backward-delete-char
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
+autoload -Uz surround
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+bindkey -a cs change-surround
+bindkey -a ds delete-surround
+bindkey -a ys add-surround
+bindkey -M visual S add-surround
+
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+   for c in {a,i}{\',\",\`}; do
+     bindkey -M $m $c select-quoted
+   done
+done
+
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
 # Make ^W behave more like Vim (back to punctuation)
 WORDCHARS=''
 
