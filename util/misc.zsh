@@ -67,6 +67,10 @@ bindkey "^H" backward-delete-char
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
+# Bind Shift-Tab to cycle backwards
+# https://unix.stackexchange.com/a/722487
+bindkey '^[[Z' reverse-menu-complete
+
 autoload -Uz surround
 zle -N delete-surround surround
 zle -N add-surround surround
