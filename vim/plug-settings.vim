@@ -425,7 +425,7 @@ augroup neoformatMaps
   " One day we will make this not do undojion, but it's too good for testing to keep off
   "au BufWritePre *.rb       try            | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
   if exists('g:neoformat_enabled_ruby')
-    au BufWritePre *.rb       try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry
+    au BufWritePre *.rb       if expand('%:t') !=# '__package.rb' | try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | silent Neoformat | endtry | endif
   endif
 
   au FileType haskell let g:neoformat_run_all_formatters = 1
