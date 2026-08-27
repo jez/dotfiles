@@ -53,6 +53,14 @@ augroup myFiletypes
   " *.rl files are ragel files
   au BufRead,BufNewFile *.rl setlocal filetype=ragel
 
+  " Skip the most expensive processing on large files
+  au BufReadPre * if getfsize(expand("<afile>")) > 10 * 1024 * 1024
+        \ | setlocal nowrap nolinebreak noswapfile
+        \ | let b:gitgutter_enabled = 0
+        \ | let b:ale_enabled = 0
+        \ | let b:better_whitespace_enabled = 0
+        \ | endif
+
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,pandoc.ghpull,markdown,tex setlocal spell
   au FileType pandoc,pandoc.ghpull,markdown,tex setlocal tw=80
