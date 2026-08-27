@@ -66,6 +66,9 @@ export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 #   pyenv rehash
 # fi
 
+# I don't want GH_HOST to always say `git.corp.stripe.com`
+unset GH_HOST
+
 # ----- From Stripe IT department ---------------------------------------------
 
 export PATH="$HOME/stripe/henson/bin:$PATH"
