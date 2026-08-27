@@ -1,6 +1,6 @@
 # Core settings
 [core]
-	pager = diff-highlight | less -F -X
+	pager = delta --color-only
 	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 18
@@ -18,6 +18,8 @@
 	colorMoved = yes
 [init]
 	defaultBranch = master
+[checkout]
+	defaultRemote = origin
 
 # Color settings
 [color]
@@ -94,12 +96,16 @@
 [difftool "imgdiff"]
 	cmd = git-imgdiff
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = delta --color-only
+
+[delta]
+	; colorMoved support
+	map-styles = "bold purple => syntax #e4e5fb, blue => syntax #b7ece8"
 
 # Merge conflict settings
 [merge]
 	tool = vimdiff
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 # GitHub-specific
 [hub]
