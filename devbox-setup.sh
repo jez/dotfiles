@@ -69,7 +69,7 @@ install_cmd=(install)
 # fi
 
 # One command because brew has parallelism over download step
-brew "${install_cmd[@]}" fzf zsh tmux fastmod hub shellcheck
+brew "${install_cmd[@]}" fzf zsh tmux fastmod hub shellcheck git-delta
 
 # brew "${install_cmd[@]}" git
 # cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
