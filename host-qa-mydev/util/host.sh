@@ -29,6 +29,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 export LANG=en_US.UTF-8
 
+# Linuxbrew defaults to `/var/tmp` if `HOMEBREW_TEMP` is not set, which on
+# devboxes is forced to share the tiny volume that's used for `/dev/root`.
+export HOMEBREW_TEMP="$TMPDIR"
+
 # ----- aliases ---------------------------------------------------------------
 
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then
