@@ -37,6 +37,7 @@ export GH_CONFIG_DIR=/home/jez/.config/gh
 if [[ -r ~/.local/state/secrets/github-token ]]; then
   export GH_TOKEN="$(< ~/.local/state/secrets/github-token)"
 fi
+export GH_HOST=github.com
 
 # ----- aliases ---------------------------------------------------------------
 
