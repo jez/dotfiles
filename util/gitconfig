@@ -1,5 +1,6 @@
 # Core settings
 [core]
+	; pager = diff-highlight | less -F -X
 	pager = delta --color-only
 	excludesfile = ~/.gitignore
 [help]
@@ -32,6 +33,9 @@
 [color "diff"]
 	whitespace = red reverse
 	newMoved = blue
+	newMovedAlternative = cyan
+	oldMoved = bold magenta
+	oldMovedAlternative = magenta
 	func = blue
 	meta = reverse
 [color "interactive"]
@@ -103,7 +107,7 @@
 
 [delta]
 	; colorMoved support
-	map-styles = "bold purple => syntax #e4e5fb, blue => syntax #b7ece8"
+	map-styles = "blue => syntax #b7ece8, cyan => syntax #d1f8f5, bold purple => syntax #e4e5fb, purple => syntax #f8d3e5"
 
 # Merge conflict settings
 [merge]
