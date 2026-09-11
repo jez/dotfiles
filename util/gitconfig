@@ -84,6 +84,7 @@
 	# See https://github.com/jez/bin/tree/master/git-submit-stack
 	ss = submit-stack
 	fetch-push = !"git fetch \"$1\" && git push --force-with-lease origin \"$1/$2:refs/heads/$2\" #"
+	fetch-push-pr = "!f() { origin=\"$1\"; branch=\"$2\"; shift 2; git fetch-push \"$origin\" \"$branch\" && git checkout \"$branch\" && hub -c core.commentChar='%' pull-request \"$@\"; }; f"
 
 
 # Diff & Difftool settings
