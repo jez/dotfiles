@@ -1,7 +1,7 @@
 # Core settings
 [core]
 	; pager = diff-highlight | less -F -X
-	pager = delta --color-only
+	pager = delta --color-only --max-line-distance=0.8
 	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 18
@@ -103,7 +103,7 @@
 [difftool "imgdiff"]
 	cmd = git-imgdiff
 [interactive]
-	diffFilter = delta --color-only
+	diffFilter = delta --color-only --max-line-distance=0.8
 
 [delta]
 	; colorMoved support
