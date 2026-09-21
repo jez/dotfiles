@@ -21,6 +21,9 @@
 	defaultBranch = master
 [checkout]
 	defaultRemote = origin
+[rerere]
+	autoupdate = true
+	enabled = true
 
 # Color settings
 [color]
