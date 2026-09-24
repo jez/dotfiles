@@ -228,6 +228,16 @@ inoremap <M-p> <ESC>p
 noremap <C-g><C-g> :echo wordcount().words." words"<CR>
 inoremap <C-g><C-g> <C-o>:echo wordcount().words." words"<CR>
 
+" Hard-wrap -> soft wrap, via pandoc filter
+command! -range PandocUnwrap keepjumps <line1>,<line2>!pandoc --from=markdown --to=markdown --wrap=none
+" Make gQ an operator, like gq.
+function! s:PandocUnwrapOperator(type) abort
+  execute "'[,']PandocUnwrap"
+endfunction
+nnoremap <silent> gQ :<C-U>set operatorfunc=<SID>PandocUnwrapOperator<CR>g@
+" Handle an existing Visual selection directly.
+xnoremap <silent> gQ :<C-U>'<,'>PandocUnwrap<CR>
+
 function! ToggleKJEsc() abort
   if empty(maparg('kj', 'i'))
     inoremap kj <ESC>
