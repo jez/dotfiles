@@ -28,8 +28,9 @@ set scrolloff=3        " don't let the cursor touch the edge of the viewport
 set splitright         " Vertical   splits  use  right  half  of screen
 set splitbelow         " Horizontal splits  use  bottom half  of screen
 set timeoutlen=1000    " Lower ^[ timeout
-set fillchars=fold:\ , " get rid of obnoxious '-' characters in folds & diffs
-set fillchars+=diff:\ ,
+" Get rid of obnoxious '-' characters in folds and diffs. Assign the option
+" directly so that there is no trailing empty entry in its comma-separated value.
+let &fillchars = 'fold: ,diff: '
 set diffopt+=vertical
 set tildeop            " use ~ to toggle case as an operator, not a motion
 set colorcolumn=+0     " show a column whenever textwidth is set

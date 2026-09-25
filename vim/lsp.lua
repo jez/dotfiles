@@ -1,22 +1,3 @@
--- Helpers ---------------------------------------------------------------- {{{
-
--- Get source from related information for a line
-local function getlines(location)
-	local uri = location.targetUri or location.uri
-	if uri == nil then
-		return
-	end
-	local bufnr = vim.uri_to_bufnr(uri)
-	if not vim.api.nvim_buf_is_loaded(bufnr) then
-		vim.fn.bufload(bufnr)
-	end
-	local range = location.targetRange or location.range
-
-	local lines = vim.api.nvim_buf_get_lines(bufnr, range.start.line, range["end"].line + 1, false)
-	return table.concat(lines, "\n")
-end
-
--- }}}
 -- Defaults --------------------------------------------------------------- {{{
 
 vim.lsp.config("*", {})
@@ -48,42 +29,9 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.HINT] = "➤",
 		},
 	},
-	-- https://github.com/neovim/neovim/issues/19649#issuecomment-1327287313
-	-- Can probably delete in Neovim 0.12?
-	-- https://github.com/neovim/neovim/commit/2031287e93295949fbe5349413668eb14c9546f0
 	float = {
 		header = "",
 		scope = "cursor",
-		format = function(diag)
-			local message = diag.message
-			local client = vim.lsp.get_clients({ name = message.source })[1]
-			if not client then
-				return diag.message
-			end
-
-			local relatedInfo = { messages = {}, locations = {} }
-			for _, info in ipairs(diag.user_data.lsp.relatedInformation) do
-				table.insert(relatedInfo.messages, info.message)
-				table.insert(relatedInfo.locations, info.location)
-			end
-
-			for i, loc in ipairs(vim.lsp.util.locations_to_items(relatedInfo.locations, client.offset_encoding)) do
-				if i == 1 then
-					message = message .. "\n"
-				end
-
-				message = string.format(
-					"%s\n%s:%d: %s\n\t%s",
-					message,
-					vim.fn.fnamemodify(loc.filename, ":."),
-					loc.lnum,
-					relatedInfo.messages[i],
-					getlines(relatedInfo.locations[i])
-				)
-			end
-
-			return message
-		end,
 	},
 })
 
