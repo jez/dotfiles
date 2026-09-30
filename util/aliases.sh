@@ -236,7 +236,7 @@ GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset
 
 # only branches with 'jez' in them, including their remote counter parts
 # (especially useful when in a repo with lots of other people)
-ONLY_JEZ="--branches='jez*' --remotes='jez*' master origin/master"
+ONLY_JEZ="--branches='jez*' --remotes='*/jez*' master origin/master"
 
 # exclude tags (Sorbet tags are super annoying)
 EXCLUDE_TAGS="--decorate-refs-exclude='tags/*'"
