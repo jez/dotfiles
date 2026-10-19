@@ -10,6 +10,8 @@
 [push]
 	default = simple
 	autoSetupRemote = true
+[branch]
+	autoSetupMerge = simple
 [log]
 	date = relative
 [rebase]
