@@ -66,7 +66,11 @@ alias sb='bazel build //main:sorbet'
 alias sbl='bazel build'
 alias sbg='bazel build //main:sorbet --config=dbg'
 alias sbo='bazel build //main:sorbet --config=debugsymbols'
-alias sbr='bazel build //main:sorbet --config=release-mac'
+if [ "$(uname -m)" = "aarch64" ]; then
+  alias sbr='bazel build //main:sorbet --config=release-linux-aarch64'
+else
+  alias sbr='bazel build //main:sorbet --config=release-linux'
+fi
 alias st='bazel test --test_output=errors --test_summary=terse test'
 alias sto='bazel test --test_output=errors'
 alias stg='bazel test --config=dbg --test_output=errors --test_summary=terse test'
