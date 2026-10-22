@@ -46,17 +46,17 @@ _gen_fzf_default_opts() {
 
   # Solarized Dark color scheme for fzf
   export FZF_DEFAULT_OPTS_DARK="
-    --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:-1,hl+:$blue
+    --color fg:-1,bg:-1,hl:$blue:bold,fg+:$base2,bg+:-1,hl+:$blue:bold
     --color info:$yellow,prompt:$yellow,pointer:$base3,marker:$base3,spinner:$yellow
     --no-separator
   "
   # Solarized Light color scheme for fzf
   export FZF_DEFAULT_OPTS_LIGHT="
-    --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:-1,hl+:$blue
+    --color fg:-1,bg:-1,hl:$blue:bold,fg+:$base02,bg+:-1,hl+:$blue:bold
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
   "
 
-  FZF_DEFAULT_OPTS="--no-separator --bind scroll-up:offset-up+offset-up+offset-up,scroll-down:offset-down+offset-down+offset-down"
+  FZF_DEFAULT_OPTS="--no-separator --no-bold --bind scroll-up:offset-up+offset-up+offset-up,scroll-down:offset-down+offset-down+offset-down"
   if [ "$SOLARIZED" = "dark" ]; then
     FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS_DARK"
   elif [ "$SOLARIZED" = "light" ]; then
