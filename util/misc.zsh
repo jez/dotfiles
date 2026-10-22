@@ -162,8 +162,18 @@ source $HOME/.zfunctions/zsh-autoquoter/zsh-autoquoter.zsh
 # and zaq (which is zsh-autoquoter).
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets zaq)
 source $HOME/.zfunctions/syntax-highlighting/zsh-syntax-highlighting.zsh
-# Change comment color for Solarized color palette
-ZSH_HIGHLIGHT_STYLES[comment]='fg=green,bold'
+# Change comment color for Solarized color palette (bright green = base01)
+ZSH_HIGHLIGHT_STYLES[comment]='fg=10'
+# These default to bold, which used to be drawn as the bright color. Ask for
+# the bright color directly so nothing is bold (e.g., orange, not heavy red,
+# for unknown commands).
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9'
+ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=9'
+ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=12'
+ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=10'
+ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=13'
+ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=11'
+ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=14'
 # This is possible too, if you ever feel like customizing the underline
 #ZSH_HIGHLIGHT_STYLES[zaq:string]="fg=green,underline"
 zle_highlight+=(paste:none)

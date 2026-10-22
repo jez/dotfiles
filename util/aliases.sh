@@ -123,8 +123,8 @@ fi
 alias agt="ag --ignore='*test*'"
 alias ago="ag --nobreak --noheading --nofilename --nogroup --only-matching"
 
-RG_DARK="rg -S --hidden --colors 'match:fg:white' --colors 'match:style:bold' --colors 'line:fg:blue'"
-RG_LIGHT="rg -S --hidden --colors 'match:fg:black' --colors 'match:style:bold' --colors 'line:fg:blue'"
+RG_DARK="rg -S --hidden --colors 'match:fg:15' --colors 'match:style:bold' --colors 'line:fg:blue'"
+RG_LIGHT="rg -S --hidden --colors 'match:fg:8' --colors 'match:style:bold' --colors 'line:fg:blue'"
 if [ "$SOLARIZED" = "dark" ]; then
   alias rg="$RG_DARK"
 elif [ "$SOLARIZED" = "light" ]; then

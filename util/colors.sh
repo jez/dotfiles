@@ -9,24 +9,28 @@
 #   This works anywhere that shell variables are expanded.
 
 # ANSI colors
+#
+# The `*b` variants are the *bright* versions of each color (90-97), not bold.
+# These used to be `1;3X` (bold), which only rendered as bright because the
+# terminal was configured to draw bold text with bright colors.
 export cnone=$'\x1b[0m'
-export cwhiteb=$'\x1b[1;37m'
+export cwhiteb=$'\x1b[0;97m'
 export cwhite=$'\x1b[0;37m'
-export cgray=$'\x1b[1;30m'
+export cgray=$'\x1b[0;90m'
 export cblack=$'\x1b[0;30m'
 
 export cred=$'\x1b[0;31m'
-export credb=$'\x1b[1;31m'
+export credb=$'\x1b[0;91m'
 export cgreen=$'\x1b[0;32m'
-export cgreenb=$'\x1b[1;32m'
+export cgreenb=$'\x1b[0;92m'
 export cyellow=$'\x1b[0;33m'
-export cyellowb=$'\x1b[1;33m'
+export cyellowb=$'\x1b[0;93m'
 export cblue=$'\x1b[0;34m'
-export cblueb=$'\x1b[1;34m'
+export cblueb=$'\x1b[0;94m'
 export cmagenta=$'\x1b[0;35m'
-export cmagentab=$'\x1b[1;35m'
+export cmagentab=$'\x1b[0;95m'
 export ccyan=$'\x1b[0;36m'
-export ccyanb=$'\x1b[1;36m'
+export ccyanb=$'\x1b[0;96m'
 
 # Solarized 256 colors
 export sred=$'\x1b[00;38;5;160m'
