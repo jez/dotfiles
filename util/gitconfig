@@ -73,8 +73,6 @@
 	diff-review = !git diff $(git review-base)
 	# Review by commit
 	by-commit = !git log -p --reverse \"${1:-$(git review-base $2)}\"..\"${2:-HEAD}\"
-	# split-diff, using icdiff
-	icdiff = --paginate difftool --tool icdiff
 	# show the before, changes, and after for one tracked image
 	diff-img = difftool --tool imgdiff
 	# Show just the subject and body of a particular commit (default: HEAD)
@@ -103,8 +101,6 @@
 	algorithm = histogram
 [difftool]
 	prompt = false
-[difftool "icdiff"]
-	cmd = icdiff --no-bold --line-numbers -L \"$BASE\" -L \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "imgdiff"]
 	cmd = git-imgdiff
 [interactive]

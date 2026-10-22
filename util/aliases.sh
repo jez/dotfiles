@@ -59,9 +59,6 @@ which doctoc &> /dev/null && alias doctoc='doctoc --title="## Table of Contents"
 which tmux &> /dev/null && alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias tnas="tmux new -As"
 
-# Use --no-bold for Solarized colors
-alias icdiff="icdiff --no-bold"
-
 # dump syntax highlighted file to screen
 alias hicat='highlight -O truecolor --style=solarized-$SOLARIZED'
 
@@ -199,7 +196,6 @@ alias gds="git diff --staged"
 alias gdw="git diff --color-words"
 alias gdr="git diff-review"
 alias gbc="git by-commit"
-alias gicd="git icdiff"
 
 alias gf="git fetch"
 alias gfp="git fetch --prune"
