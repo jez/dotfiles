@@ -5,7 +5,7 @@ live_config_reload = true
 # Colors (Solarized Light + Dark)
 [colors]
 # When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors = true
+draw_bold_text_with_bright_colors = false
 
 # Bright colors (change original/patched manually)
 [colors.bright]
@@ -97,7 +97,7 @@ size = 14.4
 
 [font.bold]
 family = "Iosevka Fixed"
-style = "Regular"
+style = "Bold"
 
 # Glyph offset determines the locations of the glyphs within their cells with
 # the default being at the bottom. Increase the x offset to move the glyph to
