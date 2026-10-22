@@ -32,14 +32,14 @@
 	ui = true
 [color "decorate"]
 	head = magenta
-	branch = bold magenta
+	branch = brightmagenta
 	remotebranch = blue
-	tag = bold red
+	tag = brightred
 [color "diff"]
 	whitespace = red reverse
 	newMoved = blue
 	newMovedAlternative = cyan
-	oldMoved = bold magenta
+	oldMoved = brightmagenta
 	oldMovedAlternative = magenta
 	func = blue
 	meta = reverse
@@ -47,7 +47,7 @@
 	prompt = blue
 	header = yellow
 	help = magenta
-	error = bold red
+	error = brightred
 
 [absorb]
 	maxStack=25
@@ -108,7 +108,7 @@
 
 [delta]
 	; colorMoved support
-	map-styles = "blue => syntax #b7ece8, cyan => syntax #d1f8f5, bold purple => syntax #e4e5fb, purple => syntax #f8d3e5"
+	map-styles = "blue => syntax #b7ece8, cyan => syntax #d1f8f5, brightmagenta => syntax #e4e5fb, purple => syntax #f8d3e5"
 
 # Merge conflict settings
 [merge]

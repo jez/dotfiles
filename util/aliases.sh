@@ -226,9 +226,9 @@ alias fastgitlog='git config core.commitGraph true && git commit-graph write --r
 alias headHEAD='ln -s HEAD .git/head'
 
 # resuable format strings
-GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(auto)%cs%Creset %C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
-# GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
-GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(bold green)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
+GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(auto)%cs%Creset %C(brightgreen)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
+# GIT_PRETTY_FORMAT_AUTHOR="--pretty=\"%C(brightgreen)%h%Creset %C(yellow)%an%Creset%C(auto)%d%Creset %s\""
+GIT_PRETTY_FORMAT_ALIGN="--pretty=\"%C(brightgreen)%h%Creset %C(yellow)%an%Creset %s%C(auto)%d%Creset\""
 
 # only branches with 'jez' in them, including their remote counter parts
 # (especially useful when in a repo with lots of other people)
