@@ -78,6 +78,19 @@ let g:airline#extensions#tmuxline#enabled = 0
 let g:airline#extensions#tagbar#enabled = 0
 " Don't show line percentage
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ' %3v'])
+" Don't use bold anywhere (mode, tab/buffer titles, line number). The terminal
+" draws bold as a heavier font, and I only want that for text that's bold.
+let g:airline_theme_patch_func = 'AirlineThemePatchNoBold'
+function! AirlineThemePatchNoBold(palette) abort
+  for l:mode in values(a:palette)
+    if type(l:mode) != v:t_dict | continue | endif
+    for l:colors in values(l:mode)
+      if type(l:colors) == v:t_list && len(l:colors) >= 5
+        let l:colors[4] = join(filter(split(l:colors[4], ','), 'v:val !=# "bold"'), ',')
+      endif
+    endfor
+  endfor
+endfunction
 
 " }}}
 " ----- Raimondi/delimitMate settings ----- {{{
