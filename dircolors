@@ -122,69 +122,69 @@ STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writabl
 *README.md  00;30 ## solarized-light ##
 
 # "unimportant" files as logs and backups (base1 light, base01 dark)
-.log        01;36 ## solarized-light ##
-.bak        01;36 ## solarized-light ##
-.aux        01;36 ## solarized-light ##
-.lof        01;36 ## solarized-light ##
-.lol        01;36 ## solarized-light ##
-.lot        01;36 ## solarized-light ##
-.out        01;36 ## solarized-light ##
-.toc        01;36 ## solarized-light ##
-.bbl        01;36 ## solarized-light ##
-.blg        01;36 ## solarized-light ##
-*~          01;36 ## solarized-light ##
-*#          01;36 ## solarized-light ##
-.part       01;36 ## solarized-light ##
-.incomplete 01;36 ## solarized-light ##
-.swp        01;36 ## solarized-light ##
-.tmp        01;36 ## solarized-light ##
-.temp       01;36 ## solarized-light ##
-.o          01;36 ## solarized-light ##
-.pyc        01;36 ## solarized-light ##
-.class      01;36 ## solarized-light ##
-.cache      01;36 ## solarized-light ##
-*tags       01;36 ## solarized-light ##
-*grm.desc   01;36 ## solarized-light ##
-*grm.sig    01;36 ## solarized-light ##
-*grm.sml    01;36 ## solarized-light ##
-*lex.sml    01;36 ## solarized-light ##
-*old.sml    01;36 ## solarized-light ##
-*old.sig    01;36 ## solarized-light ##
-.du         01;36 ## solarized-light ##
-.ud         01;36 ## solarized-light ##
+.log        00;96 ## solarized-light ##
+.bak        00;96 ## solarized-light ##
+.aux        00;96 ## solarized-light ##
+.lof        00;96 ## solarized-light ##
+.lol        00;96 ## solarized-light ##
+.lot        00;96 ## solarized-light ##
+.out        00;96 ## solarized-light ##
+.toc        00;96 ## solarized-light ##
+.bbl        00;96 ## solarized-light ##
+.blg        00;96 ## solarized-light ##
+*~          00;96 ## solarized-light ##
+*#          00;96 ## solarized-light ##
+.part       00;96 ## solarized-light ##
+.incomplete 00;96 ## solarized-light ##
+.swp        00;96 ## solarized-light ##
+.tmp        00;96 ## solarized-light ##
+.temp       00;96 ## solarized-light ##
+.o          00;96 ## solarized-light ##
+.pyc        00;96 ## solarized-light ##
+.class      00;96 ## solarized-light ##
+.cache      00;96 ## solarized-light ##
+*tags       00;96 ## solarized-light ##
+*grm.desc   00;96 ## solarized-light ##
+*grm.sig    00;96 ## solarized-light ##
+*grm.sml    00;96 ## solarized-light ##
+*lex.sml    00;96 ## solarized-light ##
+*old.sml    00;96 ## solarized-light ##
+*old.sig    00;96 ## solarized-light ##
+.du         00;96 ## solarized-light ##
+.ud         00;96 ## solarized-light ##
 
-## Archives or compressed (violet + bold for compression)
-.tar    01;35
-.tgz    01;35
-.arj    01;35
-.taz    01;35
-.lzh    01;35
-.lzma   01;35
-.tlz    01;35
-.txz    01;35
-.zip    01;35
-.z      01;35
-.Z      01;35
-.dz     01;35
-.gz     01;35
-.lz     01;35
-.xz     01;35
-.bz2    01;35
-.bz     01;35
-.tbz    01;35
-.tbz2   01;35
-.tz     01;35
-.deb    01;35
-.rpm    01;35
-.jar    01;35
-.rar    01;35
-.ace    01;35
-.zoo    01;35
-.cpio   01;35
-.7z     01;35
-.rz     01;35
-.apk    01;35
-.gem    01;35
+## Archives or compressed (violet)
+.tar    00;95
+.tgz    00;95
+.arj    00;95
+.taz    00;95
+.lzh    00;95
+.lzma   00;95
+.tlz    00;95
+.txz    00;95
+.zip    00;95
+.z      00;95
+.Z      00;95
+.dz     00;95
+.gz     00;95
+.lz     00;95
+.xz     00;95
+.bz2    00;95
+.bz     00;95
+.tbz    00;95
+.tbz2   00;95
+.tz     00;95
+.deb    00;95
+.rpm    00;95
+.jar    00;95
+.rar    00;95
+.ace    00;95
+.zoo    00;95
+.cpio   00;95
+.7z     00;95
+.rz     00;95
+.apk    00;95
+.gem    00;95
 
 # Image formats (yellow)
 .jpg    00;33
@@ -217,49 +217,49 @@ STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writabl
 .pdf    00;33
 
 # Audio formats (orange)
-.aac    01;31
-.au     01;31
-.flac   01;31
-.mid    01;31
-.midi   01;31
-.mka    01;31
-.mp3    01;31
-.mpc    01;31
-.ogg    01;31
-.ra     01;31
-.wav    01;31
-.m4a    01;31
-.axa    01;31
-.oga    01;31
-.spx    01;31
-.xspf   01;31
+.aac    00;91
+.au     00;91
+.flac   00;91
+.mid    00;91
+.midi   00;91
+.mka    00;91
+.mp3    00;91
+.mpc    00;91
+.ogg    00;91
+.ra     00;91
+.wav    00;91
+.m4a    00;91
+.axa    00;91
+.oga    00;91
+.spx    00;91
+.xspf   00;91
 
-# Video formats (as audio + bold)
-.mov    01;31
-.mpg    01;31
-.mpeg   01;31
-.m2v    01;31
-.mkv    01;31
-.ogm    01;31
-.mp4    01;31
-.m4v    01;31
-.mp4v   01;31
-.vob    01;31
-.qt     01;31
-.nuv    01;31
-.wmv    01;31
-.asf    01;31
-.rm     01;31
-.rmvb   01;31
-.flc    01;31
-.avi    01;31
-.fli    01;31
-.flv    01;31
-.gl     01;31
-.m2ts   01;31
-.divx   01;31
-.webm   01;31
-.axv    01;31
-.anx    01;31
-.ogv    01;31
-.ogx    01;31
+# Video formats (as audio)
+.mov    00;91
+.mpg    00;91
+.mpeg   00;91
+.m2v    00;91
+.mkv    00;91
+.ogm    00;91
+.mp4    00;91
+.m4v    00;91
+.mp4v   00;91
+.vob    00;91
+.qt     00;91
+.nuv    00;91
+.wmv    00;91
+.asf    00;91
+.rm     00;91
+.rmvb   00;91
+.flc    00;91
+.avi    00;91
+.fli    00;91
+.flv    00;91
+.gl     00;91
+.m2ts   00;91
+.divx   00;91
+.webm   00;91
+.axv    00;91
+.anx    00;91
+.ogv    00;91
+.ogx    00;91
