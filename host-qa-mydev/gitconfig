@@ -14,3 +14,18 @@
 	user = jez
 [hub]
 	host = git.corp.stripe.com
+
+# I have a password-protected SSH key. We want pushes to always be done over
+# SSH (with that key), and pulls over HTTPS (because I don't work with private
+# repos).
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+	pushInsteadOf = git@github.com:
+# For repos with a GitHub remote, use my personal SSH key (see
+# ~/.util/gitconfig-github) instead of the devbox SSH agent.
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+	path = .util/gitconfig-github
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+	path = .util/gitconfig-github

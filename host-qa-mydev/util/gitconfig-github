@@ -1,0 +1,6 @@
+# Included by ~/.gitconfig for repos with a GitHub remote.
+#
+# Bypass the system-wide devbox SSH agent (/etc/gitconfig core.sshCommand) and
+# use my personal key, from ~/.ssh/config.
+[core]
+	sshCommand = ssh -F ~/.ssh/config -o IdentitiesOnly=yes -o IdentityAgent=none
