@@ -61,18 +61,13 @@ vim.lsp.config("rust-analyzer", {
 -- }}}
 -- C/C++ ------------------------------------------------------------------ {{{
 
--- TODO(jez) Get this back to using the bazel clangd, not the system one
-local clangd_cmd
-if vim.fn.filereadable("build/compile_commands.json") == 1 then
-	clangd_cmd = { "clangd", "--compile-commands-dir=build", "--background-index" }
-elseif vim.fn.filereadable("bazel-sorbet/external/llvm_toolchain_15_0_7/bin/clangd") == 1 then
-	clangd_cmd = { "bazel-sorbet/external/llvm_toolchain_15_0_7/bin/clangd" }
-else
-	clangd_cmd = { "clangd" }
-end
+-- Prefer the clangd from Sorbet's Bazel LLVM toolchain, if there is one.
+-- Otherwise use the one on PATH, which finds build/compile_commands.json
+-- on its own (e.g., in CMake projects).
+local bazel_clangd = vim.fn.glob(vim.fn.getcwd() .. "/bazel-sorbet/external/llvm_toolchain_*/bin/clangd", false, true)
 
 vim.lsp.config("clangd", {
-	cmd = clangd_cmd,
+	cmd = { bazel_clangd[#bazel_clangd] or "clangd" },
 	filetypes = { "c", "cpp" },
 })
 
