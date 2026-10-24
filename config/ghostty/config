@@ -6,9 +6,10 @@ quit-after-last-window-closed = true
 font-family = Iosevka Fixed
 font-size = 14
 font-style = Regular
-font-style-bold = Regular
 font-style-italic = Italic
-font-style-bold-italic = Italic
+# Bold text uses the font's bold faces (no font-style-bold or
+# font-style-bold-italic overrides), and keeps its color: bold-color is
+# unset, so Ghostty doesn't switch bold text to the bright palette colors.
 
 palette = 0=#073642
 palette = 1=#dc322f
