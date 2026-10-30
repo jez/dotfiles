@@ -94,6 +94,7 @@ unset GIT_COMMITTER_EMAIL
 if [ -f /pay/conf/box-name ]; then
   REMOTE_NAME="$(< /pay/conf/box-name)"
   export REMOTE_NAME
+  export PROMPT_PURE_HOSTNAME="$REMOTE_NAME"
 
   export PROMPT_PURE_DIR_COLOR="%{$cmagentab%}"
   export TMUXLINE_ACCENT_COLOR="colour13"
