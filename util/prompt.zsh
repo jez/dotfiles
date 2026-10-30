@@ -42,3 +42,9 @@ zle -N clear-screen
 bindkey '^Y' clear-screen
 
 prompt pure
+
+# Hosts can set PROMPT_PURE_HOSTNAME to show something other than %m over SSH
+# (e.g., a devbox's friendly name instead of its machine hostname).
+if [ -n "$prompt_pure_username" ] && [ -n "$PROMPT_PURE_HOSTNAME" ]; then
+  prompt_pure_username="%n@${PROMPT_PURE_HOSTNAME//\%/%%} "
+fi
