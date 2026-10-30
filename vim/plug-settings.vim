@@ -579,6 +579,38 @@ augroup vimuxMappings
   au FileType pandoc nnoremap <silent> <buffer> <leader>ip :VimuxRunCommand '_bin/publish "'.bufname("%").'"'<CR>
 augroup END
 " }}}
+" ----- christoomey/vim-tmux-navigator ----- {{{
+" The plugin only knows about tmux. When running inside herdr instead, move
+" between Vim splits, and fall back to herdr panes at the edge.
+"
+" herdr's ctrl+h/j/k/l bindings forward the key to Vim when it's in the
+" foreground (see ~/.config/herdr/tmux-compat.sh), mirroring is_vim in
+" ~/.config/tmux/new-navigator.conf.
+if $TMUX ==# '' && $HERDR_ENV ==# '1'
+  " The plugin loads after this file, so stop it from clobbering these maps.
+  let g:tmux_navigator_no_mappings = 1
+
+  let s:herdr_directions = {'h': 'left', 'j': 'down', 'k': 'up', 'l': 'right'}
+
+  function! s:HerdrNavigate(direction) abort
+    let nr = winnr()
+    try
+      execute 'wincmd ' . a:direction
+    catch
+      echohl ErrorMsg | echo 'E11: Invalid in command-line window; <CR> executes, CTRL-C quits: wincmd ' . a:direction | echohl None
+    endtry
+    if nr == winnr()
+      call system('herdr pane focus --pane ' . shellescape($HERDR_PANE_ID)
+            \ . ' --direction ' . s:herdr_directions[a:direction])
+    endif
+  endfunction
+
+  nnoremap <silent> <c-h> :call <SID>HerdrNavigate('h')<cr>
+  nnoremap <silent> <c-j> :call <SID>HerdrNavigate('j')<cr>
+  nnoremap <silent> <c-k> :call <SID>HerdrNavigate('k')<cr>
+  nnoremap <silent> <c-l> :call <SID>HerdrNavigate('l')<cr>
+endif
+" }}}
 " ----- fzf ----- {{{
 nnoremap <C-P> :FZF<CR>
 

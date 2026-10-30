@@ -1,0 +1,175 @@
+# Defaults live in `herdr --default-config`; only deliberate departures belong here.
+
+# TODO: Gaps vs. tmux (~/.config/tmux) that herdr (as of 0.9.5) can't express.
+# Candidates for building ourselves if we fork herdr.
+#
+# Status bar / tab bar style (solarized-light.tmuxline)
+# - Per-entry fg/bg/bold for tab_bar_right entries (e.g. purple box name, filled
+#   \ue0b2 powerline segments). Command output is stripped of ESC sequences.
+#   https://github.com/herdrdev/herdr/discussions/4305
+# - Tab bar background on its own (tmux status-style bg=colour7). The only
+#   theme token that colors it, panel_bg, also colors every pane's background.
+# - Status entries left of / before the tabs (tmux status-left `#S`).
+# - Powerline separators and styling between tabs (window-status-format).
+# - Tab labels showing number and name together (`#I #W`). A renamed tab shows
+#   only its name.
+# - Runtime toggle for the tab bar (`bind T set-option -g status`).
+#
+# Keybindings
+# - `=` even out panes (select-layout even-horizontal), and preset layouts
+#   (M-1..5, next-layout).
+# - Native split size/before options (`split-window -l N -b`). Emulated by
+#   tmux-compat.sh `split`, which goes through `pane split --ratio` + `pane swap`.
+# - Native vim-aware keybindings (tmux's `if-shell "$is_vim"`). Emulated by
+#   tmux-compat.sh `navigate`.
+# - `C-\` vim-tmux-navigator previous pane: last_pane exists as an action, but
+#   there's no CLI command for it, so tmux-compat.sh can't forward to it.
+# - `prefix l` last-window (no last-tab action).
+# - Command prompt (`:`), clock (`t`), paste buffers (`]`).
+#
+# Sidebar
+# - Per-status colors (idle/done/...): no theme token per status, and
+#   state_icon can't be restyled by rules.
+# - Manually marking an agent as unseen/"done" again, like a reminder (closest
+#   tmux analogue: mark pane, `m`).
+# - Configurable automatic workspace names (currently the folder name).
+#
+# Config tooling
+# - `herdr config check` doesn't flag duplicate keybindings, and silently
+#   accepts unknown fields.
+
+onboarding = false
+
+[theme]
+# Matches $SOLARIZED=light (~/.dotfiles/util/before.sh).
+name = "solarized-light"
+
+[theme.custom]
+# Mirrors $TMUXLINE_ACCENT_COLOR on devboxes (colour13 = solarized violet).
+accent = "#6c71c4"
+
+# Keybindings mirror tmux's defaults plus ~/.config/tmux/tmux.conf.
+# Herdr-only actions (new_workspace, goto, rename_pane, resize_mode, ...) keep
+# their defaults; see `herdr --default-config`.
+[keys]
+prefix = "ctrl+f"         # pressing it twice sends a literal ctrl+f, like send-prefix
+
+detach = "prefix+d"
+help = "prefix+?"         # list-keys
+settings = "prefix+shift+s"
+
+# sessions ~ workspaces
+workspace_picker = ["prefix+s", "prefix+w"]  # choose-tree
+rename_workspace = "prefix+$"
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+
+# windows ~ tabs (new_tab c, next_tab n, previous_tab p, switch_tab 1..9 are defaults)
+rename_tab = "prefix+,"
+close_tab = "prefix+&"
+
+# panes (close_pane x, zoom z, swap_pane_down/up J/K are defaults)
+copy_mode = ["prefix+v", "prefix+["]
+split_horizontal = "prefix+%"  # stacked
+split_vertical = 'prefix+"'    # side by side
+cycle_pane_next = ["prefix+o", "prefix+tab"]
+last_pane = "prefix+;"
+focus_pane_left = ["prefix+h", "prefix+left"]
+focus_pane_down = ["prefix+j", "prefix+down"]
+focus_pane_up = ["prefix+k", "prefix+up"]
+focus_pane_right = ["prefix+l", "prefix+right"]
+resize_pane_left = "prefix+ctrl+left"
+resize_pane_down = "prefix+ctrl+down"
+resize_pane_up = "prefix+ctrl+up"
+resize_pane_right = "prefix+ctrl+right"
+
+open_notification_target = "prefix+shift+o"  # default prefix+o is select-pane -t :.+ in tmux
+
+# vim-tmux-navigator (new-navigator.conf)
+[[keys.command]]
+key = "ctrl+h"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh navigate left ctrl+h"
+description = "focus pane left (vim-aware)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh navigate down ctrl+j"
+description = "focus pane down (vim-aware)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh navigate up ctrl+k"
+description = "focus pane up (vim-aware)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh navigate right ctrl+l"
+description = "focus pane right (vim-aware)"
+
+# restore overwritten ctrl+l (clear screen)
+[[keys.command]]
+key = "prefix+ctrl+l"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh send-keys ctrl+l"
+description = "send ctrl+l"
+
+[[keys.command]]
+key = "prefix+!"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh break-pane"
+description = "break pane into new tab"
+
+# bind > split-window -h -l 83
+[[keys.command]]
+key = "prefix+>"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh split right 83"
+description = "split right, 83 columns"
+
+# bind < split-window -h -l 108 -b
+[[keys.command]]
+key = "prefix+<"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh split right 108 before"
+description = "split left, 108 columns"
+
+# bind ^ split-window -l 10 -b
+[[keys.command]]
+key = "prefix+^"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh split down 10 before"
+description = "split above, 10 rows"
+
+[ui]
+status_indicators = "symbols"
+
+# tmux-style internal splitters, no outer frame
+pane_outer_borders = false
+pane_gaps = false
+
+# tmux `new-window` doesn't prompt for a name
+prompt_new_tab_name = false
+
+# Mirrors the tmuxline status-right: date + 12h clock, then host, with the same
+# powerline separator (\ue0b3, thin arrow). tmux also uses \ue0b2 (filled
+# arrow) between segments, but that needs colored backgrounds (see TODO above).
+# Command entries run on the herdr *server* via /bin/sh -lc, so a selected devbox
+# reports its own identity, not the laptop's. Only the final line of output is
+# used and ESC sequences are stripped.
+tab_bar_right = [
+  { type = "datetime", format = "%Y-%m-%d \ue0b3 %-l:%M %p" },
+  { type = "command", command = "cat /pay/conf/box-name 2>/dev/null || echo laptop", interval_seconds = 5, timeout_seconds = 2 },
+]
+tab_bar_right_separator = " \ue0b3 "
+
+# Claude Code sets the terminal title to the session name (`/rename`), prefixed
+# with a status spinner that terminal_title_stripped drops.
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", "terminal_title_stripped"], ["state_text", "workspace"]]
+
+[ui.sound]
+enabled = false
