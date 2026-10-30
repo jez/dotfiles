@@ -6,6 +6,7 @@
 # Usage:
 #   tmux-compat.sh navigate <left|down|up|right> <key>
 #   tmux-compat.sh split <right|down> <cells> [before]
+#   tmux-compat.sh new-tab
 #   tmux-compat.sh break-pane
 #   tmux-compat.sh send-keys <key>
 
@@ -46,6 +47,19 @@ case "$1" in
       jq -r '.result.pane.pane_id')
     if [ "${4:-}" = before ]; then
       herdr pane swap --source-pane "$new" --target-pane "$pane" > /dev/null
+    fi
+    ;;
+
+  # Like `new-window`, then `split left` (prefix+<) on wide screens or
+  # `split right` (prefix+>) on narrow ones.
+  new-tab)
+    new=$(herdr tab create --workspace "${pane%%:*}" --focus |
+      jq -r '.result.root_pane.pane_id')
+    width=$(herdr pane layout --pane "$new" | jq '.result.layout.area.width')
+    if [ "$width" -ge 300 ]; then
+      HERDR_ACTIVE_PANE_ID=$new exec "$0" split right 108 before
+    else
+      HERDR_ACTIVE_PANE_ID=$new exec "$0" split right 83
     fi
     ;;
 

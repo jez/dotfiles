@@ -123,6 +123,12 @@ command = "~/.config/herdr/tmux-compat.sh send-keys ctrl+l"
 description = "send ctrl+l"
 
 [[keys.command]]
+key = "prefix+shift+c"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh new-tab"
+description = "new tab, split for screen width"
+
+[[keys.command]]
 key = "prefix+!"
 type = "shell"
 command = "~/.config/herdr/tmux-compat.sh break-pane"
