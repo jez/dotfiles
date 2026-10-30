@@ -168,9 +168,13 @@ tab_bar_right = [
 tab_bar_right_separator = " \ue0b3 "
 
 # Claude Code sets the terminal title to the session name (`/rename`), prefixed
-# with a status spinner that terminal_title_stripped drops.
+# with a status spinner that terminal_title_stripped drops. `machine` is the
+# saved SSH machine label, which is set to match /pay/conf/box-name.
 [ui.sidebar.agents.rows_by_agent]
-claude = [["state_icon", "terminal_title_stripped"], ["state_text", "workspace"]]
+claude = [
+  ["state_icon", { token = "terminal_title_stripped", fg = "#657b83", bold = false, dim = false }], # solarized base00 (light body text)
+  ["state_text", { token = "machine", fg = "#6c71c4" }, "workspace"], # solarized violet
+]
 
 [ui.sound]
 enabled = false
