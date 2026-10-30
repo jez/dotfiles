@@ -7,8 +7,6 @@
 # - Per-entry fg/bg/bold for tab_bar_right entries (e.g. purple box name, filled
 #   \ue0b2 powerline segments). Command output is stripped of ESC sequences.
 #   https://github.com/herdrdev/herdr/discussions/4305
-# - Tab bar background on its own (tmux status-style bg=colour7). The only
-#   theme token that colors it, panel_bg, also colors every pane's background.
 # - Status entries left of / before the tabs (tmux status-left `#S`).
 # - Powerline separators and styling between tabs (window-status-format).
 # - Tab labels showing number and name together (`#I #W`). A renamed tab shows
@@ -47,6 +45,9 @@ name = "solarized-light"
 [theme.custom]
 # Mirrors $TMUXLINE_ACCENT_COLOR on devboxes (colour13 = solarized violet).
 accent = "#6c71c4"
+# Tab bar background, like tmux status-style bg=colour7 (solarized base2).
+# Panes keep the terminal's own background.
+panel_bg = "#eee8d5"
 
 # Keybindings mirror tmux's defaults plus ~/.config/tmux/tmux.conf.
 # Herdr-only actions (new_workspace, goto, rename_pane, resize_mode, ...) keep
