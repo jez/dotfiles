@@ -17,10 +17,6 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-if [ -d /home/linuxbrew/.linuxbrew ] && [ "$HOMEBREW_PREFIX" = "" ]; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv | grep -v "export PATH")
-fi
-
 # Add diff-highlight from Git contrib
 if [ "$DIFF_HIGHLIGHT_PATH" = "" ]; then
   export DIFF_HIGHLIGHT_PATH=/home/linuxbrew/.linuxbrew/opt/git/share/git-core/contrib/diff-highlight

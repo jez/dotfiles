@@ -32,6 +32,9 @@ load_module() {
   fi
 }
 
+# SSH commands read .bashrc even when the shell is noninteractive.
+[ -f ~/.util/homebrew.sh ] && source ~/.util/homebrew.sh
+
 # Make sure we are running interactively, else stop
 [ -z "$PS1" ] && return
 

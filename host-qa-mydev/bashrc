@@ -7,6 +7,9 @@ if ! [ -e /home/linuxbrew ]; then
   sudo ln -s "$real_home/linuxbrew" /home/linuxbrew
 fi
 
+# Initialize after creating /home/linuxbrew, before possibly switching shells.
+[ -f ~/.util/homebrew.sh ] && source ~/.util/homebrew.sh
+
 # We don't have entries in /etc/passwd (because users are managed somehow else)
 # The login shell is instead chosen by `pay ssh` and `pay remote ssh` to set
 # `'$SHELL --login'` as the argument to the `ssh` command that eventually gets

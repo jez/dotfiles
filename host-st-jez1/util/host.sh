@@ -17,9 +17,6 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-
 # Catalina
 export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
 export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"

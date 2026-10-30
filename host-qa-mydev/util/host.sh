@@ -17,8 +17,6 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-[ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 export PATH="$PATH:$HOME/.local/bin"
 
 # Add diff-highlight from Git contrib
