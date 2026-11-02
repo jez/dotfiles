@@ -71,6 +71,9 @@ install_cmd=(install)
 # One command because brew has parallelism over download step
 brew "${install_cmd[@]}" fzf zsh tmux herdr fastmod hub shellcheck git-delta pandoc
 
+herdr integration install claude
+herdr integration install codex
+
 # brew "${install_cmd[@]}" git
 # cp /etc/gitconfig /pay/home/linuxbrew/.linuxbrew/etc/gitconfig
 
