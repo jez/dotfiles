@@ -37,6 +37,10 @@ if [[ -r ~/.local/state/secrets/github-token ]]; then
 fi
 export GH_HOST=github.com
 
+if [[ -r ~/.local/state/secrets/buildkite-token ]]; then
+  export BUILDKITE_API_TOKEN="$(< ~/.local/state/secrets/buildkite-token)"
+fi
+
 # ----- aliases ---------------------------------------------------------------
 
 if [ "$NVIM_LISTEN_ADDRESS" = "" ]; then

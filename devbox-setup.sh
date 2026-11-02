@@ -69,7 +69,7 @@ install_cmd=(install)
 # fi
 
 # One command because brew has parallelism over download step
-brew "${install_cmd[@]}" fzf zsh tmux herdr fastmod hub shellcheck git-delta pandoc
+brew "${install_cmd[@]}" fzf zsh tmux herdr fastmod hub shellcheck git-delta pandoc buildkite/buildkite/bk@3
 
 herdr integration install claude
 herdr integration install codex
