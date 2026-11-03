@@ -113,6 +113,7 @@ augroup myFiletypes
   au FileType cpp setlocal commentstring=//%s
   au FileType yacc setlocal commentstring=//%s
   au FileType json setlocal commentstring=//%s
+  au FileType pandoc,pandoc.ghpull,markdown setlocal commentstring=<!--%s-->
 
   " Change indentation level in some languages
   " TODO(jez) This should be in .editorconfig at some point
