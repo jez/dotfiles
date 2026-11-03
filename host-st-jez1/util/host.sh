@@ -17,62 +17,10 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-# Catalina
-export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
-export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
-
-# Use GNU coreutils with their actual names
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# Tmux
-export MANPATH="/opt/homebrew/opt/tmux/share/man:$MANPATH"
-
-# Use bison from Homebrew
-export PATH="/usr/local/opt/bison/bin:$PATH"
-export PATH="/opt/homebrew/opt/bison/bin:$PATH"
-
-# Add diff-highlight from Git contrib
-export PATH="$PATH:/usr/local/opt/git/share/git-core/contrib/diff-highlight"
-export PATH="$PATH:/opt/homebrew/opt/git/share/git-core/contrib/diff-highlight"
-
-export PATH="$PATH:./node_modules/.bin"
-export PATH="$PATH:/usr/local/sbin"
-
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/stripe/bin"
-
-# Globally installed yarn executables
-export PATH="$PATH:$HOME/.yarn/bin"
-export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-
-# We're using thrift0.9 at Stripe
-export PATH="$PATH:/opt/homebrew/opt/thrift@0.9/bin"
-
-# Find clangd from Homebrew, but put it last (fallback)
-export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
-
-# For gcloud command, to deploy srb.help
-export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
-
-# This works, but I have no use for pyenv shims at the moment, so disabling to make things faster
-# if command -v pyenv &> /dev/null; then
-#   export PATH="$(pyenv root)/shims:$PATH"
-#   pyenv rehash
-# fi
+# Set for login shells by host.profile, which runs after macOS's path_helper.
 
 # I don't want GH_HOST to always say `git.corp.stripe.com`
 unset GH_HOST
-
-# ----- From Stripe IT department ---------------------------------------------
-
-export PATH="$HOME/stripe/henson/bin:$PATH"
-export PATH="$PATH:$HOME/stripe/space-commander/bin"
-load_module "$HOME/.rbenvrc"
-# source ~/.stripe-repos.sh
-# eval "$(nodenv init -)"
 
 # ----- aliases ---------------------------------------------------------------
 

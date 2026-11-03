@@ -17,38 +17,7 @@
 
 # ----- PATH and MANPATH ------------------------------------------------------
 
-# Catalina
-# export MANPATH="/Library/Developer/CommandLineTools/usr/share/man:$MANPATH"
-# export MANPATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$MANPATH"
-
-# Use GNU coreutils with their actual names
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# Tmux
-# export MANPATH="/opt/homebrew/opt/tmux/share/man:$MANPATH"
-
-# Add diff-highlight from Git contrib
-export PATH="$PATH:/opt/homebrew/opt/git/share/git-core/contrib/diff-highlight"
-
-export PATH="$PATH:./node_modules/.bin"
-
-export PATH="$PATH:$HOME/.local/bin"
-
-# Globally installed yarn executables
-# export PATH="$PATH:$HOME/.yarn/bin"
-# export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-
-# Find clangd from Homebrew, but put it last (fallback)
-# export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
-
-if [ -d "$HOME/.rbenv/bin" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
-if command -v rbenv &> /dev/null; then
-  eval "$(rbenv init -)"
-  rbenv rehash
-fi
+# Set for login shells by host.profile, which runs after macOS's path_helper.
 
 # ----- aliases ---------------------------------------------------------------
 
