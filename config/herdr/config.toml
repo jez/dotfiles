@@ -178,9 +178,9 @@ prompt_new_tab_name = false
 # used and ESC sequences are stripped.
 # The date is a command, not a datetime entry, because devboxes set TZ=UTC0 in
 # /etc/environment, which the herdr server inherits (host.sh's TZ only reaches
-# interactive shells).
+# interactive shells). The laptop keeps its own zone, to follow travel.
 tab_bar_right = [
-  { type = "command", command = "TZ=America/Los_Angeles date '+%Y-%m-%d \ue0b3 %-l:%M %p'", interval_seconds = 5, timeout_seconds = 2 },
+  { type = "command", command = "if [ -e /pay/conf/box-name ]; then export TZ=America/Los_Angeles; fi; date '+%Y-%m-%d \ue0b3 %-l:%M %p'", interval_seconds = 5, timeout_seconds = 2 },
   { type = "command", command = "cat /pay/conf/box-name 2>/dev/null || echo laptop", interval_seconds = 5, timeout_seconds = 2 },
 ]
 tab_bar_right_separator = " \ue0b3 "
