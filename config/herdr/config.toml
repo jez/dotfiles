@@ -176,8 +176,11 @@ prompt_new_tab_name = false
 # Command entries run on the herdr *server* via /bin/sh -lc, so a selected devbox
 # reports its own identity, not the laptop's. Only the final line of output is
 # used and ESC sequences are stripped.
+# The date is a command, not a datetime entry, because devboxes set TZ=UTC0 in
+# /etc/environment, which the herdr server inherits (host.sh's TZ only reaches
+# interactive shells).
 tab_bar_right = [
-  { type = "datetime", format = "%Y-%m-%d \ue0b3 %-l:%M %p" },
+  { type = "command", command = "TZ=America/Los_Angeles date '+%Y-%m-%d \ue0b3 %-l:%M %p'", interval_seconds = 5, timeout_seconds = 2 },
   { type = "command", command = "cat /pay/conf/box-name 2>/dev/null || echo laptop", interval_seconds = 5, timeout_seconds = 2 },
 ]
 tab_bar_right_separator = " \ue0b3 "
