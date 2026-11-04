@@ -63,7 +63,7 @@ augroup myFiletypes
 
   " Turn on spell checking and 80-char lines by default for these filetypes
   au FileType pandoc,pandoc.ghpull,markdown,tex setlocal spell
-  au FileType pandoc,pandoc.ghpull,markdown,tex setlocal tw=80
+  "au FileType pandoc,pandoc.ghpull,markdown,tex setlocal tw=80
 
   " Cargo-culted from here: https://github.com/vim-pandoc/vim-pandoc/blob/0d4b68eb7f63e43f963a119d60a3e29c2bb822e0/ftplugin/pandoc.vim#L51-L52
   " (not using that plugin because it's slow and opinionated otherwise)
