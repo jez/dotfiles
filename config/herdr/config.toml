@@ -191,12 +191,12 @@ tab_bar_right_separator = " \ue0b3 "
 [ui.sidebar.agents.rows_by_agent]
 claude = [
   ["state_icon", { token = "terminal_title_stripped", fg = "#657b83", bold = false, dim = false }], # solarized base00 (light body text)
-  ["state_text", { token = "machine", fg = "#6c71c4" }, "workspace"], # solarized violet
+  [{ token = "machine", fg = "#6c71c4" }, "workspace"], # solarized violet
 ]
 # Codex sets the terminal title to the cwd's basename, so show the agent name.
 codex = [
   ["state_icon", { token = "agent", fg = "#657b83", bold = false, dim = false }],
-  ["state_text", { token = "machine", fg = "#6c71c4" }, "workspace"],
+  [{ token = "machine", fg = "#6c71c4" }, "workspace"],
 ]
 
 [ui.sound]
