@@ -669,20 +669,6 @@ endif
 " augroup END
 " inoremap <silent> <expr> <c-space> coc#refresh()
 " }}}
-" ----- ojroques/vim-oscyank ----- {{{
-
-if $SSH_CONNECTION !=# ''
-  augroup vim-oscyank
-    au!
-    " This fires for both yank and delete operations (like d and c)
-    autocmd TextYankPost *
-        \ if v:event.regname is '+' |
-        \ execute 'OSCYankRegister +' |
-        \ endif
-  augroup END
-endif
-
-" }}}
 " ----- AnsiEsc.vim ----- {{{
 let g:no_cecutil_maps = 1
 " }}}

@@ -219,6 +219,37 @@ noremap <silent> <leader>D "+D
 noremap <silent> <leader>p "+p
 noremap <silent> <leader>P "+P
 
+" Over SSH, reach the laptop's clipboard through the terminal with OSC 52.
+if $SSH_CONNECTION !=# '' && has('nvim')
+  if $HERDR_ENV ==# '1'
+    " herdr never answers OSC 52 clipboard reads, so they wait 10s ("Waiting
+    " for OSC 52 response from the terminal"). So copy over OSC 52, but paste
+    " what was last copied from this Neovim.
+    " https://github.com/herdrdev/herdr/discussions/579
+    let s:osc52_copied = {}
+    function! s:OSC52Copy(reg, lines, regtype) abort
+      let s:osc52_copied[a:reg] = [a:lines, a:regtype]
+      " Neovim has no Vimscript base64_encode() (Vim 9.1 only).
+      let l:b64 = v:lua.vim.base64.encode(join(a:lines, "\n"))
+      call nvim_ui_send(printf("\e]52;%s;%s\e\\", a:reg ==# '+' ? 'c' : 'p', l:b64))
+    endfunction
+    let g:clipboard = {
+          \ 'name': 'OSC 52 (copy only)',
+          \ 'copy': {
+          \   '+': {lines, regtype -> s:OSC52Copy('+', lines, regtype)},
+          \   '*': {lines, regtype -> s:OSC52Copy('*', lines, regtype)},
+          \ },
+          \ 'paste': {
+          \   '+': {-> get(s:osc52_copied, '+', [[], 'v'])},
+          \   '*': {-> get(s:osc52_copied, '*', [[], 'v'])},
+          \ },
+          \ }
+  else
+    " Neovim's built-in provider. iTerm2 answers clipboard reads.
+    let g:clipboard = 'osc52'
+  endif
+endif
+
 " Ideally I'd be able to specify no <M- keybindings in insert mode. For now,
 " whitelist them as they come up:
 inoremap <M-k> <ESC>k
