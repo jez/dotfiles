@@ -61,10 +61,10 @@ vim.lsp.config("rust-analyzer", {
 -- }}}
 -- C/C++ ------------------------------------------------------------------ {{{
 
--- Prefer the clangd from Sorbet's Bazel LLVM toolchain, if there is one.
+-- Prefer the clangd from the Bazel LLVM toolchain, if there is one.
 -- Otherwise use the one on PATH, which finds build/compile_commands.json
 -- on its own (e.g., in CMake projects).
-local bazel_clangd = vim.fn.glob(vim.fn.getcwd() .. "/bazel-sorbet/external/llvm_toolchain_*/bin/clangd", false, true)
+local bazel_clangd = vim.fn.glob(vim.fn.getcwd() .. "/bazel-*/external/llvm_toolchain_*/bin/clangd", false, true)
 
 vim.lsp.config("clangd", {
 	cmd = { bazel_clangd[#bazel_clangd] or "clangd" },
