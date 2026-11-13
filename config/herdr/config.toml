@@ -153,6 +153,13 @@ type = "shell"
 command = "~/.config/herdr/tmux-compat.sh split right 108 before"
 description = "split left, 108 columns"
 
+# Opposite of prefix+<: this pane becomes 108 columns, new pane to its right.
+[[keys.command]]
+key = "prefix+'"
+type = "shell"
+command = "~/.config/herdr/tmux-compat.sh split right 108 keep"
+description = "split right, keep 108 columns"
+
 # bind ^ split-window -l 10 -b
 [[keys.command]]
 key = "prefix+^"

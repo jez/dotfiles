@@ -5,7 +5,7 @@
 #
 # Usage:
 #   tmux-compat.sh navigate <left|down|up|right> <key>
-#   tmux-compat.sh split <right|down> <cells> [before]
+#   tmux-compat.sh split <right|down> <cells> [before|keep]
 #   tmux-compat.sh new-tab
 #   tmux-compat.sh break-pane
 #   tmux-compat.sh send-keys <key>
@@ -30,6 +30,8 @@ case "$1" in
     ;;
 
   # Like `split-window -l <cells>` (and `-b` when "before" is given).
+  # "keep" instead leaves the original pane <cells> big, with the new pane
+  # after it: the same layout as "before", minus the swap.
   # herdr's --ratio is the share the *original* pane keeps.
   split)
     direction=$2
@@ -38,7 +40,7 @@ case "$1" in
     total=$(herdr pane layout --pane "$pane" |
       jq --arg p "$pane" --arg d "$dim" '.result.layout.panes[] | select(.pane_id == $p) | .rect[$d]')
     ratio=$(awk -v n="$cells" -v t="$total" -v b="${4:-}" 'BEGIN {
-      r = (b == "before") ? n / t : 1 - n / t
+      r = (b == "before" || b == "keep") ? n / t : 1 - n / t
       if (r < 0.1) r = 0.1
       if (r > 0.9) r = 0.9
       print r
