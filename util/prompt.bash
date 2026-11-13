@@ -54,7 +54,9 @@ color_my_prompt() {
 
 
   # change the color of the git branch depending on whether the repo is "messy" or "clean"
-  local __git_branch_color='$(if [ -z "$(git status --porcelain 2> /dev/null)" ]; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi)'
+  # Skip `git status` in huge repos (PROMPT_PURE_SKIP_DIRTY_CHECK, set by
+  # skip-dirty.sh), like the zsh prompt does.
+  local __git_branch_color='$(if [ -n "$PROMPT_PURE_SKIP_DIRTY_CHECK" ] || [ -z "$(git status --porcelain 2> /dev/null)" ]; then echo \[${cgreen}\]; else echo \[${cyellow}\]; fi)'
 
   local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\ \(\\\\\1\)/`'
 

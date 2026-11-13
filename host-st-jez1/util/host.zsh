@@ -12,7 +12,8 @@
 
 
 source ~/.util/fzf.zsh
-source ~/.util/skip-dirty.zsh
+source ~/.util/skip-dirty.sh
+chpwd_functions+=(skip_dirty_check)
 source ~/.util/bazel.zsh
 source ~/.util/lldb.zsh
 
