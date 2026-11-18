@@ -31,6 +31,8 @@ export LANG=en_US.UTF-8
 # devboxes is forced to share the tiny volume that's used for `/dev/root`.
 export HOMEBREW_TEMP="$TMPDIR"
 
+export DEV_AGENT_ALLOW_MINT_TYPECHECK=1
+
 export GH_CONFIG_DIR=/home/jez/.config/gh
 if [[ -r ~/.local/state/secrets/github-token ]]; then
   export GH_TOKEN="$(< ~/.local/state/secrets/github-token)"
