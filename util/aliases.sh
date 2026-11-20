@@ -163,8 +163,10 @@ alias tolsptests="sed -e 's+^test+//test:test_LSPTests+; s/\\(__[^.]*\\)\\{0,1\\
 eval "$(hub alias -s 2> /dev/null)"
 
 # We want to use '#' as a markdown character, so let's use '%' for comments
-alias hubmdpr="hub -c core.commentChar='%' pull-request"
-alias hubmd="hub -c core.commentChar='%'"
+# host.sh can set hub_write to a wrapper to use instead of hub here.
+alias hubmdpr="${hub_write:-hub} -c core.commentChar='%' pull-request"
+alias hubmd="${hub_write:-hub} -c core.commentChar='%'"
+unset hub_write
 alias hubci="hub ci-status --verbose"
 alias hubcio="hub ci-status --format '%U%n' | head -n 1 | xargs open"
 alias ptal='hub issue update "$(hub pr show --format="%I")" -a'

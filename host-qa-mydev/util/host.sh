@@ -39,6 +39,11 @@ if [[ -r ~/.local/state/secrets/github-token ]]; then
 fi
 export GH_HOST=github.com
 
+# hub's own config only has a token for git.corp.stripe.com. For github.com,
+# hub-unlock asks for a password to decrypt a write token (in github.com repos
+# only; elsewhere it runs plain hub). Used by hubmdpr and hubmd in aliases.sh.
+hub_write=hub-unlock
+
 if [[ -r ~/.local/state/secrets/buildkite-token ]]; then
   export BUILDKITE_API_TOKEN="$(< ~/.local/state/secrets/buildkite-token)"
 fi
