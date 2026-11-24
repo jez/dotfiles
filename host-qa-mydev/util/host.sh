@@ -71,7 +71,7 @@ alias vimdiff="nvim -d"
 # open Vim directly to Goyo mode (distraction-free writing mode)
 alias vimg="nvim +Goyo"
 
-alias sb='bazel build //main:sorbet'
+alias sb='bazel build //main:sorbet --config=dev'
 alias sbl='bazel build'
 alias sbg='bazel build //main:sorbet --config=dbg'
 alias sbo='bazel build //main:sorbet --config=debugsymbols'
