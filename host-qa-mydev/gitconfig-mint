@@ -1,0 +1,10 @@
+# Stripe's GitFS bookkeeping hooks, without the commit and push hooks.
+[hook "gitfs-post-checkout"]
+	event = post-checkout
+	command = /etc/stripe/git_hooks/post-checkout
+[hook "gitfs-post-merge"]
+	event = post-merge
+	command = /etc/stripe/git_hooks/post-merge
+[hook "gitfs-post-rewrite"]
+	event = post-rewrite
+	command = /etc/stripe/git_hooks/post-rewrite

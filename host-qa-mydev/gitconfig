@@ -9,6 +9,8 @@
 	path = nvim
 [core]
 	hooksPath = /usr/share/git-core/templates/hooks
+[includeIf "gitdir:/pay/src/"]
+	path = ~/.dotfiles/host-qa-mydev/gitconfig-mint
 
 [github]
 	user = jez
